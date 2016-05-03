@@ -10,9 +10,7 @@ namespace UsefulToolForGameProjectYes
     {
         public GameSetup()
         {
-            myResolution = new Resolution();
-            myResolution.X = 1920;
-            myResolution.Y = 1080;
+            myResolution = new Resolution(1920, 1080);
 
             myIsFullscreen = false;
             mySkipIntro = true;

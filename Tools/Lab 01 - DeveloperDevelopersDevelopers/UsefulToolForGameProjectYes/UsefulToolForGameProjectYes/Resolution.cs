@@ -8,10 +8,10 @@ namespace UsefulToolForGameProjectYes
 {
     public class Resolution
     {
-        public Resolution()
+        public Resolution(int aX, int aY)
         {
-            myX = 1920;
-            myY = 1080;
+            myX = aX;
+            myY = aY;
         }
 
         public string Tag
