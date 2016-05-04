@@ -30,7 +30,8 @@
         {
             this.TabWindow = new System.Windows.Forms.TabControl();
             this.TabGameSettings = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonLoad = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.GroupBoxMisc = new System.Windows.Forms.GroupBox();
             this.CheckBoxMute = new System.Windows.Forms.CheckBox();
             this.CheckBoxSkipSplashScreen = new System.Windows.Forms.CheckBox();
@@ -52,31 +53,42 @@
             this.TabWindow.Location = new System.Drawing.Point(2, 3);
             this.TabWindow.Name = "TabWindow";
             this.TabWindow.SelectedIndex = 0;
-            this.TabWindow.Size = new System.Drawing.Size(788, 423);
+            this.TabWindow.Size = new System.Drawing.Size(300, 423);
             this.TabWindow.TabIndex = 0;
             // 
             // TabGameSettings
             // 
-            this.TabGameSettings.Controls.Add(this.button1);
+            this.TabGameSettings.Controls.Add(this.buttonLoad);
+            this.TabGameSettings.Controls.Add(this.buttonSave);
             this.TabGameSettings.Controls.Add(this.GroupBoxMisc);
             this.TabGameSettings.Controls.Add(this.GroupBoxResolution);
             this.TabGameSettings.Location = new System.Drawing.Point(4, 22);
             this.TabGameSettings.Name = "TabGameSettings";
             this.TabGameSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.TabGameSettings.Size = new System.Drawing.Size(780, 397);
+            this.TabGameSettings.Size = new System.Drawing.Size(292, 397);
             this.TabGameSettings.TabIndex = 0;
             this.TabGameSettings.Text = "Game Settings";
             this.TabGameSettings.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonLoad
             // 
-            this.button1.Location = new System.Drawing.Point(379, 216);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonLoad.Location = new System.Drawing.Point(111, 229);
+            this.buttonLoad.Name = "buttonLoad";
+            this.buttonLoad.Size = new System.Drawing.Size(75, 23);
+            this.buttonLoad.TabIndex = 3;
+            this.buttonLoad.Text = "&Load";
+            this.buttonLoad.UseVisualStyleBackColor = true;
+            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(12, 229);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.TabIndex = 2;
+            this.buttonSave.Text = "&Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // GroupBoxMisc
             // 
@@ -153,6 +165,7 @@
             // 
             // ComboBoxResolution
             // 
+            this.ComboBoxResolution.DisplayMember = "Tag";
             this.ComboBoxResolution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxResolution.FormattingEnabled = true;
             this.ComboBoxResolution.Location = new System.Drawing.Point(6, 19);
@@ -166,7 +179,7 @@
             this.TabLDMode.Location = new System.Drawing.Point(4, 22);
             this.TabLDMode.Name = "TabLDMode";
             this.TabLDMode.Padding = new System.Windows.Forms.Padding(3);
-            this.TabLDMode.Size = new System.Drawing.Size(780, 397);
+            this.TabLDMode.Size = new System.Drawing.Size(292, 397);
             this.TabLDMode.TabIndex = 1;
             this.TabLDMode.Text = "LD mode";
             this.TabLDMode.UseVisualStyleBackColor = true;
@@ -175,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 429);
+            this.ClientSize = new System.Drawing.Size(302, 426);
             this.Controls.Add(this.TabWindow);
             this.Name = "GameSettings";
             this.Text = "Game Settings";
@@ -201,7 +214,8 @@
         private System.Windows.Forms.CheckBox CheckBoxMute;
         private System.Windows.Forms.CheckBox CheckBoxSkipSplashScreen;
         private System.Windows.Forms.CheckBox CheckBoxSkipIntro;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonLoad;
     }
 }
 

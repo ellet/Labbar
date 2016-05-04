@@ -9,3 +9,14 @@ C:\SVNBase\Labbar\Tools\Lab 01 - DeveloperDevelopersDevelopers\UsefulToolForGame
 C:\SVNBase\Labbar\Tools\Lab 01 - DeveloperDevelopersDevelopers\UsefulToolForGameProjectYes\UsefulToolForGameProjectYes\obj\Debug\UsefulToolForGameProjectYes.pdb
 C:\SVNBase\Labbar\Tools\Lab 01 - DeveloperDevelopersDevelopers\UsefulToolForGameProjectYes\UsefulToolForGameProjectYes\bin\Debug\Newtonsoft.Json.dll
 C:\SVNBase\Labbar\Tools\Lab 01 - DeveloperDevelopersDevelopers\UsefulToolForGameProjectYes\UsefulToolForGameProjectYes\bin\Debug\Newtonsoft.Json.xml
+D:\LIB\Projekt\Labbar\LabbarGit\Tools\Lab 01 - DeveloperDevelopersDevelopers\UsefulToolForGameProjectYes\UsefulToolForGameProjectYes\bin\Debug\UsefulToolForGameProjectYes.exe.config
+D:\LIB\Projekt\Labbar\LabbarGit\Tools\Lab 01 - DeveloperDevelopersDevelopers\UsefulToolForGameProjectYes\UsefulToolForGameProjectYes\obj\Debug\UsefulToolForGameProjectYes.exe
+D:\LIB\Projekt\Labbar\LabbarGit\Tools\Lab 01 - DeveloperDevelopersDevelopers\UsefulToolForGameProjectYes\UsefulToolForGameProjectYes\obj\Debug\UsefulToolForGameProjectYes.pdb
+D:\LIB\Projekt\Labbar\LabbarGit\Tools\Lab 01 - DeveloperDevelopersDevelopers\UsefulToolForGameProjectYes\UsefulToolForGameProjectYes\bin\Debug\UsefulToolForGameProjectYes.exe
+D:\LIB\Projekt\Labbar\LabbarGit\Tools\Lab 01 - DeveloperDevelopersDevelopers\UsefulToolForGameProjectYes\UsefulToolForGameProjectYes\bin\Debug\UsefulToolForGameProjectYes.pdb
+D:\LIB\Projekt\Labbar\LabbarGit\Tools\Lab 01 - DeveloperDevelopersDevelopers\UsefulToolForGameProjectYes\UsefulToolForGameProjectYes\bin\Debug\Newtonsoft.Json.dll
+D:\LIB\Projekt\Labbar\LabbarGit\Tools\Lab 01 - DeveloperDevelopersDevelopers\UsefulToolForGameProjectYes\UsefulToolForGameProjectYes\bin\Debug\Newtonsoft.Json.xml
+D:\LIB\Projekt\Labbar\LabbarGit\Tools\Lab 01 - DeveloperDevelopersDevelopers\UsefulToolForGameProjectYes\UsefulToolForGameProjectYes\obj\Debug\UsefulToolForGameProjectYes.csprojResolveAssemblyReference.cache
+D:\LIB\Projekt\Labbar\LabbarGit\Tools\Lab 01 - DeveloperDevelopersDevelopers\UsefulToolForGameProjectYes\UsefulToolForGameProjectYes\obj\Debug\UsefulToolForGameProjectYes.GameSettings.resources
+D:\LIB\Projekt\Labbar\LabbarGit\Tools\Lab 01 - DeveloperDevelopersDevelopers\UsefulToolForGameProjectYes\UsefulToolForGameProjectYes\obj\Debug\UsefulToolForGameProjectYes.Properties.Resources.resources
+D:\LIB\Projekt\Labbar\LabbarGit\Tools\Lab 01 - DeveloperDevelopersDevelopers\UsefulToolForGameProjectYes\UsefulToolForGameProjectYes\obj\Debug\UsefulToolForGameProjectYes.csproj.GenerateResource.Cache
