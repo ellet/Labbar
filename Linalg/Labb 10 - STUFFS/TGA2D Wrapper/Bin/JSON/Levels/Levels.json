@@ -1,0 +1,15 @@
+{
+	"Levels" : 
+	[
+		{
+			"Path" : "JSON/Levels/Level1/Level1.json"
+		},
+		{
+			"Path" : "JSON/Levels/Level2/Level2.json"
+		}
+	],
+	"StartLevel" : 
+	{
+		"Path" : "JSON/Levels/Level1/Level1.json"
+	}
+}

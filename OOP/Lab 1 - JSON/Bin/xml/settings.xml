@@ -1,0 +1,9 @@
+<root>
+	<paddles gfx="sprites/paddle.png" speed="2" />
+	<ball gfx="sprites/ball.png" startspeed="0.8" acc="0.8" />
+	
+	<titlescreen>
+		<img gfx="sprites/Background.dds" x="0.0" y="0.0" />
+		<img gfx="sprites/pongCraft.dds" x="0.2" y="0.3" />
+	</titlescreen>
+</root>

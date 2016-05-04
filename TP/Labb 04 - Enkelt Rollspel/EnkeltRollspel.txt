@@ -1,0 +1,72 @@
+void main()
+STARTs
+	WHILE (ExitGame == FALSE)
+	START
+		ScenLoop(CurrentScen)
+	END
+END
+
+
+ScenLoop(ScenToLoad)
+START
+	
+	LoadScen(ScenToLoad)
+
+	WHILE(LoadedScen == CurrentScen)
+	START
+		BaseScreenUpdate()
+		RunReleventScreen(CurrentGameState)
+		CurrentGameState = CheckScreenScreenState()
+	END
+END
+
+void BaseScreenUpdate()
+START
+	
+	CheckPlayerInput()
+	CheckEntityStates()
+
+END
+
+void CharacterCreationScreen()
+START
+	WHILE(CharacterNotDone)
+	START
+		ShowAttributes(CharacterToCreate.LevelData.Attributes)
+		ShowSkills(CharacterToCreate.LevelData.Skills)
+
+		CharacterToCreate.LevelData = PlayerLevelingInput()
+	END
+	CreateCharacter(CharacterToCreate)
+END
+
+void LevelingScreen()
+START
+
+	WHILE(LevelingNotDone)
+	START
+		ShowAttributes(CharacterToLevel.LevelData.Attributes)
+		ShowSkills(CharacterToLevel.LevelData.Skills)
+
+		CharacterToLevel.LevelData = PlayerLevelingInput()
+	END
+	CharacterToLevel.Entity.LevelData = CharacterToLevel.LevelData
+END
+
+
+
+void ExplorationScreen()
+START
+	FOR_EACH EntityIndex FROM 1 to EntityIndex.Size
+	START
+		EntityInScen[EntityIndex].GetCurrentBehaviour.Execute();
+	END
+END
+
+void CombatScreen()
+START
+	FOR_EACH EntityIndex FROM 1 to EntityIndex.Size
+	START
+		EntityInScen[EntityIndex].GetCurrentCombatAction.Execute();
+	END
+END

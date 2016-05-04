@@ -1,0 +1,5 @@
+Font\Font.dds
+8
+20
+89
+!"#-%&'()*+,-./0123456789:;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^`abcdefghijklmnopqrstuvwxyz 

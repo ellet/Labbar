@@ -1,0 +1,12 @@
+#pragma once
+#include "RouletteColumn.h"
+#include "RouletteCorner.h"
+#include "RouletteDouble.h"
+#include "RouletteDozen.h"
+#include "RouletteEvenOrOdd.h"
+#include "RouletteManque.h"
+#include "RoulettePasse.h"
+#include "RouletteSingle.h"
+#include "RouletteSplit.h"
+#include "RouletteRedOrBlack.h"
+#include "RouletteStreet.h"

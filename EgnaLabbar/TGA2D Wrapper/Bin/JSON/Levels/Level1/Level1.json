@@ -1,0 +1,240 @@
+{
+	"Name" : "Level1",
+	"BackgroundImagePath" : "Sprites/Backgrounds/Level1/Background.dds",
+	"BackgroundSound" : "BGLevel1",
+	"DialoguePath" : "JSON/Levels/Level1/Dialogue/All.json",
+	"BorderPath" : "JSON/Levels/Level1/borders.json",
+    "PlayerScaling":
+    {
+        "TopY" : 600,
+        "TopScale" : 0.75,
+        "BottomY" : 1080,
+        "BottomScale" : 2.0
+    },
+	"Player" :
+	{	
+		"PlayerPosition" : 
+		{
+			"XPosition" : 810,
+			"YPosition" : 800
+		}
+	},	
+	"Objects" : 
+	[
+		{ 
+			"Name" : "ChangeRoom",
+			"XPosition" : 1022,
+			"YPosition" : 560,
+			"SpritePath" : "Sprites/ChangeRoom.dds",
+			"Active" : true,
+			"Events" : 
+			[
+				{
+					"EventType" : "OnClickEvent",	
+					"Events" :
+					[
+						{
+							"EventType" : "ChangeLevelEvent",
+							"Data" : 
+							{
+								"TargetLevelName" : "Level2",
+								"PlayerPosition" : 
+								{
+									"XPosition" : 820,
+									"YPosition" : 725
+								}
+							}
+						},
+						{
+							"EventType" : "DialogueEvent",
+							"Data" : 
+							{
+								"SpriteID" : "Commander",
+								"Text" : "Velas, start working ffs."
+							}
+						},
+						{
+							"EventType" : "DialogueEvent",
+							"Data" : 
+							{
+								"SpriteID" : "Velas",
+								"Text" : "Ok dude."
+							}
+						},
+						{
+							"EventType" : "UnlockMagicEvent",
+							"Data" :
+							{
+								"Type" : "Wind"
+							}
+						}
+					],
+					"BoxSize" : 
+					{
+						"X" : 128,
+						"Y" : 128
+					}
+				},
+				{
+					"EventType" : "ExamineEvent",
+					"Data" :
+					{
+						"SpriteID" : "Commander",
+						"Text" : "Velas, start working ffs."
+					}
+				}
+			]
+		},
+		
+		{
+		 "Name" : "Kugghjul",
+			"XPosition" : 1580,
+			"YPosition" : 780,
+			"SpritePath" : "Sprites/Levels/Level1/Objects/Kugghjul.png",
+			"Active" : false,
+			"Events" : 
+			[
+						{
+										"EventType" : "PickUpEvent"	,
+										"Data" : 
+										{
+											"ObjectNametoPickUp" : "Kugghjul",
+											"RemoveObjectAfterPickup" : true
+										}
+						}
+			]
+		},
+		
+		{ 
+			"Name" : "Test",
+			"XPosition" : 100,
+			"YPosition" : 100,
+			"SpritePath" : "Sprites/redBush.dds",
+			"Active" : false,
+			"Events" : 
+			[
+				{
+					"EventType" : "OnClickEvent",	
+					"Events" : 
+					[
+						{
+							"EventType" : "PickUpEvent"	,
+							"Data" : 
+							{
+								"ObjectNametoPickUp" : "Test3",
+								"RemoveObjectAfterPickup" : false
+							}
+						}
+					],
+					"BoxSize" : 
+					{
+						"X" : 128,
+						"Y" : 128
+					}
+				}
+			]
+		},
+		{ 
+			"Name" : "Test2",
+			"XPosition" : 300,
+			"YPosition" : 300,
+			"SpritePath" : "Sprites/blueBush.dds",
+			"Active" : false,
+			"Events" :
+			[
+			]
+		},
+		{ 
+			"Name" : "Test3",
+			"XPosition" : -100,
+			"YPosition" : -100,
+			"SpritePath" : "Sprites/redBush.dds",
+			"Active" : false,
+			"Events" : 
+			[
+				{
+					"EventType" : "OnClickEvent",	
+					"Events" : 
+					[
+						{
+							"EventType" : "AddAsInventory"
+						},
+						{
+							"EventType" : "OnCombineEvent",
+							"Data" : 
+							{
+								"ObjectToCombineWith" : "Test2"
+							},
+							"Events" : 
+							[
+								{
+									"EventType" : "PlaySoundEvent",
+									"Data" : 
+									{
+										"SoundName" : "BOOM",
+										"Repeat" : false
+									}
+								}
+							],
+							"BoxSize" : 
+							{
+								"X" : 128,
+								"Y" : 128
+							}
+						}
+					],
+					"BoxSize" : 
+					{
+						"X" : 128,
+						"Y" : 128
+					}
+				}
+			]
+		},
+		{
+			"Name" : "Boom",
+			"XPosition" : 1500,
+			"YPosition" : 500,
+			"SpritePath" : "Sprites/desert.dds",
+			"Active" : false,
+			"Events" : 
+			[
+				{
+					"EventType" : "OnClickEvent",	
+					"Events" : 
+					[
+						{
+							"EventType" : "CheckInventoryEvent",
+							"Data" : 
+							{
+								"ObjectName" : "Test3"
+							},
+							"Events" : 
+							[
+								{	
+									"EventType" : "SetActiveEvent",
+									"Data" : 
+									{
+										"ObjectName" : "Test2",
+										"Value" : true
+									}
+								}
+							]
+						}
+					],
+					"BoxSize" : 
+					{
+						"X" : 128,
+						"Y" : 128
+					}		
+				}
+			]
+		}
+	],
+	"NPCS" : 
+	[
+		{
+			
+		}
+	]
+}

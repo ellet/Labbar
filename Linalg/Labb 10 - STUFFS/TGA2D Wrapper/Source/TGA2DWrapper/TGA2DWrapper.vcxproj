@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseClasses\BaseGameObject\BaseAnimatedObject\Animation.cpp" />
+    <ClCompile Include="BaseClasses\BaseGameObject\BaseAnimatedObject\BaseAnimatedGameObject.cpp" />
+    <ClCompile Include="BaseClasses\BaseState\BaseState.cpp" />
+    <ClCompile Include="BaseClasses\BaseGameObject\BaseGameObject.cpp" />
+    <ClCompile Include="CollisionManager\CollisionData\CollisionData.cpp" />
+    <ClCompile Include="CollisionManager\CollisionShapes\CircleShape.cpp" />
+    <ClCompile Include="CollisionManager\CollisionShapes\BaseCollisionShape.cpp" />
+    <ClCompile Include="CollisionManager\CollisionShapes\BoxShape.cpp" />
+    <ClCompile Include="CollisionManager\CollisionManager.cpp" />
+    <ClCompile Include="BaseClasses\FactoryGameObject\FactoryGameObject.cpp" />
+    <ClCompile Include="CollisionManager\EventCollider.cpp" />
+    <ClCompile Include="CollisionManager\CollisionShapes\PointShape.cpp" />
+    <ClCompile Include="CollisionManager\CollisionShapes\LineShape.cpp" />
+    <ClCompile Include="Input\MouseInput\MouseInput.cpp" />
+    <ClCompile Include="Input\MouseInput\MousePointer.cpp" />
+    <ClCompile Include="RendererManager\Commands\Lines\RenderCommandLine.cpp" />
+    <ClCompile Include="RendererManager\Commands\Sprite\RenderCommand.cpp" />
+    <ClCompile Include="RendererManager\Commands\Text\RenderText.cpp" />
+    <ClCompile Include="RendererManager\RenderManager.cpp" />
+    <ClCompile Include="StateManager\StateManager.cpp" />
+    <ClCompile Include="RendererManager\Text\TextRenderer.cpp" />
+    <ClCompile Include="RendererManager\Text\TextFont.cpp" />
+    <ClCompile Include="CollisionManager\CollisionShapes\SweptCircle.cpp" />
+    <ClCompile Include="Utility\MouseInputResolutionAdaption.cpp" />
+    <ClCompile Include="Utility\ScreenResolution.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseClasses\BaseGameObject\BaseAnimatedObject\Animation.h" />
+    <ClInclude Include="BaseClasses\BaseGameObject\BaseAnimatedObject\BaseAnimatedGameObject.h" />
+    <ClInclude Include="BaseClasses\BaseState\BaseState.h" />
+    <ClInclude Include="BaseClasses\BaseGameObject\BaseGameObject.h" />
+    <ClInclude Include="CollisionManager\CollisionData\CollisionData.h" />
+    <ClInclude Include="CollisionManager\CollisionShapes\CircleShape.h" />
+    <ClInclude Include="CollisionManager\EventCollider.h" />
+    <ClInclude Include="CollisionManager\CollisionShapes\BaseCollisionShape.h" />
+    <ClInclude Include="CollisionManager\CollisionShapes\BoxShape.h" />
+    <ClInclude Include="CollisionManager\CollisionManager.h" />
+    <ClInclude Include="BaseClasses\FactoryGameObject\FactoryGameObject.h" />
+    <ClInclude Include="CollisionManager\CollisionShapes\PointShape.h" />
+    <ClInclude Include="CollisionManager\CollisionShapes\LineShape.h" />
+    <ClInclude Include="Input\MouseInput\MouseInput.h" />
+    <ClInclude Include="Input\MouseInput\MousePointer.h" />
+    <ClInclude Include="RendererManager\Commands\Lines\RenderCommandLine.h" />
+    <ClInclude Include="RendererManager\Commands\Sprite\RenderCommand.h" />
+    <ClInclude Include="RendererManager\Commands\Text\RenderText.h" />
+    <ClInclude Include="RendererManager\RenderManager.h" />
+    <ClInclude Include="StateManager\StateManager.h" />
+    <ClInclude Include="StateManager\StatesEnum.h" />
+    <ClInclude Include="RendererManager\Text\TextRenderer.h" />
+    <ClInclude Include="RendererManager\Text\TextFont.h" />
+    <ClInclude Include="CollisionManager\CollisionShapes\SweptCircle.h" />
+    <ClInclude Include="Utility\MouseInputResolutionAdaption.h" />
+    <ClInclude Include="Utility\ScreenResolution.h" />
+    <ClInclude Include="Utility\TGA2DConversions.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonUtilities\CommonUtilities.vcxproj">
+      <Project>{a41e3ed6-a914-40b1-b1e9-9551e0cc7eab}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\DX2DEngine\DX2DEngine.vcxproj">
+      <Project>{11f98bf6-7bdb-4cfb-96cf-577db4ae312f}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{17C48901-03A0-49C4-AFCB-F51F84244470}</ProjectGuid>
+    <RootNamespace>TGA2DWrapper</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseIntelMKL>No</UseIntelMKL>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>..\DX2DEngine;..\CommonUtilities;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>..\DX2DEngine;..\CommonUtilities;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

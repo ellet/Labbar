@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Data">
+      <UniqueIdentifier>{bbe9836e-c7ca-4471-abc0-1b2f4b001c39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Functions">
+      <UniqueIdentifier>{3d2d8e7c-a713-4965-b3b2-3ef3e3ef4008}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Functions\MyGeneralFunctions">
+      <UniqueIdentifier>{c79bd69d-c0ee-4bc4-b4e7-0d3a660ec69e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Games">
+      <UniqueIdentifier>{66597bff-0fb9-40b1-9110-bc1b374f1848}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Games\Roulette">
+      <UniqueIdentifier>{58e20aa7-2f39-4548-9116-76dcdee1fe93}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CashFlow.h">
+      <Filter>Source Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Source Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="KasinoGeneralFunctions.h">
+      <Filter>Source Files\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="MyGeneralFunctions\ConsoleFunctions.h">
+      <Filter>Source Files\Functions\MyGeneralFunctions</Filter>
+    </ClInclude>
+    <ClInclude Include="MyGeneralFunctions\l1generallib.h">
+      <Filter>Source Files\Functions\MyGeneralFunctions</Filter>
+    </ClInclude>
+    <ClInclude Include="MyGeneralFunctions\MathFunctions.h">
+      <Filter>Source Files\Functions\MyGeneralFunctions</Filter>
+    </ClInclude>
+    <ClInclude Include="MyGeneralFunctions\MyGeneralFunctionsNameSpaces.h">
+      <Filter>Source Files\Functions\MyGeneralFunctions</Filter>
+    </ClInclude>
+    <ClInclude Include="DiceBlackJack.h">
+      <Filter>Source Files\Games</Filter>
+    </ClInclude>
+    <ClInclude Include="KasinoClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuessNumber.h">
+      <Filter>Source Files\Games</Filter>
+    </ClInclude>
+    <ClInclude Include="CashFlowEnum.h">
+      <Filter>Source Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="GuessEvenOrUneven.h">
+      <Filter>Source Files\Games</Filter>
+    </ClInclude>
+    <ClInclude Include="GuessMoreOrLess.h">
+      <Filter>Source Files\Games</Filter>
+    </ClInclude>
+    <ClInclude Include="RussianRoulette.h">
+      <Filter>Source Files\Games</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalRoulette.h">
+      <Filter>Source Files\Games</Filter>
+    </ClInclude>
+    <ClInclude Include="WhatNumberAmIThinkingOf.h">
+      <Filter>Source Files\Games</Filter>
+    </ClInclude>
+    <ClInclude Include="RockPaperScissors.h">
+      <Filter>Source Files\Games</Filter>
+    </ClInclude>
+    <ClInclude Include="Roulette\RouletteColumn.h">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClInclude>
+    <ClInclude Include="Roulette\RouletteCorner.h">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClInclude>
+    <ClInclude Include="Roulette\RouletteDouble.h">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClInclude>
+    <ClInclude Include="Roulette\RouletteDozen.h">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClInclude>
+    <ClInclude Include="Roulette\RouletteEvenOrOdd.h">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClInclude>
+    <ClInclude Include="Roulette\RouletteGeneralFunctions.h">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClInclude>
+    <ClInclude Include="Roulette\RouletteManque.h">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClInclude>
+    <ClInclude Include="Roulette\RouletteMenu.h">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClInclude>
+    <ClInclude Include="Roulette\RoulettePasse.h">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClInclude>
+    <ClInclude Include="Roulette\RouletteRedOrBlack.h">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClInclude>
+    <ClInclude Include="Roulette\RouletteSingle.h">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClInclude>
+    <ClInclude Include="Roulette\RouletteSplit.h">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClInclude>
+    <ClInclude Include="Roulette\RouletteStreet.h">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClInclude>
+    <ClInclude Include="Roulette\RouletteTypes.h">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CashFlow.cpp">
+      <Filter>Source Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="KasinoGeneralFunctions.cpp">
+      <Filter>Source Files\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="MyGeneralFunctions\ConsoleFunctions.cpp">
+      <Filter>Source Files\Functions\MyGeneralFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="MyGeneralFunctions\MathFunctions.cpp">
+      <Filter>Source Files\Functions\MyGeneralFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="DiceBlackJack.cpp">
+      <Filter>Source Files\Games</Filter>
+    </ClCompile>
+    <ClCompile Include="KasinoClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuessNumber.cpp">
+      <Filter>Source Files\Games</Filter>
+    </ClCompile>
+    <ClCompile Include="GuessEvenOrUneven.cpp">
+      <Filter>Source Files\Games</Filter>
+    </ClCompile>
+    <ClCompile Include="GuessMoreOrLess.cpp">
+      <Filter>Source Files\Games</Filter>
+    </ClCompile>
+    <ClCompile Include="WhatNumberAmIThinkingOf.cpp">
+      <Filter>Source Files\Games</Filter>
+    </ClCompile>
+    <ClCompile Include="NormalRoulette.cpp">
+      <Filter>Source Files\Games</Filter>
+    </ClCompile>
+    <ClCompile Include="RussianRoulette.cpp">
+      <Filter>Source Files\Games</Filter>
+    </ClCompile>
+    <ClCompile Include="RockPaperScissors.cpp">
+      <Filter>Source Files\Games</Filter>
+    </ClCompile>
+    <ClCompile Include="Roulette\RouletteColumn.cpp">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClCompile>
+    <ClCompile Include="Roulette\RouletteCorner.cpp">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClCompile>
+    <ClCompile Include="Roulette\RouletteDouble.cpp">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClCompile>
+    <ClCompile Include="Roulette\RouletteDozen.cpp">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClCompile>
+    <ClCompile Include="Roulette\RouletteEvenOrOdd.cpp">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClCompile>
+    <ClCompile Include="Roulette\RouletteGeneralFunctions.cpp">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClCompile>
+    <ClCompile Include="Roulette\RouletteManque.cpp">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClCompile>
+    <ClCompile Include="Roulette\RouletteMenu.cpp">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClCompile>
+    <ClCompile Include="Roulette\RoulettePasse.cpp">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClCompile>
+    <ClCompile Include="Roulette\RouletteRedOrBlack.cpp">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClCompile>
+    <ClCompile Include="Roulette\RouletteSingle.cpp">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClCompile>
+    <ClCompile Include="Roulette\RouletteSplit.cpp">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClCompile>
+    <ClCompile Include="Roulette\RouletteStreet.cpp">
+      <Filter>Source Files\Games\Roulette</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

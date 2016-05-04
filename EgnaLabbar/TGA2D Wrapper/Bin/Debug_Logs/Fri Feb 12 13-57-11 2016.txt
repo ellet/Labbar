@@ -1,0 +1,171 @@
+---TGA 2D Starting, dream big and dare to fail---
+---------------
+Creating window
+---------------
+Windows created with size  1920 1080
+---------------
+Starting engine
+---------------
+Video card(s) detected: 
+---------------
+NVIDIA GeForce GTX 650
+---------------
+Microsoft Basic Render Driver
+---------------
+Using primary graphic card: NVIDIA GeForce GTX 650
+---------------
+VSYNC Compatible: Yes, Enabled: No
+---------------
+Creating device
+---------------
+Creating swapchain
+---------------
+Swapchain created
+---------------
+Creating RenderTargetView
+---------------
+Creating Texture2D
+---------------
+Creating DepthStencilState
+---------------
+Creating DepthStencilView
+---------------
+Creating RasterizerState
+---------------
+Initing Shader: shaders/sprite_shader.fx
+---------------
+Initing Shader: shaders/custom_shape.fx
+---------------
+Initing Shader: shaders/lineshader.fx
+---------------
+Initing Shader: shaders/instanced_sprite_shader.fx
+---------------
+Initing Shader: shaders/instanced_distance_shader.fx
+---------------
+All done, starting...
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Level1/Objects/Kugghjul.png
+---------------
+DDS needs to be power of two! Sprites/Levels/Level2/Objects/Windmill.dds 400*397
+---------------
+DDS needs to be power of two! Sprites/Backgrounds/Level2/Background.dds 2048*1152
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Level3/Windstick.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Level3/Head.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Level3/Soup.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Level3/Potion.png
+---------------
+DDS needs to be power of two! Sprites/Backgrounds/Level3/Background.dds 1920*1080
+---------------
+DDS needs to be power of two! Sprites/Backgrounds/Level5/Background.dds 1920*1080
+---------------
+DDS needs to be power of two! Sprites/Backgrounds/Level7/Background.dds 1920*1080
+---------------
+DDS needs to be power of two! Sprites/Backgrounds/Level8/Background.dds 1920*1080
+---------------
+DDS needs to be power of two! Sprites/Interfaces/Inventory/Inventory.dds 201*243
+---------------
+DDS needs to be power of two! Sprites/Interfaces/Dialog/dialogbox.dds 1166*259
+---------------
+DDS needs to be power of two! Sprites/Interfaces/Dialog/Velas.dds 234*234
+---------------
+DDS needs to be power of two! Sprites/Interfaces/Dialog/Commander.dds 234*234
+---------------
+DDS needs to be power of two! Sprites/Interfaces/Dialog/Black.dds 234*234
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Backgrounds/Intro/intro_bg.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/black.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/gubbe.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/badguys.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/snurra.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/cliff_path.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/cliff_bg.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/soldiers.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/menucreditstemp.png
+---------------
+Program crashed in file: c:\svnprojekt2\progammering\tga2d wrapper\source\game\states\newstateswitch.h
+At line: 51
+In function: StateHandling::CreateNewState
+State not found in State switch, forgot to add a new one?
+
+---------------
+
+Stack Crash Log Below:
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\commonutilities\dldebug\dl_debug.cpp (92): DL_Debug::Debug::AssertMessage
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\states\newstateswitch.h (52): StateHandling::CreateNewState
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\game.cpp (198): CGame::AddStates
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\game.cpp (157): CGame::InitCallBack
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\functional (1230): std::_Pmf_wrap<void (__thiscall CGame::*)(void),void,CGame>::operator()
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\functional (1150): std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall CGame::*)(void),void,CGame>,CGame * const>::_Do_call<,0>
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\functional (1138): std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall CGame::*)(void),void,CGame>,CGame * const>::operator()<>
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xrefwrap (284): std::_Callable_obj<std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall CGame::*)(void),void,CGame>,CGame * const>,0>::_ApplyX<void>
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\functional (229): std::_Func_impl<std::_Callable_obj<std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall CGame::*)(void),void,CGame>,CGame * const>,0>,std::allocator<std::_Func_class<void> >,void>::_Do_call
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\functional (315): std::_Func_class<void>::operator()
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\dx2dengine\source\engine.cpp (140): DX2D::CEngine::Start
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\game.cpp (101): CGame::Init
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\launcher\main.cpp (63): Init
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\launcher\main.cpp (29): main
+
+---------------
+f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c (626): __tmainCRTStartup
+
+---------------
+f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c (466): mainCRTStartup
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 75FE919F)
+
+---------------
+75FE919F (KERNEL32): (filename not available): BaseThreadInitThunk
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 77E7A8CB)
+
+---------------
+77E7A8CB (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 77E7A8A1)
+
+---------------
+77E7A8A1 (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------

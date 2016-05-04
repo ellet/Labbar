@@ -1,0 +1,294 @@
+{
+	"Name" : "Level4",
+	"BackgroundImagePath" : "Sprites/Backgrounds/Level4/Background.dds",
+	"BackgroundSound" : "BGLevel4",
+	"DialoguePath" : "JSON/Levels/Level4/Dialogue/All.json",
+	"BorderPath" : "JSON/Levels/Level4/borders.json",
+	"Player" :
+	{	
+		"PlayerPosition" : 
+		{
+			"XPosition" : 700,
+			"YPosition" : 900
+		}
+	},
+	"PlayerPosition" : 
+	{
+		"XPosition" : 700,
+		"YPosition" : 900
+	},
+	"Objects" : 
+	[
+		{ 
+			"Name" : "ChangeRoom",
+			"XPosition" : 1800,
+			"YPosition" : 670,
+			"SpritePath" : "Sprites/Levels/Level1/Objects/ChangeRoom.dds",
+			"Active" : true,
+			"Animation" : "JSON/Animations/PalmTest.json",
+			"Events" : 
+			[
+				{
+					"EventType" : "OnClickEvent",	
+					"Events" : 
+					[
+						{
+								"EventType" : "ChangeLevelEvent",
+								"Data" : 
+								{
+									"TargetLevelName" : "Level5",
+								"PlayerPosition" : 
+								{
+									"XPosition" : 150,
+									"YPosition" : 400
+								}
+								}
+							}
+					],
+					"BoxSize" : 
+					{
+						"X" : 128,
+						"Y" : 128
+					}
+				}
+			]
+		},
+		
+		{ 
+			"Name" : "ChangeRoom",
+			"XPosition" : 865,
+			"YPosition" : 485,
+			"SpritePath" : "Sprites/Levels/Level1/Objects/ChangeRoom.dds",
+			"Active" : true,
+			"Animation" : "JSON/Animations/PalmTest.json",
+			"Events" : 
+			[
+				{
+					"EventType" : "OnClickEvent",	
+					"Events" : 
+					[
+						{
+								"EventType" : "ChangeLevelEvent",
+								"Data" : 
+								{
+									"TargetLevelName" : "Level6",
+								"PlayerPosition" : 
+								{
+									"XPosition" : 620,
+									"YPosition" : 675
+								}
+								}
+							}
+					],
+					"BoxSize" : 
+					{
+						"X" : 128,
+						"Y" : 128
+					}
+				}
+			]
+		},
+		
+		{
+		 "Name" : "SmallFireFlower",
+			"XPosition" : 500,
+			"YPosition" : 680,
+			"SpritePath" : "Sprites/Levels/Level4/SmallFireFlower.png",
+			"Active" : false,
+			"Events" : 
+			[
+				{
+					"EventType" : "OnClickEvent",	
+					"Events" : 
+					[
+						{
+							"EventType" : "OnElement",
+							"WindEvents" :
+							{
+								"Events" : 
+								[
+								{	
+										"EventType" : "SetActiveEvent",
+										"Data" : 
+										{
+											"ObjectName" : "FireFlower",
+											"Value" : true
+										}
+								},
+								{	
+										"EventType" : "SetActiveEvent",
+										"Data" : 
+										{
+											"ObjectName" : "SmallFireFlower",
+											"Value" : false
+										}
+								}
+								]
+							}
+						},
+						
+						{
+										"EventType" : "PickUpEvent"	,
+										"Data" : 
+										{
+											"ObjectNametoPickUp" : "SmallFireFlower",
+											"RemoveObjectAfterPickup" : true
+										}
+						}
+					],
+					"BoxSize" : 
+					{
+						"X" : 128,
+						"Y" : 128
+					}
+				}
+			]
+		},
+		
+		{
+		 "Name" : "BigFireFlower",
+			"XPosition" : 500,
+			"YPosition" : 680,
+			"SpritePath" : "Sprites/Levels/Level4/BigFireFlower.png",
+			"Active" : false,
+			"Events" : 
+			[
+				{
+					"EventType" : "OnClickEvent",	
+					"Events" : 
+					[
+						{
+							"EventType" : "OnElement",
+							"WaterEvents" :
+							{
+								"Events" : 
+								[
+								{	
+										"EventType" : "SetActiveEvent",
+										"Data" : 
+										{
+											"ObjectName" : "FireFlower",
+											"Value" : true
+										}
+								},
+								{	
+										"EventType" : "SetActiveEvent",
+										"Data" : 
+										{
+											"ObjectName" : "BigFireFlower",
+											"Value" : false
+										}
+								}
+								]
+							}
+						},
+						{
+										"EventType" : "DialogueEvent",
+										"Data" : 
+										{
+											"SpriteID" : "Velas",
+											"Text" : "I can't pick that up! It's flaming hot!"
+										}
+						}
+						
+					],
+					"BoxSize" : 
+					{
+						"X" : 128,
+						"Y" : 128
+					}
+				}
+			]
+		
+		},
+		
+		{
+		"Name" : "FireFlower",
+			"XPosition" : 500,
+			"YPosition" : 680,
+			"SpritePath" : "Sprites/Levels/Level4/FireFlower.png",
+			"Active" : true,
+			"Events" : 
+			[
+				{
+					"EventType" : "OnClickEvent",	
+					"Events" : 
+					[
+						{
+							"EventType" : "OnElement",
+							"WindEvents" :
+							{
+								"Events" : 
+								[
+								{	
+										"EventType" : "SetActiveEvent",
+										"Data" : 
+										{
+											"ObjectName" : "BigFireFlower",
+											"Value" : true
+										}
+								},
+								{	
+										"EventType" : "SetActiveEvent",
+										"Data" : 
+										{
+											"ObjectName" : "FireFlower",
+											"Value" : false
+										}
+								}
+								]
+							}
+						},
+						{
+							"EventType" : "OnElement",
+							"WaterEvents" :
+							{
+								"Events" : 
+								[
+								{	
+										"EventType" : "SetActiveEvent",
+										"Data" : 
+										{
+											"ObjectName" : "SmallFireFlower",
+											"Value" : true
+										}
+								},
+								{	
+										"EventType" : "SetActiveEvent",
+										"Data" : 
+										{
+											"ObjectName" : "FireFlower",
+											"Value" : false
+										}
+								}
+								]
+							}
+						},
+						{
+										"EventType" : "DialogueEvent",
+										"Data" : 
+										{
+											"SpriteID" : "Velas",
+											"Text" : "I can't pick that up! It's flaming hot, YO!"
+										}
+						}
+						
+					],
+					"BoxSize" : 
+					{
+						"X" : 128,
+						"Y" : 128
+					}
+				}
+			]
+		}
+	],
+	"NPCS" : 
+	[
+		
+	],
+	"InventoryItems" : 
+	{
+		
+	}
+}

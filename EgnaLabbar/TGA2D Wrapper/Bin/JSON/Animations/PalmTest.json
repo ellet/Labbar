@@ -1,0 +1,19 @@
+{
+	"Animation" : 
+    {
+        "SpriteSheet": "Sprites/ChangeRoom.dds",
+        "Columns": 1,
+        "Rows": 1,
+        "AnimationList":
+        [
+            {
+                "ID": "floccinaucinihilipilification",
+                "DisplayTime": 1,
+                "FirstFrame": 0,
+                "LastFrame": 3,
+                "Loop": true
+            }
+        ],
+        "DefaultAnimation": "floccinaucinihilipilification"
+	}
+}

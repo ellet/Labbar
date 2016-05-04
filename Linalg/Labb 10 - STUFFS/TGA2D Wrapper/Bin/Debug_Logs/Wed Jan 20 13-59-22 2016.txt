@@ -1,0 +1,52 @@
+Program crashed in file: c:\svnprojekt2\progammering\tga2d wrapper\source\game\jsonparser\jsonparser.cpp
+At line: 70
+In function: JsonParser::InitInternalSettings
+Error in Settings.json 
+Path: JSON/Settings.json
+
+---------------
+
+Stack Crash Log Below:
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\commonutilities\dldebug\dl_debug.cpp (92): DL_Debug::Debug::AssertMessage
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\jsonparser\jsonparser.cpp (74): JsonParser::InitInternalSettings
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\jsonparser\jsonparser.cpp (123): JsonParser::InitSettings
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\game.cpp (57): CGame::Init
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\launcher\main.cpp (44): Init
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\launcher\main.cpp (26): main
+
+---------------
+f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c (626): __tmainCRTStartup
+
+---------------
+f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c (466): mainCRTStartup
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 75FE919F)
+
+---------------
+75FE919F (KERNEL32): (filename not available): BaseThreadInitThunk
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 77E7A8CB)
+
+---------------
+77E7A8CB (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 77E7A8A1)
+
+---------------
+77E7A8A1 (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------

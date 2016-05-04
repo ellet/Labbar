@@ -1,0 +1,108 @@
+---TGA 2D Starting, dream big and dare to fail---
+---------------
+Creating window
+---------------
+Windows created with size  1920 1080
+---------------
+Starting engine
+---------------
+Video card(s) detected: 
+---------------
+NVIDIA GeForce GTX 650
+---------------
+Microsoft Basic Render Driver
+---------------
+Using primary graphic card: NVIDIA GeForce GTX 650
+---------------
+VSYNC Compatible: Yes, Enabled: No
+---------------
+Creating device
+---------------
+Creating swapchain
+---------------
+Swapchain created
+---------------
+Creating RenderTargetView
+---------------
+Creating Texture2D
+---------------
+Creating DepthStencilState
+---------------
+Creating DepthStencilView
+---------------
+Creating RasterizerState
+---------------
+Initing Shader: shaders/sprite_shader.fx
+---------------
+Initing Shader: shaders/custom_shape.fx
+---------------
+Initing Shader: shaders/lineshader.fx
+---------------
+Initing Shader: shaders/instanced_sprite_shader.fx
+---------------
+Initing Shader: shaders/instanced_distance_shader.fx
+---------------
+All done, starting...
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Level1/Objects/Kugghjul.png
+---------------
+Program crashed in file: JsonParser\JsonParser.cpp
+At line: 67
+In function: JsonParser::ReadJSONFile
+syntax error at line 18 near: {JSON/Puzzles/BalanceBeamPuzzle.json
+
+---------------
+
+Stack Crash Log Below:
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\commonutilities\dldebug\dl_debug.cpp (92): DL_Debug::Debug::AssertMessage
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\jsonparser\jsonparser.cpp (67): JsonParser::ReadJSONFile
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\jsonparser\jsonparser.cpp (987): JsonParser::CreateBeamPuzzle
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\jsonparser\jsonparser.cpp (351): JsonParser::InitInternalLevels
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\levels\levelmanager.cpp (33): LevelManager::InitInternal
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\game.cpp (133): CGame::InitCallBack
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\dx2dengine\source\engine.cpp (140): DX2D::CEngine::Start
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\game.cpp (101): CGame::Init
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\launcher\main.cpp (63): Init
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\launcher\main.cpp (29): main
+
+---------------
+f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c (626): __tmainCRTStartup
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 75FE919F)
+
+---------------
+75FE919F (KERNEL32): (filename not available): BaseThreadInitThunk
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 77E7A8CB)
+
+---------------
+77E7A8CB (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 77E7A8A1)
+
+---------------
+77E7A8A1 (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------

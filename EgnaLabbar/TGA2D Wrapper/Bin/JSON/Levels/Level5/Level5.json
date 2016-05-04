@@ -1,0 +1,100 @@
+{
+	"Name" : "Level5",
+	"BackgroundImagePath" : "Sprites/Backgrounds/Level5/Background.dds",
+	"BackgroundSound" : "BGLevel5",
+	"DialoguePath" : "JSON/Levels/Level5/Dialogue/All.json",
+	"BorderPath" : "JSON/Levels/Level5/borders.json",
+	"Player" :
+	{	
+		"PlayerPosition" : 
+		{
+			"XPosition" : 70,
+			"YPosition" : 425
+		}
+	},
+	"PlayerPosition" : 
+	{
+		"XPosition" : 70,
+		"YPosition" : 425
+	},
+	"Objects" : 
+	[
+		{ 
+			"Name" : "ChangeRoom",
+			"XPosition" : 1750,
+			"YPosition" : 350,
+			"SpritePath" : "Sprites/Levels/Level1/Objects/ChangeRoom.dds",
+			"Active" : true,
+			"Animation" : "JSON/Animations/PalmTest.json",
+			"Events" : 
+			[
+				{
+					"EventType" : "OnClickEvent",	
+					"Events" : 
+					[
+						{
+								"EventType" : "ChangeLevelEvent",
+								"Data" : 
+								{
+									"TargetLevelName" : "Level7",
+								"PlayerPosition" : 
+								{
+									"XPosition" : 300,
+									"YPosition" : 600
+								}
+								}
+							}
+					],
+					"BoxSize" : 
+					{
+						"X" : 128,
+						"Y" : 128
+					}
+				}
+			]
+		},
+		
+		{ 
+			"Name" : "ChangeRoom",
+			"XPosition" : 70,
+			"YPosition" : 425,
+			"SpritePath" : "Sprites/Levels/Level1/Objects/ChangeRoom.dds",
+			"Active" : true,
+			"Animation" : "JSON/Animations/PalmTest.json",
+			"Events" : 
+			[
+				{
+					"EventType" : "OnClickEvent",	
+					"Events" : 
+					[
+						{
+								"EventType" : "ChangeLevelEvent",
+								"Data" : 
+								{
+									"TargetLevelName" : "Level4",
+								"PlayerPosition" : 
+								{
+									"XPosition" : 1700,
+									"YPosition" : 675
+								}
+								}
+							}
+					],
+					"BoxSize" : 
+					{
+						"X" : 128,
+						"Y" : 128
+					}
+				}
+			]
+		}
+	],
+	"NPCS" : 
+	[
+		
+	],
+	"InventoryItems" : 
+	{
+		
+	}
+}

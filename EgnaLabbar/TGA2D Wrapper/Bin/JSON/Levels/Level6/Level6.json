@@ -1,0 +1,135 @@
+{
+	"Name" : "Level6",
+	"BackgroundImagePath" : "Sprites/Backgrounds/Level6/Background.dds",
+	"BackgroundSound" : "BGLevel6",
+	"DialoguePath" : "JSON/Levels/Level6/Dialogue/All.json",
+	"BorderPath" : "JSON/Levels/Level6/borders.json",
+	"Player" :
+	{	
+		"PlayerPosition" : 
+		{
+			"XPosition" : 700,
+			"YPosition" : 900
+		}
+	},
+	"PlayerPosition" : 
+	{
+		"XPosition" : 700,
+		"YPosition" : 900
+	},
+	"Objects" : 
+	[
+		{ 
+			"Name" : "ChangeRoom",
+			"XPosition" : 260,
+			"YPosition" : 260,
+			"SpritePath" : "Sprites/Levels/Level1/Objects/ChangeRoom.dds",
+			"Active" : true,
+			"Animation" : "JSON/Animations/PalmTest.json",
+			"Events" : 
+			[
+				{
+					"EventType" : "OnClickEvent",	
+					"Events" : 
+					[
+						{
+								"EventType" : "ChangeLevelEvent",
+								"Data" : 
+								{
+									"TargetLevelName" : "Level8",
+								"PlayerPosition" : 
+								{
+									"XPosition" : 1600,
+									"YPosition" : 640
+								}
+								}
+							}
+					],
+					"BoxSize" : 
+					{
+						"X" : 128,
+						"Y" : 128
+					}
+				}
+			]
+		},
+		
+		{ 
+			"Name" : "ChangeRoom",
+			"XPosition" : 1340,
+			"YPosition" : 400,
+			"SpritePath" : "Sprites/Levels/Level1/Objects/ChangeRoom.dds",
+			"Active" : true,
+			"Animation" : "JSON/Animations/PalmTest.json",
+			"Events" : 
+			[
+				{
+					"EventType" : "OnClickEvent",	
+					"Events" : 
+					[
+						{
+								"EventType" : "ChangeLevelEvent",
+								"Data" : 
+								{
+									"TargetLevelName" : "Level7",
+								"PlayerPosition" : 
+								{
+									"XPosition" : 620,
+									"YPosition" : 540
+								}
+								}
+							}
+					],
+					"BoxSize" : 
+					{
+						"X" : 128,
+						"Y" : 128
+					}
+				}
+			]
+		},
+		
+		{ 
+			"Name" : "ChangeRoom",
+			"XPosition" : 1300,
+			"YPosition" : 1000,
+			"SpritePath" : "Sprites/Levels/Level1/Objects/ChangeRoom.dds",
+			"Active" : true,
+			"Animation" : "JSON/Animations/PalmTest.json",
+			"Events" : 
+			[
+				{
+					"EventType" : "OnClickEvent",	
+					"Events" : 
+					[
+						{
+								"EventType" : "ChangeLevelEvent",
+								"Data" : 
+								{
+									"TargetLevelName" : "Level4",
+								"PlayerPosition" : 
+								{
+									"XPosition" : 1000,
+									"YPosition" : 450
+								}
+								}
+							}
+					],
+					"BoxSize" : 
+					{
+						"X" : 128,
+						"Y" : 128
+					}
+				}
+			]
+		}
+	],
+	"NPCS" : 
+	[
+		
+	],
+	"InventoryItems" : 
+	{
+		
+	}
+}

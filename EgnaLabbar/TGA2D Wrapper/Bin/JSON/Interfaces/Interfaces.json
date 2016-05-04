@@ -1,0 +1,9 @@
+{
+	"Interfaces" : 
+	[
+		{
+			"InterfaceName" : "Inventory",
+			"Path" : "JSON/Interfaces/Inventory/Inventory.json"
+		}
+	]
+}

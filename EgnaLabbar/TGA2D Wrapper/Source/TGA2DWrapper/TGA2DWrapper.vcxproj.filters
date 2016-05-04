@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{7e684386-68d7-4f48-8a3c-f801958ae948}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\StateManager">
+      <UniqueIdentifier>{ef822f5c-247c-4af0-92bf-9c07aca7c391}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\BaseClasses">
+      <UniqueIdentifier>{eda76f4b-70e1-4b7d-bace-656bce041275}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="StateManager\StateManager.cpp">
+      <Filter>Source\StateManager</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseClasses\BaseState\BaseState.cpp" />
+    <ClCompile Include="BaseClasses\BaseGameObject\BaseGameObject.cpp" />
+    <ClCompile Include="RendererManager\RenderManager.cpp" />
+    <ClCompile Include="BaseClasses\BaseGameObject\BaseAnimatedObject\BaseAnimatedGameObject.cpp" />
+    <ClCompile Include="CollisionManager\CollisionManager.cpp" />
+    <ClCompile Include="BaseClasses\FactoryGameObject\FactoryGameObject.cpp" />
+    <ClCompile Include="RendererManager\Commands\Sprite\RenderCommand.cpp" />
+    <ClCompile Include="Utility\ScreenResolution.cpp" />
+    <ClCompile Include="CollisionManager\CollisionShapes\BaseCollisionShape.cpp" />
+    <ClCompile Include="CollisionManager\CollisionShapes\BoxShape.cpp" />
+    <ClCompile Include="CollisionManager\EventCollider.cpp" />
+    <ClCompile Include="RendererManager\Commands\Lines\RenderCommandLine.cpp" />
+    <ClCompile Include="CollisionManager\CollisionShapes\PointShape.cpp" />
+    <ClCompile Include="RendererManager\Text\TextRenderer.cpp" />
+    <ClCompile Include="RendererManager\Text\TextFont.cpp" />
+    <ClCompile Include="Utility\MouseInputResolutionAdaption.cpp" />
+    <ClCompile Include="CollisionManager\CollisionShapes\LineShape.cpp" />
+    <ClCompile Include="CollisionManager\TriggerColliders\BaseTriggerCollider.cpp" />
+    <ClCompile Include="CollisionManager\TriggerColliders\OnMouseClickTriggerCollider.cpp" />
+    <ClCompile Include="Input\MouseInput\MouseInput.cpp" />
+    <ClCompile Include="Input\MouseInput\MousePointer.cpp" />
+    <ClCompile Include="CollisionManager\CollisionShapes\CircleShape.cpp" />
+    <ClCompile Include="CollisionManager\CollisionShapes\SweptCircle.cpp" />
+    <ClCompile Include="RendererManager\Text\TextRenderCommand.cpp" />
+    <ClCompile Include="Input\MouseActions\ActionWheel.cpp" />
+    <ClCompile Include="Input\MouseActions\WheelOption.cpp" />
+    <ClCompile Include="Input\MouseInput\MouseAction\BaseMouseAction.cpp" />
+    <ClCompile Include="Input\MouseInput\MouseAction\ClickOnObject.cpp" />
+    <ClCompile Include="Input\MouseInput\MouseAction\SetPlayerGotoOnClick.cpp" />
+    <ClCompile Include="Input\MouseInput\MouseAction\ActivateActionWheel.cpp" />
+    <ClCompile Include="CollisionManager\TriggerColliders\OnMouseHoverTriggerCollider.cpp" />
+    <ClCompile Include="Input\MouseActions\WheelElementalOption.cpp" />
+    <ClCompile Include="Input\MouseActions\BaseWheelOption.cpp" />
+    <ClCompile Include="Input\MouseInput\MouseAction\ClickOnActionOption.cpp" />
+    <ClCompile Include="Input\MouseInput\MouseAction\ClickForNextText.cpp" />
+    <ClCompile Include="Input\MouseInput\MouseAction\UseHeldObjectOnObject.cpp" />
+    <ClCompile Include="CollisionManager\TriggerColliders\OnTriggerCombineObjects.cpp" />
+    <ClCompile Include="Input\MouseActions\ExamineWheelOption.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="StateManager\StateManager.h">
+      <Filter>Source\StateManager</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseClasses\BaseState\BaseState.h" />
+    <ClInclude Include="BaseClasses\BaseGameObject\BaseGameObject.h" />
+    <ClInclude Include="Utility\TGA2DConversions.h" />
+    <ClInclude Include="BaseClasses\BaseGameObject\BaseAnimatedObject\BaseAnimatedGameObject.h" />
+    <ClInclude Include="StateManager\StatesEnum.h" />
+    <ClInclude Include="CollisionManager\CollisionManager.h" />
+    <ClInclude Include="BaseClasses\FactoryGameObject\FactoryGameObject.h" />
+    <ClInclude Include="RendererManager\Commands\Sprite\RenderCommand.h" />
+    <ClInclude Include="Utility\ScreenResolution.h" />
+    <ClInclude Include="CollisionManager\CollisionShapes\BoxShape.h" />
+    <ClInclude Include="CollisionManager\CollisionShapes\BaseCollisionShape.h" />
+    <ClInclude Include="CollisionManager\EventCollider.h" />
+    <ClInclude Include="Utility\MouseInputResolutionAdaption.h" />
+    <ClInclude Include="RendererManager\Commands\Lines\RenderCommandLine.h" />
+    <ClInclude Include="CollisionManager\CollisionShapes\PointShape.h" />
+    <ClInclude Include="RendererManager\Text\TextRenderer.h" />
+    <ClInclude Include="RendererManager\Text\TextFont.h" />
+    <ClInclude Include="CollisionManager\CollisionShapes\LineShape.h" />
+    <ClInclude Include="CollisionManager\TriggerColliders\BaseTriggerCollider.h" />
+    <ClInclude Include="CollisionManager\TriggerColliders\OnMouseClickTriggerCollider.h" />
+    <ClInclude Include="RendererManager\RenderManager.h" />
+    <ClInclude Include="Input\MouseInput\MouseInput.h" />
+    <ClInclude Include="Input\MouseInput\MousePointer.h" />
+    <ClInclude Include="CollisionManager\CollisionShapes\CircleShape.h" />
+    <ClInclude Include="CollisionManager\CollisionShapes\SweptCircle.h" />
+    <ClInclude Include="RendererManager\Text\TextRenderCommand.h" />
+    <ClInclude Include="Input\MouseActions\ActionWheel.h" />
+    <ClInclude Include="Input\MouseActions\WheelOption.h" />
+    <ClInclude Include="Input\MouseInput\MouseAction\BaseMouseAction.h" />
+    <ClInclude Include="Input\MouseInput\MouseAction\ClickOnObject.h" />
+    <ClInclude Include="Input\MouseInput\MouseAction\SetPlayerGotoOnClick.h" />
+    <ClInclude Include="Input\MouseInput\MouseAction\ActivateActionWheel.h" />
+    <ClInclude Include="Input\MouseInput\MouseStates.h" />
+    <ClInclude Include="CollisionManager\TriggerColliders\OnMouseHoverTriggerCollider.h" />
+    <ClInclude Include="Input\MouseActions\WheelElementalOption.h" />
+    <ClInclude Include="Input\MouseActions\BaseWheelOption.h" />
+    <ClInclude Include="Input\MouseInput\MouseAction\ClickOnActionOption.h" />
+    <ClInclude Include="Input\MouseInput\MouseAction\ClickForNextText.h" />
+    <ClInclude Include="Input\MouseInput\MouseAction\UseHeldObjectOnObject.h" />
+    <ClInclude Include="CollisionManager\TriggerColliders\OnTriggerCombineObjects.h" />
+    <ClInclude Include="Input\MouseActions\ExamineWheelOption.h" />
+  </ItemGroup>
+</Project>

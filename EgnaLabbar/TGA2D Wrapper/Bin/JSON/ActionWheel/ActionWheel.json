@@ -1,0 +1,29 @@
+{
+	"ActionWheel":
+	[
+		{
+			"Name" : "Fire",
+			"SpritePath" : "Sprites/ActionWheel/ActionWheel_BTN1.dds"
+		},
+		
+		{
+			"Name" : "Water",
+			"SpritePath" : "Sprites/ActionWheel/ActionWheel_BTN2.dds"
+		},
+		
+		{
+			"Name" : "Wind",
+			"SpritePath" : "Sprites/ActionWheel/ActionWheel_BTN3.dds"
+		},
+		
+		{
+			"Name" : "Earth",
+			"SpritePath" : "Sprites/ActionWheel/ActionWheel_BTN4.dds"
+		},
+		
+		{
+			"Name" : "Click",
+			"SpritePath" : "Sprites/ActionWheel/ActionWheel_BTN5.dds"
+		}
+	]
+}

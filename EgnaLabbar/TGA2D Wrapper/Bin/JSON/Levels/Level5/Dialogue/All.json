@@ -1,0 +1,15 @@
+{
+	"GuardTalk" :
+	[
+		{
+			"Speaker" : "Guard",
+			"Emotion" : "Anger",
+			"Text" : "You are ugly!"
+		},
+		{
+			"Speaker" : "__PLAYER__",
+			"Emotion" : "Happy",
+			"Text" : "Not as ugly as you! You only have __SEXAPPEAL__."
+		}
+	]
+}

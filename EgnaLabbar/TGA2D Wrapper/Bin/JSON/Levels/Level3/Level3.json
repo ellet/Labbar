@@ -1,0 +1,97 @@
+{
+	"Name" : "Level3",
+	"BackgroundImagePath" : "Sprites/Backgrounds/Level3/Background.dds",
+	"BackgroundSound" : "BGLevel3",
+	"DialoguePath" : "JSON/Levels/Level3/Dialogue/All.json",
+	"BorderPath" : "JSON/Levels/Level3/borders.json",
+	"Player" :
+	{	
+		"PlayerPosition" : 
+		{
+			"XPosition" : 1300,
+			"YPosition" : 350
+		}
+	},
+	"PlayerPosition" : 
+	{
+		"XPosition" : 1300,
+		"YPosition" : 350
+	},
+	"Objects" : 
+	[
+		{ 
+			"Name" : "ChangeRoom",
+			"XPosition" : 1433,
+			"YPosition" : 300,
+			"SpritePath" : "Sprites/Levels/Level1/Objects/ChangeRoom.dds",
+			"Active" : true,
+			"Animation" : "JSON/Animations/PalmTest.json",
+			"Events" : 
+			[
+				{
+					"EventType" : "OnClickEvent",	
+					"Events" : 
+					[
+						{
+								"EventType" : "ChangeLevelEvent",
+								"Data" : 
+								{
+									"TargetLevelName" : "Level2",
+									"PlayerPosition" : 
+								{
+									"XPosition" : 470,
+									"YPosition" : 770
+								}
+								}
+							}
+					],
+					"BoxSize" : 
+					{
+						"X" : 128,
+						"Y" : 128
+					}
+				}
+			]
+		},
+		{
+		"Name" : "Windstick",
+			"XPosition" : 350,
+			"YPosition" : 750,
+			"SpritePath" : "Sprites/Levels/Level3/Windstick.png",
+			"Active" : true,
+			"Events" : []
+		},
+		{
+		"Name" : "Head",
+			"XPosition" : 550,
+			"YPosition" : 750,
+			"SpritePath" : "Sprites/Levels/Level3/Head.png",
+			"Active" : true,
+			"Events" : []
+		},
+		{
+		"Name" : "Soup",
+			"XPosition" : 750,
+			"YPosition" : 750,
+			"SpritePath" : "Sprites/Levels/Level3/Soup.png",
+			"Active" : true,
+			"Events" : []
+		},
+		{
+		"Name" : "Potion",
+			"XPosition" : 150,
+			"YPosition" : 750,
+			"SpritePath" : "Sprites/Levels/Level3/Potion.png",
+			"Active" : true,
+			"Events" : []
+		}
+	],
+	"NPCS" : 
+	[
+		
+	],
+	"InventoryItems" : 
+	{
+		
+	}
+}

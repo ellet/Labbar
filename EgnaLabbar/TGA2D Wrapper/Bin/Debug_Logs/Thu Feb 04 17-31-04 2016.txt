@@ -1,0 +1,144 @@
+---TGA 2D Starting, dream big and dare to fail---
+---------------
+Creating window
+---------------
+Windows created with size  1920 1080
+---------------
+Starting engine
+---------------
+Video card(s) detected: 
+---------------
+NVIDIA GeForce GTX 650
+---------------
+Microsoft Basic Render Driver
+---------------
+Using primary graphic card: NVIDIA GeForce GTX 650
+---------------
+VSYNC Compatible: Yes, Enabled: No
+---------------
+Creating device
+---------------
+Creating swapchain
+---------------
+Swapchain created
+---------------
+Creating RenderTargetView
+---------------
+Creating Texture2D
+---------------
+Creating DepthStencilState
+---------------
+Creating DepthStencilView
+---------------
+Creating RasterizerState
+---------------
+Initing Shader: shaders/sprite_shader.fx
+---------------
+Initing Shader: shaders/custom_shape.fx
+---------------
+Initing Shader: shaders/lineshader.fx
+---------------
+Initing Shader: shaders/instanced_sprite_shader.fx
+---------------
+Initing Shader: shaders/instanced_distance_shader.fx
+---------------
+All done, starting...
+---------------
+DDS needs to be power of two! Sprites/Interfaces/Inventory/Inventory.dds 201*243
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Backgrounds/Intro/intro_bg.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/black.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/gubbe.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/badguys.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/snurra.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/cliff_path.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/cliff_bg.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/soldiers.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/redBush.png
+---------------
+Program crashed in file: Levels\LevelManager.cpp
+At line: 133
+In function: LevelManager::ChangeLevelInternal
+Level was not found by this name: Level3
+
+---------------
+
+Stack Crash Log Below:
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\commonutilities\dldebug\dl_debug.cpp (92): DL_Debug::Debug::AssertMessage
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\levels\levelmanager.cpp (133): LevelManager::ChangeLevelInternal
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\eventmanager\events\changelevelevent.cpp (23): ChangeLevelEvent::OneShotEvent
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\eventmanager\events\onclickevent.cpp (34): OnClickEvent::OnMouseClickEvent
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\tga2dwrapper\collisionmanager\triggercolliders\onmouseclicktriggercollider.cpp (12): OnMouseClickTriggerCollider::TriggerEvent
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\tga2dwrapper\collisionmanager\collisionmanager.cpp (80): CollisionManager::InsideUpdate
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\testmainloop.cpp (59): TestMainLoop::Update
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\tga2dwrapper\statemanager\statemanager.cpp (63): StateManager::Update
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\game.cpp (176): CGame::ThreadFunctionUpdate
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\commonutilities\syncronizer\syncronizer.inl (140): CommonUtilities::Thread::Syncronizer<CGame>::ThreadData::Run
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\thr\xthread (188): std::_LaunchPad<std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall CommonUtilities::Thread::Syncronizer<CGame>::ThreadData::*)(void),void,CommonUtilities::Thread::Syncronizer<CGame>::ThreadData>,CommonUtilities::Thread::Syncronizer<CGame>::ThreadData *> >::_Go
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 6CCEF33C)
+
+---------------
+6CCEF33C (MSVCP120): (filename not available): std::_Pad::_Release
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 6CD6C01D)
+
+---------------
+6CD6C01D (MSVCR120): (filename not available): _get_flsindex
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 6CD6C001)
+
+---------------
+6CD6C001 (MSVCR120): (filename not available): _get_flsindex
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 75FE919F)
+
+---------------
+75FE919F (KERNEL32): (filename not available): BaseThreadInitThunk
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 77E7A8CB)
+
+---------------
+77E7A8CB (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 77E7A8A1)
+
+---------------
+77E7A8A1 (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------

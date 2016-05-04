@@ -1,0 +1,24 @@
+<Root>
+	<PLAY>
+		<TITLE>A Midsummer Night's Dream</TITLE>
+		<TestFloat test="0.3" />
+	</PLAY>
+	
+	<NUMBERS>
+		<AFLOAT>0.1</AFLOAT>
+		<AINT>2</AINT>
+		<AINT>2478</AINT>
+		<AINT>6</AINT>
+		<AFLOAT>0.1</AFLOAT>
+		<AINT>24</AINT>
+		<AFLOAT>-2.1</AFLOAT>
+		<AFLOAT>-3.2</AFLOAT>
+		<AFLOAT>10.1</AFLOAT>
+		<AINT>3</AINT>
+		<XVALUE>3423134</XVALUE>
+		<YVALUE>3423134</YVALUE>
+	</NUMBERS>
+	<SPRITES>
+		<SPRITE Sprite="PATH" x="3" y="8"/>
+	</SPRITES>
+</Root>

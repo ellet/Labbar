@@ -1,0 +1,71 @@
+{
+	"BorderObjects" :
+		[
+			{
+				"XPosition1" : 1356.19,
+				"YPosition1" : 301.692,
+				"XPosition2" : 1354.67,
+				"YPosition2" : 467.67
+			},
+			{
+				"XPosition1" : 832,
+				"YPosition1" : 338.238,
+				"XPosition2" : 1356.19,
+				"YPosition2" : 301.692
+			},
+			{
+				"XPosition1" : 18.2857,
+				"YPosition1" : 1070.67,
+				"XPosition2" : 19.8095,
+				"YPosition2" : 881.854
+			},
+			{
+				"XPosition1" : 466.458,
+				"YPosition1" : 1070.04,
+				"XPosition2" : 18.2857,
+				"YPosition2" : 1070.67
+			},
+			{
+				"XPosition1" : 1915.43,
+				"YPosition1" : 828.558,
+				"XPosition2" : 1906.29,
+				"YPosition2" : 1066.1
+			},
+			{
+				"XPosition1" : 1561.9,
+				"YPosition1" : 685.421,
+				"XPosition2" : 1915.43,
+				"YPosition2" : 828.558
+			},
+			{
+				"XPosition1" : 1354.67,
+				"YPosition1" : 467.67,
+				"XPosition2" : 1561.9,
+				"YPosition2" : 685.421
+			},
+			{
+				"XPosition1" : 1011.81,
+				"YPosition1" : 819.422,
+				"XPosition2" : 815.238,
+				"YPosition2" : 644.307
+			},
+			{
+				"XPosition1" : 19.8095,
+				"YPosition1" : 881.854,
+				"XPosition2" : 1011.81,
+				"YPosition2" : 819.422
+			},
+			{
+				"XPosition1" : 815.238,
+				"YPosition1" : 644.307,
+				"XPosition2" : 832,
+				"YPosition2" : 338.238
+			},
+			{
+				"XPosition1" : 1906.29,
+				"YPosition1" : 1066.1,
+				"XPosition2" : 466.458,
+				"YPosition2" : 1070.04
+			}
+		]
+}

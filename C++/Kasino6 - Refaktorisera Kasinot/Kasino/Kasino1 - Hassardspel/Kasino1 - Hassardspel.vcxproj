@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2E09FB5E-BDCA-452A-B984-C268C51096EB}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Kasino1Hassardspel</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DiceBlackJackGame.h" />
+    <ClInclude Include="GuessEvenOrUneven.h" />
+    <ClInclude Include="GuessMoreOrLess.h" />
+    <ClInclude Include="GuessNumberGame.h" />
+    <ClInclude Include="Kasino1 - Hassardspel.h" />
+    <ClInclude Include="KasinoGames.h" />
+    <ClInclude Include="KasinoGeneralFunctions.h" />
+    <ClInclude Include="KasinoMenu.h" />
+    <ClInclude Include="KasinoNamespaces.h" />
+    <ClInclude Include="MyGeneralFunctions\ConsoleFunctions.h" />
+    <ClInclude Include="MyGeneralFunctions\l1generallib.h" />
+    <ClInclude Include="MyGeneralFunctions\MathFunctions.h" />
+    <ClInclude Include="MyGeneralFunctions\MyGeneralFunctionsNameSpaces.h" />
+    <ClInclude Include="NormalRoulette.h" />
+    <ClInclude Include="RockPapperScissors.h" />
+    <ClInclude Include="RouletteColumn.h" />
+    <ClInclude Include="RouletteCorner.h" />
+    <ClInclude Include="RouletteDouble.h" />
+    <ClInclude Include="RouletteDozen.h" />
+    <ClInclude Include="RouletteEvenOrOdd.h" />
+    <ClInclude Include="RouletteGeneralFunctions.h" />
+    <ClInclude Include="RouletteManque.h" />
+    <ClInclude Include="RouletteMenu.h" />
+    <ClInclude Include="RoulettePasse.h" />
+    <ClInclude Include="RouletteRedOrBlack.h" />
+    <ClInclude Include="RouletteSingle.h" />
+    <ClInclude Include="RouletteSplit.h" />
+    <ClInclude Include="RouletteStreet.h" />
+    <ClInclude Include="RouletteTypes.h" />
+    <ClInclude Include="RussianRoullete.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="WhatNumberAmIThinkingOfGame.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DiceBlackJackGame.cpp" />
+    <ClCompile Include="GuessEvenOrUneven.cpp" />
+    <ClCompile Include="GuessMoreOrLess.cpp" />
+    <ClCompile Include="GuessNumberGame.cpp" />
+    <ClCompile Include="Kasino1 - Hassardspel.cpp" />
+    <ClCompile Include="KasinoGeneralFunctions.cpp" />
+    <ClCompile Include="KasinoMenu.cpp" />
+    <ClCompile Include="MyGeneralFunctions\ConsoleFunctions.cpp" />
+    <ClCompile Include="MyGeneralFunctions\MathFunctions.cpp" />
+    <ClCompile Include="NormalRoulette.cpp" />
+    <ClCompile Include="RockPapperScissors.cpp" />
+    <ClCompile Include="RouletteColumn.cpp" />
+    <ClCompile Include="RouletteCorner.cpp" />
+    <ClCompile Include="RouletteDouble.cpp" />
+    <ClCompile Include="RouletteDozen.cpp" />
+    <ClCompile Include="RouletteEvenOrOdd.cpp" />
+    <ClCompile Include="RouletteGeneralFunctions.cpp" />
+    <ClCompile Include="RouletteManque.cpp" />
+    <ClCompile Include="RouletteMenu.cpp" />
+    <ClCompile Include="RoulettePasse.cpp" />
+    <ClCompile Include="RouletteRedOrBlack.cpp" />
+    <ClCompile Include="RouletteSingle.cpp" />
+    <ClCompile Include="RouletteSplit.cpp" />
+    <ClCompile Include="RouletteStreet.cpp" />
+    <ClCompile Include="RussianRoullete.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="WhatNumberAmIThinkingOfGame.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

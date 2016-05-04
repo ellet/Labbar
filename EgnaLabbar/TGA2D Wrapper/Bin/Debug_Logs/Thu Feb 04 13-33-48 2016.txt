@@ -1,0 +1,165 @@
+---TGA 2D Starting, dream big and dare to fail---
+---------------
+Creating window
+---------------
+Windows created with size  1920 1080
+---------------
+Starting engine
+---------------
+Video card(s) detected: 
+---------------
+NVIDIA GeForce GTX 650
+---------------
+Microsoft Basic Render Driver
+---------------
+Using primary graphic card: NVIDIA GeForce GTX 650
+---------------
+VSYNC Compatible: Yes, Enabled: No
+---------------
+Creating device
+---------------
+Creating swapchain
+---------------
+Swapchain created
+---------------
+Creating RenderTargetView
+---------------
+Creating Texture2D
+---------------
+Creating DepthStencilState
+---------------
+Creating DepthStencilView
+---------------
+Creating RasterizerState
+---------------
+Initing Shader: shaders/sprite_shader.fx
+---------------
+Initing Shader: shaders/custom_shape.fx
+---------------
+Initing Shader: shaders/lineshader.fx
+---------------
+Initing Shader: shaders/instanced_sprite_shader.fx
+---------------
+Initing Shader: shaders/instanced_distance_shader.fx
+---------------
+All done, starting...
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Interfaces/Inventory/pelare_placeholder.png
+---------------
+DDS needs to be power of two! Sprites/Backgrounds/Level1/Background.dds 1920*1080
+---------------
+DDS needs to be power of two! Sprites/Backgrounds/Level2/Background.dds 1920*1080
+---------------
+DDS needs to be power of two! Sprites/Backgrounds/Level3/Background.dds 1920*1080
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Backgrounds/Intro/intro_bg.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/black.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/gubbe.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/badguys.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/snurra.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/cliff_path.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/cliff_bg.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/Levels/Intro/soldiers.png
+---------------
+Non dds texture loaded, please consider using dds as it will be more optimized!  Sprites/redBush.png
+---------------
+Program crashed in file: c:\svnprojekt2\progammering\tga2d wrapper\source\tga2dwrapper\input\mouseactions\actionwheel.h
+At line: 55
+In function: ActionWheel::SetActiveObject
+Mouse input Recieved object nullptr
+
+---------------
+
+Stack Crash Log Below:
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\commonutilities\dldebug\dl_debug.cpp (92): DL_Debug::Debug::AssertMessage
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\tga2dwrapper\input\mouseactions\actionwheel.h (56): ActionWheel::SetActiveObject
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\tga2dwrapper\input\mouseinput\mouseinput.h (97): MouseInput::SetObjectRefrenceOnWheel
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\tga2dwrapper\collisionmanager\triggercolliders\onmousehovertriggercollider.cpp (21): OnMouseHoverTriggerCollider::TriggerEvent
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\tga2dwrapper\collisionmanager\collisionmanager.cpp (110): CollisionManager::CheckACollision
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\tga2dwrapper\collisionmanager\collisionmanager.cpp (90): CollisionManager::InsideUpdate
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\tga2dwrapper\collisionmanager\collisionmanager.h (90): CollisionManager::Update
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\testmainloop.cpp (60): TestMainLoop::Update
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\tga2dwrapper\statemanager\statemanager.cpp (62): StateManager::Update
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\game\game.cpp (175): CGame::ThreadFunctionUpdate
+
+---------------
+c:\svnprojekt2\progammering\tga2d wrapper\source\commonutilities\syncronizer\syncronizer.inl (139): CommonUtilities::Thread::Syncronizer<CGame>::ThreadData::Run
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\functional (1230): std::_Pmf_wrap<void (__thiscall CommonUtilities::Thread::Syncronizer<CGame>::ThreadData::*)(void),void,CommonUtilities::Thread::Syncronizer<CGame>::ThreadData>::operator()
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\functional (1150): std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall CommonUtilities::Thread::Syncronizer<CGame>::ThreadData::*)(void),void,CommonUtilities::Thread::Syncronizer<CGame>::ThreadData>,CommonUtilities::Thread::Syncronizer<CGame>::ThreadData *>::_Do_call<,0>
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\functional (1138): std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall CommonUtilities::Thread::Syncronizer<CGame>::ThreadData::*)(void),void,CommonUtilities::Thread::Syncronizer<CGame>::ThreadData>,CommonUtilities::Thread::Syncronizer<CGame>::ThreadData *>::operator()<>
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\thr\xthread (196): std::_LaunchPad<std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall CommonUtilities::Thread::Syncronizer<CGame>::ThreadData::*)(void),void,CommonUtilities::Thread::Syncronizer<CGame>::ThreadData>,CommonUtilities::Thread::Syncronizer<CGame>::ThreadData *> >::_Run
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\thr\xthread (187): std::_LaunchPad<std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall CommonUtilities::Thread::Syncronizer<CGame>::ThreadData::*)(void),void,CommonUtilities::Thread::Syncronizer<CGame>::ThreadData>,CommonUtilities::Thread::Syncronizer<CGame>::ThreadData *> >::_Go
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 5B3A2FA6)
+
+---------------
+5B3A2FA6 (MSVCP120D): (filename not available): std::_Pad::_Release
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 0F913651)
+
+---------------
+0F913651 (MSVCR120D): (filename not available): beginthreadex
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 0F913861)
+
+---------------
+0F913861 (MSVCR120D): (filename not available): endthreadex
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 75FE919F)
+
+---------------
+75FE919F (KERNEL32): (filename not available): BaseThreadInitThunk
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 77E7A8CB)
+
+---------------
+77E7A8CB (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 77E7A8A1)
+
+---------------
+77E7A8A1 (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------

@@ -1,0 +1,57 @@
+Program crashed in file: c:\svnbase\labbar\egnalabbar\theprojectwiththejsonparser\source\commonutilities\cu\utility\filehandling.cpp
+At line: 21
+In function: CommonUtilities::GetFileAsString
+Could not open WindowSettings
+
+---------------
+
+Stack Crash Log Below:
+---------------
+c:\svnbase\labbar\egnalabbar\theprojectwiththejsonparser\source\commonutilities\cu\dldebug\dl_debug.cpp (94): DL_Debug::Debug::AssertMessage
+
+---------------
+c:\svnbase\labbar\egnalabbar\theprojectwiththejsonparser\source\commonutilities\cu\utility\filehandling.cpp (21): CommonUtilities::GetFileAsString
+
+---------------
+c:\svnbase\labbar\egnalabbar\theprojectwiththejsonparser\source\jsonparser\json\jsonwrapper.cpp (45): JSONWrapper::ReadJSONFile
+
+---------------
+c:\svnbase\labbar\egnalabbar\theprojectwiththejsonparser\source\jsonparser\json\jsonwrapper.cpp (58): JSONWrapper::InternalReadAllDocuments
+
+---------------
+c:\svnbase\labbar\egnalabbar\theprojectwiththejsonparser\source\jsonparser\json\jsonwrapper.h (16): JSONWrapper::ReadAllDocuments
+
+---------------
+c:\svnbase\labbar\egnalabbar\theprojectwiththejsonparser\source\game\game.cpp (34): CGame::CGame
+
+---------------
+c:\svnbase\labbar\egnalabbar\theprojectwiththejsonparser\source\launcher\main.cpp (51): Init
+
+---------------
+c:\svnbase\labbar\egnalabbar\theprojectwiththejsonparser\source\launcher\main.cpp (30): main
+
+---------------
+f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c (626): __tmainCRTStartup
+
+---------------
+f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c (466): mainCRTStartup
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 75AD919F)
+
+---------------
+75AD919F (KERNEL32): (filename not available): BaseThreadInitThunk
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 775CA8CB)
+
+---------------
+775CA8CB (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 775CA8A1)
+
+---------------
+775CA8A1 (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------

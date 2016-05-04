@@ -1,0 +1,54 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"Events" : 
+			[
+				{
+					"EventType" : "OnClickEvent",	
+					"Events" : 
+					[
+						{
+							"EventType" : "PickUpEvent"	,
+							"Data" : 
+							{
+								"ObjectNametoPickUp" : "Apple",
+								"RemoveObjectAfterPickup" : true
+							}							
+						}
+					],
+					"BoxSize" : 
+					{
+						"X" : 100,
+						"Y" : 100
+					}
+				},
+				{
+					"EventType" : "OnUseEvent",	
+					"Events" : 
+					[
+					]
+				}
+			]

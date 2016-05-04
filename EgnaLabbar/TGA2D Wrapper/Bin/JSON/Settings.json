@@ -1,0 +1,15 @@
+{
+	"Settings" : 
+	[
+		{
+			"SettingsType" : "Resolution",
+			"Width" : 1920,
+			"Height" : 1080
+		},
+		{
+			"SettingsType" : "StartState",
+			"DUMBDATA!" : "LD: use Name = eTestMainLoop for now, if changed a prog is testing something!",
+			"Name" : "eTestMainLoop"
+		}
+	]
+}

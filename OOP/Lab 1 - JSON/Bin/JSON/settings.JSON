@@ -1,0 +1,35 @@
+{
+	"paddles":
+	{
+		"sprite":"sprites/paddle.png",
+		"speed":2
+	},
+	"balls":
+	{
+		"sprite":"sprites/ball.png",
+		"startspeed":0.2,
+		"acc":0.8
+	},
+	"titlescreen":
+	{
+		"titlescreen" :
+		[
+			{
+				"sprite":"sprites/Background.dds",
+				"position" :
+				{
+					"x":0.0,
+					"y":0.0
+				}
+			},
+			{
+				"sprite":"sprites/pongCraft.dds",
+				"position" :
+				{
+					"x":0.2,
+					"y":0.3
+				}
+			}
+		]
+	}
+}

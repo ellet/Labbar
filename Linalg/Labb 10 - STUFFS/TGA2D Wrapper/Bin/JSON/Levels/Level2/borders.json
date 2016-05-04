@@ -1,0 +1,29 @@
+{
+	"BorderObjects" : 
+		[ 
+			{
+				"XPosition1" : 400,
+				"YPosition1" : 520,
+				"XPosition2" : 1050,
+				"YPosition2" : 550
+			},
+			{
+				"XPosition1" : 1050,
+				"YPosition1" : 550,
+				"XPosition2" : 1920,
+				"YPosition2" : 1080
+			},
+			{
+				"XPosition1" : 1920,
+				"YPosition1" : 1080,
+				"XPosition2" : 0,
+				"YPosition2" : 1080
+			},
+			{
+				"XPosition1" : 0,
+				"YPosition1" : 1080,
+				"XPosition2" : 400,
+				"YPosition2" : 520
+			}
+		]
+}
