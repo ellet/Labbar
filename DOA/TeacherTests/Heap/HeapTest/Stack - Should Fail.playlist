@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="CollectionsTests::StackTests::Stack_DefaultConstructor_TopAsserts" /><Add Test="CollectionsTests::StackTests::Stack_DefaultConstructor_PopAsserts" /></Playlist>

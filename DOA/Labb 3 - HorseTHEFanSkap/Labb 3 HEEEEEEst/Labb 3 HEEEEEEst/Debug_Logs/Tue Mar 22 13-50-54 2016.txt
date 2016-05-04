@@ -1,0 +1,36 @@
+Program crashed in file: Classes\Board.cpp
+At line: 87
+In function: Board::AddHORSEFAN
+Trying TO Put Pony on OTher pony, YOU DIRTY FUCKER!
+
+---------------
+
+Stack Crash Log Below:
+---------------
+c:\svnbase\labbar\doa\labb 3 - horsethefanskap\labb 3 heeeeeest\commonutilities\dldebug\dl_debug.cpp (91): DL_Debug::Debug::AssertMessage
+
+---------------
+c:\svnbase\labbar\doa\labb 3 - horsethefanskap\labb 3 heeeeeest\labb 3 heeeeeest\labb 3 heeeeeest.cpp (20): wmain
+
+---------------
+f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c (623): __tmainCRTStartup
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 7572919F)
+
+---------------
+7572919F (KERNEL32): (filename not available): BaseThreadInitThunk
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 775AA8CB)
+
+---------------
+775AA8CB (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 775AA8A1)
+
+---------------
+775AA8A1 (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------
