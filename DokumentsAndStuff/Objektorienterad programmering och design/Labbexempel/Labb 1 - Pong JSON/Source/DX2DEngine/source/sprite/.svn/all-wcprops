@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/Teachers/!svn/ver/220/TGA2D/trunk/Source/DX2DEngine/source/sprite
+END
+textured_quad.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/200/TGA2D/trunk/Source/DX2DEngine/source/sprite/textured_quad.cpp
+END
+textured_quad_batch.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Teachers/!svn/ver/200/TGA2D/trunk/Source/DX2DEngine/source/sprite/textured_quad_batch.cpp
+END
+sprite.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/Teachers/!svn/ver/220/TGA2D/trunk/Source/DX2DEngine/source/sprite/sprite.cpp
+END
+sprite_batch.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Teachers/!svn/ver/200/TGA2D/trunk/Source/DX2DEngine/source/sprite/sprite_batch.cpp
+END
