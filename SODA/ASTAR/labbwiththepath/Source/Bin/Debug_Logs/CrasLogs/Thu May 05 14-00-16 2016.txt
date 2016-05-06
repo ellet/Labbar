@@ -1,0 +1,87 @@
+Program crashed in file: d:\lib\projekt\labbar\astar\labbwiththepath\source\source\commonutilities\growingarray\growingarray.h
+At line: 166
+In function: CommonUtilities::GrowingArray<class CommonUtilities::GraphCluster::Node,unsigned int>::operator []
+Index is out of range
+
+---------------
+
+Stack Crash Log Below:
+---------------
+d:\lib\projekt\labbar\astar\labbwiththepath\source\source\commonutilities\dldebug\dl_debug.cpp (97): DL_Debug::Debug::AssertMessage
+
+---------------
+d:\lib\projekt\labbar\astar\labbwiththepath\source\source\commonutilities\growingarray\growingarray.h (167): CommonUtilities::GrowingArray<CommonUtilities::GraphCluster::Node,unsigned int>::operator[]
+
+---------------
+d:\lib\projekt\labbar\astar\labbwiththepath\source\source\commonutilities\graphcluster\graphcluster.cpp (76): CommonUtilities::GraphCluster::AStar
+
+---------------
+d:\lib\projekt\labbar\astar\labbwiththepath\source\source\game\intemartinhittakakacluster.cpp (41): InteMartinHittaKakaCluster::Update
+
+---------------
+d:\lib\projekt\labbar\astar\labbwiththepath\source\source\game\gameworld.cpp (107): CGameWorld::Update
+
+---------------
+d:\lib\projekt\labbar\astar\labbwiththepath\source\source\game\game.cpp (99): CGame::UpdateCallBack
+
+---------------
+d:\program\prog\visualstudio2013\vc\include\functional (1230): std::_Pmf_wrap<void (__thiscall CGame::*)(void),void,CGame>::operator()
+
+---------------
+d:\program\prog\visualstudio2013\vc\include\functional (1150): std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall CGame::*)(void),void,CGame>,CGame * const>::_Do_call<,0>
+
+---------------
+d:\program\prog\visualstudio2013\vc\include\functional (1138): std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall CGame::*)(void),void,CGame>,CGame * const>::operator()<>
+
+---------------
+d:\program\prog\visualstudio2013\vc\include\xrefwrap (284): std::_Callable_obj<std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall CGame::*)(void),void,CGame>,CGame * const>,0>::_ApplyX<void>
+
+---------------
+d:\program\prog\visualstudio2013\vc\include\functional (229): std::_Func_impl<std::_Callable_obj<std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall CGame::*)(void),void,CGame>,CGame * const>,0>,std::allocator<std::_Func_class<void> >,void>::_Do_call
+
+---------------
+d:\program\prog\visualstudio2013\vc\include\functional (315): std::_Func_class<void>::operator()
+
+---------------
+d:\lib\projekt\labbar\astar\labbwiththepath\source\source\dx2dengine\source\engine.cpp (206): DX2D::CEngine::DoStep
+
+---------------
+d:\lib\projekt\labbar\astar\labbwiththepath\source\source\dx2dengine\source\engine.cpp (165): DX2D::CEngine::StartStep
+
+---------------
+d:\lib\projekt\labbar\astar\labbwiththepath\source\source\dx2dengine\source\engine.cpp (152): DX2D::CEngine::Start
+
+---------------
+d:\lib\projekt\labbar\astar\labbwiththepath\source\source\game\game.cpp (76): CGame::Init
+
+---------------
+d:\lib\projekt\labbar\astar\labbwiththepath\source\source\launcher\main.cpp (64): Init
+
+---------------
+d:\lib\projekt\labbar\astar\labbwiththepath\source\source\launcher\main.cpp (30): main
+
+---------------
+f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c (626): __tmainCRTStartup
+
+---------------
+f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c (466): mainCRTStartup
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 765938F4)
+
+---------------
+765938F4 (KERNEL32): (filename not available): BaseThreadInitThunk
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 77D05DE3)
+
+---------------
+77D05DE3 (ntdll): (filename not available): RtlUnicodeStringToInteger
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 77D05DAE)
+
+---------------
+77D05DAE (ntdll): (filename not available): RtlUnicodeStringToInteger
+
+---------------
