@@ -105,7 +105,7 @@ void CGameWorld::Draw()
 	}
 	else
 	{
-		myGraphCluster.DrawLinks(myRenderer);S
+		myGraphCluster.DrawLinks(myRenderer);
 
 		myRenderer.Draw();
 
