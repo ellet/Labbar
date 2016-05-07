@@ -22,6 +22,10 @@ namespace UsefulToolForGameProjectYes
             InitializeComponent();
             InitResolution();
 
+            ToolTip.SetToolTip(this.GroupBoxDebug, "Location originates in Bin, not C");
+            ToolTip.SetToolTip(this.TextBoxDebuglogsDirectory, "Location originates in Bin, not C");
+            ToolTip.SetToolTip(this.LabelDebugDirectory, "Location originates in Bin, not C");
+
             string text = System.IO.File.ReadAllText("JSON/testings.json");
 
             mySetup = JsonConvert.DeserializeObject<GameSetup>(text);

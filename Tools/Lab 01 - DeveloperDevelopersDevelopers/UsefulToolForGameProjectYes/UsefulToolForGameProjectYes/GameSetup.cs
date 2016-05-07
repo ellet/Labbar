@@ -16,6 +16,9 @@ namespace UsefulToolForGameProjectYes
             mySkipIntro = true;
             mySkipSplashscreen = true;
             myMuteAllSounds = true;
+            myShouldCreateDebugLogs = true;
+            myDebugFolderLocation = "";
+
         }
 
         #region Properties
@@ -76,12 +79,38 @@ namespace UsefulToolForGameProjectYes
                 myMuteAllSounds = value;
             }
         }
+
+        public bool CreateDebugLogs
+        {
+            get
+            {
+                return myShouldCreateDebugLogs;
+            }
+            set
+            {
+                myShouldCreateDebugLogs = value;
+            }
+        }
+
+        public string DebugFolderLocation
+        {
+            get
+            {
+                return myDebugFolderLocation;
+            }
+            set
+            {
+                myDebugFolderLocation = value;
+            }
+        }
         #endregion
 
         private Resolution myResolution;
+        private string myDebugFolderLocation;
         private bool myIsFullscreen;
         private bool mySkipIntro;
         private bool mySkipSplashscreen;
         private bool myMuteAllSounds;
+        private bool myShouldCreateDebugLogs;
     }
 }
