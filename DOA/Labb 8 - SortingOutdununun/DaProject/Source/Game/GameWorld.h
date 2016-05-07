@@ -4,6 +4,7 @@
 #include <CU/GrowingArray/GrowingArray.h>
 #include <CU/Utility/Randomizer/Randomizer.h>
 #include <tga2d/math/vector2.h>
+#include <CU/NameSpaceAliases.h>
 
 enum class eGameState
 {
@@ -63,7 +64,6 @@ public:
 	void Init();
 	void Update(float aTimeDelta); 
 
-	//void SortWithHeap(StapleArray * aArrayOfNumbers);
 	void SortWithInsert(NumberArray * aArrayOfNumbers, SpriteArray * aSpriteArray);
 	void SortWithMerge(NumberArray * input, size_t size, SpriteArray * aSpriteArray);
 	void SortWithShell(NumberArray * aArray, SpriteArray * aSpriteArray);
@@ -71,19 +71,32 @@ public:
 	void SortWithHeap(NumberArray * aArray, SpriteArray * aSpriteArray);
 	void SortWithQuick(NumberArray * aArray, SpriteArray * aSpriteArray, int left, int right);
 
-	void CreateRandomStaples(NumberArray & aArrayOfNumbers, SpriteArray & aSpriteArray);
-	//void UpdateSpritesSizes(NumberArray & aArrayOfNumbers, SpriteArray & aArrayOfSprites);
+	void SortWithRadix(size_t * input, int n);
+
+	void CreateRandomStaples();
 
 private:
+	void SetupArrays();
+	void UpdateAllSprites();
+
 	void StartAlgorithms();
 	void DecideNumberOfElements();
 	void DecidedElements();
 	void DecideValueInterval();
 	void DecidedValues();
 
+	CU::GrowingArray<NumberArray> myNumberArrays;
+	CU::GrowingArray<SpriteArray> mySpriteArrays;
+
 	DX2D::CText * myText;
 	Randomizer myRandomizer;
 	Renderer * myRenderer;
 	CommonUtilities::GrowingArray<std::thread*> myThreads;
 	eGameState myState;
+
+	DX2D::CSprite * myMergeSprite;
+	DX2D::CSprite * myQuickSprite;
+	DX2D::CSprite * myHeapSprite;
+	DX2D::CSprite * myRadixSprite;
+	DX2D::CSprite * myShellSprite;
 };

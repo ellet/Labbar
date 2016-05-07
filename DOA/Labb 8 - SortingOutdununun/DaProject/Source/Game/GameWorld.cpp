@@ -14,10 +14,10 @@
 #include <CU/InputWrapper/SingletonInputWrapper.h>
 
 size_t MaxValueNumber = 1000000;
-size_t MaxElementsNumber = 10000000;
+size_t MaxElementsNumber = 1000000;
 
-const size_t StartValue = 100;
-const size_t StartElements = 1000000;
+const size_t StartValue = 100000;
+const size_t StartElements = 10000000;
 
 
 CGameWorld::CGameWorld()
@@ -29,14 +29,35 @@ CGameWorld::~CGameWorld()
 {
 }
 
-void UpdateSpritesSizes(NumberArray & aArrayOfNumbers, SpriteArray & aArrayOfSprites)
+void UpdateSpritesSizes(NumberArray & aArrayOfNumbers, SpriteArray & aArrayOfSprites, size_t anAlgorithmIndex)
 {
-	for (size_t iStaple = 0; iStaple < aArrayOfNumbers.Size(); ++iStaple)
+	const size_t StepOffset = aArrayOfNumbers.Size() / aArrayOfSprites.Size();
+	for (size_t iStaple = 0; iStaple < aArrayOfSprites.Size(); ++iStaple)
 	{
-		aArrayOfSprites[iStaple]->SetSize(DX2D::Vector2f(1.f, -(static_cast<float>(aArrayOfNumbers[iStaple]) / static_cast<float>(MaxValueNumber)) * 10.f));
-		const float ColorValue = static_cast<float>(aArrayOfNumbers[iStaple]) / static_cast<float>(MaxValueNumber);
-		aArrayOfSprites[iStaple]->SetColor(DX2D::CColor(ColorValue, 1.f - ColorValue, 0.f, 1.f));
+		aArrayOfSprites[iStaple]->SetSize(DX2D::Vector2f(1.f, -(static_cast<float>(aArrayOfNumbers[iStaple * StepOffset]) / static_cast<float>(MaxValueNumber)) * 10.f));
+		const float ColorValue = static_cast<float>(aArrayOfNumbers[iStaple * StepOffset]) / static_cast<float>(MaxValueNumber);
+		switch (anAlgorithmIndex)
+		{
+		case 0:
+			aArrayOfSprites[iStaple]->SetColor(DX2D::CColor(ColorValue, 1.f - ColorValue, 0.f, 1.f));
+			break;
+		case 1:
+			aArrayOfSprites[iStaple]->SetColor(DX2D::CColor(1.f - ColorValue, 1.f - ColorValue, ColorValue, 1.f));
+			break;
+		case 2:
+			aArrayOfSprites[iStaple]->SetColor(DX2D::CColor(1.f - ColorValue, ColorValue, ColorValue, 1.f));
+			break;
+		case 3:
+			aArrayOfSprites[iStaple]->SetColor(DX2D::CColor(0.f, ColorValue, 1.f - ColorValue, 1.f));
+			break;
+		case 4:
+			aArrayOfSprites[iStaple]->SetColor(DX2D::CColor(ColorValue, 1.f - ColorValue, 1.f - ColorValue, 1.f));
+			break;
+
+		}
+		
 	}
+	
 }
 
 void UpdateSpritesSizesOnOneIndex(NumberArray & aArrayOfNumbers, SpriteArray & aArrayOfSprites, const size_t aIndex)
@@ -64,6 +85,8 @@ void CGameWorld::Init()
 
 void CGameWorld::Update(float /*aTimeDelta*/)
 { 
+
+
 	CommonUtilities::SingletonInputWrapper::Update();
 	switch (myState)
 	{
@@ -78,6 +101,12 @@ void CGameWorld::Update(float /*aTimeDelta*/)
 		myState = eGameState::eRunning;
 		break;
 	case eGameState::eRunning:
+		UpdateAllSprites();
+		myMergeSprite->Render();
+		myQuickSprite->Render();
+		myHeapSprite->Render();
+		myRadixSprite->Render();
+		myShellSprite->Render();
 		break;
 	case eGameState::eFinished:
 		break;
@@ -86,6 +115,49 @@ void CGameWorld::Update(float /*aTimeDelta*/)
 	myRenderer->Render();
 	myText->Render();
 }
+
+void CGameWorld::SortWithRadix(size_t * input, int n)
+{
+	int i;
+
+	// find the max number in the given list.
+	// to be used in loop termination part.
+	int maxNumber = input[0];
+	for (i = 1; i < n; i++)
+	{
+		if (input[i] > maxNumber)
+			maxNumber = input[i];
+	}
+
+	// run the loop for each of the decimal places
+	int exp = 1;
+	int *tmpBuffer = new int[n];
+	while (maxNumber / exp > 0)
+	{
+		int decimalBucket[10] = { 0 };
+		// count the occurences in this decimal digit.
+		for (i = 0; i < n; i++)
+			decimalBucket[input[i] / exp % 10]++;
+
+		// Prepare the position counters to be used for re-ordering the numbers
+		// for this decimal place.
+		for (i = 1; i < 10; i++)
+			decimalBucket[i] += decimalBucket[i - 1];
+
+		// Re order the numbers in the tmpbuffer and later copy back to original buffer.
+		for (i = n - 1; i >= 0; i--)
+			tmpBuffer[--decimalBucket[input[i] / exp % 10]] = input[i];
+		for (i = 0; i < n; i++)
+			input[i] = tmpBuffer[i];
+
+		// Move to next decimal place.
+		exp *= 10;
+
+		//cout << "\nPASS   : ";
+		//print(input, n);
+	}
+}
+
 
 //void CGameWorld::SortWithHeap(StapleArray * aArrayOfNumbers)
 //{
@@ -108,7 +180,7 @@ void CGameWorld::SortWithInsert(NumberArray * aArrayOfNumbers, SpriteArray * aSp
 	NumberArray tempArray;
 	tempArray.Init(aArrayOfNumbers->Size());
 
-	UpdateSpritesSizes(*aArrayOfNumbers, *aSpriteArray);
+	// UpdateSpritesSizes(*aArrayOfNumbers, *aSpriteArray);
 
 
 	for (size_t iStaple = 0; iStaple < aArrayOfNumbers->Size(); ++iStaple)
@@ -120,7 +192,7 @@ void CGameWorld::SortWithInsert(NumberArray * aArrayOfNumbers, SpriteArray * aSp
 			{
 				tempArray.Insert(iResult, (*aArrayOfNumbers)[iStaple]);
 
-				UpdateSpritesSizes(tempArray, *aSpriteArray);
+				//UpdateSpritesSizes(tempArray, *aSpriteArray);
 
 				hasAdded = true;
 				break;
@@ -131,7 +203,7 @@ void CGameWorld::SortWithInsert(NumberArray * aArrayOfNumbers, SpriteArray * aSp
 		if (hasAdded == false)
 		{
 			tempArray.Add((*aArrayOfNumbers)[iStaple]);
-			UpdateSpritesSizes(tempArray, *aSpriteArray);
+			//UpdateSpritesSizes(tempArray, *aSpriteArray);
 		}
 	}
 
@@ -172,7 +244,7 @@ void merge_helper(NumberArray & input, size_t left, size_t right, NumberArray & 
 			* so, we compare them.  Otherwise, we know that the merge must
 			* use take the element from the left array */
 			if (l < left + midpoint_distance &&
-				(r == right || max(input[l], input[r]) == input[l]))
+				(r == right || min(input[l], input[r]) == input[l]))
 			{
 				scratch[i] = input[l];
 				l++;
@@ -182,7 +254,7 @@ void merge_helper(NumberArray & input, size_t left, size_t right, NumberArray & 
 				scratch[i] = input[r];
 				r++;
 			}
-			UpdateSpritesSizesOnOneIndex(scratch, aSpriteArray, i);
+			//UpdateSpritesSizesOnOneIndex(scratch, aSpriteArray, i);
 		}
 		/* Copy the sorted subarray back to the input */
 		for (i = left; i < right; i++)
@@ -202,17 +274,17 @@ void merge_helper(NumberArray & input, size_t left, size_t right, NumberArray & 
 void CGameWorld::SortWithMerge(NumberArray * input, size_t size, SpriteArray * aSpriteArray)
 {
 	NumberArray * scratch = new NumberArray(*input);
-	UpdateSpritesSizes(*input, *aSpriteArray);
+	//UpdateSpritesSizes(*input, *aSpriteArray);
 	//scratch->Init(MaxElementsNumber);
 	merge_helper(*input, 0, size, *scratch, *aSpriteArray);
-	UpdateSpritesSizes(*input, *aSpriteArray);
+	//UpdateSpritesSizes(*input, *aSpriteArray);
 }
 
 void CGameWorld::SortWithShell(NumberArray * aArray, SpriteArray * aSpriteArray)
 {
 	int gap, i, j, temp;
 
-	UpdateSpritesSizes(*aArray, *aSpriteArray);
+	//UpdateSpritesSizes(*aArray, *aSpriteArray);
 
 	for (gap = aArray->Size() / 2; gap > 0; gap /= 2)
 	{
@@ -227,13 +299,13 @@ void CGameWorld::SortWithShell(NumberArray * aArray, SpriteArray * aSpriteArray)
 				(*aArray)[j] = (*aArray)[j + gap];
 
 				(*aArray)[j + gap] = temp;
-				UpdateSpritesSizesOnOneIndex(*aArray, *aSpriteArray, j);
-				UpdateSpritesSizesOnOneIndex(*aArray, *aSpriteArray, j + gap);
+				//UpdateSpritesSizesOnOneIndex(*aArray, *aSpriteArray, j);
+				//UpdateSpritesSizesOnOneIndex(*aArray, *aSpriteArray, j + gap);
 			}
 		}
 	}
 	
-	UpdateSpritesSizes(*aArray, *aSpriteArray);
+	//UpdateSpritesSizes(*aArray, *aSpriteArray);
 }
 
 #pragma endregion
@@ -261,8 +333,8 @@ void CGameWorld::SortWithQuick(NumberArray * aArray, SpriteArray * aSpriteArray,
 			tmp = (*aArray)[i];
 			(*aArray)[i] = (*aArray)[j];
 			(*aArray)[j] = tmp;
-			UpdateSpritesSizesOnOneIndex(*aArray, *aSpriteArray, i);
-			UpdateSpritesSizesOnOneIndex(*aArray, *aSpriteArray, j);
+			//UpdateSpritesSizesOnOneIndex(*aArray, *aSpriteArray, i);
+			//UpdateSpritesSizesOnOneIndex(*aArray, *aSpriteArray, j);
 
 			i++;
 			j--;
@@ -282,42 +354,106 @@ void CGameWorld::SortWithQuick(NumberArray * aArray, SpriteArray * aSpriteArray,
 	//UpdateSpritesSizes(*aArray, *aSpriteArray);
 }
 
-void CGameWorld::CreateRandomStaples(NumberArray & aArrayOfNumbers, SpriteArray & aSpriteArray)
-{
+void CGameWorld::CreateRandomStaples(/*NumberArray & aArrayOfNumbers, SpriteArray & aSpriteArray*/)
+{	
+	//randomize an array
 	for (size_t iNumber = 0; iNumber < MaxElementsNumber; ++iNumber)
 	{
 		size_t tempNumber = static_cast<size_t>(myRandomizer.GetRandomValue(1.f, static_cast<float>(MaxValueNumber)));
-		aArrayOfNumbers.Add(tempNumber);
-		DX2D::CSprite * tempSprite = new DX2D::CSprite(nullptr);
-		tempSprite->SetPosition(DX2D::Vector2f(0.07f, 0.3f) + (DX2D::Vector2f(0.9f / static_cast<float>(MaxElementsNumber), 0.0f) * static_cast<float>(iNumber)));
-		aSpriteArray.Add(tempSprite);
-		myRenderer->AddSprite(*tempSprite);
+		myNumberArrays[0].Add(tempNumber);
+	}
+	//Copy the randomized numbers into each array
+	for (size_t iAlgorithm = 1; iAlgorithm < myNumberArrays.Size(); ++iAlgorithm)
+	{
+		myNumberArrays[iAlgorithm] = myNumberArrays[0];
+	}
+	//Set Sprites
+	if (MaxElementsNumber < 2048)
+	{
+		for (size_t iAlgorithm = 0; iAlgorithm < myNumberArrays.Size(); ++iAlgorithm)
+		{
+			for (size_t iNumber = 0; iNumber < MaxElementsNumber; ++iNumber)
+			{
+				DX2D::CSprite * tempSprite = new DX2D::CSprite(nullptr);
+				tempSprite->SetPosition(DX2D::Vector2f(0.07f, 0.3f * ((iAlgorithm / 5.f) + 1)) + (DX2D::Vector2f(0.9f / static_cast<float>(MaxElementsNumber), 0.0f) * static_cast<float>(iNumber)));
+				mySpriteArrays[iAlgorithm].Add(tempSprite);
+				myRenderer->AddSprite(*tempSprite);
+			}
+		}
+	}
+	else
+	{
+		for (size_t iAlgorithm = 0; iAlgorithm < myNumberArrays.Size(); ++iAlgorithm)
+		{
+			for (size_t iNumber = 0; iNumber < 2048; ++iNumber)
+			{
+				DX2D::CSprite * tempSprite = new DX2D::CSprite(nullptr);
+				tempSprite->SetPosition(DX2D::Vector2f(0.07f, 0.3f * ((iAlgorithm / 5.f) + 1)) + (DX2D::Vector2f(0.9f / static_cast<float>(2048), 0.0f) * static_cast<float>(iNumber)));
+				mySpriteArrays[iAlgorithm].Add(tempSprite);
+				myRenderer->AddSprite(*tempSprite);
+			}
+		}
 	}
 }
 
 
 
+void CGameWorld::SetupArrays()
+{
+	myNumberArrays.Init(5);
+	mySpriteArrays.Init(5);
+	for (size_t iNumber = 0; iNumber < 5; ++iNumber)
+	{
+		myNumberArrays.Add(NumberArray());
+		myNumberArrays.GetLast().Init(MaxElementsNumber);
+
+		mySpriteArrays.Add(SpriteArray());
+		mySpriteArrays.GetLast().Init(MaxElementsNumber);
+	}
+}
+
+void CGameWorld::UpdateAllSprites()
+{
+	for (size_t iAlgorithm = 0; iAlgorithm < mySpriteArrays.Size(); ++iAlgorithm)
+	{
+		UpdateSpritesSizes(myNumberArrays[iAlgorithm], mySpriteArrays[iAlgorithm], iAlgorithm);
+	}
+}
+
 void CGameWorld::StartAlgorithms()
 {
-	NumberArray * tempStaple = new NumberArray();
-	tempStaple->Init(MaxElementsNumber);
 
-	SpriteArray * tempSprites = new SpriteArray();
-	tempSprites->Init(MaxElementsNumber);
+	myMergeSprite = new DX2D::CSprite("Sprites/Merge.png");
+	myQuickSprite = new DX2D::CSprite("Sprites/Quick.png");
+	myHeapSprite = new DX2D::CSprite("Sprites/Heap.png");
+	myRadixSprite = new DX2D::CSprite("Sprites/Radix.png");
+	myShellSprite = new DX2D::CSprite("Sprites/Shell.png");
 
-	CreateRandomStaples(*tempStaple, *tempSprites);
+	myMergeSprite->SetPosition(DX2D::Vector2f(0.f, 0.27f));
+	myShellSprite->SetPosition(DX2D::Vector2f(0.f, 0.32f));
+	myHeapSprite->SetPosition(DX2D::Vector2f(0.f, 0.38f));
+	myQuickSprite->SetPosition(DX2D::Vector2f(0.f, 0.45f));
+	myRadixSprite->SetPosition(DX2D::Vector2f(0.f, 0.5f));
+
+
+
+	SetupArrays();
+	NumberArray * tempStaple = &myNumberArrays[0];
+	SpriteArray * tempSprites = &mySpriteArrays[0];
+	CreateRandomStaples();
 
 	//myThreads.Add(new std::thread(&CGameWorld::SortWithInsert, this, tempStaple, tempSprites));
 	myThreads.Add(new std::thread(&CGameWorld::SortWithMerge, this, tempStaple, MaxElementsNumber, tempSprites));
-	//myThreads.Add(new std::thread(&CGameWorld::SortWithShell, this, tempStaple, tempSprites));
-	//myThreads.Add(new std::thread(&CGameWorld::SortWithHeap, this, tempStaple, tempSprites));
-	//myThreads.Add(new std::thread(&CGameWorld::SortWithQuick, this, tempStaple, tempSprites, 0, MaxElementsNumber -1));
+	myThreads.Add(new std::thread(&CGameWorld::SortWithShell, this, &myNumberArrays[1], &mySpriteArrays[1]));
+	myThreads.Add(new std::thread(&CGameWorld::SortWithHeap, this, &myNumberArrays[2], &mySpriteArrays[2]));
+	myThreads.Add(new std::thread(&CGameWorld::SortWithQuick, this, &myNumberArrays[3], &mySpriteArrays[3], 0, MaxElementsNumber - 1));
+	myThreads.Add(new std::thread(&CGameWorld::SortWithRadix, this, &myNumberArrays[4][0], myNumberArrays[4].Size()));
 }
 
 void CGameWorld::DecideNumberOfElements()
 {
-	DecidedElements();
-	MaxElementsNumber = StartElements;
+	/*DecidedElements();
+	MaxElementsNumber = StartElements;*/
 
 	if (GetInput::GetKeyPressed(DIK_1) == true)
 	{
@@ -349,7 +485,7 @@ void CGameWorld::DecideNumberOfElements()
 
 void CGameWorld::SortWithHeap(NumberArray * aArray, SpriteArray * aSpriteArray)
 {
-	UpdateSpritesSizes(*aArray, *aSpriteArray);
+	//UpdateSpritesSizes(*aArray, *aSpriteArray);
 
 	int N = aArray->Size();
 	int n = N, i = n / 2, parent, child;
@@ -365,7 +501,7 @@ void CGameWorld::SortWithHeap(NumberArray * aArray, SpriteArray * aSpriteArray)
 			n--;           /* Make the new heap smaller */
 			if (n == 0)
 			{
-				UpdateSpritesSizes(*aArray, *aSpriteArray);
+				//UpdateSpritesSizes(*aArray, *aSpriteArray);
 				return; /* When the heap is empty, we are done */
 			}
 				
@@ -386,7 +522,7 @@ void CGameWorld::SortWithHeap(NumberArray * aArray, SpriteArray * aSpriteArray)
 				parent = child; /* Move parent pointer to this child */
 				child = parent * 2 + 1; /* Find the next child */
 
-				UpdateSpritesSizesOnOneIndex(*aArray, *aSpriteArray, parent);
+				//UpdateSpritesSizesOnOneIndex(*aArray, *aSpriteArray, parent);
 				//UpdateSpritesSizesOnOneIndex(*aArray, *aSpriteArray, child);
 			}
 			else {
@@ -406,8 +542,8 @@ void CGameWorld::DecidedElements()
 
 void CGameWorld::DecideValueInterval()
 {
-	DecidedValues();
-	MaxValueNumber = StartValue;
+	/*DecidedValues();
+	MaxValueNumber = StartValue;*/
 
 	if (GetInput::GetKeyPressed(DIK_1) == true)
 	{
