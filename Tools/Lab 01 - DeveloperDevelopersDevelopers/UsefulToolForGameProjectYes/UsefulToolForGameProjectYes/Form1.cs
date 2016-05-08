@@ -13,6 +13,16 @@ using System.Windows.Forms;
 
 namespace UsefulToolForGameProjectYes
 {
+    public enum eGameState
+    {
+        eMainMenu,
+        eInGame,
+        eLevelSelect,
+        ePauseMenu,
+        eOptionsMenu,
+        eCredits
+    }
+
     public partial class GameSettings : Form
     {
         
@@ -83,11 +93,11 @@ namespace UsefulToolForGameProjectYes
 
             if (tempSaveFileDialog.FileName != "")
             {
+                mySetup.StartingGameState = (int)GetSelectedGameState();
                 SaveGameSettingsToFile(tempSaveFileDialog.FileName);
             }
         }
 
-        private GameSetup mySetup;
 
         private void buttonLoad_Click(object sender, EventArgs e)
         {
@@ -101,5 +111,40 @@ namespace UsefulToolForGameProjectYes
                 LoadGameSettingsFromFile(tempLoadFileDialog.FileName);
             }
         }
+
+        private eGameState GetSelectedGameState()
+        {
+            if (RadioButtonGamestateMenu.Checked == true)
+            {
+                return eGameState.eMainMenu;
+            }
+            else if (RadioButtonGamestateInGame.Checked == true)
+            {
+                return eGameState.eInGame;
+            }
+            else if (RadioButtonLevelSelect.Checked == true)
+            {
+                return eGameState.eLevelSelect;
+            }
+            else if (RadioButtonGamestatePauseMenu.Checked == true)
+            {
+                return eGameState.ePauseMenu;
+            }
+            else if (RadioButtonGamestateOptionsMenu.Checked == true)
+            {
+                return eGameState.eOptionsMenu;
+            }
+            else
+            {
+                return eGameState.eCredits;
+            }
+        }
+
+        private void ButtonHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hello!\n\nIf you think something is missing or that something is confusing among the options here, go tell your friendly neighborhood programmers about it, and we will modify the tool according to feedback.");
+        }
+        private GameSetup mySetup;
+
     }
 }

@@ -18,6 +18,7 @@ namespace UsefulToolForGameProjectYes
             myMuteAllSounds = true;
             myShouldCreateDebugLogs = true;
             myDebugFolderLocation = "";
+            myGameStateEnum = 2;
 
         }
 
@@ -103,10 +104,23 @@ namespace UsefulToolForGameProjectYes
                 myDebugFolderLocation = value;
             }
         }
+
+        public int StartingGameState
+        {
+            get
+            {
+                return myGameStateEnum;
+            }
+            set
+            {
+                myGameStateEnum = value;
+            }
+        }
         #endregion
 
         private Resolution myResolution;
         private string myDebugFolderLocation;
+        private int myGameStateEnum;
         private bool myIsFullscreen;
         private bool mySkipIntro;
         private bool mySkipSplashscreen;
