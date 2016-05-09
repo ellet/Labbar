@@ -36,9 +36,7 @@ namespace UsefulToolForGameProjectYes
             ToolTip.SetToolTip(this.TextBoxDebuglogsDirectory, "Location originates in Bin, not C");
             ToolTip.SetToolTip(this.LabelDebugDirectory, "Location originates in Bin, not C");
 
-            string text = System.IO.File.ReadAllText("JSON/testings.json");
-
-            mySetup = JsonConvert.DeserializeObject<GameSetup>(text);
+            mySetup = new GameSetup();
         }
 
         void InitResolution()
@@ -87,7 +85,9 @@ namespace UsefulToolForGameProjectYes
         private void buttonSave_Click(object sender, EventArgs e)
         {
             SaveFileDialog tempSaveFileDialog = new SaveFileDialog();
-            tempSaveFileDialog.InitialDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/JSON";
+            string folderPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\JSON";
+            System.IO.Directory.CreateDirectory(folderPath);
+            tempSaveFileDialog.InitialDirectory = folderPath;
             tempSaveFileDialog.Filter = "Json Files(*.json) | *.json";
             tempSaveFileDialog.ShowDialog(this);
 
@@ -102,7 +102,10 @@ namespace UsefulToolForGameProjectYes
         private void buttonLoad_Click(object sender, EventArgs e)
         {
             OpenFileDialog tempLoadFileDialog = new OpenFileDialog();
-            tempLoadFileDialog.InitialDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location + "/JSON");
+            string folderPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\JSON";
+            System.IO.Directory.CreateDirectory(folderPath);
+            tempLoadFileDialog.InitialDirectory = folderPath;
+            tempLoadFileDialog.RestoreDirectory = false;
             tempLoadFileDialog.Filter = "Json Files(*.json) | *.json";
             tempLoadFileDialog.ShowDialog(this);
 
