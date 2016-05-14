@@ -30,23 +30,27 @@ namespace UsefulToolForGameProjectYes
         public GameSettings()
         {
             InitializeComponent();
-            InitResolution();
+            
 
             ToolTip.SetToolTip(this.GroupBoxDebug, "Location originates in Bin, not C");
             ToolTip.SetToolTip(this.TextBoxDebuglogsDirectory, "Location originates in Bin, not C");
             ToolTip.SetToolTip(this.LabelDebugDirectory, "Location originates in Bin, not C");
 
             mySetup = new GameSetup();
+            InitResolution();
         }
 
         void InitResolution()
         {
-            ComboBoxResolution.Items.Add(new Resolution(1920, 1080));
+            Resolution tempSelected = new Resolution(1920, 1080);
+            ComboBoxResolution.Items.Add(tempSelected);
             ComboBoxResolution.Items.Add(new Resolution(600, 800));
+            ComboBoxResolution.SelectedItem = tempSelected;
         }
 
         private void SaveGameSettingsToFile(string aFilePath)
         {
+            mySetup.DebugFolderLocation = TextBoxDebuglogsDirectory.Text;
             string output = JsonConvert.SerializeObject(mySetup);
             System.IO.File.WriteAllText(aFilePath, output);
         }
@@ -55,6 +59,39 @@ namespace UsefulToolForGameProjectYes
         {
             string input = System.IO.File.ReadAllText(aFilePath);
             mySetup = JsonConvert.DeserializeObject<GameSetup>(input);
+
+           
+            
+            ComboBoxResolution.SelectedItem = mySetup.ResolutoinSettings;
+            ComboBoxResolution.Refresh();
+            CheckBoxFullscreen.Checked = mySetup.IsFullscreen;
+            CheckBoxSkipIntro.Checked = mySetup.SkipIntro;
+            CheckBoxSkipSplashScreen.Checked = mySetup.SkipSplashscreen;
+            CheckBoxMute.Checked = mySetup.MuteAllSounds;
+            CheckBoxCreateDebugLogs.Checked = mySetup.CreateDebugLogs;
+            TextBoxDebuglogsDirectory.Text = mySetup.DebugFolderLocation;
+            switch ((eGameState)mySetup.StartingGameState)
+            {
+                case eGameState.eMainMenu:
+                    RadioButtonGamestateMenu.Checked = true;
+                    break;
+                case eGameState.eInGame:
+                    RadioButtonGamestateInGame.Checked = true;
+                    break;
+                case eGameState.eLevelSelect:
+                    RadioButtonLevelSelect.Checked = true;
+                    break;
+                case eGameState.ePauseMenu:
+                    RadioButtonGamestatePauseMenu.Checked = true;
+                    break;
+                case eGameState.eOptionsMenu:
+                    RadioButtonGamestateOptionsMenu.Checked = true;
+                    break;
+                case eGameState.eCredits:
+                    RadioButtonGamestateCredits.Checked = true;
+                    break;
+            }
+
         }
 
         private void ComboBoxResolution_SelectedIndexChanged(object sender, EventArgs e)
@@ -148,6 +185,5 @@ namespace UsefulToolForGameProjectYes
             MessageBox.Show("Hello!\n\nIf you think something is missing or that something is confusing among the options here, go tell your friendly neighborhood programmers about it, and we will modify the tool according to feedback.");
         }
         private GameSetup mySetup;
-
     }
 }

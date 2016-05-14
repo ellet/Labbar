@@ -16,20 +16,12 @@ namespace ANIMATIOOOONS.Classes
 
         }
 
-        //public void DrawDerp()
-        //{
-        //    Graphics tempG = Graphics.FromImage(this.Image);
-
-        //    tempG.DrawImage(this.Image, new Point(0, 0));
-        //}
-
         protected override void OnPaint(PaintEventArgs pe)
         {
             if (this.Image != null)
             {
                 pe.Graphics.DrawImage(this.Image, 0, 0, mySpriteRectangle, GraphicsUnit.Pixel);
             }
-            //base.OnPaint(pe);
         }
 
 
