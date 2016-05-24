@@ -1,0 +1,4171 @@
+Faction 0 Created and placed 403 Units
+Faction 1 Created and placed 403 Units
+Faction 2 Created and placed 403 Units
+Faction 3 Created and placed 403 Units
+Faction 4 Created and placed 403 Units
+Faction 5 Created and placed 403 Units
+Faction 6 Created and placed 403 Units
+Faction 7 Created and placed 403 Units
+Faction 8 Created and placed 403 Units
+Faction 9 Created and placed 403 Units
+Turn # 0
+---------------------
+Turn # 1
+Turn took 0.000409 seconds.
+
+Buddies alive in faction 0: 393
+Buddies alive in faction 1: 396
+Buddies alive in faction 2: 389
+Buddies alive in faction 3: 390
+Buddies alive in faction 4: 389
+Buddies alive in faction 5: 386
+Buddies alive in faction 6: 392
+Buddies alive in faction 7: 386
+Buddies alive in faction 8: 388
+Buddies alive in faction 9: 385
+
+Number of Units that moved: 3812
+Number of Combats: 136
+Number of Dead Units: 136
+---------------------
+Turn # 2
+Turn took 0.000321 seconds.
+
+Buddies alive in faction 0: 387
+Buddies alive in faction 1: 391
+Buddies alive in faction 2: 382
+Buddies alive in faction 3: 380
+Buddies alive in faction 4: 376
+Buddies alive in faction 5: 379
+Buddies alive in faction 6: 383
+Buddies alive in faction 7: 375
+Buddies alive in faction 8: 379
+Buddies alive in faction 9: 376
+
+Number of Units that moved: 3760
+Number of Combats: 86
+Number of Dead Units: 222
+---------------------
+Turn # 3
+Turn took 0.000302 seconds.
+
+Buddies alive in faction 0: 380
+Buddies alive in faction 1: 387
+Buddies alive in faction 2: 370
+Buddies alive in faction 3: 373
+Buddies alive in faction 4: 363
+Buddies alive in faction 5: 373
+Buddies alive in faction 6: 376
+Buddies alive in faction 7: 367
+Buddies alive in faction 8: 372
+Buddies alive in faction 9: 368
+
+Number of Units that moved: 3692
+Number of Combats: 79
+Number of Dead Units: 301
+---------------------
+Turn # 4
+Turn took 0.000291 seconds.
+
+Buddies alive in faction 0: 373
+Buddies alive in faction 1: 378
+Buddies alive in faction 2: 362
+Buddies alive in faction 3: 364
+Buddies alive in faction 4: 351
+Buddies alive in faction 5: 365
+Buddies alive in faction 6: 371
+Buddies alive in faction 7: 364
+Buddies alive in faction 8: 368
+Buddies alive in faction 9: 353
+
+Number of Units that moved: 3600
+Number of Combats: 80
+Number of Dead Units: 381
+---------------------
+Turn # 5
+Turn took 0.000285 seconds.
+
+Buddies alive in faction 0: 358
+Buddies alive in faction 1: 367
+Buddies alive in faction 2: 355
+Buddies alive in faction 3: 354
+Buddies alive in faction 4: 344
+Buddies alive in faction 5: 362
+Buddies alive in faction 6: 364
+Buddies alive in faction 7: 361
+Buddies alive in faction 8: 360
+Buddies alive in faction 9: 345
+
+Number of Units that moved: 3541
+Number of Combats: 79
+Number of Dead Units: 460
+---------------------
+Turn # 6
+Turn took 0.000274 seconds.
+
+Buddies alive in faction 0: 347
+Buddies alive in faction 1: 364
+Buddies alive in faction 2: 354
+Buddies alive in faction 3: 347
+Buddies alive in faction 4: 339
+Buddies alive in faction 5: 355
+Buddies alive in faction 6: 357
+Buddies alive in faction 7: 353
+Buddies alive in faction 8: 354
+Buddies alive in faction 9: 342
+
+Number of Units that moved: 3485
+Number of Combats: 58
+Number of Dead Units: 518
+---------------------
+Turn # 7
+Turn took 0.000274 seconds.
+
+Buddies alive in faction 0: 337
+Buddies alive in faction 1: 356
+Buddies alive in faction 2: 342
+Buddies alive in faction 3: 344
+Buddies alive in faction 4: 333
+Buddies alive in faction 5: 353
+Buddies alive in faction 6: 349
+Buddies alive in faction 7: 348
+Buddies alive in faction 8: 344
+Buddies alive in faction 9: 337
+
+Number of Units that moved: 3412
+Number of Combats: 69
+Number of Dead Units: 587
+---------------------
+Turn # 8
+Turn took 0.000258 seconds.
+
+Buddies alive in faction 0: 330
+Buddies alive in faction 1: 350
+Buddies alive in faction 2: 340
+Buddies alive in faction 3: 338
+Buddies alive in faction 4: 330
+Buddies alive in faction 5: 346
+Buddies alive in faction 6: 342
+Buddies alive in faction 7: 341
+Buddies alive in faction 8: 334
+Buddies alive in faction 9: 332
+
+Number of Units that moved: 3351
+Number of Combats: 60
+Number of Dead Units: 647
+---------------------
+Turn # 9
+Turn took 0.000255 seconds.
+
+Buddies alive in faction 0: 330
+Buddies alive in faction 1: 343
+Buddies alive in faction 2: 332
+Buddies alive in faction 3: 329
+Buddies alive in faction 4: 324
+Buddies alive in faction 5: 339
+Buddies alive in faction 6: 335
+Buddies alive in faction 7: 334
+Buddies alive in faction 8: 326
+Buddies alive in faction 9: 323
+
+Number of Units that moved: 3277
+Number of Combats: 68
+Number of Dead Units: 715
+---------------------
+Turn # 10
+Turn took 0.000252 seconds.
+
+Buddies alive in faction 0: 325
+Buddies alive in faction 1: 338
+Buddies alive in faction 2: 328
+Buddies alive in faction 3: 322
+Buddies alive in faction 4: 320
+Buddies alive in faction 5: 335
+Buddies alive in faction 6: 327
+Buddies alive in faction 7: 329
+Buddies alive in faction 8: 320
+Buddies alive in faction 9: 318
+
+Number of Units that moved: 3241
+Number of Combats: 53
+Number of Dead Units: 768
+---------------------
+Turn # 11
+Turn took 0.000247 seconds.
+
+Buddies alive in faction 0: 322
+Buddies alive in faction 1: 329
+Buddies alive in faction 2: 323
+Buddies alive in faction 3: 317
+Buddies alive in faction 4: 313
+Buddies alive in faction 5: 328
+Buddies alive in faction 6: 324
+Buddies alive in faction 7: 324
+Buddies alive in faction 8: 314
+Buddies alive in faction 9: 313
+
+Number of Units that moved: 3176
+Number of Combats: 55
+Number of Dead Units: 823
+---------------------
+Turn # 12
+Turn took 0.000244 seconds.
+
+Buddies alive in faction 0: 316
+Buddies alive in faction 1: 325
+Buddies alive in faction 2: 318
+Buddies alive in faction 3: 311
+Buddies alive in faction 4: 310
+Buddies alive in faction 5: 321
+Buddies alive in faction 6: 319
+Buddies alive in faction 7: 316
+Buddies alive in faction 8: 308
+Buddies alive in faction 9: 308
+
+Number of Units that moved: 3124
+Number of Combats: 55
+Number of Dead Units: 878
+---------------------
+Turn # 13
+Turn took 0.000238 seconds.
+
+Buddies alive in faction 0: 313
+Buddies alive in faction 1: 321
+Buddies alive in faction 2: 312
+Buddies alive in faction 3: 308
+Buddies alive in faction 4: 307
+Buddies alive in faction 5: 320
+Buddies alive in faction 6: 316
+Buddies alive in faction 7: 311
+Buddies alive in faction 8: 305
+Buddies alive in faction 9: 306
+
+Number of Units that moved: 3104
+Number of Combats: 33
+Number of Dead Units: 911
+---------------------
+Turn # 14
+Turn took 0.000236 seconds.
+
+Buddies alive in faction 0: 312
+Buddies alive in faction 1: 318
+Buddies alive in faction 2: 310
+Buddies alive in faction 3: 306
+Buddies alive in faction 4: 304
+Buddies alive in faction 5: 314
+Buddies alive in faction 6: 308
+Buddies alive in faction 7: 306
+Buddies alive in faction 8: 298
+Buddies alive in faction 9: 299
+
+Number of Units that moved: 3046
+Number of Combats: 44
+Number of Dead Units: 955
+---------------------
+Turn # 15
+Turn took 0.000234 seconds.
+
+Buddies alive in faction 0: 307
+Buddies alive in faction 1: 311
+Buddies alive in faction 2: 303
+Buddies alive in faction 3: 303
+Buddies alive in faction 4: 299
+Buddies alive in faction 5: 310
+Buddies alive in faction 6: 306
+Buddies alive in faction 7: 302
+Buddies alive in faction 8: 297
+Buddies alive in faction 9: 296
+
+Number of Units that moved: 3017
+Number of Combats: 41
+Number of Dead Units: 996
+---------------------
+Turn # 16
+Turn took 0.000231 seconds.
+
+Buddies alive in faction 0: 306
+Buddies alive in faction 1: 307
+Buddies alive in faction 2: 300
+Buddies alive in faction 3: 300
+Buddies alive in faction 4: 296
+Buddies alive in faction 5: 303
+Buddies alive in faction 6: 302
+Buddies alive in faction 7: 298
+Buddies alive in faction 8: 293
+Buddies alive in faction 9: 291
+
+Number of Units that moved: 2973
+Number of Combats: 38
+Number of Dead Units: 1034
+---------------------
+Turn # 17
+Turn took 0.000232 seconds.
+
+Buddies alive in faction 0: 301
+Buddies alive in faction 1: 301
+Buddies alive in faction 2: 298
+Buddies alive in faction 3: 295
+Buddies alive in faction 4: 289
+Buddies alive in faction 5: 298
+Buddies alive in faction 6: 300
+Buddies alive in faction 7: 290
+Buddies alive in faction 8: 287
+Buddies alive in faction 9: 288
+
+Number of Units that moved: 2923
+Number of Combats: 49
+Number of Dead Units: 1083
+---------------------
+Turn # 18
+Turn took 0.000229 seconds.
+
+Buddies alive in faction 0: 295
+Buddies alive in faction 1: 297
+Buddies alive in faction 2: 293
+Buddies alive in faction 3: 293
+Buddies alive in faction 4: 286
+Buddies alive in faction 5: 294
+Buddies alive in faction 6: 295
+Buddies alive in faction 7: 290
+Buddies alive in faction 8: 284
+Buddies alive in faction 9: 286
+
+Number of Units that moved: 2900
+Number of Combats: 34
+Number of Dead Units: 1117
+---------------------
+Turn # 19
+Turn took 0.000226 seconds.
+
+Buddies alive in faction 0: 293
+Buddies alive in faction 1: 292
+Buddies alive in faction 2: 289
+Buddies alive in faction 3: 289
+Buddies alive in faction 4: 280
+Buddies alive in faction 5: 290
+Buddies alive in faction 6: 293
+Buddies alive in faction 7: 283
+Buddies alive in faction 8: 280
+Buddies alive in faction 9: 281
+
+Number of Units that moved: 2851
+Number of Combats: 43
+Number of Dead Units: 1160
+---------------------
+Turn # 20
+Turn took 0.000222 seconds.
+
+Buddies alive in faction 0: 289
+Buddies alive in faction 1: 289
+Buddies alive in faction 2: 283
+Buddies alive in faction 3: 289
+Buddies alive in faction 4: 277
+Buddies alive in faction 5: 286
+Buddies alive in faction 6: 290
+Buddies alive in faction 7: 279
+Buddies alive in faction 8: 277
+Buddies alive in faction 9: 277
+
+Number of Units that moved: 2820
+Number of Combats: 34
+Number of Dead Units: 1194
+---------------------
+Turn # 21
+Turn took 0.000224 seconds.
+
+Buddies alive in faction 0: 288
+Buddies alive in faction 1: 282
+Buddies alive in faction 2: 281
+Buddies alive in faction 3: 283
+Buddies alive in faction 4: 276
+Buddies alive in faction 5: 281
+Buddies alive in faction 6: 286
+Buddies alive in faction 7: 274
+Buddies alive in faction 8: 274
+Buddies alive in faction 9: 271
+
+Number of Units that moved: 2777
+Number of Combats: 40
+Number of Dead Units: 1234
+---------------------
+Turn # 22
+Turn took 0.00022 seconds.
+
+Buddies alive in faction 0: 286
+Buddies alive in faction 1: 275
+Buddies alive in faction 2: 277
+Buddies alive in faction 3: 280
+Buddies alive in faction 4: 270
+Buddies alive in faction 5: 277
+Buddies alive in faction 6: 281
+Buddies alive in faction 7: 269
+Buddies alive in faction 8: 271
+Buddies alive in faction 9: 269
+
+Number of Units that moved: 2734
+Number of Combats: 41
+Number of Dead Units: 1275
+---------------------
+Turn # 23
+Turn took 0.000219 seconds.
+
+Buddies alive in faction 0: 281
+Buddies alive in faction 1: 270
+Buddies alive in faction 2: 274
+Buddies alive in faction 3: 277
+Buddies alive in faction 4: 267
+Buddies alive in faction 5: 275
+Buddies alive in faction 6: 277
+Buddies alive in faction 7: 266
+Buddies alive in faction 8: 267
+Buddies alive in faction 9: 266
+
+Number of Units that moved: 2705
+Number of Combats: 35
+Number of Dead Units: 1310
+---------------------
+Turn # 24
+Turn took 0.000216 seconds.
+
+Buddies alive in faction 0: 279
+Buddies alive in faction 1: 268
+Buddies alive in faction 2: 267
+Buddies alive in faction 3: 273
+Buddies alive in faction 4: 264
+Buddies alive in faction 5: 267
+Buddies alive in faction 6: 273
+Buddies alive in faction 7: 260
+Buddies alive in faction 8: 263
+Buddies alive in faction 9: 262
+
+Number of Units that moved: 2650
+Number of Combats: 44
+Number of Dead Units: 1354
+---------------------
+Turn # 25
+Turn took 0.000215 seconds.
+
+Buddies alive in faction 0: 277
+Buddies alive in faction 1: 266
+Buddies alive in faction 2: 261
+Buddies alive in faction 3: 271
+Buddies alive in faction 4: 262
+Buddies alive in faction 5: 266
+Buddies alive in faction 6: 268
+Buddies alive in faction 7: 255
+Buddies alive in faction 8: 259
+Buddies alive in faction 9: 260
+
+Number of Units that moved: 2627
+Number of Combats: 31
+Number of Dead Units: 1385
+---------------------
+Turn # 26
+Turn took 0.000212 seconds.
+
+Buddies alive in faction 0: 277
+Buddies alive in faction 1: 264
+Buddies alive in faction 2: 260
+Buddies alive in faction 3: 268
+Buddies alive in faction 4: 258
+Buddies alive in faction 5: 263
+Buddies alive in faction 6: 264
+Buddies alive in faction 7: 252
+Buddies alive in faction 8: 257
+Buddies alive in faction 9: 258
+
+Number of Units that moved: 2607
+Number of Combats: 24
+Number of Dead Units: 1409
+---------------------
+Turn # 27
+Turn took 0.000212 seconds.
+
+Buddies alive in faction 0: 275
+Buddies alive in faction 1: 261
+Buddies alive in faction 2: 258
+Buddies alive in faction 3: 264
+Buddies alive in faction 4: 256
+Buddies alive in faction 5: 259
+Buddies alive in faction 6: 263
+Buddies alive in faction 7: 247
+Buddies alive in faction 8: 253
+Buddies alive in faction 9: 258
+
+Number of Units that moved: 2580
+Number of Combats: 27
+Number of Dead Units: 1436
+---------------------
+Turn # 28
+Turn took 0.00024 seconds.
+
+Buddies alive in faction 0: 272
+Buddies alive in faction 1: 257
+Buddies alive in faction 2: 252
+Buddies alive in faction 3: 260
+Buddies alive in faction 4: 254
+Buddies alive in faction 5: 257
+Buddies alive in faction 6: 256
+Buddies alive in faction 7: 243
+Buddies alive in faction 8: 248
+Buddies alive in faction 9: 254
+
+Number of Units that moved: 2528
+Number of Combats: 41
+Number of Dead Units: 1477
+---------------------
+Turn # 29
+Turn took 0.000207 seconds.
+
+Buddies alive in faction 0: 270
+Buddies alive in faction 1: 255
+Buddies alive in faction 2: 249
+Buddies alive in faction 3: 258
+Buddies alive in faction 4: 250
+Buddies alive in faction 5: 254
+Buddies alive in faction 6: 255
+Buddies alive in faction 7: 243
+Buddies alive in faction 8: 247
+Buddies alive in faction 9: 251
+
+Number of Units that moved: 2524
+Number of Combats: 21
+Number of Dead Units: 1498
+---------------------
+Turn # 30
+Turn took 0.000206 seconds.
+
+Buddies alive in faction 0: 266
+Buddies alive in faction 1: 254
+Buddies alive in faction 2: 248
+Buddies alive in faction 3: 255
+Buddies alive in faction 4: 246
+Buddies alive in faction 5: 251
+Buddies alive in faction 6: 254
+Buddies alive in faction 7: 242
+Buddies alive in faction 8: 246
+Buddies alive in faction 9: 249
+
+Number of Units that moved: 2502
+Number of Combats: 21
+Number of Dead Units: 1519
+---------------------
+Turn # 31
+Turn took 0.000209 seconds.
+
+Buddies alive in faction 0: 264
+Buddies alive in faction 1: 252
+Buddies alive in faction 2: 246
+Buddies alive in faction 3: 249
+Buddies alive in faction 4: 244
+Buddies alive in faction 5: 248
+Buddies alive in faction 6: 252
+Buddies alive in faction 7: 241
+Buddies alive in faction 8: 245
+Buddies alive in faction 9: 248
+
+Number of Units that moved: 2481
+Number of Combats: 22
+Number of Dead Units: 1541
+---------------------
+Turn # 32
+Turn took 0.000206 seconds.
+
+Buddies alive in faction 0: 259
+Buddies alive in faction 1: 250
+Buddies alive in faction 2: 242
+Buddies alive in faction 3: 247
+Buddies alive in faction 4: 243
+Buddies alive in faction 5: 247
+Buddies alive in faction 6: 249
+Buddies alive in faction 7: 239
+Buddies alive in faction 8: 241
+Buddies alive in faction 9: 247
+
+Number of Units that moved: 2454
+Number of Combats: 25
+Number of Dead Units: 1566
+---------------------
+Turn # 33
+Turn took 0.000202 seconds.
+
+Buddies alive in faction 0: 254
+Buddies alive in faction 1: 248
+Buddies alive in faction 2: 239
+Buddies alive in faction 3: 246
+Buddies alive in faction 4: 240
+Buddies alive in faction 5: 247
+Buddies alive in faction 6: 247
+Buddies alive in faction 7: 233
+Buddies alive in faction 8: 239
+Buddies alive in faction 9: 245
+
+Number of Units that moved: 2424
+Number of Combats: 26
+Number of Dead Units: 1592
+---------------------
+Turn # 34
+Turn took 0.000202 seconds.
+
+Buddies alive in faction 0: 251
+Buddies alive in faction 1: 248
+Buddies alive in faction 2: 238
+Buddies alive in faction 3: 243
+Buddies alive in faction 4: 239
+Buddies alive in faction 5: 242
+Buddies alive in faction 6: 245
+Buddies alive in faction 7: 233
+Buddies alive in faction 8: 234
+Buddies alive in faction 9: 243
+
+Number of Units that moved: 2403
+Number of Combats: 22
+Number of Dead Units: 1614
+---------------------
+Turn # 35
+Turn took 0.000202 seconds.
+
+Buddies alive in faction 0: 247
+Buddies alive in faction 1: 245
+Buddies alive in faction 2: 235
+Buddies alive in faction 3: 241
+Buddies alive in faction 4: 236
+Buddies alive in faction 5: 239
+Buddies alive in faction 6: 242
+Buddies alive in faction 7: 228
+Buddies alive in faction 8: 234
+Buddies alive in faction 9: 242
+
+Number of Units that moved: 2378
+Number of Combats: 27
+Number of Dead Units: 1641
+---------------------
+Turn # 36
+Turn took 0.000201 seconds.
+
+Buddies alive in faction 0: 244
+Buddies alive in faction 1: 242
+Buddies alive in faction 2: 232
+Buddies alive in faction 3: 238
+Buddies alive in faction 4: 234
+Buddies alive in faction 5: 238
+Buddies alive in faction 6: 241
+Buddies alive in faction 7: 225
+Buddies alive in faction 8: 229
+Buddies alive in faction 9: 241
+
+Number of Units that moved: 2350
+Number of Combats: 25
+Number of Dead Units: 1666
+---------------------
+Turn # 37
+Turn took 0.000239 seconds.
+
+Buddies alive in faction 0: 241
+Buddies alive in faction 1: 241
+Buddies alive in faction 2: 230
+Buddies alive in faction 3: 236
+Buddies alive in faction 4: 232
+Buddies alive in faction 5: 232
+Buddies alive in faction 6: 238
+Buddies alive in faction 7: 225
+Buddies alive in faction 8: 228
+Buddies alive in faction 9: 241
+
+Number of Units that moved: 2335
+Number of Combats: 20
+Number of Dead Units: 1686
+---------------------
+Turn # 38
+Turn took 0.00022 seconds.
+
+Buddies alive in faction 0: 241
+Buddies alive in faction 1: 240
+Buddies alive in faction 2: 226
+Buddies alive in faction 3: 232
+Buddies alive in faction 4: 232
+Buddies alive in faction 5: 232
+Buddies alive in faction 6: 237
+Buddies alive in faction 7: 222
+Buddies alive in faction 8: 227
+Buddies alive in faction 9: 239
+
+Number of Units that moved: 2321
+Number of Combats: 16
+Number of Dead Units: 1702
+---------------------
+Turn # 39
+Turn took 0.000199 seconds.
+
+Buddies alive in faction 0: 240
+Buddies alive in faction 1: 237
+Buddies alive in faction 2: 225
+Buddies alive in faction 3: 229
+Buddies alive in faction 4: 228
+Buddies alive in faction 5: 231
+Buddies alive in faction 6: 237
+Buddies alive in faction 7: 221
+Buddies alive in faction 8: 225
+Buddies alive in faction 9: 235
+
+Number of Units that moved: 2300
+Number of Combats: 20
+Number of Dead Units: 1722
+---------------------
+Turn # 40
+Turn took 0.000195 seconds.
+
+Buddies alive in faction 0: 237
+Buddies alive in faction 1: 237
+Buddies alive in faction 2: 224
+Buddies alive in faction 3: 226
+Buddies alive in faction 4: 225
+Buddies alive in faction 5: 231
+Buddies alive in faction 6: 234
+Buddies alive in faction 7: 220
+Buddies alive in faction 8: 223
+Buddies alive in faction 9: 233
+
+Number of Units that moved: 2282
+Number of Combats: 18
+Number of Dead Units: 1740
+---------------------
+Turn # 41
+Turn took 0.000207 seconds.
+
+Buddies alive in faction 0: 234
+Buddies alive in faction 1: 235
+Buddies alive in faction 2: 224
+Buddies alive in faction 3: 224
+Buddies alive in faction 4: 225
+Buddies alive in faction 5: 227
+Buddies alive in faction 6: 229
+Buddies alive in faction 7: 217
+Buddies alive in faction 8: 222
+Buddies alive in faction 9: 226
+
+Number of Units that moved: 2248
+Number of Combats: 27
+Number of Dead Units: 1767
+---------------------
+Turn # 42
+Turn took 0.000201 seconds.
+
+Buddies alive in faction 0: 232
+Buddies alive in faction 1: 233
+Buddies alive in faction 2: 221
+Buddies alive in faction 3: 221
+Buddies alive in faction 4: 224
+Buddies alive in faction 5: 225
+Buddies alive in faction 6: 228
+Buddies alive in faction 7: 216
+Buddies alive in faction 8: 217
+Buddies alive in faction 9: 223
+
+Number of Units that moved: 2230
+Number of Combats: 23
+Number of Dead Units: 1790
+---------------------
+Turn # 43
+Turn took 0.000201 seconds.
+
+Buddies alive in faction 0: 227
+Buddies alive in faction 1: 230
+Buddies alive in faction 2: 218
+Buddies alive in faction 3: 220
+Buddies alive in faction 4: 222
+Buddies alive in faction 5: 225
+Buddies alive in faction 6: 226
+Buddies alive in faction 7: 214
+Buddies alive in faction 8: 213
+Buddies alive in faction 9: 222
+
+Number of Units that moved: 2207
+Number of Combats: 23
+Number of Dead Units: 1813
+---------------------
+Turn # 44
+Turn took 0.0002 seconds.
+
+Buddies alive in faction 0: 226
+Buddies alive in faction 1: 227
+Buddies alive in faction 2: 216
+Buddies alive in faction 3: 218
+Buddies alive in faction 4: 220
+Buddies alive in faction 5: 223
+Buddies alive in faction 6: 225
+Buddies alive in faction 7: 212
+Buddies alive in faction 8: 211
+Buddies alive in faction 9: 222
+
+Number of Units that moved: 2195
+Number of Combats: 17
+Number of Dead Units: 1830
+---------------------
+Turn # 45
+Turn took 0.000228 seconds.
+
+Buddies alive in faction 0: 224
+Buddies alive in faction 1: 226
+Buddies alive in faction 2: 215
+Buddies alive in faction 3: 216
+Buddies alive in faction 4: 219
+Buddies alive in faction 5: 222
+Buddies alive in faction 6: 223
+Buddies alive in faction 7: 209
+Buddies alive in faction 8: 206
+Buddies alive in faction 9: 221
+
+Number of Units that moved: 2168
+Number of Combats: 19
+Number of Dead Units: 1849
+---------------------
+Turn # 46
+Turn took 0.000236 seconds.
+
+Buddies alive in faction 0: 224
+Buddies alive in faction 1: 222
+Buddies alive in faction 2: 214
+Buddies alive in faction 3: 216
+Buddies alive in faction 4: 217
+Buddies alive in faction 5: 222
+Buddies alive in faction 6: 220
+Buddies alive in faction 7: 209
+Buddies alive in faction 8: 205
+Buddies alive in faction 9: 219
+
+Number of Units that moved: 2163
+Number of Combats: 13
+Number of Dead Units: 1862
+---------------------
+Turn # 47
+Turn took 0.000197 seconds.
+
+Buddies alive in faction 0: 221
+Buddies alive in faction 1: 217
+Buddies alive in faction 2: 213
+Buddies alive in faction 3: 215
+Buddies alive in faction 4: 213
+Buddies alive in faction 5: 218
+Buddies alive in faction 6: 216
+Buddies alive in faction 7: 208
+Buddies alive in faction 8: 203
+Buddies alive in faction 9: 217
+
+Number of Units that moved: 2131
+Number of Combats: 27
+Number of Dead Units: 1889
+---------------------
+Turn # 48
+Turn took 0.000195 seconds.
+
+Buddies alive in faction 0: 218
+Buddies alive in faction 1: 217
+Buddies alive in faction 2: 212
+Buddies alive in faction 3: 214
+Buddies alive in faction 4: 210
+Buddies alive in faction 5: 217
+Buddies alive in faction 6: 214
+Buddies alive in faction 7: 207
+Buddies alive in faction 8: 200
+Buddies alive in faction 9: 214
+
+Number of Units that moved: 2115
+Number of Combats: 18
+Number of Dead Units: 1907
+---------------------
+Turn # 49
+Turn took 0.000193 seconds.
+
+Buddies alive in faction 0: 217
+Buddies alive in faction 1: 215
+Buddies alive in faction 2: 212
+Buddies alive in faction 3: 211
+Buddies alive in faction 4: 207
+Buddies alive in faction 5: 214
+Buddies alive in faction 6: 211
+Buddies alive in faction 7: 206
+Buddies alive in faction 8: 199
+Buddies alive in faction 9: 212
+
+Number of Units that moved: 2092
+Number of Combats: 19
+Number of Dead Units: 1926
+---------------------
+Turn # 50
+Turn took 0.000191 seconds.
+
+Buddies alive in faction 0: 217
+Buddies alive in faction 1: 213
+Buddies alive in faction 2: 208
+Buddies alive in faction 3: 209
+Buddies alive in faction 4: 204
+Buddies alive in faction 5: 212
+Buddies alive in faction 6: 208
+Buddies alive in faction 7: 204
+Buddies alive in faction 8: 197
+Buddies alive in faction 9: 209
+
+Number of Units that moved: 2067
+Number of Combats: 23
+Number of Dead Units: 1949
+---------------------
+Turn # 51
+Turn took 0.000189 seconds.
+
+Buddies alive in faction 0: 216
+Buddies alive in faction 1: 212
+Buddies alive in faction 2: 206
+Buddies alive in faction 3: 208
+Buddies alive in faction 4: 202
+Buddies alive in faction 5: 209
+Buddies alive in faction 6: 203
+Buddies alive in faction 7: 202
+Buddies alive in faction 8: 194
+Buddies alive in faction 9: 204
+
+Number of Units that moved: 2044
+Number of Combats: 25
+Number of Dead Units: 1974
+---------------------
+Turn # 52
+Turn took 0.000225 seconds.
+
+Buddies alive in faction 0: 213
+Buddies alive in faction 1: 209
+Buddies alive in faction 2: 205
+Buddies alive in faction 3: 207
+Buddies alive in faction 4: 201
+Buddies alive in faction 5: 209
+Buddies alive in faction 6: 198
+Buddies alive in faction 7: 201
+Buddies alive in faction 8: 191
+Buddies alive in faction 9: 204
+
+Number of Units that moved: 2029
+Number of Combats: 18
+Number of Dead Units: 1992
+---------------------
+Turn # 53
+Turn took 0.000195 seconds.
+
+Buddies alive in faction 0: 210
+Buddies alive in faction 1: 206
+Buddies alive in faction 2: 204
+Buddies alive in faction 3: 206
+Buddies alive in faction 4: 200
+Buddies alive in faction 5: 207
+Buddies alive in faction 6: 196
+Buddies alive in faction 7: 198
+Buddies alive in faction 8: 190
+Buddies alive in faction 9: 201
+
+Number of Units that moved: 2007
+Number of Combats: 20
+Number of Dead Units: 2012
+---------------------
+Turn # 54
+Turn took 0.000182 seconds.
+
+Buddies alive in faction 0: 210
+Buddies alive in faction 1: 204
+Buddies alive in faction 2: 204
+Buddies alive in faction 3: 206
+Buddies alive in faction 4: 196
+Buddies alive in faction 5: 205
+Buddies alive in faction 6: 194
+Buddies alive in faction 7: 198
+Buddies alive in faction 8: 187
+Buddies alive in faction 9: 199
+
+Number of Units that moved: 1994
+Number of Combats: 15
+Number of Dead Units: 2027
+---------------------
+Turn # 55
+Turn took 0.000181 seconds.
+
+Buddies alive in faction 0: 205
+Buddies alive in faction 1: 203
+Buddies alive in faction 2: 201
+Buddies alive in faction 3: 206
+Buddies alive in faction 4: 193
+Buddies alive in faction 5: 201
+Buddies alive in faction 6: 192
+Buddies alive in faction 7: 197
+Buddies alive in faction 8: 187
+Buddies alive in faction 9: 197
+
+Number of Units that moved: 1972
+Number of Combats: 21
+Number of Dead Units: 2048
+---------------------
+Turn # 56
+Turn took 0.000235 seconds.
+
+Buddies alive in faction 0: 203
+Buddies alive in faction 1: 200
+Buddies alive in faction 2: 201
+Buddies alive in faction 3: 206
+Buddies alive in faction 4: 191
+Buddies alive in faction 5: 197
+Buddies alive in faction 6: 191
+Buddies alive in faction 7: 194
+Buddies alive in faction 8: 185
+Buddies alive in faction 9: 195
+
+Number of Units that moved: 1953
+Number of Combats: 19
+Number of Dead Units: 2067
+---------------------
+Turn # 57
+Turn took 0.000183 seconds.
+
+Buddies alive in faction 0: 200
+Buddies alive in faction 1: 198
+Buddies alive in faction 2: 200
+Buddies alive in faction 3: 204
+Buddies alive in faction 4: 189
+Buddies alive in faction 5: 196
+Buddies alive in faction 6: 188
+Buddies alive in faction 7: 192
+Buddies alive in faction 8: 184
+Buddies alive in faction 9: 191
+
+Number of Units that moved: 1930
+Number of Combats: 21
+Number of Dead Units: 2088
+---------------------
+Turn # 58
+Turn took 0.000181 seconds.
+
+Buddies alive in faction 0: 198
+Buddies alive in faction 1: 195
+Buddies alive in faction 2: 198
+Buddies alive in faction 3: 203
+Buddies alive in faction 4: 188
+Buddies alive in faction 5: 194
+Buddies alive in faction 6: 187
+Buddies alive in faction 7: 191
+Buddies alive in faction 8: 182
+Buddies alive in faction 9: 189
+
+Number of Units that moved: 1916
+Number of Combats: 17
+Number of Dead Units: 2105
+---------------------
+Turn # 59
+Turn took 0.000182 seconds.
+
+Buddies alive in faction 0: 198
+Buddies alive in faction 1: 193
+Buddies alive in faction 2: 197
+Buddies alive in faction 3: 201
+Buddies alive in faction 4: 187
+Buddies alive in faction 5: 193
+Buddies alive in faction 6: 185
+Buddies alive in faction 7: 191
+Buddies alive in faction 8: 180
+Buddies alive in faction 9: 187
+
+Number of Units that moved: 1908
+Number of Combats: 13
+Number of Dead Units: 2118
+---------------------
+Turn # 60
+Turn took 0.000181 seconds.
+
+Buddies alive in faction 0: 197
+Buddies alive in faction 1: 192
+Buddies alive in faction 2: 194
+Buddies alive in faction 3: 201
+Buddies alive in faction 4: 186
+Buddies alive in faction 5: 191
+Buddies alive in faction 6: 184
+Buddies alive in faction 7: 190
+Buddies alive in faction 8: 179
+Buddies alive in faction 9: 185
+
+Number of Units that moved: 1892
+Number of Combats: 13
+Number of Dead Units: 2131
+---------------------
+Turn # 61
+Turn took 0.000181 seconds.
+
+Buddies alive in faction 0: 194
+Buddies alive in faction 1: 191
+Buddies alive in faction 2: 189
+Buddies alive in faction 3: 199
+Buddies alive in faction 4: 183
+Buddies alive in faction 5: 189
+Buddies alive in faction 6: 182
+Buddies alive in faction 7: 189
+Buddies alive in faction 8: 177
+Buddies alive in faction 9: 182
+
+Number of Units that moved: 1864
+Number of Combats: 24
+Number of Dead Units: 2155
+---------------------
+Turn # 62
+Turn took 0.000178 seconds.
+
+Buddies alive in faction 0: 189
+Buddies alive in faction 1: 191
+Buddies alive in faction 2: 187
+Buddies alive in faction 3: 198
+Buddies alive in faction 4: 182
+Buddies alive in faction 5: 188
+Buddies alive in faction 6: 181
+Buddies alive in faction 7: 186
+Buddies alive in faction 8: 176
+Buddies alive in faction 9: 181
+
+Number of Units that moved: 1852
+Number of Combats: 16
+Number of Dead Units: 2171
+---------------------
+Turn # 63
+Turn took 0.00018 seconds.
+
+Buddies alive in faction 0: 187
+Buddies alive in faction 1: 190
+Buddies alive in faction 2: 185
+Buddies alive in faction 3: 198
+Buddies alive in faction 4: 182
+Buddies alive in faction 5: 185
+Buddies alive in faction 6: 180
+Buddies alive in faction 7: 186
+Buddies alive in faction 8: 176
+Buddies alive in faction 9: 179
+
+Number of Units that moved: 1845
+Number of Combats: 11
+Number of Dead Units: 2182
+---------------------
+Turn # 64
+Turn took 0.000176 seconds.
+
+Buddies alive in faction 0: 185
+Buddies alive in faction 1: 189
+Buddies alive in faction 2: 183
+Buddies alive in faction 3: 197
+Buddies alive in faction 4: 179
+Buddies alive in faction 5: 182
+Buddies alive in faction 6: 177
+Buddies alive in faction 7: 186
+Buddies alive in faction 8: 175
+Buddies alive in faction 9: 177
+
+Number of Units that moved: 1819
+Number of Combats: 18
+Number of Dead Units: 2200
+---------------------
+Turn # 65
+Turn took 0.000174 seconds.
+
+Buddies alive in faction 0: 183
+Buddies alive in faction 1: 187
+Buddies alive in faction 2: 183
+Buddies alive in faction 3: 196
+Buddies alive in faction 4: 178
+Buddies alive in faction 5: 179
+Buddies alive in faction 6: 177
+Buddies alive in faction 7: 185
+Buddies alive in faction 8: 173
+Buddies alive in faction 9: 176
+
+Number of Units that moved: 1812
+Number of Combats: 13
+Number of Dead Units: 2213
+---------------------
+Turn # 66
+Turn took 0.000172 seconds.
+
+Buddies alive in faction 0: 183
+Buddies alive in faction 1: 186
+Buddies alive in faction 2: 182
+Buddies alive in faction 3: 196
+Buddies alive in faction 4: 177
+Buddies alive in faction 5: 177
+Buddies alive in faction 6: 174
+Buddies alive in faction 7: 182
+Buddies alive in faction 8: 172
+Buddies alive in faction 9: 174
+
+Number of Units that moved: 1795
+Number of Combats: 14
+Number of Dead Units: 2227
+---------------------
+Turn # 67
+Turn took 0.000173 seconds.
+
+Buddies alive in faction 0: 182
+Buddies alive in faction 1: 186
+Buddies alive in faction 2: 179
+Buddies alive in faction 3: 194
+Buddies alive in faction 4: 175
+Buddies alive in faction 5: 174
+Buddies alive in faction 6: 171
+Buddies alive in faction 7: 180
+Buddies alive in faction 8: 172
+Buddies alive in faction 9: 174
+
+Number of Units that moved: 1776
+Number of Combats: 16
+Number of Dead Units: 2243
+---------------------
+Turn # 68
+Turn took 0.000171 seconds.
+
+Buddies alive in faction 0: 180
+Buddies alive in faction 1: 185
+Buddies alive in faction 2: 178
+Buddies alive in faction 3: 194
+Buddies alive in faction 4: 173
+Buddies alive in faction 5: 172
+Buddies alive in faction 6: 168
+Buddies alive in faction 7: 177
+Buddies alive in faction 8: 171
+Buddies alive in faction 9: 171
+
+Number of Units that moved: 1758
+Number of Combats: 18
+Number of Dead Units: 2261
+---------------------
+Turn # 69
+Turn took 0.000171 seconds.
+
+Buddies alive in faction 0: 178
+Buddies alive in faction 1: 182
+Buddies alive in faction 2: 178
+Buddies alive in faction 3: 193
+Buddies alive in faction 4: 171
+Buddies alive in faction 5: 172
+Buddies alive in faction 6: 167
+Buddies alive in faction 7: 176
+Buddies alive in faction 8: 168
+Buddies alive in faction 9: 169
+
+Number of Units that moved: 1747
+Number of Combats: 15
+Number of Dead Units: 2276
+---------------------
+Turn # 70
+Turn took 0.000168 seconds.
+
+Buddies alive in faction 0: 178
+Buddies alive in faction 1: 178
+Buddies alive in faction 2: 177
+Buddies alive in faction 3: 191
+Buddies alive in faction 4: 170
+Buddies alive in faction 5: 171
+Buddies alive in faction 6: 166
+Buddies alive in faction 7: 173
+Buddies alive in faction 8: 167
+Buddies alive in faction 9: 168
+
+Number of Units that moved: 1734
+Number of Combats: 15
+Number of Dead Units: 2291
+---------------------
+Turn # 71
+Turn took 0.000169 seconds.
+
+Buddies alive in faction 0: 175
+Buddies alive in faction 1: 176
+Buddies alive in faction 2: 176
+Buddies alive in faction 3: 191
+Buddies alive in faction 4: 170
+Buddies alive in faction 5: 167
+Buddies alive in faction 6: 165
+Buddies alive in faction 7: 172
+Buddies alive in faction 8: 165
+Buddies alive in faction 9: 167
+
+Number of Units that moved: 1719
+Number of Combats: 15
+Number of Dead Units: 2306
+---------------------
+Turn # 72
+Turn took 0.000167 seconds.
+
+Buddies alive in faction 0: 173
+Buddies alive in faction 1: 174
+Buddies alive in faction 2: 175
+Buddies alive in faction 3: 190
+Buddies alive in faction 4: 167
+Buddies alive in faction 5: 166
+Buddies alive in faction 6: 163
+Buddies alive in faction 7: 170
+Buddies alive in faction 8: 164
+Buddies alive in faction 9: 165
+
+Number of Units that moved: 1698
+Number of Combats: 17
+Number of Dead Units: 2323
+---------------------
+Turn # 73
+Turn took 0.000165 seconds.
+
+Buddies alive in faction 0: 173
+Buddies alive in faction 1: 171
+Buddies alive in faction 2: 174
+Buddies alive in faction 3: 188
+Buddies alive in faction 4: 167
+Buddies alive in faction 5: 165
+Buddies alive in faction 6: 163
+Buddies alive in faction 7: 168
+Buddies alive in faction 8: 163
+Buddies alive in faction 9: 165
+
+Number of Units that moved: 1693
+Number of Combats: 10
+Number of Dead Units: 2333
+---------------------
+Turn # 74
+Turn took 0.000163 seconds.
+
+Buddies alive in faction 0: 173
+Buddies alive in faction 1: 169
+Buddies alive in faction 2: 171
+Buddies alive in faction 3: 187
+Buddies alive in faction 4: 167
+Buddies alive in faction 5: 162
+Buddies alive in faction 6: 161
+Buddies alive in faction 7: 167
+Buddies alive in faction 8: 163
+Buddies alive in faction 9: 163
+
+Number of Units that moved: 1677
+Number of Combats: 14
+Number of Dead Units: 2347
+---------------------
+Turn # 75
+Turn took 0.000164 seconds.
+
+Buddies alive in faction 0: 172
+Buddies alive in faction 1: 169
+Buddies alive in faction 2: 170
+Buddies alive in faction 3: 187
+Buddies alive in faction 4: 166
+Buddies alive in faction 5: 161
+Buddies alive in faction 6: 160
+Buddies alive in faction 7: 166
+Buddies alive in faction 8: 162
+Buddies alive in faction 9: 159
+
+Number of Units that moved: 1665
+Number of Combats: 11
+Number of Dead Units: 2358
+---------------------
+Turn # 76
+Turn took 0.000162 seconds.
+
+Buddies alive in faction 0: 170
+Buddies alive in faction 1: 166
+Buddies alive in faction 2: 169
+Buddies alive in faction 3: 185
+Buddies alive in faction 4: 165
+Buddies alive in faction 5: 158
+Buddies alive in faction 6: 160
+Buddies alive in faction 7: 166
+Buddies alive in faction 8: 161
+Buddies alive in faction 9: 157
+
+Number of Units that moved: 1653
+Number of Combats: 15
+Number of Dead Units: 2373
+---------------------
+Turn # 77
+Turn took 0.000157 seconds.
+
+Buddies alive in faction 0: 167
+Buddies alive in faction 1: 164
+Buddies alive in faction 2: 169
+Buddies alive in faction 3: 184
+Buddies alive in faction 4: 165
+Buddies alive in faction 5: 157
+Buddies alive in faction 6: 159
+Buddies alive in faction 7: 166
+Buddies alive in faction 8: 158
+Buddies alive in faction 9: 155
+
+Number of Units that moved: 1638
+Number of Combats: 13
+Number of Dead Units: 2386
+---------------------
+Turn # 78
+Turn took 0.000156 seconds.
+
+Buddies alive in faction 0: 166
+Buddies alive in faction 1: 163
+Buddies alive in faction 2: 169
+Buddies alive in faction 3: 183
+Buddies alive in faction 4: 164
+Buddies alive in faction 5: 156
+Buddies alive in faction 6: 156
+Buddies alive in faction 7: 164
+Buddies alive in faction 8: 156
+Buddies alive in faction 9: 153
+
+Number of Units that moved: 1620
+Number of Combats: 14
+Number of Dead Units: 2400
+---------------------
+Turn # 79
+Turn took 0.00017 seconds.
+
+Buddies alive in faction 0: 165
+Buddies alive in faction 1: 162
+Buddies alive in faction 2: 167
+Buddies alive in faction 3: 180
+Buddies alive in faction 4: 164
+Buddies alive in faction 5: 155
+Buddies alive in faction 6: 156
+Buddies alive in faction 7: 164
+Buddies alive in faction 8: 156
+Buddies alive in faction 9: 151
+
+Number of Units that moved: 1614
+Number of Combats: 10
+Number of Dead Units: 2410
+---------------------
+Turn # 80
+Turn took 0.000155 seconds.
+
+Buddies alive in faction 0: 162
+Buddies alive in faction 1: 159
+Buddies alive in faction 2: 167
+Buddies alive in faction 3: 180
+Buddies alive in faction 4: 164
+Buddies alive in faction 5: 155
+Buddies alive in faction 6: 154
+Buddies alive in faction 7: 161
+Buddies alive in faction 8: 156
+Buddies alive in faction 9: 151
+
+Number of Units that moved: 1605
+Number of Combats: 11
+Number of Dead Units: 2421
+---------------------
+Turn # 81
+Turn took 0.000152 seconds.
+
+Buddies alive in faction 0: 161
+Buddies alive in faction 1: 159
+Buddies alive in faction 2: 166
+Buddies alive in faction 3: 179
+Buddies alive in faction 4: 164
+Buddies alive in faction 5: 154
+Buddies alive in faction 6: 153
+Buddies alive in faction 7: 161
+Buddies alive in faction 8: 156
+Buddies alive in faction 9: 151
+
+Number of Units that moved: 1601
+Number of Combats: 5
+Number of Dead Units: 2426
+---------------------
+Turn # 82
+Turn took 0.000153 seconds.
+
+Buddies alive in faction 0: 161
+Buddies alive in faction 1: 156
+Buddies alive in faction 2: 165
+Buddies alive in faction 3: 177
+Buddies alive in faction 4: 164
+Buddies alive in faction 5: 154
+Buddies alive in faction 6: 152
+Buddies alive in faction 7: 161
+Buddies alive in faction 8: 155
+Buddies alive in faction 9: 149
+
+Number of Units that moved: 1589
+Number of Combats: 10
+Number of Dead Units: 2436
+---------------------
+Turn # 83
+Turn took 0.000154 seconds.
+
+Buddies alive in faction 0: 161
+Buddies alive in faction 1: 155
+Buddies alive in faction 2: 163
+Buddies alive in faction 3: 176
+Buddies alive in faction 4: 162
+Buddies alive in faction 5: 154
+Buddies alive in faction 6: 151
+Buddies alive in faction 7: 159
+Buddies alive in faction 8: 155
+Buddies alive in faction 9: 147
+
+Number of Units that moved: 1576
+Number of Combats: 11
+Number of Dead Units: 2447
+---------------------
+Turn # 84
+Turn took 0.000151 seconds.
+
+Buddies alive in faction 0: 159
+Buddies alive in faction 1: 153
+Buddies alive in faction 2: 162
+Buddies alive in faction 3: 173
+Buddies alive in faction 4: 161
+Buddies alive in faction 5: 153
+Buddies alive in faction 6: 151
+Buddies alive in faction 7: 157
+Buddies alive in faction 8: 153
+Buddies alive in faction 9: 146
+
+Number of Units that moved: 1561
+Number of Combats: 15
+Number of Dead Units: 2462
+---------------------
+Turn # 85
+Turn took 0.000149 seconds.
+
+Buddies alive in faction 0: 158
+Buddies alive in faction 1: 153
+Buddies alive in faction 2: 161
+Buddies alive in faction 3: 173
+Buddies alive in faction 4: 160
+Buddies alive in faction 5: 151
+Buddies alive in faction 6: 150
+Buddies alive in faction 7: 155
+Buddies alive in faction 8: 153
+Buddies alive in faction 9: 145
+
+Number of Units that moved: 1553
+Number of Combats: 9
+Number of Dead Units: 2471
+---------------------
+Turn # 86
+Turn took 0.000149 seconds.
+
+Buddies alive in faction 0: 157
+Buddies alive in faction 1: 152
+Buddies alive in faction 2: 160
+Buddies alive in faction 3: 172
+Buddies alive in faction 4: 157
+Buddies alive in faction 5: 151
+Buddies alive in faction 6: 148
+Buddies alive in faction 7: 153
+Buddies alive in faction 8: 152
+Buddies alive in faction 9: 145
+
+Number of Units that moved: 1541
+Number of Combats: 12
+Number of Dead Units: 2483
+---------------------
+Turn # 87
+Turn took 0.000148 seconds.
+
+Buddies alive in faction 0: 155
+Buddies alive in faction 1: 151
+Buddies alive in faction 2: 159
+Buddies alive in faction 3: 172
+Buddies alive in faction 4: 156
+Buddies alive in faction 5: 150
+Buddies alive in faction 6: 147
+Buddies alive in faction 7: 151
+Buddies alive in faction 8: 151
+Buddies alive in faction 9: 143
+
+Number of Units that moved: 1528
+Number of Combats: 12
+Number of Dead Units: 2495
+---------------------
+Turn # 88
+Turn took 0.000147 seconds.
+
+Buddies alive in faction 0: 152
+Buddies alive in faction 1: 150
+Buddies alive in faction 2: 157
+Buddies alive in faction 3: 171
+Buddies alive in faction 4: 156
+Buddies alive in faction 5: 150
+Buddies alive in faction 6: 147
+Buddies alive in faction 7: 151
+Buddies alive in faction 8: 149
+Buddies alive in faction 9: 140
+
+Number of Units that moved: 1517
+Number of Combats: 12
+Number of Dead Units: 2507
+---------------------
+Turn # 89
+Turn took 0.000145 seconds.
+
+Buddies alive in faction 0: 151
+Buddies alive in faction 1: 149
+Buddies alive in faction 2: 157
+Buddies alive in faction 3: 170
+Buddies alive in faction 4: 155
+Buddies alive in faction 5: 148
+Buddies alive in faction 6: 146
+Buddies alive in faction 7: 150
+Buddies alive in faction 8: 146
+Buddies alive in faction 9: 140
+
+Number of Units that moved: 1506
+Number of Combats: 11
+Number of Dead Units: 2518
+---------------------
+Turn # 90
+Turn took 0.000146 seconds.
+
+Buddies alive in faction 0: 151
+Buddies alive in faction 1: 147
+Buddies alive in faction 2: 157
+Buddies alive in faction 3: 170
+Buddies alive in faction 4: 155
+Buddies alive in faction 5: 148
+Buddies alive in faction 6: 144
+Buddies alive in faction 7: 147
+Buddies alive in faction 8: 145
+Buddies alive in faction 9: 138
+
+Number of Units that moved: 1492
+Number of Combats: 10
+Number of Dead Units: 2528
+---------------------
+Turn # 91
+Turn took 0.000144 seconds.
+
+Buddies alive in faction 0: 151
+Buddies alive in faction 1: 144
+Buddies alive in faction 2: 157
+Buddies alive in faction 3: 168
+Buddies alive in faction 4: 152
+Buddies alive in faction 5: 148
+Buddies alive in faction 6: 142
+Buddies alive in faction 7: 147
+Buddies alive in faction 8: 144
+Buddies alive in faction 9: 137
+
+Number of Units that moved: 1484
+Number of Combats: 12
+Number of Dead Units: 2540
+---------------------
+Turn # 92
+Turn took 0.000166 seconds.
+
+Buddies alive in faction 0: 149
+Buddies alive in faction 1: 143
+Buddies alive in faction 2: 157
+Buddies alive in faction 3: 166
+Buddies alive in faction 4: 152
+Buddies alive in faction 5: 148
+Buddies alive in faction 6: 141
+Buddies alive in faction 7: 146
+Buddies alive in faction 8: 143
+Buddies alive in faction 9: 135
+
+Number of Units that moved: 1474
+Number of Combats: 10
+Number of Dead Units: 2550
+---------------------
+Turn # 93
+Turn took 0.000142 seconds.
+
+Buddies alive in faction 0: 149
+Buddies alive in faction 1: 140
+Buddies alive in faction 2: 155
+Buddies alive in faction 3: 166
+Buddies alive in faction 4: 151
+Buddies alive in faction 5: 147
+Buddies alive in faction 6: 140
+Buddies alive in faction 7: 145
+Buddies alive in faction 8: 142
+Buddies alive in faction 9: 134
+
+Number of Units that moved: 1464
+Number of Combats: 11
+Number of Dead Units: 2561
+---------------------
+Turn # 94
+Turn took 0.000143 seconds.
+
+Buddies alive in faction 0: 149
+Buddies alive in faction 1: 139
+Buddies alive in faction 2: 154
+Buddies alive in faction 3: 165
+Buddies alive in faction 4: 150
+Buddies alive in faction 5: 146
+Buddies alive in faction 6: 140
+Buddies alive in faction 7: 144
+Buddies alive in faction 8: 141
+Buddies alive in faction 9: 134
+
+Number of Units that moved: 1459
+Number of Combats: 7
+Number of Dead Units: 2568
+---------------------
+Turn # 95
+Turn took 0.000141 seconds.
+
+Buddies alive in faction 0: 149
+Buddies alive in faction 1: 139
+Buddies alive in faction 2: 149
+Buddies alive in faction 3: 165
+Buddies alive in faction 4: 149
+Buddies alive in faction 5: 146
+Buddies alive in faction 6: 140
+Buddies alive in faction 7: 141
+Buddies alive in faction 8: 141
+Buddies alive in faction 9: 134
+
+Number of Units that moved: 1447
+Number of Combats: 9
+Number of Dead Units: 2577
+---------------------
+Turn # 96
+Turn took 0.000141 seconds.
+
+Buddies alive in faction 0: 149
+Buddies alive in faction 1: 136
+Buddies alive in faction 2: 146
+Buddies alive in faction 3: 164
+Buddies alive in faction 4: 147
+Buddies alive in faction 5: 144
+Buddies alive in faction 6: 140
+Buddies alive in faction 7: 141
+Buddies alive in faction 8: 141
+Buddies alive in faction 9: 133
+
+Number of Units that moved: 1434
+Number of Combats: 12
+Number of Dead Units: 2589
+---------------------
+Turn # 97
+Turn took 0.00014 seconds.
+
+Buddies alive in faction 0: 149
+Buddies alive in faction 1: 136
+Buddies alive in faction 2: 145
+Buddies alive in faction 3: 163
+Buddies alive in faction 4: 146
+Buddies alive in faction 5: 143
+Buddies alive in faction 6: 139
+Buddies alive in faction 7: 141
+Buddies alive in faction 8: 140
+Buddies alive in faction 9: 133
+
+Number of Units that moved: 1431
+Number of Combats: 6
+Number of Dead Units: 2595
+---------------------
+Turn # 98
+Turn took 0.000139 seconds.
+
+Buddies alive in faction 0: 148
+Buddies alive in faction 1: 135
+Buddies alive in faction 2: 143
+Buddies alive in faction 3: 162
+Buddies alive in faction 4: 146
+Buddies alive in faction 5: 142
+Buddies alive in faction 6: 136
+Buddies alive in faction 7: 141
+Buddies alive in faction 8: 140
+Buddies alive in faction 9: 132
+
+Number of Units that moved: 1420
+Number of Combats: 10
+Number of Dead Units: 2605
+---------------------
+Turn # 99
+Turn took 0.000139 seconds.
+
+Buddies alive in faction 0: 146
+Buddies alive in faction 1: 133
+Buddies alive in faction 2: 140
+Buddies alive in faction 3: 162
+Buddies alive in faction 4: 145
+Buddies alive in faction 5: 140
+Buddies alive in faction 6: 135
+Buddies alive in faction 7: 140
+Buddies alive in faction 8: 139
+Buddies alive in faction 9: 132
+
+Number of Units that moved: 1404
+Number of Combats: 13
+Number of Dead Units: 2618
+---------------------
+Turn # 100
+Turn took 0.000138 seconds.
+
+Buddies alive in faction 0: 145
+Buddies alive in faction 1: 132
+Buddies alive in faction 2: 140
+Buddies alive in faction 3: 159
+Buddies alive in faction 4: 145
+Buddies alive in faction 5: 139
+Buddies alive in faction 6: 134
+Buddies alive in faction 7: 139
+Buddies alive in faction 8: 136
+Buddies alive in faction 9: 132
+
+Number of Units that moved: 1396
+Number of Combats: 11
+Number of Dead Units: 2629
+Turn # 100
+---------------------
+Turn # 101
+Turn took 0.000138 seconds.
+
+Buddies alive in faction 0: 145
+Buddies alive in faction 1: 132
+Buddies alive in faction 2: 140
+Buddies alive in faction 3: 159
+Buddies alive in faction 4: 144
+Buddies alive in faction 5: 139
+Buddies alive in faction 6: 134
+Buddies alive in faction 7: 138
+Buddies alive in faction 8: 135
+Buddies alive in faction 9: 130
+
+Number of Units that moved: 1391
+Number of Combats: 5
+Number of Dead Units: 2634
+---------------------
+Turn # 102
+Turn took 0.000141 seconds.
+
+Buddies alive in faction 0: 144
+Buddies alive in faction 1: 131
+Buddies alive in faction 2: 139
+Buddies alive in faction 3: 159
+Buddies alive in faction 4: 144
+Buddies alive in faction 5: 139
+Buddies alive in faction 6: 134
+Buddies alive in faction 7: 137
+Buddies alive in faction 8: 133
+Buddies alive in faction 9: 130
+
+Number of Units that moved: 1387
+Number of Combats: 6
+Number of Dead Units: 2640
+---------------------
+Turn # 103
+Turn took 0.000154 seconds.
+
+Buddies alive in faction 0: 144
+Buddies alive in faction 1: 129
+Buddies alive in faction 2: 139
+Buddies alive in faction 3: 159
+Buddies alive in faction 4: 143
+Buddies alive in faction 5: 137
+Buddies alive in faction 6: 133
+Buddies alive in faction 7: 135
+Buddies alive in faction 8: 133
+Buddies alive in faction 9: 130
+
+Number of Units that moved: 1379
+Number of Combats: 8
+Number of Dead Units: 2648
+---------------------
+Turn # 104
+Turn took 0.000145 seconds.
+
+Buddies alive in faction 0: 144
+Buddies alive in faction 1: 127
+Buddies alive in faction 2: 138
+Buddies alive in faction 3: 158
+Buddies alive in faction 4: 143
+Buddies alive in faction 5: 133
+Buddies alive in faction 6: 132
+Buddies alive in faction 7: 134
+Buddies alive in faction 8: 132
+Buddies alive in faction 9: 128
+
+Number of Units that moved: 1362
+Number of Combats: 13
+Number of Dead Units: 2661
+---------------------
+Turn # 105
+Turn took 0.000143 seconds.
+
+Buddies alive in faction 0: 142
+Buddies alive in faction 1: 126
+Buddies alive in faction 2: 138
+Buddies alive in faction 3: 157
+Buddies alive in faction 4: 142
+Buddies alive in faction 5: 133
+Buddies alive in faction 6: 132
+Buddies alive in faction 7: 131
+Buddies alive in faction 8: 132
+Buddies alive in faction 9: 128
+
+Number of Units that moved: 1358
+Number of Combats: 8
+Number of Dead Units: 2669
+---------------------
+Turn # 106
+Turn took 0.000142 seconds.
+
+Buddies alive in faction 0: 142
+Buddies alive in faction 1: 124
+Buddies alive in faction 2: 135
+Buddies alive in faction 3: 156
+Buddies alive in faction 4: 142
+Buddies alive in faction 5: 132
+Buddies alive in faction 6: 131
+Buddies alive in faction 7: 130
+Buddies alive in faction 8: 132
+Buddies alive in faction 9: 127
+
+Number of Units that moved: 1349
+Number of Combats: 10
+Number of Dead Units: 2679
+---------------------
+Turn # 107
+Turn took 0.000143 seconds.
+
+Buddies alive in faction 0: 139
+Buddies alive in faction 1: 124
+Buddies alive in faction 2: 134
+Buddies alive in faction 3: 154
+Buddies alive in faction 4: 141
+Buddies alive in faction 5: 131
+Buddies alive in faction 6: 129
+Buddies alive in faction 7: 128
+Buddies alive in faction 8: 132
+Buddies alive in faction 9: 127
+
+Number of Units that moved: 1335
+Number of Combats: 12
+Number of Dead Units: 2691
+---------------------
+Turn # 108
+Turn took 0.000142 seconds.
+
+Buddies alive in faction 0: 138
+Buddies alive in faction 1: 124
+Buddies alive in faction 2: 132
+Buddies alive in faction 3: 154
+Buddies alive in faction 4: 141
+Buddies alive in faction 5: 130
+Buddies alive in faction 6: 128
+Buddies alive in faction 7: 127
+Buddies alive in faction 8: 130
+Buddies alive in faction 9: 127
+
+Number of Units that moved: 1326
+Number of Combats: 8
+Number of Dead Units: 2699
+---------------------
+Turn # 109
+Turn took 0.000142 seconds.
+
+Buddies alive in faction 0: 137
+Buddies alive in faction 1: 124
+Buddies alive in faction 2: 132
+Buddies alive in faction 3: 151
+Buddies alive in faction 4: 141
+Buddies alive in faction 5: 130
+Buddies alive in faction 6: 127
+Buddies alive in faction 7: 126
+Buddies alive in faction 8: 128
+Buddies alive in faction 9: 126
+
+Number of Units that moved: 1316
+Number of Combats: 9
+Number of Dead Units: 2708
+---------------------
+Turn # 110
+Turn took 0.000141 seconds.
+
+Buddies alive in faction 0: 136
+Buddies alive in faction 1: 124
+Buddies alive in faction 2: 132
+Buddies alive in faction 3: 149
+Buddies alive in faction 4: 141
+Buddies alive in faction 5: 130
+Buddies alive in faction 6: 126
+Buddies alive in faction 7: 126
+Buddies alive in faction 8: 127
+Buddies alive in faction 9: 125
+
+Number of Units that moved: 1314
+Number of Combats: 6
+Number of Dead Units: 2714
+---------------------
+Turn # 111
+Turn took 0.000142 seconds.
+
+Buddies alive in faction 0: 136
+Buddies alive in faction 1: 123
+Buddies alive in faction 2: 132
+Buddies alive in faction 3: 148
+Buddies alive in faction 4: 139
+Buddies alive in faction 5: 128
+Buddies alive in faction 6: 126
+Buddies alive in faction 7: 124
+Buddies alive in faction 8: 125
+Buddies alive in faction 9: 125
+
+Number of Units that moved: 1298
+Number of Combats: 10
+Number of Dead Units: 2724
+---------------------
+Turn # 112
+Turn took 0.000137 seconds.
+
+Buddies alive in faction 0: 136
+Buddies alive in faction 1: 122
+Buddies alive in faction 2: 131
+Buddies alive in faction 3: 147
+Buddies alive in faction 4: 139
+Buddies alive in faction 5: 128
+Buddies alive in faction 6: 126
+Buddies alive in faction 7: 124
+Buddies alive in faction 8: 124
+Buddies alive in faction 9: 124
+
+Number of Units that moved: 1299
+Number of Combats: 5
+Number of Dead Units: 2729
+---------------------
+Turn # 113
+Turn took 0.000139 seconds.
+
+Buddies alive in faction 0: 136
+Buddies alive in faction 1: 122
+Buddies alive in faction 2: 131
+Buddies alive in faction 3: 146
+Buddies alive in faction 4: 139
+Buddies alive in faction 5: 128
+Buddies alive in faction 6: 125
+Buddies alive in faction 7: 123
+Buddies alive in faction 8: 121
+Buddies alive in faction 9: 123
+
+Number of Units that moved: 1288
+Number of Combats: 7
+Number of Dead Units: 2736
+---------------------
+Turn # 114
+Turn took 0.000137 seconds.
+
+Buddies alive in faction 0: 136
+Buddies alive in faction 1: 121
+Buddies alive in faction 2: 130
+Buddies alive in faction 3: 146
+Buddies alive in faction 4: 139
+Buddies alive in faction 5: 127
+Buddies alive in faction 6: 125
+Buddies alive in faction 7: 123
+Buddies alive in faction 8: 120
+Buddies alive in faction 9: 123
+
+Number of Units that moved: 1287
+Number of Combats: 4
+Number of Dead Units: 2740
+---------------------
+Turn # 115
+Turn took 0.000138 seconds.
+
+Buddies alive in faction 0: 135
+Buddies alive in faction 1: 120
+Buddies alive in faction 2: 128
+Buddies alive in faction 3: 144
+Buddies alive in faction 4: 139
+Buddies alive in faction 5: 127
+Buddies alive in faction 6: 125
+Buddies alive in faction 7: 123
+Buddies alive in faction 8: 120
+Buddies alive in faction 9: 123
+
+Number of Units that moved: 1284
+Number of Combats: 6
+Number of Dead Units: 2746
+---------------------
+Turn # 116
+Turn took 0.000137 seconds.
+
+Buddies alive in faction 0: 134
+Buddies alive in faction 1: 120
+Buddies alive in faction 2: 128
+Buddies alive in faction 3: 142
+Buddies alive in faction 4: 139
+Buddies alive in faction 5: 125
+Buddies alive in faction 6: 124
+Buddies alive in faction 7: 123
+Buddies alive in faction 8: 120
+Buddies alive in faction 9: 122
+
+Number of Units that moved: 1274
+Number of Combats: 7
+Number of Dead Units: 2753
+---------------------
+Turn # 117
+Turn took 0.000136 seconds.
+
+Buddies alive in faction 0: 134
+Buddies alive in faction 1: 120
+Buddies alive in faction 2: 127
+Buddies alive in faction 3: 142
+Buddies alive in faction 4: 138
+Buddies alive in faction 5: 124
+Buddies alive in faction 6: 124
+Buddies alive in faction 7: 123
+Buddies alive in faction 8: 119
+Buddies alive in faction 9: 121
+
+Number of Units that moved: 1269
+Number of Combats: 5
+Number of Dead Units: 2758
+---------------------
+Turn # 118
+Turn took 0.000128 seconds.
+
+Buddies alive in faction 0: 132
+Buddies alive in faction 1: 119
+Buddies alive in faction 2: 127
+Buddies alive in faction 3: 141
+Buddies alive in faction 4: 138
+Buddies alive in faction 5: 123
+Buddies alive in faction 6: 124
+Buddies alive in faction 7: 122
+Buddies alive in faction 8: 119
+Buddies alive in faction 9: 120
+
+Number of Units that moved: 1262
+Number of Combats: 7
+Number of Dead Units: 2765
+---------------------
+Turn # 119
+Turn took 0.000128 seconds.
+
+Buddies alive in faction 0: 131
+Buddies alive in faction 1: 117
+Buddies alive in faction 2: 127
+Buddies alive in faction 3: 139
+Buddies alive in faction 4: 138
+Buddies alive in faction 5: 123
+Buddies alive in faction 6: 123
+Buddies alive in faction 7: 122
+Buddies alive in faction 8: 118
+Buddies alive in faction 9: 119
+
+Number of Units that moved: 1254
+Number of Combats: 8
+Number of Dead Units: 2773
+---------------------
+Turn # 120
+Turn took 0.000162 seconds.
+
+Buddies alive in faction 0: 131
+Buddies alive in faction 1: 117
+Buddies alive in faction 2: 126
+Buddies alive in faction 3: 138
+Buddies alive in faction 4: 138
+Buddies alive in faction 5: 122
+Buddies alive in faction 6: 121
+Buddies alive in faction 7: 122
+Buddies alive in faction 8: 118
+Buddies alive in faction 9: 119
+
+Number of Units that moved: 1251
+Number of Combats: 5
+Number of Dead Units: 2778
+---------------------
+Turn # 121
+Turn took 0.000127 seconds.
+
+Buddies alive in faction 0: 131
+Buddies alive in faction 1: 117
+Buddies alive in faction 2: 126
+Buddies alive in faction 3: 137
+Buddies alive in faction 4: 138
+Buddies alive in faction 5: 122
+Buddies alive in faction 6: 121
+Buddies alive in faction 7: 121
+Buddies alive in faction 8: 116
+Buddies alive in faction 9: 117
+
+Number of Units that moved: 1241
+Number of Combats: 6
+Number of Dead Units: 2784
+---------------------
+Turn # 122
+Turn took 0.000127 seconds.
+
+Buddies alive in faction 0: 130
+Buddies alive in faction 1: 117
+Buddies alive in faction 2: 124
+Buddies alive in faction 3: 136
+Buddies alive in faction 4: 136
+Buddies alive in faction 5: 122
+Buddies alive in faction 6: 121
+Buddies alive in faction 7: 120
+Buddies alive in faction 8: 114
+Buddies alive in faction 9: 116
+
+Number of Units that moved: 1230
+Number of Combats: 10
+Number of Dead Units: 2794
+---------------------
+Turn # 123
+Turn took 0.000127 seconds.
+
+Buddies alive in faction 0: 130
+Buddies alive in faction 1: 117
+Buddies alive in faction 2: 124
+Buddies alive in faction 3: 134
+Buddies alive in faction 4: 136
+Buddies alive in faction 5: 121
+Buddies alive in faction 6: 120
+Buddies alive in faction 7: 119
+Buddies alive in faction 8: 113
+Buddies alive in faction 9: 116
+
+Number of Units that moved: 1226
+Number of Combats: 6
+Number of Dead Units: 2800
+---------------------
+Turn # 124
+Turn took 0.000125 seconds.
+
+Buddies alive in faction 0: 129
+Buddies alive in faction 1: 116
+Buddies alive in faction 2: 124
+Buddies alive in faction 3: 133
+Buddies alive in faction 4: 136
+Buddies alive in faction 5: 121
+Buddies alive in faction 6: 120
+Buddies alive in faction 7: 119
+Buddies alive in faction 8: 112
+Buddies alive in faction 9: 115
+
+Number of Units that moved: 1223
+Number of Combats: 5
+Number of Dead Units: 2805
+---------------------
+Turn # 125
+Turn took 0.000133 seconds.
+
+Buddies alive in faction 0: 129
+Buddies alive in faction 1: 116
+Buddies alive in faction 2: 122
+Buddies alive in faction 3: 133
+Buddies alive in faction 4: 134
+Buddies alive in faction 5: 121
+Buddies alive in faction 6: 119
+Buddies alive in faction 7: 119
+Buddies alive in faction 8: 110
+Buddies alive in faction 9: 115
+
+Number of Units that moved: 1214
+Number of Combats: 7
+Number of Dead Units: 2812
+---------------------
+Turn # 126
+Turn took 0.000124 seconds.
+
+Buddies alive in faction 0: 129
+Buddies alive in faction 1: 115
+Buddies alive in faction 2: 120
+Buddies alive in faction 3: 132
+Buddies alive in faction 4: 132
+Buddies alive in faction 5: 121
+Buddies alive in faction 6: 119
+Buddies alive in faction 7: 119
+Buddies alive in faction 8: 110
+Buddies alive in faction 9: 114
+
+Number of Units that moved: 1209
+Number of Combats: 7
+Number of Dead Units: 2819
+---------------------
+Turn # 127
+Turn took 0.000124 seconds.
+
+Buddies alive in faction 0: 128
+Buddies alive in faction 1: 115
+Buddies alive in faction 2: 120
+Buddies alive in faction 3: 132
+Buddies alive in faction 4: 132
+Buddies alive in faction 5: 121
+Buddies alive in faction 6: 118
+Buddies alive in faction 7: 119
+Buddies alive in faction 8: 109
+Buddies alive in faction 9: 114
+
+Number of Units that moved: 1206
+Number of Combats: 3
+Number of Dead Units: 2822
+---------------------
+Turn # 128
+Turn took 0.000124 seconds.
+
+Buddies alive in faction 0: 126
+Buddies alive in faction 1: 113
+Buddies alive in faction 2: 120
+Buddies alive in faction 3: 132
+Buddies alive in faction 4: 131
+Buddies alive in faction 5: 121
+Buddies alive in faction 6: 118
+Buddies alive in faction 7: 119
+Buddies alive in faction 8: 106
+Buddies alive in faction 9: 114
+
+Number of Units that moved: 1196
+Number of Combats: 8
+Number of Dead Units: 2830
+---------------------
+Turn # 129
+Turn took 0.000123 seconds.
+
+Buddies alive in faction 0: 126
+Buddies alive in faction 1: 113
+Buddies alive in faction 2: 120
+Buddies alive in faction 3: 132
+Buddies alive in faction 4: 129
+Buddies alive in faction 5: 121
+Buddies alive in faction 6: 118
+Buddies alive in faction 7: 118
+Buddies alive in faction 8: 106
+Buddies alive in faction 9: 113
+
+Number of Units that moved: 1194
+Number of Combats: 4
+Number of Dead Units: 2834
+---------------------
+Turn # 130
+Turn took 0.000235 seconds.
+
+Buddies alive in faction 0: 124
+Buddies alive in faction 1: 113
+Buddies alive in faction 2: 120
+Buddies alive in faction 3: 132
+Buddies alive in faction 4: 129
+Buddies alive in faction 5: 121
+Buddies alive in faction 6: 117
+Buddies alive in faction 7: 118
+Buddies alive in faction 8: 106
+Buddies alive in faction 9: 112
+
+Number of Units that moved: 1191
+Number of Combats: 4
+Number of Dead Units: 2838
+---------------------
+Turn # 131
+Turn took 0.000124 seconds.
+
+Buddies alive in faction 0: 123
+Buddies alive in faction 1: 113
+Buddies alive in faction 2: 119
+Buddies alive in faction 3: 132
+Buddies alive in faction 4: 129
+Buddies alive in faction 5: 121
+Buddies alive in faction 6: 117
+Buddies alive in faction 7: 116
+Buddies alive in faction 8: 106
+Buddies alive in faction 9: 112
+
+Number of Units that moved: 1186
+Number of Combats: 4
+Number of Dead Units: 2842
+---------------------
+Turn # 132
+Turn took 0.000121 seconds.
+
+Buddies alive in faction 0: 123
+Buddies alive in faction 1: 113
+Buddies alive in faction 2: 119
+Buddies alive in faction 3: 131
+Buddies alive in faction 4: 129
+Buddies alive in faction 5: 118
+Buddies alive in faction 6: 117
+Buddies alive in faction 7: 114
+Buddies alive in faction 8: 105
+Buddies alive in faction 9: 110
+
+Number of Units that moved: 1172
+Number of Combats: 9
+Number of Dead Units: 2851
+---------------------
+Turn # 133
+Turn took 0.000121 seconds.
+
+Buddies alive in faction 0: 123
+Buddies alive in faction 1: 113
+Buddies alive in faction 2: 119
+Buddies alive in faction 3: 129
+Buddies alive in faction 4: 128
+Buddies alive in faction 5: 118
+Buddies alive in faction 6: 116
+Buddies alive in faction 7: 114
+Buddies alive in faction 8: 105
+Buddies alive in faction 9: 109
+
+Number of Units that moved: 1169
+Number of Combats: 5
+Number of Dead Units: 2856
+---------------------
+Turn # 134
+Turn took 0.000124 seconds.
+
+Buddies alive in faction 0: 123
+Buddies alive in faction 1: 113
+Buddies alive in faction 2: 118
+Buddies alive in faction 3: 127
+Buddies alive in faction 4: 124
+Buddies alive in faction 5: 117
+Buddies alive in faction 6: 115
+Buddies alive in faction 7: 113
+Buddies alive in faction 8: 104
+Buddies alive in faction 9: 109
+
+Number of Units that moved: 1157
+Number of Combats: 11
+Number of Dead Units: 2867
+---------------------
+Turn # 135
+Turn took 0.00012 seconds.
+
+Buddies alive in faction 0: 122
+Buddies alive in faction 1: 112
+Buddies alive in faction 2: 118
+Buddies alive in faction 3: 125
+Buddies alive in faction 4: 124
+Buddies alive in faction 5: 117
+Buddies alive in faction 6: 115
+Buddies alive in faction 7: 112
+Buddies alive in faction 8: 104
+Buddies alive in faction 9: 108
+
+Number of Units that moved: 1154
+Number of Combats: 6
+Number of Dead Units: 2873
+---------------------
+Turn # 136
+Turn took 0.000119 seconds.
+
+Buddies alive in faction 0: 122
+Buddies alive in faction 1: 112
+Buddies alive in faction 2: 118
+Buddies alive in faction 3: 125
+Buddies alive in faction 4: 124
+Buddies alive in faction 5: 114
+Buddies alive in faction 6: 115
+Buddies alive in faction 7: 112
+Buddies alive in faction 8: 104
+Buddies alive in faction 9: 108
+
+Number of Units that moved: 1152
+Number of Combats: 3
+Number of Dead Units: 2876
+---------------------
+Turn # 137
+Turn took 0.000119 seconds.
+
+Buddies alive in faction 0: 121
+Buddies alive in faction 1: 112
+Buddies alive in faction 2: 118
+Buddies alive in faction 3: 124
+Buddies alive in faction 4: 123
+Buddies alive in faction 5: 113
+Buddies alive in faction 6: 114
+Buddies alive in faction 7: 112
+Buddies alive in faction 8: 104
+Buddies alive in faction 9: 108
+
+Number of Units that moved: 1147
+Number of Combats: 5
+Number of Dead Units: 2881
+---------------------
+Turn # 138
+Turn took 0.000127 seconds.
+
+Buddies alive in faction 0: 119
+Buddies alive in faction 1: 112
+Buddies alive in faction 2: 117
+Buddies alive in faction 3: 123
+Buddies alive in faction 4: 123
+Buddies alive in faction 5: 112
+Buddies alive in faction 6: 113
+Buddies alive in faction 7: 111
+Buddies alive in faction 8: 104
+Buddies alive in faction 9: 107
+
+Number of Units that moved: 1137
+Number of Combats: 8
+Number of Dead Units: 2889
+---------------------
+Turn # 139
+Turn took 0.000123 seconds.
+
+Buddies alive in faction 0: 118
+Buddies alive in faction 1: 111
+Buddies alive in faction 2: 116
+Buddies alive in faction 3: 120
+Buddies alive in faction 4: 123
+Buddies alive in faction 5: 112
+Buddies alive in faction 6: 113
+Buddies alive in faction 7: 111
+Buddies alive in faction 8: 104
+Buddies alive in faction 9: 107
+
+Number of Units that moved: 1133
+Number of Combats: 6
+Number of Dead Units: 2895
+---------------------
+Turn # 140
+Turn took 0.00012 seconds.
+
+Buddies alive in faction 0: 118
+Buddies alive in faction 1: 110
+Buddies alive in faction 2: 115
+Buddies alive in faction 3: 119
+Buddies alive in faction 4: 123
+Buddies alive in faction 5: 111
+Buddies alive in faction 6: 111
+Buddies alive in faction 7: 110
+Buddies alive in faction 8: 102
+Buddies alive in faction 9: 107
+
+Number of Units that moved: 1121
+Number of Combats: 9
+Number of Dead Units: 2904
+---------------------
+Turn # 141
+Turn took 0.000121 seconds.
+
+Buddies alive in faction 0: 118
+Buddies alive in faction 1: 110
+Buddies alive in faction 2: 114
+Buddies alive in faction 3: 118
+Buddies alive in faction 4: 121
+Buddies alive in faction 5: 111
+Buddies alive in faction 6: 111
+Buddies alive in faction 7: 109
+Buddies alive in faction 8: 101
+Buddies alive in faction 9: 105
+
+Number of Units that moved: 1114
+Number of Combats: 8
+Number of Dead Units: 2912
+---------------------
+Turn # 142
+Turn took 0.00012 seconds.
+
+Buddies alive in faction 0: 118
+Buddies alive in faction 1: 109
+Buddies alive in faction 2: 113
+Buddies alive in faction 3: 116
+Buddies alive in faction 4: 120
+Buddies alive in faction 5: 111
+Buddies alive in faction 6: 111
+Buddies alive in faction 7: 109
+Buddies alive in faction 8: 101
+Buddies alive in faction 9: 102
+
+Number of Units that moved: 1106
+Number of Combats: 8
+Number of Dead Units: 2920
+---------------------
+Turn # 143
+Turn took 0.000119 seconds.
+
+Buddies alive in faction 0: 118
+Buddies alive in faction 1: 109
+Buddies alive in faction 2: 111
+Buddies alive in faction 3: 116
+Buddies alive in faction 4: 120
+Buddies alive in faction 5: 111
+Buddies alive in faction 6: 111
+Buddies alive in faction 7: 109
+Buddies alive in faction 8: 101
+Buddies alive in faction 9: 102
+
+Number of Units that moved: 1108
+Number of Combats: 2
+Number of Dead Units: 2922
+---------------------
+Turn # 144
+Turn took 0.000119 seconds.
+
+Buddies alive in faction 0: 117
+Buddies alive in faction 1: 107
+Buddies alive in faction 2: 111
+Buddies alive in faction 3: 114
+Buddies alive in faction 4: 118
+Buddies alive in faction 5: 111
+Buddies alive in faction 6: 110
+Buddies alive in faction 7: 109
+Buddies alive in faction 8: 99
+Buddies alive in faction 9: 102
+
+Number of Units that moved: 1093
+Number of Combats: 10
+Number of Dead Units: 2932
+---------------------
+Turn # 145
+Turn took 0.000118 seconds.
+
+Buddies alive in faction 0: 115
+Buddies alive in faction 1: 107
+Buddies alive in faction 2: 111
+Buddies alive in faction 3: 114
+Buddies alive in faction 4: 118
+Buddies alive in faction 5: 108
+Buddies alive in faction 6: 110
+Buddies alive in faction 7: 108
+Buddies alive in faction 8: 99
+Buddies alive in faction 9: 101
+
+Number of Units that moved: 1087
+Number of Combats: 7
+Number of Dead Units: 2939
+---------------------
+Turn # 146
+Turn took 0.000118 seconds.
+
+Buddies alive in faction 0: 115
+Buddies alive in faction 1: 107
+Buddies alive in faction 2: 110
+Buddies alive in faction 3: 113
+Buddies alive in faction 4: 117
+Buddies alive in faction 5: 107
+Buddies alive in faction 6: 110
+Buddies alive in faction 7: 106
+Buddies alive in faction 8: 98
+Buddies alive in faction 9: 101
+
+Number of Units that moved: 1081
+Number of Combats: 7
+Number of Dead Units: 2946
+---------------------
+Turn # 147
+Turn took 0.000117 seconds.
+
+Buddies alive in faction 0: 113
+Buddies alive in faction 1: 107
+Buddies alive in faction 2: 109
+Buddies alive in faction 3: 113
+Buddies alive in faction 4: 116
+Buddies alive in faction 5: 107
+Buddies alive in faction 6: 110
+Buddies alive in faction 7: 105
+Buddies alive in faction 8: 97
+Buddies alive in faction 9: 101
+
+Number of Units that moved: 1074
+Number of Combats: 6
+Number of Dead Units: 2952
+---------------------
+Turn # 148
+Turn took 0.000115 seconds.
+
+Buddies alive in faction 0: 113
+Buddies alive in faction 1: 107
+Buddies alive in faction 2: 109
+Buddies alive in faction 3: 112
+Buddies alive in faction 4: 116
+Buddies alive in faction 5: 106
+Buddies alive in faction 6: 109
+Buddies alive in faction 7: 105
+Buddies alive in faction 8: 96
+Buddies alive in faction 9: 101
+
+Number of Units that moved: 1072
+Number of Combats: 4
+Number of Dead Units: 2956
+---------------------
+Turn # 149
+Turn took 0.000117 seconds.
+
+Buddies alive in faction 0: 113
+Buddies alive in faction 1: 107
+Buddies alive in faction 2: 106
+Buddies alive in faction 3: 111
+Buddies alive in faction 4: 115
+Buddies alive in faction 5: 106
+Buddies alive in faction 6: 108
+Buddies alive in faction 7: 105
+Buddies alive in faction 8: 96
+Buddies alive in faction 9: 101
+
+Number of Units that moved: 1065
+Number of Combats: 6
+Number of Dead Units: 2962
+---------------------
+Turn # 150
+Turn took 0.000116 seconds.
+
+Buddies alive in faction 0: 111
+Buddies alive in faction 1: 106
+Buddies alive in faction 2: 105
+Buddies alive in faction 3: 110
+Buddies alive in faction 4: 114
+Buddies alive in faction 5: 104
+Buddies alive in faction 6: 107
+Buddies alive in faction 7: 104
+Buddies alive in faction 8: 96
+Buddies alive in faction 9: 101
+
+Number of Units that moved: 1055
+Number of Combats: 10
+Number of Dead Units: 2972
+---------------------
+Turn # 151
+Turn took 0.000115 seconds.
+
+Buddies alive in faction 0: 110
+Buddies alive in faction 1: 105
+Buddies alive in faction 2: 104
+Buddies alive in faction 3: 109
+Buddies alive in faction 4: 113
+Buddies alive in faction 5: 104
+Buddies alive in faction 6: 105
+Buddies alive in faction 7: 103
+Buddies alive in faction 8: 94
+Buddies alive in faction 9: 101
+
+Number of Units that moved: 1044
+Number of Combats: 10
+Number of Dead Units: 2982
+---------------------
+Turn # 152
+Turn took 0.000114 seconds.
+
+Buddies alive in faction 0: 110
+Buddies alive in faction 1: 103
+Buddies alive in faction 2: 102
+Buddies alive in faction 3: 109
+Buddies alive in faction 4: 113
+Buddies alive in faction 5: 104
+Buddies alive in faction 6: 105
+Buddies alive in faction 7: 102
+Buddies alive in faction 8: 94
+Buddies alive in faction 9: 101
+
+Number of Units that moved: 1040
+Number of Combats: 5
+Number of Dead Units: 2987
+---------------------
+Turn # 153
+Turn took 0.000113 seconds.
+
+Buddies alive in faction 0: 110
+Buddies alive in faction 1: 103
+Buddies alive in faction 2: 102
+Buddies alive in faction 3: 109
+Buddies alive in faction 4: 113
+Buddies alive in faction 5: 101
+Buddies alive in faction 6: 104
+Buddies alive in faction 7: 101
+Buddies alive in faction 8: 94
+Buddies alive in faction 9: 101
+
+Number of Units that moved: 1035
+Number of Combats: 5
+Number of Dead Units: 2992
+---------------------
+Turn # 154
+Turn took 0.000116 seconds.
+
+Buddies alive in faction 0: 110
+Buddies alive in faction 1: 103
+Buddies alive in faction 2: 101
+Buddies alive in faction 3: 107
+Buddies alive in faction 4: 112
+Buddies alive in faction 5: 101
+Buddies alive in faction 6: 103
+Buddies alive in faction 7: 101
+Buddies alive in faction 8: 93
+Buddies alive in faction 9: 99
+
+Number of Units that moved: 1025
+Number of Combats: 8
+Number of Dead Units: 3000
+---------------------
+Turn # 155
+Turn took 0.000112 seconds.
+
+Buddies alive in faction 0: 110
+Buddies alive in faction 1: 103
+Buddies alive in faction 2: 100
+Buddies alive in faction 3: 105
+Buddies alive in faction 4: 112
+Buddies alive in faction 5: 101
+Buddies alive in faction 6: 101
+Buddies alive in faction 7: 101
+Buddies alive in faction 8: 93
+Buddies alive in faction 9: 99
+
+Number of Units that moved: 1022
+Number of Combats: 5
+Number of Dead Units: 3005
+---------------------
+Turn # 156
+Turn took 0.000119 seconds.
+
+Buddies alive in faction 0: 109
+Buddies alive in faction 1: 103
+Buddies alive in faction 2: 100
+Buddies alive in faction 3: 105
+Buddies alive in faction 4: 111
+Buddies alive in faction 5: 101
+Buddies alive in faction 6: 99
+Buddies alive in faction 7: 101
+Buddies alive in faction 8: 93
+Buddies alive in faction 9: 99
+
+Number of Units that moved: 1019
+Number of Combats: 4
+Number of Dead Units: 3009
+---------------------
+Turn # 157
+Turn took 0.00011 seconds.
+
+Buddies alive in faction 0: 108
+Buddies alive in faction 1: 102
+Buddies alive in faction 2: 99
+Buddies alive in faction 3: 105
+Buddies alive in faction 4: 110
+Buddies alive in faction 5: 99
+Buddies alive in faction 6: 98
+Buddies alive in faction 7: 101
+Buddies alive in faction 8: 92
+Buddies alive in faction 9: 99
+
+Number of Units that moved: 1011
+Number of Combats: 8
+Number of Dead Units: 3017
+---------------------
+Turn # 158
+Turn took 0.000107 seconds.
+
+Buddies alive in faction 0: 107
+Buddies alive in faction 1: 102
+Buddies alive in faction 2: 97
+Buddies alive in faction 3: 105
+Buddies alive in faction 4: 110
+Buddies alive in faction 5: 99
+Buddies alive in faction 6: 98
+Buddies alive in faction 7: 100
+Buddies alive in faction 8: 91
+Buddies alive in faction 9: 99
+
+Number of Units that moved: 1006
+Number of Combats: 5
+Number of Dead Units: 3022
+---------------------
+Turn # 159
+Turn took 0.000128 seconds.
+
+Buddies alive in faction 0: 106
+Buddies alive in faction 1: 102
+Buddies alive in faction 2: 97
+Buddies alive in faction 3: 104
+Buddies alive in faction 4: 110
+Buddies alive in faction 5: 98
+Buddies alive in faction 6: 98
+Buddies alive in faction 7: 100
+Buddies alive in faction 8: 91
+Buddies alive in faction 9: 99
+
+Number of Units that moved: 1004
+Number of Combats: 3
+Number of Dead Units: 3025
+---------------------
+Turn # 160
+Turn took 0.000108 seconds.
+
+Buddies alive in faction 0: 106
+Buddies alive in faction 1: 101
+Buddies alive in faction 2: 96
+Buddies alive in faction 3: 103
+Buddies alive in faction 4: 109
+Buddies alive in faction 5: 98
+Buddies alive in faction 6: 98
+Buddies alive in faction 7: 98
+Buddies alive in faction 8: 91
+Buddies alive in faction 9: 99
+
+Number of Units that moved: 997
+Number of Combats: 6
+Number of Dead Units: 3031
+---------------------
+Turn # 161
+Turn took 0.000107 seconds.
+
+Buddies alive in faction 0: 105
+Buddies alive in faction 1: 101
+Buddies alive in faction 2: 96
+Buddies alive in faction 3: 103
+Buddies alive in faction 4: 108
+Buddies alive in faction 5: 97
+Buddies alive in faction 6: 98
+Buddies alive in faction 7: 97
+Buddies alive in faction 8: 91
+Buddies alive in faction 9: 99
+
+Number of Units that moved: 994
+Number of Combats: 4
+Number of Dead Units: 3035
+---------------------
+Turn # 162
+Turn took 0.000108 seconds.
+
+Buddies alive in faction 0: 105
+Buddies alive in faction 1: 99
+Buddies alive in faction 2: 96
+Buddies alive in faction 3: 102
+Buddies alive in faction 4: 107
+Buddies alive in faction 5: 96
+Buddies alive in faction 6: 98
+Buddies alive in faction 7: 97
+Buddies alive in faction 8: 90
+Buddies alive in faction 9: 97
+
+Number of Units that moved: 982
+Number of Combats: 8
+Number of Dead Units: 3043
+---------------------
+Turn # 163
+Turn took 0.000106 seconds.
+
+Buddies alive in faction 0: 105
+Buddies alive in faction 1: 99
+Buddies alive in faction 2: 95
+Buddies alive in faction 3: 102
+Buddies alive in faction 4: 106
+Buddies alive in faction 5: 96
+Buddies alive in faction 6: 98
+Buddies alive in faction 7: 97
+Buddies alive in faction 8: 90
+Buddies alive in faction 9: 97
+
+Number of Units that moved: 984
+Number of Combats: 2
+Number of Dead Units: 3045
+---------------------
+Turn # 164
+Turn took 0.000105 seconds.
+
+Buddies alive in faction 0: 104
+Buddies alive in faction 1: 99
+Buddies alive in faction 2: 93
+Buddies alive in faction 3: 102
+Buddies alive in faction 4: 106
+Buddies alive in faction 5: 96
+Buddies alive in faction 6: 98
+Buddies alive in faction 7: 96
+Buddies alive in faction 8: 89
+Buddies alive in faction 9: 97
+
+Number of Units that moved: 979
+Number of Combats: 5
+Number of Dead Units: 3050
+---------------------
+Turn # 165
+Turn took 0.000105 seconds.
+
+Buddies alive in faction 0: 104
+Buddies alive in faction 1: 99
+Buddies alive in faction 2: 93
+Buddies alive in faction 3: 101
+Buddies alive in faction 4: 106
+Buddies alive in faction 5: 96
+Buddies alive in faction 6: 98
+Buddies alive in faction 7: 96
+Buddies alive in faction 8: 89
+Buddies alive in faction 9: 96
+
+Number of Units that moved: 976
+Number of Combats: 2
+Number of Dead Units: 3052
+---------------------
+Turn # 166
+Turn took 0.000104 seconds.
+
+Buddies alive in faction 0: 103
+Buddies alive in faction 1: 98
+Buddies alive in faction 2: 92
+Buddies alive in faction 3: 99
+Buddies alive in faction 4: 105
+Buddies alive in faction 5: 96
+Buddies alive in faction 6: 98
+Buddies alive in faction 7: 96
+Buddies alive in faction 8: 89
+Buddies alive in faction 9: 95
+
+Number of Units that moved: 968
+Number of Combats: 7
+Number of Dead Units: 3059
+---------------------
+Turn # 167
+Turn took 0.000105 seconds.
+
+Buddies alive in faction 0: 102
+Buddies alive in faction 1: 98
+Buddies alive in faction 2: 92
+Buddies alive in faction 3: 99
+Buddies alive in faction 4: 105
+Buddies alive in faction 5: 96
+Buddies alive in faction 6: 95
+Buddies alive in faction 7: 95
+Buddies alive in faction 8: 87
+Buddies alive in faction 9: 95
+
+Number of Units that moved: 959
+Number of Combats: 7
+Number of Dead Units: 3066
+---------------------
+Turn # 168
+Turn took 0.000105 seconds.
+
+Buddies alive in faction 0: 100
+Buddies alive in faction 1: 97
+Buddies alive in faction 2: 91
+Buddies alive in faction 3: 98
+Buddies alive in faction 4: 104
+Buddies alive in faction 5: 96
+Buddies alive in faction 6: 95
+Buddies alive in faction 7: 95
+Buddies alive in faction 8: 87
+Buddies alive in faction 9: 95
+
+Number of Units that moved: 956
+Number of Combats: 6
+Number of Dead Units: 3072
+---------------------
+Turn # 169
+Turn took 0.000103 seconds.
+
+Buddies alive in faction 0: 98
+Buddies alive in faction 1: 97
+Buddies alive in faction 2: 91
+Buddies alive in faction 3: 97
+Buddies alive in faction 4: 104
+Buddies alive in faction 5: 96
+Buddies alive in faction 6: 92
+Buddies alive in faction 7: 94
+Buddies alive in faction 8: 87
+Buddies alive in faction 9: 95
+
+Number of Units that moved: 949
+Number of Combats: 7
+Number of Dead Units: 3079
+---------------------
+Turn # 170
+Turn took 0.000106 seconds.
+
+Buddies alive in faction 0: 97
+Buddies alive in faction 1: 97
+Buddies alive in faction 2: 91
+Buddies alive in faction 3: 96
+Buddies alive in faction 4: 102
+Buddies alive in faction 5: 96
+Buddies alive in faction 6: 91
+Buddies alive in faction 7: 94
+Buddies alive in faction 8: 87
+Buddies alive in faction 9: 94
+
+Number of Units that moved: 942
+Number of Combats: 6
+Number of Dead Units: 3085
+---------------------
+Turn # 171
+Turn took 0.000102 seconds.
+
+Buddies alive in faction 0: 96
+Buddies alive in faction 1: 96
+Buddies alive in faction 2: 91
+Buddies alive in faction 3: 96
+Buddies alive in faction 4: 102
+Buddies alive in faction 5: 95
+Buddies alive in faction 6: 90
+Buddies alive in faction 7: 93
+Buddies alive in faction 8: 87
+Buddies alive in faction 9: 94
+
+Number of Units that moved: 938
+Number of Combats: 5
+Number of Dead Units: 3090
+---------------------
+Turn # 172
+Turn took 0.000103 seconds.
+
+Buddies alive in faction 0: 96
+Buddies alive in faction 1: 95
+Buddies alive in faction 2: 90
+Buddies alive in faction 3: 96
+Buddies alive in faction 4: 101
+Buddies alive in faction 5: 95
+Buddies alive in faction 6: 90
+Buddies alive in faction 7: 93
+Buddies alive in faction 8: 86
+Buddies alive in faction 9: 94
+
+Number of Units that moved: 934
+Number of Combats: 4
+Number of Dead Units: 3094
+---------------------
+Turn # 173
+Turn took 0.000102 seconds.
+
+Buddies alive in faction 0: 94
+Buddies alive in faction 1: 94
+Buddies alive in faction 2: 89
+Buddies alive in faction 3: 96
+Buddies alive in faction 4: 100
+Buddies alive in faction 5: 95
+Buddies alive in faction 6: 89
+Buddies alive in faction 7: 93
+Buddies alive in faction 8: 85
+Buddies alive in faction 9: 93
+
+Number of Units that moved: 925
+Number of Combats: 8
+Number of Dead Units: 3102
+---------------------
+Turn # 174
+Turn took 0.000107 seconds.
+
+Buddies alive in faction 0: 94
+Buddies alive in faction 1: 94
+Buddies alive in faction 2: 88
+Buddies alive in faction 3: 95
+Buddies alive in faction 4: 100
+Buddies alive in faction 5: 95
+Buddies alive in faction 6: 89
+Buddies alive in faction 7: 92
+Buddies alive in faction 8: 84
+Buddies alive in faction 9: 92
+
+Number of Units that moved: 919
+Number of Combats: 5
+Number of Dead Units: 3107
+---------------------
+Turn # 175
+Turn took 0.000157 seconds.
+
+Buddies alive in faction 0: 94
+Buddies alive in faction 1: 94
+Buddies alive in faction 2: 87
+Buddies alive in faction 3: 95
+Buddies alive in faction 4: 100
+Buddies alive in faction 5: 94
+Buddies alive in faction 6: 89
+Buddies alive in faction 7: 92
+Buddies alive in faction 8: 84
+Buddies alive in faction 9: 91
+
+Number of Units that moved: 917
+Number of Combats: 3
+Number of Dead Units: 3110
+---------------------
+Turn # 176
+Turn took 0.000102 seconds.
+
+Buddies alive in faction 0: 94
+Buddies alive in faction 1: 91
+Buddies alive in faction 2: 85
+Buddies alive in faction 3: 94
+Buddies alive in faction 4: 100
+Buddies alive in faction 5: 94
+Buddies alive in faction 6: 88
+Buddies alive in faction 7: 91
+Buddies alive in faction 8: 84
+Buddies alive in faction 9: 89
+
+Number of Units that moved: 906
+Number of Combats: 10
+Number of Dead Units: 3120
+---------------------
+Turn # 177
+Turn took 9.9e-005 seconds.
+
+Buddies alive in faction 0: 93
+Buddies alive in faction 1: 91
+Buddies alive in faction 2: 85
+Buddies alive in faction 3: 94
+Buddies alive in faction 4: 100
+Buddies alive in faction 5: 94
+Buddies alive in faction 6: 87
+Buddies alive in faction 7: 91
+Buddies alive in faction 8: 84
+Buddies alive in faction 9: 89
+
+Number of Units that moved: 908
+Number of Combats: 2
+Number of Dead Units: 3122
+---------------------
+Turn # 178
+Turn took 0.000101 seconds.
+
+Buddies alive in faction 0: 92
+Buddies alive in faction 1: 90
+Buddies alive in faction 2: 84
+Buddies alive in faction 3: 94
+Buddies alive in faction 4: 100
+Buddies alive in faction 5: 93
+Buddies alive in faction 6: 87
+Buddies alive in faction 7: 91
+Buddies alive in faction 8: 84
+Buddies alive in faction 9: 89
+
+Number of Units that moved: 901
+Number of Combats: 4
+Number of Dead Units: 3126
+---------------------
+Turn # 179
+Turn took 9.9e-005 seconds.
+
+Buddies alive in faction 0: 92
+Buddies alive in faction 1: 90
+Buddies alive in faction 2: 84
+Buddies alive in faction 3: 94
+Buddies alive in faction 4: 99
+Buddies alive in faction 5: 92
+Buddies alive in faction 6: 86
+Buddies alive in faction 7: 91
+Buddies alive in faction 8: 84
+Buddies alive in faction 9: 89
+
+Number of Units that moved: 900
+Number of Combats: 3
+Number of Dead Units: 3129
+---------------------
+Turn # 180
+Turn took 0.000126 seconds.
+
+Buddies alive in faction 0: 92
+Buddies alive in faction 1: 90
+Buddies alive in faction 2: 84
+Buddies alive in faction 3: 94
+Buddies alive in faction 4: 98
+Buddies alive in faction 5: 92
+Buddies alive in faction 6: 86
+Buddies alive in faction 7: 91
+Buddies alive in faction 8: 82
+Buddies alive in faction 9: 89
+
+Number of Units that moved: 897
+Number of Combats: 3
+Number of Dead Units: 3132
+---------------------
+Turn # 181
+Turn took 0.000103 seconds.
+
+Buddies alive in faction 0: 91
+Buddies alive in faction 1: 90
+Buddies alive in faction 2: 84
+Buddies alive in faction 3: 93
+Buddies alive in faction 4: 98
+Buddies alive in faction 5: 92
+Buddies alive in faction 6: 86
+Buddies alive in faction 7: 91
+Buddies alive in faction 8: 82
+Buddies alive in faction 9: 89
+
+Number of Units that moved: 896
+Number of Combats: 2
+Number of Dead Units: 3134
+---------------------
+Turn # 182
+Turn took 0.000132 seconds.
+
+Buddies alive in faction 0: 90
+Buddies alive in faction 1: 90
+Buddies alive in faction 2: 84
+Buddies alive in faction 3: 93
+Buddies alive in faction 4: 98
+Buddies alive in faction 5: 91
+Buddies alive in faction 6: 86
+Buddies alive in faction 7: 91
+Buddies alive in faction 8: 81
+Buddies alive in faction 9: 89
+
+Number of Units that moved: 891
+Number of Combats: 3
+Number of Dead Units: 3137
+---------------------
+Turn # 183
+Turn took 0.000103 seconds.
+
+Buddies alive in faction 0: 90
+Buddies alive in faction 1: 90
+Buddies alive in faction 2: 84
+Buddies alive in faction 3: 91
+Buddies alive in faction 4: 98
+Buddies alive in faction 5: 90
+Buddies alive in faction 6: 86
+Buddies alive in faction 7: 91
+Buddies alive in faction 8: 81
+Buddies alive in faction 9: 89
+
+Number of Units that moved: 888
+Number of Combats: 3
+Number of Dead Units: 3140
+---------------------
+Turn # 184
+Turn took 0.000105 seconds.
+
+Buddies alive in faction 0: 89
+Buddies alive in faction 1: 90
+Buddies alive in faction 2: 83
+Buddies alive in faction 3: 91
+Buddies alive in faction 4: 98
+Buddies alive in faction 5: 90
+Buddies alive in faction 6: 86
+Buddies alive in faction 7: 91
+Buddies alive in faction 8: 79
+Buddies alive in faction 9: 89
+
+Number of Units that moved: 885
+Number of Combats: 4
+Number of Dead Units: 3144
+---------------------
+Turn # 185
+Turn took 0.000125 seconds.
+
+Buddies alive in faction 0: 89
+Buddies alive in faction 1: 90
+Buddies alive in faction 2: 83
+Buddies alive in faction 3: 89
+Buddies alive in faction 4: 98
+Buddies alive in faction 5: 90
+Buddies alive in faction 6: 86
+Buddies alive in faction 7: 91
+Buddies alive in faction 8: 79
+Buddies alive in faction 9: 89
+
+Number of Units that moved: 883
+Number of Combats: 2
+Number of Dead Units: 3146
+---------------------
+Turn # 186
+Turn took 0.000103 seconds.
+
+Buddies alive in faction 0: 89
+Buddies alive in faction 1: 90
+Buddies alive in faction 2: 83
+Buddies alive in faction 3: 88
+Buddies alive in faction 4: 96
+Buddies alive in faction 5: 89
+Buddies alive in faction 6: 86
+Buddies alive in faction 7: 91
+Buddies alive in faction 8: 79
+Buddies alive in faction 9: 89
+
+Number of Units that moved: 878
+Number of Combats: 4
+Number of Dead Units: 3150
+---------------------
+Turn # 187
+Turn took 0.000102 seconds.
+
+Buddies alive in faction 0: 89
+Buddies alive in faction 1: 90
+Buddies alive in faction 2: 82
+Buddies alive in faction 3: 88
+Buddies alive in faction 4: 96
+Buddies alive in faction 5: 89
+Buddies alive in faction 6: 86
+Buddies alive in faction 7: 90
+Buddies alive in faction 8: 77
+Buddies alive in faction 9: 88
+
+Number of Units that moved: 872
+Number of Combats: 5
+Number of Dead Units: 3155
+---------------------
+Turn # 188
+Turn took 0.000101 seconds.
+
+Buddies alive in faction 0: 89
+Buddies alive in faction 1: 90
+Buddies alive in faction 2: 82
+Buddies alive in faction 3: 88
+Buddies alive in faction 4: 96
+Buddies alive in faction 5: 89
+Buddies alive in faction 6: 85
+Buddies alive in faction 7: 90
+Buddies alive in faction 8: 76
+Buddies alive in faction 9: 88
+
+Number of Units that moved: 871
+Number of Combats: 2
+Number of Dead Units: 3157
+---------------------
+Turn # 189
+Turn took 0.000101 seconds.
+
+Buddies alive in faction 0: 89
+Buddies alive in faction 1: 90
+Buddies alive in faction 2: 82
+Buddies alive in faction 3: 86
+Buddies alive in faction 4: 94
+Buddies alive in faction 5: 88
+Buddies alive in faction 6: 84
+Buddies alive in faction 7: 89
+Buddies alive in faction 8: 76
+Buddies alive in faction 9: 88
+
+Number of Units that moved: 860
+Number of Combats: 7
+Number of Dead Units: 3164
+---------------------
+Turn # 190
+Turn took 9.9e-005 seconds.
+
+Buddies alive in faction 0: 87
+Buddies alive in faction 1: 90
+Buddies alive in faction 2: 82
+Buddies alive in faction 3: 85
+Buddies alive in faction 4: 93
+Buddies alive in faction 5: 88
+Buddies alive in faction 6: 84
+Buddies alive in faction 7: 87
+Buddies alive in faction 8: 76
+Buddies alive in faction 9: 87
+
+Number of Units that moved: 855
+Number of Combats: 7
+Number of Dead Units: 3171
+---------------------
+Turn # 191
+Turn took 0.000102 seconds.
+
+Buddies alive in faction 0: 87
+Buddies alive in faction 1: 90
+Buddies alive in faction 2: 82
+Buddies alive in faction 3: 85
+Buddies alive in faction 4: 92
+Buddies alive in faction 5: 88
+Buddies alive in faction 6: 84
+Buddies alive in faction 7: 87
+Buddies alive in faction 8: 76
+Buddies alive in faction 9: 86
+
+Number of Units that moved: 855
+Number of Combats: 2
+Number of Dead Units: 3173
+---------------------
+Turn # 192
+Turn took 0.0001 seconds.
+
+Buddies alive in faction 0: 87
+Buddies alive in faction 1: 89
+Buddies alive in faction 2: 80
+Buddies alive in faction 3: 85
+Buddies alive in faction 4: 92
+Buddies alive in faction 5: 88
+Buddies alive in faction 6: 83
+Buddies alive in faction 7: 87
+Buddies alive in faction 8: 76
+Buddies alive in faction 9: 86
+
+Number of Units that moved: 851
+Number of Combats: 4
+Number of Dead Units: 3177
+---------------------
+Turn # 193
+Turn took 9.9e-005 seconds.
+
+Buddies alive in faction 0: 87
+Buddies alive in faction 1: 89
+Buddies alive in faction 2: 79
+Buddies alive in faction 3: 85
+Buddies alive in faction 4: 92
+Buddies alive in faction 5: 87
+Buddies alive in faction 6: 82
+Buddies alive in faction 7: 85
+Buddies alive in faction 8: 76
+Buddies alive in faction 9: 86
+
+Number of Units that moved: 844
+Number of Combats: 5
+Number of Dead Units: 3182
+---------------------
+Turn # 194
+Turn took 0.0001 seconds.
+
+Buddies alive in faction 0: 87
+Buddies alive in faction 1: 89
+Buddies alive in faction 2: 79
+Buddies alive in faction 3: 85
+Buddies alive in faction 4: 92
+Buddies alive in faction 5: 87
+Buddies alive in faction 6: 80
+Buddies alive in faction 7: 85
+Buddies alive in faction 8: 76
+Buddies alive in faction 9: 86
+
+Number of Units that moved: 844
+Number of Combats: 2
+Number of Dead Units: 3184
+---------------------
+Turn # 195
+Turn took 9.8e-005 seconds.
+
+Buddies alive in faction 0: 87
+Buddies alive in faction 1: 89
+Buddies alive in faction 2: 78
+Buddies alive in faction 3: 85
+Buddies alive in faction 4: 92
+Buddies alive in faction 5: 87
+Buddies alive in faction 6: 80
+Buddies alive in faction 7: 85
+Buddies alive in faction 8: 75
+Buddies alive in faction 9: 84
+
+Number of Units that moved: 839
+Number of Combats: 4
+Number of Dead Units: 3188
+---------------------
+Turn # 196
+Turn took 0.000101 seconds.
+
+Buddies alive in faction 0: 87
+Buddies alive in faction 1: 89
+Buddies alive in faction 2: 77
+Buddies alive in faction 3: 85
+Buddies alive in faction 4: 92
+Buddies alive in faction 5: 86
+Buddies alive in faction 6: 80
+Buddies alive in faction 7: 84
+Buddies alive in faction 8: 75
+Buddies alive in faction 9: 84
+
+Number of Units that moved: 837
+Number of Combats: 3
+Number of Dead Units: 3191
+---------------------
+Turn # 197
+Turn took 9.8e-005 seconds.
+
+Buddies alive in faction 0: 84
+Buddies alive in faction 1: 89
+Buddies alive in faction 2: 77
+Buddies alive in faction 3: 84
+Buddies alive in faction 4: 91
+Buddies alive in faction 5: 86
+Buddies alive in faction 6: 80
+Buddies alive in faction 7: 84
+Buddies alive in faction 8: 73
+Buddies alive in faction 9: 84
+
+Number of Units that moved: 830
+Number of Combats: 7
+Number of Dead Units: 3198
+---------------------
+Turn # 198
+Turn took 9.7e-005 seconds.
+
+Buddies alive in faction 0: 84
+Buddies alive in faction 1: 89
+Buddies alive in faction 2: 74
+Buddies alive in faction 3: 84
+Buddies alive in faction 4: 91
+Buddies alive in faction 5: 85
+Buddies alive in faction 6: 79
+Buddies alive in faction 7: 84
+Buddies alive in faction 8: 73
+Buddies alive in faction 9: 84
+
+Number of Units that moved: 825
+Number of Combats: 5
+Number of Dead Units: 3203
+---------------------
+Turn # 199
+Turn took 9.8e-005 seconds.
+
+Buddies alive in faction 0: 84
+Buddies alive in faction 1: 89
+Buddies alive in faction 2: 74
+Buddies alive in faction 3: 84
+Buddies alive in faction 4: 91
+Buddies alive in faction 5: 85
+Buddies alive in faction 6: 78
+Buddies alive in faction 7: 83
+Buddies alive in faction 8: 73
+Buddies alive in faction 9: 84
+
+Number of Units that moved: 823
+Number of Combats: 2
+Number of Dead Units: 3205
+---------------------
+Turn # 200
+Turn took 9.7e-005 seconds.
+
+Buddies alive in faction 0: 83
+Buddies alive in faction 1: 89
+Buddies alive in faction 2: 74
+Buddies alive in faction 3: 84
+Buddies alive in faction 4: 91
+Buddies alive in faction 5: 84
+Buddies alive in faction 6: 78
+Buddies alive in faction 7: 83
+Buddies alive in faction 8: 73
+Buddies alive in faction 9: 83
+
+Number of Units that moved: 821
+Number of Combats: 3
+Number of Dead Units: 3208
+Turn # 200
+---------------------
+Turn # 201
+Turn took 9.6e-005 seconds.
+
+Buddies alive in faction 0: 83
+Buddies alive in faction 1: 88
+Buddies alive in faction 2: 73
+Buddies alive in faction 3: 83
+Buddies alive in faction 4: 90
+Buddies alive in faction 5: 83
+Buddies alive in faction 6: 77
+Buddies alive in faction 7: 83
+Buddies alive in faction 8: 72
+Buddies alive in faction 9: 82
+
+Number of Units that moved: 809
+Number of Combats: 8
+Number of Dead Units: 3216
+---------------------
+Turn # 202
+Turn took 9.7e-005 seconds.
+
+Buddies alive in faction 0: 83
+Buddies alive in faction 1: 88
+Buddies alive in faction 2: 73
+Buddies alive in faction 3: 83
+Buddies alive in faction 4: 89
+Buddies alive in faction 5: 83
+Buddies alive in faction 6: 77
+Buddies alive in faction 7: 83
+Buddies alive in faction 8: 72
+Buddies alive in faction 9: 82
+
+Number of Units that moved: 812
+Number of Combats: 1
+Number of Dead Units: 3217
+---------------------
+Turn # 203
+Turn took 9.7e-005 seconds.
+
+Buddies alive in faction 0: 82
+Buddies alive in faction 1: 88
+Buddies alive in faction 2: 72
+Buddies alive in faction 3: 82
+Buddies alive in faction 4: 89
+Buddies alive in faction 5: 83
+Buddies alive in faction 6: 77
+Buddies alive in faction 7: 83
+Buddies alive in faction 8: 71
+Buddies alive in faction 9: 82
+
+Number of Units that moved: 808
+Number of Combats: 4
+Number of Dead Units: 3221
+---------------------
+Turn # 204
+Turn took 9.5e-005 seconds.
+
+Buddies alive in faction 0: 81
+Buddies alive in faction 1: 88
+Buddies alive in faction 2: 71
+Buddies alive in faction 3: 81
+Buddies alive in faction 4: 89
+Buddies alive in faction 5: 83
+Buddies alive in faction 6: 76
+Buddies alive in faction 7: 83
+Buddies alive in faction 8: 71
+Buddies alive in faction 9: 82
+
+Number of Units that moved: 804
+Number of Combats: 4
+Number of Dead Units: 3225
+---------------------
+Turn # 205
+Turn took 9.6e-005 seconds.
+
+Buddies alive in faction 0: 81
+Buddies alive in faction 1: 88
+Buddies alive in faction 2: 71
+Buddies alive in faction 3: 81
+Buddies alive in faction 4: 89
+Buddies alive in faction 5: 82
+Buddies alive in faction 6: 76
+Buddies alive in faction 7: 83
+Buddies alive in faction 8: 70
+Buddies alive in faction 9: 82
+
+Number of Units that moved: 801
+Number of Combats: 2
+Number of Dead Units: 3227
+---------------------
+Turn # 206
+Turn took 9.5e-005 seconds.
+
+Buddies alive in faction 0: 81
+Buddies alive in faction 1: 88
+Buddies alive in faction 2: 71
+Buddies alive in faction 3: 80
+Buddies alive in faction 4: 89
+Buddies alive in faction 5: 82
+Buddies alive in faction 6: 76
+Buddies alive in faction 7: 83
+Buddies alive in faction 8: 69
+Buddies alive in faction 9: 80
+
+Number of Units that moved: 796
+Number of Combats: 4
+Number of Dead Units: 3231
+---------------------
+Turn # 207
+Turn took 0.000102 seconds.
+
+Buddies alive in faction 0: 81
+Buddies alive in faction 1: 86
+Buddies alive in faction 2: 71
+Buddies alive in faction 3: 80
+Buddies alive in faction 4: 89
+Buddies alive in faction 5: 81
+Buddies alive in faction 6: 76
+Buddies alive in faction 7: 83
+Buddies alive in faction 8: 69
+Buddies alive in faction 9: 79
+
+Number of Units that moved: 793
+Number of Combats: 4
+Number of Dead Units: 3235
+---------------------
+Turn # 208
+Turn took 9.3e-005 seconds.
+
+Buddies alive in faction 0: 81
+Buddies alive in faction 1: 86
+Buddies alive in faction 2: 71
+Buddies alive in faction 3: 80
+Buddies alive in faction 4: 89
+Buddies alive in faction 5: 80
+Buddies alive in faction 6: 75
+Buddies alive in faction 7: 82
+Buddies alive in faction 8: 69
+Buddies alive in faction 9: 79
+
+Number of Units that moved: 792
+Number of Combats: 3
+Number of Dead Units: 3238
+---------------------
+Turn # 209
+Turn took 9.2e-005 seconds.
+
+Buddies alive in faction 0: 81
+Buddies alive in faction 1: 86
+Buddies alive in faction 2: 71
+Buddies alive in faction 3: 79
+Buddies alive in faction 4: 88
+Buddies alive in faction 5: 79
+Buddies alive in faction 6: 75
+Buddies alive in faction 7: 81
+Buddies alive in faction 8: 68
+Buddies alive in faction 9: 79
+
+Number of Units that moved: 782
+Number of Combats: 5
+Number of Dead Units: 3243
+---------------------
+Turn # 210
+Turn took 9.2e-005 seconds.
+
+Buddies alive in faction 0: 81
+Buddies alive in faction 1: 85
+Buddies alive in faction 2: 71
+Buddies alive in faction 3: 78
+Buddies alive in faction 4: 86
+Buddies alive in faction 5: 79
+Buddies alive in faction 6: 73
+Buddies alive in faction 7: 81
+Buddies alive in faction 8: 68
+Buddies alive in faction 9: 79
+
+Number of Units that moved: 779
+Number of Combats: 6
+Number of Dead Units: 3249
+---------------------
+Turn # 211
+Turn took 9.1e-005 seconds.
+
+Buddies alive in faction 0: 81
+Buddies alive in faction 1: 85
+Buddies alive in faction 2: 71
+Buddies alive in faction 3: 78
+Buddies alive in faction 4: 86
+Buddies alive in faction 5: 79
+Buddies alive in faction 6: 72
+Buddies alive in faction 7: 81
+Buddies alive in faction 8: 68
+Buddies alive in faction 9: 79
+
+Number of Units that moved: 779
+Number of Combats: 1
+Number of Dead Units: 3250
+---------------------
+Turn # 212
+Turn took 9.3e-005 seconds.
+
+Buddies alive in faction 0: 80
+Buddies alive in faction 1: 84
+Buddies alive in faction 2: 70
+Buddies alive in faction 3: 78
+Buddies alive in faction 4: 85
+Buddies alive in faction 5: 78
+Buddies alive in faction 6: 72
+Buddies alive in faction 7: 81
+Buddies alive in faction 8: 68
+Buddies alive in faction 9: 77
+
+Number of Units that moved: 770
+Number of Combats: 7
+Number of Dead Units: 3257
+---------------------
+Turn # 213
+Turn took 9e-005 seconds.
+
+Buddies alive in faction 0: 79
+Buddies alive in faction 1: 83
+Buddies alive in faction 2: 70
+Buddies alive in faction 3: 78
+Buddies alive in faction 4: 84
+Buddies alive in faction 5: 78
+Buddies alive in faction 6: 72
+Buddies alive in faction 7: 80
+Buddies alive in faction 8: 68
+Buddies alive in faction 9: 76
+
+Number of Units that moved: 765
+Number of Combats: 5
+Number of Dead Units: 3262
+---------------------
+Turn # 214
+Turn took 9e-005 seconds.
+
+Buddies alive in faction 0: 79
+Buddies alive in faction 1: 83
+Buddies alive in faction 2: 70
+Buddies alive in faction 3: 78
+Buddies alive in faction 4: 84
+Buddies alive in faction 5: 78
+Buddies alive in faction 6: 72
+Buddies alive in faction 7: 80
+Buddies alive in faction 8: 67
+Buddies alive in faction 9: 76
+
+Number of Units that moved: 766
+Number of Combats: 1
+Number of Dead Units: 3263
+---------------------
+Turn # 215
+Turn took 9.1e-005 seconds.
+
+Buddies alive in faction 0: 79
+Buddies alive in faction 1: 83
+Buddies alive in faction 2: 70
+Buddies alive in faction 3: 78
+Buddies alive in faction 4: 83
+Buddies alive in faction 5: 78
+Buddies alive in faction 6: 71
+Buddies alive in faction 7: 80
+Buddies alive in faction 8: 66
+Buddies alive in faction 9: 75
+
+Number of Units that moved: 760
+Number of Combats: 4
+Number of Dead Units: 3267
+---------------------
+Turn # 216
+Turn took 8.9e-005 seconds.
+
+Buddies alive in faction 0: 79
+Buddies alive in faction 1: 83
+Buddies alive in faction 2: 70
+Buddies alive in faction 3: 77
+Buddies alive in faction 4: 83
+Buddies alive in faction 5: 78
+Buddies alive in faction 6: 71
+Buddies alive in faction 7: 80
+Buddies alive in faction 8: 65
+Buddies alive in faction 9: 74
+
+Number of Units that moved: 757
+Number of Combats: 3
+Number of Dead Units: 3270
+---------------------
+Turn # 217
+Turn took 8.9e-005 seconds.
+
+Buddies alive in faction 0: 79
+Buddies alive in faction 1: 83
+Buddies alive in faction 2: 70
+Buddies alive in faction 3: 77
+Buddies alive in faction 4: 83
+Buddies alive in faction 5: 78
+Buddies alive in faction 6: 71
+Buddies alive in faction 7: 80
+Buddies alive in faction 8: 65
+Buddies alive in faction 9: 74
+
+Number of Units that moved: 760
+Number of Combats: 0
+Number of Dead Units: 3270
+---------------------
+Turn # 218
+Turn took 9e-005 seconds.
+
+Buddies alive in faction 0: 79
+Buddies alive in faction 1: 82
+Buddies alive in faction 2: 69
+Buddies alive in faction 3: 76
+Buddies alive in faction 4: 81
+Buddies alive in faction 5: 78
+Buddies alive in faction 6: 71
+Buddies alive in faction 7: 80
+Buddies alive in faction 8: 65
+Buddies alive in faction 9: 74
+
+Number of Units that moved: 753
+Number of Combats: 5
+Number of Dead Units: 3275
+---------------------
+Turn # 219
+Turn took 9.1e-005 seconds.
+
+Buddies alive in faction 0: 79
+Buddies alive in faction 1: 81
+Buddies alive in faction 2: 69
+Buddies alive in faction 3: 75
+Buddies alive in faction 4: 81
+Buddies alive in faction 5: 77
+Buddies alive in faction 6: 71
+Buddies alive in faction 7: 80
+Buddies alive in faction 8: 65
+Buddies alive in faction 9: 73
+
+Number of Units that moved: 748
+Number of Combats: 4
+Number of Dead Units: 3279
+---------------------
+Turn # 220
+Turn took 8.9e-005 seconds.
+
+Buddies alive in faction 0: 79
+Buddies alive in faction 1: 81
+Buddies alive in faction 2: 69
+Buddies alive in faction 3: 75
+Buddies alive in faction 4: 81
+Buddies alive in faction 5: 77
+Buddies alive in faction 6: 71
+Buddies alive in faction 7: 80
+Buddies alive in faction 8: 65
+Buddies alive in faction 9: 72
+
+Number of Units that moved: 749
+Number of Combats: 1
+Number of Dead Units: 3280
+---------------------
+Turn # 221
+Turn took 8.8e-005 seconds.
+
+Buddies alive in faction 0: 79
+Buddies alive in faction 1: 80
+Buddies alive in faction 2: 68
+Buddies alive in faction 3: 75
+Buddies alive in faction 4: 81
+Buddies alive in faction 5: 77
+Buddies alive in faction 6: 71
+Buddies alive in faction 7: 80
+Buddies alive in faction 8: 65
+Buddies alive in faction 9: 72
+
+Number of Units that moved: 748
+Number of Combats: 2
+Number of Dead Units: 3282
+---------------------
+Turn # 222
+Turn took 8.9e-005 seconds.
+
+Buddies alive in faction 0: 79
+Buddies alive in faction 1: 80
+Buddies alive in faction 2: 67
+Buddies alive in faction 3: 75
+Buddies alive in faction 4: 80
+Buddies alive in faction 5: 77
+Buddies alive in faction 6: 71
+Buddies alive in faction 7: 79
+Buddies alive in faction 8: 65
+Buddies alive in faction 9: 71
+
+Number of Units that moved: 742
+Number of Combats: 4
+Number of Dead Units: 3286
+---------------------
+Turn # 223
+Turn took 8.9e-005 seconds.
+
+Buddies alive in faction 0: 78
+Buddies alive in faction 1: 80
+Buddies alive in faction 2: 67
+Buddies alive in faction 3: 74
+Buddies alive in faction 4: 80
+Buddies alive in faction 5: 76
+Buddies alive in faction 6: 71
+Buddies alive in faction 7: 79
+Buddies alive in faction 8: 65
+Buddies alive in faction 9: 71
+
+Number of Units that moved: 740
+Number of Combats: 3
+Number of Dead Units: 3289
+---------------------
+Turn # 224
+Turn took 9e-005 seconds.
+
+Buddies alive in faction 0: 76
+Buddies alive in faction 1: 79
+Buddies alive in faction 2: 66
+Buddies alive in faction 3: 74
+Buddies alive in faction 4: 80
+Buddies alive in faction 5: 76
+Buddies alive in faction 6: 71
+Buddies alive in faction 7: 78
+Buddies alive in faction 8: 64
+Buddies alive in faction 9: 71
+
+Number of Units that moved: 734
+Number of Combats: 6
+Number of Dead Units: 3295
+---------------------
+Turn # 225
+Turn took 8.7e-005 seconds.
+
+Buddies alive in faction 0: 76
+Buddies alive in faction 1: 79
+Buddies alive in faction 2: 66
+Buddies alive in faction 3: 74
+Buddies alive in faction 4: 80
+Buddies alive in faction 5: 75
+Buddies alive in faction 6: 71
+Buddies alive in faction 7: 78
+Buddies alive in faction 8: 64
+Buddies alive in faction 9: 71
+
+Number of Units that moved: 733
+Number of Combats: 1
+Number of Dead Units: 3296
+---------------------
+Turn # 226
+Turn took 8.7e-005 seconds.
+
+Buddies alive in faction 0: 75
+Buddies alive in faction 1: 79
+Buddies alive in faction 2: 66
+Buddies alive in faction 3: 74
+Buddies alive in faction 4: 80
+Buddies alive in faction 5: 75
+Buddies alive in faction 6: 71
+Buddies alive in faction 7: 78
+Buddies alive in faction 8: 64
+Buddies alive in faction 9: 71
+
+Number of Units that moved: 733
+Number of Combats: 1
+Number of Dead Units: 3297
+---------------------
+Turn # 227
+Turn took 8.7e-005 seconds.
+
+Buddies alive in faction 0: 74
+Buddies alive in faction 1: 79
+Buddies alive in faction 2: 66
+Buddies alive in faction 3: 74
+Buddies alive in faction 4: 79
+Buddies alive in faction 5: 74
+Buddies alive in faction 6: 71
+Buddies alive in faction 7: 78
+Buddies alive in faction 8: 64
+Buddies alive in faction 9: 71
+
+Number of Units that moved: 728
+Number of Combats: 3
+Number of Dead Units: 3300
+---------------------
+Turn # 228
+Turn took 8.9e-005 seconds.
+
+Buddies alive in faction 0: 73
+Buddies alive in faction 1: 79
+Buddies alive in faction 2: 66
+Buddies alive in faction 3: 74
+Buddies alive in faction 4: 79
+Buddies alive in faction 5: 74
+Buddies alive in faction 6: 70
+Buddies alive in faction 7: 78
+Buddies alive in faction 8: 64
+Buddies alive in faction 9: 71
+
+Number of Units that moved: 727
+Number of Combats: 2
+Number of Dead Units: 3302
+---------------------
+Turn # 229
+Turn took 8.6e-005 seconds.
+
+Buddies alive in faction 0: 73
+Buddies alive in faction 1: 79
+Buddies alive in faction 2: 66
+Buddies alive in faction 3: 74
+Buddies alive in faction 4: 79
+Buddies alive in faction 5: 74
+Buddies alive in faction 6: 70
+Buddies alive in faction 7: 78
+Buddies alive in faction 8: 63
+Buddies alive in faction 9: 70
+
+Number of Units that moved: 724
+Number of Combats: 2
+Number of Dead Units: 3304
+---------------------
+Turn # 230
+Turn took 8.6e-005 seconds.
+
+Buddies alive in faction 0: 73
+Buddies alive in faction 1: 79
+Buddies alive in faction 2: 66
+Buddies alive in faction 3: 74
+Buddies alive in faction 4: 79
+Buddies alive in faction 5: 72
+Buddies alive in faction 6: 70
+Buddies alive in faction 7: 77
+Buddies alive in faction 8: 62
+Buddies alive in faction 9: 70
+
+Number of Units that moved: 718
+Number of Combats: 4
+Number of Dead Units: 3308
+---------------------
+Results:
+
+Buddies alive in faction 0: 73
+Buddies alive in faction 1: 79
+Buddies alive in faction 2: 66
+Buddies alive in faction 3: 74
+Buddies alive in faction 4: 79
+Buddies alive in faction 5: 72
+Buddies alive in faction 6: 70
+Buddies alive in faction 7: 77
+Buddies alive in faction 8: 62
+Buddies alive in faction 9: 70
+
+Number of Dead Units: 3308
+Total time elapsed: 0.055061
+For more detailed information, 
+check the text 'DAGREATBATTLEOUTPUT' Log in Bin.

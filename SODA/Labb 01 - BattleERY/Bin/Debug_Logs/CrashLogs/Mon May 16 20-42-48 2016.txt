@@ -1,0 +1,57 @@
+Program crashed in file: c:\gitlabbur\soda\labb 01 - battleery\dabattelry\commonutilities\cu\growingarray\growingarray.h
+At line: 172
+In function: CommonUtilities::GrowingArray<class BaseUnitClass *,unsigned short>::operator []
+Index is out of range
+
+---------------
+
+Stack Crash Log Below:
+---------------
+c:\gitlabbur\soda\labb 01 - battleery\dabattelry\commonutilities\cu\dldebug\dl_debug.cpp (94): DL_Debug::Debug::AssertMessage
+
+---------------
+c:\gitlabbur\soda\labb 01 - battleery\dabattelry\commonutilities\cu\growingarray\growingarray.h (173): CommonUtilities::GrowingArray<BaseUnitClass *,unsigned short>::operator[]
+
+---------------
+c:\gitlabbur\soda\labb 01 - battleery\dabattelry\dabattelry\gameobjects\unit\baseunitclass.cpp (176): BaseUnitClass::HandleMovement
+
+---------------
+c:\gitlabbur\soda\labb 01 - battleery\dabattelry\dabattelry\gameobjects\unit\baseunitclass.cpp (134): BaseUnitClass::Update
+
+---------------
+c:\gitlabbur\soda\labb 01 - battleery\dabattelry\dabattelry\game\gameloop.cpp (48): GameLoop::DoTurn
+
+---------------
+c:\gitlabbur\soda\labb 01 - battleery\dabattelry\dabattelry\game\gameloop.cpp (28): GameLoop::RunGame
+
+---------------
+c:\gitlabbur\soda\labb 01 - battleery\dabattelry\dabattelry\dabattelry.cpp (35): StartGame
+
+---------------
+c:\gitlabbur\soda\labb 01 - battleery\dabattelry\dabattelry\dabattelry.cpp (45): wmain
+
+---------------
+f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c (623): __tmainCRTStartup
+
+---------------
+f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c (466): wmainCRTStartup
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 74AF919F)
+
+---------------
+74AF919F (KERNEL32): (filename not available): BaseThreadInitThunk
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 76EFA8CB)
+
+---------------
+76EFA8CB (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 76EFA8A1)
+
+---------------
+76EFA8A1 (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------

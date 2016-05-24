@@ -1,0 +1,87 @@
+Program crashed in file: c:\gitlabbur\soda\labb 03 - spatial partionoining\daprojectwithdapartioning\source\renderer\rend\staticsprite.cpp
+At line: 70
+In function: StaticSprite::Draw
+Static sprite not initialized
+
+---------------
+
+Stack Crash Log Below:
+---------------
+c:\gitlabbur\soda\labb 03 - spatial partionoining\daprojectwithdapartioning\source\commonutilities\cu\dldebug\dl_debug.cpp (94): DL_Debug::Debug::AssertMessage
+
+---------------
+c:\gitlabbur\soda\labb 03 - spatial partionoining\daprojectwithdapartioning\source\renderer\rend\staticsprite.cpp (72): StaticSprite::Draw
+
+---------------
+c:\gitlabbur\soda\labb 03 - spatial partionoining\daprojectwithdapartioning\source\partioning\partiongrid\circle.cpp (27): Circle::Draw
+
+---------------
+c:\gitlabbur\soda\labb 03 - spatial partionoining\daprojectwithdapartioning\source\partioning\partiongrid\partiongrid.cpp (36): PartionGrid::Draw
+
+---------------
+c:\gitlabbur\soda\labb 03 - spatial partionoining\daprojectwithdapartioning\source\game\gameworld.cpp (47): CGameWorld::Draw
+
+---------------
+c:\gitlabbur\soda\labb 03 - spatial partionoining\daprojectwithdapartioning\source\game\game.cpp (91): CGame::UpdateCallBack
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\functional (1230): std::_Pmf_wrap<void (__thiscall CGame::*)(void),void,CGame>::operator()
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\functional (1150): std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall CGame::*)(void),void,CGame>,CGame * const>::_Do_call<,0>
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\functional (1138): std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall CGame::*)(void),void,CGame>,CGame * const>::operator()<>
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xrefwrap (284): std::_Callable_obj<std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall CGame::*)(void),void,CGame>,CGame * const>,0>::_ApplyX<void>
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\functional (229): std::_Func_impl<std::_Callable_obj<std::_Bind<1,void,std::_Pmf_wrap<void (__thiscall CGame::*)(void),void,CGame>,CGame * const>,0>,std::allocator<std::_Func_class<void> >,void>::_Do_call
+
+---------------
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\functional (315): std::_Func_class<void>::operator()
+
+---------------
+c:\gitlabbur\soda\labb 03 - spatial partionoining\daprojectwithdapartioning\source\dx2dengine\source\engine.cpp (215): DX2D::CEngine::DoStep
+
+---------------
+c:\gitlabbur\soda\labb 03 - spatial partionoining\daprojectwithdapartioning\source\dx2dengine\source\engine.cpp (174): DX2D::CEngine::StartStep
+
+---------------
+c:\gitlabbur\soda\labb 03 - spatial partionoining\daprojectwithdapartioning\source\dx2dengine\source\engine.cpp (160): DX2D::CEngine::Start
+
+---------------
+c:\gitlabbur\soda\labb 03 - spatial partionoining\daprojectwithdapartioning\source\game\game.cpp (69): CGame::Init
+
+---------------
+c:\gitlabbur\soda\labb 03 - spatial partionoining\daprojectwithdapartioning\source\launcher\main.cpp (64): Init
+
+---------------
+c:\gitlabbur\soda\labb 03 - spatial partionoining\daprojectwithdapartioning\source\launcher\main.cpp (30): main
+
+---------------
+f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c (626): __tmainCRTStartup
+
+---------------
+f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c (466): mainCRTStartup
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 74AF919F)
+
+---------------
+74AF919F (KERNEL32): (filename not available): BaseThreadInitThunk
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 76EFA8CB)
+
+---------------
+76EFA8CB (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 76EFA8A1)
+
+---------------
+76EFA8A1 (ntdll): (filename not available): RtlInitializeExceptionChain
+
+---------------
