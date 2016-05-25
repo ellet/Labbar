@@ -106,6 +106,7 @@
             this.TextBoxDebuglogsDirectory.Name = "TextBoxDebuglogsDirectory";
             this.TextBoxDebuglogsDirectory.Size = new System.Drawing.Size(174, 20);
             this.TextBoxDebuglogsDirectory.TabIndex = 1;
+            this.TextBoxDebuglogsDirectory.Text = "Debug_Logs";
             // 
             // LabelDebugDirectory
             // 

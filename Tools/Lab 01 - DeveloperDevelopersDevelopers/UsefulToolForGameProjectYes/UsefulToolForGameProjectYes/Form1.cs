@@ -51,7 +51,7 @@ namespace UsefulToolForGameProjectYes
         private void SaveGameSettingsToFile(string aFilePath)
         {
             mySetup.DebugFolderLocation = TextBoxDebuglogsDirectory.Text;
-            string output = JsonConvert.SerializeObject(mySetup);
+            string output = JsonConvert.SerializeObject(mySetup, Formatting.Indented);
             System.IO.File.WriteAllText(aFilePath, output);
         }
 
@@ -62,7 +62,7 @@ namespace UsefulToolForGameProjectYes
 
            
             
-            ComboBoxResolution.SelectedItem = mySetup.ResolutoinSettings;
+            ComboBoxResolution.SelectedItem = mySetup.ResolutionSettings;
             ComboBoxResolution.Refresh();
             CheckBoxFullscreen.Checked = mySetup.IsFullscreen;
             CheckBoxSkipIntro.Checked = mySetup.SkipIntro;
@@ -96,7 +96,7 @@ namespace UsefulToolForGameProjectYes
 
         private void ComboBoxResolution_SelectedIndexChanged(object sender, EventArgs e)
         {
-            mySetup.ResolutoinSettings = ComboBoxResolution.SelectedItem as Resolution;
+            mySetup.ResolutionSettings = ComboBoxResolution.SelectedItem as Resolution;
         }
 
         private void CheckBoxFullscreen_CheckedChanged(object sender, EventArgs e)

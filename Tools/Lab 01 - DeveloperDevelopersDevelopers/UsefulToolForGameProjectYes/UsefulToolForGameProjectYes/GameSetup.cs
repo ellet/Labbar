@@ -24,7 +24,7 @@ namespace UsefulToolForGameProjectYes
 
         #region Properties
 
-        public Resolution ResolutoinSettings
+        public Resolution ResolutionSettings
         {
             get
             {
