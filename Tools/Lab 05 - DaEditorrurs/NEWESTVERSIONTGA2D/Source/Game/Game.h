@@ -9,7 +9,7 @@ class CGame
 public:
 	CGame();
 	~CGame();
-	bool Init(const std::wstring& aVersion = L"", HWND aHWND = nullptr);
+	bool Init(/*const std::wstring& aVersion = L"",*/ HWND aHWND = nullptr);
 private:
 	void InitCallBack();
 	void UpdateCallBack();

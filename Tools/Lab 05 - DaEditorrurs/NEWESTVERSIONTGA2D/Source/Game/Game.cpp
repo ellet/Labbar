@@ -31,8 +31,10 @@ CGame::~CGame()
 }
 
 
-bool CGame::Init(const std::wstring& aVersion, HWND aHWND)
+bool CGame::Init(/*const std::wstring& aVersion,*/ HWND aHWND)
 {
+
+	const std::wstring& aVersion(L"APA");
 	myFileOutput.open("error.txt");
 	OutputDebugString(L"APA");
 	unsigned short windowWidth = 800;
