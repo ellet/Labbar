@@ -28,11 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.RenderBox = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.RenderBox)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // RenderBox
+            // 
+            this.RenderBox.Location = new System.Drawing.Point(52, 59);
+            this.RenderBox.Name = "RenderBox";
+            this.RenderBox.Size = new System.Drawing.Size(619, 246);
+            this.RenderBox.TabIndex = 0;
+            this.RenderBox.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(151, 354);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(441, 59);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(761, 429);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.RenderBox);
+            this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.RenderBox)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox RenderBox;
+        private System.Windows.Forms.Button button1;
     }
 }

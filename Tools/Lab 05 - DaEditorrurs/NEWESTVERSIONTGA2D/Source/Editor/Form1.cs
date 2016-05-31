@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Editor.DaBestClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace Editor
         public Form1()
         {
             InitializeComponent();
+
+            myRenderer = new TGARenderBox();
+            myRenderer.Init(RenderBox);
         }
+
+        private TGARenderBox myRenderer;
     }
 }

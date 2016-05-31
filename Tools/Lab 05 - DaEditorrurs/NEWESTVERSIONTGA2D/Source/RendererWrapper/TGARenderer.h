@@ -10,6 +10,9 @@ public:
 	void StartRendering(System::IntPtr aHandle);
 
 private:
-	CGame * myRenderer;
-};
+	void RenderLoop();
 
+	CGame * myRenderer;
+	System::IntPtr myHandle;
+
+};

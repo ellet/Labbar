@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Editor.DaBestClasses
 {
@@ -10,9 +11,14 @@ namespace Editor.DaBestClasses
     {
         public TGARenderBox()
         {
-
+            myRenderer = new TGARenderer();
         }
 
-        private TGARenderBox myRenderer;
+        public void Init(PictureBox aPictureBox)
+        {
+            myRenderer.StartRendering(aPictureBox.Handle);
+        }
+
+        private TGARenderer myRenderer;
     }
 }
