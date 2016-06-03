@@ -159,11 +159,17 @@ void OctoTree::AddObject(Circle * aCircle, OctoNode * aStartNode)
 	while (isPlaced == false)
 	{
 		const CU::Vector3f OffsetDistance = aCircle->GetPosition() - currentNodeToCheck->myCenter - currentNodeToCheck->myBox.myExtents;
+		const CU::Vector3f DistanceFromCenter = aCircle->GetPosition() - currentNodeToCheck->myCenter;
 		
-		if (abs(OffsetDistance.x) < aCircle->GetRadius()
+		if ((currentNodeToCheck->myChildren[0] == nullptr) 
+			|| 
+			(abs(OffsetDistance.x) < aCircle->GetRadius()
 			|| abs(OffsetDistance.y) < aCircle->GetRadius()
-			|| abs(OffsetDistance.z) < aCircle->GetRadius()
-			|| currentNodeToCheck->myChildren[0] == nullptr)
+			|| abs(OffsetDistance.z) < aCircle->GetRadius())
+			&& 
+			(abs(DistanceFromCenter.x) < currentNodeToCheck->myHalfWidth &&
+			abs(DistanceFromCenter.y) < currentNodeToCheck->myHalfWidth &&
+			abs(DistanceFromCenter.z) < currentNodeToCheck->myHalfWidth))
 		{
 			currentNodeToCheck->myDwellers.Add(aCircle);
 			aCircle->SetColor(currentNodeToCheck->myColor);
@@ -174,17 +180,17 @@ void OctoTree::AddObject(Circle * aCircle, OctoNode * aStartNode)
 		{
 			unsigned short childIndex = 0;
 
-			if (OffsetDistance.x > 0.f)
+			if (DistanceFromCenter.x > 0.f)
 			{
 				++childIndex;
 			}
 
-			if (OffsetDistance.y > 0.f)
+			if (DistanceFromCenter.y > 0.f)
 			{
 				childIndex += 2;
 			}
 
-			if (OffsetDistance.z > 0.f)
+			if (DistanceFromCenter.z > 0.f)
 			{
 				childIndex += 4;
 			}

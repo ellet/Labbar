@@ -90,13 +90,13 @@ void CGameWorld::Update(const CU::Time & aTime)
 
 	if (GetInput::GetKeyDown(DIK_NUMPADMINUS) == true)
 	{
-		myPrettyTree->SetLooseNess(-1.f * aTime.GetSeconds());
+		myPrettyTree->SetLooseNess(-0.4f * aTime.GetSeconds());
 		myPrettyTree->AddAllObjects();
 	}
 
 	if (GetInput::GetKeyDown(DIK_NUMPADPLUS) == true)
 	{
-		myPrettyTree->SetLooseNess(1.f * aTime.GetSeconds());
+		myPrettyTree->SetLooseNess(0.4f * aTime.GetSeconds());
 		myPrettyTree->AddAllObjects();
 	}
 
