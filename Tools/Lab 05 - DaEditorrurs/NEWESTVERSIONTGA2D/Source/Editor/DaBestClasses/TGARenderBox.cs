@@ -17,8 +17,15 @@ namespace Editor.DaBestClasses
         public void Init(PictureBox aPictureBox)
         {
             myRenderer.StartRendering(aPictureBox.Handle);
+            myPictureBox = aPictureBox;
+        }
+
+        public void RefreshWindow()
+        {
+            myPictureBox.Refresh();
         }
 
         private TGARenderer myRenderer;
+        private PictureBox myPictureBox;
     }
 }

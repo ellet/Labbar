@@ -1,5 +1,8 @@
 #pragma once
 
+#include <CU/NameSpaceAliases.h>
+
+
 class CGame;
 
 public ref class TGARenderer

@@ -1,8 +1,9 @@
 #pragma once
 #include <tga2d/Engine.h>
 #include <fstream>
-#include "GameWorld.h"
 
+
+class CGameWorld;
 
 class CGame
 {
@@ -15,7 +16,7 @@ private:
 	void UpdateCallBack();
 	void LogCallback(std::string aText);
 
-	CGameWorld myGameWorld;
+	CGameWorld * myGameWorld;
 	std::ofstream myFileOutput;
 
 };

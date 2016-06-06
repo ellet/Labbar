@@ -1,6 +1,8 @@
+#include <CU/GrowingArray/GrowingArray.h>
 #include "TGARenderer.h"
 #include <Game.h>
 #include <windows.h>
+
 
 using namespace System;
 using namespace System::Threading;

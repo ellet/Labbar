@@ -37,15 +37,15 @@
             // 
             this.RenderBox.Location = new System.Drawing.Point(52, 59);
             this.RenderBox.Name = "RenderBox";
-            this.RenderBox.Size = new System.Drawing.Size(619, 246);
+            this.RenderBox.Size = new System.Drawing.Size(1118, 744);
             this.RenderBox.TabIndex = 0;
             this.RenderBox.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(151, 354);
+            this.button1.Location = new System.Drawing.Point(1176, 744);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(441, 59);
+            this.button1.Size = new System.Drawing.Size(159, 59);
             this.button1.TabIndex = 1;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -55,7 +55,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 429);
+            this.ClientSize = new System.Drawing.Size(1358, 832);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.RenderBox);
             this.Name = "Form1";

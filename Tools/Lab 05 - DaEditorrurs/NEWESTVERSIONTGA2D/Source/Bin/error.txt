@@ -1,0 +1,28 @@
+---TGA 2D Starting, dream big and dare to fail---
+Creating window
+Windows created with size  800 800
+Starting engine
+Video card(s) detected: 
+	NVIDIA GeForce GTX 970 Mem: 3072Mb
+	Intel(R) HD Graphics 3000 Mem: 32Mb
+	Microsoft Basic Render Driver Mem: 0Mb
+Detecting best card...
+Using graphic card: NVIDIA GeForce GTX 970 Dedicated Mem: 3072
+VSYNC Compatible: Yes, Enabled: No
+Creating device
+Creating swapchain
+Swapchain created
+Creating RenderTargetView
+Creating Texture2D
+Creating DepthStencilState
+Creating DepthStencilView
+Creating RasterizerState
+Initing vertex Shader: shaders/sprite_shader.fx
+Initing pixel Shader: shaders/sprite_shader.fx
+Initing vertex Shader: shaders/custom_shape.fx
+Initing pixel Shader: shaders/custom_shape.fx
+Initing vertex Shader: shaders/lineshader.fx
+Initing pixel Shader: shaders/lineshader.fx
+Initing vertex Shader: shaders/instanced_sprite_shader.fx
+Initing pixel Shader: shaders/instanced_sprite_shader.fx
+All done, starting...

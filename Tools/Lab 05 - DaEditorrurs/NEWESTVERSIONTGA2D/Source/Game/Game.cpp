@@ -7,6 +7,10 @@
 #include <functional>
 #include <time.h>
 
+#include <Rend/RenderConverter.h>
+#include "GameWorld.h"
+
+#include <Input/SingletonIsometricInputWrapper.h>
 
 using namespace std::placeholders;
 
@@ -21,18 +25,23 @@ using namespace std::placeholders;
 
 CGame::CGame()
 {
-	int a = 10;
+	DL_Debug::Debug::Create();
+	SingletonPostMaster::Create();
+	myGameWorld = new CGameWorld();
 }
 
 
 CGame::~CGame()
 {
 	myFileOutput.close();
+	SAFE_DELETE(myGameWorld);
 }
 
 
 bool CGame::Init(/*const std::wstring& aVersion,*/ HWND aHWND)
 {
+	
+	
 
 	const std::wstring& aVersion(L"APA");
 	myFileOutput.open("error.txt");
@@ -40,6 +49,8 @@ bool CGame::Init(/*const std::wstring& aVersion,*/ HWND aHWND)
 	unsigned short windowWidth = 800;
 	unsigned short windowHeight = 800;
 
+	RenderConverter::Create();
+	RenderConverter::Init(CU::Vector2ui(windowWidth, windowHeight));
 
     DX2D::SEngineCreateParameters createParameters;
 	createParameters.myActivateDebugSystems = DX2D::eDebugFeature_Fps | DX2D::eDebugFeature_Mem | DX2D::eDebugFeature_Filewatcher | DX2D::eDebugFeature_Cpu | DX2D::eDebugFeature_Drawcalls;
@@ -53,7 +64,7 @@ bool CGame::Init(/*const std::wstring& aVersion,*/ HWND aHWND)
 	createParameters.myRenderWidth = windowWidth;
 	createParameters.myTargetWidth = windowWidth;
 	createParameters.myTargetHeight = windowHeight;
-	createParameters.myAutoUpdateViewportWithWindow = false;
+	createParameters.myAutoUpdateViewportWithWindow = true;
     createParameters.myClearColor.Set( 0.0f, 0.0f, 0.0f, 1.0f );
 
 	if (aHWND != nullptr)
@@ -88,19 +99,29 @@ bool CGame::Init(/*const std::wstring& aVersion,*/ HWND aHWND)
 
 void CGame::InitCallBack()
 {
-    myGameWorld.Init();
+	IsometricInput::Create();
+	IsometricInput::Initialize(DX2D::CEngine::GetInstance()->GetHInstance(), *DX2D::CEngine::GetInstance()->GetHWND());
+	
+
+    myGameWorld->Init();
 }
 
 
 void CGame::UpdateCallBack()
 {
 	const float deltaTime = 1.0f / 120.0f;
-	myGameWorld.Update(deltaTime);
+	IsometricInput::Update();
+	myGameWorld->Update(deltaTime);
+	myGameWorld->Draw();
+
+	RenderConverter::Draw();
+	RenderConverter::SwapBuffers();
 }
 
 
 void CGame::LogCallback( std::string aText )
 {
+	DL_PRINT(aText.c_str());
 	myFileOutput << aText.c_str() << std::endl;
 	myFileOutput.flush();
 }

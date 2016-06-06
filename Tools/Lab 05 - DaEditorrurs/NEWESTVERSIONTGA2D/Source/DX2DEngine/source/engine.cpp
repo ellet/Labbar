@@ -11,7 +11,8 @@
 #include "texture/texture_manager.h"
 #include "windows/windows_window.h"
 #include <windows.h>
-
+#include <PostMaster/SingletonPostMaster.h>
+#include <Message/WindowRectChangedMessage.h>
 
 #pragma comment( lib, "user32.lib" )
 
@@ -64,7 +65,6 @@ CEngine::CEngine( const SEngineCreateParameters& aCreateParameters)
 		myTargetSize.x = myCreateParameters.myTargetWidth;
 		myTargetSize.y = myCreateParameters.myTargetHeight;
 	}
-	
 
 	myDebugDrawer = new CDebugDrawer(myCreateParameters.myActivateDebugSystems);
 
@@ -356,6 +356,14 @@ void DX2D::CEngine::SetViewPort(float aTopLeftX, float aTopLeftY, float aWidth, 
 		}	
 		myDirect3D->SetViewPort(aTopLeftX, aTopLeftY, aWidth, aHeight, aMinDepth, aMaxDepth);
 	}
+
+	RECT r;
+	GetClientRect(*myHwnd, &r); //get window rect of control relative to screen
+
+	WindowRectChangedMessage tempMessage(RecieverTypes::eWindowProperties, aTopLeftX, aTopLeftY, aWidth, aHeight,
+		r.left, r.top, r.right, r.bottom);
+
+	SingletonPostMaster::SendPostMessage(tempMessage);
 }
 
 void DX2D::CEngine::SetFullScreen(bool aFullScreen)
