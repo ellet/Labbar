@@ -131,6 +131,21 @@ namespace Intersection3D
 		return PointInsideSphere(aSphere,aAABB.GetClosestPoint(aSphere.myCenterPosition));
 	}
 
+	inline bool SphereIsInsideAABB(const Sphere & aSphere, const AABB & aAABB)
+	{
+		if (PointInsideAABB(aAABB, aSphere.myCenterPosition) == true)
+		{
+			CU::Vector3f offset = aSphere.myCenterPosition - aAABB.myCenterPos;
+			if ((aAABB.myExtents.x - aSphere.myRadius) > abs(offset.x) &&
+				(aAABB.myExtents.y - aSphere.myRadius) > abs(offset.y) &&
+				(aAABB.myExtents.z - aSphere.myRadius) > abs(offset.z))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
 	inline bool LineVsAABB(const LineSegment3D & aLine, const AABB & aAABB, CU::Vector3f & anIntersectionPoint)
 	{
 		bool isInside = true;

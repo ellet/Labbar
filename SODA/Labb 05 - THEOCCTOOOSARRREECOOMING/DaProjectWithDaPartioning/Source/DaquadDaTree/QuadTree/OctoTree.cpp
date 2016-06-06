@@ -68,9 +68,14 @@ OctoNode * OctoTree::CreateNode(const CU::Vector3f &aCenter, float aHalfWidth, f
 	newNode->myHalfWidth = aHalfWidth;
 
 	newNode->myBox.myCenterPos = aCenter;
-	newNode->myBox.myExtents = CU::Vector2f(aHalfWidth * aLooseness, aHalfWidth * aLooseness);
+	newNode->myBox.myExtents = CU::Vector3f(aHalfWidth, aHalfWidth, aHalfWidth);
 	newNode->myBox.myMinPos = aCenter - newNode->myBox.myExtents;
 	newNode->myBox.myMaxPos = aCenter + newNode->myBox.myExtents;
+
+	newNode->myLooseBox.myCenterPos = aCenter;
+	newNode->myLooseBox.myExtents = CU::Vector3f(aHalfWidth * aLooseness, aHalfWidth * aLooseness, aHalfWidth * aLooseness);
+	newNode->myLooseBox.myMinPos = aCenter - newNode->myLooseBox.myExtents;
+	newNode->myLooseBox.myMaxPos = aCenter + newNode->myLooseBox.myExtents;
 
 
 
@@ -158,7 +163,48 @@ void OctoTree::AddObject(Circle * aCircle, OctoNode * aStartNode)
 	bool isPlaced = false;
 	while (isPlaced == false)
 	{
-		const CU::Vector3f OffsetDistance = aCircle->GetPosition() - currentNodeToCheck->myCenter - currentNodeToCheck->myBox.myExtents;
+		bool testInsideLooseBool = Intersection3D::SphereIsInsideAABB(aCircle->GetSphere(), currentNodeToCheck->myLooseBox);
+		bool testInsideBoxBool = Intersection3D::PointInsideAABB(currentNodeToCheck->myBox, aCircle->GetSphere().myCenterPosition);
+		bool testHaveChildrenBool = currentNodeToCheck->myChildren[0] == nullptr;
+
+
+		if (Intersection3D::SphereIsInsideAABB(aCircle->GetSphere(), currentNodeToCheck->myLooseBox) == false ||
+			Intersection3D::PointInsideAABB( currentNodeToCheck->myBox, aCircle->GetSphere().myCenterPosition) == false ||
+			currentNodeToCheck->myChildren[0] == nullptr)
+		{
+			
+			currentNodeToCheck->myDwellers.Add(aCircle);
+			aCircle->SetColor(currentNodeToCheck->myColor);
+			aCircle->SetParentNode(currentNodeToCheck);
+			isPlaced = true;
+
+
+		}
+		else
+		{
+			CU::Vector3f offset = aCircle->GetSphere().myCenterPosition - currentNodeToCheck->myBox.myCenterPos;
+
+			unsigned short childIndex = 0;
+
+			if (offset.x > 0.f)
+			{
+				++childIndex;
+			}
+
+			if (offset.y > 0.f)
+			{
+				childIndex += 2;
+			}
+
+			if (offset.z > 0.f)
+			{
+				childIndex += 4;
+			}
+
+			currentNodeToCheck = currentNodeToCheck->myChildren[childIndex];
+		}
+
+		/*const CU::Vector3f OffsetDistance = aCircle->GetPosition() - currentNodeToCheck->myCenter - currentNodeToCheck->myBox.myExtents;
 		const CU::Vector3f DistanceFromCenter = aCircle->GetPosition() - currentNodeToCheck->myCenter;
 		
 		if ((currentNodeToCheck->myChildren[0] == nullptr) 
@@ -196,7 +242,7 @@ void OctoTree::AddObject(Circle * aCircle, OctoNode * aStartNode)
 			}
 
 			currentNodeToCheck = currentNodeToCheck->myChildren[childIndex];
-		}
+		}*/
 	}
 }
 

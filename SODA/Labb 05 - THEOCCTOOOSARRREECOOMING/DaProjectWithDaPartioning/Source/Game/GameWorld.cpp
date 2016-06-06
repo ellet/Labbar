@@ -43,7 +43,7 @@ void CGameWorld::Init()
 
 	myPrettyTree->Init(tempPositions);
 
-	myPrettyTree->BuildTree(CU::Vector3f(400.f, 400.f, 400.f), 5);
+	myPrettyTree->BuildTree(CU::Vector3f(800.f, 800.f, 800.f), 5);
 	myPrettyTree->AddAllObjects();
 }
 

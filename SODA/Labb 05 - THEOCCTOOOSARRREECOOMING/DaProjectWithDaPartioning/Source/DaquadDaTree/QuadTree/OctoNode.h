@@ -19,6 +19,7 @@ public:
 
 	OctoNode * myParent;
 	Intersection3D::AABB myBox;
+	Intersection3D::AABB myLooseBox;
 
 	CU::Vector4f myColor;
 
