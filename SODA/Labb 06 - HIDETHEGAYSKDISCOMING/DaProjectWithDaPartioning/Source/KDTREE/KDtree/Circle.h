@@ -20,6 +20,7 @@ public:
 
 	void Reset();
 	void SetIsSeen();
+	void SetLayerChecked();
 
 	bool CollisionTest(const PointOfView & aPointOfView);
 

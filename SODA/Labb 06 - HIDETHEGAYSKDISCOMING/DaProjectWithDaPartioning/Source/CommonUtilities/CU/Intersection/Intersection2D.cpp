@@ -181,34 +181,6 @@ namespace Intersection2D
 		return false;
 	}
 
-	bool TriangleVSCircle(const Triangle & aTriangle, const Circle2D & aCircle)
-	{
-		CU::Vector2f firstBoundary = aTriangle.myFirstLine.GetNormal();
-		float firstPoint = aTriangle.myFirstLine.GetNormal().Dot(aCircle.myMainPoint + (firstBoundary * aCircle.myRadius));
-
-	/*	if (firstPoint > 0)
-		{
-			return true;
-		}*/
-
-		CU::Vector2f secondBoundary = aTriangle.mySecondLine.GetNormal();
-		float secondPoint = aTriangle.mySecondLine.GetNormal().Dot(aCircle.myMainPoint + (secondBoundary * aCircle.myRadius));
-
-		/*if (secondPoint > 0)
-		{
-			return true;
-		}*/
-
-		CU::Vector2f thirdBoundary = aTriangle.myThirdLine.GetNormal();
-		float thirdPoint = aTriangle.myThirdLine.GetNormal().Dot(aCircle.myMainPoint + (thirdBoundary * aCircle.myRadius));
-
-		if (thirdPoint > 0)
-		{
-			return true;
-		}
-
-		return false;
-	}
 
 	bool CircleVSCircle(const Circle2D & aFirstCircle, const Circle2D & aSecondCircle)
 	{
@@ -282,4 +254,81 @@ namespace Intersection2D
 
 		return (e.Length2() - a.Length2());
 	}
+
+	CU::Point2f ClosestPtPointTriangle(CU::Point2f p, CU::Point2f a, CU::Point2f b, CU::Point2f c)
+	{
+		// Check if P in vertex region outside A
+		CU::Vector2f ab = b - a;
+		CU::Vector2f ac = c - a;
+		CU::Vector2f ap = p - a;
+		float d1 = ab.Dot(ap);
+		float d2 = ac.Dot(ap);
+		if (d1 <= 0.0f && d2 <= 0.0f) return a; // barycentric coordinates (1,0,0)
+												// Check if P in vertex region outside B
+		CU::Vector2f bp = p - b;
+		float d3 = ab.Dot(bp);
+		float d4 = ac.Dot(bp);
+		if (d3 >= 0.0f && d4 <= d3) return b; // barycentric coordinates (0,1,0)
+											  // Check if P in edge region of AB, if so return projection of P onto AB
+		float vc = d1*d4 - d3*d2;
+		if (vc <= 0.0f && d1 >= 0.0f && d3 <= 0.0f) {
+			float v = d1 / (d1 - d3);
+			return a + ab * v; // barycentric coordinates (1-v,v,0)
+		}
+		// Check if P in vertex region outside C
+		CU::Vector2f cp = p - c;
+		float d5 = ab.Dot(cp);
+		float d6 = ac.Dot(cp);
+		if (d6 >= 0.0f && d5 <= d6) return c; // barycentric coordinates (0,0,1)
+			// Check if P in edge region of AC, if so return projection of P onto AC
+			float vb = d5*d2 - d1*d6;
+		if (vb <= 0.0f && d2 >= 0.0f && d6 <= 0.0f) {
+			float w = d2 / (d2 - d6);
+			return a + ac * w; // barycentric coordinates (1-w,0,w)
+		}
+		// Check if P in edge region of BC, if so return projection of P onto BC
+		float va = d3*d6 - d5*d4;
+		if (va <= 0.0f && (d4 - d3) >= 0.0f && (d5 - d6) >= 0.0f) {
+			float w = (d4 - d3) / ((d4 - d3) + (d5 - d6));
+			return b + (c - b) * w; // barycentric coordinates (0,1-w,w)
+		}
+		// P inside face region. Compute Q through its barycentric coordinates (u,v,w)
+		float denom = 1.0f / (va + vb + vc);
+		float v = vb * denom;
+		float w = vc * denom;
+		return a + ab * v + ac * w; // = u*a + v*b + w*c, u = va * denom = 1.0f-v-w
+	}
+
+	bool TriangleVSCircle(const Triangle & aTriangle, const Circle2D & aCircle)
+	{
+		CU::Point2f closestPoint = ClosestPtPointTriangle(aCircle.myMainPoint, aTriangle.myFirstLine.myStartPos, aTriangle.mySecondLine.myStartPos, aTriangle.myThirdLine.myStartPos);
+
+		return PointVsCircle(closestPoint, aCircle);
+		//	CU::Vector2f firstBoundary = aTriangle.myFirstLine.GetNormal();
+		//	float firstPoint = aTriangle.myFirstLine.GetNormal().Dot(aCircle.myMainPoint + (firstBoundary * aCircle.myRadius));
+
+		///*	if (firstPoint > 0)
+		//	{
+		//		return true;
+		//	}*/
+
+		//	CU::Vector2f secondBoundary = aTriangle.mySecondLine.GetNormal();
+		//	float secondPoint = aTriangle.mySecondLine.GetNormal().Dot(aCircle.myMainPoint + (secondBoundary * aCircle.myRadius));
+
+		//	/*if (secondPoint > 0)
+		//	{
+		//		return true;
+		//	}*/
+
+		//	CU::Vector2f thirdBoundary = aTriangle.myThirdLine.GetNormal();
+		//	float thirdPoint = aTriangle.myThirdLine.GetNormal().Dot(aCircle.myMainPoint + (thirdBoundary * aCircle.myRadius));
+
+		//	if (thirdPoint > 0)
+		//	{
+		//		return true;
+		//	}
+
+		//	return false;
+	}
+
 }

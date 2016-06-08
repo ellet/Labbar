@@ -63,12 +63,9 @@ void KDTree::CullingPointOfView()
 	for (unsigned short iObject = 0; iObject < myCircles.Size(); ++iObject)
 	{
 		myCircles[iObject].Reset();
-		if (Intersection2D::TriangleVSCircle(myPointOfView.GetTriangle(), myCircles[iObject].GetSphere()) == true)
-		{
-			myCircles[iObject].SetIsSeen();
-		}
 	}
 
+	CullNode(*myRootNode);
 }
 
 KDNode * KDTree::BuildTreeNode(const CU::GrowingArray<Circle*>& aRelevantCircles, const CU::Vector4f & aNodeREKT, const int aCurrentDepth, bool aIsX)
@@ -83,6 +80,8 @@ KDNode * KDTree::BuildTreeNode(const CU::GrowingArray<Circle*>& aRelevantCircles
 		{
 			workIndex = 1;
 		}
+
+		tempNode->myAxisIndex = workIndex;
 
 		CU::GrowingArray<Circle*> sortedCircles;
 		CU::GrowingArray<float> tempXValue;
@@ -213,6 +212,41 @@ void KDTree::DrawNodes(const KDNode & aNodeToDraw) const
 	DRAWLINE(UpperRight, LowerRight);
 	DRAWLINE(LowerRight, LowerLeft);
 	DRAWLINE(LowerLeft, UpperLeft);*/
+}
+
+void KDTree::CullNode(const KDNode & aNodeToCheck) const
+{
+	if (aNodeToCheck.myLeftNode == nullptr && aNodeToCheck.myRightNode == nullptr)
+	{
+		for (unsigned short iCirlce = 0; iCirlce < aNodeToCheck.myObjects.Size(); ++iCirlce)
+		{
+			aNodeToCheck.myObjects[iCirlce]->SetLayerChecked();
+			if (Intersection2D::TriangleVSCircle(myPointOfView.GetTriangle(), aNodeToCheck.myObjects[iCirlce]->GetSphere()) == true)
+			{
+				aNodeToCheck.myObjects[iCirlce]->SetIsSeen();
+			}
+		}
+	}
+	else
+	{
+		unsigned short workIndex = aNodeToCheck.myAxisIndex;
+
+		if ((myPointOfView.GetPosition()[workIndex] - myPointOfView.GetCircle().myRadius) < aNodeToCheck.mySplit.myStartPos[workIndex])
+		{
+			if (aNodeToCheck.myLeftNode != nullptr)
+			{
+				CullNode(*aNodeToCheck.myLeftNode);
+			}
+		}
+
+		if ((myPointOfView.GetPosition()[workIndex] + myPointOfView.GetCircle().myRadius) > aNodeToCheck.mySplit.myStartPos[workIndex])
+		{
+			if (aNodeToCheck.myRightNode != nullptr)
+			{
+				CullNode(*aNodeToCheck.myRightNode);
+			}
+		}
+	}
 }
 
 void KDTree::DeleteNodes(const KDNode & aNodeToDelete)

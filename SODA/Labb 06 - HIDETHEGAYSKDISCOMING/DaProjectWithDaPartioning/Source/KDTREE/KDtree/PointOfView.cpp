@@ -43,6 +43,8 @@ void PointOfView::SetPointOfView(const CU::Vector2f & aPosition, const CU::Vecto
 	myBPosition = aEndPosition + tempLineNormal * tempLine.Length();
 	myCPosition = aEndPosition - tempLineNormal * tempLine.Length();
 	myFOV.Init(myPosition, myBPosition, myCPosition);
+
+	myCircle = Intersection2D::Circle2D(aPosition, (myBPosition - aPosition).Length());
 }
 
 const CU::Vector2f & PointOfView::GetPosition() const
@@ -53,4 +55,9 @@ const CU::Vector2f & PointOfView::GetPosition() const
 const Intersection2D::Triangle & PointOfView::GetTriangle() const
 {
 	return myFOV;
+}
+
+const Intersection2D::Circle2D & PointOfView::GetCircle() const
+{
+	return myCircle;
 }

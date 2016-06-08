@@ -4,7 +4,7 @@
 class Randomizer
 {
 public:
-	Randomizer(float aMinValue = 0.f, float aMaxValue = 1.f);
+	Randomizer(float aMinValue = 0.f, float aMaxValue = 1.f, unsigned short aSeed = 0);
 	~Randomizer();
 
 	void SetMinMax(float aMinValue, float aMaxValue);

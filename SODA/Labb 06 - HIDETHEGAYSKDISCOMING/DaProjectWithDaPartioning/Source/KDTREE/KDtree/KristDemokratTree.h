@@ -22,6 +22,7 @@ private:
 	KDNode* BuildTreeNode(const CU::GrowingArray<Circle*> & aRelevantCircles, const CU::Vector4f & aNodeREKT, const int aCurrentDepth, bool aIsX);
 
 	void DrawNodes(const KDNode & aNodeToDraw) const;
+	void CullNode(const KDNode & aNodeToCheck) const;
 
 	void DeleteNodes(const KDNode & aNodeToDraw);
 

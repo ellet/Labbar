@@ -3,8 +3,9 @@
 
 
 
-Randomizer::Randomizer(float aMinValue /*= 0.f*/, float aMaxValue /*= 1.f*/)
+Randomizer::Randomizer(float aMinValue /*= 0.f*/, float aMaxValue /*= 1.f*/, unsigned short aSeed /*= 0*/)
 {
+	myRandomGenerator = std::default_random_engine(aSeed);
 	myDistribution = std::uniform_real_distribution<float>(aMinValue, aMaxValue);
 }
 

@@ -31,7 +31,7 @@ void CGameWorld::Init()
 {
 	CU::GrowingArray<CU::Vector2f> tempPositions;
 	CU::GrowingArray<float> tempRadius;
-	Randomizer rehndomizher;
+	Randomizer rehndomizher(0.f, 1.f, 7);
 	unsigned short numberOfObjects = 25;
 	tempPositions.Init(numberOfObjects);
 	tempRadius.Init(numberOfObjects);
@@ -54,8 +54,8 @@ void CGameWorld::Init()
 
 void CGameWorld::Update(const CU::Time & aTime)
 {
-	//if (GetInput::GetMouseButtonPressed(CU::enumMouseButtons::eRight) == true)
-	if (GetInput::GetKeyReleased(DIK_LCONTROL) == true)
+	if (GetInput::GetMouseButtonPressed(CU::enumMouseButtons::eRight) == true)
+	//if (GetInput::GetKeyReleased(DIK_LCONTROL) == true)
 	{
 		myMouseStartPosition = GetInput::GetMouseWindowPosition();
 	}

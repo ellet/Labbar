@@ -18,6 +18,7 @@ public:
 	const CU::Vector2f & GetPosition() const;
 
 	const Intersection2D::Triangle & GetTriangle() const;
+	const Intersection2D::Circle2D & GetCircle() const;
 
 private:
 	float myRotation;
@@ -26,6 +27,7 @@ private:
 	CU::Vector2f myBPosition;
 	CU::Vector2f myCPosition;
 	Intersection2D::Triangle myFOV;
+	Intersection2D::Circle2D myCircle;
 	
 
 	StaticSprite * mySprite;

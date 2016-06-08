@@ -10,6 +10,7 @@ Randomizer Circle::ourRandomizer;
 
 const CU::Vector4f SeenColor = CU::Vector4f(1.f, 1.f, 1.f, 0.7f);
 const CU::Vector4f ShadowColor = CU::Vector4f(1.f, 0.f, 0.f, 0.2f);
+const CU::Vector4f CheckedColor = CU::Vector4f(1.f, 0.5f, 0.5f, 0.4f);
 
 const float BallSpeed = 10.f;
 
@@ -58,6 +59,12 @@ void Circle::SetIsSeen()
 	myIsSeen = true;
 	myColor.a = 1.f;
 	mySprite->SetColor(SeenColor);
+}
+
+void Circle::SetLayerChecked()
+{
+	myColor.a = 1.f;
+	mySprite->SetColor(CheckedColor);
 }
 
 bool Circle::CollisionTest(const PointOfView & aPointOfView)
