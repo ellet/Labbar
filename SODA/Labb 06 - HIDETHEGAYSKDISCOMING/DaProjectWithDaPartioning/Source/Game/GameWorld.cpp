@@ -7,7 +7,7 @@
 #include <Rend/StaticSprite.h>
 #include <Rend/RenderConverter.h>
 #include <amp.h>
-
+#include <time.h>
 
 #include <KDtree/KristDemokratTree.h>
 
@@ -17,7 +17,7 @@ const CU::Vector2f WorldSize = CU::Vector2f(1024, 768);
 CGameWorld::CGameWorld()
 {
 	myPrettyTree = new KDTree();
-	myHashtagDeep = 1;
+	myHashtagDeep = 4;
 }
 
 
@@ -31,7 +31,7 @@ void CGameWorld::Init()
 {
 	CU::GrowingArray<CU::Vector2f> tempPositions;
 	CU::GrowingArray<float> tempRadius;
-	Randomizer rehndomizher(0.f, 1.f, 7);
+	Randomizer rehndomizher(0.f, 1.f, time(0));
 	unsigned short numberOfObjects = 25;
 	tempPositions.Init(numberOfObjects);
 	tempRadius.Init(numberOfObjects);

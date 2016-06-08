@@ -63,8 +63,8 @@ void Circle::SetIsSeen()
 
 void Circle::SetLayerChecked()
 {
-	myColor.a = 1.f;
-	mySprite->SetColor(CheckedColor);
+	/*myColor.a = 1.f;
+	mySprite->SetColor(CheckedColor);*/
 }
 
 bool Circle::CollisionTest(const PointOfView & aPointOfView)
