@@ -42,10 +42,18 @@ namespace UsefulToolForGameProjectYes
 
         void InitResolution()
         {
-            Resolution tempSelected = new Resolution(1920, 1080);
-            ComboBoxResolution.Items.Add(tempSelected);
-            ComboBoxResolution.Items.Add(new Resolution(600, 800));
-            ComboBoxResolution.SelectedItem = tempSelected;
+            myResolutions = new List<Resolution>();
+
+            Resolution res19201080 = new Resolution(1920, 1080);
+            Resolution res600800 = new Resolution(600, 800);
+
+            ComboBoxResolution.Items.Add(res19201080);
+            ComboBoxResolution.Items.Add(res600800);
+
+            myResolutions.Add(res19201080);
+            myResolutions.Add(res600800);
+
+            ComboBoxResolution.SelectedItem = res19201080;
         }
 
         private void SaveGameSettingsToFile(string aFilePath)
@@ -60,10 +68,8 @@ namespace UsefulToolForGameProjectYes
             string input = System.IO.File.ReadAllText(aFilePath);
             mySetup = JsonConvert.DeserializeObject<GameSetup>(input);
 
-           
-            
-            ComboBoxResolution.SelectedItem = mySetup.ResolutionSettings;
-            ComboBoxResolution.Refresh();
+            UpdateResolutionsListBox();
+
             CheckBoxFullscreen.Checked = mySetup.IsFullscreen;
             CheckBoxSkipIntro.Checked = mySetup.SkipIntro;
             CheckBoxSkipSplashScreen.Checked = mySetup.SkipSplashscreen;
@@ -180,10 +186,25 @@ namespace UsefulToolForGameProjectYes
             }
         }
 
+        private void UpdateResolutionsListBox()
+        {
+            for (int i = 0; i < myResolutions.Count; ++i)
+            {
+                if (myResolutions[i].Tag == mySetup.ResolutionSettings.Tag)
+                {
+                    ComboBoxResolution.SelectedItem = myResolutions[i];
+                }
+            }
+
+            ComboBoxResolution.Refresh();
+        }
+
+
         private void ButtonHelp_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Hello!\n\nIf you think something is missing or that something is confusing among the options here, go tell your friendly neighborhood programmers about it, and we will modify the tool according to feedback.");
         }
         private GameSetup mySetup;
+        private List<Resolution> myResolutions;
     }
 }
