@@ -1,0 +1,88 @@
+Se AmbientLight.png... och alla andra bilder. För att se så att varje steg blir rätt.
+
+
+Först så har jag en funktion som skapar all pixeldata som jag behöver
+
+struct PixelData
+{
+	float3 albedo;
+	float3 metalnessAlbedo;
+	float3 normal;
+	float3 metalness;
+	float3 substance;
+	float3 ambientOcclusion;
+	float roughness;
+	float roughnessOffsetted;
+};
+
+
+De delar som ni inte har sett för är metalnessAlbedo, roughnessOffsetted och substance
+
+Så här räknar vi ut substance och albedon
+	returnData.substance = (0.04 - 0.04 * returnData.metalness) + albedo * returnData.metalness;
+	returnData.metalnessAlbedo = albedo - albedo * metalness;
+
+Utan denna ser ambienten mycket dassigare ut. Se AmbientLightRoughness.png
+	returnData.roughnessOffsetted = pow(8192, returnData.roughness);
+
+
+Efter vi har all data kan vi börja beräkna saker! Vi börjar med en lätt.
+
+För att kunna beräkna spec måste vi veta hur vi tar oss från pixeln till ögat. ViewPos är en variabel som vi skickar in från cpusidan till grafikkortet. Den är helt enkelt bara kamerans position
+	float3 toEye = normalize(ViewPos - input.myPosition.xyz);
+
+
+Sen behöver vi en reflektionsfresnel. Den kommer att beräkna hur reflektionen beter sig i olika material.
+	float3 reflectionFresnel = ReflectionFresnel(data.substance, data.normal.xyz, toEye, 1 - data.roughnessOffsetted);
+	
+	
+	float3 ReflectionFresnel(const float3 substance, const float3 lightDir, const float3 halfVec, float roughness)
+	{
+		float LdotH = dot(lightDir, halfVec);
+		LdotH = saturate(LdotH);
+		LdotH = 1.0f - LdotH;
+		LdotH = pow(LdotH, 5);
+		float3 fresnel = LdotH * (1.f - substance);
+		fresnel = fresnel / (6 - 5 * roughness);
+		fresnel = substance + fresnel;
+		return fresnel;
+	}
+
+	
+Efter vi har detta kan vi beräkna vår ambienta diffus! Den får vi genom att sampla vår cubemap med pixelns normal. Notera även att mip är hårdkodat till 9, så ifall er cubemap har ett annat antal mips än 12 så måste ni ändra på denna. Sen tar vi och multipliserar ihopa allt med varandra och en (1 - reflectionFresnel), denna håller oss energy conserving. Så att vi inte råkar skapa mer ljus än vi får in.
+	float3 ambientDiffuse = Cubemap.SampleLevel(samplerState, data.normal.xyz, 9).xyz * data.ambientOcclusion * data.metalnessAlbedo * (1 - reflectionFresnel);
+
+
+Sen behöver vi en reflektionsvector. Det är helt enkelt vektorn som visar var ljuset kommer ifrån.
+	float3 reflectionVector = reflect(toEye, data.normal.xyz);
+
+
+Efter det implementerar vi kod som är taget rakt från lys dokumentation. Den räknar ut vilken mip vi ska ha till reflektionen baserat på roughness. Notera den hårdkodade 10 som ska vara antalet mips på era cubemaps.
+	float fakeLysSpecularPower = RoughToSPow(data.roughness);
+	float lysMipMap = GetSpecPowToMip(fakeLysSpecularPower, 12);
+	
+	
+	float RoughToSPow(float fRoughness)
+	{
+		return (2.f / (fRoughness * fRoughness)) - 2.f;
+	}
+
+	static const float k0 = 0.00098f;
+	static const float k1 = 0.9921f;
+	static const float fakeLysMaxSpecularPower = (2.f / (0.0014f * 0.0014f)) - 2.f;
+	static const float fMaxT = (exp2(-10.f / sqrt((2.f / (0.0014f * 0.0014f)) - 2.f)) - 0.00098f) / 0.9921f;
+	float GetSpecPowToMip(float fSpecPow, int nMips)
+	{
+		float fSmulMaxT = (exp2(-10.0 / sqrt(fSpecPow)) - k0) / k1;
+
+		return float(nMips - 1 - 0) * (1.0 - clamp(fSmulMaxT / fMaxT, 0.0, 1.0));
+	}
+
+
+Efter det så samplar vi cubemappen igen, fast den här gången med mippen som lys vill ha, samt att vi kör vår energy conservation på andra hållet
+	float3 ambientSpec = Cubemap.SampleLevel(samplerState, reflectionVector, lysMipMap).xyz * data.ambientOcclusion * reflectionFresnel;
+
+
+Om ni sen returnerar det som vi får ut så ska ni ha en scen som liknar AmbientLight.png!
+	float3 ambient = saturate(ambientDiffuse + ambientSpec);
+	return float4(ambient.xyz, 1);
