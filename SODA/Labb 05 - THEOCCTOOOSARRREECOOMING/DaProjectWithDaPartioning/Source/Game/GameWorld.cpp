@@ -58,7 +58,8 @@ void CGameWorld::Update(const CU::Time & aTime)
 
 	if (GetInput::GetMouseButtonDown(CU::enumMouseButtons::eRight) == true)
 	{
-		myPrettyTree->SetPointOfViewRotation(CU::Vector3f(GetInput::GetMouseWindowPosition().x, GetInput::GetMouseWindowPosition().y, 0.f));
+		myPrettyTree->SetPointOfView(GetInput::GetMouseWindowPosition());
+		//myPrettyTree->SetPointOfViewRotation(CU::Vector3f(GetInput::GetMouseWindowPosition().x, GetInput::GetMouseWindowPosition().y, 0.f));
 	}
 
 	CU::Vector3f addedRotation = CU::Vector3f::Zero;

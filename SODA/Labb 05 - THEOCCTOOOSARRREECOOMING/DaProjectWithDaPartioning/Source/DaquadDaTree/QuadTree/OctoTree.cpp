@@ -5,6 +5,7 @@
 
 OctoTree::OctoTree()
 {
+	myRootNode = nullptr;
 }
 
 
@@ -116,6 +117,30 @@ void OctoTree::UpdateObjectTreeLocation()
 			AddObject(&workCircle, workCircle.GetParentNode()->myParent);
 		}
 	}*/
+}
+
+void OctoTree::DeleteAllNodes()
+{
+	if (myRootNode != nullptr)
+	{
+		DeleteNode(myRootNode);
+		myRootNode = nullptr;
+	}
+}
+
+void OctoTree::DeleteNode(OctoNode * aNode)
+{
+	if (aNode == nullptr)
+	{
+		return;
+	}
+
+	for (int iNode = 0; iNode <= aNode->myChildren.GetSize(); ++iNode)
+	{
+		DeleteNode(aNode->myChildren[iNode]);
+	}
+
+	delete aNode;
 }
 
 void OctoTree::CollisionCheckNode(OctoNode * aNode)
@@ -251,6 +276,7 @@ void OctoTree::BuildTree(const CU::Vector3f & aAreaSize, const int aMax)
 	myMaxDepth = aMax;
 	myArea = aAreaSize;
 
+	DeleteAllNodes();
 	myRootNode = CreateNode(aAreaSize / 2.f, aAreaSize.x / 2.f, OctoNode::ourLooseness, 0, nullptr);
 }
 

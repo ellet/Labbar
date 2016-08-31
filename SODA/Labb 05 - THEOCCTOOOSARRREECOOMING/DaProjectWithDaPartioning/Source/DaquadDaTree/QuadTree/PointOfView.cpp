@@ -42,6 +42,7 @@ const CU::Vector2f & PointOfView::GetPosition() const
 void PointOfView::SetPosition(const CU::Vector2f & aPosition)
 {
 	//myCircle.ChangePosition(aPosition);
+	myPosition = aPosition;
 }
 
 void PointOfView::SetRotation(const CU::Vector3f & aRotation)

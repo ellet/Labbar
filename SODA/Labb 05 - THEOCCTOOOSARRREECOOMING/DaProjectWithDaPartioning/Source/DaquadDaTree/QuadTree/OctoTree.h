@@ -30,6 +30,8 @@ public:
 	CU::Vector4f GetColor(const int aDepth);
 
 private:
+	void DeleteAllNodes();
+	void DeleteNode(OctoNode * aNode);
 	void CollisionCheckNode(OctoNode * aNode);
 	void CollisionCheck();
 
