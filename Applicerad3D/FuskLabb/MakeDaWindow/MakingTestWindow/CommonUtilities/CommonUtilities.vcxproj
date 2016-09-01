@@ -344,7 +344,8 @@
     <ClInclude Include="CU\Utility\MathHelper.h" />
     <ClInclude Include="CU\Utility\Math\Isometric.h" />
     <ClInclude Include="CU\Utility\Randomizer\Randomizer.h" />
-    <ClInclude Include="CU\Utility\WindowsFunctions.h" />
+    <ClInclude Include="CU\Utility\WindowsFunctions\WindowHelperFunctions.h" />
+    <ClInclude Include="CU\Utility\WindowsFunctions\WindowsFunctions.h" />
     <ClInclude Include="CU\VectonOnStack\VectorOnStack.h" />
     <ClInclude Include="CU\Vectors\Vector.h" />
     <ClInclude Include="CU\Vectors\vector2.h" />
@@ -388,12 +389,13 @@
     <ClCompile Include="CU\Utility\FileHandling.cpp" />
     <ClCompile Include="CU\Utility\Math\Isometric.cpp" />
     <ClCompile Include="CU\Utility\Randomizer\Randomizer.cpp" />
-    <ClCompile Include="CU\Utility\WindowsFunctions.cpp" />
+    <ClCompile Include="CU\Utility\WindowsFunctions\WindowsFunctions.cpp" />
     <ClCompile Include="CU\Utility\DataHolder\SingletonDataHolder.cpp" />
     <ClCompile Include="CU\MainSingleton\MainSingleton.cpp" />
     <ClCompile Include="CU\PostMaster\PostMaster.cpp" />
     <ClCompile Include="CU\Intersection\Colliders\SquareCollider.cpp" />
     <ClCompile Include="CU\ObjectCreationDatabase\ObjectCreationDatabase.cpp" />
+    <ClCompile Include="CU\Utility\WindowsFunctions\WindowHelperFunctions.cpp" />
     <ClCompile Include="stdafx.cpp">
       <MultiProcessorCompilation Condition="'$(Configuration)|$(Platform)'=='TestShit|Win32'">false</MultiProcessorCompilation>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='TestShit|Win32'">Create</PrecompiledHeader>

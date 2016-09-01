@@ -6,8 +6,8 @@
 #include <cassert>
 #include <time.h>
 #include <Windows.h>
-#include "../Utility/WindowsFunctions.h"
-#include "../NameSpaceAliases.h"
+#include "CU/Utility/WindowsFunctions/WindowsFunctions.h"
+#include "CU/NameSpaceAliases.h"
 
 using namespace DL_Debug;
 

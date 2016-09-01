@@ -4,7 +4,7 @@
 
 #include <dinput.h>
 #include <vector>
-#include "CU/Utility/WindowsFunctions.h"
+#include "CU/Utility/WindowsFunctions/WindowsFunctions.h"
 #include "CU/DLDebug/DL_Debug.h"
 
 #include "InputWrapper.h"
