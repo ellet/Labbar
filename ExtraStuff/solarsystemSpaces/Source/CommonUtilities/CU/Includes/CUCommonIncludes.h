@@ -10,6 +10,7 @@
 
 #include "CU/Matriser/matrix.h"
 #include "CU/Vectors/Vector.h"
+#include "CU/WorldSpace/Space.h"
 
 #include "CU/Camera/Camera2D.h"
 

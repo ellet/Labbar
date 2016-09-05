@@ -45,8 +45,8 @@ void CGameWorld::CreateObjects()
 	tempConstructData.myLocalRotationSpeed = 0.f;
 	tempConstructData.mySize = 1.2f;
 
-
 	mySun.Init(tempConstructData);
+	mySun.SetParentSpace(WorldSpace);
 
 	tempConstructData.myFilePath = "Sprites/Kaffe.png";
 	tempConstructData.myPosition = { 200.f, 200.f };
@@ -132,7 +132,7 @@ void CGameWorld::Update(const CU::Time & aDeltaTime)
 {
 	const float eyeMoveAmount = 5; 
 
-	PixelPositionFloat tempPlanetPosition = myFirstPlanet.GetPosition() * mySun.GetTransformation();
+	PixelPositionFloat tempPlanetPosition = myFirstPlanet.GetPosition();
 
 	myLeftEye.SetPosition(((tempPlanetPosition - myLeftEyeCenterPosition).GetNormalized() * eyeMoveAmount + myLeftEyeCenterPosition));
 	myRightEye.SetPosition(((tempPlanetPosition - myRightEyeCenterPosition).GetNormalized() * eyeMoveAmount + myRightEyeCenterPosition));

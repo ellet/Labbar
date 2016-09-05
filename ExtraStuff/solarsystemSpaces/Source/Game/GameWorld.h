@@ -18,6 +18,7 @@ public:
 
 
 private:
+	CU::Space WorldSpace;
 	SpatialObject mySun;
 
 	SpatialObject myFirstPlanet;

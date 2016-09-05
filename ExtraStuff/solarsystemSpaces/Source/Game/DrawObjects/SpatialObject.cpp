@@ -18,7 +18,7 @@ void SpatialObject::Init(const ConstructData & aCreationData)
 	mySprite.SetPivot({ 0.5f, 0.5f });
 	mySprite.SetSize(aCreationData.mySize);
 
-	myTransformation.SetPosition(aCreationData.myPosition);
+	mySpace.SetPosition(aCreationData.myPosition);
 	
 	myRotationSpeed = aCreationData.myRotationSpeed;
 	myLocalRotationSpeed = aCreationData.myLocalRotationSpeed;
@@ -31,7 +31,7 @@ void SpatialObject::Update(const CU::Time & aDeltaTime)
 
 	myCurrentRotation += myLocalRotationSpeed * aDeltaTime.GetSeconds();
 
-	myTransformation.Rotate2D(DEGRESS_TO_RADIANSF(newRotation));
+	mySpace.Rotate2D(DEGRESS_TO_RADIANSF(newRotation));
 	
 	mySprite.SetRotationDegrees(myCurrentRotation);
 
@@ -43,27 +43,34 @@ void SpatialObject::Update(const CU::Time & aDeltaTime)
 
 void SpatialObject::Draw(const CU::Matrix33f & aParentMatrix) const
 {
-	CU::Matrix33f tempTransformation = myTransformation * aParentMatrix;
+	CU::Matrix33f tempTransformation;// = mySpace.GetTransform();//myTransformation * aParentMatrix;
 
 	for (unsigned short iChild = 0; iChild < myChildren.Size(); ++iChild)
 	{
 		myChildren[iChild]->Draw(tempTransformation);
 	}
 
-	mySprite.Draw(tempTransformation.GetPosition());
+	//CU::Vector2f temppos = mySpace.GetPosition();
+	mySprite.Draw(mySpace.GetPosition());
 }
 
 void SpatialObject::AddChild(SpatialObject & aSpatialObject)
 {
+	aSpatialObject.SetParentSpace(mySpace);
 	myChildren.Add(&aSpatialObject);
+}
+
+void SpatialObject::SetParentSpace(const CU::Space& aSpace)
+{
+	mySpace.SetParent(aSpace);
 }
 
 const CU::Vector2f & SpatialObject::GetPosition()
 {
-	return myTransformation.GetPosition();
+	return mySpace.GetPosition();
 }
 
 const CU::Matrix33f & SpatialObject::GetTransformation()
 {
-	return myTransformation;
+	return mySpace.GetTransform();
 }

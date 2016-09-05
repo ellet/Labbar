@@ -276,6 +276,9 @@
     <ClInclude Include="CU\Utility\Enums\GameSpecificEnums\GameSpecifcObjectTypes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CU\WorldSpace\Space.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CU\DLDebug\StackWalker\StackWalker.cpp">
@@ -387,6 +390,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CU\ObjectCreationDatabase\ObjectCreationDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\WorldSpace\Space.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

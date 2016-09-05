@@ -355,6 +355,7 @@
     <ClInclude Include="CU\PostMaster\PostMaster.h" />
     <ClInclude Include="CU\Intersection\Colliders\SquareCollider.h" />
     <ClInclude Include="CU\ObjectCreationDatabase\ObjectCreationDatabase.h" />
+    <ClInclude Include="CU\WorldSpace\Space.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
@@ -394,6 +395,7 @@
     <ClCompile Include="CU\PostMaster\PostMaster.cpp" />
     <ClCompile Include="CU\Intersection\Colliders\SquareCollider.cpp" />
     <ClCompile Include="CU\ObjectCreationDatabase\ObjectCreationDatabase.cpp" />
+    <ClCompile Include="CU\WorldSpace\Space.cpp" />
     <ClCompile Include="stdafx.cpp">
       <MultiProcessorCompilation Condition="'$(Configuration)|$(Platform)'=='TestShit|Win32'">false</MultiProcessorCompilation>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='TestShit|Win32'">Create</PrecompiledHeader>
