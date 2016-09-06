@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/Teachers/!svn/ver/488/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample
+END
+swresample-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/swresample-test.c
+END
+audioconvert.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/audioconvert.c
+END
+resample_template.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/resample_template.c
+END
+audioconvert.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/audioconvert.h
+END
+resample.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/resample.c
+END
+dither_template.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/dither_template.c
+END
+dither.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/dither.c
+END
+noise_shaping_data.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/noise_shaping_data.c
+END
+swresample.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/swresample.c
+END
+swresample_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/swresample_internal.h
+END
+soxr_resample.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/soxr_resample.c
+END
+rematrix_template.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/rematrix_template.c
+END
+swresample.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/swresample.h
+END
+log2_tab.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/log2_tab.c
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/version.h
+END
+rematrix.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/rematrix.c
+END
+libswresample.v
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/libswresample.v
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswresample/Makefile
+END

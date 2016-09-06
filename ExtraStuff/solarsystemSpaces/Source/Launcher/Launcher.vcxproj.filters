@@ -37,4 +37,10 @@
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Version.bat">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Launcher.aps" />
+  </ItemGroup>
 </Project>

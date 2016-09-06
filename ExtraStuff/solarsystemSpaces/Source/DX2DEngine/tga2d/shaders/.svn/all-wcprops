@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/tga2d/shaders
+END
+shader_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/tga2d/shaders/shader_common.h
+END
+shader_normal.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/482/TGA2D/trunk/Source/DX2DEngine/tga2d/shaders/shader_normal.h
+END
+customshader.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/Teachers/!svn/ver/482/TGA2D/trunk/Source/DX2DEngine/tga2d/shaders/customshader.h
+END
+shader.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/Teachers/!svn/ver/482/TGA2D/trunk/Source/DX2DEngine/tga2d/shaders/shader.h
+END
+shader_normal_instanced.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/Teachers/!svn/ver/482/TGA2D/trunk/Source/DX2DEngine/tga2d/shaders/shader_normal_instanced.h
+END

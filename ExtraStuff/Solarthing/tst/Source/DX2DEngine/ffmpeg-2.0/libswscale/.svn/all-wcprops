@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/Teachers/!svn/ver/488/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale
+END
+input.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale/input.c
+END
+yuv2rgb.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale/yuv2rgb.c
+END
+output.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale/output.c
+END
+utils.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale/utils.c
+END
+swscale.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale/swscale.c
+END
+swscale_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale/swscale_internal.h
+END
+swscale.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale/swscale.h
+END
+colorspace-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale/colorspace-test.c
+END
+libswscale.v
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale/libswscale.v
+END
+swscale-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale/swscale-test.c
+END
+swscale_unscaled.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale/swscale_unscaled.c
+END
+rgb2rgb_template.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale/rgb2rgb_template.c
+END
+rgb2rgb.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale/rgb2rgb.c
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale/version.h
+END
+options.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale/options.c
+END
+rgb2rgb.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale/rgb2rgb.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libswscale/Makefile
+END

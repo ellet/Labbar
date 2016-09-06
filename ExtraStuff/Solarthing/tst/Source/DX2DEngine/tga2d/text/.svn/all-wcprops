@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/tga2d/text
+END
+parser.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/329/TGA2D/trunk/Source/DX2DEngine/tga2d/text/parser.h
+END
+token.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Teachers/!svn/ver/329/TGA2D/trunk/Source/DX2DEngine/tga2d/text/token.h
+END
+text.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/tga2d/text/text.h
+END
+text_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/tga2d/text/text_service.h
+END
+textfile.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/Teachers/!svn/ver/200/TGA2D/trunk/Source/DX2DEngine/tga2d/text/textfile.h
+END
+fontfile.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/Teachers/!svn/ver/329/TGA2D/trunk/Source/DX2DEngine/tga2d/text/fontfile.h
+END

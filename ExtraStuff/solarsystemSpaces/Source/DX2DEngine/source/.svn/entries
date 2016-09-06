@@ -1,0 +1,110 @@
+10
+
+dir
+493
+https://semalfil03.hermods.local/svn/Teachers/TGA2D/trunk/Source/DX2DEngine/source
+https://semalfil03.hermods.local/svn/Teachers
+
+
+
+2016-07-08T06:49:05.001315Z
+491
+gral1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5950e0f5-9d68-5d4b-84bb-b4f0c470b735
+
+render
+dir
+
+videoplayer
+dir
+
+text
+dir
+
+engine.cpp
+file
+
+
+
+
+2016-09-06T13:59:16.294508Z
+6814b57c66f7636d59706d6e5bf95732
+2016-07-08T06:49:05.001315Z
+491
+gral1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11393
+
+error
+dir
+
+math
+dir
+
+windows
+dir
+
+primitives
+dir
+
+filewatcher
+dir
+
+input
+dir
+
+texture
+dir
+
+shader
+dir
+
+sprite
+dir
+
+drawers
+dir
+
+light
+dir
+
+d3d
+dir
+
+noise
+dir
+

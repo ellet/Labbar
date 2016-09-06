@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/Teachers/!svn/ver/489/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0
+END
+configure
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/configure
+END
+ffmpeg.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/ffmpeg.c
+END
+Changelog
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/Changelog
+END
+cmdutils_common_opts.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/cmdutils_common_opts.h
+END
+ffmpeg.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/ffmpeg.h
+END
+ffmpeg_filter.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/ffmpeg_filter.c
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/config.h
+END
+version.sh
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/version.sh
+END
+ffplay.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/ffplay.c
+END
+ffserver.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/ffserver.c
+END
+ffprobe.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/ffprobe.c
+END
+cmdutils.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/cmdutils.c
+END
+ffmpeg_opt.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/ffmpeg_opt.c
+END
+cmdutils.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/cmdutils.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/Makefile
+END

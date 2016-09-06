@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/Teachers/!svn/ver/486/TGA2D/trunk/Source/Tutorials/Tutorial10Customshader
+END
+custom_sprite_vertex_shader.fx
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/Teachers/!svn/ver/486/TGA2D/trunk/Source/Tutorials/Tutorial10Customshader/custom_sprite_vertex_shader.fx
+END
+Tutorial10Customshader.vcxproj
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/Teachers/!svn/ver/486/TGA2D/trunk/Source/Tutorials/Tutorial10Customshader/Tutorial10Customshader.vcxproj
+END
+custom_sprite_pixel_shader.fx
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/Teachers/!svn/ver/486/TGA2D/trunk/Source/Tutorials/Tutorial10Customshader/custom_sprite_pixel_shader.fx
+END
+common.fx
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/486/TGA2D/trunk/Source/Tutorials/Tutorial10Customshader/common.fx
+END
+Tutorial10Customshader.vcxproj.filters
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/Teachers/!svn/ver/486/TGA2D/trunk/Source/Tutorials/Tutorial10Customshader/Tutorial10Customshader.vcxproj.filters
+END
+common_sprite.fx
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/Teachers/!svn/ver/486/TGA2D/trunk/Source/Tutorials/Tutorial10Customshader/common_sprite.fx
+END

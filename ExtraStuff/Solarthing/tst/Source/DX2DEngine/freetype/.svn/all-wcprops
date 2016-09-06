@@ -1,0 +1,275 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype
+END
+ftcid.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftcid.h
+END
+ftmac.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftmac.h
+END
+ftoutln.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftoutln.h
+END
+fttrigon.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/fttrigon.h
+END
+ftcache.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftcache.h
+END
+ftsynth.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftsynth.h
+END
+ttunpat.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ttunpat.h
+END
+ftstroke.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftstroke.h
+END
+ftmodapi.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftmodapi.h
+END
+ftchapters.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftchapters.h
+END
+ftcffdrv.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftcffdrv.h
+END
+ftlist.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftlist.h
+END
+ftlzw.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftlzw.h
+END
+ftbitmap.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftbitmap.h
+END
+tttags.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/tttags.h
+END
+ftincrem.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftincrem.h
+END
+ftrender.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftrender.h
+END
+ftautoh.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftautoh.h
+END
+ftglyph.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftglyph.h
+END
+t1tables.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/t1tables.h
+END
+ftsnames.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftsnames.h
+END
+ftbzip2.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftbzip2.h
+END
+tttables.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/tttables.h
+END
+ftmoderr.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftmoderr.h
+END
+freetype.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/freetype.h
+END
+ftgasp.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftgasp.h
+END
+ftbdf.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftbdf.h
+END
+ftsizes.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftsizes.h
+END
+ftfntfmt.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftfntfmt.h
+END
+ftttdrv.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftttdrv.h
+END
+fttypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/fttypes.h
+END
+ftwinfnt.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftwinfnt.h
+END
+fterrdef.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/fterrdef.h
+END
+ftmm.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftmm.h
+END
+ftgzip.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftgzip.h
+END
+ttnameid.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ttnameid.h
+END
+fterrors.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/fterrors.h
+END
+ftgxval.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftgxval.h
+END
+ftimage.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftimage.h
+END
+ftsystem.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftsystem.h
+END
+ftotval.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftotval.h
+END
+ftpfr.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftpfr.h
+END
+ftbbox.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftbbox.h
+END
+ftadvanc.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftadvanc.h
+END
+ftlcdfil.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/freetype/ftlcdfil.h
+END

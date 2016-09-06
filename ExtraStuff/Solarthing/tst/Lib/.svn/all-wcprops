@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/Teachers/!svn/ver/493/TGA2D/trunk/Lib
+END
+freetype_Debug_x64.lib
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/Teachers/!svn/ver/493/TGA2D/trunk/Lib/freetype_Debug_x64.lib
+END
+avfilter.lib
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/Teachers/!svn/ver/482/TGA2D/trunk/Lib/avfilter.lib
+END
+avformat.lib
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/Teachers/!svn/ver/482/TGA2D/trunk/Lib/avformat.lib
+END
+swscale.lib
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/Teachers/!svn/ver/482/TGA2D/trunk/Lib/swscale.lib
+END
+swresample.lib
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/Teachers/!svn/ver/482/TGA2D/trunk/Lib/swresample.lib
+END
+avcodec.lib
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/Teachers/!svn/ver/482/TGA2D/trunk/Lib/avcodec.lib
+END
+avutil.lib
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/Teachers/!svn/ver/482/TGA2D/trunk/Lib/avutil.lib
+END
+freetype_Release_x64.lib
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/Teachers/!svn/ver/493/TGA2D/trunk/Lib/freetype_Release_x64.lib
+END
+avdevice.lib
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/Teachers/!svn/ver/482/TGA2D/trunk/Lib/avdevice.lib
+END
+postproc.lib
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/Teachers/!svn/ver/482/TGA2D/trunk/Lib/postproc.lib
+END

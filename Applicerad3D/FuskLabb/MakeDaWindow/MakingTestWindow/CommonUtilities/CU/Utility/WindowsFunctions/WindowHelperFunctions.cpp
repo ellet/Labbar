@@ -7,7 +7,8 @@ namespace CommonUtilities
 	namespace WindowsFunctions
 	{
 
-		HWND CreateWindowsWindow(HINSTANCE aHINSTANCE, WNDPROC aMessageHandleFunction, const std::string & aClassName, bool aShowConsoleFlag)
+		HWND CreateWindowsWindow(HINSTANCE aHINSTANCE, WNDPROC aMessageHandleFunction, const std::string & aClassName,
+			const CU::Vector2i aWindowSize /*= CU::Vector2i(1024, 600)*/, const std::string & anApplicationName /*= "Default Name"*/, const int aWindowShowState /*= SW_SHOWNORMAL*/)
 		{
 			CU::WindowsFunctions::RegisterWindow(aHINSTANCE, aMessageHandleFunction, aClassName);
 
@@ -16,12 +17,10 @@ namespace CommonUtilities
 			hwnd = CreateWindowEx(
 				WS_EX_CLIENTEDGE,
 				aClassName.c_str(),
-				"ARARARARARAAR",
+				anApplicationName.c_str(),
 				WS_OVERLAPPEDWINDOW,
-				CW_USEDEFAULT, CW_USEDEFAULT, 640, 320,
+				CW_USEDEFAULT, CW_USEDEFAULT, aWindowSize.x, aWindowSize.y,
 				NULL, NULL, aHINSTANCE, NULL);
-
-			//SetWindowText(hwnd, "derperperperp");
 
 			if (hwnd == NULL)
 			{
@@ -30,7 +29,7 @@ namespace CommonUtilities
 				return 0;
 			}
 
-			ShowWindow(hwnd, aShowConsoleFlag);
+			ShowWindow(hwnd, aWindowShowState);
 			UpdateWindow(hwnd);
 
 			return hwnd;
@@ -38,29 +37,29 @@ namespace CommonUtilities
 
 		WNDCLASSEX RegisterWindow(HINSTANCE aHINSTANCE, WNDPROC aMessageHandleFunction, const std::string & aClassName)
 		{
-			WNDCLASSEX wc;
+			WNDCLASSEX windowClass;
 
-			wc.cbSize = sizeof(WNDCLASSEX);
-			wc.style = 0;
-			wc.lpfnWndProc = aMessageHandleFunction;
-			wc.cbClsExtra = 0;
-			wc.cbWndExtra = 0;
-			wc.hInstance = aHINSTANCE;
-			wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
-			wc.hCursor = LoadCursor(NULL, IDC_ARROW);
-			wc.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
-			wc.lpszMenuName = NULL;
-			wc.lpszClassName = aClassName.c_str();
-			wc.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
+			windowClass.cbSize = sizeof(WNDCLASSEX);
+			windowClass.style = 0;
+			windowClass.lpfnWndProc = aMessageHandleFunction;
+			windowClass.cbClsExtra = 0;
+			windowClass.cbWndExtra = 0;
+			windowClass.hInstance = aHINSTANCE;
+			windowClass.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+			windowClass.hCursor = LoadCursor(NULL, IDC_ARROW);
+			windowClass.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+			windowClass.lpszMenuName = NULL;
+			windowClass.lpszClassName = aClassName.c_str();
+			windowClass.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
 
-			if (!RegisterClassEx(&wc))
+			if (!RegisterClassEx(&windowClass))
 			{
 				MessageBox(NULL, "Window Registration Failed!", "Error!",
 					MB_ICONEXCLAMATION | MB_OK);
 				//return 0;
 			}
 
-			return wc;
+			return windowClass;
 		}
 
 	}

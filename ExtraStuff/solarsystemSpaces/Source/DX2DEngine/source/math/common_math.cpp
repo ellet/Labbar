@@ -2,9 +2,9 @@
 #include "math/common_math.h"
 #include "math/Matrix44.h"
 
-void DX2D::PerspectiveFOV( float fov, float aspect, float aNear, float aFar, Matrix44& aOutMatrix )
+void Tga2D::PerspectiveFOV( float fov, float aspect, float aNear, float aFar, Matrix44& aOutMatrix )
 {
-	float D2R = DX2D_PI / 180.0f;
+	float D2R = Tga2D_PI / 180.0f;
 	float yScale = 1.0f / tan(D2R * fov / 2.0f);
 	float xScale = yScale / aspect;
 	float nearmfar = aNear - aFar;
@@ -15,7 +15,7 @@ void DX2D::PerspectiveFOV( float fov, float aspect, float aNear, float aFar, Mat
 	aOutMatrix.myPos4.Set(0.0f, 0.0f, 2.0f*aFar*aNear / nearmfar, 0.0f );
 }
 
-void DX2D::MakeMatrixOrtho( float left, float right, float bottom, float top, float aNear,float aFar, Matrix44& result )
+void Tga2D::MakeMatrixOrtho( float left, float right, float bottom, float top, float aNear,float aFar, Matrix44& result )
 {
 	result.myXAxis4.x = 2.0f / (right - left);
 	result.myYAxis4.x = 0.0;

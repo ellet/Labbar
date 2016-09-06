@@ -2,30 +2,30 @@
 #include <math.h>
 
 
-#define DX2D_PI 3.14159265358979323846f
+#define Tga2D_PI 3.14159265358979323846f
 #define Ftrunc(aFloat) ((float)((int)(aFloat)))
 #define FmodMacro(aX, aY) ((aX) - Ftrunc((aX) * (1.0f / (aY))) * (aY))
 
 
-namespace DX2D
+namespace Tga2D
 {
 	class Matrix44;
 	void PerspectiveFOV(float fov, float aspect, float aNear, float aFar, Matrix44& aOutMatrix);
 	void MakeMatrixOrtho(float left, float right, float bottom, float top, float aNear,float aFar, Matrix44& result);
 
-	__forceinline float DX2D_Cos(const float aX)
+	__forceinline float Tga2D_Cos(const float aX)
 	{
 		// Calculate abs value (cos(x) == cos(-x))
 		float t = fabsf(aX);
 
 		// Mod to [0 .. 2PI] range
-		t = FmodMacro(t, 2.0f * DX2D_PI);
+		t = FmodMacro(t, 2.0f * Tga2D_PI);
 
 		// Reflect in PI
-		t = fabsf(t - DX2D_PI);
+		t = fabsf(t - Tga2D_PI);
 
 		// Offset to sin space
-		t -= 0.5f * DX2D_PI;
+		t -= 0.5f * Tga2D_PI;
 
 		// Taylor series constants
 		const float c0 = -1.0f / 6.0f;			// 1/3!
@@ -39,15 +39,15 @@ namespace DX2D
 		return t + t * (t2 * (c0 + t2 * (c1 + t2 * (c2 + t2 * (c3 + t2 * c4)))));
 	}
 
-	__forceinline float DX2D_Sin(float aX)
+	__forceinline float Tga2D_Sin(float aX)
 	{
-		return DX2D_Cos(aX - 0.5f * DX2D_PI);
+		return Tga2D_Cos(aX - 0.5f * Tga2D_PI);
 	}
 
-	__forceinline void DX2D_SinCos(float aX, float* aOutSin, float* aOutCos)
+	__forceinline void Tga2D_SinCos(float aX, float* aOutSin, float* aOutCos)
 	{
-		*aOutSin = DX2D_Sin(aX);
-		*aOutCos = DX2D_Cos(aX);
+		*aOutSin = Tga2D_Sin(aX);
+		*aOutCos = Tga2D_Cos(aX);
 	}
 
 	const double Pi = 3.14159265358979323846264338327950288419716939937510; 

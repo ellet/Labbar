@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/tga2d/render
+END
+render_object.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/Teachers/!svn/ver/482/TGA2D/trunk/Source/DX2DEngine/tga2d/render/render_object.h
+END
+renderer.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/Teachers/!svn/ver/482/TGA2D/trunk/Source/DX2DEngine/tga2d/render/renderer.h
+END
+render_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/Teachers/!svn/ver/491/TGA2D/trunk/Source/DX2DEngine/tga2d/render/render_common.h
+END

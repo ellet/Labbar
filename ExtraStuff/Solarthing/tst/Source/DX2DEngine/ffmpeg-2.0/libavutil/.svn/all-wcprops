@@ -1,0 +1,803 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/Teachers/!svn/ver/488/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil
+END
+xga_font_data.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/xga_font_data.c
+END
+pixdesc.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/pixdesc.c
+END
+adler32.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/adler32.h
+END
+imgutils.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/imgutils.h
+END
+xga_font_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/xga_font_data.h
+END
+pixdesc.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/pixdesc.h
+END
+random_seed.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/random_seed.c
+END
+dict.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/dict.c
+END
+random_seed.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/random_seed.h
+END
+dict.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/dict.h
+END
+avassert.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/avassert.h
+END
+time.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/time.c
+END
+softfloat.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/softfloat.c
+END
+xtea.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/xtea.c
+END
+opt.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/opt.c
+END
+atomic_win32.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/atomic_win32.h
+END
+time.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/time.h
+END
+audio_fifo.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/audio_fifo.c
+END
+lzo.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/lzo.c
+END
+xtea.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/xtea.h
+END
+softfloat.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/softfloat.h
+END
+opt.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/opt.h
+END
+audio_fifo.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/audio_fifo.h
+END
+lzo.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/lzo.h
+END
+buffer_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/buffer_internal.h
+END
+murmur3.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/murmur3.c
+END
+des.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/des.c
+END
+libavutil.v
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/libavutil.v
+END
+mem.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/mem.c
+END
+murmur3.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/murmur3.h
+END
+des.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/des.h
+END
+opencl.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/opencl.c
+END
+mem.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/mem.h
+END
+fifo.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/fifo.c
+END
+opencl.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/opencl.h
+END
+intfloat.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/intfloat.h
+END
+fifo.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/fifo.h
+END
+avstring.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/avstring.c
+END
+avstring.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/avstring.h
+END
+sha.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/sha.c
+END
+atomic_suncc.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/atomic_suncc.h
+END
+sha.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/sha.h
+END
+cpu.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/cpu.c
+END
+timecode.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/timecode.c
+END
+cpu.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/cpu.h
+END
+timecode.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/timecode.h
+END
+buffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/buffer.c
+END
+float_dsp.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/float_dsp.c
+END
+qsort.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/qsort.h
+END
+buffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/buffer.h
+END
+float_dsp.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/float_dsp.h
+END
+base64.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/base64.c
+END
+eval.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/eval.c
+END
+rc4.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/rc4.c
+END
+base64.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/base64.h
+END
+parseutils.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/parseutils.c
+END
+eval.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/eval.h
+END
+rc4.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/rc4.h
+END
+atomic_gcc.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/atomic_gcc.h
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/common.h
+END
+integer.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/integer.c
+END
+utils.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/utils.c
+END
+parseutils.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/parseutils.h
+END
+x86_cpu.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/x86_cpu.h
+END
+avconfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/avconfig.h
+END
+integer.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/integer.h
+END
+crc.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/crc.c
+END
+hmac.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/hmac.c
+END
+lfg.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/lfg.c
+END
+crc.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/crc.h
+END
+pixfmt.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/pixfmt.h
+END
+hmac.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/hmac.h
+END
+lfg.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/lfg.h
+END
+hash.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/hash.c
+END
+md5.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/md5.c
+END
+intfloat_readwrite.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/intfloat_readwrite.c
+END
+hash.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/hash.h
+END
+error.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/error.c
+END
+md5.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/md5.h
+END
+attributes.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/attributes.h
+END
+intfloat_readwrite.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/intfloat_readwrite.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/Makefile
+END
+error.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/error.h
+END
+bprint.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/bprint.c
+END
+tree.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/tree.c
+END
+bprint.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/bprint.h
+END
+intmath.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/intmath.c
+END
+tree.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/tree.h
+END
+channel_layout.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/channel_layout.c
+END
+aes.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/aes.c
+END
+intmath.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/intmath.h
+END
+channel_layout.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/channel_layout.h
+END
+atomic.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/atomic.c
+END
+aes.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/aes.h
+END
+blowfish.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/blowfish.c
+END
+ripemd.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/ripemd.c
+END
+internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/internal.h
+END
+atomic.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/atomic.h
+END
+bswap.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/bswap.h
+END
+blowfish.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/blowfish.h
+END
+ripemd.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/ripemd.h
+END
+log2_tab.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/log2_tab.c
+END
+frame.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/frame.c
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/version.h
+END
+old_pix_fmts.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/old_pix_fmts.h
+END
+frame.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/frame.h
+END
+colorspace.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/colorspace.h
+END
+mathematics.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/mathematics.c
+END
+sha512.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/sha512.c
+END
+mathematics.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/mathematics.h
+END
+audioconvert.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/audioconvert.h
+END
+sha512.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/sha512.h
+END
+timestamp.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/timestamp.h
+END
+avutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/avutil.h
+END
+opencl_internal.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/opencl_internal.c
+END
+opencl_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/opencl_internal.h
+END
+lls.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/lls.c
+END
+lls.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/lls.h
+END
+pca.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/pca.c
+END
+intreadwrite.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/intreadwrite.h
+END
+pca.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/pca.h
+END
+rational.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/rational.c
+END
+rational.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/rational.h
+END
+file.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/file.c
+END
+log.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/log.c
+END
+file.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/file.h
+END
+timer.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/timer.h
+END
+log.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/log.h
+END
+samplefmt.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/samplefmt.c
+END
+libm.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/libm.h
+END
+adler32.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/adler32.c
+END
+samplefmt.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/samplefmt.h
+END
+imgutils.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/483/TGA2D/trunk/Source/DX2DEngine/ffmpeg-2.0/libavutil/imgutils.c
+END
