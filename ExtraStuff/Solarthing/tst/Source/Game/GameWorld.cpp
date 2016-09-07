@@ -20,11 +20,11 @@ CGameWorld::~CGameWorld()
 void CGameWorld::Init()
 {
 	CreateObjects();
-	myLeftEye.Init("Sprites/eye.png");
+	myLeftEye.Init("Sprites/eye.dds");
 	myLeftEye.SetPosition(myLeftEyeCenterPosition);
 	myLeftEye.SetSize(2.f);
 
-	myRightEye.Init("Sprites/eye.png");
+	myRightEye.Init("Sprites/eye.dds");
 	myRightEye.SetPosition(myRightEyeCenterPosition);
 	myRightEye.SetSize(2.f);
 
@@ -39,7 +39,7 @@ void CGameWorld::CreateObjects()
 {
 	SpatialObject::ConstructData tempConstructData;
 
-	tempConstructData.myFilePath = "Sprites/adam.png";
+	tempConstructData.myFilePath = "Sprites/adam.dds";
 	tempConstructData.myPosition = { 1920.f / 2.f, 1080.f / 2.f };
 	tempConstructData.myRotationSpeed = SunRotationSpeed;
 	tempConstructData.myLocalRotationSpeed = 0.f;
@@ -48,7 +48,7 @@ void CGameWorld::CreateObjects()
 	mySun.Init(tempConstructData);
 	mySun.SetParentSpace(WorldSpace);
 
-	tempConstructData.myFilePath = "Sprites/Kaffe.png";
+	tempConstructData.myFilePath = "Sprites/kaffe.dds";
 	tempConstructData.myPosition = { 200.f, 200.f };
 	tempConstructData.myRotationSpeed = 60.f;
 	tempConstructData.myLocalRotationSpeed = 60.f;
@@ -62,14 +62,14 @@ void CGameWorld::CreateObjects()
 
 	mySecondPlanet.Init(tempConstructData);
 
-	tempConstructData.myFilePath = "Sprites/vg.png";
+	tempConstructData.myFilePath = "Sprites/labb.dds";
 	tempConstructData.myPosition = { -450.f, 200.f };
 	tempConstructData.myRotationSpeed = 60.f;
 	tempConstructData.myLocalRotationSpeed = 60.f;
 
 	myThirdPlanet.Init(tempConstructData);
 
-	tempConstructData.myFilePath = "Sprites/Ralle.png";
+	tempConstructData.myFilePath = "Sprites/ralle.dds";
 	tempConstructData.myPosition = { -120.f, -450.f };
 	tempConstructData.myRotationSpeed = 60.f;
 	tempConstructData.myLocalRotationSpeed = 60.f;
@@ -81,7 +81,7 @@ void CGameWorld::CreateObjects()
 	mySun.AddChild(myThirdPlanet);
 	mySun.AddChild(myFourthPlanet);
 
-	tempConstructData.myFilePath = "Sprites/Chokladboll.png";
+	tempConstructData.myFilePath = "Sprites/chokladboll.dds";
 	tempConstructData.myPosition = { 100.f, 0.f };
 	tempConstructData.mySize = 0.5f;
 
@@ -90,7 +90,7 @@ void CGameWorld::CreateObjects()
 
 	const float tempAwesomeHeadDistance = 100.f;
 
-	tempConstructData.myFilePath = "Sprites/ylf.png";
+	tempConstructData.myFilePath = "Sprites/ylf.dds";
 	tempConstructData.myPosition = { 0.f, tempAwesomeHeadDistance};
 	tempConstructData.mySize = 0.45f;
 	tempConstructData.myRotationSpeed = 60.f;
@@ -98,14 +98,14 @@ void CGameWorld::CreateObjects()
 
 	myYlf.Init(tempConstructData);
 
-	tempConstructData.myFilePath = "Sprites/Nicos.png";
+	tempConstructData.myFilePath = "Sprites/nicos.dds";
 	tempConstructData.myPosition = { 0.f, -tempAwesomeHeadDistance };
 	tempConstructData.myRotationSpeed = 60.f;
 	tempConstructData.myLocalRotationSpeed = 60.f;
 
 	myNicos.Init(tempConstructData);
 
-	tempConstructData.myFilePath = "Sprites/Dan.png";
+	tempConstructData.myFilePath = "Sprites/dan.dds";
 	tempConstructData.myPosition = { tempAwesomeHeadDistance, 0.f};
 	tempConstructData.myRotationSpeed = 60.f;
 	tempConstructData.myLocalRotationSpeed = 60.f;
