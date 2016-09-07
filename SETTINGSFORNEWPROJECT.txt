@@ -1,10 +1,20 @@
-OutputDirectory - $(SolutionDir)../Bin/ - (vart alla filer hamnar)
-IntermediateDireectory - $(SolutionDir)../temp/$(ProjectName)/$(Configuration) - (Vart Alla skräpfiler hamnar)
-TargetName - $(ProjectName)_$(Configuration)_$(Platform) - vad man vill att filen ska heta
+OutputDirectory -
+$(SolutionDir)../Bin/
+
+IntermediateDireectory - 
+$(SolutionDir)../temp/$(ProjectName)/$(Configuration)
+
+TargetName -
+$(ProjectName)_$(Configuration)_$(Platform) - vad man vill att filen ska heta
+
 
 OutputDirectory - (vart alla filer hamnar)
 IntermediateDireectory - (Vart Alla skräpfiler hamnar)
 TargetName - vad output filen kommer heta
+
+
+
+
 
 
 Compila stdafx multithreaded
