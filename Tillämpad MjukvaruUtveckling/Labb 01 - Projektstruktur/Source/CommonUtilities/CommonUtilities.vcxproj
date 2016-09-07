@@ -285,6 +285,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CU\Includes\WindowsDefines.h" />
+    <ClInclude Include="CU\Input\InputWrapper\InputWrapperInputStates.h" />
     <ClInclude Include="CU\Intersection\Colliders\CircleCollider.h" />
     <ClInclude Include="CU\Intersection\Colliders\BaseCollider.h" />
     <ClInclude Include="CU\Containers\Heap\HeapIncludes.h" />
@@ -297,6 +299,7 @@
     <ClInclude Include="CU\Systems\MainSingleton\BaseSingletons\BaseCreationManager.h" />
     <ClInclude Include="CU\Systems\MainSingleton\BaseSingletons\BaseRenderer.h" />
     <ClInclude Include="CU\Containers\BinaryTree\BinaryTree.h" />
+    <ClInclude Include="CU\Systems\Timer\TimeManagerTimeStamps.h" />
     <ClInclude Include="CU\Utility\Camera\Camera2D.h" />
     <ClInclude Include="CU\Containers\GridArray\GridArray.h" />
     <ClInclude Include="CU\Math\Hashing\HashUtility.h" />

@@ -1,8 +1,9 @@
 #pragma once
-#include <Windows.h>
 #include "Timer.h"
 #include <vector>
 #include "CU/Systems/DLDebug/DL_Debug.h"
+
+struct TimeManagerTimeStamps;
 
 namespace CommonUtilities
 {
@@ -50,13 +51,7 @@ namespace CommonUtilities
 
 		double myFrequency;
 		
-		LARGE_INTEGER myStartStamp;
-		LARGE_INTEGER myPauseStamp;
-
-		LARGE_INTEGER myCountFromStamp;
-		LARGE_INTEGER myCurrentStamp;
-		LARGE_INTEGER myPreviousStamp;
-		LARGE_INTEGER myTimeDifference;
+		TimeManagerTimeStamps * myStamps;
 
 		LONGLONG myDeltaTime;
 

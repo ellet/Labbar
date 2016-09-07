@@ -1,10 +1,6 @@
 #pragma once
-#pragma comment (lib, "dinput8.lib")
-#pragma comment (lib, "dxguid.lib")
 
-#include <dinput.h>
 #include <vector>
-#include "CU/Utility/WindowsFunctions/WindowsFunctions.h"
 #include "CU/Systems/DLDebug/DL_Debug.h"
 
 #include "InputWrapper.h"
@@ -19,7 +15,7 @@ namespace CommonUtilities
 		static void Create();
 		static void Destroy();
 
-		static void Initialize(HINSTANCE aApplicationInstance, HWND aWindow);
+		static void Initialize(/*HINSTANCE aApplicationInstance, HWND aWindow*/);
 
 		static void Update();
 

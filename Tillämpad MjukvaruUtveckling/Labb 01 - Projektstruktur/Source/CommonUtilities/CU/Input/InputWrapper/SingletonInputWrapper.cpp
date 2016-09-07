@@ -1,6 +1,11 @@
 #include "stdafx.h"
 #include "SingletonInputWrapper.h"
 
+#pragma comment (lib, "dinput8.lib")
+#pragma comment (lib, "dxguid.lib")
+
+#include <dinput.h>
+#include "CU/Utility/WindowsFunctions/WindowsFunctions.h"
 
 namespace CommonUtilities
 {
@@ -34,13 +39,13 @@ namespace CommonUtilities
 	{
 	}
 
-	void SingletonInputWrapper::Initialize(HINSTANCE aApplicationInstance, HWND aWindow)
+	void SingletonInputWrapper::Initialize(/*HINSTANCE aApplicationInstance, HWND aWindow*/)
 	{
 		if (ourInstance == nullptr)
 		{
 			Create();
 		}
-		GetInstance().myInputWrapper.Initialize(aApplicationInstance, aWindow);
+		GetInstance().myInputWrapper.Initialize(/*aApplicationInstance, aWindow*/);
 	}
 
 	void SingletonInputWrapper::Update()

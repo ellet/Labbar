@@ -37,7 +37,7 @@
 
 #include "CU/Utility/CommonCasts.h"
 #include "CU/Utility/FileHandling.h"
-#include "CU/Utility/WindowsFunctions/WindowsFunctions.h"
+//#include "CU/Utility/WindowsFunctions/WindowsFunctions.h"
 #include "CU/Utility/MathHelper.h"
 #include "CU/Utility/Randomizer/Randomizer.h"
 
@@ -50,3 +50,5 @@
 #include "CU/Utility/Enums/GameSpecificEnums/GameSpecifcObjectTypes.h"
 
 #include "CU/Systems/ObjectCreationDatabase/ObjectCreationDatabase.h"
+
+#include "CU/Includes/WindowsDefines.h"

@@ -1,5 +1,6 @@
 #pragma once
-#include <windows.h>
+#include "CU/Includes/WindowsDefines.h"
+
 
 namespace CommonUtilities
 {

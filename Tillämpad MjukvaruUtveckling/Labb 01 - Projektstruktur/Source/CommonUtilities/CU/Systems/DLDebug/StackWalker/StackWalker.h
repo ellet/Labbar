@@ -115,7 +115,11 @@ protected:
     CHAR loadedImageName[STACKWALK_MAX_NAMELEN];
   } CallstackEntry;
 
+
+#pragma warning( push )
+#pragma warning( disable : 4091 )
   typedef enum CallstackEntryType {firstEntry, nextEntry, lastEntry};
+#pragma warning( pop ) 
 
   virtual void OnCallstackEntry(CallstackEntryType eType, CallstackEntry &entry);
   virtual void OnDbgHelpErr(LPCSTR szFuncName, DWORD gle, DWORD64 addr);

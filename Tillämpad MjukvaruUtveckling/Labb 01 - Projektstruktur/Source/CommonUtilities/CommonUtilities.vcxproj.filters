@@ -276,6 +276,15 @@
     <ClInclude Include="CU\Systems\Timer\Timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CU\Includes\WindowsDefines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\Timer\TimeManagerTimeStamps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Input\InputWrapper\InputWrapperInputStates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CU\Intersection\Shapes\AABB.cpp">

@@ -7,7 +7,7 @@ public:
 	CHUGWindowsWindow();
 	~CHUGWindowsWindow();
 
-	void Init(const CU::Vector2i aWindowSize = CU::Vector2i(1024, 600), const std::string & anApplicationName = "Default Name", const int aWindowShowState = SW_SHOWNORMAL);
+	void Init(const CU::Vector2i aWindowSize = CU::Vector2i(1024, 600), const std::string & anApplicationName = "Default Name");
 
 	void Update();
 
@@ -16,5 +16,5 @@ public:
 private:
 	void RegisterWindow(const std::string & aClassName);
 
-	int myWindowHandle;
+	LONGLONG myWindowHandle;
 };

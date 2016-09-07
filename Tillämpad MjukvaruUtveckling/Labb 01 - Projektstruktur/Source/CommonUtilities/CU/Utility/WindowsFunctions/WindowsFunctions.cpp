@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "WindowsFunctions.h"
-
+#include <windows.h>
 
 
 

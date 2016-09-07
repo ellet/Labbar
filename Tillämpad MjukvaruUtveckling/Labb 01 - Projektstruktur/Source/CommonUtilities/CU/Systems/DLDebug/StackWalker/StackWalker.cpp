@@ -38,7 +38,10 @@
 
 // If VC7 and later, then use the shipped 'dbghelp.h'-file
 #if _MSC_VER >= 1300
+#pragma warning( push )
+#pragma warning( disable : 4091 )
 #include <dbghelp.h>
+#pragma warning( pop ) 
 #else
 // inline the important dbghelp.h-declarations...
 typedef enum {
@@ -345,6 +348,9 @@ public:
 	BOOL     Publics;                // contains public symbols
 };
 */
+#pragma warning( push )
+#pragma warning( disable : 4091 )
+
 typedef struct IMAGEHLP_MODULE64_V2 {
 	DWORD    SizeOfStruct;           // set to sizeof(IMAGEHLP_MODULE64)
 	DWORD64  BaseOfImage;            // base load address of module
@@ -357,7 +363,7 @@ typedef struct IMAGEHLP_MODULE64_V2 {
 	CHAR     ImageName[256];         // image name
 	CHAR     LoadedImageName[256];   // symbol file name
 };
-
+#pragma warning( pop ) 
 
   // SymCleanup()
   typedef BOOL (__stdcall *tSC)( IN HANDLE hProcess );

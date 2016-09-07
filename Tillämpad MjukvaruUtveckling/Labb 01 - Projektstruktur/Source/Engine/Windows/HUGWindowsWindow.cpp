@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "HUGWindowsWindow.h"
 #include "Engine/HUGEngine.h"
+#include "windows.h"
 
 LRESULT CALLBACK HandleWindowsMessage(HWND aWindowHandle, UINT aMessage, WPARAM wParam, LPARAM lParam)
 {
@@ -42,15 +43,14 @@ CHUGWindowsWindow::~CHUGWindowsWindow()
 
 void CHUGWindowsWindow::Init(
 	const CU::Vector2i aWindowSize /*= CU::Vector2i(1024, 600)*/, 
-	const std::string & anApplicationName /*= "Default Name"*/, 
-	const int aWindowShowState /*= SW_SHOWNORMAL*/)
+	const std::string & anApplicationName /*= "Default Name"*/)
 {
 	HINSTANCE myInstanceHandle = GetModuleHandle(NULL);
 
 	std::string className = "Pretty Class Name";
 	RegisterWindow(className);
 
-	myWindowHandle = (int)CreateWindowEx(
+	myWindowHandle = (LONGLONG)CreateWindowEx(
 		WS_EX_CLIENTEDGE,
 		className.c_str(),
 		anApplicationName.c_str(),
@@ -64,7 +64,7 @@ void CHUGWindowsWindow::Init(
 			MB_ICONEXCLAMATION | MB_OK);
 	}
 
-	ShowWindow((HWND)myWindowHandle, aWindowShowState);
+	ShowWindow((HWND)myWindowHandle, SW_SHOWNORMAL);
 	UpdateWindow((HWND)myWindowHandle);
 }
 
@@ -72,7 +72,7 @@ void CHUGWindowsWindow::Update()
 {
 	MSG message;
 
-	while (PeekMessage(&message, (HWND)myWindowHandle, 0, 0, PM_REMOVE) > 0)
+	while (PeekMessage(&message, (HWND)(myWindowHandle), 0, 0, PM_REMOVE) > 0)
 	{
 		TranslateMessage(&message);
 		DispatchMessage(&message);

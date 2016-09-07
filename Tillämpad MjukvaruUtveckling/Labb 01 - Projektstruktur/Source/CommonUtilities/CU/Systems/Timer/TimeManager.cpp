@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "TimeManager.h"
-
+#include "TimeManagerTimeStamps.h"
 
 namespace CommonUtilities
 {
@@ -32,11 +32,11 @@ namespace CommonUtilities
 	{
 		if (myImPaused == false)
 		{
-			QueryPerformanceCounter(&myCurrentStamp);
-			myTimeDifference.QuadPart = static_cast<LONGLONG>((myCurrentStamp.QuadPart - myCountFromStamp.QuadPart) / (myFrequency));
-			myDeltaTime = static_cast<LONGLONG>((myCurrentStamp.QuadPart - myPreviousStamp.QuadPart) / (myFrequency));
+			QueryPerformanceCounter(&myStamps->myCurrentStamp);
+			myStamps->myTimeDifference.QuadPart = static_cast<LONGLONG>((myStamps->myCurrentStamp.QuadPart - myStamps->myCountFromStamp.QuadPart) / (myFrequency));
+			myDeltaTime = static_cast<LONGLONG>((myStamps->myCurrentStamp.QuadPart - myStamps->myPreviousStamp.QuadPart) / (myFrequency));
 
-			myPreviousStamp = myCurrentStamp;
+			myStamps->myPreviousStamp = myStamps->myCurrentStamp;
 		}
 	}
 
@@ -57,12 +57,12 @@ namespace CommonUtilities
 
 	LONGLONG TimeManager::GetTimeSinceStart()
 	{
-		return  static_cast<LONGLONG>((static_cast<double>(GetInstance().myTimeDifference.QuadPart) / 1000000.0));
+		return  static_cast<LONGLONG>((static_cast<double>(GetInstance().myStamps->myTimeDifference.QuadPart) / 1000000.0));
 	}
 
 	LONGLONG TimeManager::GetMainStamp()
 	{
-		return GetInstance().myTimeDifference.QuadPart;
+		return GetInstance().myStamps->myTimeDifference.QuadPart;
 	}
 
 	/*Timer & TimeManager::GetTimer(size_t aTimerIndex)
@@ -91,7 +91,7 @@ namespace CommonUtilities
 		if (myImPaused == false)
 		{
 			myImPaused = true;
-			QueryPerformanceCounter(&myPauseStamp);
+			QueryPerformanceCounter(&myStamps->myPauseStamp);
 		}
 	}
 
@@ -102,7 +102,7 @@ namespace CommonUtilities
 			myImPaused = false;
 			LARGE_INTEGER tempCounter;
 			QueryPerformanceCounter(&tempCounter);
-			myCountFromStamp.QuadPart = myCountFromStamp.QuadPart + (tempCounter.QuadPart + myPauseStamp.QuadPart);
+			myStamps->myCountFromStamp.QuadPart = myStamps->myCountFromStamp.QuadPart + (tempCounter.QuadPart + myStamps->myPauseStamp.QuadPart);
 		}
 	}
 
@@ -110,12 +110,14 @@ namespace CommonUtilities
 
 	TimeManager::TimeManager()
 	{
+		myStamps = new TimeManagerTimeStamps();
+
 		LARGE_INTEGER tempGetFrequency;
 		QueryPerformanceFrequency(&tempGetFrequency);
-		QueryPerformanceCounter(&myStartStamp);
-		myPreviousStamp = myStartStamp;
-		myCurrentStamp = myStartStamp;
-		myCountFromStamp = myStartStamp;
+		QueryPerformanceCounter(&myStamps->myStartStamp);
+		myStamps->myPreviousStamp = myStamps->myStartStamp;
+		myStamps->myCurrentStamp = myStamps->myStartStamp;
+		myStamps->myCountFromStamp = myStamps->myStartStamp;
 
 		myImPaused = false;
 
@@ -125,6 +127,8 @@ namespace CommonUtilities
 
 	TimeManager::~TimeManager()
 	{
+		delete myStamps;
+		myStamps = nullptr;
 	}
 
 }
