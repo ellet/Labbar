@@ -7,7 +7,5 @@ int main()
 	CGame game;
 	game.Init();
 
-	//system("pause");
-
 	return 0;
 }

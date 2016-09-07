@@ -9,6 +9,9 @@ public:
 
 	void Init();
 
+	void Update();
+
 private:
+
 };
 

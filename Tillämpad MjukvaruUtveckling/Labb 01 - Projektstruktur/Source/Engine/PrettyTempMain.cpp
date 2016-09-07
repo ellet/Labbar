@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include <windows.h>
 #include <CU/Includes/CUCommonIncludes.h>
 #include <CU/Utility/WindowsFunctions/WindowHelperFunctions.h>
