@@ -128,15 +128,27 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>../CommonUtilities/;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)../lib/$(ProjectName)</OutDir>
+    <IntDir>$(SolutionDir)../temp/$(ProjectName)</IntDir>
+    <TargetName>$(ProjectName)_$(Platform)$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='TestShit|x64'">
     <IncludePath>../CommonUtilities/;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)../lib/$(ProjectName)</OutDir>
+    <IntDir>$(SolutionDir)../temp/$(ProjectName)</IntDir>
+    <TargetName>$(ProjectName)_$(Platform)$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>../CommonUtilities/;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)../lib/$(ProjectName)</OutDir>
+    <IntDir>$(SolutionDir)../temp/$(ProjectName)</IntDir>
+    <TargetName>$(ProjectName)_$(Platform)$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DevMode|x64'">
     <IncludePath>../CommonUtilities/;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)../lib/$(ProjectName)</OutDir>
+    <IntDir>$(SolutionDir)../temp/$(ProjectName)</IntDir>
+    <TargetName>$(ProjectName)_$(Platform)$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DevMode|Win32'">
     <OutDir>$(SolutionDir)..\Lib\</OutDir>
@@ -191,6 +203,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -201,6 +214,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -247,6 +261,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -261,6 +276,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
