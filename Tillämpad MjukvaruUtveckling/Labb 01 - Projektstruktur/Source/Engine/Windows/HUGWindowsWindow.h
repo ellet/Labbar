@@ -11,12 +11,10 @@ public:
 
 	void Update();
 
-	static LRESULT CALLBACK HandleWindowsMessage(HWND aWindowHandle, UINT aMessage, WPARAM wParam, LPARAM lParam);
+	//static LRESULT CALLBACK HandleWindowsMessage(int aWindowHandle, UINT aMessage, WPARAM wParam, LPARAM lParam);
 
 private:
-	void RegisterWindow(WNDPROC aMessageHandleFunction, const std::string & aClassName);
+	void RegisterWindow(const std::string & aClassName);
 
-	HWND myWindowHandle;
-	HINSTANCE myInstanceHandle;
+	int myWindowHandle;
 };
-
