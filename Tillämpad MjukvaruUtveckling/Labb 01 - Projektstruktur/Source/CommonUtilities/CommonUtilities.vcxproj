@@ -128,26 +128,26 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>../CommonUtilities/;$(IncludePath)</IncludePath>
-    <OutDir>$(SolutionDir)../lib/$(ProjectName)</OutDir>
-    <IntDir>$(SolutionDir)../temp/$(ProjectName)</IntDir>
+    <OutDir>$(SolutionDir)..\lib\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)..\temp\$(ProjectName)\</IntDir>
     <TargetName>$(ProjectName)_$(Platform)$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='TestShit|x64'">
     <IncludePath>../CommonUtilities/;$(IncludePath)</IncludePath>
-    <OutDir>$(SolutionDir)../lib/$(ProjectName)</OutDir>
-    <IntDir>$(SolutionDir)../temp/$(ProjectName)</IntDir>
+    <OutDir>$(SolutionDir)..\lib\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)..\temp\$(ProjectName)\</IntDir>
     <TargetName>$(ProjectName)_$(Platform)$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>../CommonUtilities/;$(IncludePath)</IncludePath>
-    <OutDir>$(SolutionDir)../lib/$(ProjectName)</OutDir>
-    <IntDir>$(SolutionDir)../temp/$(ProjectName)</IntDir>
+    <OutDir>$(SolutionDir)..\lib\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)..\temp\$(ProjectName)\</IntDir>
     <TargetName>$(ProjectName)_$(Platform)$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DevMode|x64'">
     <IncludePath>../CommonUtilities/;$(IncludePath)</IncludePath>
-    <OutDir>$(SolutionDir)../lib/$(ProjectName)</OutDir>
-    <IntDir>$(SolutionDir)../temp/$(ProjectName)</IntDir>
+    <OutDir>$(SolutionDir)..\lib\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)..\temp\$(ProjectName)\</IntDir>
     <TargetName>$(ProjectName)_$(Platform)$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DevMode|Win32'">
@@ -200,7 +200,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(ProjectDir)</AdditionalIncludeDirectories>
@@ -211,7 +211,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='TestShit|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(ProjectDir)</AdditionalIncludeDirectories>
@@ -256,7 +256,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -271,7 +271,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DevMode|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -341,7 +341,6 @@
     <ClInclude Include="CU\Messaging\Observer\ObserverPatternSubject.h" />
     <ClInclude Include="CU\Messaging\PostMaster\MessageReceiver.h" />
     <ClInclude Include="CU\Messaging\PostMaster\ReceiverTypes.h" />
-    <ClInclude Include="CU\Messaging\PostMaster\SingletonPostMaster.h" />
     <ClInclude Include="CU\Containers\Queue\ObjectQueue.h" />
     <ClInclude Include="CU\Containers\StaticArray\StaticArray.h" />
     <ClInclude Include="CU\StringToData.h" />
@@ -395,7 +394,6 @@
     <ClCompile Include="CU\Messaging\Observer\ObserverPatternListener.cpp" />
     <ClCompile Include="CU\Messaging\Observer\ObserverPatternSubject.cpp" />
     <ClCompile Include="CU\Messaging\PostMaster\MessageReceiver.cpp" />
-    <ClCompile Include="CU\Messaging\PostMaster\SingletonPostMaster.cpp" />
     <ClCompile Include="CU\Systems\Thread\ThreadHelper.cpp" />
     <ClCompile Include="CU\Systems\Thread\ThreadSynchronizer.cpp" />
     <ClCompile Include="CU\Systems\Timer\Alarm.cpp" />

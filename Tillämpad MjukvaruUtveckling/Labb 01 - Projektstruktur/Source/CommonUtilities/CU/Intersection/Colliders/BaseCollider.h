@@ -18,11 +18,13 @@ namespace Intersection2D
 		
 		virtual bool CheckCollisionAgainstSquare(const SquareCollider & aSquareCollider) const
 		{
+			(aSquareCollider);
 			return false;
 		}
 
 		virtual bool CheckCollisionAgainstCircle(const CircleCollider & aCircleCollider) const
 		{
+			(aCircleCollider);
 			return false;
 		}
 	};

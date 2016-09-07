@@ -18,9 +18,6 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PrettyTempMain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\HUGEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

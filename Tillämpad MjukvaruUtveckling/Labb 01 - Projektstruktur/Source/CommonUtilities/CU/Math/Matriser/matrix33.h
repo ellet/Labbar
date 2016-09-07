@@ -110,7 +110,8 @@ namespace CommonUtilities
 
 		const T& GetDataAtPosition(const size_t aRow, const size_t aColumn) const;
 
-#pragma warning( suppress : 4201 ) // NOTE: This works fine in VC2013 and GCC so I'm keeping it. //MAHAM
+#pragma warning( push )
+#pragma warning( disable : 4201 ) // NOTE: This works fine in VC2013 and GCC so I'm keeping it. //MAHAM
 		union
 		{
 			struct
@@ -122,6 +123,7 @@ namespace CommonUtilities
 
 			std::array<T, NumElements> myMatrix;
 		};
+#pragma warning( pop ) 
 
 		// Pre-created matrices
 		//

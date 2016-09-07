@@ -116,7 +116,9 @@ namespace CommonUtilities
 		Vector3<T> GetForward() const;
 
 
-#pragma warning( suppress : 4201 ) // NOTE: This works fine in VC2013 and GCC so I'm keeping it. //MAHAM
+		// Your function
+#pragma warning( push )
+#pragma warning( disable : 4201 ) // NOTE: This works fine in VC2013 and GCC so I'm keeping it. //MAHAM
 		union
 		{
 			struct
@@ -139,6 +141,7 @@ namespace CommonUtilities
 
 			std::array<Vector4<T>, NumRows> myVectorRows;*/
 		};
+#pragma warning( pop ) 
 
 		// Pre-created identity matrix
 		//

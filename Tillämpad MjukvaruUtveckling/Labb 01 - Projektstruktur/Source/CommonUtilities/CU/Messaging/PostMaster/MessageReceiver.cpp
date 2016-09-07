@@ -3,5 +3,6 @@
 
 bool MessageReceiver::ReceiveMessage(const BaseMessage & aMessage)
 {
+	(aMessage);
 	return true;
 }

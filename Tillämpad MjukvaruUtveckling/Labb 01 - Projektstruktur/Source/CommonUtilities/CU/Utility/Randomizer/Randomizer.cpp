@@ -32,7 +32,7 @@ void Randomizer::SetMinMax(float aMinValue, float aMaxValue)
 
 void Randomizer::SetSeed(const size_t aSeedValue)
 {
-	myRandomGenerator = std::default_random_engine(aSeedValue);
+	myRandomGenerator = std::default_random_engine(static_cast<unsigned int>(aSeedValue));
 }
 
 void Randomizer::SetSeed()

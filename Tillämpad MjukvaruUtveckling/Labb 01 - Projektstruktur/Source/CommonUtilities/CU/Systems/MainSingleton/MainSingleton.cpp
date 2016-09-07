@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "MainSingleton.h"
 
+#include "CU/Systems/MainSingleton/BaseSingletons/BaseRenderer.h"
+
 namespace CommonUtilities
 {
 	MainSingleton * MainSingleton::ourInstance = nullptr;

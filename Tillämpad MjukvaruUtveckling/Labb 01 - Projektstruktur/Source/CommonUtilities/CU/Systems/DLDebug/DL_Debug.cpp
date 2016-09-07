@@ -29,6 +29,7 @@ Debug::~Debug()
 
 bool Debug::Create(const std::string& aFile)
 {
+	(aFile);
 	assert(ourInstance == nullptr && "DEBUG TOOL ERROR  -  ourInstance is not nullptr");
 	ourInstance = new Debug();
 	if (ourInstance == nullptr)
@@ -171,6 +172,7 @@ void DL_Debug::Debug::StartCrashMessage()
 
 void DL_Debug::Debug::CrashMessage(const char * aString)
 {
+	(aString);
 	//ourInstance->myCrashOutput << aString << std::endl;
 	//ourInstance->myCrashOutput << "---------------" << std::endl;
 }

@@ -64,7 +64,7 @@ namespace CommonUtilities
 		{
 			if ((CU::WindowsFunctions::CheckIfWindowFullscreen(myWindowID)) == true)
 			{
-				CU::Point2ui newPosition(tempPosition.x, tempPosition.y);
+				CU::Point2ui newPosition(USHORTCAST(tempPosition.x), USHORTCAST(tempPosition.y));
 
 				tempPosition.x = min(1.f, max(tempPosition.x, 0.f));
 				tempPosition.y = min(1.f, max(tempPosition.y, 0.f));
@@ -74,8 +74,8 @@ namespace CommonUtilities
 
 				//newPosition.x = newPosition.x * tempWindow.right;
 				//newPosition.y = newPosition.y * tempWindow.bottom;
-				newPosition.x = tempPosition.x * tempWindow.right -4;
-				newPosition.y = tempPosition.y * tempWindow.bottom;
+				newPosition.x = USHORTCAST(tempPosition.x) * tempWindow.right -4;
+				newPosition.y = USHORTCAST(tempPosition.y) * tempWindow.bottom;
 
 				POINT tempPoint;
 				tempPoint.x = newPosition.x;
@@ -99,7 +99,7 @@ namespace CommonUtilities
 		myMouse->GetDeviceState(sizeof(DIMOUSESTATE), static_cast<LPVOID>(&myMouseData));
 
 		myPreviousKeyboardData = myKeyboardData;
-		myKeyboard->GetDeviceState(sizeof(BYTE) * myKeyboardData.size(), static_cast<void*>(&myKeyboardData[0]));
+		myKeyboard->GetDeviceState(sizeof(BYTE) * static_cast<DWORD>(myKeyboardData.size()), static_cast<void*>(&myKeyboardData[0]));
 	}
 
 }

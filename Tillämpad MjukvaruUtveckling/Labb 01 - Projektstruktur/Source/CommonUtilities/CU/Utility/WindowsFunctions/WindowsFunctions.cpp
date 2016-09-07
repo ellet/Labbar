@@ -42,7 +42,7 @@ namespace CommonUtilities
 			return temp;
 		}
 
-		windowsString CreateFolder(const std::string & aFilePath, const windowsString & aFolderName)
+		windowsString CreateFolder(const windowsString & aFilePath, const windowsString & aFolderName)
 		{
 			return CreateFolder(aFilePath + "/" + aFolderName);
 		}
@@ -55,5 +55,6 @@ namespace CommonUtilities
 
 			return aFilePathAndFolderName;
 		}
+
 	}
 }
