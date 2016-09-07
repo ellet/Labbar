@@ -20,5 +20,3 @@ private:
 	HINSTANCE myInstanceHandle;
 };
 
-//LRESULT CALLBACK HandleWindowsMessage(HWND aWindowHandle, UINT aMessage, WPARAM wParam, LPARAM lParam);
-
