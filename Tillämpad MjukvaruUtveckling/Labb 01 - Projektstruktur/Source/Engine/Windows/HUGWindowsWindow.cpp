@@ -2,7 +2,7 @@
 #include "HUGWindowsWindow.h"
 #include "Engine/HUGEngine.h"
 
-LRESULT CALLBACK HandleWindowsMessage(HWND aWindowHandle, UINT aMessage, WPARAM wParam, LPARAM lParam)
+LRESULT CALLBACK CHUGWindowsWindow::HandleWindowsMessage(HWND aWindowHandle, UINT aMessage, WPARAM wParam, LPARAM lParam)
 {
 	switch (aMessage)
 	{
@@ -48,7 +48,7 @@ void CHUGWindowsWindow::Init(
 	myInstanceHandle = GetModuleHandle(NULL);
 
 	std::string className = "Pretty Class Name";
-	RegisterWindow(HandleWindowsMessage, className);
+	RegisterWindow(CHUGWindowsWindow::HandleWindowsMessage, className);
 
 	myWindowHandle = CreateWindowEx(
 		WS_EX_CLIENTEDGE,

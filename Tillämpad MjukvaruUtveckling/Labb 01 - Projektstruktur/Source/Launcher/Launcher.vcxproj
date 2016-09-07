@@ -93,7 +93,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(SolutionDir)Game;$(ProjectDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)CommonUtilities;$(SolutionDir)Engine;$(SolutionDir)Game;$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -118,7 +118,7 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(SolutionDir)Game;$(ProjectDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)CommonUtilities;$(SolutionDir)Engine;$(SolutionDir)Game;$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -138,6 +138,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommonUtilities\CommonUtilities.vcxproj">
+      <Project>{a41e3ed6-a914-40b1-b1e9-9551e0cc7eab}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Engine\Engine.vcxproj">
+      <Project>{28b99f03-cdf3-4ebb-ab08-326a8c1703ed}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Game\Game.vcxproj">
       <Project>{d73cec19-1245-4167-b88c-e64bf9220ef3}</Project>
     </ProjectReference>
