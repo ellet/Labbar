@@ -21,9 +21,15 @@
     <ClCompile Include="PrettyTempMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\HUGEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\HUGEngine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -11,7 +11,7 @@
 
 #include "CU/Includes/CUCommonIncludes.h"
 #include "CU/NameSpaceAliases.h"
-#include "CU/GrowingArray/GrowingArray.h"
+#include "CU/Containers/GrowingArray/GrowingArray.h"
 #include <iostream>
 #include <fstream>
 #include <CU/Utility/CommonCasts.h>

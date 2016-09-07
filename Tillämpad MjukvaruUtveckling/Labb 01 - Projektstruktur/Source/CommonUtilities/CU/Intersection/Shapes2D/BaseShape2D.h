@@ -1,6 +1,6 @@
 #pragma once
-#include "../../Vectors/vector2.h"
-#include "../../NameSpaceAliases.h"
+#include "CU/Math/Vectors/vector2.h"
+#include "CU/NameSpaceAliases.h"
 
 class BaseShape2D
 {
