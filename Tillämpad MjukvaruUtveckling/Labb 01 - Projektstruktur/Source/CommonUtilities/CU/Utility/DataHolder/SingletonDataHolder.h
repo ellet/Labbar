@@ -1,5 +1,5 @@
 #pragma once
-#include <CU/Vectors/vector2.h>
+#include <CU/Math/Vectors/vector2.h>
 
 class SingletonDataHolder
 {

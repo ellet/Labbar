@@ -1,6 +1,6 @@
 #pragma once
 #include <windows.h>
-#include "CU/Vectors/Vector4.h"
+#include "CU/Math/Vectors/Vector4.h"
 #include <iostream>
 
 #ifdef UNICODE

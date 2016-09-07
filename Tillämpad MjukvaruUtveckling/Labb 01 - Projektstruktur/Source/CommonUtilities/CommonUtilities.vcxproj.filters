@@ -15,27 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CU\DLDebug\StackWalker\StackWalker.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\DLDebug\DL_Debug.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\DLDebug\DL_StackWalker.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\GridArray\GridArray.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\GrowingArray\GrowingArray.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\InputWrapper\InputWrapper.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\InputWrapper\SingletonInputWrapper.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CU\Intersection\Shapes\AABB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -75,55 +54,7 @@
     <ClInclude Include="CU\Intersection\Shapes2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CU\Lines And Planes\line.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Lines And Planes\line_volume.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Lines And Planes\plane.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Lines And Planes\plane_volume.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CU\Macros\Macros.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Matriser\matrix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Matriser\matrix33.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Matriser\matrix44.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Observer\ObserverPatternListener.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Observer\ObserverPatternSubject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Queue\ObjectQueue.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\StaticArray\StaticArray.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Syncronizer\Syncronizer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Timer\Alarm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Timer\Time.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Timer\TimeManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Timer\Timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CU\Utility\Randomizer\Randomizer.h">
@@ -132,31 +63,10 @@
     <ClInclude Include="CU\Utility\MathHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CU\VectonOnStack\VectorOnStack.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Vectors\Vector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Vectors\vector2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Vectors\vector3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Vectors\vector4.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CU\NameSpaceAliases.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CU\StringToData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Camera\Camera2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\BinaryTree\BinaryTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
@@ -168,34 +78,10 @@
     <ClInclude Include="CU\Memory Pool\MemoryPool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CU\Thread\ThreadHelper.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Thread\ThreadSynchronizer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Hashing\HashUtility.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CU\Utility\Math\Isometric.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CU\Intersection\Intersections.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Heap\Greater.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Heap\Heap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Heap\Lesser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Heap\PointerGreater.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Heap\PointerLesser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CU\Utility\CommonCasts.h">
@@ -204,25 +90,7 @@
     <ClInclude Include="CU\Utility\GameSpecificTypeDefs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CU\InputWrapper\MouseButtonsEnum.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CU\Utility\DataHolder\SingletonDataHolder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\PostMaster\MessageReceiver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\PostMaster\SingletonPostMaster.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\PostMaster\ReceiverTypes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\MainSingleton\MainSingleton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\MainSingleton\BaseSingletons\BaseRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CU\Macros\MathMacros.h">
@@ -240,12 +108,6 @@
     <ClInclude Include="CU\Macros\UtilityMacros.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CU\PostMaster\PostMaster.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\Heap\HeapIncludes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CU\Utility\CommonTypeDefs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -261,15 +123,6 @@
     <ClInclude Include="CU\Intersection\Colliders\Colliders.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CU\ObjectCreationDatabase\ObjectCreationDatabase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\ObjectCreationDatabase\BaseObjectData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CU\MainSingleton\BaseSingletons\BaseCreationManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CU\Utility\Enums\GameSpecificEnums\GameSpecifcObjectTypes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -279,23 +132,155 @@
     <ClInclude Include="CU\Utility\WindowsFunctions\WindowHelperFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CU\Math\Vectors\Vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Vectors\vector2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Vectors\vector3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Vectors\vector4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Matriser\matrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Matriser\matrix33.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Matriser\matrix44.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Lines And Planes\line.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Lines And Planes\line_volume.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Lines And Planes\plane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Lines And Planes\plane_volume.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\BinaryTree\BinaryTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\GridArray\GridArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\GrowingArray\GrowingArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Hashing\HashUtility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\Heap\Greater.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\Heap\Heap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\Heap\HeapIncludes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\Heap\Lesser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\Heap\PointerGreater.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\Heap\PointerLesser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Input\InputWrapper\InputWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Input\InputWrapper\MouseButtonsEnum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Input\InputWrapper\SingletonInputWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\StaticArray\StaticArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Messaging\PostMaster\MessageReceiver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Messaging\PostMaster\PostMaster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Messaging\PostMaster\ReceiverTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Messaging\PostMaster\SingletonPostMaster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Messaging\Observer\ObserverPatternListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Messaging\Observer\ObserverPatternSubject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\Queue\ObjectQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\VectonOnStack\VectorOnStack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Utility\Camera\Camera2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\DLDebug\StackWalker\StackWalker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\DLDebug\DL_Debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\DLDebug\DL_StackWalker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\MainSingleton\BaseSingletons\BaseCreationManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\MainSingleton\BaseSingletons\BaseRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\MainSingleton\MainSingleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\ObjectCreationDatabase\BaseObjectData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\ObjectCreationDatabase\ObjectCreationDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\Syncronizer\Syncronizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\Thread\ThreadHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\Thread\ThreadSynchronizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\Timer\Alarm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\Timer\Time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\Timer\TimeManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\Timer\Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CU\DLDebug\StackWalker\StackWalker.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CU\DLDebug\DL_Debug.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CU\DLDebug\DL_StackWalker.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CU\InputWrapper\InputWrapper.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CU\InputWrapper\SingletonInputWrapper.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CU\Intersection\Shapes\AABB.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -326,28 +311,7 @@
     <ClCompile Include="CU\Intersection\Intersection2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CU\Observer\ObserverPatternListener.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CU\Observer\ObserverPatternSubject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CU\Timer\Alarm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CU\Timer\Time.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CU\Timer\TimeManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CU\Timer\Timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CU\Utility\Randomizer\Randomizer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CU\Camera\Camera2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
@@ -356,28 +320,10 @@
     <ClCompile Include="CU\Utility\FileHandling.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CU\Thread\ThreadHelper.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CU\Thread\ThreadSynchronizer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CU\Utility\Math\Isometric.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CU\Utility\DataHolder\SingletonDataHolder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CU\PostMaster\MessageReceiver.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CU\PostMaster\SingletonPostMaster.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CU\MainSingleton\MainSingleton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CU\PostMaster\PostMaster.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CU\Intersection\Colliders\SquareCollider.cpp">
@@ -386,33 +332,87 @@
     <ClCompile Include="CU\Intersection\Colliders\CircleCollider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CU\ObjectCreationDatabase\ObjectCreationDatabase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CU\Utility\WindowsFunctions\WindowsFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CU\Utility\WindowsFunctions\WindowHelperFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CU\Input\InputWrapper\InputWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Input\InputWrapper\SingletonInputWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Messaging\PostMaster\MessageReceiver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Messaging\PostMaster\PostMaster.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Messaging\PostMaster\SingletonPostMaster.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Messaging\Observer\ObserverPatternListener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Messaging\Observer\ObserverPatternSubject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Utility\Camera\Camera2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\DLDebug\StackWalker\StackWalker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\DLDebug\DL_Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\DLDebug\DL_StackWalker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\MainSingleton\MainSingleton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\ObjectCreationDatabase\ObjectCreationDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\Thread\ThreadHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\Thread\ThreadSynchronizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\Timer\Alarm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\Timer\Time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\Timer\TimeManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\Timer\Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="CU\Matriser\matrix33.inl">
+    <None Include="CU\Math\Vectors\vector2.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="CU\Matriser\matrix44.inl">
+    <None Include="CU\Math\Vectors\vector3.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="CU\Syncronizer\Syncronizer.inl">
+    <None Include="CU\Math\Vectors\vector4.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="CU\Vectors\vector2.inl">
+    <None Include="CU\Math\Matriser\matrix33.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="CU\Vectors\vector3.inl">
+    <None Include="CU\Math\Matriser\matrix44.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="CU\Vectors\vector4.inl">
+    <None Include="CU\Systems\Syncronizer\Syncronizer.inl">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

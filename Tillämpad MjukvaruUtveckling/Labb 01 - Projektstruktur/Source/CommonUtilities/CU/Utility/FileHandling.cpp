@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "FileHandling.h"
 #include <fstream>
-#include "../DLDebug/DL_Debug.h"
+#include "CU/Systems/DLDebug/DL_Debug.h"
 
 std::string CommonUtilities::GetFileAsString(const std::string & aFilePath)
 {

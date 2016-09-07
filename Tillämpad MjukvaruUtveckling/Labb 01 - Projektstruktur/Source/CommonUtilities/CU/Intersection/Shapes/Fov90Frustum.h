@@ -1,6 +1,6 @@
 #pragma once
 #include "BaseShape.h"
-#include "CU/Lines And Planes/plane.h"
+#include "CU/Math/Lines And Planes/plane.h"
 
 namespace Intersection3D
 {
