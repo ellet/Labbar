@@ -30,7 +30,7 @@ void CGameWorld::Init()
 
 	myBackground.Init("Sprites/bed.dds");
 	myBackground.SetSize(1.5f);
-	myBackground.SetPosition({ 860.f, 900.f });
+	myBackground.SetPosition({ 860.f + 22.f, 900.f + 185.f});
 	
 }
 
@@ -40,7 +40,7 @@ void CGameWorld::CreateObjects()
 	SpatialObject::ConstructData tempConstructData;
 
 	tempConstructData.myFilePath = "Sprites/adam.dds";
-	tempConstructData.myPosition = { 1920.f / 2.f, 1080.f / 2.f };
+	tempConstructData.myPosition = { 1920.f / 2.f + 67.f, 1080.f / 2.f + 44.f};
 	tempConstructData.myRotationSpeed = SunRotationSpeed;
 	tempConstructData.myLocalRotationSpeed = 0.f;
 	tempConstructData.mySize = 1.2f;
@@ -112,7 +112,7 @@ void CGameWorld::CreateObjects()
 
 	myDan.Init(tempConstructData);
 
-	tempConstructData.myFilePath = "Sprites/l1.png";
+	tempConstructData.myFilePath = "Sprites/l1.dds";
 	tempConstructData.myPosition = { -tempAwesomeHeadDistance, 0.f };
 	tempConstructData.myRotationSpeed = 60.f;
 	tempConstructData.myLocalRotationSpeed = 60.f;
