@@ -42,7 +42,7 @@ CHUGWindowsWindow::~CHUGWindowsWindow()
 }
 
 void CHUGWindowsWindow::Init(
-	const CU::Vector2i aWindowSize /*= CU::Vector2i(1024, 600)*/, 
+	const CU::Vector2ui aWindowSize /*= CU::Vector2ui(1024, 600)*/, 
 	const std::string & anApplicationName /*= "Default Name"*/)
 {
 	HINSTANCE myInstanceHandle = GetModuleHandle(NULL);
@@ -77,6 +77,11 @@ void CHUGWindowsWindow::Update()
 		TranslateMessage(&message);
 		DispatchMessage(&message);
 	}
+}
+
+void* CHUGWindowsWindow::GetHWND()
+{
+	return &myWindowHandle;
 }
 
 void CHUGWindowsWindow::RegisterWindow(const std::string & aClassName)

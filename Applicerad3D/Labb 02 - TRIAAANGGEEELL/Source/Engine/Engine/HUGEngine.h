@@ -2,6 +2,7 @@
 #include <functional>
 
 class CHUGWindowsWindow;
+class CHUGDXFramework;
 
 class CHUGEngineSingleton
 {
@@ -10,7 +11,7 @@ public:
 	struct EngineParameters
 	{
 		std::function<void()> myGameUpdateFunction;
-		CU::Vector2i myWindowSize;
+		CU::Vector2ui myWindowSize;
 		std::string myApplicationName;
 	};
 
@@ -29,6 +30,8 @@ private:
 
 	void EngineLoop();
 	void CreateWindowsWindow();
+
+	CHUGDXFramework * myFramework;
 
 	static CHUGEngineSingleton * ourInstance;
 

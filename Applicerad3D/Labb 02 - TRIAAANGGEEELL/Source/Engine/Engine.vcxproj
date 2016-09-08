@@ -126,7 +126,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Effect\HUGEffect.cpp" />
+    <ClCompile Include="Model\DXModel.cpp" />
     <ClCompile Include="Engine\HUGEngine.cpp" />
+    <ClCompile Include="HUGFramework\HUGDXFramework.cpp" />
+    <ClCompile Include="Model\HUGModel.cpp" />
     <ClCompile Include="Windows\HUGWindowsWindow.cpp" />
     <ClCompile Include="stdafx.cpp">
       <MultiProcessorCompilation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</MultiProcessorCompilation>
@@ -136,7 +140,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Effect\HUGEffectHelper.h" />
+    <ClInclude Include="Effect\HUGEffect.h" />
+    <ClInclude Include="Model\DXModel.h" />
     <ClInclude Include="Engine\HUGEngine.h" />
+    <ClInclude Include="HUGFramework\HUGDXFramework.h" />
+    <ClInclude Include="Model\HUGModel.h" />
     <ClInclude Include="Windows\HUGWindowsWindow.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>

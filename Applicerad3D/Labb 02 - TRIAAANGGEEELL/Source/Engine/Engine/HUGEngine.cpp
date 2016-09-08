@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "HUGEngine.h"
 #include "Windows/HUGWindowsWindow.h"
+#include "HUGFramework/HUGDXFramework.h"
 
 CHUGEngineSingleton * CHUGEngineSingleton::ourInstance = nullptr;
 
@@ -23,6 +24,8 @@ void CHUGEngineSingleton::Init(EngineParameters & someParameters)
 	GetInstance().myWindowsWindow->Init(someParameters.myWindowSize, someParameters.myApplicationName);
 	GetInstance().myGameUpdateFunction = someParameters.myGameUpdateFunction;
 
+	GetInstance().myFramework->Init(GetInstance().myWindowsWindow->GetHWND(), someParameters.myWindowSize);
+
 	GetInstance().EngineLoop();
 }
 
@@ -33,10 +36,12 @@ void CHUGEngineSingleton::CloseGame()
 
 CHUGEngineSingleton::CHUGEngineSingleton()
 {
+	myFramework = new CHUGDXFramework();
 }
 
 CHUGEngineSingleton::~CHUGEngineSingleton()
 {
+	SAFE_DELETE(myFramework);
 }
 
 CHUGEngineSingleton & CHUGEngineSingleton::GetInstance()
@@ -49,10 +54,14 @@ void CHUGEngineSingleton::EngineLoop()
 {
 	while (GetInstance().myShouldRun == true)
 	{
+		//CleanFrame();
+
 		myWindowsWindow->Update();
 
 		//Game Update
 		GetInstance().myGameUpdateFunction();
+		//Game Render
+		//Render
 	}
 }
 
