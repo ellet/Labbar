@@ -1,0 +1,29 @@
+OutputDirectory -
+$(SolutionDir)../Bin/
+
+IntermediateDireectory - 
+$(SolutionDir)../temp/$(ProjectName)/$(Configuration)
+
+TargetName -
+$(ProjectName)_$(Configuration)_$(Platform) - vad man vill att filen ska heta
+
+
+OutputDirectory - (vart alla filer hamnar)
+IntermediateDireectory - (Vart Alla skräpfiler hamnar)
+TargetName - vad output filen kommer heta
+
+
+
+
+
+
+Compila stdafx multithreaded
+{
+	Sätta igång Multi-processor Compilation, i C/C++ -> General
+	Stänga av "Enable Minimal Rebuild" (/Gm-), i C/C++ -> Code Generation
+	Sätta Precompiled Header till Use (/Yu), i C/C++ -> Precompiled Headers
+
+	samt för varje stdafx:
+	Sätta Multi-processor Compilation till No, i C/C++ -> General
+	Sätta Precompiled Header till Create (/Yc), i C/C++ -> Precompiled Header
+}
