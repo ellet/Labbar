@@ -10,7 +10,9 @@ public:
 
 	struct EngineParameters
 	{
+		std::function<void()> myGameInitFunction;
 		std::function<void()> myGameUpdateFunction;
+		std::function<void()> myGameRenderFunction;
 		CU::Vector2ui myWindowSize;
 		std::string myApplicationName;
 	};
@@ -21,6 +23,8 @@ public:
 	static void Init(EngineParameters & someParameters);
 
 	static void CloseGame();
+
+	static CHUGDXFramework & GetFramework();
 
 private:
 	CHUGEngineSingleton();
@@ -36,7 +40,9 @@ private:
 	static CHUGEngineSingleton * ourInstance;
 
 	CHUGWindowsWindow * myWindowsWindow;
+	std::function<void()> myGameInitFunction;
 	std::function<void()> myGameUpdateFunction;
+	std::function<void()> myGameRenderFunction;
 	bool myShouldRun;
 };
 

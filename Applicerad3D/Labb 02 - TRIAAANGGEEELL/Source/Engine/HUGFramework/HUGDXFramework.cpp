@@ -254,3 +254,13 @@ void CHUGDXFramework::Init(void* aHWND, const CU::Vector2ui & aScreenWidthHeight
 	myDeviceContext->RSSetViewports(1, &tempViewport);
 
 }
+
+ID3D11DeviceContext & CHUGDXFramework::GetDeviceContext()
+{
+	return *myDeviceContext;
+}
+
+ID3D11Device & CHUGDXFramework::GetDevice()
+{
+	return *myDevice;
+}

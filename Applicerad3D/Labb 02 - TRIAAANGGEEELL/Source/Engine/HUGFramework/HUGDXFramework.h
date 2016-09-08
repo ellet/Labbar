@@ -26,7 +26,8 @@ public:
 
 	void Init(void* aHWND, const CU::Vector2ui & aScreenWidthHeight);
 
-
+	ID3D11DeviceContext & GetDeviceContext();
+	ID3D11Device & GetDevice();
 
 private:
 	IDXGISwapChain* mySwapChain;

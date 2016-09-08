@@ -22,9 +22,14 @@ void CHUGEngineSingleton::Init(EngineParameters & someParameters)
 
 	GetInstance().myWindowsWindow = new CHUGWindowsWindow();
 	GetInstance().myWindowsWindow->Init(someParameters.myWindowSize, someParameters.myApplicationName);
+	GetInstance().myGameInitFunction = someParameters.myGameInitFunction;
 	GetInstance().myGameUpdateFunction = someParameters.myGameUpdateFunction;
+	GetInstance().myGameRenderFunction = someParameters.myGameRenderFunction;
+
 
 	GetInstance().myFramework->Init(GetInstance().myWindowsWindow->GetHWND(), someParameters.myWindowSize);
+
+	GetInstance().myGameInitFunction();
 
 	GetInstance().EngineLoop();
 }
@@ -32,6 +37,11 @@ void CHUGEngineSingleton::Init(EngineParameters & someParameters)
 void CHUGEngineSingleton::CloseGame()
 {
 	GetInstance().myShouldRun = false;
+}
+
+CHUGDXFramework & CHUGEngineSingleton::GetFramework()
+{
+	return *GetInstance().myFramework;
 }
 
 CHUGEngineSingleton::CHUGEngineSingleton()
@@ -58,11 +68,8 @@ void CHUGEngineSingleton::EngineLoop()
 
 		myWindowsWindow->Update();
 
-		//Game Update
 		GetInstance().myGameUpdateFunction();
-		//Game Render
-		//Render
-		
+		GetInstance().myGameRenderFunction();		
 
 		GetInstance().myFramework->Present();
 	}

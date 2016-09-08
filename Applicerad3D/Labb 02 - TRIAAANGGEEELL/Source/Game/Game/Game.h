@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Model/HUGModel.h"
 
 class CGame
 {
@@ -11,7 +11,9 @@ public:
 
 	void Update();
 
-private:
+	void Render();
 
+private:
+	CHUGModel myModel;
 };
 

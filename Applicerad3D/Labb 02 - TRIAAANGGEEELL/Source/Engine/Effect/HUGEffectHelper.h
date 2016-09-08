@@ -2,7 +2,6 @@
 #include <fstream>
 #include "HUGFramework/HUGDXFramework.h"
 #include <d3dcompiler.h>
-#include <vector>
 
 //TODO:: CreateEffect
 //TODO:: CreateLayout
@@ -24,7 +23,7 @@ namespace HUGEffectHelper
 	{
 		if (File_exist(aShader) == false)
 		{
-			aOutError = "Shader not found!";
+			aOutError = "Shaderfile not found!";
 			return false;
 		}
 
@@ -61,16 +60,16 @@ namespace HUGEffectHelper
 
 
 	//QUE^^ GrowingArray?
-	static void CreateLayout(std::vector<D3D11_INPUT_ELEMENT_DESC> & anArray, LPCSTR aName, int aSemanticIndex, DXGI_FORMAT aFormat, int aInputSlot, D3D11_INPUT_CLASSIFICATION aClassification, int aInstancestep)
+	static void CreateLayout(CU::GrowingArray<D3D11_INPUT_ELEMENT_DESC> & anArray, LPCSTR aName, int aSemanticIndex, DXGI_FORMAT aFormat, int aInputSlot, D3D11_INPUT_CLASSIFICATION aClassification, int aInstancestep)
 	{
 		D3D11_INPUT_ELEMENT_DESC tempPolygonLayout;
 		tempPolygonLayout.SemanticName = aName;
 		tempPolygonLayout.SemanticIndex = aSemanticIndex;
 		tempPolygonLayout.Format = aFormat;
 		tempPolygonLayout.InputSlot = aInputSlot;
-		tempPolygonLayout.AlignedByteOffset = anArray.size() > 0 ? D3D11_APPEND_ALIGNED_ELEMENT : 0;
+		tempPolygonLayout.AlignedByteOffset = anArray.Size() > 0 ? D3D11_APPEND_ALIGNED_ELEMENT : 0;
 		tempPolygonLayout.InputSlotClass = aClassification;
 		tempPolygonLayout.InstanceDataStepRate = aInstancestep;
-		anArray.push_back(tempPolygonLayout);
+		anArray.Add(tempPolygonLayout);
 	}
 }

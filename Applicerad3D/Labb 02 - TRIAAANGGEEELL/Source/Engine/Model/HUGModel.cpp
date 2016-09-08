@@ -4,12 +4,13 @@
 
 CHUGModel::CHUGModel()
 {
-	myModel = nullptr;
+	myModel = new CDXModel();
 }
 
 
 CHUGModel::~CHUGModel()
 {
+	SAFE_DELETE(myModel);
 }
 
 void CHUGModel::Init()

@@ -13,8 +13,14 @@ CGame::~CGame()
 
 void CGame::Init()
 {
+	myModel.Init();
 }
 
 void CGame::Update()
 {
+}
+
+void CGame::Render()
+{
+	myModel.Render();
 }
