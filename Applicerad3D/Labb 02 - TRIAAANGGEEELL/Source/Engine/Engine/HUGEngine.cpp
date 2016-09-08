@@ -54,7 +54,7 @@ void CHUGEngineSingleton::EngineLoop()
 {
 	while (GetInstance().myShouldRun == true)
 	{
-		//CleanFrame();
+		GetInstance().myFramework->CleanFrame();
 
 		myWindowsWindow->Update();
 
@@ -62,6 +62,9 @@ void CHUGEngineSingleton::EngineLoop()
 		GetInstance().myGameUpdateFunction();
 		//Game Render
 		//Render
+		
+
+		GetInstance().myFramework->Present();
 	}
 }
 

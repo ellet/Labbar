@@ -36,6 +36,31 @@ CHUGDXFramework::~CHUGDXFramework()
 	myRasterState = nullptr;
 }
 
+void CHUGDXFramework::CleanFrame()
+{
+	CU::Vector4f tempColor;
+
+	// Setup the color to clear the buffer to.
+	tempColor.r = 0.f;
+	tempColor.g = 1.f;
+	tempColor.b = 1.f;
+	tempColor.a = 1.f;
+	
+
+	// Clear the back buffer.
+	myDeviceContext->ClearRenderTargetView(myRenderTargetView, &tempColor.r);
+
+	// Clear the depth buffer.
+	//myDeviceContext->ClearDepthStencilView(myDepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
+
+	return;
+}
+
+void CHUGDXFramework::Present()
+{
+	mySwapChain->Present(0, 0);
+}
+
 void CHUGDXFramework::Init(void* aHWND, const CU::Vector2ui & aScreenWidthHeight)
 {
 	HRESULT tempResult = S_OK;
@@ -67,7 +92,7 @@ void CHUGDXFramework::Init(void* aHWND, const CU::Vector2ui & aScreenWidthHeight
 	tempSwapChainDescription.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT; //QUE?^^ backbuffer?
 
 	// Set the handle for the window to render to.
-	tempSwapChainDescription.OutputWindow = static_cast<HWND>(aHWND); //QUE?^^ kasta till pekare och avreferara
+	tempSwapChainDescription.OutputWindow = *static_cast<HWND*>(aHWND);
 
 	// Turn multisampling off.
 	tempSwapChainDescription.SampleDesc.Count = 1;

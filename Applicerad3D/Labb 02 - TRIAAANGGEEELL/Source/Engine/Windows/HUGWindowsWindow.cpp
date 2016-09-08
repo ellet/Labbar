@@ -14,7 +14,13 @@ LRESULT CALLBACK HandleWindowsMessage(HWND aWindowHandle, UINT aMessage, WPARAM 
 	case WM_EXITSIZEMOVE:
 		break;
 	case WM_PAINT:
-		break;
+	{
+		PAINTSTRUCT tempPaintStruct;
+		/*HDC hdc = */BeginPaint(aWindowHandle, &tempPaintStruct);
+		// TODO: Add any drawing code that uses hdc here...
+		EndPaint(aWindowHandle, &tempPaintStruct);
+	}
+	break;
 	case WM_CREATE:
 		break;
 	case WM_CLOSE:
@@ -42,7 +48,7 @@ CHUGWindowsWindow::~CHUGWindowsWindow()
 }
 
 void CHUGWindowsWindow::Init(
-	const CU::Vector2ui aWindowSize /*= CU::Vector2ui(1024, 600)*/, 
+	const CU::Vector2ui aWindowSize /*= CU::Vector2ui(1024, 600)*/,
 	const std::string & anApplicationName /*= "Default Name"*/)
 {
 	HINSTANCE myInstanceHandle = GetModuleHandle(NULL);

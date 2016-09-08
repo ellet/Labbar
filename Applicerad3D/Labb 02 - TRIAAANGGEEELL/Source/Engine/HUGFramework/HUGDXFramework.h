@@ -21,6 +21,9 @@ public:
 	CHUGDXFramework();
 	~CHUGDXFramework();
 
+	void CleanFrame();
+	void Present();
+
 	void Init(void* aHWND, const CU::Vector2ui & aScreenWidthHeight);
 
 
