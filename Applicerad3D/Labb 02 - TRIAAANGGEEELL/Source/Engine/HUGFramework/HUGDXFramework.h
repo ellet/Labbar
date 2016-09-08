@@ -30,11 +30,9 @@ private:
 	ID3D11Device* myDevice;
 	ID3D11DeviceContext* myDeviceContext;
 	ID3D11RenderTargetView* myRenderTargetView;
-
-
-	//maybe need these? // TODO:: remove this
-	/*ID3D11Texture2D* m_depthStencilBuffer;
-	ID3D11DepthStencilState* m_depthStencilState;
-	ID3D11DepthStencilView* m_depthStencilView;*/
+	ID3D11Texture2D* myDepthStencilBuffer;
+	ID3D11DepthStencilState* myDepthStencilState;
+	ID3D11DepthStencilView* myDepthStencilView;
+	ID3D11RasterizerState* myRasterState;
 };
 

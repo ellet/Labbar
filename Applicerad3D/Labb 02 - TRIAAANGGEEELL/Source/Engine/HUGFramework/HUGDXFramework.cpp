@@ -8,6 +8,10 @@ CHUGDXFramework::CHUGDXFramework()
 	myDevice = nullptr;
 	myDeviceContext = nullptr;
 	myRenderTargetView = nullptr;
+	myDepthStencilBuffer = nullptr;
+	myDepthStencilState = nullptr;
+	myDepthStencilView = nullptr;
+	myRasterState = nullptr;
 }
 
 
@@ -17,11 +21,19 @@ CHUGDXFramework::~CHUGDXFramework()
 	myDevice->Release();
 	myDeviceContext->Release();
 	myRenderTargetView->Release();
+	myDepthStencilBuffer->Release();
+	myDepthStencilState->Release();
+	myDepthStencilView->Release();
+	myRasterState->Release();
 
 	mySwapChain = nullptr;
 	myDevice = nullptr;
 	myDeviceContext = nullptr;
 	myRenderTargetView = nullptr;
+	myDepthStencilBuffer = nullptr;
+	myDepthStencilState = nullptr;
+	myDepthStencilView = nullptr;
+	myRasterState = nullptr;
 }
 
 void CHUGDXFramework::Init(void* aHWND, const CU::Vector2ui & aScreenWidthHeight)
@@ -131,9 +143,7 @@ void CHUGDXFramework::Init(void* aHWND, const CU::Vector2ui & aScreenWidthHeight
 	tempDepthBufferDescription.MiscFlags = 0;
 
 	// Create the texture for the depth buffer using the filled out description.
-
-	ID3D11Texture2D* tempDepthStencilBuffer = nullptr;
-	tempResult = myDevice->CreateTexture2D(&tempDepthBufferDescription, NULL, &tempDepthStencilBuffer);
+	tempResult = myDevice->CreateTexture2D(&tempDepthBufferDescription, NULL, &myDepthStencilBuffer);
 
 	DL_ASSERT(tempResult == S_OK, "Failed to create depth buffer texture");
 
@@ -163,13 +173,12 @@ void CHUGDXFramework::Init(void* aHWND, const CU::Vector2ui & aScreenWidthHeight
 	tempDepthStencilDescription.BackFace.StencilFunc = D3D11_COMPARISON_ALWAYS;
 
 	// Create the depth stencil state.
-	ID3D11DepthStencilState * tempDepthStencilState = nullptr;
-	tempResult = myDevice->CreateDepthStencilState(&tempDepthStencilDescription, &tempDepthStencilState);
+	tempResult = myDevice->CreateDepthStencilState(&tempDepthStencilDescription, &myDepthStencilState);
 
 	DL_ASSERT(tempResult == S_OK, "Failed to create depth stencil state!");
 
 	// Set the depth stencil state.
-	myDeviceContext->OMSetDepthStencilState(tempDepthStencilState, 1);
+	myDeviceContext->OMSetDepthStencilState(myDepthStencilState, 1);
 
 	// Initialize the depth stencil view.
 	D3D11_DEPTH_STENCIL_VIEW_DESC tempDepthStencilViewDescription;
@@ -181,12 +190,11 @@ void CHUGDXFramework::Init(void* aHWND, const CU::Vector2ui & aScreenWidthHeight
 	tempDepthStencilViewDescription.Texture2D.MipSlice = 0;
 
 	// Create the depth stencil view.
-	ID3D11DepthStencilView * tempDepthStencilView = nullptr;
-	tempResult = myDevice->CreateDepthStencilView(tempDepthStencilBuffer, &tempDepthStencilViewDescription, &tempDepthStencilView);
+	tempResult = myDevice->CreateDepthStencilView(myDepthStencilBuffer, &tempDepthStencilViewDescription, &myDepthStencilView);
 	DL_ASSERT(tempResult == S_OK, "Failed to create depth stencil view!");
 
 	// Bind the render target view and depth stencil buffer to the output render pipeline.
-	myDeviceContext->OMSetRenderTargets(1, &myRenderTargetView, tempDepthStencilView);
+	myDeviceContext->OMSetRenderTargets(1, &myRenderTargetView, myDepthStencilView);
 
 	// Setup the raster description which will determine how and what polygons will be drawn.
 	D3D11_RASTERIZER_DESC tempRasterDescription;
@@ -202,12 +210,11 @@ void CHUGDXFramework::Init(void* aHWND, const CU::Vector2ui & aScreenWidthHeight
 	tempRasterDescription.SlopeScaledDepthBias = 0.0f;
 
 	// Create the rasterizer state from the description we just filled out.
-	ID3D11RasterizerState *  tempRasterState = nullptr;
-	tempResult = myDevice->CreateRasterizerState(&tempRasterDescription, &tempRasterState);
+	tempResult = myDevice->CreateRasterizerState(&tempRasterDescription, &myRasterState);
 	DL_ASSERT(tempResult == S_OK, "Failed to create rasterizer state!");
 
 	// Now set the rasterizer state.
-	myDeviceContext->RSSetState(tempRasterState);
+	myDeviceContext->RSSetState(myRasterState);
 
 	// Setup the viewport for rendering.
 	D3D11_VIEWPORT tempViewport;
