@@ -8,6 +8,11 @@ LRESULT CALLBACK HandleWindowsMessage(HWND aWindowHandle, UINT aMessage, WPARAM 
 	switch (aMessage)
 	{
 	case WM_SIZE:
+	{
+		unsigned int width = LOWORD(lParam);
+		unsigned int height = HIWORD(lParam);
+		CHUGEngineSingleton::ResizeWindow(CU::Vector2ui(width, height));
+	}
 		break;
 	case WM_ENTERSIZEMOVE:
 		break;
@@ -16,8 +21,7 @@ LRESULT CALLBACK HandleWindowsMessage(HWND aWindowHandle, UINT aMessage, WPARAM 
 	case WM_PAINT:
 	{
 		PAINTSTRUCT tempPaintStruct;
-		/*HDC hdc = */BeginPaint(aWindowHandle, &tempPaintStruct);
-		// TODO: Add any drawing code that uses hdc here...
+		BeginPaint(aWindowHandle, &tempPaintStruct);
 		EndPaint(aWindowHandle, &tempPaintStruct);
 	}
 	break;
@@ -32,6 +36,9 @@ LRESULT CALLBACK HandleWindowsMessage(HWND aWindowHandle, UINT aMessage, WPARAM 
 		PostQuitMessage(0);
 		CHUGEngineSingleton::CloseGame();
 		return 0;
+		break;
+	case WM_POWERBROADCAST:
+		//TODO^^ Handle computer sleeping, don't render / update stuff
 		break;
 	default:
 		return DefWindowProc(aWindowHandle, aMessage, wParam, lParam);

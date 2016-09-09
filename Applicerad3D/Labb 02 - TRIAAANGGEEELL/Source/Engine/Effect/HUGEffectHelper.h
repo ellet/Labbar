@@ -3,11 +3,6 @@
 #include "HUGFramework/HUGDXFramework.h"
 #include <d3dcompiler.h>
 
-//TODO:: CreateEffect
-//TODO:: CreateLayout
-
-//TODO:: RELEASA SHIT EFTER
-
 namespace HUGEffectHelper
 {
 	static bool File_exist(const wchar_t * afilename)
@@ -58,8 +53,6 @@ namespace HUGEffectHelper
 		return true;
 	}
 
-
-	//QUE^^ GrowingArray?
 	static void CreateLayout(CU::GrowingArray<D3D11_INPUT_ELEMENT_DESC> & anArray, LPCSTR aName, int aSemanticIndex, DXGI_FORMAT aFormat, int aInputSlot, D3D11_INPUT_CLASSIFICATION aClassification, int aInstancestep)
 	{
 		D3D11_INPUT_ELEMENT_DESC tempPolygonLayout;

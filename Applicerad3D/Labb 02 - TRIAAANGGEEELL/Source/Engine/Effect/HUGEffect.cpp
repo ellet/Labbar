@@ -43,7 +43,8 @@ void CHUGEffect::Init()
 	CU::GrowingArray<D3D11_INPUT_ELEMENT_DESC> tempPolyLayout;
 	tempPolyLayout.Init(1);
 
-	HUGEffectHelper::CreateLayout(tempPolyLayout, "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
+	HUGEffectHelper::CreateLayout(tempPolyLayout, "POSITION", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
+	HUGEffectHelper::CreateLayout(tempPolyLayout, "COLOR", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
 
 	tempResult = tempDeviceRef.CreateInputLayout(&tempPolyLayout[0], tempPolyLayout.Size(), tempVertexShaderBuffer->GetBufferPointer(), tempVertexShaderBuffer->GetBufferSize(), &myLayout);
 	DL_ASSERT(tempResult == S_OK, "Failed to create input layout");
@@ -57,26 +58,6 @@ void CHUGEffect::Init()
 
 void CHUGEffect::Active()
 {
-	//TODO:: activate stuff
-}
-
-void CHUGEffect::Render()
-{
-	HRESULT tempResult = S_OK;
-
-	// Set the shader parameters that it will use for rendering.
-	/*tempResult = SetShaderParameters();
-	
-	DL_ASSERT(tempResult == S_OK, "Set shade parameters failed");*/
-
-	// Now render the prepared buffers with the shader.
-	RenderShader();
-}
-
-
-
-void CHUGEffect::RenderShader()
-{
 	ID3D11DeviceContext & tempDeviceContextRef = CHUGEngineSingleton::GetFramework().GetDeviceContext();
 
 	UINT myVertexCount = 3;
@@ -87,9 +68,6 @@ void CHUGEffect::RenderShader()
 	// Set the vertex and pixel shaders that will be used to render this triangle.
 	tempDeviceContextRef.VSSetShader(myVertexShader, NULL, 0);
 	tempDeviceContextRef.PSSetShader(myPixelShader, NULL, 0);
-
-	// Render the triangle.
-	tempDeviceContextRef.Draw(myVertexCount, 0);
 
 	return;
 }

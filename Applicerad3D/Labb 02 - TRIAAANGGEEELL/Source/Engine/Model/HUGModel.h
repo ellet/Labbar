@@ -8,6 +8,9 @@ public:
 	CHUGModel();
 	~CHUGModel();
 
+	void InitAsTriangle();
+	void InitAsQuad();
+
 	void Init();
 	void Render();
 

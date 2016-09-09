@@ -13,7 +13,8 @@ CGame::~CGame()
 
 void CGame::Init()
 {
-	myModel.Init();
+	myQuad.InitAsQuad();
+	//myTriangle.InitAsTriangle();
 }
 
 void CGame::Update()
@@ -22,5 +23,6 @@ void CGame::Update()
 
 void CGame::Render()
 {
-	myModel.Render();
+	myQuad.Render();
+	//myTriangle.Render();
 }

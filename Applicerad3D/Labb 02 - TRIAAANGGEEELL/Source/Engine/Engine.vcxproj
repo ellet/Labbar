@@ -127,6 +127,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Effect\HUGEffect.cpp" />
+    <ClCompile Include="Model\HUGModelLoader.cpp" />
     <ClCompile Include="Model\DXModel.cpp" />
     <ClCompile Include="Engine\HUGEngine.cpp" />
     <ClCompile Include="HUGFramework\HUGDXFramework.cpp" />
@@ -142,6 +143,7 @@
   <ItemGroup>
     <ClInclude Include="Effect\HUGEffectHelper.h" />
     <ClInclude Include="Effect\HUGEffect.h" />
+    <ClInclude Include="Model\HUGModelLoader.h" />
     <ClInclude Include="Model\DXModel.h" />
     <ClInclude Include="Engine\HUGEngine.h" />
     <ClInclude Include="HUGFramework\HUGDXFramework.h" />

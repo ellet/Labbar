@@ -10,6 +10,7 @@ public:
 	struct Vertex
 	{
 		CU::Vector4f myPosition;
+		CU::Vector4f myColor;
 	};
 
 	CDXModel();
@@ -18,22 +19,23 @@ public:
 	void Init();
 	void Render();
 
+	void SetVertices(const CU::GrowingArray<Vertex> & someVertices);
+
 private:
 	void InitBuffers();
 	void InitVertices();
+	void InitIndices();
 
 	void RenderBuffers();
-
+	void RenderModel();
 	void ShutdownBuffers();
 
-	CU::GrowingArray<Vertex>myVertices;
+	CU::GrowingArray<Vertex> myVertices;
+	CU::GrowingArray<unsigned int> myIndexCount;
 
 	CHUGEffect * myEffect;
 
 	ID3D11Buffer * myVertexBuffer;
 	ID3D11Buffer * myIndexBuffer;
-
-	//int myIndexCount; //QUE^^ size of vertices?
-	//TODO:: håller effect på något sett
 };
 

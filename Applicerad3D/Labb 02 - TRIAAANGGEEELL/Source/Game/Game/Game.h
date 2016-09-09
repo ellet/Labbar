@@ -14,6 +14,7 @@ public:
 	void Render();
 
 private:
-	CHUGModel myModel;
+	CHUGModel myTriangle;
+	CHUGModel myQuad;
 };
 
