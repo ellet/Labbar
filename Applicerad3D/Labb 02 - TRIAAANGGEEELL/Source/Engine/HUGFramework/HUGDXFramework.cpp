@@ -67,7 +67,7 @@ void CHUGDXFramework::Init(void* aHWND, const CU::Vector2ui & aScreenWidthHeight
 
 
 #pragma region SwapChainSetup
-	DXGI_SWAP_CHAIN_DESC tempSwapChainDescription; // QUE?^^ Swith to DXGI_SWAP_CHAIN_DESC1?
+	DXGI_SWAP_CHAIN_DESC tempSwapChainDescription;
 
 	// Initialize the swap chain description.
 	ZeroMemory(&tempSwapChainDescription, sizeof(tempSwapChainDescription));
@@ -89,7 +89,7 @@ void CHUGDXFramework::Init(void* aHWND, const CU::Vector2ui & aScreenWidthHeight
 
 
 	// Set the usage of the back buffer.
-	tempSwapChainDescription.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT; //QUE?^^ backbuffer?
+	tempSwapChainDescription.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
 
 	// Set the handle for the window to render to.
 	tempSwapChainDescription.OutputWindow = *static_cast<HWND*>(aHWND);

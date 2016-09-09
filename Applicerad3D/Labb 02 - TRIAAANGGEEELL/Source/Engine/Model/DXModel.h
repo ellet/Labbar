@@ -34,6 +34,5 @@ private:
 	ID3D11Buffer * myIndexBuffer;
 
 	//int myIndexCount; //QUE^^ size of vertices?
-	//TODO:: håller effect på något sett
 };
 

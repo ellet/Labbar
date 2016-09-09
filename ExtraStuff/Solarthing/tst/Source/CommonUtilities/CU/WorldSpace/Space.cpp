@@ -34,6 +34,11 @@ namespace CommonUtilities
 		myTransformation.Rotate2D(aRotationInRadians);
 	}
 
+	void Space::RotateAroundAxis2D(const float aRotationInRadians)
+	{
+		myTransformation.SetPosition(myTransformation.GetPosition() * CU::Matrix33f::CreateRotateAroundZ(aRotationInRadians));
+	}
+
 	const Matrix33f Space::GetTransform() const
 	{
 		if (myParent != nullptr)

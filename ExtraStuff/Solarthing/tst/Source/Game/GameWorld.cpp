@@ -38,6 +38,7 @@ void CGameWorld::Init()
 void CGameWorld::CreateObjects()
 {
 	SpatialObject::ConstructData tempConstructData;
+	tempConstructData.myOrbitSpeed = 0;
 
 	tempConstructData.myFilePath = "Sprites/adam.dds";
 	tempConstructData.myPosition = { 1920.f / 2.f + 67.f, 1080.f / 2.f + 44.f};
@@ -52,6 +53,7 @@ void CGameWorld::CreateObjects()
 	tempConstructData.myPosition = { 200.f, 200.f };
 	tempConstructData.myRotationSpeed = 60.f;
 	tempConstructData.myLocalRotationSpeed = 60.f;
+	tempConstructData.myOrbitSpeed = 0.f;
 
 	myFirstPlanet.Init(tempConstructData);
 
@@ -59,6 +61,7 @@ void CGameWorld::CreateObjects()
 	tempConstructData.myPosition = { 450.f, 0.f };
 	tempConstructData.myRotationSpeed = 60.f;
 	tempConstructData.myLocalRotationSpeed = 60.f;
+	tempConstructData.myOrbitSpeed = 30.f;
 
 	mySecondPlanet.Init(tempConstructData);
 
@@ -66,6 +69,7 @@ void CGameWorld::CreateObjects()
 	tempConstructData.myPosition = { -450.f, 200.f };
 	tempConstructData.myRotationSpeed = 60.f;
 	tempConstructData.myLocalRotationSpeed = 60.f;
+	tempConstructData.myOrbitSpeed = 20.f;
 
 	myThirdPlanet.Init(tempConstructData);
 
@@ -73,6 +77,7 @@ void CGameWorld::CreateObjects()
 	tempConstructData.myPosition = { -120.f, -450.f };
 	tempConstructData.myRotationSpeed = 60.f;
 	tempConstructData.myLocalRotationSpeed = 60.f;
+	tempConstructData.myOrbitSpeed = -70.f;
 
 	myFourthPlanet.Init(tempConstructData);
 
@@ -80,6 +85,7 @@ void CGameWorld::CreateObjects()
 	mySun.AddChild(mySecondPlanet);
 	mySun.AddChild(myThirdPlanet);
 	mySun.AddChild(myFourthPlanet);
+	tempConstructData.myOrbitSpeed = 0.f;
 
 	tempConstructData.myFilePath = "Sprites/chokladboll.dds";
 	tempConstructData.myPosition = { 100.f, 0.f };
@@ -95,6 +101,7 @@ void CGameWorld::CreateObjects()
 	tempConstructData.mySize = 0.45f;
 	tempConstructData.myRotationSpeed = 60.f;
 	tempConstructData.myLocalRotationSpeed = 60.f;
+	tempConstructData.myOrbitSpeed = 25.f;
 
 	myYlf.Init(tempConstructData);
 
@@ -102,6 +109,7 @@ void CGameWorld::CreateObjects()
 	tempConstructData.myPosition = { 0.f, -tempAwesomeHeadDistance };
 	tempConstructData.myRotationSpeed = 60.f;
 	tempConstructData.myLocalRotationSpeed = 60.f;
+	tempConstructData.myOrbitSpeed = -50.f;
 
 	myNicos.Init(tempConstructData);
 
@@ -109,6 +117,7 @@ void CGameWorld::CreateObjects()
 	tempConstructData.myPosition = { tempAwesomeHeadDistance, 0.f};
 	tempConstructData.myRotationSpeed = 60.f;
 	tempConstructData.myLocalRotationSpeed = 60.f;
+	tempConstructData.myOrbitSpeed = -90.f;
 
 	myDan.Init(tempConstructData);
 
@@ -116,6 +125,7 @@ void CGameWorld::CreateObjects()
 	tempConstructData.myPosition = { -tempAwesomeHeadDistance, 0.f };
 	tempConstructData.myRotationSpeed = 60.f;
 	tempConstructData.myLocalRotationSpeed = 60.f;
+	tempConstructData.myOrbitSpeed = -10.f;
 
 	myl1.Init(tempConstructData);
 
