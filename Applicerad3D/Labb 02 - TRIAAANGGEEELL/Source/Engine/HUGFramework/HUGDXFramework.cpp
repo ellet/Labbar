@@ -51,7 +51,7 @@ void CHUGDXFramework::CleanFrame()
 	myDeviceContext->ClearRenderTargetView(myRenderTargetView, &tempColor.r);
 
 	// Clear the depth buffer.
-	//myDeviceContext->ClearDepthStencilView(myDepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
+	myDeviceContext->ClearDepthStencilView(myDepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
 
 	return;
 }
