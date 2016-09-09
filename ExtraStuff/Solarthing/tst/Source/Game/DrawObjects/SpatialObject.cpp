@@ -20,18 +20,20 @@ void SpatialObject::Init(const ConstructData & aCreationData)
 
 	mySpace.SetPosition(aCreationData.myPosition);
 	
-	myRotationSpeed = aCreationData.myRotationSpeed;
+	myChildrenRotationSpeed = aCreationData.myRotationSpeed;
 	myLocalRotationSpeed = aCreationData.myLocalRotationSpeed;
+	myOrbitSpeed = aCreationData.myOrbitSpeed;
 	myCurrentRotation = 0.f;
 }
 
 void SpatialObject::Update(const CU::Time & aDeltaTime)
 {
-	const float newRotation = myRotationSpeed * aDeltaTime.GetSeconds();
+	const float newRotation = myChildrenRotationSpeed * aDeltaTime.GetSeconds();
 
 	myCurrentRotation += myLocalRotationSpeed * aDeltaTime.GetSeconds();
 
 	mySpace.Rotate2D(DEGRESS_TO_RADIANSF(newRotation));
+	mySpace.RotateAroundAxis2D(DEGRESS_TO_RADIANSF(myOrbitSpeed * aDeltaTime.GetSeconds()));
 	
 	mySprite.SetRotationDegrees(myCurrentRotation);
 

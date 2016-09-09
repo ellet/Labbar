@@ -14,6 +14,7 @@ namespace CommonUtilities
 		void SetNoParent();
 
 		void Rotate2D(const float aRotationInRadians);
+		void RotateAroundAxis2D(const float aRotationInRadians);
 		
 		const Matrix33f GetTransform() const;
 		const Vector2f GetPosition() const;

@@ -10,6 +10,7 @@ public:
 		std::string myFilePath;
 		float myRotationSpeed;
 		float myLocalRotationSpeed;
+		float myOrbitSpeed;
 		PixelPositionFloat myPosition;
 		float mySize;
 	};
@@ -29,8 +30,9 @@ public:
 	const CU::Matrix33f &GetTransformation();
 private:
 	HUG::Sprite mySprite;
-	float myRotationSpeed;
-	float myLocalRotationSpeed;
+	float myChildrenRotationSpeed;
+	float myLocalRotationSpeed; //Sprite only
+	float myOrbitSpeed;
 	float myCurrentRotation;
 
 	//CU::Matrix33f myTransformation;

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DX2DEngine", "DX2DEngine\DX2DEngine.vcxproj", "{11F98BF6-7BDB-4CFB-96CF-577DB4AE312F}"
 EndProject
@@ -106,8 +106,8 @@ Global
 		{12FFE2CE-8CED-46FE-9B19-76F780675F10}.TestShit|x64.Build.0 = Release|x64
 		{12FFE2CE-8CED-46FE-9B19-76F780675F10}.TestShit|x86.ActiveCfg = Release|Win32
 		{12FFE2CE-8CED-46FE-9B19-76F780675F10}.TestShit|x86.Build.0 = Release|Win32
-		{486285C5-EC46-4537-8E0B-5504975469D6}.Debug|x64.ActiveCfg = Debug|x64
-		{486285C5-EC46-4537-8E0B-5504975469D6}.Debug|x64.Build.0 = Debug|x64
+		{486285C5-EC46-4537-8E0B-5504975469D6}.Debug|x64.ActiveCfg = Release|x64
+		{486285C5-EC46-4537-8E0B-5504975469D6}.Debug|x64.Build.0 = Release|x64
 		{486285C5-EC46-4537-8E0B-5504975469D6}.Debug|x86.ActiveCfg = Debug|Win32
 		{486285C5-EC46-4537-8E0B-5504975469D6}.Debug|x86.Build.0 = Debug|Win32
 		{486285C5-EC46-4537-8E0B-5504975469D6}.DevMode|x64.ActiveCfg = Debug|x64
