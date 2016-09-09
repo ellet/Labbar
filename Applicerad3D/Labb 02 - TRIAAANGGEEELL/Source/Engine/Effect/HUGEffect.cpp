@@ -43,7 +43,8 @@ void CHUGEffect::Init()
 	CU::GrowingArray<D3D11_INPUT_ELEMENT_DESC> tempPolyLayout;
 	tempPolyLayout.Init(1);
 
-	HUGEffectHelper::CreateLayout(tempPolyLayout, "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
+	HUGEffectHelper::CreateLayout(tempPolyLayout, "POSITION", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
+	HUGEffectHelper::CreateLayout(tempPolyLayout, "COLOR", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
 
 	tempResult = tempDeviceRef.CreateInputLayout(&tempPolyLayout[0], tempPolyLayout.Size(), tempVertexShaderBuffer->GetBufferPointer(), tempVertexShaderBuffer->GetBufferSize(), &myLayout);
 	DL_ASSERT(tempResult == S_OK, "Failed to create input layout");

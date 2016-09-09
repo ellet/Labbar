@@ -1,17 +1,18 @@
 struct VertexInputType
 {
 	float4 position : POSITION;
+	float4 color : COLOR;
 };
 
 struct PixelInputType
 {
 	float4 position : SV_POSITION;
+	float4 color : COLOR;
 };
 
 struct PixelOutputType
 {
-	float4 position : SV_TARGET;
-	//float4 Color 
+	float4 color : SV_TARGET;
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -21,11 +22,12 @@ struct PixelOutputType
 // pixel shader?
 PixelOutputType HUGPixelShader(PixelInputType aInput)
 {
-	PixelOutputType tempOutput = aInput;
-	tempOutput.position[0] = 1.f;
-	tempOutput.position[1] = 0.55f;
-	tempOutput.position[2] = 0.f;
-	tempOutput.position[3] = 1.f;
+	PixelOutputType tempOutput;
+	tempOutput.color = aInput.color;
+	//tempOutput.color[0] = 1.f * aInput.position[0];
+	//tempOutput.color[1] = 1.f;
+	//tempOutput.color[2] = 1.f;
+	//tempOutput.color[3] = 1.f;
 
 	/*float4 tempColor;
 	tempColor[0] = 1.f;

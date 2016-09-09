@@ -37,6 +37,9 @@ LRESULT CALLBACK HandleWindowsMessage(HWND aWindowHandle, UINT aMessage, WPARAM 
 		CHUGEngineSingleton::CloseGame();
 		return 0;
 		break;
+	case WM_POWERBROADCAST:
+		//TODO^^ Handle computer sleeping, don't render / update stuff
+		break;
 	default:
 		return DefWindowProc(aWindowHandle, aMessage, wParam, lParam);
 	}

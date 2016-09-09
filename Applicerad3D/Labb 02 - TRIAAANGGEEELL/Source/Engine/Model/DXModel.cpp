@@ -8,8 +8,8 @@
 CDXModel::CDXModel()
 {
 	myEffect = new CHUGEffect();
-	myVertices.Init(3);
-	myVertices.Resize(3);
+	myVertices.Init(4);
+	myVertices.Resize(4);
 }
 
 CDXModel::~CDXModel()
@@ -43,6 +43,7 @@ void CDXModel::InitBuffers()
 	D3D11_SUBRESOURCE_DATA tempIndexData;
 
 	InitVertices();
+	InitIndices();
 
 	// Set up the description of the static vertex buffer.
 	tempVertexBufferDesc.Usage = D3D11_USAGE_DEFAULT;
@@ -70,14 +71,7 @@ void CDXModel::InitBuffers()
 	tempIndexBufferDesc.MiscFlags = 0;
 	tempIndexBufferDesc.StructureByteStride = 0;
 
-	// Give the subresource structure a pointer to the index data.
-	unsigned long * tempIndices = new unsigned long[myVertices.Size()];
-
-	tempIndices[0] = 0;
-	tempIndices[1] = 1;
-	tempIndices[2] = 2;
-
-	tempIndexData.pSysMem = tempIndices;
+	tempIndexData.pSysMem = &myIndexCount[0];
 	tempIndexData.SysMemPitch = 0;
 	tempIndexData.SysMemSlicePitch = 0;
 
@@ -85,25 +79,62 @@ void CDXModel::InitBuffers()
 	tempResult = tempDeviceRef.CreateBuffer(&tempIndexBufferDesc, &tempIndexData, &myIndexBuffer);
 	DL_ASSERT(tempResult == S_OK, "Indexbuffer creation failed");
 
-	SAFE_DELETE(tempIndices);
 }
 
 void CDXModel::InitVertices()
 {
-	myVertices[0].myPosition.x = 0.0f;
-	myVertices[0].myPosition.y = -0.8f;
+	myVertices[0].myPosition.x = -0.5f;
+	myVertices[0].myPosition.y = -0.5f;
 	myVertices[0].myPosition.z = 0.5f;
 	myVertices[0].myPosition.w = 1.f;
 
-	myVertices[1].myPosition.x = -0.8f;
-	myVertices[1].myPosition.y = 0.8f;
+	myVertices[0].myColor.r = 0.0f;
+	myVertices[0].myColor.g = 1.0f;
+	myVertices[0].myColor.b = 0.0f;
+	myVertices[0].myColor.a = 1.f;
+
+	myVertices[1].myPosition.x = -0.5f;
+	myVertices[1].myPosition.y = 0.5f;
 	myVertices[1].myPosition.z = 0.5f;
 	myVertices[1].myPosition.w = 1.f;
 
-	myVertices[2].myPosition.x = 0.8f;
-	myVertices[2].myPosition.y = 0.8f;
+	myVertices[1].myColor.r = 1.0f;
+	myVertices[1].myColor.g = 0.0f;
+	myVertices[1].myColor.b = 0.0f;
+	myVertices[1].myColor.a = 1.f;
+
+	myVertices[2].myPosition.x = 0.5f;
+	myVertices[2].myPosition.y = -0.5f;
 	myVertices[2].myPosition.z = 0.5f;
 	myVertices[2].myPosition.w = 1.f;
+
+	myVertices[2].myColor.r = 0.0f;
+	myVertices[2].myColor.g = 0.0f;
+	myVertices[2].myColor.b = 1.0f;
+	myVertices[2].myColor.a = 1.f;
+
+	myVertices[3].myPosition.x = 0.5f;
+	myVertices[3].myPosition.y = 0.5f;
+	myVertices[3].myPosition.z = 0.5f;
+	myVertices[3].myPosition.w = 1.f;
+
+	myVertices[3].myColor.r = 1.0f;
+	myVertices[3].myColor.g = 1.0f;
+	myVertices[3].myColor.b = 0.0f;
+	myVertices[3].myColor.a = 1.f;
+
+}
+
+void CDXModel::InitIndices()
+{
+	//Todo^^ Edit indices to be correct stuff and not vertex stuff
+	myIndexCount.Init(myVertices.Size());
+	myIndexCount.Resize(myVertices.Size());
+
+	for (unsigned int i = 0; i < myIndexCount.Size(); ++i)
+	{
+		myIndexCount[i] = i;
+	}
 }
 
 void CDXModel::RenderBuffers()
@@ -125,7 +156,7 @@ void CDXModel::RenderBuffers()
 	tempDeviceContextRef.IASetIndexBuffer(myIndexBuffer, DXGI_FORMAT_R32_UINT, 0);
 
 	// Set the type of primitive that should be rendered from this vertex buffer, in this case triangles.
-	tempDeviceContextRef.IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+	tempDeviceContextRef.IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP);
 
 	return;
 }
