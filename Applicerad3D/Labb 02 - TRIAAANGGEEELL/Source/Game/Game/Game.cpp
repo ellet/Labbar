@@ -14,7 +14,7 @@ CGame::~CGame()
 void CGame::Init()
 {
 	myQuad.InitAsQuad();
-	myTriangle.InitAsTriangle();
+	//myTriangle.InitAsTriangle();
 }
 
 void CGame::Update()
@@ -24,5 +24,5 @@ void CGame::Update()
 void CGame::Render()
 {
 	myQuad.Render();
-	myTriangle.Render();
+	//myTriangle.Render();
 }

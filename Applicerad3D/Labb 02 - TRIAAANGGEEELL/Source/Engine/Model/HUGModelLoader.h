@@ -10,6 +10,9 @@ public:
 
 	CDXModel & CreateQuad();
 	CDXModel & CreateTriangle();
+	//CDXModel & CreateCube();
+
+	CDXModel & CreateQuadTopLeft();
 
 private:
 };
