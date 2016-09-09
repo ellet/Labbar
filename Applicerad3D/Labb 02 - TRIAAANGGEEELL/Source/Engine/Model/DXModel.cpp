@@ -23,7 +23,6 @@ void CDXModel::Init()
 {
 	InitBuffers();
 	myEffect->Init();
-	//TODO:: CreateEffects --- Effect Helper
 }
 
 

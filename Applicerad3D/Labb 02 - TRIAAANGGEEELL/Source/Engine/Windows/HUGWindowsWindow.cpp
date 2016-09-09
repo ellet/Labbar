@@ -16,8 +16,7 @@ LRESULT CALLBACK HandleWindowsMessage(HWND aWindowHandle, UINT aMessage, WPARAM 
 	case WM_PAINT:
 	{
 		PAINTSTRUCT tempPaintStruct;
-		/*HDC hdc = */BeginPaint(aWindowHandle, &tempPaintStruct);
-		// TODO: Add any drawing code that uses hdc here...
+		BeginPaint(aWindowHandle, &tempPaintStruct);
 		EndPaint(aWindowHandle, &tempPaintStruct);
 	}
 	break;
