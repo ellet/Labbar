@@ -31,6 +31,11 @@ void CDXModel::Render()
 	RenderModel();
 }
 
+void CDXModel::SetVertices(const CU::GrowingArray<Vertex> & someVertices)
+{
+	myVertices = someVertices;
+}
+
 void CDXModel::InitBuffers()
 {
 	HRESULT tempResult = S_OK;

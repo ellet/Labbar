@@ -19,6 +19,8 @@ public:
 	void Init();
 	void Render();
 
+	void SetVertices(const CU::GrowingArray<Vertex> & someVertices);
+
 private:
 	void InitBuffers();
 	void InitVertices();
