@@ -62,7 +62,7 @@ void CHUGEffect::Active()
 
 void CHUGEffect::Render()
 {
-	HRESULT tempResult = S_OK;
+	//HRESULT tempResult = S_OK;
 
 	// Set the shader parameters that it will use for rendering.
 	/*tempResult = SetShaderParameters();

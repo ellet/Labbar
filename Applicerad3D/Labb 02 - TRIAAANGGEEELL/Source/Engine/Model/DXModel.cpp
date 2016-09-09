@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "DXModel.h"
-#include "Effect/HUGEffectHelper.h"
 #include "Effect/HUGEffect.h"
 #include "Engine/HUGEngine.h"
 #include "HUGFramework/HUGDXFramework.h"
@@ -22,8 +21,6 @@ CDXModel::~CDXModel()
 
 void CDXModel::Init()
 {
-	//TODO:: init model
-	//TODO:: init vertices
 	InitBuffers();
 	myEffect->Init();
 	//TODO:: CreateEffects --- Effect Helper
@@ -144,8 +141,6 @@ void CDXModel::ShutdownBuffers()
 		myIndexBuffer->Release();
 		myIndexBuffer = nullptr;
 	}
-
-
 
 	// Release the vertex buffer.
 	if (myVertexBuffer != nullptr)
