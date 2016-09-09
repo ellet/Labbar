@@ -8,6 +8,11 @@ LRESULT CALLBACK HandleWindowsMessage(HWND aWindowHandle, UINT aMessage, WPARAM 
 	switch (aMessage)
 	{
 	case WM_SIZE:
+	{
+		unsigned int width = LOWORD(lParam);
+		unsigned int height = HIWORD(lParam);
+		CHUGEngineSingleton::ResizeWindow(CU::Vector2ui(width, height));
+	}
 		break;
 	case WM_ENTERSIZEMOVE:
 		break;

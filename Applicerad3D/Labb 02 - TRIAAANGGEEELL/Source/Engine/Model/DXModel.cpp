@@ -12,7 +12,6 @@ CDXModel::CDXModel()
 	myVertices.Resize(3);
 }
 
-
 CDXModel::~CDXModel()
 {
 	ShutdownBuffers();
@@ -24,8 +23,6 @@ void CDXModel::Init()
 	InitBuffers();
 	myEffect->Init();
 }
-
-
 
 void CDXModel::Render()
 {

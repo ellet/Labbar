@@ -21,10 +21,16 @@ public:
 
 	void Init(void* aHWND, const CU::Vector2ui & aScreenWidthHeight);
 
+	void UpdateViewportSize(const CU::Vector2ui aNewSize);
+
 	ID3D11DeviceContext & GetDeviceContext();
 	ID3D11Device & GetDevice();
 
 private:
+	void CreateViewPort(const CU::Vector2ui & aScreenWidthHeight);
+	void CreateBuffers(const CU::Vector2ui & aScreenWidthHeight);
+	void ReleaseBuffers();
+
 	IDXGISwapChain* mySwapChain;
 	ID3D11Device* myDevice;
 	ID3D11DeviceContext* myDeviceContext;

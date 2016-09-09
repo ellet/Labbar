@@ -22,6 +22,8 @@ public:
 
 	static void Init(EngineParameters & someParameters);
 
+	static void ResizeWindow(const CU::Vector2ui aNewWindowSize);
+
 	static void CloseGame();
 
 	static CHUGDXFramework & GetFramework();

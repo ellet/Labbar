@@ -21,19 +21,13 @@ CHUGDXFramework::~CHUGDXFramework()
 	myDevice->Release();
 	myDeviceContext->Release();
 	myRenderTargetView->Release();
-	myDepthStencilBuffer->Release();
-	myDepthStencilState->Release();
-	myDepthStencilView->Release();
-	myRasterState->Release();
 
 	mySwapChain = nullptr;
 	myDevice = nullptr;
 	myDeviceContext = nullptr;
 	myRenderTargetView = nullptr;
-	myDepthStencilBuffer = nullptr;
-	myDepthStencilState = nullptr;
-	myDepthStencilView = nullptr;
-	myRasterState = nullptr;
+
+	ReleaseBuffers();
 }
 
 void CHUGDXFramework::CleanFrame()
@@ -134,16 +128,69 @@ void CHUGDXFramework::Init(void* aHWND, const CU::Vector2ui & aScreenWidthHeight
 
 	DL_ASSERT(tempResult == S_OK, "Failed to create devices and/or swapchain");
 
+	CreateBuffers(aScreenWidthHeight);
+	CreateViewPort(aScreenWidthHeight);
+}
+
+void CHUGDXFramework::UpdateViewportSize(const CU::Vector2ui aNewSize)
+{
+	if (myDeviceContext != nullptr)
+	{
+		HRESULT tempResult = S_OK;
+
+		myDeviceContext->OMSetRenderTargets(0, nullptr, nullptr);
+		myRenderTargetView->Release();
+		ReleaseBuffers();
+
+		DXGI_SWAP_CHAIN_DESC tempSwapchainDesc;
+		mySwapChain->GetDesc(&tempSwapchainDesc);
+		tempResult = mySwapChain->ResizeBuffers(tempSwapchainDesc.BufferCount, aNewSize.x, aNewSize.y, tempSwapchainDesc.BufferDesc.Format, tempSwapchainDesc.Flags);
+		DL_ASSERT(tempResult == S_OK, "Failed to resize window - swapchain buffer");
+
+		CreateBuffers(aNewSize);
+		CreateViewPort(aNewSize);
+	}
+}
+
+ID3D11DeviceContext & CHUGDXFramework::GetDeviceContext()
+{
+	return *myDeviceContext;
+}
+
+ID3D11Device & CHUGDXFramework::GetDevice()
+{
+	return *myDevice;
+}
+
+void CHUGDXFramework::CreateViewPort(const CU::Vector2ui & aScreenWidthHeight)
+{
+	// Setup the viewport for rendering.
+	D3D11_VIEWPORT tempViewport;
+	tempViewport.Width = static_cast<float>(aScreenWidthHeight.x);
+	tempViewport.Height = static_cast<float>(aScreenWidthHeight.y);
+	tempViewport.MinDepth = 0.0f;
+	tempViewport.MaxDepth = 1.0f;
+	tempViewport.TopLeftX = 0.0f;
+	tempViewport.TopLeftY = 0.0f;
+
+	// Create the viewport.
+	myDeviceContext->RSSetViewports(1, &tempViewport);
+}
+
+void CHUGDXFramework::CreateBuffers(const CU::Vector2ui & aScreenWidthHeight)
+{
+	HRESULT tempResult = S_OK;
+
 	ID3D11Texture2D* tempBackBufferPtr;
 
 	// Get the pointer to the back buffer.
 	tempResult = mySwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (LPVOID*)&tempBackBufferPtr);
-	
+
 	DL_ASSERT(tempResult == S_OK, "Failed to get backbuffer");
 
 	// Create the render target view with the back buffer pointer.
 	tempResult = myDevice->CreateRenderTargetView(tempBackBufferPtr, NULL, &myRenderTargetView);
-	
+
 	DL_ASSERT(tempResult == S_OK, "Failed to create rendertarget view");
 
 	// Release pointer to the back buffer as we no longer need it.
@@ -241,26 +288,17 @@ void CHUGDXFramework::Init(void* aHWND, const CU::Vector2ui & aScreenWidthHeight
 	// Now set the rasterizer state.
 	myDeviceContext->RSSetState(myRasterState);
 
-	// Setup the viewport for rendering.
-	D3D11_VIEWPORT tempViewport;
-	tempViewport.Width = static_cast<float>(aScreenWidthHeight.x);
-	tempViewport.Height = static_cast<float>(aScreenWidthHeight.y);
-	tempViewport.MinDepth = 0.0f;
-	tempViewport.MaxDepth = 1.0f;
-	tempViewport.TopLeftX = 0.0f;
-	tempViewport.TopLeftY = 0.0f;
-
-	// Create the viewport.
-	myDeviceContext->RSSetViewports(1, &tempViewport);
-
 }
 
-ID3D11DeviceContext & CHUGDXFramework::GetDeviceContext()
+void CHUGDXFramework::ReleaseBuffers()
 {
-	return *myDeviceContext;
-}
+	myDepthStencilBuffer->Release();
+	myDepthStencilState->Release();
+	myDepthStencilView->Release();
+	myRasterState->Release();
 
-ID3D11Device & CHUGDXFramework::GetDevice()
-{
-	return *myDevice;
+	myDepthStencilBuffer = nullptr;
+	myDepthStencilState = nullptr;
+	myDepthStencilView = nullptr;
+	myRasterState = nullptr;
 }

@@ -10,7 +10,7 @@ int main()
 
 	CHUGEngineSingleton::EngineParameters engineSettings;
 	engineSettings.myApplicationName = "Pretty Application";
-	engineSettings.myWindowSize = CU::Vector2ui(10, 10);
+	engineSettings.myWindowSize = CU::Vector2ui(50, 50);
 	
 	CGame game;
 	//std::placeholders make something for Time for Game Update
