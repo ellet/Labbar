@@ -13,12 +13,8 @@ public:
 
 	void Init();
 	void Active();
-	void Render();
 
 private:
-	void InitShader();
-	//bool SetShaderParameters(); //QUE?^^ not do?
-	void RenderShader();
 
 	ID3D11VertexShader * myVertexShader;
 	ID3D11PixelShader * myPixelShader;

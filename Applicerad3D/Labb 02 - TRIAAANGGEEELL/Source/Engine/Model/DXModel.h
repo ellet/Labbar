@@ -23,7 +23,7 @@ private:
 	void InitVertices();
 
 	void RenderBuffers();
-
+	void RenderModel();
 	void ShutdownBuffers();
 
 	CU::GrowingArray<Vertex>myVertices;

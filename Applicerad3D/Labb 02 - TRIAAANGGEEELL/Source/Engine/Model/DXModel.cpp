@@ -31,7 +31,8 @@ void CDXModel::Init()
 void CDXModel::Render()
 {
 	RenderBuffers();
-	myEffect->Render();
+	myEffect->Active();
+	RenderModel();
 }
 
 void CDXModel::InitBuffers()
@@ -131,6 +132,14 @@ void CDXModel::RenderBuffers()
 	tempDeviceContextRef.IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
 	return;
+}
+
+void CDXModel::RenderModel()
+{
+	ID3D11DeviceContext & tempDeviceContextRef = CHUGEngineSingleton::GetFramework().GetDeviceContext();
+	
+	// Render the model.
+	tempDeviceContextRef.Draw(myVertices.Size(), 0);
 }
 
 void CDXModel::ShutdownBuffers()

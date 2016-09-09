@@ -57,26 +57,6 @@ void CHUGEffect::Init()
 
 void CHUGEffect::Active()
 {
-	//TODO:: activate stuff
-}
-
-void CHUGEffect::Render()
-{
-	//HRESULT tempResult = S_OK;
-
-	// Set the shader parameters that it will use for rendering.
-	/*tempResult = SetShaderParameters();
-	
-	DL_ASSERT(tempResult == S_OK, "Set shade parameters failed");*/
-
-	// Now render the prepared buffers with the shader.
-	RenderShader();
-}
-
-
-
-void CHUGEffect::RenderShader()
-{
 	ID3D11DeviceContext & tempDeviceContextRef = CHUGEngineSingleton::GetFramework().GetDeviceContext();
 
 	UINT myVertexCount = 3;
@@ -87,9 +67,6 @@ void CHUGEffect::RenderShader()
 	// Set the vertex and pixel shaders that will be used to render this triangle.
 	tempDeviceContextRef.VSSetShader(myVertexShader, NULL, 0);
 	tempDeviceContextRef.PSSetShader(myPixelShader, NULL, 0);
-
-	// Render the triangle.
-	tempDeviceContextRef.Draw(myVertexCount, 0);
 
 	return;
 }
