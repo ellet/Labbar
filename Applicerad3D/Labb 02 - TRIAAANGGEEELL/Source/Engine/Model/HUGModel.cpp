@@ -1,16 +1,29 @@
 #include "stdafx.h"
-#include "HUGModel.h"
-#include "DXModel.h"
+#include "Model/HUGModel.h"
+#include "Model/DXModel.h"
+#include "Model/HUGModelLoader.h"
 
 CHUGModel::CHUGModel()
 {
-	myModel = new CDXModel();
+	myModel = nullptr;
 }
 
 
 CHUGModel::~CHUGModel()
 {
 	SAFE_DELETE(myModel);
+}
+
+void CHUGModel::InitAsTriangle()
+{
+	CHUGModelLoader tempLoader;
+	myModel = &tempLoader.CreateTriangle();
+}
+
+void CHUGModel::InitAsQuad()
+{
+	CHUGModelLoader tempLoader;
+	myModel = &tempLoader.CreateQuad();
 }
 
 void CHUGModel::Init()

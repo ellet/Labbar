@@ -47,7 +47,7 @@ void CDXModel::InitBuffers()
 	D3D11_SUBRESOURCE_DATA tempVertexData;
 	D3D11_SUBRESOURCE_DATA tempIndexData;
 
-	InitVertices();
+	//InitVertices();
 	InitIndices();
 
 	// Set up the description of the static vertex buffer.
@@ -136,7 +136,7 @@ void CDXModel::InitIndices()
 	myIndexCount.Init(myVertices.Size());
 	myIndexCount.Resize(myVertices.Size());
 
-	for (unsigned int i = 0; i < myIndexCount.Size(); ++i)
+	for (unsigned int i = 0; i < static_cast<unsigned short>(myIndexCount.Size()); ++i)
 	{
 		myIndexCount[i] = i;
 	}
