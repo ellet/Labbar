@@ -4,6 +4,9 @@
 
 CHUGDXFramework::CHUGDXFramework()
 {
+	myAspectRatio.x = 16.f;
+	myAspectRatio.y = 9.f;
+
 	mySwapChain = nullptr;
 	myDevice = nullptr;
 	myDeviceContext = nullptr;
@@ -164,14 +167,23 @@ ID3D11Device & CHUGDXFramework::GetDevice()
 
 void CHUGDXFramework::CreateViewPort(const CU::Vector2ui & aScreenWidthHeight)
 {
+	/*
+		kolla om fönster storlek är samma som target resolution aspect ratio
+
+		ANNARS
+
+		LETTERBOXA!!
+		ta fönster resolution och anpassa till aspect ration
+	*/
+
 	// Setup the viewport for rendering.
 	D3D11_VIEWPORT tempViewport;
 	tempViewport.Width = static_cast<float>(aScreenWidthHeight.x);
 	tempViewport.Height = static_cast<float>(aScreenWidthHeight.y);
 	tempViewport.MinDepth = 0.0f;
 	tempViewport.MaxDepth = 1.0f;
-	tempViewport.TopLeftX = 0.0f;
-	tempViewport.TopLeftY = 0.0f;
+	tempViewport.TopLeftX = 0;
+	tempViewport.TopLeftY = 0;
 
 	// Create the viewport.
 	myDeviceContext->RSSetViewports(1, &tempViewport);

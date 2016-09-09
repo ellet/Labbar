@@ -12,7 +12,6 @@ LRESULT CALLBACK HandleWindowsMessage(HWND aWindowHandle, UINT aMessage, WPARAM 
 		unsigned int width = LOWORD(lParam);
 		unsigned int height = HIWORD(lParam);
 		CHUGEngineSingleton::ResizeWindow(CU::Vector2ui(width, height));
-		std::cout << "Moved" << std::endl;
 	}
 		break;
 	case WM_ENTERSIZEMOVE:

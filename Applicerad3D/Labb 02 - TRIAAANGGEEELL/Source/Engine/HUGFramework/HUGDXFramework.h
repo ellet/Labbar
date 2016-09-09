@@ -39,5 +39,7 @@ private:
 	ID3D11DepthStencilState* myDepthStencilState;
 	ID3D11DepthStencilView* myDepthStencilView;
 	ID3D11RasterizerState* myRasterState;
+
+	CU::Vector2f myAspectRatio;
 };
 
