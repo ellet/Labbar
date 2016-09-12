@@ -70,7 +70,7 @@ CDXModel & CHUGModelLoader::CreateTriangle()
 	prettyVertices.Resize(3);
 	prettyVertices[0].myPosition.x = 0.0f;
 	prettyVertices[0].myPosition.y = -0.5f;
-	prettyVertices[0].myPosition.z = 0.5f;
+	prettyVertices[0].myPosition.z = 0.3f;
 	prettyVertices[0].myPosition.w = 1.f;
 
 	prettyVertices[0].myColor.r = 0.0f;
@@ -80,7 +80,7 @@ CDXModel & CHUGModelLoader::CreateTriangle()
 
 	prettyVertices[1].myPosition.x = 0.0f;
 	prettyVertices[1].myPosition.y = 0.5f;
-	prettyVertices[1].myPosition.z = 0.5f;
+	prettyVertices[1].myPosition.z = 0.3f;
 	prettyVertices[1].myPosition.w = 1.f;
 
 	prettyVertices[1].myColor.r = 1.0f;
@@ -90,7 +90,7 @@ CDXModel & CHUGModelLoader::CreateTriangle()
 
 	prettyVertices[2].myPosition.x = 0.5f;
 	prettyVertices[2].myPosition.y = -0.5f;
-	prettyVertices[2].myPosition.z = 0.5f;
+	prettyVertices[2].myPosition.z = 0.3f;
 	prettyVertices[2].myPosition.w = 1.f;
 
 	prettyVertices[2].myColor.r = 0.0f;
