@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CU\Intersection\Shapes\AABB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Intersection\Shapes\BaseShape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Intersection\Shapes\Fov90Frustum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Intersection\Shapes\LineSegment3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Intersection\Shapes\Sphere.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Intersection\Shapes2D\AABB2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Intersection\Shapes2D\BaseShape2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Intersection\Shapes2D\Circle2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Intersection\Shapes2D\LineSegment2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Intersection\Intersection2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Intersection\Intersections3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Intersection\Shapes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Intersection\Shapes2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Macros\Macros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Utility\Randomizer\Randomizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Utility\MathHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\NameSpaceAliases.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\StringToData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Utility\FileHandling.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Memory Pool\MemoryPool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Utility\Math\Isometric.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Intersection\Intersections.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Utility\CommonCasts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Utility\GameSpecificTypeDefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Utility\DataHolder\SingletonDataHolder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Macros\MathMacros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Includes\CUCommonIncludes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Includes\ExternalIncludes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Macros\MemoryMacros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Macros\UtilityMacros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Utility\CommonTypeDefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Intersection\Colliders\BaseCollider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Intersection\Colliders\SquareCollider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Intersection\Colliders\CircleCollider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Intersection\Colliders\Colliders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Utility\Enums\GameSpecificEnums\GameSpecifcObjectTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Utility\WindowsFunctions\WindowsFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Utility\WindowsFunctions\WindowHelperFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Vectors\Vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Vectors\vector2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Vectors\vector3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Vectors\vector4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Matriser\matrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Matriser\matrix33.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Matriser\matrix44.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Lines And Planes\line.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Lines And Planes\line_volume.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Lines And Planes\plane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Lines And Planes\plane_volume.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\BinaryTree\BinaryTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\GridArray\GridArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\GrowingArray\GrowingArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Math\Hashing\HashUtility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\Heap\Greater.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\Heap\Heap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\Heap\HeapIncludes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\Heap\Lesser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\Heap\PointerGreater.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\Heap\PointerLesser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Input\InputWrapper\InputWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Input\InputWrapper\MouseButtonsEnum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Input\InputWrapper\SingletonInputWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\StaticArray\StaticArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Messaging\PostMaster\MessageReceiver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Messaging\PostMaster\PostMaster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Messaging\PostMaster\ReceiverTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Messaging\Observer\ObserverPatternListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Messaging\Observer\ObserverPatternSubject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\Queue\ObjectQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Containers\VectonOnStack\VectorOnStack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Utility\Camera\Camera2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\DLDebug\StackWalker\StackWalker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\DLDebug\DL_Debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\DLDebug\DL_StackWalker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\MainSingleton\BaseSingletons\BaseCreationManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\MainSingleton\BaseSingletons\BaseRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\MainSingleton\MainSingleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\ObjectCreationDatabase\BaseObjectData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\ObjectCreationDatabase\ObjectCreationDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\Syncronizer\Syncronizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\Thread\ThreadHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\Thread\ThreadSynchronizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\Timer\Alarm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\Timer\Time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\Timer\TimeManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\Timer\Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Includes\WindowsDefines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Systems\Timer\TimeManagerTimeStamps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CU\Input\InputWrapper\InputWrapperInputStates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CU\Intersection\Shapes\AABB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Intersection\Shapes\BaseShape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Intersection\Shapes\Fov90Frustum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Intersection\Shapes\LineSegment3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Intersection\Shapes\Sphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Intersection\Shapes2D\AABB2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Intersection\Shapes2D\BaseShape2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Intersection\Shapes2D\Circle2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Intersection\Shapes2D\LineSegment2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Intersection\Intersection2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Utility\Randomizer\Randomizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Utility\FileHandling.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Utility\Math\Isometric.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Utility\DataHolder\SingletonDataHolder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Intersection\Colliders\SquareCollider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Intersection\Colliders\CircleCollider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Utility\WindowsFunctions\WindowsFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Utility\WindowsFunctions\WindowHelperFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Input\InputWrapper\InputWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Input\InputWrapper\SingletonInputWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Messaging\PostMaster\MessageReceiver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Messaging\PostMaster\PostMaster.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Messaging\Observer\ObserverPatternListener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Messaging\Observer\ObserverPatternSubject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Utility\Camera\Camera2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\DLDebug\StackWalker\StackWalker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\DLDebug\DL_Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\DLDebug\DL_StackWalker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\MainSingleton\MainSingleton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\ObjectCreationDatabase\ObjectCreationDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\Thread\ThreadHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\Thread\ThreadSynchronizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\Timer\Alarm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\Timer\Time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\Timer\TimeManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Systems\Timer\Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CU\Math\Vectors\vector2.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="CU\Math\Vectors\vector3.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="CU\Math\Vectors\vector4.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="CU\Math\Matriser\matrix33.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="CU\Math\Matriser\matrix44.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="CU\Systems\Syncronizer\Syncronizer.inl">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>
