@@ -126,6 +126,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Camera\Camera.cpp" />
     <ClCompile Include="Effect\HUGEffect.cpp" />
     <ClCompile Include="Model\HUGModelLoader.cpp" />
     <ClCompile Include="Model\DXModel.cpp" />
@@ -141,6 +142,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera\Camera.h" />
     <ClInclude Include="Effect\HUGEffectHelper.h" />
     <ClInclude Include="Effect\HUGEffect.h" />
     <ClInclude Include="Model\HUGModelLoader.h" />
