@@ -21,25 +21,11 @@ Camera::Camera(
 	*/
 	SetPosition(aPosition);
 
-	myProjection = CU::Matrix44f::CreateProjectionMatrixLH(0.1f, 100.f, aProjectionWidth/aProjectionHeight, DEGRESS_TO_RADIANS(100.f));
+	myProjection = CU::Matrix44f::CreateProjectionMatrixLH(0.1f, 100.f, DEGRESS_TO_RADIANSF(90.f), aProjectionHeight / aProjectionWidth);
 }
 
 CU::Matrix44f Camera::GetInverse() const
 {
-	/*Matrix44f temp(myTransformation);
-	Vector4f tempPos = myTransformation.GetPosition4();
-	temp.SetPosition(Vector4f(0.f, 0.f, 0.f, 1.f));
-
-	temp.m12 = -temp.m12;
-	temp.m21 = -temp.m21;
-	
-	tempPos = -tempPos;
-	tempPos.w = -tempPos.w;
-
-	temp.SetPosition(tempPos * temp);
-
-	return temp;*/
-
 	CU::Matrix44<float> inverse(myTransformation);
 
 	CU::Vector4<float> translation = inverse.GetPosition4();
@@ -60,8 +46,6 @@ const CU::Matrix44f& Camera::GetProjection() const
 
 void Camera::IncreasePosition(CU::Vector3f aPosition)
 {
-	//aPosition = aPosition * myTransformation;
-
 	myTransformation.SetPosition(aPosition + myTransformation.GetPosition());
 }
 

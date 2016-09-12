@@ -10,10 +10,14 @@ public:
 
 	void InitAsTriangle();
 	void InitAsQuad();
+	void InitAsCube();
 
 	void Init();
-	void Render();
+	void Update();
+	void Render(const CU::Matrix44f & aCameraTransform, const CU::Matrix44f & aProjectionTransform);
 
 private:
+	CU::Matrix44f myTransformation;
+	
 	CDXModel * myModel;
 };

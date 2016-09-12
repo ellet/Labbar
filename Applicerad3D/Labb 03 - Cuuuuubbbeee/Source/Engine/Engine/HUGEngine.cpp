@@ -39,6 +39,11 @@ void CHUGEngineSingleton::ResizeWindow(const CU::Vector2ui aNewWindowSize)
 	GetInstance().GetFramework().UpdateViewportSize(aNewWindowSize);
 }
 
+void * CHUGEngineSingleton::GetHWND()
+{
+	return GetInstance().myWindowsWindow->GetHWND();
+}
+
 void CHUGEngineSingleton::CloseGame()
 {
 	GetInstance().myShouldRun = false;

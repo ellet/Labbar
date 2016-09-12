@@ -1,13 +1,29 @@
+/////////////
+// GLOBALS //
+/////////////
+Texture2D ShaderTexture;
+SamplerState Sampler;
+
+
 struct VertexInputType
 {
 	float4 position : POSITION;
 	float4 color : COLOR;
+	float2 UV : UV0;
 };
 
 struct PixelInputType
 {
 	float4 position : SV_POSITION;
 	float4 color : COLOR;
+	float2 UV : UV0;
+};
+
+cbuffer MatriserBuffer : register(b0)
+{
+	float4x4 WorldMatris;
+	float4x4 CameraMatris;
+	float4x4 ProjectionMatris;
 };
 
 struct PixelOutputType
@@ -19,32 +35,36 @@ struct PixelOutputType
 // Pixel Shader
 ////////////////////////////////////////////////////////////////////////////////
 
-// pixel shader?
+
+// vertexshader
+PixelInputType HUGVertexShader(VertexInputType aInput)
+{
+	PixelInputType tempOutput;
+	tempOutput.UV = aInput.UV;
+
+	// Change the position vector to be 4 units for proper matrix calculations.
+	aInput.position.w = 1.f;
+
+	// Calculate the position of the vertex against the world, view, and projection matrices.
+	tempOutput.position = mul(aInput.position, WorldMatris);
+	tempOutput.position = mul(tempOutput.position, CameraMatris);
+	tempOutput.position = mul(tempOutput.position, ProjectionMatris);
+
+	// Store the input color for the pixel shader to use.
+	tempOutput.color = aInput.color;
+
+	return tempOutput;
+}
+
+// pixel shader
 PixelOutputType HUGPixelShader(PixelInputType aInput)
 {
 	PixelOutputType tempOutput;
-	tempOutput.color = aInput.color;
-	//tempOutput.color[0] = 1.f * aInput.position[0];
-	//tempOutput.color[1] = 1.f;
-	//tempOutput.color[2] = 1.f;
-	//tempOutput.color[3] = 1.f;
-
-	/*float4 tempColor;
-	tempColor[0] = 1.f;
-	tempColor[1] = 0.4f;
-	tempColor[2] = 0.f;
-	tempColor[3] = 1.f;*/
+	tempOutput.color = ShaderTexture.Sample(Sampler, aInput.UV);
 
 	return tempOutput;
 }
 
-
-// vertexshader?
-PixelInputType HUGVertexShader(VertexInputType aInput)
-{
-	PixelInputType tempOutput = aInput;
-	return tempOutput;
-}
 
 
 

@@ -5,6 +5,7 @@
 #include "HUGFramework/HUGDXFramework.h"
 
 
+
 CDXModel::CDXModel()
 {
 	myEffect = new CHUGEffect();
@@ -24,16 +25,23 @@ void CDXModel::Init()
 	myEffect->Init();
 }
 
-void CDXModel::Render()
+void CDXModel::Render(const CU::Matrix44f & aModelTransform, const CU::Matrix44f & aCameraTransform, const CU::Matrix44f & aProjectionTransform)
 {
+
+	MatrixBuffer tempMatrixes;
+	tempMatrixes.myCamera = aCameraTransform;
+	tempMatrixes.myWorld = aModelTransform;
+	tempMatrixes.myProjection = aProjectionTransform;
+
 	RenderBuffers();
-	myEffect->Active();
+	myEffect->ActivateEffect(tempMatrixes);
 	RenderModel();
 }
 
-void CDXModel::SetVertices(const CU::GrowingArray<Vertex> & someVertices)
+void CDXModel::LoadModel(const CU::GrowingArray<Vertex> & aArrayOfVertices, const CU::GrowingArray<unsigned int> & aArrayOfIndices)
 {
-	myVertices = someVertices;
+	myVertices = aArrayOfVertices;
+	myIndices = aArrayOfIndices;
 }
 
 void CDXModel::InitBuffers()
@@ -70,13 +78,13 @@ void CDXModel::InitBuffers()
 
 	// Set up the description of the static index buffer.
 	tempIndexBufferDesc.Usage = D3D11_USAGE_DEFAULT;
-	tempIndexBufferDesc.ByteWidth = sizeof(unsigned long) * myVertices.Size();
+	tempIndexBufferDesc.ByteWidth = sizeof(unsigned long) * myIndices.Size();
 	tempIndexBufferDesc.BindFlags = D3D11_BIND_INDEX_BUFFER;
 	tempIndexBufferDesc.CPUAccessFlags = 0;
 	tempIndexBufferDesc.MiscFlags = 0;
 	tempIndexBufferDesc.StructureByteStride = 0;
 
-	tempIndexData.pSysMem = &myIndexCount[0];
+	tempIndexData.pSysMem = &myIndices[0];
 	tempIndexData.SysMemPitch = 0;
 	tempIndexData.SysMemSlicePitch = 0;
 
@@ -88,7 +96,7 @@ void CDXModel::InitBuffers()
 
 void CDXModel::InitVertices()
 {
-	myVertices[0].myPosition.x = -0.5f;
+	/*myVertices[0].myPosition.x = -0.5f;
 	myVertices[0].myPosition.y = -0.5f;
 	myVertices[0].myPosition.z = 0.5f;
 	myVertices[0].myPosition.w = 1.f;
@@ -126,20 +134,20 @@ void CDXModel::InitVertices()
 	myVertices[3].myColor.r = 1.0f;
 	myVertices[3].myColor.g = 1.0f;
 	myVertices[3].myColor.b = 0.0f;
-	myVertices[3].myColor.a = 1.f;
+	myVertices[3].myColor.a = 1.f;*/
 
 }
 
 void CDXModel::InitIndices()
 {
 	//Todo^^ Edit indices to be correct stuff and not vertex stuff
-	myIndexCount.Init(myVertices.Size());
-	myIndexCount.Resize(myVertices.Size());
+	/*myIndices.Init(myVertices.Size());
+	myIndices.Resize(myVertices.Size());
 
-	for (unsigned int i = 0; i < static_cast<unsigned short>(myIndexCount.Size()); ++i)
+	for (unsigned int i = 0; i < static_cast<unsigned short>(myIndices.Size()); ++i)
 	{
-		myIndexCount[i] = i;
-	}
+		myIndices[i] = i;
+	}*/
 }
 
 void CDXModel::RenderBuffers()
@@ -161,7 +169,7 @@ void CDXModel::RenderBuffers()
 	tempDeviceContextRef.IASetIndexBuffer(myIndexBuffer, DXGI_FORMAT_R32_UINT, 0);
 
 	// Set the type of primitive that should be rendered from this vertex buffer, in this case triangles.
-	tempDeviceContextRef.IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP);
+	tempDeviceContextRef.IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
 	return;
 }
@@ -171,7 +179,7 @@ void CDXModel::RenderModel()
 	ID3D11DeviceContext & tempDeviceContextRef = CHUGEngineSingleton::GetFramework().GetDeviceContext();
 	
 	// Render the model.
-	tempDeviceContextRef.Draw(myVertices.Size(), 0);
+	tempDeviceContextRef.DrawIndexed(myIndices.Size(), 0, 0);
 }
 
 void CDXModel::ShutdownBuffers()

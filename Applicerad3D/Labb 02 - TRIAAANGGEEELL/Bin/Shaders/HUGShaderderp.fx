@@ -24,6 +24,16 @@ PixelOutputType HUGPixelShader(PixelInputType aInput)
 {
 	PixelOutputType tempOutput;
 	tempOutput.color = aInput.color;
+	//tempOutput.color[0] = 1.f * aInput.position[0];
+	//tempOutput.color[1] = 1.f;
+	//tempOutput.color[2] = 1.f;
+	//tempOutput.color[3] = 1.f;
+
+	/*float4 tempColor;
+	tempColor[0] = 1.f;
+	tempColor[1] = 0.4f;
+	tempColor[2] = 0.f;
+	tempColor[3] = 1.f;*/
 
 	return tempOutput;
 }

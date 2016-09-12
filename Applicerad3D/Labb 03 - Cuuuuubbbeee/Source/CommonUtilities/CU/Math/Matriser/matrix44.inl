@@ -265,27 +265,33 @@ namespace CommonUtilities
 	}
 
 	template<typename T>
-	Matrix44<T> Matrix44<T>::CreateProjectionMatrixLH(T aNearZ, T aFarZ, T aAspectRatio, T aFovAngle)
+	Matrix44<T> Matrix44<T>::CreateProjectionMatrixLH(const  T aNearZ, const  T aFarZ, const  T  aFovAngleX, const  T aFovAngleY)
 	{
+		
+
+		
+
 		Matrix44 temp;
 
-		T  sinFov;
+		T	tempHeight;
+		T	tempWidth;
+		T	tempDistance;
 
-		T  cosFov;
+		tempHeight = static_cast<T>(1) / tan(aFovAngleX * static_cast<T>(0.5));    //(float)1 / tan(fov_horiz*0.5);  // 1/tan(x) == cot(x)
+		tempWidth = static_cast<T>(1) / tan(aFovAngleY * static_cast<T>(0.5)); //(float)1 / tan(fov_vert*0.5);   // 1/tan(x) == cot(x)
+		tempDistance = aFarZ / (aFarZ - aNearZ); //far_plane / (far_plane - near_plane);
 
-		T  height;
+		temp.m11 = tempWidth;
+		
+		temp.m22 = tempHeight;
 
-		T  width;
+		temp.m33 = tempDistance;
+		temp.m34 = static_cast<T>(1);
 
-		sinFov = sin(0.5f * aFovAngle);
+		
+		temp.m43 = -tempDistance * aNearZ;
 
-		cosFov = cos(0.5f * aFovAngle);
-
-		height = cosFov / sinFov;
-
-		width = height / aAspectRatio;
-
-		T scaling = aFarZ / (aFarZ - aNearZ);
+		return temp;
 
 		/*temp.myVectorRows[0]= Vector4<T>(width, 0.0f, 0.0f, 0.0f);
 
@@ -295,12 +301,51 @@ namespace CommonUtilities
 
 		temp.myVectorRows[3] = Vector4<T>(0.0f, 0.0f, -scaling * aNearZ, 0.0f);*/
 
-		temp.m11 = width; temp.m12 = 0.0f; temp.m13 = 0.0f; temp.m14 = 0.0f;
-		temp.m21 = 0.0f; temp.m22 = height; temp.m23 = 0.0f; temp.m24 = 0.0f;
-		temp.m31 = 0.0f; temp.m32 = 0.0f; temp.m33 = scaling; temp.m34 = 1.0f;
-		temp.m41 = 0.0f; temp.m42 = 0.0f; temp.m43 = -scaling * aNearZ; temp.m44 = 0.0f;
+		//D3DXMATRIX
+		//	ProjectionMatrix(const float near_plane, // Distance to near clipping 
+		//											 // plane
+		//		const float far_plane,  // Distance to far clipping 
+		//								// plane
+		//		const float fov_horiz,  // Horizontal field of view 
+		//								// angle, in radians
+		//		const float fov_vert)   // Vertical field of view 
+		//								// angle, in radians
+		//{
 
-		return temp;
+		//	D3DXMATRIX ret;
+		//	ZeroMemory(&ret, sizeof(ret));
+
+		//	ret(0, 0) = w;
+		//	ret(1, 1) = h;
+		//	ret(2, 2) = Q;
+		//	ret(3, 2) = -Q*near_plane;
+		//	ret(2, 3) = 1;
+		//	return ret;
+		//}   // End of ProjectionMatrix
+
+		
+
+		//T  sinFov;
+
+		//T  cosFov;
+
+		//T  height;
+
+		//T  width;
+
+		//sinFov = sin(0.5f * aFovAngle);
+
+		//cosFov = cos(0.5f * aFovAngle);
+
+		//height = cosFov / sinFov;
+
+		//width = height / aAspectRatio;
+
+		//T scaling = aFarZ / (aFarZ - aNearZ);
+		//temp.m11 = width; temp.m12 = 0.0f; temp.m13 = 0.0f; temp.m14 = 0.0f;
+		//temp.m21 = 0.0f; temp.m22 = height; temp.m23 = 0.0f; temp.m24 = 0.0f;
+		//temp.m31 = 0.0f; temp.m32 = 0.0f; temp.m33 = scaling; temp.m34 = 1.0f;
+		//temp.m41 = 0.0f; temp.m42 = 0.0f; temp.m43 = -scaling * aNearZ; temp.m44 = 0.0f;
 	}
 
 	template<typename T>
