@@ -33,10 +33,11 @@ void CHUGModel::InitAsQuad()
 	myModel = &tempLoader.CreateQuad();
 }
 
-void CHUGModel::InitAsCube()
+void CHUGModel::InitAsCube(const CU::Vector3f & aPosition /*= CU::Vector3f::Zero*/, const CU::Vector3f & aScale /*= CU::Vector3f::One*/)
 {
 	CHUGModelLoader tempLoader;
-	myModel = &tempLoader.CreateCube();
+	myModel = &tempLoader.CreateCube(aScale);
+	myTransformation.SetPosition(aPosition);
 	Init();
 }
 
@@ -64,4 +65,9 @@ void CHUGModel::Rotate()
 
 	myTransformation = myTransformation * CU::Matrix44f::CreateRotateAroundY(DEGRESS_TO_RADIANSF(fakeSpeedY * fakeDeltaTime));
 	myTransformation = myTransformation * CU::Matrix44f::CreateRotateAroundZ(DEGRESS_TO_RADIANSF(fakeSpeedZ * fakeDeltaTime));
+}
+
+void CHUGModel::SetPosition(const CU::Vector3f & aPosition /*= CU::Vector3f::Zero*/)
+{
+	myTransformation.SetPosition(aPosition);
 }

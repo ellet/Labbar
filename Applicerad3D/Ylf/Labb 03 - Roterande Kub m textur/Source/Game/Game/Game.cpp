@@ -15,17 +15,19 @@ CGame::~CGame()
 
 void CGame::Init()
 {
+	myRandomizer.SetSeed();
+
 	CU::MainSingleton::Create();
 	GET_INPUT.Initialize();
 
 	myCamera.Init(500.f, 500.f, CU::Vector3f(0.f, 0.0f, -0.6f));
 	//myQuad.InitAsQuad();
-	myCube.InitAsCube();
+	myCube.InitAsCube(CU::Vector3f::Zero, CU::Vector3f(0.3f, 0.3f, 0.3f));
 }
 
 void CGame::Update()
 {
-	myCube.Rotate();
+	//myCube.Rotate();
 	const float fakeDeltaTime = 0.00001f;
 
 	GET_INPUT.Update();
@@ -83,6 +85,46 @@ void CGame::Update()
 void CGame::Render()
 {
 	//myQuad.Render();
-	myCube.Render(myCamera);
+	//myCube.Render(myCamera);
 	//myTriangle.Render();
+	//RenderAllTheCubes();
+	RenderOneCubeALot();
+}
+
+void CGame::RenderCubeAtPosition(const CU::Vector3f & aPosition, const CU::Vector3f & aScale /*= CU::Vector3f::One*/)
+{
+	CHUGModel prettyCube;
+	prettyCube.InitAsCube(aPosition, aScale);
+	prettyCube.Render(myCamera);
+}
+
+void CGame::RenderOneCubeALot()
+{
+	unsigned int cubeAmount = 1000;
+	CU::Vector3f positionOffset = CU::Vector3f::Zero;
+
+	for (unsigned int i = 0; i < cubeAmount; ++i)
+	{
+		positionOffset = CU::Vector3f(myRandomizer.GetRandomValue(-0.5f, 0.5f), myRandomizer.GetRandomValue(-0.4f, 0.4f), myRandomizer.GetRandomValue(-0.2f, 0.2f));
+
+		myCube.SetPosition(positionOffset);
+		myCube.Render(myCamera);
+	}
+}
+
+void CGame::RenderAllTheCubes()
+{
+	unsigned int cubeAmount = 100;
+	CU::Vector3f positionOffset = CU::Vector3f::Zero;
+
+	for (unsigned int i = 0; i < cubeAmount; ++i)
+	{
+		positionOffset = CU::Vector3f(myRandomizer.GetRandomValue(-0.5f, 0.5f), myRandomizer.GetRandomValue(-0.4f, 0.4f), myRandomizer.GetRandomValue(-0.2f, 0.2f));
+
+		RenderCubeAtPosition(CU::Vector3f(
+			0.f + positionOffset.x,
+			0.f + positionOffset.y,
+			0.f + positionOffset.z),
+			CU::Vector3f(0.6f, 0.6f, 0.6f));
+	}
 }

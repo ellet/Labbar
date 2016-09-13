@@ -11,7 +11,7 @@ public:
 	CDXModel & CreateQuad();
 	CDXModel & CreateTriangle();
 
-	CDXModel & CreateCube();
+	CDXModel & CreateCube(const CU::Vector3f & aScale = CU::Vector3f::One);
 
 private:
 
