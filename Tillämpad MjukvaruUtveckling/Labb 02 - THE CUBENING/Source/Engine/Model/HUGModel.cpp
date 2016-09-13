@@ -50,7 +50,7 @@ void CHUGModel::Update(const CU::Time & aDeltaTime)
 void CHUGModel::Render(const CU::Matrix44f & aCameraTransform, const CU::Matrix44f & aProjectionTransform)
 {
 	CU::Matrix44f tempMatrix = myTransformation;
-	for (int iTestDraw = 0; iTestDraw < 100000; ++iTestDraw)
+	for (int iTestDraw = 0; iTestDraw < 1000000; ++iTestDraw)
 	{
 		const float tempX = myRandomizer.GetRandomValue(-0.5f, 0.5f);
 		const float tempY = myRandomizer.GetRandomValue(-0.5f, 0.5f);
