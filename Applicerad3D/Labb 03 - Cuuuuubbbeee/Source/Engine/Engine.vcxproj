@@ -127,6 +127,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Camera\Camera.cpp" />
+    <ClCompile Include="DDSLoader\DDSTextureLoader.cpp" />
+    <ClCompile Include="Effect\CBuffer.cpp" />
     <ClCompile Include="Effect\HUGEffect.cpp" />
     <ClCompile Include="Model\HUGModelLoader.cpp" />
     <ClCompile Include="Model\DXModel.cpp" />
@@ -143,6 +145,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera\Camera.h" />
+    <ClInclude Include="DDSLoader\dds.h" />
+    <ClInclude Include="DDSLoader\DDSTextureLoader.h" />
+    <ClInclude Include="DDSLoader\DirectXHelpers.h" />
+    <ClInclude Include="DDSLoader\PlatformHelpers.h" />
+    <ClInclude Include="Effect\CBuffer.h" />
     <ClInclude Include="Effect\HUGEffectHelper.h" />
     <ClInclude Include="Effect\HUGEffect.h" />
     <ClInclude Include="Model\HUGModelLoader.h" />

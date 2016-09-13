@@ -26,12 +26,28 @@ void CHUGModel::InitAsQuad()
 	myModel = &tempLoader.CreateQuad();
 }
 
+void CHUGModel::InitAsCube()
+{
+	CHUGModelLoader tempLoader;
+	myModel = &tempLoader.CreateCube();
+}
+
 void CHUGModel::Init()
 {
 	myModel->Init();
 }
 
-void CHUGModel::Render()
+void CHUGModel::Update()
 {
-	myModel->Render();
+	float fakeDeltaTime = 0.0001f;
+
+	float rotatespeed = 10.f;
+
+	myTransformation = myTransformation * CU::Matrix44f::CreateRotateAroundY(DEGRESS_TO_RADIANSF(rotatespeed * fakeDeltaTime));
+	//myTransformation = myTransformation * CU::Matrix44f::CreateRotateAroundX(DEGRESS_TO_RADIANSF(rotatespeed * fakeDeltaTime));
+}
+
+void CHUGModel::Render(const CU::Matrix44f & aCameraTransform, const CU::Matrix44f & aProjectionTransform)
+{
+	myModel->Render(myTransformation, aCameraTransform, aProjectionTransform);
 }

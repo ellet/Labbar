@@ -11,15 +11,16 @@ public:
 	{
 		CU::Vector4f myPosition;
 		CU::Vector4f myColor;
+		CU::Vector2f myUV;
 	};
 
 	CDXModel();
 	~CDXModel();
 
 	void Init();
-	void Render();
+	void Render(const CU::Matrix44f & aModelTransform, const CU::Matrix44f & aCameraTransform, const CU::Matrix44f & aProjectionTransform);
 
-	void SetVertices(const CU::GrowingArray<Vertex> & someVertices);
+	void LoadModel(const CU::GrowingArray<Vertex> & aArrayOfVertices, const CU::GrowingArray<unsigned int> & aArrayOfIndices);
 
 private:
 	void InitBuffers();
@@ -31,7 +32,7 @@ private:
 	void ShutdownBuffers();
 
 	CU::GrowingArray<Vertex> myVertices;
-	CU::GrowingArray<unsigned int> myIndexCount;
+	CU::GrowingArray<unsigned int> myIndices;
 
 	CHUGEffect * myEffect;
 

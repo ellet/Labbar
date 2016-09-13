@@ -4,13 +4,16 @@
 
 int main()
 {
+	CU::MainSingleton::Create();
 	DL_Debug::Debug::Create();
+
+	GET_INPUT.Initialize();
 
 	CHUGEngineSingleton::Create();
 
 	CHUGEngineSingleton::EngineParameters engineSettings;
 	engineSettings.myApplicationName = "Pretty Application";
-	engineSettings.myWindowSize = CU::Vector2ui(900, 500);
+	engineSettings.myWindowSize = CU::Vector2ui(800, 600);
 	
 	CGame game;
 	//std::placeholders make something for Time for Game Update

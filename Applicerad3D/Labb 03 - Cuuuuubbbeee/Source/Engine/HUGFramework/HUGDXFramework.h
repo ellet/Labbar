@@ -35,10 +35,11 @@ private:
 	ID3D11Device* myDevice;
 	ID3D11DeviceContext* myDeviceContext;
 	ID3D11RenderTargetView* myRenderTargetView;
-	ID3D11Texture2D* myDepthStencilBuffer;
+	/*ID3D11Texture2D* myDepthStencilBuffer;
 	ID3D11DepthStencilState* myDepthStencilState;
-	ID3D11DepthStencilView* myDepthStencilView;
+	ID3D11DepthStencilView* myDepthStencilView;*/
 	ID3D11RasterizerState* myRasterState;
+
 
 	CU::Vector2f myAspectRatio;
 };
