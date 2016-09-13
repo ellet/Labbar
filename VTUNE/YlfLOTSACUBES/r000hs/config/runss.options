@@ -1,0 +1,13 @@
+-r
+C:\l1TGA\Labbar\VTUNE\YlfLOTSACUBES\r000hs
+--data-limit-mb=500
+--stack-stitching
+--follow-child
+--type=frame:counters
+--stackwalk=offline
+--mrte-mode=auto
+--type=cpu:counters
+--type=cpu:stack
+--interval=10
+--
+C:\l1TGA\Labbar\Applicerad3D\YLF\Labb 03 - Roterande Kub m textur\Bin\Launcher_x64Release.exe
