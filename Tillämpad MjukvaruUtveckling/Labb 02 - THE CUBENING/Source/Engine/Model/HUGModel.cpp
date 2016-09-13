@@ -52,7 +52,11 @@ void CHUGModel::Render(const CU::Matrix44f & aCameraTransform, const CU::Matrix4
 	CU::Matrix44f tempMatrix = myTransformation;
 	for (int iTestDraw = 0; iTestDraw < 100000; ++iTestDraw)
 	{
-		CU::Vector3f tempVector(myRandomizer.GetRandomValue(-0.5f, 0.5f), myRandomizer.GetRandomValue(-0.5f, 0.5f), myRandomizer.GetRandomValue(-0.5f, 0.5f));
+		const float tempX = myRandomizer.GetRandomValue(-0.5f, 0.5f);
+		const float tempY = myRandomizer.GetRandomValue(-0.5f, 0.5f);
+		const float tempZ = myRandomizer.GetRandomValue(-0.5f, 0.5f);
+
+		CU::Vector3f tempVector(tempX, tempY, tempZ);
 
 		tempMatrix.SetPosition(myTransformation.GetPosition() + tempVector);
 		myModel->Render(tempMatrix, aCameraTransform, aProjectionTransform);
