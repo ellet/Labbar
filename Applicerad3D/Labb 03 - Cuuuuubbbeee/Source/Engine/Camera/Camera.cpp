@@ -21,7 +21,7 @@ Camera::Camera(
 	*/
 	SetPosition(aPosition);
 
-	myProjection = CU::Matrix44f::CreateProjectionMatrixLH(0.1f, 100.f, DEGRESS_TO_RADIANSF(90.f), aProjectionHeight / aProjectionWidth);
+	myProjection = CU::Matrix44f::CreateProjectionMatrixLH(0.1f, 1000.f, DEGRESS_TO_RADIANSF(90.f), aProjectionHeight / aProjectionWidth);
 }
 
 CU::Matrix44f Camera::GetInverse() const
