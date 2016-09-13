@@ -20,10 +20,13 @@ public:
 private:
 	void RenderOneCubeALot();
 	void RenderAllTheCubes();
+	void RenderPileOfCubes();
+	void InitPileOfCubes();
 
 	CHUGModel myTriangle;
 	CHUGModel myQuad;
 	CHUGModel myCube;
+	CU::GrowingArray<CHUGModel> myPileOfCubes;
 
 	CHUGCameraInterface myCamera;
 	Randomizer myRandomizer;

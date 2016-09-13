@@ -23,6 +23,7 @@ void CGame::Init()
 	myCamera.Init(500.f, 500.f, CU::Vector3f(0.f, 0.0f, -0.6f));
 	//myQuad.InitAsQuad();
 	myCube.InitAsCube(CU::Vector3f::Zero, CU::Vector3f(0.3f, 0.3f, 0.3f));
+	InitPileOfCubes();
 }
 
 void CGame::Update()
@@ -88,7 +89,8 @@ void CGame::Render()
 	//myCube.Render(myCamera);
 	//myTriangle.Render();
 	//RenderAllTheCubes();
-	RenderOneCubeALot();
+	//RenderOneCubeALot();
+	RenderPileOfCubes();
 }
 
 void CGame::RenderCubeAtPosition(const CU::Vector3f & aPosition, const CU::Vector3f & aScale /*= CU::Vector3f::One*/)
@@ -105,7 +107,7 @@ void CGame::RenderOneCubeALot()
 
 	for (unsigned int i = 0; i < cubeAmount; ++i)
 	{
-		positionOffset = CU::Vector3f(myRandomizer.GetRandomValue(-0.5f, 0.5f), myRandomizer.GetRandomValue(-0.4f, 0.4f), myRandomizer.GetRandomValue(-0.2f, 0.2f));
+		//positionOffset = CU::Vector3f(myRandomizer.GetRandomValue(-0.5f, 0.5f), myRandomizer.GetRandomValue(-0.4f, 0.4f), myRandomizer.GetRandomValue(-0.2f, 0.2f));
 
 		myCube.SetPosition(positionOffset);
 		myCube.Render(myCamera);
@@ -119,12 +121,35 @@ void CGame::RenderAllTheCubes()
 
 	for (unsigned int i = 0; i < cubeAmount; ++i)
 	{
-		positionOffset = CU::Vector3f(myRandomizer.GetRandomValue(-0.5f, 0.5f), myRandomizer.GetRandomValue(-0.4f, 0.4f), myRandomizer.GetRandomValue(-0.2f, 0.2f));
+		//positionOffset = CU::Vector3f(myRandomizer.GetRandomValue(-0.5f, 0.5f), myRandomizer.GetRandomValue(-0.4f, 0.4f), myRandomizer.GetRandomValue(-0.2f, 0.2f));
 
 		RenderCubeAtPosition(CU::Vector3f(
 			0.f + positionOffset.x,
 			0.f + positionOffset.y,
 			0.f + positionOffset.z),
 			CU::Vector3f(0.6f, 0.6f, 0.6f));
+	}
+}
+
+void CGame::RenderPileOfCubes()
+{
+	for (unsigned int i = 0; i < myPileOfCubes.Size(); ++i)
+	{
+		myPileOfCubes[i].Render(myCamera);
+	}
+}
+
+void CGame::InitPileOfCubes()
+{
+	unsigned short cubeAmount = 1000;
+	myPileOfCubes.Init(cubeAmount);
+
+	CU::Vector3f positionOffset = CU::Vector3f::Zero;
+
+	for (unsigned int i = 0; i < cubeAmount; ++i)
+	{
+		//positionOffset = CU::Vector3f(myRandomizer.GetRandomValue(-0.5f, 0.5f), myRandomizer.GetRandomValue(-0.4f, 0.4f), myRandomizer.GetRandomValue(-0.2f, 0.2f));
+		myPileOfCubes.Add(CHUGModel());
+		myPileOfCubes[i].InitAsCube(positionOffset, CU::Vector3f(0.6f, 0.6f, 0.6f));
 	}
 }
