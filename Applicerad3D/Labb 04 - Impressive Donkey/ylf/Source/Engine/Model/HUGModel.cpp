@@ -58,12 +58,11 @@ void CHUGModel::Render(const CHUGCameraInterface & aCamera)
 
 void CHUGModel::Rotate()
 {
-	const float fakeDeltaTime = 0.0001f;
 	const float fakeSpeedY = 10.f;
 	const float fakeSpeedZ = 5.f;
 
-	myTransformation = myTransformation * CU::Matrix44f::CreateRotateAroundY(DEGRESS_TO_RADIANSF(fakeSpeedY * fakeDeltaTime));
-	myTransformation = myTransformation * CU::Matrix44f::CreateRotateAroundZ(DEGRESS_TO_RADIANSF(fakeSpeedZ * fakeDeltaTime));
+	myTransformation = myTransformation * CU::Matrix44f::CreateRotateAroundY(DEGRESS_TO_RADIANSF(fakeSpeedY * GET_DELTA_SECONDS));
+	myTransformation = myTransformation * CU::Matrix44f::CreateRotateAroundZ(DEGRESS_TO_RADIANSF(fakeSpeedZ * GET_DELTA_SECONDS));
 }
 
 void CHUGModel::SetPosition(const CU::Vector3f & aPosition /*= CU::Vector3f::Zero*/)

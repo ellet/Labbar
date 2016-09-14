@@ -87,6 +87,7 @@ void CGame::Update()
 
 void CGame::Render()
 {
+	//RenderCubeAtPosition(CU::Vector3f(0.f, 0.f, 0.5f), CU::Vector3f(0.2f, 0.2f, 0.2f));
 	myPrettyModel.Render(myCamera);
 }
 
