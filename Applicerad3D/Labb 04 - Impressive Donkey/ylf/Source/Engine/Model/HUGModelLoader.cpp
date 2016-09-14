@@ -23,11 +23,6 @@ CDXModel & CHUGModelLoader::CreateQuad()
 	prettyVertices[0].myPosition.z = 0.5f;
 	prettyVertices[0].myPosition.w = 1.f;
 
-	prettyVertices[0].myColor.r = 0.0f;
-	prettyVertices[0].myColor.g = 1.0f;
-	prettyVertices[0].myColor.b = 0.0f;
-	prettyVertices[0].myColor.a = 1.f;
-
 	prettyVertices[0].myUV.u = 0.0f;
 	prettyVertices[0].myUV.v = 0.0f;
 
@@ -35,11 +30,6 @@ CDXModel & CHUGModelLoader::CreateQuad()
 	prettyVertices[1].myPosition.y = 1.0f;
 	prettyVertices[1].myPosition.z = 0.5f;
 	prettyVertices[1].myPosition.w = 1.f;
-
-	prettyVertices[1].myColor.r = 1.0f;
-	prettyVertices[1].myColor.g = 0.0f;
-	prettyVertices[1].myColor.b = 0.0f;
-	prettyVertices[1].myColor.a = 1.f;
 
 	prettyVertices[1].myUV.u = 0.0f;
 	prettyVertices[1].myUV.v = 0.0f;
@@ -49,11 +39,6 @@ CDXModel & CHUGModelLoader::CreateQuad()
 	prettyVertices[2].myPosition.z = 0.5f;
 	prettyVertices[2].myPosition.w = 1.f;
 
-	prettyVertices[2].myColor.r = 0.0f;
-	prettyVertices[2].myColor.g = 0.0f;
-	prettyVertices[2].myColor.b = 1.0f;
-	prettyVertices[2].myColor.a = 1.f;
-
 	prettyVertices[2].myUV.u = 0.0f;
 	prettyVertices[2].myUV.v = 0.0f;
 
@@ -61,11 +46,6 @@ CDXModel & CHUGModelLoader::CreateQuad()
 	prettyVertices[3].myPosition.y = 1.0f;
 	prettyVertices[3].myPosition.z = 0.5f;
 	prettyVertices[3].myPosition.w = 1.f;
-
-	prettyVertices[3].myColor.r = 1.0f;
-	prettyVertices[3].myColor.g = 1.0f;
-	prettyVertices[3].myColor.b = 0.0f;
-	prettyVertices[3].myColor.a = 1.f;
 
 	prettyVertices[3].myUV.u = 0.0f;
 	prettyVertices[3].myUV.v = 0.0f;
@@ -87,11 +67,6 @@ CDXModel & CHUGModelLoader::CreateTriangle()
 	prettyVertices[0].myPosition.z = 0.5f;
 	prettyVertices[0].myPosition.w = 1.f;
 
-	prettyVertices[0].myColor.r = 0.0f;
-	prettyVertices[0].myColor.g = 1.0f;
-	prettyVertices[0].myColor.b = 0.0f;
-	prettyVertices[0].myColor.a = 1.f;
-
 	prettyVertices[0].myUV.u = 0.0f;
 	prettyVertices[0].myUV.v = 0.0f;
 
@@ -100,11 +75,6 @@ CDXModel & CHUGModelLoader::CreateTriangle()
 	prettyVertices[1].myPosition.z = 0.5f;
 	prettyVertices[1].myPosition.w = 1.f;
 
-	prettyVertices[1].myColor.r = 1.0f;
-	prettyVertices[1].myColor.g = 0.0f;
-	prettyVertices[1].myColor.b = 0.0f;
-	prettyVertices[1].myColor.a = 1.f;
-
 	prettyVertices[1].myUV.u = 0.0f;
 	prettyVertices[1].myUV.v = 0.0f;
 
@@ -112,11 +82,6 @@ CDXModel & CHUGModelLoader::CreateTriangle()
 	prettyVertices[2].myPosition.y = -0.5f;
 	prettyVertices[2].myPosition.z = 0.5f;
 	prettyVertices[2].myPosition.w = 1.f;
-
-	prettyVertices[2].myColor.r = 0.0f;
-	prettyVertices[2].myColor.g = 0.0f;
-	prettyVertices[2].myColor.b = 1.0f;
-	prettyVertices[2].myColor.a = 1.f;
 
 	prettyVertices[3].myUV.u = 0.0f;
 	prettyVertices[3].myUV.v = 0.0f;
@@ -141,11 +106,6 @@ CDXModel & CHUGModelLoader::CreateCube(const CU::Vector3f & aScale /*= CU::Vecto
 	prettyVertices[0].myPosition.z = (-0.5f * aScale.z);
 	prettyVertices[0].myPosition.w = 1.0f;
 
-	prettyVertices[0].myColor.r = 1.0f;
-	prettyVertices[0].myColor.g = 1.0f;
-	prettyVertices[0].myColor.b = 0.0f;
-	prettyVertices[0].myColor.a = 1.0f;
-
 	prettyVertices[0].myUV.u = 0.0f;
 	prettyVertices[0].myUV.v = 0.0f;
 
@@ -154,11 +114,6 @@ CDXModel & CHUGModelLoader::CreateCube(const CU::Vector3f & aScale /*= CU::Vecto
 	prettyVertices[1].myPosition.y = (0.5f * aScale.y);
 	prettyVertices[1].myPosition.z = (0.5f * aScale.z);
 	prettyVertices[1].myPosition.w = 1.0f;
-
-	prettyVertices[1].myColor.r = 1.0f;
-	prettyVertices[1].myColor.g = 0.0f;
-	prettyVertices[1].myColor.b = 0.0f;
-	prettyVertices[1].myColor.a = 1.0f;
 
 	prettyVertices[1].myUV.u = 1.0f;
 	prettyVertices[1].myUV.v = 0.0f;
@@ -169,11 +124,6 @@ CDXModel & CHUGModelLoader::CreateCube(const CU::Vector3f & aScale /*= CU::Vecto
 	prettyVertices[2].myPosition.z = (0.5f * aScale.z);
 	prettyVertices[2].myPosition.w = 1.0f;
 
-	prettyVertices[2].myColor.r = 0.0f;
-	prettyVertices[2].myColor.g = 0.0f;
-	prettyVertices[2].myColor.b = 1.0f;
-	prettyVertices[2].myColor.a = 1.0f;
-
 	prettyVertices[2].myUV.u = 0.0f;
 	prettyVertices[2].myUV.v = 0.0f;
 
@@ -182,11 +132,6 @@ CDXModel & CHUGModelLoader::CreateCube(const CU::Vector3f & aScale /*= CU::Vecto
 	prettyVertices[3].myPosition.y = (0.5f * aScale.y);
 	prettyVertices[3].myPosition.z = (-0.5f* aScale.z);
 	prettyVertices[3].myPosition.w = 1.0f;
-
-	prettyVertices[3].myColor.r = 0.0f;
-	prettyVertices[3].myColor.g = 1.0f;
-	prettyVertices[3].myColor.b = 0.0f;
-	prettyVertices[3].myColor.a = 1.0f;
 
 	prettyVertices[3].myUV.u = 1.0f;
 	prettyVertices[3].myUV.v = 0.0f;
@@ -197,11 +142,6 @@ CDXModel & CHUGModelLoader::CreateCube(const CU::Vector3f & aScale /*= CU::Vecto
 	prettyVertices[4].myPosition.z = (-0.5f * aScale.z);
 	prettyVertices[4].myPosition.w = 1.0f;
 
-	prettyVertices[4].myColor.r = 1.0f;
-	prettyVertices[4].myColor.g = 0.0f;
-	prettyVertices[4].myColor.b = 1.0f;
-	prettyVertices[4].myColor.a = 1.0f;
-
 	prettyVertices[4].myUV.u = 0.0f;
 	prettyVertices[4].myUV.v = 1.0f;
 
@@ -210,11 +150,6 @@ CDXModel & CHUGModelLoader::CreateCube(const CU::Vector3f & aScale /*= CU::Vecto
 	prettyVertices[5].myPosition.y = (-0.5f* aScale.y);
 	prettyVertices[5].myPosition.z = (0.5f * aScale.z);
 	prettyVertices[5].myPosition.w = 1.0f;
-
-	prettyVertices[5].myColor.r = 1.0f;
-	prettyVertices[5].myColor.g = 1.0f;
-	prettyVertices[5].myColor.b = 1.0f;
-	prettyVertices[5].myColor.a = 1.0f;
 
 	prettyVertices[5].myUV.u = 1.0f;
 	prettyVertices[5].myUV.v = 1.0f;
@@ -225,10 +160,6 @@ CDXModel & CHUGModelLoader::CreateCube(const CU::Vector3f & aScale /*= CU::Vecto
 	prettyVertices[6].myPosition.z = (0.5f * aScale.z);
 	prettyVertices[6].myPosition.w = 1.0f;
 
-	prettyVertices[6].myColor.r = 1.0f;
-	prettyVertices[6].myColor.g = 1.0f;
-	prettyVertices[6].myColor.b = 1.0f;
-	prettyVertices[6].myColor.a = 1.0f;
 
 	prettyVertices[6].myUV.u = 0.0f;
 	prettyVertices[6].myUV.v = 1.0f;
@@ -239,10 +170,6 @@ CDXModel & CHUGModelLoader::CreateCube(const CU::Vector3f & aScale /*= CU::Vecto
 	prettyVertices[7].myPosition.z = (-0.5f* aScale.z);
 	prettyVertices[7].myPosition.w = 1.0f;
 
-	prettyVertices[7].myColor.r = 1.0f;
-	prettyVertices[7].myColor.g = 1.0f;
-	prettyVertices[7].myColor.b = 1.0f;
-	prettyVertices[7].myColor.a = 1.0f;
 
 	prettyVertices[7].myUV.u = 1.0f;
 	prettyVertices[7].myUV.v = 1.0f;

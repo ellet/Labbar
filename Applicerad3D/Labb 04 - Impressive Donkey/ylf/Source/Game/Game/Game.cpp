@@ -31,7 +31,8 @@ void CGame::Init()
 void CGame::Update()
 {
 	//myCube.Rotate();
-	const float deltaTime = GET_DELTA_SECONDS;
+	//myPrettyModel.Rotate();
+	const float deltaTime = 0.0001f;//GET_DELTA_SECONDS;
 	
 
 	GET_INPUT.Update();
@@ -67,7 +68,7 @@ void CGame::Update()
 
 	if (GET_INPUT.GetKeyDown(DIK_UPARROW) == true)
 	{
-		myCamera.IncreasePitch(-100.f  * deltaTime);
+		myCamera.IncreasePitch(-100.f * deltaTime);
 	}
 	else if (GET_INPUT.GetKeyDown(DIK_DOWNARROW) == true)
 	{

@@ -28,7 +28,7 @@ void CDXModel::Init()
 
 void CDXModel::InitWithModel(const CLoaderModel & aModel)
 {
-	InitBuffers(*aModel.myMeshes[0]);
+	InitBuffers(*aModel.myMeshes[1]);
 	myEffect->Init();
 }
 
