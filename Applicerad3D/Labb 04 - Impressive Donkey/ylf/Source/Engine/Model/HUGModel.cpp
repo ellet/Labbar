@@ -11,7 +11,7 @@
 CHUGModel::CHUGModel()
 {
 	myModel = nullptr;
-	myTexture = nullptr;
+	myTextures.Init(1);
 }
 
 
@@ -20,37 +20,31 @@ CHUGModel::~CHUGModel()
 	SAFE_DELETE(myModel);
 }
 
-void CHUGModel::InitAsTriangle()
-{
-	CHUGModelLoader tempLoader;
-	myModel = &tempLoader.CreateTriangle();
-}
-
-void CHUGModel::InitAsQuad()
-{
-	CHUGModelLoader tempLoader;
-	myModel = &tempLoader.CreateQuad();
-}
-
 void CHUGModel::InitAsCube(const CU::Vector3f & aPosition /*= CU::Vector3f::Zero*/, const CU::Vector3f & aScale /*= CU::Vector3f::One*/)
 {
 	CHUGModelLoader tempLoader;
 	myModel = &tempLoader.CreateCube(aScale);
 	myTransformation.SetPosition(aPosition);
-	InitEffectAndTexture();
+	InitTexture();
 }
 
-void CHUGModel::Init(const std::string & aModelFilePath, const std::wstring & aTextureFilepath /*= L"Sprites/adam.dds"*/)
+void CHUGModel::Init(const std::string & aModelFilePath)
 {
 	CHUGModelLoader tempLoader;
-	myModel = &tempLoader.CreateModel(aModelFilePath);
-	InitEffectAndTexture(aTextureFilepath);
+	CU::GrowingArray<std::string> textureFilePaths;
+	textureFilePaths.Init(4);
+	
+	myModel = &tempLoader.CreateModel(aModelFilePath, textureFilePaths);
+	
+	/*TODO add support for multiple textures*/
+	textureFilePaths[0] = "Sprites/" + textureFilePaths[0];
+	InitTexture(textureFilePaths[0]);
 }
 
-void CHUGModel::InitEffectAndTexture(const std::wstring & aTextureFilepath /*= L"Sprites/adam.dds"*/)
+void CHUGModel::InitTexture(const std::string & aTextureFilepath /*= "Sprites/adam.dds"*/)
 {
-	myTexture = new CHUGTexture();
-	myTexture->Init(&CHUGEngineSingleton::GetFramework().GetDevice(), &CHUGEngineSingleton::GetFramework().GetDeviceContext(), aTextureFilepath);
+	myTextures.Add(new CHUGTexture());
+	myTextures.GetLast()->Init(&CHUGEngineSingleton::GetFramework().GetDevice(), &CHUGEngineSingleton::GetFramework().GetDeviceContext(), std::wstring(aTextureFilepath.begin(), aTextureFilepath.end()));
 }
 
 void CHUGModel::Render(const CHUGCameraInterface & aCamera)
@@ -59,7 +53,7 @@ void CHUGModel::Render(const CHUGCameraInterface & aCamera)
 	tempMatrixes.myToWorld = myTransformation;
 	tempMatrixes.myToCamera = aCamera.GetCameraMatrix().GetInverse();
 	tempMatrixes.myToProjection = aCamera.GetProjection();
-	myModel->Render(tempMatrixes.myToWorld, tempMatrixes.myToCamera, tempMatrixes.myToProjection, myTexture->GetTexture());
+	myModel->Render(tempMatrixes.myToWorld, tempMatrixes.myToCamera, tempMatrixes.myToProjection, myTextures.GetLast()->GetTexture());
 }
 
 void CHUGModel::Rotate()

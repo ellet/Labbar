@@ -21,21 +21,18 @@ void CGame::Init()
 	CU::MainSingleton::Create();
 	GET_INPUT.Initialize();
 
-	myCamera.Init(500.f, 500.f, CU::Vector3f(0.f, 0.0f, -0.6f));
+	myCamera.Init(500.f, 500.f, CU::Vector3f(0.f, 0.0f, -2.6f));
 
-	myPrettyModel.Init("Models/companion.fbx", L"Sprites/companion_heart.dds");
-	myPrettyModel.SetPosition(CU::Vector3f(0.f, 0.f, 1.5f));
-	//myCube.InitAsCube(CU::Vector3f::Zero, CU::Vector3f(0.3f, 0.3f, 0.3f));
-	//InitPileOfCubes();
+	myPrettyModel.Init("Models/companion.fbx");
+	//myPrettyModel.SetPosition(CU::Vector3f(0.f, 0.f, 2.0f));
 }
 
 void CGame::Update()
 {
-	//myCube.Rotate();
 	myPrettyModel.Rotate();
-	const float deltaTime = 0.0001f;//GET_DELTA_SECONDS;
+	const float deltaTime = GET_DELTA_SECONDS;
 	
-
+	CU::MainSingleton::GetTimerManager().Update();
 	GET_INPUT.Update();
 
 	CU::Vector3f tempToAddCameraPosition = CU::Vector3f::Zero;
@@ -100,56 +97,3 @@ void CGame::RenderCubeAtPosition(const CU::Vector3f & aPosition, const CU::Vecto
 	prettyCube.Render(myCamera);
 }
 
-void CGame::RenderOneCubeALot()
-{
-	unsigned int cubeAmount = 10000;
-	CU::Vector3f positionOffset = CU::Vector3f::Zero;
-
-	for (unsigned int i = 0; i < cubeAmount; ++i)
-	{
-		positionOffset = CU::Vector3f(myRandomizer.GetRandomValue(), myRandomizer.GetRandomValue(), myRandomizer.GetRandomValue());
-
-		myCube.SetPosition(positionOffset);
-		myCube.Render(myCamera);
-	}
-}
-
-void CGame::RenderAllTheCubes()
-{
-	unsigned int cubeAmount = 100;
-	CU::Vector3f positionOffset = CU::Vector3f::Zero;
-
-	for (unsigned int i = 0; i < cubeAmount; ++i)
-	{
-		positionOffset = CU::Vector3f(myRandomizer.GetRandomValue(-0.5f, 0.5f), myRandomizer.GetRandomValue(-0.4f, 0.4f), myRandomizer.GetRandomValue(-0.2f, 0.2f));
-
-		RenderCubeAtPosition(CU::Vector3f(
-			0.f + positionOffset.x,
-			0.f + positionOffset.y,
-			0.f + positionOffset.z),
-			CU::Vector3f(0.6f, 0.6f, 0.6f));
-	}
-}
-
-void CGame::RenderPileOfCubes()
-{
-	for (unsigned int i = 0; i < myPileOfCubes.Size(); ++i)
-	{
-		myPileOfCubes[i].Render(myCamera);
-	}
-}
-
-void CGame::InitPileOfCubes()
-{
-	unsigned short cubeAmount = 1000;
-	myPileOfCubes.Init(cubeAmount);
-
-	CU::Vector3f positionOffset = CU::Vector3f::Zero;
-
-	for (unsigned int i = 0; i < cubeAmount; ++i)
-	{
-		positionOffset = CU::Vector3f(myRandomizer.GetRandomValue(-0.5f, 0.5f), myRandomizer.GetRandomValue(-0.4f, 0.4f), myRandomizer.GetRandomValue(-0.2f, 0.2f));
-		myPileOfCubes.Add(CHUGModel());
-		myPileOfCubes[i].InitAsCube(positionOffset, CU::Vector3f(0.6f, 0.6f, 0.6f));
-	}
-}

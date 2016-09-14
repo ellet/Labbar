@@ -134,7 +134,7 @@ void CDXModel::InitBuffers(const CLoaderMesh & aMeshData)
 
 	DL_ASSERT(tempResult == S_OK, "Vertex buffer creation failed");
 
-	myIndexCount = aMeshData.myIndexes.size();
+	myIndexCount = static_cast<unsigned int>(aMeshData.myIndexes.size());
 
 	// Set up the description of the static index buffer.
 	tempIndexBufferDesc.Usage = D3D11_USAGE_DEFAULT;
