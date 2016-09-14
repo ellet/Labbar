@@ -2,6 +2,7 @@
 #include "HUGEngine.h"
 #include "Windows/HUGWindowsWindow.h"
 #include "HUGFramework/HUGDXFramework.h"
+#include "Model/ModelManager/HUGModelManager.h"
 
 CHUGEngineSingleton * CHUGEngineSingleton::ourInstance = nullptr;
 
@@ -54,14 +55,21 @@ CHUGDXFramework & CHUGEngineSingleton::GetFramework()
 	return *GetInstance().myFramework;
 }
 
+CDXModel & CHUGEngineSingleton::GetModel(const std::string & aFilePath)
+{
+	return GetInstance().myModelManager->CreateModel(aFilePath);
+}
+
 CHUGEngineSingleton::CHUGEngineSingleton()
 {
 	myFramework = new CHUGDXFramework();
+	myModelManager = new CHUGModelManager();
 }
 
 CHUGEngineSingleton::~CHUGEngineSingleton()
 {
 	SAFE_DELETE(myFramework);
+	SAFE_DELETE(myModelManager);
 }
 
 CHUGEngineSingleton & CHUGEngineSingleton::GetInstance()

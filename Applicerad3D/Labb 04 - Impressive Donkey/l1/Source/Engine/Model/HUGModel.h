@@ -14,7 +14,7 @@ public:
 	void InitAsModel(const std::string & aModelFilePath);
 
 	void Init();
-	void Update();
+	void Update(const CU::Time & aDeltaTime);
 	void Render(const CU::Matrix44f & aCameraTransform, const CU::Matrix44f & aProjectionTransform);
 
 private:

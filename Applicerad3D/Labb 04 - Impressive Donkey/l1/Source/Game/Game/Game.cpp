@@ -31,7 +31,7 @@ void CGame::Update()
 	float cameraSpeed = 10.5f;
 	float cameraTurnSpeed = 0.5f;
 
-	myCube.Update();
+	myCube.Update(CU::TimeManager::GetDeltaTime());
 
 	if (GET_INPUT.GetKeyDown(DIK_1) == true)
 	{

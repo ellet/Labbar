@@ -3,6 +3,8 @@
 
 class CHUGWindowsWindow;
 class CHUGDXFramework;
+class CHUGModelManager;
+class CDXModel;
 
 class CHUGEngineSingleton
 {
@@ -29,7 +31,11 @@ public:
 
 	static CHUGDXFramework & GetFramework();
 
+	static CDXModel & GetModel(const std::string & aFilePath);
+
 private:
+	CHUGModelManager * myModelManager;
+
 	CHUGEngineSingleton();
 	~CHUGEngineSingleton();
 

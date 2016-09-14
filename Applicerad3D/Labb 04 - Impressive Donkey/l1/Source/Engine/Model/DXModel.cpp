@@ -22,6 +22,7 @@ CDXModel::~CDXModel()
 
 void CDXModel::Init(const CLoaderModel & aModelToLoadFrom)
 {
+
 	CLoaderMesh * tempMeshPointer = nullptr;
 	for (unsigned short iMesh = 0; iMesh < aModelToLoadFrom.myMeshes.Size(); ++iMesh)
 	{

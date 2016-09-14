@@ -51,6 +51,9 @@
     <ClCompile Include="ModelLoader\FBX_Loader_assimp\FBXLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Model\ModelManager\HUGModelManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -219,6 +222,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ModelLoader\FBX_Loader_assimp\VertexStructs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\ModelManager\HUGModelManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

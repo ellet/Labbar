@@ -2,6 +2,7 @@
 #include "Model/HUGModel.h"
 #include "Model/DXModel.h"
 #include "Model/HUGModelLoader.h"
+#include "Engine/HUGEngine.h"
 
 CHUGModel::CHUGModel()
 {
@@ -16,35 +17,35 @@ CHUGModel::~CHUGModel()
 
 void CHUGModel::InitAsTriangle()
 {
-	CHUGModelLoader tempLoader;
-	myModel = &tempLoader.CreateTriangle();
+	/*CHUGModelLoader tempLoader;
+	myModel = &tempLoader.CreateTriangle();*/
 }
 
 void CHUGModel::InitAsQuad()
 {
-	CHUGModelLoader tempLoader;
-	myModel = &tempLoader.CreateQuad();
+	/*CHUGModelLoader tempLoader;
+	myModel = &tempLoader.CreateQuad();*/
 }
 
 void CHUGModel::InitAsCube()
 {
-	CHUGModelLoader tempLoader;
-	myModel = &tempLoader.CreateCube();
+	/*CHUGModelLoader tempLoader;
+	myModel = &tempLoader.CreateCube();*/
 }
 
 void CHUGModel::InitAsModel(const std::string & aModelFilePath)
 {
-	CHUGModelLoader tempLoader;
-	myModel = &tempLoader.CreateModel(aModelFilePath);
+	
+	myModel = &CHUGEngineSingleton::GetModel(aModelFilePath);
 }
 
 void CHUGModel::Init()
 {
 }
 
-void CHUGModel::Update()
+void CHUGModel::Update(const CU::Time & aDeltaTime)
 {
-	float fakeDeltaTime = 0.0001f;
+	const float fakeDeltaTime = aDeltaTime.GetSeconds();
 
 	float rotatespeed = 10.f;
 
