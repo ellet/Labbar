@@ -1,6 +1,5 @@
 #pragma once
 #include "VertexStructs.h"
-#include <vector>
 #include <map>
 
 using namespace FBXLoader;
@@ -19,10 +18,23 @@ struct BoneInfo
 class CLoaderMesh
 {
 public:
-	CLoaderMesh() {myShaderType = 0; myVerticies = nullptr; myVertexBufferSize = 0; myVertexCount = 0; myModel = nullptr; }
-	~CLoaderMesh(){}
-	std::vector<unsigned int> myIndexes;
-	std::vector<CLoaderMesh*> myChildren;
+	CLoaderMesh() 
+	{
+		myShaderType = 0; 
+		myVerticies = nullptr; 
+		myVertexBufferSize = 0; 
+		myVertexCount = 0; 
+		myModel = nullptr; 
+
+		myIndexes.Init(2);
+		myChildren.Init(2);
+	}
+
+	~CLoaderMesh()
+	{}
+
+	CU::GrowingArray<unsigned int> myIndexes;
+	CU::GrowingArray<CLoaderMesh*> myChildren;
 	unsigned int myShaderType;
 	unsigned int myVertexBufferSize;
 	int myVertexCount;
@@ -33,20 +45,40 @@ public:
 class CLoaderModel
 {
 public:
-	CLoaderModel(){ myIsLoaded = false; myAnimationDuration = 0.0f; }
-	~CLoaderModel(){}
-	void SetData(const char* aModelPath){ myModelPath = aModelPath; }
-	CLoaderMesh* CreateMesh(){ CLoaderMesh *model = new CLoaderMesh(); myMeshes.push_back(model); model->myModel = this; return model; }
+	CLoaderModel()
+	{ 
+		myIsLoaded = false; 
+		myAnimationDuration = 0.0f; 
 
-	std::vector<CLoaderMesh*> myMeshes;
+		myMeshes.Init(2);
+		myTextures.Init(2);
+		myBoneInfo.Init(2);
+	}
+
+	~CLoaderModel()
+	{}
+
+	void SetData(const char* aModelPath)
+	{
+		myModelPath = aModelPath; 
+	}
+
+	CLoaderMesh* CreateMesh()
+	{
+		CLoaderMesh *model = new CLoaderMesh();
+		myMeshes.Add(model); 
+		model->myModel = this; return model; 
+	}
+
+	CU::GrowingArray<CLoaderMesh*> myMeshes;
 	std::string myModelPath;
 	float myAnimationDuration;
 	const struct aiScene* myScene;
 	Matrix44f myGlobalInverseTransform;
 	bool myIsLoaded;
-	std::vector<std::string> myTextures;
+	CU::GrowingArray<std::string> myTextures;
 	// Animation data
-	std::vector<BoneInfo> myBoneInfo;
+	CU::GrowingArray<BoneInfo> myBoneInfo;
 	std::map<std::string, unsigned int> myBoneNameToIndex;
 	unsigned int myNumBones;
 
@@ -65,7 +97,7 @@ private:
 	void* LoadModelInternal(CLoaderModel* someInput);
 	int DetermineAndLoadVerticies(struct aiMesh* aMesh, CLoaderMesh* aLoaderMesh);
 	void LoadMaterials(const struct aiScene *sc, CLoaderModel* aModel);
-	void LoadTexture(int aType, std::vector<std::string>& someTextures, struct aiMaterial* aMaterial);
+	void LoadTexture(int aType, CU::GrowingArray<std::string>& someTextures, struct aiMaterial* aMaterial);
 
 };
 

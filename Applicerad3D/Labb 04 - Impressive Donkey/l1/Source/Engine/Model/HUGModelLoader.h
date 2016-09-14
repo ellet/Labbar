@@ -1,6 +1,7 @@
 #pragma once
 
 class CDXModel;
+class CFBXLoader;
 
 class CHUGModelLoader
 {
@@ -14,6 +15,8 @@ public:
 
 	CDXModel & CreateQuadTopLeft();
 
+	CDXModel & CreateModel(const std::string & aFilePath);
+
 private:
-	
+	CFBXLoader * myModelLoader;
 };

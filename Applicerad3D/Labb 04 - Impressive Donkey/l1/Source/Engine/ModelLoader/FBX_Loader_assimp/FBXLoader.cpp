@@ -16,9 +16,9 @@
 
 // Change to your path
 #ifdef _DEBUG
-#pragma comment (lib, "..\\Libs\\assimp-vc140-mtd.lib")
+#pragma comment (lib, "..\\..\\lib\\assimp-vc140-mtd.lib")
 #else
-#pragma comment (lib, "..\\Libs\\assimp-vc140-mt.lib")
+#pragma comment (lib, "..\\..\\lib\\assimp-vc140-mt.lib")
 #endif
 
 #define TEXTURE_SET_0 0
@@ -77,10 +77,10 @@ int CFBXLoader::DetermineAndLoadVerticies(aiMesh* fbxMesh, CLoaderMesh* aLoaderM
 	aLoaderMesh->myVerticies = new char[vertexBufferSize * fbxMesh->mNumVertices];
 	aLoaderMesh->myVertexCount = fbxMesh->mNumVertices;
 
-	std::vector<VertexBoneData> collectedBoneData;
+	CU::GrowingArray<VertexBoneData> collectedBoneData;
 	if (fbxMesh->HasBones())
 	{
-		collectedBoneData.resize(fbxMesh->mNumVertices);
+		collectedBoneData.Resize(fbxMesh->mNumVertices);
 
 		unsigned int BoneIndex = 0;
 		for (unsigned int i = 0; i < fbxMesh->mNumBones; i++) 
@@ -91,7 +91,7 @@ int CFBXLoader::DetermineAndLoadVerticies(aiMesh* fbxMesh, CLoaderMesh* aLoaderM
 				BoneIndex = aLoaderMesh->myModel->myNumBones;
 				aLoaderMesh->myModel->myNumBones++;
 				BoneInfo bi;
-				aLoaderMesh->myModel->myBoneInfo.push_back(bi);
+				aLoaderMesh->myModel->myBoneInfo.Add(bi);
 
 
 				Matrix44f NodeTransformation = ConvertToEngineMatrix44(fbxMesh->mBones[i]->mOffsetMatrix);
@@ -210,7 +210,7 @@ void* CFBXLoader::LoadModelInternal(CLoaderModel* someInput)
 		{
 			for (uint j = 0; j < fbxMesh->mFaces[i].mNumIndices; j++)
 			{
-				mesh->myIndexes.push_back(fbxMesh->mFaces[i].mIndices[j]);
+				mesh->myIndexes.Add(fbxMesh->mFaces[i].mIndices[j]);
 			}
 		}
 	}
@@ -249,7 +249,7 @@ void CFBXLoader::LoadMaterials(const struct aiScene *sc, CLoaderModel* aModel)
 	}
 }
 
-void CFBXLoader::LoadTexture(int aType, std::vector<std::string>& someTextures, aiMaterial* aMaterial)
+void CFBXLoader::LoadTexture(int aType, CU::GrowingArray<std::string>& someTextures, aiMaterial* aMaterial)
 {
 	int texIndex = 0;
 	aiReturn texFound = AI_SUCCESS;
@@ -259,7 +259,7 @@ void CFBXLoader::LoadTexture(int aType, std::vector<std::string>& someTextures, 
 	texFound = aMaterial->GetTexture((aiTextureType)aType, texIndex, &path);
 	if (texFound == AI_FAILURE)
 	{
-		someTextures.push_back("");
+		someTextures.Add("");
 		return;
 	}
 
@@ -271,5 +271,5 @@ void CFBXLoader::LoadTexture(int aType, std::vector<std::string>& someTextures, 
 		filePath.erase(0, last_slash_idx + 1);
 	}
 
-	someTextures.push_back(filePath);
+	someTextures.Add(filePath);
 }

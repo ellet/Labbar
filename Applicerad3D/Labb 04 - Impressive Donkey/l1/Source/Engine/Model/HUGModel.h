@@ -11,6 +11,7 @@ public:
 	void InitAsTriangle();
 	void InitAsQuad();
 	void InitAsCube();
+	void InitAsModel();
 
 	void Init();
 	void Update();

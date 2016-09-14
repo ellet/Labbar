@@ -11,9 +11,9 @@ CHUGDXFramework::CHUGDXFramework()
 	myDevice = nullptr;
 	myDeviceContext = nullptr;
 	myRenderTargetView = nullptr;
-	/*myDepthStencilBuffer = nullptr;
+	myDepthStencilBuffer = nullptr;
 	myDepthStencilState = nullptr;
-	myDepthStencilView = nullptr;*/
+	myDepthStencilView = nullptr;
 	myRasterState = nullptr;
 }
 
@@ -48,7 +48,7 @@ void CHUGDXFramework::CleanFrame()
 	myDeviceContext->ClearRenderTargetView(myRenderTargetView, &tempColor.r);
 
 	// Clear the depth buffer.
-	//myDeviceContext->ClearDepthStencilView(myDepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
+	myDeviceContext->ClearDepthStencilView(myDepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
 
 	return;
 }
@@ -210,75 +210,75 @@ void CHUGDXFramework::CreateBuffers(const CU::Vector2ui & aScreenWidthHeight)
 	tempBackBufferPtr = nullptr;
 
 	// Initialize the description of the depth buffer.
-	//D3D11_TEXTURE2D_DESC tempDepthBufferDescription;
-	//ZeroMemory(&tempDepthBufferDescription, sizeof(tempDepthBufferDescription));
+	D3D11_TEXTURE2D_DESC tempDepthBufferDescription;
+	ZeroMemory(&tempDepthBufferDescription, sizeof(tempDepthBufferDescription));
 
-	//// Set up the description of the depth buffer.
-	//tempDepthBufferDescription.Width = aScreenWidthHeight.x;
-	//tempDepthBufferDescription.Height = aScreenWidthHeight.y;
-	//tempDepthBufferDescription.MipLevels = 1;
-	//tempDepthBufferDescription.ArraySize = 1;
-	//tempDepthBufferDescription.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
-	//tempDepthBufferDescription.SampleDesc.Count = 1;
-	//tempDepthBufferDescription.SampleDesc.Quality = 0;
-	//tempDepthBufferDescription.Usage = D3D11_USAGE_DEFAULT;
-	//tempDepthBufferDescription.BindFlags = D3D11_BIND_DEPTH_STENCIL;
-	//tempDepthBufferDescription.CPUAccessFlags = 0;
-	//tempDepthBufferDescription.MiscFlags = 0;
+	// Set up the description of the depth buffer.
+	tempDepthBufferDescription.Width = aScreenWidthHeight.x;
+	tempDepthBufferDescription.Height = aScreenWidthHeight.y;
+	tempDepthBufferDescription.MipLevels = 1;
+	tempDepthBufferDescription.ArraySize = 1;
+	tempDepthBufferDescription.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
+	tempDepthBufferDescription.SampleDesc.Count = 1;
+	tempDepthBufferDescription.SampleDesc.Quality = 0;
+	tempDepthBufferDescription.Usage = D3D11_USAGE_DEFAULT;
+	tempDepthBufferDescription.BindFlags = D3D11_BIND_DEPTH_STENCIL;
+	tempDepthBufferDescription.CPUAccessFlags = 0;
+	tempDepthBufferDescription.MiscFlags = 0;
 
 	// Create the texture for the depth buffer using the filled out description.
-	//tempResult = myDevice->CreateTexture2D(&tempDepthBufferDescription, NULL, &myDepthStencilBuffer);
+	tempResult = myDevice->CreateTexture2D(&tempDepthBufferDescription, NULL, &myDepthStencilBuffer);
 
 	DL_ASSERT(tempResult == S_OK, "Failed to create depth buffer texture");
 
 	// Initialize the description of the stencil state.
-	//D3D11_DEPTH_STENCIL_DESC tempDepthStencilDescription;
-	//ZeroMemory(&tempDepthStencilDescription, sizeof(tempDepthStencilDescription));
+	D3D11_DEPTH_STENCIL_DESC tempDepthStencilDescription;
+	ZeroMemory(&tempDepthStencilDescription, sizeof(tempDepthStencilDescription));
 
-	//// Set up the description of the stencil state.
-	//tempDepthStencilDescription.DepthEnable = true;
-	//tempDepthStencilDescription.DepthWriteMask = D3D11_DEPTH_WRITE_MASK_ALL;
-	//tempDepthStencilDescription.DepthFunc = D3D11_COMPARISON_LESS;
+	// Set up the description of the stencil state.
+	tempDepthStencilDescription.DepthEnable = true;
+	tempDepthStencilDescription.DepthWriteMask = D3D11_DEPTH_WRITE_MASK_ALL;
+	tempDepthStencilDescription.DepthFunc = D3D11_COMPARISON_LESS;
 
-	//tempDepthStencilDescription.StencilEnable = true;
-	//tempDepthStencilDescription.StencilReadMask = 0xFF;
-	//tempDepthStencilDescription.StencilWriteMask = 0xFF;
+	tempDepthStencilDescription.StencilEnable = true;
+	tempDepthStencilDescription.StencilReadMask = 0xFF;
+	tempDepthStencilDescription.StencilWriteMask = 0xFF;
 
-	//// Stencil operations if pixel is front-facing.
-	//tempDepthStencilDescription.FrontFace.StencilFailOp = D3D11_STENCIL_OP_KEEP;
-	//tempDepthStencilDescription.FrontFace.StencilDepthFailOp = D3D11_STENCIL_OP_INCR;
-	//tempDepthStencilDescription.FrontFace.StencilPassOp = D3D11_STENCIL_OP_KEEP;
-	//tempDepthStencilDescription.FrontFace.StencilFunc = D3D11_COMPARISON_ALWAYS;
+	// Stencil operations if pixel is front-facing.
+	tempDepthStencilDescription.FrontFace.StencilFailOp = D3D11_STENCIL_OP_KEEP;
+	tempDepthStencilDescription.FrontFace.StencilDepthFailOp = D3D11_STENCIL_OP_INCR;
+	tempDepthStencilDescription.FrontFace.StencilPassOp = D3D11_STENCIL_OP_KEEP;
+	tempDepthStencilDescription.FrontFace.StencilFunc = D3D11_COMPARISON_ALWAYS;
 
-	//// Stencil operations if pixel is back-facing.
-	//tempDepthStencilDescription.BackFace.StencilFailOp = D3D11_STENCIL_OP_KEEP;
-	//tempDepthStencilDescription.BackFace.StencilDepthFailOp = D3D11_STENCIL_OP_DECR;
-	//tempDepthStencilDescription.BackFace.StencilPassOp = D3D11_STENCIL_OP_KEEP;
-	//tempDepthStencilDescription.BackFace.StencilFunc = D3D11_COMPARISON_ALWAYS;
+	// Stencil operations if pixel is back-facing.
+	tempDepthStencilDescription.BackFace.StencilFailOp = D3D11_STENCIL_OP_KEEP;
+	tempDepthStencilDescription.BackFace.StencilDepthFailOp = D3D11_STENCIL_OP_DECR;
+	tempDepthStencilDescription.BackFace.StencilPassOp = D3D11_STENCIL_OP_KEEP;
+	tempDepthStencilDescription.BackFace.StencilFunc = D3D11_COMPARISON_ALWAYS;
 
 	// Create the depth stencil state.
-	//tempResult = myDevice->CreateDepthStencilState(&tempDepthStencilDescription, &myDepthStencilState);
+	tempResult = myDevice->CreateDepthStencilState(&tempDepthStencilDescription, &myDepthStencilState);
 
-	//DL_ASSERT(tempResult == S_OK, "Failed to create depth stencil state!");
+	DL_ASSERT(tempResult == S_OK, "Failed to create depth stencil state!");
 
-	//// Set the depth stencil state.
-	//my//DeviceContext->OMSetDepthStencilState(myDepthStencilState, 1);
+	// Set the depth stencil state.
+	myDeviceContext->OMSetDepthStencilState(myDepthStencilState, 1);
 
-	//// Initialize the depth stencil view.
-	//D3D11_DEPTH_STENCIL_VIEW_DESC tempDepthStencilViewDescription;
-	//ZeroMemory(&tempDepthStencilViewDescription, sizeof(tempDepthStencilViewDescription));
+	// Initialize the depth stencil view.
+	D3D11_DEPTH_STENCIL_VIEW_DESC tempDepthStencilViewDescription;
+	ZeroMemory(&tempDepthStencilViewDescription, sizeof(tempDepthStencilViewDescription));
 
-	//// Set up the depth stencil view description.
-	//tempDepthStencilViewDescription.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
-	//tempDepthStencilViewDescription.ViewDimension = D3D11_DSV_DIMENSION_TEXTURE2D;
-	//tempDepthStencilViewDescription.Texture2D.MipSlice = 0;
+	// Set up the depth stencil view description.
+	tempDepthStencilViewDescription.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
+	tempDepthStencilViewDescription.ViewDimension = D3D11_DSV_DIMENSION_TEXTURE2D;
+	tempDepthStencilViewDescription.Texture2D.MipSlice = 0;
 
-	//// Create the depth stencil view.
-	//tempResult = myDevice->CreateDepthStencilView(myDepthStencilBuffer, &tempDepthStencilViewDescription, &myDepthStencilView);
-	//DL_ASSERT(tempResult == S_OK, "Failed to create depth stencil view!");
+	// Create the depth stencil view.
+	tempResult = myDevice->CreateDepthStencilView(myDepthStencilBuffer, &tempDepthStencilViewDescription, &myDepthStencilView);
+	DL_ASSERT(tempResult == S_OK, "Failed to create depth stencil view!");
 
 	// Bind the render target view and depth stencil buffer to the output render pipeline.
-	myDeviceContext->OMSetRenderTargets(1, &myRenderTargetView, nullptr);
+	myDeviceContext->OMSetRenderTargets(1, &myRenderTargetView, myDepthStencilView);
 
 	// Setup the raster description which will determine how and what polygons will be drawn.
 	D3D11_RASTERIZER_DESC tempRasterDescription;
@@ -304,13 +304,13 @@ void CHUGDXFramework::CreateBuffers(const CU::Vector2ui & aScreenWidthHeight)
 
 void CHUGDXFramework::ReleaseBuffers()
 {
-	/*myDepthStencilBuffer->Release();
+	myDepthStencilBuffer->Release();
 	myDepthStencilState->Release();
-	myDepthStencilView->Release();*/
+	myDepthStencilView->Release();
 	myRasterState->Release();
 
-	/*myDepthStencilBuffer = nullptr;
+	myDepthStencilBuffer = nullptr;
 	myDepthStencilState = nullptr;
-	myDepthStencilView = nullptr;*/
+	myDepthStencilView = nullptr;
 	myRasterState = nullptr;
 }

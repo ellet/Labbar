@@ -15,7 +15,7 @@ CGame::~CGame()
 
 void CGame::Init()
 {
-	myCube.InitAsCube();
+	myCube.InitAsModel();
 	
 	myCamera.SetPosition({ 0.f, 0.4f, -1.f });
 }

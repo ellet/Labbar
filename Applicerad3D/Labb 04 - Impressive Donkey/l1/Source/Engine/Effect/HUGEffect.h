@@ -20,7 +20,7 @@ public:
 	CHUGEffect();
 	~CHUGEffect();
 
-	void Init();
+	void Init(const std::wstring & aTextureFilePath);
 	void ActivateEffect(const MatrixBuffer & aMatrixBuffer);
 
 private:

@@ -24,8 +24,6 @@ public:
 
 private:
 	void InitBuffers();
-	void InitVertices();
-	void InitIndices();
 
 	void RenderBuffers();
 	void RenderModel();

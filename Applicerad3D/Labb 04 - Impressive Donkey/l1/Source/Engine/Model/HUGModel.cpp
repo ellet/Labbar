@@ -32,9 +32,14 @@ void CHUGModel::InitAsCube()
 	myModel = &tempLoader.CreateCube();
 }
 
+void CHUGModel::InitAsModel()
+{
+	CHUGModelLoader tempLoader;
+	myModel = &tempLoader.CreateModel("Modeller/tga_companioncube/companion.fbx");
+}
+
 void CHUGModel::Init()
 {
-	myModel->Init();
 }
 
 void CHUGModel::Update()

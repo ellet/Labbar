@@ -8,15 +8,20 @@ SamplerState Sampler;
 struct VertexInputType
 {
 	float4 position : POSITION;
-	float4 color : COLOR;
 	float2 UV : UV0;
+	float4 normal : NORMAL;
+	float4 tangent : TANGENT;
+	float4 bitangent : BITANGENT;
+	//float4 color : COLOR;
+	
 };
 
 struct PixelInputType
 {
 	float4 position : SV_POSITION;
-	float4 color : COLOR;
 	float2 UV : UV0;
+	//float4 color : COLOR;
+	
 };
 
 cbuffer MatriserBuffer : register(b0)
@@ -51,7 +56,7 @@ PixelInputType HUGVertexShader(VertexInputType aInput)
 	tempOutput.position = mul(tempOutput.position, ProjectionMatris);
 
 	// Store the input color for the pixel shader to use.
-	tempOutput.color = aInput.color;
+	//tempOutput.color = aInput.color;
 
 	return tempOutput;
 }

@@ -1,14 +1,17 @@
 #include "stdafx.h"
 #include "Model/HUGModelLoader.h"
 #include "Model/DXModel.h"
+#include "ModelLoader/FBX_Loader_assimp/FBXLoader.h"
 
 CHUGModelLoader::CHUGModelLoader()
 {
+	myModelLoader = new CFBXLoader();
 }
 
 
 CHUGModelLoader::~CHUGModelLoader()
 {
+	SAFE_DELETE(myModelLoader);
 }
 
 CDXModel & CHUGModelLoader::CreateQuad()
@@ -21,40 +24,40 @@ CDXModel & CHUGModelLoader::CreateQuad()
 	prettyVertices[0].myPosition.z = 0.5f;
 	prettyVertices[0].myPosition.w = 1.f;
 
-	prettyVertices[0].myColor.r = 0.0f;
+	/*prettyVertices[0].myColor.r = 0.0f;
 	prettyVertices[0].myColor.g = 1.0f;
 	prettyVertices[0].myColor.b = 0.0f;
-	prettyVertices[0].myColor.a = 1.f;
+	prettyVertices[0].myColor.a = 1.f;*/
 
 	prettyVertices[1].myPosition.x = -1.0f;
 	prettyVertices[1].myPosition.y = 1.0f;
 	prettyVertices[1].myPosition.z = 0.5f;
 	prettyVertices[1].myPosition.w = 1.f;
 
-	prettyVertices[1].myColor.r = 1.0f;
+	/*prettyVertices[1].myColor.r = 1.0f;
 	prettyVertices[1].myColor.g = 0.0f;
 	prettyVertices[1].myColor.b = 0.0f;
-	prettyVertices[1].myColor.a = 1.f;
+	prettyVertices[1].myColor.a = 1.f;*/
 
 	prettyVertices[2].myPosition.x = 1.0f;
 	prettyVertices[2].myPosition.y = -1.0f;
 	prettyVertices[2].myPosition.z = 0.5f;
 	prettyVertices[2].myPosition.w = 1.f;
 
-	prettyVertices[2].myColor.r = 0.0f;
+	/*prettyVertices[2].myColor.r = 0.0f;
 	prettyVertices[2].myColor.g = 0.0f;
 	prettyVertices[2].myColor.b = 1.0f;
-	prettyVertices[2].myColor.a = 1.f;
+	prettyVertices[2].myColor.a = 1.f;*/
 
 	prettyVertices[3].myPosition.x = 1.0f;
 	prettyVertices[3].myPosition.y = 1.0f;
 	prettyVertices[3].myPosition.z = 0.5f;
 	prettyVertices[3].myPosition.w = 1.f;
 
-	prettyVertices[3].myColor.r = 1.0f;
+	/*prettyVertices[3].myColor.r = 1.0f;
 	prettyVertices[3].myColor.g = 1.0f;
 	prettyVertices[3].myColor.b = 0.0f;
-	prettyVertices[3].myColor.a = 1.f;
+	prettyVertices[3].myColor.a = 1.f;*/
 
 	CDXModel * tempModel = new CDXModel();
 
@@ -72,8 +75,7 @@ CDXModel & CHUGModelLoader::CreateQuad()
 	}
 
 
-	tempModel->LoadModel(prettyVertices, tempArrayOfIndices);
-	tempModel->Init();
+	tempModel->Init(prettyVertices, tempArrayOfIndices);
 
 	return *tempModel;
 }
@@ -88,30 +90,30 @@ CDXModel & CHUGModelLoader::CreateTriangle()
 	prettyVertices[0].myPosition.z = 0.5f;
 	prettyVertices[0].myPosition.w = 1.f;
 
-	prettyVertices[0].myColor.r = 0.0f;
+	/*prettyVertices[0].myColor.r = 0.0f;
 	prettyVertices[0].myColor.g = 1.0f;
 	prettyVertices[0].myColor.b = 0.0f;
-	prettyVertices[0].myColor.a = 1.f;
+	prettyVertices[0].myColor.a = 1.f;*/
 
 	prettyVertices[1].myPosition.x = 0.0f;
 	prettyVertices[1].myPosition.y = 0.5f;
 	prettyVertices[1].myPosition.z = 0.5f;
 	prettyVertices[1].myPosition.w = 1.f;
 
-	prettyVertices[1].myColor.r = 1.0f;
+	/*prettyVertices[1].myColor.r = 1.0f;
 	prettyVertices[1].myColor.g = 0.0f;
 	prettyVertices[1].myColor.b = 0.0f;
-	prettyVertices[1].myColor.a = 1.f;
+	prettyVertices[1].myColor.a = 1.f;*/
 
 	prettyVertices[2].myPosition.x = 0.5f;
 	prettyVertices[2].myPosition.y = -0.5f;
 	prettyVertices[2].myPosition.z = 0.5f;
 	prettyVertices[2].myPosition.w = 1.f;
 
-	prettyVertices[2].myColor.r = 0.0f;
+	/*prettyVertices[2].myColor.r = 0.0f;
 	prettyVertices[2].myColor.g = 0.0f;
 	prettyVertices[2].myColor.b = 1.0f;
-	prettyVertices[2].myColor.a = 1.f;
+	prettyVertices[2].myColor.a = 1.f;*/
 
 	CDXModel * tempModel = new CDXModel();
 
@@ -124,8 +126,7 @@ CDXModel & CHUGModelLoader::CreateTriangle()
 		tempArrayOfIndices[i] = i;
 	}
 
-	tempModel->LoadModel(prettyVertices, tempArrayOfIndices);
-	tempModel->Init();
+	tempModel->Init(prettyVertices, tempArrayOfIndices);
 
 	return *tempModel;
 }
@@ -145,10 +146,10 @@ CDXModel & CHUGModelLoader::CreateCube()
 	tempVertices[0].myPosition.z = -0.5f;
 	tempVertices[0].myPosition.w = 1.0f;
 	
-	tempVertices[0].myColor.r = 1.0f;
+	/*tempVertices[0].myColor.r = 1.0f;
 	tempVertices[0].myColor.g = 1.0f;
 	tempVertices[0].myColor.b = 0.0f;
-	tempVertices[0].myColor.a = 1.0f;
+	tempVertices[0].myColor.a = 1.0f;*/
 	
 	tempVertices[0].myUV.x = 0.0f;
 	tempVertices[0].myUV.y = 0.0f;
@@ -159,10 +160,10 @@ CDXModel & CHUGModelLoader::CreateCube()
 	tempVertices[1].myPosition.z = 0.5f;
 	tempVertices[1].myPosition.a = 1.0f;
 	
-	tempVertices[1].myColor.r = 1.0f;
+	/*tempVertices[1].myColor.r = 1.0f;
 	tempVertices[1].myColor.g = 0.5f;
 	tempVertices[1].myColor.b = 1.0f;
-	tempVertices[1].myColor.a = 1.0f;
+	tempVertices[1].myColor.a = 1.0f;*/
 	
 	tempVertices[1].myUV.x = 1.0f;
 	tempVertices[1].myUV.y = 0.0f;
@@ -173,10 +174,10 @@ CDXModel & CHUGModelLoader::CreateCube()
 	tempVertices[2].myPosition.z = 0.5f;
 	tempVertices[2].myPosition.a = 1.0f;
 	
-	tempVertices[2].myColor.r = 1.0f;
+	/*tempVertices[2].myColor.r = 1.0f;
 	tempVertices[2].myColor.g = 1.0f;
 	tempVertices[2].myColor.b = 0.0f;
-	tempVertices[2].myColor.a = 1.0f;
+	tempVertices[2].myColor.a = 1.0f;*/
 	
 	tempVertices[2].myUV.x = 0.0f;
 	tempVertices[2].myUV.y = 0.0f;
@@ -188,10 +189,10 @@ CDXModel & CHUGModelLoader::CreateCube()
 	tempVertices[3].myPosition.z = -0.5f;
 	tempVertices[3].myPosition.a = 1.0f;
 	
-	tempVertices[3].myColor.r = 1.0f;
+	/*tempVertices[3].myColor.r = 1.0f;
 	tempVertices[3].myColor.g = 1.0f;
 	tempVertices[3].myColor.b = 1.0f;
-	tempVertices[3].myColor.a = 1.0f;
+	tempVertices[3].myColor.a = 1.0f;*/
 	
 	tempVertices[3].myUV.x = 1.0f;
 	tempVertices[3].myUV.y = 0.0f;
@@ -203,10 +204,10 @@ CDXModel & CHUGModelLoader::CreateCube()
 	tempVertices[4].myPosition.z = -0.5f;
 	tempVertices[4].myPosition.a = 1.0f;
 	
-	tempVertices[4].myColor.r = 1.0f;
+	/*tempVertices[4].myColor.r = 1.0f;
 	tempVertices[4].myColor.g = 0.2f;
 	tempVertices[4].myColor.b = 1.0f;
-	tempVertices[4].myColor.a = 1.0f;
+	tempVertices[4].myColor.a = 1.0f;*/
 	
 	tempVertices[4].myUV.x = 0.0f;
 	tempVertices[4].myUV.y = 1.0f;
@@ -217,10 +218,10 @@ CDXModel & CHUGModelLoader::CreateCube()
 	tempVertices[5].myPosition.z = 0.5f;
 	tempVertices[5].myPosition.a = 1.0f;
 	
-	tempVertices[5].myColor.r = 1.0f;
+	/*tempVertices[5].myColor.r = 1.0f;
 	tempVertices[5].myColor.g = 1.0f;
 	tempVertices[5].myColor.b = 0.0f;
-	tempVertices[5].myColor.a = 1.0f;
+	tempVertices[5].myColor.a = 1.0f;*/
 	
 	tempVertices[5].myUV.x = 1.0f;
 	tempVertices[5].myUV.y = 1.0f;
@@ -231,10 +232,10 @@ CDXModel & CHUGModelLoader::CreateCube()
 	tempVertices[6].myPosition.z = 0.5f;
 	tempVertices[6].myPosition.a = 1.0f;
 	
-	tempVertices[6].myColor.r = 0.0f;
+	/*tempVertices[6].myColor.r = 0.0f;
 	tempVertices[6].myColor.g = 1.0f;
 	tempVertices[6].myColor.b = 1.0f;
-	tempVertices[6].myColor.a = 1.0f;
+	tempVertices[6].myColor.a = 1.0f;*/
 	
 	tempVertices[6].myUV.x = 0.0f;
 	tempVertices[6].myUV.y = 1.0f;
@@ -245,10 +246,10 @@ CDXModel & CHUGModelLoader::CreateCube()
 	tempVertices[7].myPosition.z = -0.5f;
 	tempVertices[7].myPosition.a = 1.0f;
 	
-	tempVertices[7].myColor.r = 1.0f;
+	/*tempVertices[7].myColor.r = 1.0f;
 	tempVertices[7].myColor.g = 0.0f;
 	tempVertices[7].myColor.b = 1.0f;
-	tempVertices[7].myColor.a = 1.0f;
+	tempVertices[7].myColor.a = 1.0f;*/
 	
 	tempVertices[7].myUV.x = 1.0f;
 	tempVertices[7].myUV.y = 1.0f;
@@ -313,8 +314,18 @@ CDXModel & CHUGModelLoader::CreateCube()
 
 	CDXModel * tempModel = new CDXModel();
 
-	tempModel->LoadModel(tempVertices, tempArrayOfIndices);
-	tempModel->Init();
+	tempModel->Init(tempVertices, tempArrayOfIndices);
+
+	return *tempModel;
+}
+
+CDXModel & CHUGModelLoader::CreateModel(const std::string & aFilePath)
+{
+	CLoaderModel & tempInputModel = *myModelLoader->LoadModel(aFilePath.c_str());
+
+	CDXModel * tempModel = new CDXModel();
+
+	tempModel->Init(tempInputModel);
 
 	return *tempModel;
 }

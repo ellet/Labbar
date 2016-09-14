@@ -17,7 +17,7 @@ CHUGEffect::~CHUGEffect()
 {
 }
 
-void CHUGEffect::Init()
+void CHUGEffect::Init(const std::wstring & aTextureFilePath)
 {
 	HRESULT tempResult = S_OK;
 
@@ -47,8 +47,13 @@ void CHUGEffect::Init()
 	tempPolyLayout.Init(1);
 
 	HUGEffectHelper::CreateLayout(tempPolyLayout, "POSITION", 0, ConvertToDXGI(eDataType::Float4), 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
-	HUGEffectHelper::CreateLayout(tempPolyLayout, "COLOR", 0, ConvertToDXGI(eDataType::Float4), 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
 	HUGEffectHelper::CreateLayout(tempPolyLayout, "UV", 0, ConvertToDXGI(eDataType::Float2), 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
+	HUGEffectHelper::CreateLayout(tempPolyLayout, "NORMAL", 0, ConvertToDXGI(eDataType::Float4), 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
+	HUGEffectHelper::CreateLayout(tempPolyLayout, "TANGENT", 0, ConvertToDXGI(eDataType::Float4), 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
+	HUGEffectHelper::CreateLayout(tempPolyLayout, "BITANGENT", 0, ConvertToDXGI(eDataType::Float4), 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
+	
+	//HUGEffectHelper::CreateLayout(tempPolyLayout, "COLOR", 0, ConvertToDXGI(eDataType::Float4), 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
+	
 
 	tempResult = tempDeviceRef.CreateInputLayout(&tempPolyLayout[0], tempPolyLayout.Size(), tempVertexShaderBuffer->GetBufferPointer(), tempVertexShaderBuffer->GetBufferSize(), &myLayout);
 	DL_ASSERT(tempResult == S_OK, "Failed to create input layout");
@@ -74,7 +79,7 @@ void CHUGEffect::Init()
 	
 	DL_ASSERT(tempResult == S_OK, "failed to create matrix buffer");
 
-	tempResult = DirectX::CreateDDSTextureFromFile(&tempDeviceRef, L"Textures/tga_logo.dds", nullptr, &myTexture);
+	tempResult = DirectX::CreateDDSTextureFromFile(&tempDeviceRef, aTextureFilePath.c_str(), nullptr, &myTexture);
 	DL_ASSERT(tempResult == S_OK, "Texture was loaded incorrecly");
 
 	D3D11_SAMPLER_DESC tempSamplerDesc;
