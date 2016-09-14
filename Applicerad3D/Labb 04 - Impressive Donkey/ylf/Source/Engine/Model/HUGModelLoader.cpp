@@ -8,89 +8,8 @@ CHUGModelLoader::CHUGModelLoader()
 	myLoader = new CFBXLoader();
 }
 
-
 CHUGModelLoader::~CHUGModelLoader()
 {
-}
-
-CDXModel & CHUGModelLoader::CreateQuad()
-{
-	CU::GrowingArray<CDXModel::Vertex> prettyVertices;
-	prettyVertices.Init(4);
-	prettyVertices.Resize(4);
-	prettyVertices[0].myPosition.x = -1.0f;
-	prettyVertices[0].myPosition.y = -1.0f;
-	prettyVertices[0].myPosition.z = 0.5f;
-	prettyVertices[0].myPosition.w = 1.f;
-
-	prettyVertices[0].myUV.u = 0.0f;
-	prettyVertices[0].myUV.v = 0.0f;
-
-	prettyVertices[1].myPosition.x = -1.0f;
-	prettyVertices[1].myPosition.y = 1.0f;
-	prettyVertices[1].myPosition.z = 0.5f;
-	prettyVertices[1].myPosition.w = 1.f;
-
-	prettyVertices[1].myUV.u = 0.0f;
-	prettyVertices[1].myUV.v = 0.0f;
-
-	prettyVertices[2].myPosition.x = 1.0f;
-	prettyVertices[2].myPosition.y = -1.0f;
-	prettyVertices[2].myPosition.z = 0.5f;
-	prettyVertices[2].myPosition.w = 1.f;
-
-	prettyVertices[2].myUV.u = 0.0f;
-	prettyVertices[2].myUV.v = 0.0f;
-
-	prettyVertices[3].myPosition.x = 1.0f;
-	prettyVertices[3].myPosition.y = 1.0f;
-	prettyVertices[3].myPosition.z = 0.5f;
-	prettyVertices[3].myPosition.w = 1.f;
-
-	prettyVertices[3].myUV.u = 0.0f;
-	prettyVertices[3].myUV.v = 0.0f;
-
-	CDXModel * tempModel = new CDXModel();
-	tempModel->SetVertices(prettyVertices);
-	tempModel->Init();
-
-	return *tempModel;
-}
-
-CDXModel & CHUGModelLoader::CreateTriangle()
-{
-	CU::GrowingArray<CDXModel::Vertex> prettyVertices;
-	prettyVertices.Init(4);
-	prettyVertices.Resize(3);
-	prettyVertices[0].myPosition.x = 0.0f;
-	prettyVertices[0].myPosition.y = -0.5f;
-	prettyVertices[0].myPosition.z = 0.5f;
-	prettyVertices[0].myPosition.w = 1.f;
-
-	prettyVertices[0].myUV.u = 0.0f;
-	prettyVertices[0].myUV.v = 0.0f;
-
-	prettyVertices[1].myPosition.x = 0.0f;
-	prettyVertices[1].myPosition.y = 0.5f;
-	prettyVertices[1].myPosition.z = 0.5f;
-	prettyVertices[1].myPosition.w = 1.f;
-
-	prettyVertices[1].myUV.u = 0.0f;
-	prettyVertices[1].myUV.v = 0.0f;
-
-	prettyVertices[2].myPosition.x = 0.5f;
-	prettyVertices[2].myPosition.y = -0.5f;
-	prettyVertices[2].myPosition.z = 0.5f;
-	prettyVertices[2].myPosition.w = 1.f;
-
-	prettyVertices[3].myUV.u = 0.0f;
-	prettyVertices[3].myUV.v = 0.0f;
-
-	CDXModel * tempModel = new CDXModel();
-	tempModel->SetVertices(prettyVertices);
-	tempModel->Init();
-
-	return *tempModel;
 }
 
 CDXModel & CHUGModelLoader::CreateCube(const CU::Vector3f & aScale /*= CU::Vector3f::One*/)
@@ -228,14 +147,18 @@ CDXModel & CHUGModelLoader::CreateCube(const CU::Vector3f & aScale /*= CU::Vecto
 	return *tempModel;
 }
 
-CDXModel & CHUGModelLoader::CreateModel(const std::string & aFilePath)
+CDXModel & CHUGModelLoader::CreateModel(const std::string & aFilePath, CU::GrowingArray<std::string> & aTextureFilePaths)
 {
 	CLoaderModel * prettyLoaderModel = nullptr;
 	prettyLoaderModel = myLoader->LoadModel(aFilePath.c_str());
 
-
 	DL_ASSERT(prettyLoaderModel != nullptr, std::string("Failed To Load Model : " + aFilePath).c_str());
 	DL_PRINT(std::string("Loaded Model : " + aFilePath).c_str());
+
+	for (unsigned int iTexture = 0; iTexture < prettyLoaderModel->myTextures.size(); ++iTexture)
+	{
+		aTextureFilePaths.Add(prettyLoaderModel->myTextures[iTexture]);
+	}
 
 	CDXModel * prettyModel = new CDXModel();
 	prettyModel->InitWithModel(*prettyLoaderModel);

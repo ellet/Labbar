@@ -44,5 +44,5 @@ namespace CommonUtilities
 }
 
 #define GET_INPUT CU::MainSingleton::GetInputWrapper()
-#define GET_DELTA_TIME CU::MainSingleton::GetDeltaTime();
-#define GET_DELTA_SECONDS CU::MainSingleton::GetDeltaTime().GetSeconds();
+#define GET_DELTA_TIME CU::MainSingleton::GetDeltaTime()
+#define GET_DELTA_SECONDS CU::MainSingleton::GetDeltaTime().GetSeconds()

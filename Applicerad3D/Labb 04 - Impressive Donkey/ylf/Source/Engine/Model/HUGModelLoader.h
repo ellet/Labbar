@@ -9,12 +9,9 @@ public:
 	CHUGModelLoader();
 	~CHUGModelLoader();
 
-	CDXModel & CreateQuad();
-	CDXModel & CreateTriangle();
-
 	CDXModel & CreateCube(const CU::Vector3f & aScale = CU::Vector3f::One);
 
-	CDXModel & CreateModel(const std::string & aFilePath);
+	CDXModel & CreateModel(const std::string & aFilePath, CU::GrowingArray<std::string> & aTextureFilePaths);
 
 private:
 	CFBXLoader * myLoader;

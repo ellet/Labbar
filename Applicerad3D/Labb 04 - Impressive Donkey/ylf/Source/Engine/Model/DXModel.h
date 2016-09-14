@@ -11,10 +11,6 @@ class CDXModel
 public:
 	struct Vertex
 	{
-		//CU::Vector4f myPosition;
-		//CU::Vector4f myColor;
-		//CU::Vector2f myUV;
-
 		CU::Vector4f myPosition;
 		CU::Vector2f myUV;
 		CU::Vector4f myNormals;
