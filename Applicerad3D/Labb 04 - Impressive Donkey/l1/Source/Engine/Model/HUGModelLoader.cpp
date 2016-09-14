@@ -323,6 +323,8 @@ CDXModel & CHUGModelLoader::CreateModel(const std::string & aFilePath)
 {
 	CLoaderModel & tempInputModel = *myModelLoader->LoadModel(aFilePath.c_str());
 
+	DL_ASSERT(&tempInputModel != nullptr, "Model not loaded!");
+
 	CDXModel * tempModel = new CDXModel();
 
 	tempModel->Init(tempInputModel);

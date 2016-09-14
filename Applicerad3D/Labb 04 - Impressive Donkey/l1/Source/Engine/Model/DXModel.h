@@ -38,6 +38,8 @@ private:
 	void RenderModel();
 	void ShutdownBuffers();
 
+	CU::GrowingArray<CDXModel*> myChildren;
+
 	CU::GrowingArray<Vertex> myVertices;
 	CU::GrowingArray<unsigned int> myIndices;
 	unsigned int myIndexCount;

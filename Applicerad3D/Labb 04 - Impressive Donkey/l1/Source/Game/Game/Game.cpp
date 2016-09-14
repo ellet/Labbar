@@ -15,9 +15,9 @@ CGame::~CGame()
 
 void CGame::Init()
 {
-	myCube.InitAsModel();
+	myCube.InitAsModel("Modeller/Asteroid/AsteroidPillarLarge3.fbx");
 	
-	myCamera.SetPosition({ 0.f, 0.4f, -1.f });
+	myCamera.SetPosition({ 0.f, 0.4f, -100.f });
 }
 
 void CGame::Update()
@@ -25,13 +25,46 @@ void CGame::Update()
 	GET_INPUT.Update();
 	CU::TimeManager::Update();
 
-	
-	const float DeltaTime = 0.0001f;
-	
-	float cameraSpeed = 0.5f;
+
+	const float DeltaTime = CU::TimeManager::GetDeltaTime().GetSeconds();
+
+	float cameraSpeed = 10.5f;
+	float cameraTurnSpeed = 0.5f;
 
 	myCube.Update();
-	
+
+	if (GET_INPUT.GetKeyDown(DIK_1) == true)
+	{
+		myCube.InitAsModel("Modeller/Asteroid/AsteroidPillarLarge1.fbx");
+	}
+	if (GET_INPUT.GetKeyDown(DIK_2) == true)
+	{
+		myCube.InitAsModel("Modeller/Asteroid/AsteroidPillarLarge2.fbx");
+	}
+	if (GET_INPUT.GetKeyDown(DIK_3) == true)
+	{
+		myCube.InitAsModel("Modeller/Asteroid/AsteroidPillarLarge3.fbx");
+	}
+	if (GET_INPUT.GetKeyDown(DIK_4) == true)
+	{
+		myCube.InitAsModel("Modeller/crystalAsteroid/crystalAsteroidHigh.fbx");
+	}
+	if (GET_INPUT.GetKeyDown(DIK_5) == true)
+	{
+		myCube.InitAsModel("Modeller/crystalAsteroid/crystalAsteroidMid.fbx");
+	}
+	if (GET_INPUT.GetKeyDown(DIK_6) == true)
+	{
+		myCube.InitAsModel("Modeller/crystalAsteroid/crystalAsteroidLow.fbx");
+	}
+	if (GET_INPUT.GetKeyDown(DIK_7) == true)
+	{
+		myCube.InitAsModel("Modeller/pillar/pillarShortObelisk.fbx");
+	}
+	if (GET_INPUT.GetKeyDown(DIK_8) == true)
+	{
+		myCube.InitAsModel("Modeller/tga_companioncube/companion.fbx");
+	}
 
 	if (GET_INPUT.GetKeyDown(DIK_D) == true)
 	{
@@ -52,28 +85,28 @@ void CGame::Update()
 
 	if (GET_INPUT.GetKeyDown(DIK_RIGHTARROW) == true)
 	{
-		myCamera.IncreaseYaw(DeltaTime  * cameraSpeed);
+		myCamera.IncreaseYaw(DeltaTime  * cameraTurnSpeed);
 	}
 	if (GET_INPUT.GetKeyDown(DIK_LEFTARROW) == true)
 	{
-		myCamera.IncreaseYaw(-DeltaTime  * cameraSpeed);
+		myCamera.IncreaseYaw(-DeltaTime  * cameraTurnSpeed);
 	}
 	if (GET_INPUT.GetKeyDown(DIK_UPARROW) == true)
 	{
-		myCamera.IncreasePitch(DeltaTime  * cameraSpeed);
+		myCamera.IncreasePitch(DeltaTime  * cameraTurnSpeed);
 	}
 	if (GET_INPUT.GetKeyDown(DIK_DOWNARROW) == true)
 	{
-		myCamera.IncreasePitch(-DeltaTime  * cameraSpeed);
+		myCamera.IncreasePitch(-DeltaTime  * cameraTurnSpeed);
 	}
 
 	if (GET_INPUT.GetKeyDown(DIK_E) == true)
 	{
-		myCamera.IncreaseRoll(-DeltaTime  * cameraSpeed);
+		myCamera.IncreaseRoll(-DeltaTime  * cameraTurnSpeed);
 	}
 	if (GET_INPUT.GetKeyDown(DIK_Q) == true)
 	{
-		myCamera.IncreaseRoll(DeltaTime  * cameraSpeed);
+		myCamera.IncreaseRoll(DeltaTime  * cameraTurnSpeed);
 	}
 
 }

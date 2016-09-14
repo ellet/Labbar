@@ -267,10 +267,6 @@ namespace CommonUtilities
 	template<typename T>
 	Matrix44<T> Matrix44<T>::CreateProjectionMatrixLH(const  T aNearZ, const  T aFarZ, const  T  aFovAngleX, const  T aFovAngleY)
 	{
-		
-
-		
-
 		Matrix44 temp;
 
 		T	tempHeight;

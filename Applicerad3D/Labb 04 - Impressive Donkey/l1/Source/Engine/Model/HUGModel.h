@@ -11,7 +11,7 @@ public:
 	void InitAsTriangle();
 	void InitAsQuad();
 	void InitAsCube();
-	void InitAsModel();
+	void InitAsModel(const std::string & aModelFilePath);
 
 	void Init();
 	void Update();

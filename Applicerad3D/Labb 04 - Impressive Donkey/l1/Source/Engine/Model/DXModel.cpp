@@ -22,11 +22,23 @@ CDXModel::~CDXModel()
 
 void CDXModel::Init(const CLoaderModel & aModelToLoadFrom)
 {
-	InitBuffers(*aModelToLoadFrom.myMeshes[1]);
+	CLoaderMesh * tempMeshPointer = nullptr;
+	for (unsigned short iMesh = 0; iMesh < aModelToLoadFrom.myMeshes.Size(); ++iMesh)
+	{
+		if (aModelToLoadFrom.myMeshes[iMesh] == nullptr)
+		{
+			break;
+		}
+		else
+		{
+			tempMeshPointer = aModelToLoadFrom.myMeshes[iMesh];
+		}
+	}
+	InitBuffers(*tempMeshPointer);
 
 	std::wstring tempString(aModelToLoadFrom.myTextures[0].cbegin(), aModelToLoadFrom.myTextures[0].end());
 
-	myEffect->Init(L"Modeller/tga_companioncube/" + tempString);
+	myEffect->Init(L"Textures/" + tempString);
 }
 
 void CDXModel::Init(const CU::GrowingArray<Vertex> & aArrayOfVertices, const CU::GrowingArray<unsigned int> & aArrayOfIndices)

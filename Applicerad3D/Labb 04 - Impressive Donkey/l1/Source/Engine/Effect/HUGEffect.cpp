@@ -35,7 +35,7 @@ void CHUGEffect::Init(const std::wstring & aTextureFilePath)
 	tempLoadBool = HUGEffectHelper::CompileShader(L"Shaders/HUGShader.fx", "HUGPixelShader", "ps_5_0", tempPixelShaderBuffer, tempOutput);
 	DL_ASSERT(tempLoadBool == true, "failed to load pixelshader");
 
-	// Create the vertex shader from the buffer.
+	// Create the vertex shader from the buffe.r
 	tempResult = tempDeviceRef.CreateVertexShader(tempVertexShaderBuffer->GetBufferPointer(), tempVertexShaderBuffer->GetBufferSize(), NULL, &myVertexShader);
 	DL_ASSERT(tempResult == S_OK, "failed to create vertex shader");
 
@@ -47,10 +47,10 @@ void CHUGEffect::Init(const std::wstring & aTextureFilePath)
 	tempPolyLayout.Init(1);
 
 	HUGEffectHelper::CreateLayout(tempPolyLayout, "POSITION", 0, ConvertToDXGI(eDataType::Float4), 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
-	HUGEffectHelper::CreateLayout(tempPolyLayout, "UV", 0, ConvertToDXGI(eDataType::Float2), 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
 	HUGEffectHelper::CreateLayout(tempPolyLayout, "NORMAL", 0, ConvertToDXGI(eDataType::Float4), 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
 	HUGEffectHelper::CreateLayout(tempPolyLayout, "TANGENT", 0, ConvertToDXGI(eDataType::Float4), 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
 	HUGEffectHelper::CreateLayout(tempPolyLayout, "BITANGENT", 0, ConvertToDXGI(eDataType::Float4), 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
+	HUGEffectHelper::CreateLayout(tempPolyLayout, "UV", 0, ConvertToDXGI(eDataType::Float2), 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
 	
 	//HUGEffectHelper::CreateLayout(tempPolyLayout, "COLOR", 0, ConvertToDXGI(eDataType::Float4), 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
 	
@@ -162,4 +162,5 @@ void CHUGEffect::SetMatrixes(const MatrixBuffer & aMatrixBuffer)
 
 	// Set shader texture resource in the pixel shader.
 	tempDeviceContextRef.PSSetShaderResources(0, 1, &myTexture);
+	//tempDeviceContextRef.PSSetSamplers(0, 1, &mySampleState);
 }

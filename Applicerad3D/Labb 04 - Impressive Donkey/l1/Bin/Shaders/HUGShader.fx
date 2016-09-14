@@ -8,10 +8,10 @@ SamplerState Sampler;
 struct VertexInputType
 {
 	float4 position : POSITION;
-	float2 UV : UV0;
 	float4 normal : NORMAL;
 	float4 tangent : TANGENT;
 	float4 bitangent : BITANGENT;
+	float2 UV : UV0;
 	//float4 color : COLOR;
 	
 };
