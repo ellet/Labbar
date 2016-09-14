@@ -50,10 +50,10 @@ void CHUGEffect::Init()
 	tempPolyLayout.Init(1);
 
 	HUGEffectHelper::CreateLayout(tempPolyLayout, "POSITION", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
-	HUGEffectHelper::CreateLayout(tempPolyLayout, "UV", 0, DXGI_FORMAT_R32G32_FLOAT, 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
 	HUGEffectHelper::CreateLayout(tempPolyLayout, "NORMALS", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
 	HUGEffectHelper::CreateLayout(tempPolyLayout, "TANGENTS", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
 	HUGEffectHelper::CreateLayout(tempPolyLayout, "BITANGENTS", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
+	HUGEffectHelper::CreateLayout(tempPolyLayout, "UV", 0, DXGI_FORMAT_R32G32_FLOAT, 0, D3D11_INPUT_PER_VERTEX_DATA, 0);
 
 	tempResult = tempDeviceRef.CreateInputLayout(&tempPolyLayout[0], tempPolyLayout.Size(), tempVertexShaderBuffer->GetBufferPointer(), tempVertexShaderBuffer->GetBufferSize(), &myLayout);
 	DL_ASSERT(tempResult == S_OK, "Failed to create input layout");
@@ -153,5 +153,6 @@ void CHUGEffect::SetShaderResources(const CU::Matrix44f aWorldMatrix, const CU::
 
 	// Set shader texture resource in the pixel shader.
 	tempDeviceContextRef.PSSetShaderResources(0, 1, &aTexture);
+	//tempDeviceContextRef.PSSetSamplers(0, 1, &mySampleState);
 
 }

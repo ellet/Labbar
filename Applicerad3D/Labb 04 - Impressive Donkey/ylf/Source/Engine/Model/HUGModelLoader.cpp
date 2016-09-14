@@ -233,6 +233,7 @@ CDXModel & CHUGModelLoader::CreateModel(const std::string & aFilePath)
 	CLoaderModel * prettyLoaderModel = nullptr;
 	prettyLoaderModel = myLoader->LoadModel(aFilePath.c_str());
 
+
 	DL_ASSERT(prettyLoaderModel != nullptr, std::string("Failed To Load Model : " + aFilePath).c_str());
 	DL_PRINT(std::string("Loaded Model : " + aFilePath).c_str());
 

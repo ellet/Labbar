@@ -4,19 +4,19 @@ SamplerState Sampler;
 struct VertexInputType
 {
 	float4 position : POSITION;
-	float2 uv : UV;
 	float4 normals : NORMALS;
 	float4 tangents : TANGENTS;
 	float4 bitangents : BITANGENTS;
+	float2 uv : UV;
 };
 
 struct PixelInputType
 {
 	float4 position : SV_POSITION;
-	float2 uv : UV;
-	float4 normals : NORMALS;
-	float4 tangents : TANGENTS;
-	float4 bitangents : BITANGENTS;
+	float4 normals : TEXCOORD1;
+	float4 tangents : TEXCOORD2;
+	float4 bitangents : TEXCOORD3;
+	float2 uv : TEXCOORD0;
 };
 
 struct PixelOutputType

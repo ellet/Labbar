@@ -138,7 +138,7 @@ void CDXModel::InitBuffers(const CLoaderMesh & aMeshData)
 
 	// Set up the description of the static index buffer.
 	tempIndexBufferDesc.Usage = D3D11_USAGE_DEFAULT;
-	tempIndexBufferDesc.ByteWidth = sizeof(unsigned long) * myIndexCount;
+	tempIndexBufferDesc.ByteWidth = sizeof(unsigned int) * myIndexCount;
 	tempIndexBufferDesc.BindFlags = D3D11_BIND_INDEX_BUFFER;
 	tempIndexBufferDesc.CPUAccessFlags = 0;
 	tempIndexBufferDesc.MiscFlags = 0;

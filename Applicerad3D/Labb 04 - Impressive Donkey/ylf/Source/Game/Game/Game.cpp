@@ -24,6 +24,7 @@ void CGame::Init()
 	myCamera.Init(500.f, 500.f, CU::Vector3f(0.f, 0.0f, -0.6f));
 
 	myPrettyModel.Init("Models/companion.fbx", L"Sprites/companion_heart.dds");
+	myPrettyModel.SetPosition(CU::Vector3f(0.f, 0.f, 1.5f));
 	//myCube.InitAsCube(CU::Vector3f::Zero, CU::Vector3f(0.3f, 0.3f, 0.3f));
 	//InitPileOfCubes();
 }
@@ -31,7 +32,7 @@ void CGame::Init()
 void CGame::Update()
 {
 	//myCube.Rotate();
-	//myPrettyModel.Rotate();
+	myPrettyModel.Rotate();
 	const float deltaTime = 0.0001f;//GET_DELTA_SECONDS;
 	
 
