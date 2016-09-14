@@ -48,6 +48,9 @@
     <ClCompile Include="DDSLoader\DDSTextureLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ModelLoader\FBX_Loader_assimp\FBXLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -101,5 +104,145 @@
     <ClInclude Include="DXHelpers\DataTypeEnum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\Compiler\poppack1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\Compiler\pstdint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\Compiler\pushpack1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\port\AndroidJNI\AndroidJNIIOSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\ai_assert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\anim.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\cexport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\cfileio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\cimport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\color4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\DefaultLogger.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\Exporter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\Importer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\importerdesc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\IOStream.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\IOSystem.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\Logger.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\LogStream.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\matrix3x3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\matrix4x4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\metadata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\NullLogger.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\postprocess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\ProgressHandler.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\quaternion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\vector2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\vector3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\FBXLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\VertexStructs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ModelLoader\FBX_Loader_assimp\AssImp\color4.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="ModelLoader\FBX_Loader_assimp\AssImp\material.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="ModelLoader\FBX_Loader_assimp\AssImp\matrix3x3.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="ModelLoader\FBX_Loader_assimp\AssImp\matrix4x4.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="ModelLoader\FBX_Loader_assimp\AssImp\quaternion.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="ModelLoader\FBX_Loader_assimp\AssImp\vector2.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="ModelLoader\FBX_Loader_assimp\AssImp\vector3.inl">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

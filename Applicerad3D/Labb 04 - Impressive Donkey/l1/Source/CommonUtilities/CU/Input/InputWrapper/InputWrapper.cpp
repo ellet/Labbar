@@ -43,8 +43,6 @@ namespace CommonUtilities
 	{
 		HRESULT inputError;
 		inputError = DirectInput8Create(GetModuleHandle(NULL), DIRECTINPUT_VERSION, IID_IDirectInput8A, reinterpret_cast<void**>(&myInputStates->myInputInterface), nullptr);
-
-		DIK_E
 		
 		//HWND tempWindowID = ;
 

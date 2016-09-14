@@ -130,6 +130,7 @@
     <ClCompile Include="DDSLoader\DDSTextureLoader.cpp" />
     <ClCompile Include="Effect\CBuffer.cpp" />
     <ClCompile Include="Effect\HUGEffect.cpp" />
+    <ClCompile Include="ModelLoader\FBX_Loader_assimp\FBXLoader.cpp" />
     <ClCompile Include="Model\HUGModelLoader.cpp" />
     <ClCompile Include="Model\DXModel.cpp" />
     <ClCompile Include="Engine\HUGEngine.cpp" />
@@ -154,6 +155,45 @@
     <ClInclude Include="Effect\CBuffer.h" />
     <ClInclude Include="DXHelpers\HUGEffectHelper.h" />
     <ClInclude Include="Effect\HUGEffect.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\ai_assert.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\anim.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\camera.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\cexport.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\cfileio.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\cimport.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\color4.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\Compiler\poppack1.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\Compiler\pstdint.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\Compiler\pushpack1.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\config.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\DefaultLogger.hpp" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\defs.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\Exporter.hpp" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\Importer.hpp" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\importerdesc.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\IOStream.hpp" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\IOSystem.hpp" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\light.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\Logger.hpp" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\LogStream.hpp" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\material.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\matrix3x3.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\matrix4x4.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\mesh.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\metadata.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\NullLogger.hpp" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\port\AndroidJNI\AndroidJNIIOSystem.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\postprocess.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\ProgressHandler.hpp" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\quaternion.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\scene.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\texture.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\types.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\vector2.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\vector3.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\version.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\FBXLoader.h" />
+    <ClInclude Include="ModelLoader\FBX_Loader_assimp\VertexStructs.h" />
     <ClInclude Include="Model\HUGModelLoader.h" />
     <ClInclude Include="Model\DXModel.h" />
     <ClInclude Include="Engine\HUGEngine.h" />
@@ -166,6 +206,15 @@
     <ProjectReference Include="..\CommonUtilities\CommonUtilities.vcxproj">
       <Project>{a41e3ed6-a914-40b1-b1e9-9551e0cc7eab}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ModelLoader\FBX_Loader_assimp\AssImp\color4.inl" />
+    <None Include="ModelLoader\FBX_Loader_assimp\AssImp\material.inl" />
+    <None Include="ModelLoader\FBX_Loader_assimp\AssImp\matrix3x3.inl" />
+    <None Include="ModelLoader\FBX_Loader_assimp\AssImp\matrix4x4.inl" />
+    <None Include="ModelLoader\FBX_Loader_assimp\AssImp\quaternion.inl" />
+    <None Include="ModelLoader\FBX_Loader_assimp\AssImp\vector2.inl" />
+    <None Include="ModelLoader\FBX_Loader_assimp\AssImp\vector3.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

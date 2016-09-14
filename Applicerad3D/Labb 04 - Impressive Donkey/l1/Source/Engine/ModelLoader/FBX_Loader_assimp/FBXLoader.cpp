@@ -1,16 +1,16 @@
 #include "stdafx.h"
 #include "FBXLoader.h"
 
-#include <assimp/cimport.h>
-#include <assimp/scene.h>
-#include <assimp/postprocess.h>
-#include "Engine.h"
+#include "ModelLoader/FBX_Loader_assimp/assimp/cimport.h"
+#include "ModelLoader/FBX_Loader_assimp/assimp/scene.h"
+#include "ModelLoader/FBX_Loader_assimp/assimp/postprocess.h"
+//#include "Engine.h"
 
 #include <map>
 #include <string>
 #include <windows.h>
 #include <fstream>
-#include "Model.h"
+//#include "ModelLoader/FBX_Loader_assimp/Model.h"
 
 #include <memory.h>
 
