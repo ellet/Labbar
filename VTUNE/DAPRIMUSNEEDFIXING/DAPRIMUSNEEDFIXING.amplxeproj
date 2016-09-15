@@ -11,6 +11,9 @@
   <CPUFrequency type="s64_t">3400000000</CPUFrequency>
  </rdmgr>
  <All_Configurations-All_Platforms>
+  <analysis_type_settings>
+   <selected_analysis_type_path>C:\Program Files (x86)\Intel\VTune Amplifier XE 2013\config\analysis_type\advanced_hotspots.cfg</selected_analysis_type_path>
+  </analysis_type_settings>
   <target_settings>
    <result_dir>
     <localhost>C:\l1TGA\Labbar\VTUNE\DAPRIMUSNEEDFIXING</localhost>
@@ -87,11 +90,11 @@
        <use_app_dir_as_work_dir type="bool">true</use_app_dir_as_work_dir>
        <launch.userapppath>C:\l1TGA\Labbar\Tillämpad MjukvaruUtveckling\Labb 03 - THE OPTIMUS PRIMEUSING\Sorting\Release\DOASortering.exe</launch.userapppath>
        <launch_app.app_to_launch>C:\l1TGA\Labbar\Tillämpad MjukvaruUtveckling\Labb 03 - THE OPTIMUS PRIMEUSING\Sorting\Release\DOASortering.exe</launch_app.app_to_launch>
-       <launch_app.inherit_sys_environment type="bool">true</launch_app.inherit_sys_environment>
-       <result_directory.path>C:\l1TGA\Labbar\VTUNE\DAPRIMUSNEEDFIXING\r@@@{at}</result_directory.path>
        <system.duration>2</system.duration>
        <launch_app.resume_after type="s32_t">0</launch_app.resume_after>
        <launch_app.start_paused type="bool">false</launch_app.start_paused>
+       <launch_app.inherit_sys_environment type="bool">true</launch_app.inherit_sys_environment>
+       <result_directory.path>C:\l1TGA\Labbar\VTUNE\DAPRIMUSNEEDFIXING\r@@@{at}</result_directory.path>
        <launch_app.working_folder>C:\l1TGA\Labbar\Tillämpad MjukvaruUtveckling\Labb 03 - THE OPTIMUS PRIMEUSING\Sorting\Release</launch_app.working_folder>
        <search_directories type="bag"/>
        <context>
@@ -213,9 +216,6 @@
     <category type="u8_t">4</category>
    </searchCategory>
   </searchDirs>
-  <analysis_type_settings>
-   <selected_analysis_type_path>C:\Program Files (x86)\Intel\VTune Amplifier XE 2013\config\analysis_type\advanced_hotspots.cfg</selected_analysis_type_path>
-  </analysis_type_settings>
  </All_Configurations-All_Platforms>
  <engine>
   <knobs>

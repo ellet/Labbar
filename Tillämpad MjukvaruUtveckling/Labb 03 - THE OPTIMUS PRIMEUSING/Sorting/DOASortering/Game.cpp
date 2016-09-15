@@ -21,7 +21,7 @@ void Game::Init()
 {
 	myListSize = 5000000;
 	mySeed = 1;
-	myUnsortedList.Init(8);
+	myUnsortedList.Init(myListSize);
 
 	for (unsigned int n = 0; n < myListSize; n++)
 	{
