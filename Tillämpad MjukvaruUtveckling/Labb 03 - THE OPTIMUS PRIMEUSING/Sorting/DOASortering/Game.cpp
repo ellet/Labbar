@@ -22,6 +22,7 @@ void Game::Init()
 	myListSize = 5000000;
 	mySeed = 1;
 	myUnsortedList.Init(8);
+
 	for (unsigned int n = 0; n < myListSize; n++)
 	{
 		myUnsortedList.Add(Rand() % myListSize);
@@ -39,6 +40,7 @@ void Game::Init()
 	myHeapSortThread = new std::thread(&Game::ThreadedHeapSort, this, std::ref(myPoints[eColour::eGreen]));
 	myRadixSortThread = new std::thread(&Game::ThreadedRadixSort, this, std::ref(myPoints[eColour::ePurple]));
 
+	//START
 }
 
 bool Game::Update()
@@ -56,25 +58,26 @@ void Game::Render()
 	int valueHeight = static_cast<int>(locHeight / myNumberOfAlgorithms);
 	float pixelWidth = static_cast<float>(locWidth / myListSize);
 	int pixelIndex = 0;
-	for (unsigned long n = 0; n < myNumberOfAlgorithms; n++)
+
+	int tempJumpDistance = (int)(myListSize / locWidth);
+
+	for (unsigned long n = 0; n < myNumberOfAlgorithms; ++n)
 	{
-		for (unsigned long i = 0; i < myListSize; i++)
+
+		eColour colour = static_cast<eColour>(n);
+
+		DWORD lineColour = ConvertColor(colour);
+
+		for (unsigned long i = 0; i < myListSize; i += tempJumpDistance)
 		{
-			eColour colour = static_cast<eColour>(n);
+			float percentageOfHeight = static_cast<float>(myPoints[n][pixelIndex]) / static_cast<float>(myListSize);
 
-			DWORD lineColour = ConvertColor(colour);
-
-			if (i % (int)(myListSize / locWidth) == 0)
-			{
-				float percentageOfHeight = static_cast<float>(myPoints[n][pixelIndex]) / static_cast<float>(myListSize);
-
-				myHGE.Gfx_RenderLine(static_cast<float>	(pixelIndex*pixelWidth),
-					static_cast<float>						((valueHeight)*(n + 1)),
-					static_cast<float>						(pixelIndex*pixelWidth),
-					static_cast<float>						((valueHeight)*(n + 1) - (percentageOfHeight*valueHeight))
-					, (lineColour));
-				pixelIndex = i;
-			}
+			myHGE.Gfx_RenderLine(static_cast<float>	(pixelIndex*pixelWidth),
+				static_cast<float>						((valueHeight)*(n + 1)),
+				static_cast<float>						(pixelIndex*pixelWidth),
+				static_cast<float>						((valueHeight)*(n + 1) - (percentageOfHeight*valueHeight))
+				, (lineColour));
+			pixelIndex = i;
 		}
 	}
 	myHGE.Gfx_EndScene();

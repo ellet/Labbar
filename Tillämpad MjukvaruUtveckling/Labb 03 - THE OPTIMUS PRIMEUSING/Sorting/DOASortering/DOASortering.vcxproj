@@ -98,7 +98,17 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GrowingArray.h" />
     <ClInclude Include="HeapSort.h" />
+    <ClInclude Include="MergeSort.h" />
+    <ClInclude Include="QuickSort.h" />
     <ClInclude Include="RadixSort.h" />
+    <ClInclude Include="ShellSort.h" />
+    <ClInclude Include="Vector.h" />
+    <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Vector2decl.h" />
+    <ClInclude Include="Vector3.h" />
+    <ClInclude Include="Vector3decl.h" />
+    <ClInclude Include="Vector4.h" />
+    <ClInclude Include="Vector4decl.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
