@@ -12,13 +12,13 @@ CHUGCamera::~CHUGCamera()
 }
 
 CHUGCamera::CHUGCamera(
-	const float aProjectionHeight,
-	const float aProjectionWidth,
+	const float aWindowWidth,
+	const float aWindowHeight,
 	const CU::Vector3f &aPosition)
 {
 	SetPosition(aPosition);
 
-	myProjection = CU::Matrix44f::CreateProjectionMatrixLH(0.1f, 100.f, aProjectionWidth/aProjectionHeight, DEGRESS_TO_RADIANS(100.f));
+	SetProjection(aWindowWidth, aWindowHeight);
 }
 
 CU::Matrix44f CHUGCamera::GetInverse() const
@@ -36,9 +36,9 @@ CU::Matrix44f CHUGCamera::GetInverse() const
 	return inverse;
 }
 
-void CHUGCamera::SetProjection(const float aProjectionHeight, const float aProjectionWidth)
+void CHUGCamera::SetProjection(const float aWindowWidth, const float aWindowHeight)
 {
-	myProjection = CU::Matrix44f::CreateProjectionMatrixLH(0.1f, 100.f, aProjectionWidth / aProjectionHeight, DEGRESS_TO_RADIANS(100.f));
+	myProjection = CU::Matrix44f::CreateProjectionMatrixLH(0.001f, 1000.f, (aWindowWidth / aWindowHeight), M_PI_2);
 }
 
 const CU::Matrix44f& CHUGCamera::GetProjection() const

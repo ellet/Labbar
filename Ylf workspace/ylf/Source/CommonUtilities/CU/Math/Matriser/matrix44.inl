@@ -265,27 +265,24 @@ namespace CommonUtilities
 	}
 
 	template<typename T>
-	Matrix44<T> Matrix44<T>::CreateProjectionMatrixLH(const  T aNearZ, const  T aFarZ, const  T  aFovAngleX, const  T aFovAngleY)
+	Matrix44<T> Matrix44<T>::CreateProjectionMatrixLH(const  T aNearZ, const  T aFarZ, const  T  anAspectRatio, const  T aFovAngleY)
 	{
 		Matrix44 temp;
 
-		T    tempHeight;
-		T    tempWidth;
-		T    tempDistance;
+		T    tempDistance = aFarZ / (aFarZ - aNearZ);
+		T	 yScale = cos(aFovAngleY / static_cast<T>(2)) / sin(aFovAngleY / static_cast<T>(2));
+		T	 xScale = yScale / anAspectRatio;
 
-		tempHeight = static_cast<T>(1) / tan(aFovAngleX * static_cast<T>(0.5));    //(float)1 / tan(fov_horiz*0.5);  // 1/tan(x) == cot(x)
-		tempWidth = static_cast<T>(1) / tan(aFovAngleY * static_cast<T>(0.5)); //(float)1 / tan(fov_vert*0.5);   // 1/tan(x) == cot(x)
-		tempDistance = aFarZ / (aFarZ - aNearZ); //far_plane / (far_plane - near_plane);
+		temp.m11 = xScale;
 
-		temp.m11 = tempWidth;
-
-		temp.m22 = tempHeight;
+		temp.m22 = yScale;
 
 		temp.m33 = tempDistance;
 		temp.m34 = static_cast<T>(1);
 
-
-		temp.m43 = -tempDistance * aNearZ; return temp;
+		temp.m43 = -aNearZ * tempDistance;
+		temp.m44 = static_cast<T>(0);
+		return temp;
 	}
 
 	template<typename T>

@@ -9,14 +9,14 @@ public:
 	~CHUGCamera();
 
 	CHUGCamera(
-		const float aProjectionHeight,
-		const float aProjectionWidth,
+		const float aWindowWidth,
+		const float aWindowHeight,
 		const CU::Vector3f &aPosition);
 
 	CU::Matrix44f GetInverse(void) const;
 
-	void SetProjection(const float aProjectionHeight,
-		const float aProjectionWidth);
+	void SetProjection(const float aWindowWidth,
+		const float aWindowHeight);
 
 	const CU::Matrix44f &GetProjection() const;
 	const CU::Matrix44f &GetCameraMatrix() const;

@@ -107,7 +107,7 @@ namespace CommonUtilities
 
 		const T& GetDataAtPosition(const size_t aRow, const size_t aColumn) const;
 
-		static Matrix44 CreateProjectionMatrixLH(T aNearZ, T aFarZ, T aAspectRatio, T aFovAngle);
+		static Matrix44 CreateProjectionMatrixLH(const  T aNearZ, const  T aFarZ, const  T  anAspectRatio, const  T aFovAngleY);
 
 		Vector3<T> GetRight() const;
 
