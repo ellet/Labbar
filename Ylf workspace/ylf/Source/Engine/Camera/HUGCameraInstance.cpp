@@ -1,18 +1,18 @@
 #include "stdafx.h"
-#include "HUGCameraInterface.h"
+#include "Camera/HUGCameraInstance.h"
 #include "Camera/HUGCamera.h"
 
-CHUGCameraInterface::CHUGCameraInterface()
+CHUGCameraInstance::CHUGCameraInstance()
 {
 	myCamera = nullptr;
 }
 
-CHUGCameraInterface::~CHUGCameraInterface()
+CHUGCameraInstance::~CHUGCameraInstance()
 {
 	SAFE_DELETE(myCamera);
 }
 
-void CHUGCameraInterface::Init(const float aProjectionHeight, const float aProjectionWidth, const CU::Vector3f &aPosition)
+void CHUGCameraInstance::Init(const float aProjectionHeight, const float aProjectionWidth, const CU::Vector3f &aPosition)
 {
 	myCamera = new CHUGCamera(aProjectionHeight, aProjectionWidth, aPosition);
 	//myCamera = new CHUGCamera();
@@ -20,32 +20,32 @@ void CHUGCameraInterface::Init(const float aProjectionHeight, const float aProje
 	//myCamera->SetPosition(aPosition);
 }
 
-const CU::Matrix44f & CHUGCameraInterface::GetProjection() const
+const CU::Matrix44f & CHUGCameraInstance::GetProjection() const
 {
 	return myCamera->GetProjection();
 }
 
-const CU::Matrix44f & CHUGCameraInterface::GetCameraMatrix() const
+const CU::Matrix44f & CHUGCameraInstance::GetCameraMatrix() const
 {
 	return myCamera->GetCameraMatrix();
 }
 
-void CHUGCameraInterface::MovePosition(const CU::Vector3f &aPosition)
+void CHUGCameraInstance::MovePosition(const CU::Vector3f &aPosition)
 {
 	myCamera->SetPosition(myCamera->GetMyPosition() + aPosition);
 }
 
-void CHUGCameraInterface::IncreaseYaw(const float aDegrees)
+void CHUGCameraInstance::IncreaseYaw(const float aDegrees)
 {
 	myCamera->IncreaseYaw(DEGRESS_TO_RADIANSF(aDegrees));
 }
 
-void CHUGCameraInterface::IncreasePitch(const float aDegrees)
+void CHUGCameraInstance::IncreasePitch(const float aDegrees)
 {
 	myCamera->IncreasePitch(DEGRESS_TO_RADIANSF(aDegrees));
 }
 
-void CHUGCameraInterface::IncreaseRoll(const float aDegrees)
+void CHUGCameraInstance::IncreaseRoll(const float aDegrees)
 {
 	myCamera->IncreaseRoll(DEGRESS_TO_RADIANSF(aDegrees));
 }
