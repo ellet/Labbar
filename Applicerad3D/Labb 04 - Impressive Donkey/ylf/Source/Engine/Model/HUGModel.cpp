@@ -4,7 +4,7 @@
 #include "Model/HUGModelLoader.h"
 #include "Model/Texture/HUGTexture.h"
 #include "Effect/HUGEffect.h"
-#include "Camera/HUGCameraInterface.h"
+#include "Camera/HUGCameraInstance.h"
 #include "Engine/HUGEngine.h"
 #include "HUGFramework/HUGDXFramework.h"
 
@@ -47,7 +47,7 @@ void CHUGModel::InitTexture(const std::string & aTextureFilepath /*= "Sprites/ad
 	myTextures.GetLast()->Init(&CHUGEngineSingleton::GetFramework().GetDevice(), &CHUGEngineSingleton::GetFramework().GetDeviceContext(), std::wstring(aTextureFilepath.begin(), aTextureFilepath.end()));
 }
 
-void CHUGModel::Render(const CHUGCameraInterface & aCamera)
+void CHUGModel::Render(const CHUGCameraInstance & aCamera)
 {
 	CHUGEffect::MatrixBufferType tempMatrixes;
 	tempMatrixes.myToWorld = myTransformation;

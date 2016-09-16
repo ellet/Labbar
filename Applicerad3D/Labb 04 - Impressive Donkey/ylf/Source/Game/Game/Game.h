@@ -1,6 +1,6 @@
 #pragma once
 #include "Model/HUGModel.h"
-#include "Camera/HUGCameraInterface.h"
+#include "Camera/HUGCameraInstance.h"
 #include "CU/Utility/Randomizer/Randomizer.h"
 
 class CGame
@@ -21,7 +21,7 @@ private:
 
 	CHUGModel myPrettyModel;
 
-	CHUGCameraInterface myCamera;
+	CHUGCameraInstance myCamera;
 	Randomizer myRandomizer;
 
 };

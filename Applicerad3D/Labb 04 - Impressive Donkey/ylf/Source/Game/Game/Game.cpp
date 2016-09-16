@@ -31,6 +31,8 @@ void CGame::Update()
 {
 	myPrettyModel.Rotate();
 	const float deltaTime = GET_DELTA_SECONDS;
+	const float cameraSpeed = 5.f;
+	const float cameraRotationSpeed = 100.f;
 	
 	CU::MainSingleton::GetTimerManager().Update();
 	GET_INPUT.Update();
@@ -39,47 +41,47 @@ void CGame::Update()
 
 	if (GET_INPUT.GetKeyDown(DIK_W) == true)
 	{
-		tempToAddCameraPosition.y += 0.00005f;
+		tempToAddCameraPosition.y += cameraSpeed * deltaTime;
 	}
 	else if (GET_INPUT.GetKeyDown(DIK_S) == true)
 	{
-		tempToAddCameraPosition.y -= 0.00005f;
+		tempToAddCameraPosition.y -= cameraSpeed * deltaTime;
 	}
 
 	if (GET_INPUT.GetKeyDown(DIK_D) == true)
 	{
-		tempToAddCameraPosition.x += 0.00005f;
+		tempToAddCameraPosition.x += cameraSpeed * deltaTime;
 	}
 	else if (GET_INPUT.GetKeyDown(DIK_A) == true)
 	{
-		tempToAddCameraPosition.x -= 0.00005f;
+		tempToAddCameraPosition.x -= cameraSpeed * deltaTime;
 	}
 
 	if (GET_INPUT.GetKeyDown(DIK_Q) == true)
 	{
-		tempToAddCameraPosition.z += 0.00005f;
+		tempToAddCameraPosition.z += cameraSpeed * deltaTime;
 	}
 	else if (GET_INPUT.GetKeyDown(DIK_E) == true)
 	{
-		tempToAddCameraPosition.z -= 0.00005f;
+		tempToAddCameraPosition.z -= cameraSpeed * deltaTime;
 	}
 
 	if (GET_INPUT.GetKeyDown(DIK_UPARROW) == true)
 	{
-		myCamera.IncreasePitch(-100.f * deltaTime);
+		myCamera.IncreasePitch(-cameraRotationSpeed * deltaTime);
 	}
 	else if (GET_INPUT.GetKeyDown(DIK_DOWNARROW) == true)
 	{
-		myCamera.IncreasePitch(100.f * deltaTime);
+		myCamera.IncreasePitch(cameraRotationSpeed * deltaTime);
 	}
 
 	if (GET_INPUT.GetKeyDown(DIK_RIGHTARROW) == true)
 	{
-		myCamera.IncreaseYaw(100.f * deltaTime);
+		myCamera.IncreaseYaw(cameraRotationSpeed * deltaTime);
 	}
 	else if (GET_INPUT.GetKeyDown(DIK_LEFTARROW) == true)
 	{
-		myCamera.IncreaseYaw(-100.f * deltaTime);
+		myCamera.IncreaseYaw(-cameraRotationSpeed * deltaTime);
 	}
 
 	myCamera.MovePosition(tempToAddCameraPosition);

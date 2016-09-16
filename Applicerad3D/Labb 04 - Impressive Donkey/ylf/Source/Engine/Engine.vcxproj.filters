@@ -42,9 +42,6 @@
     <ClCompile Include="Camera\HUGCamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Camera\HUGCameraInterface.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Model\Texture\HUGTexture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -52,6 +49,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Model\FBXLoader\FBXLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera\HUGCameraInstance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera\HUGCameraController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -86,9 +89,6 @@
     <ClInclude Include="Camera\HUGCamera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Camera\HUGCameraInterface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Model\Texture\HUGTexture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -108,6 +108,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Model\FBXLoader\VertexStructs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\HUGCameraInstance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\HUGCameraController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -128,7 +128,8 @@
   <ItemGroup>
     <ClCompile Include="Camera\HUGCamera.cpp" />
     <ClCompile Include="Effect\HUGEffect.cpp" />
-    <ClCompile Include="Camera\HUGCameraInterface.cpp" />
+    <ClCompile Include="Camera\HUGCameraInstance.cpp" />
+    <ClCompile Include="Camera\HUGCameraController.cpp" />
     <ClCompile Include="Model\FBXLoader\FBXLoader.cpp" />
     <ClCompile Include="Model\TextureLoader\DDSTextureLoader.cpp" />
     <ClCompile Include="Model\Texture\HUGTexture.cpp" />
@@ -149,7 +150,8 @@
     <ClInclude Include="Camera\HUGCamera.h" />
     <ClInclude Include="Effect\HUGEffectHelper.h" />
     <ClInclude Include="Effect\HUGEffect.h" />
-    <ClInclude Include="Camera\HUGCameraInterface.h" />
+    <ClInclude Include="Camera\HUGCameraInstance.h" />
+    <ClInclude Include="Camera\HUGCameraController.h" />
     <ClInclude Include="Model\FBXLoader\FBXLoader.h" />
     <ClInclude Include="Model\FBXLoader\VertexStructs.h" />
     <ClInclude Include="Model\TextureLoader\dds.h" />

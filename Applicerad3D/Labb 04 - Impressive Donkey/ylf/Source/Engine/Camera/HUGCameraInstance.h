@@ -1,11 +1,11 @@
 #pragma once
 class CHUGCamera;
 
-class CHUGCameraInterface
+class CHUGCameraInstance
 {
 public:
-	CHUGCameraInterface();
-	~CHUGCameraInterface();
+	CHUGCameraInstance();
+	~CHUGCameraInstance();
 
 	void Init(const float aProjectionHeight,
 		const float aProjectionWidth,

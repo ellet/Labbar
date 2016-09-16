@@ -2,7 +2,7 @@
 
 class CDXModel;
 class CHUGTexture;
-class CHUGCameraInterface;
+class CHUGCameraInstance;
 
 class CHUGModel
 {
@@ -13,7 +13,7 @@ public:
 	void InitAsCube(const CU::Vector3f & aPosition = CU::Vector3f::Zero, const CU::Vector3f & aScale = CU::Vector3f::Zero);
 	void Init(const std::string & aModelFilePath);
 
-	void Render(const CHUGCameraInterface & aCamera);
+	void Render(const CHUGCameraInstance & aCamera);
 
 	void Rotate();
 	void SetPosition(const CU::Vector3f & aPosition = CU::Vector3f::Zero);
