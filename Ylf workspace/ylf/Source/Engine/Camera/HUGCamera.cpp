@@ -52,59 +52,56 @@ const CU::Matrix44f & CHUGCamera::GetCameraMatrix() const
 }
 
 void CHUGCamera::IncreasePosition(CU::Vector3f aPosition)
-{
-	myTransformation.SetPosition(aPosition + myTransformation.GetPosition());
+{	
+	//myPosition += myRotation.RotateIntoSpace(aPosition);
+	myPosition += aPosition;
+	UpdateTransformation();
 }
 
 void CHUGCamera::IncreaseYaw(float aRadian)
 {
-	CU::Vector3f tempPosition(myTransformation.GetPosition());
-
-	myTransformation.SetPosition(CU::Vector3f(0.f, 0.f, 0.f));
-
-	myTransformation = myTransformation.CreateRotateAroundY(aRadian) * myTransformation;;
-
-	myTransformation.SetPosition(tempPosition);
+	//CU::Vector3f tempPosition(myTransformation.GetPosition());
+	//myTransformation.SetPosition(CU::Vector3f(0.f, 0.f, 0.f));
+	//myTransformation = myTransformation.CreateRotateAroundY(aRadian) * myTransformation;;
+	//myTransformation.SetPosition(tempPosition);
+	myRotation.RotateY(aRadian);
+	UpdateTransformation();
 }
 
 void CHUGCamera::IncreasePitch(float aRadian)
 {
-	CU::Vector3f tempPosition(myTransformation.GetPosition());
-
-	myTransformation.SetPosition(CU::Vector3f(0.f, 0.f, 0.f));
-
-	myTransformation = myTransformation.CreateRotateAroundX(aRadian) * myTransformation;
-
-	myTransformation.SetPosition(tempPosition);
+	//CU::Vector3f tempPosition(myTransformation.GetPosition());
+	//myTransformation.SetPosition(CU::Vector3f(0.f, 0.f, 0.f));
+	//myTransformation = myTransformation.CreateRotateAroundX(aRadian) * myTransformation;
+	//myTransformation.SetPosition(tempPosition);
+	myRotation.RotateX(aRadian);
+	UpdateTransformation();
 }
 
 void CHUGCamera::IncreaseRoll(float aRadian)
 {
-	CU::Vector3f tempPosition(myTransformation.GetPosition());
+	//CU::Vector3f tempPosition(myTransformation.GetPosition());
+	//myTransformation.SetPosition(CU::Vector3f(0.f, 0.f, 0.f));
+	//myTransformation = myTransformation.CreateRotateAroundZ(aRadian) * myTransformation;;
+	//myTransformation.SetPosition(tempPosition);
 
-	myTransformation.SetPosition(CU::Vector3f(0.f, 0.f, 0.f));
-
-	myTransformation = myTransformation.CreateRotateAroundZ(aRadian) * myTransformation;;
-
-	myTransformation.SetPosition(tempPosition);
-}
-
-void CHUGCamera::IncreaseForward(float aDelta)
-{
-	SetPosition(GetMyPosition() + (myTransformation.GetForward() * aDelta ));
-}
-
-void CHUGCamera::IncreaseRight(float aDelta)
-{
-	SetPosition(GetMyPosition() + (myTransformation.GetRight() * aDelta));
+	myRotation.RotateZ(aRadian);
+	UpdateTransformation();
 }
 
 void CHUGCamera::SetPosition(CU::Vector3f aPosition)
 {
-	myTransformation.SetPosition(aPosition);
+	myPosition = aPosition;
+	UpdateTransformation();
 }
 
 CU::Vector3f CHUGCamera::GetMyPosition() const
 {
-	return myTransformation.GetPosition();
+	return myPosition;
+}
+
+void CHUGCamera::UpdateTransformation()
+{
+	myTransformation = myRotation.GenerateMatrix();
+	myTransformation.SetPosition(myPosition);
 }

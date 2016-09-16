@@ -1,6 +1,7 @@
 #pragma once
 #include "CU/Math/Vectors/vector3.h"
 #include "CU/Math/Matriser/matrix44.h"
+#include "CU/Math/Quaternion/Quaternion.h"
 
 class CHUGCamera
 {
@@ -29,15 +30,14 @@ public:
 
 	void IncreaseRoll(float aRadian);
 
-	void IncreaseForward(float aDelta);
-
-	void IncreaseRight(float aDelta);
-
 	void SetPosition(CU::Vector3f aPosition);
 
 	CU::Vector3f GetMyPosition() const;
 
 private:
+	void UpdateTransformation();
+	CU::Quaternion myRotation;
+	CU::Vector3f myPosition;
 	CU::Matrix44f myTransformation;
 	CU::Matrix44f myProjection;
 };
