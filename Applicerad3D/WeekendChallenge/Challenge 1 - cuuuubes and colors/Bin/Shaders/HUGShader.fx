@@ -3,6 +3,7 @@
 /////////////
 Texture2D ShaderTexture;
 SamplerState Sampler;
+float ElapsedTime;
 
 
 struct VertexInputType

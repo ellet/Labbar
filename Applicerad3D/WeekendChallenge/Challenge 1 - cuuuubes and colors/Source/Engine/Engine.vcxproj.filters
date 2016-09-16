@@ -54,6 +54,9 @@
     <ClCompile Include="Model\ModelManager\HUGModelManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Model\HUGCBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -225,6 +228,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Model\ModelManager\HUGModelManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\HUGCBuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

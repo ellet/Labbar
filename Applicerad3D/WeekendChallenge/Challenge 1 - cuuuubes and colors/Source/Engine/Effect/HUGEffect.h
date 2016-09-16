@@ -32,6 +32,7 @@ private:
 	
 	ID3D11ShaderResourceView * myTexture;
 
-	ID3D11Buffer * myMatrixBuffer;
+	/*Cbuffer mymatrixbuffer*/
+
 	ID3D11SamplerState * mySampleState;
 };

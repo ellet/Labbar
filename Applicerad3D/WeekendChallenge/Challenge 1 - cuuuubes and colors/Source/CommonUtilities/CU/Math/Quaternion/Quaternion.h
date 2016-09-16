@@ -1,5 +1,7 @@
 #pragma once
 
+// Nicos Quaterion
+
 	//created using reference from http://www.cprogramming.com/tutorial/3d/quaternions.html
 namespace CommonUtilities
 {
