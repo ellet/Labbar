@@ -297,6 +297,7 @@
     <ClInclude Include="CU\Macros\MemoryMacros.h" />
     <ClInclude Include="CU\Macros\UtilityMacros.h" />
     <ClInclude Include="CU\Containers\BinaryTree\BinaryTree.h" />
+    <ClInclude Include="CU\Math\Quaternion\Quaternion.h" />
     <ClInclude Include="CU\Systems\MainSingleton\BaseSingletons\BaseRenderer.h" />
     <ClInclude Include="CU\Systems\Timer\TimeManagerTimeStamps.h" />
     <ClInclude Include="CU\Math\Hashing\HashUtility.h" />
@@ -364,6 +365,7 @@
     <ClCompile Include="CU\Intersection\Intersection2D.cpp" />
     <ClCompile Include="CU\Intersection\Shapes2D\AABB2D.cpp" />
     <ClCompile Include="CU\Intersection\Shapes2D\BaseShape2D.cpp" />
+    <ClCompile Include="CU\Math\Quaternion\Quaternion.cpp" />
     <ClCompile Include="CU\Systems\DLDebug\DL_Debug.cpp" />
     <ClCompile Include="CU\Systems\DLDebug\DL_StackWalker.cpp" />
     <ClCompile Include="CU\Systems\DLDebug\StackWalker\StackWalker.cpp" />

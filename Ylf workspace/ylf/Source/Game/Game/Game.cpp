@@ -32,7 +32,7 @@ void CGame::Update()
 	myPrettyModel.Rotate();
 	const float deltaTime = GET_DELTA_SECONDS;
 	const float cameraSpeed = 5.f;
-	const float cameraRotationSpeed = 100.f;
+	const float cameraRotationSpeed = 10.f;
 	
 	CU::MainSingleton::GetTimerManager().Update();
 	GET_INPUT.Update();

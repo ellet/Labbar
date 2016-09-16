@@ -85,6 +85,7 @@ namespace CommonUtilities
 		//			// Creates a transformation matrix for rotating anAngle rad around the z-axis
 		//			//
 		static Matrix44 CreateRotateAroundZ(const T anAngle);
+
 		//
 		//			// Returns a transposed copy of aMatrix
 		//			//

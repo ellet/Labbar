@@ -32,7 +32,7 @@ const CU::Matrix44f & CHUGCameraInstance::GetCameraMatrix() const
 
 void CHUGCameraInstance::MovePosition(const CU::Vector3f &aPosition)
 {
-	myCamera->SetPosition(myCamera->GetMyPosition() + aPosition);
+	myCamera->IncreasePosition(aPosition);
 }
 
 void CHUGCameraInstance::IncreaseYaw(const float aDegrees)

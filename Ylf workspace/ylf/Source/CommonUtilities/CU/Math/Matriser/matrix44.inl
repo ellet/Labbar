@@ -136,26 +136,6 @@ namespace CommonUtilities
 		myMatrix = tempMatrix;
 
 		return (*this);
-		/*std::array<T, NumElements> tempMatrix;
-
-		for (size_t iRowPos = 0; iRowPos < NumRows; ++iRowPos)
-		{
-			for (size_t iColumnPos = 0; iColumnPos < NumColumns; ++iColumnPos)
-			{
-				T result = 0;
-
-				for (size_t iPos = 0; iPos < NumRows; ++iPos)
-				{
-					result += (*this)(iPos + 1, iColumnPos + 1) * (*this)((iRowPos + 1), iPos + 1);
-				}
-
-				tempMatrix[((iColumnPos * NumColumns) + iRowPos)] = result;
-			}
-		}
-
-		myMatrix = tempMatrix;
-
-		return (*this);*/
 	}
 
 	template<typename T>
@@ -182,7 +162,6 @@ namespace CommonUtilities
 
 		return (*this);
 	}
-
 
 	template<typename T>
 	Matrix44<T> Matrix44<T>::CreateRotateAroundX(const T anAngle)
@@ -295,7 +274,6 @@ namespace CommonUtilities
 	Vector4<T> Matrix44<T>::GetPosition4() const
 	{
 		return Vector4f(m41, m42, m43, m44);
-		//return myFourthRow;
 	}
 
 	template<typename T>
@@ -313,7 +291,6 @@ namespace CommonUtilities
 		m42 = aPosition.y;
 		m43 = aPosition.z;
 		m44 = aPosition.w;
-		//myFourthRow = aPosition;
 	}
 
 	template<typename T>
