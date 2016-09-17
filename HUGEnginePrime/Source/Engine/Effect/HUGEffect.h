@@ -16,12 +16,13 @@ class CHUGEffect
 {
 public:
 
-
 	CHUGEffect();
 	~CHUGEffect();
 
 	void Init(const std::wstring & aTextureFilePath);
 	void ActivateEffect(const MatrixBuffer & aMatrixBuffer);
+
+	void Inactivate();
 
 private:
 	void SetMatrixes(const MatrixBuffer & aMatrixBuffer);
@@ -31,6 +32,7 @@ private:
 	ID3D11InputLayout * myLayout;
 	
 	ID3D11ShaderResourceView * myTexture;
+	ID3D11Buffer * myMatrixBuffer;
 
 	/*Cbuffer mymatrixbuffer*/
 

@@ -10,6 +10,11 @@
 
 CHUGEffect::CHUGEffect()
 {
+	myVertexShader = nullptr;
+	myPixelShader = nullptr;
+	myLayout = nullptr;
+	myMatrixBuffer = nullptr;
+	mySampleState = nullptr;
 }
 
 
@@ -64,7 +69,7 @@ void CHUGEffect::Init(const std::wstring & aTextureFilePath)
 	tempPixelShaderBuffer->Release();
 	tempPixelShaderBuffer = nullptr;
 
-	
+	HUGEffectHelper::CreateCBuffer<MatrixBuffer>(0, myMatrixBuffer, &tempDeviceRef);
 	DL_ASSERT(tempResult == S_OK, "failed to create matrix buffer");
 
 	tempResult = DirectX::CreateDDSTextureFromFile(&tempDeviceRef, aTextureFilePath.c_str(), nullptr, &myTexture);
@@ -111,6 +116,21 @@ void CHUGEffect::ActivateEffect(const MatrixBuffer & aMatrixBuffer)
 	return;
 }
 
+void CHUGEffect::Inactivate()
+{
+	myVertexShader->Release();
+	myPixelShader->Release();
+	myLayout->Release();
+	myMatrixBuffer->Release();
+	mySampleState->Release();
+
+	myVertexShader = nullptr;
+	myPixelShader = nullptr;
+	myLayout = nullptr;
+	myMatrixBuffer = nullptr;
+	mySampleState = nullptr;
+}
+
 void CHUGEffect::SetMatrixes(const MatrixBuffer & aMatrixBuffer)
 {
 	HRESULT tempResult = S_OK;
@@ -128,7 +148,7 @@ void CHUGEffect::SetMatrixes(const MatrixBuffer & aMatrixBuffer)
 	// Transpose the matrices to prepare them for the shader.
 
 	// Lock the constant buffer so it can be written to.
-	tempResult = tempDeviceContextRef.Map(/*Get from cbuffer*/, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
+	tempResult = tempDeviceContextRef.Map(myMatrixBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
 	
 	DL_ASSERT(tempResult == S_OK, "Failed to map matrixbuffer");
 
@@ -141,13 +161,13 @@ void CHUGEffect::SetMatrixes(const MatrixBuffer & aMatrixBuffer)
 	dataPtr->myProjection = tempProjection;
 
 	// Unlock the constant buffer.
-	tempDeviceContextRef.Unmap(/*get from c buffer*/, 0);
+	tempDeviceContextRef.Unmap(myMatrixBuffer, 0);
 
 	// Set the position of the constant buffer in the vertex shader.
 	bufferNumber = 0;
 
 	// Finanly set the constant buffer in the vertex shader with the updated values.
-	tempDeviceContextRef.VSSetConstantBuffers(bufferNumber, 1, &/*get from c buffer*/);
+	tempDeviceContextRef.VSSetConstantBuffers(bufferNumber, 1, &myMatrixBuffer);
 
 	// Set shader texture resource in the pixel shader.
 	tempDeviceContextRef.PSSetShaderResources(0, 1, &myTexture);

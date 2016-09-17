@@ -65,4 +65,21 @@ namespace HUGEffectHelper
 		tempPolygonLayout.InstanceDataStepRate = aInstancestep;
 		anArray.Add(tempPolygonLayout);
 	}
+
+	template<typename TConstantBuffer>
+	static void CreateCBuffer(unsigned int aBufferIndex, ID3D11Buffer *& aBuffer, ID3D11Device * aDevice)
+	{
+		(aBufferIndex);
+		D3D11_BUFFER_DESC tempDescription;
+		tempDescription.Usage = D3D11_USAGE_DYNAMIC;
+		tempDescription.ByteWidth = sizeof(TConstantBuffer);
+		tempDescription.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
+		tempDescription.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
+		tempDescription.MiscFlags = 0;
+		tempDescription.StructureByteStride = 0;
+
+		HRESULT tempResult = S_OK;
+		tempResult = aDevice->CreateBuffer(&tempDescription, NULL, &aBuffer);
+		DL_ASSERT(tempResult == S_OK, "Failed to create matrix buffer");
+	}
 }
