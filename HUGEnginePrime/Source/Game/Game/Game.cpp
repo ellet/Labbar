@@ -5,7 +5,7 @@
 
 CGame::CGame()
 {
-	myCamera = Camera(900.f, 500.f, CU::Vector3f::Zero);
+	myCamera = Camera(900.f, 500.f);
 }
 
 
@@ -94,20 +94,20 @@ void CGame::Update()
 	}
 	if (GET_INPUT.GetKeyDown(DIK_UPARROW) == true)
 	{
-		myCamera.IncreasePitch(DeltaTime  * cameraTurnSpeed);
+		myCamera.IncreasePitch(-DeltaTime  * cameraTurnSpeed);
 	}
 	if (GET_INPUT.GetKeyDown(DIK_DOWNARROW) == true)
 	{
-		myCamera.IncreasePitch(-DeltaTime  * cameraTurnSpeed);
+		myCamera.IncreasePitch(DeltaTime  * cameraTurnSpeed);
 	}
 
 	if (GET_INPUT.GetKeyDown(DIK_E) == true)
 	{
-		myCamera.IncreaseRoll(-DeltaTime  * cameraTurnSpeed);
+		myCamera.IncreaseRoll(DeltaTime  * cameraTurnSpeed);
 	}
 	if (GET_INPUT.GetKeyDown(DIK_Q) == true)
 	{
-		myCamera.IncreaseRoll(DeltaTime  * cameraTurnSpeed);
+		myCamera.IncreaseRoll(-DeltaTime  * cameraTurnSpeed);
 	}
 
 }

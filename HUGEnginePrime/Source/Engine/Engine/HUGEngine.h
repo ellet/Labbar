@@ -4,6 +4,7 @@
 class CHUGWindowsWindow;
 class CHUGDXFramework;
 class CHUGModelManager;
+class CHUGCameraManager;
 class CDXModel;
 
 class CHUGEngineSingleton
@@ -30,29 +31,35 @@ public:
 	static void CloseGame();
 
 	static CHUGDXFramework & GetFramework();
+	static const CHUGCameraManager & GetCameraManager();
 
 	static CDXModel & GetModel(const std::string & aFilePath);
 	static CDXModel & GetModel();
 
 private:
-	CHUGModelManager * myModelManager;
-
 	CHUGEngineSingleton();
 	~CHUGEngineSingleton();
-
-	static CHUGEngineSingleton & GetInstance();
 
 	void EngineLoop();
 	void CreateWindowsWindow();
 
+	static CHUGEngineSingleton & GetInstance();
+
+	//Engine necessary
 	CHUGDXFramework * myFramework;
-
 	static CHUGEngineSingleton * ourInstance;
-
 	CHUGWindowsWindow * myWindowsWindow;
+
+	//Extras
+	CHUGModelManager * myModelManager;
+	CHUGCameraManager * myCameraManager;
+
+	//Function pointers to game for abstraction
 	std::function<void()> myGameInitFunction;
 	std::function<void()> myGameUpdateFunction;
 	std::function<void()> myGameRenderFunction;
+
+	//TODO^^ Set shouldRun with messages
 	bool myShouldRun;
 };
 

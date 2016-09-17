@@ -3,6 +3,7 @@
 #include "Windows/HUGWindowsWindow.h"
 #include "HUGFramework/HUGDXFramework.h"
 #include "Model/ModelManager/HUGModelManager.h"
+#include "Camera/HUGCameraManager.h"
 
 CHUGEngineSingleton * CHUGEngineSingleton::ourInstance = nullptr;
 
@@ -29,6 +30,7 @@ void CHUGEngineSingleton::Init(EngineParameters & someParameters)
 
 
 	GetInstance().myFramework->Init(GetInstance().myWindowsWindow->GetHWND(), someParameters.myWindowSize);
+	GetInstance().myCameraManager->CreateCamera(someParameters.myWindowSize.y, someParameters.myWindowSize.x);
 
 	GetInstance().myGameInitFunction();
 
@@ -55,6 +57,11 @@ CHUGDXFramework & CHUGEngineSingleton::GetFramework()
 	return *GetInstance().myFramework;
 }
 
+const CHUGCameraManager & CHUGEngineSingleton::GetCameraManager()
+{
+	return *GetInstance().myCameraManager;
+}
+
 CDXModel & CHUGEngineSingleton::GetModel(const std::string & aFilePath)
 {
 	return GetInstance().myModelManager->CreateModel(aFilePath);
@@ -69,6 +76,7 @@ CHUGEngineSingleton::CHUGEngineSingleton()
 {
 	myFramework = new CHUGDXFramework();
 	myModelManager = new CHUGModelManager();
+	myCameraManager = new CHUGCameraManager();
 }
 
 CHUGEngineSingleton::~CHUGEngineSingleton()
