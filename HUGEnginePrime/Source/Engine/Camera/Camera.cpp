@@ -101,3 +101,9 @@ CU::Vector3f Camera::GetMyPosition() const
 {
 	return myTransformation.GetPosition();
 }
+
+void Camera::UpdateTransformation()
+{
+	myTransformation = myRotation.GenerateMatrix();
+	myTransformation.SetPosition(myPosition);
+}

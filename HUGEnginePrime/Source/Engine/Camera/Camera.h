@@ -33,6 +33,11 @@ public:
 	CU::Vector3f GetMyPosition() const;
 
 private:
+	void UpdateTransformation();
+
+	CU::Quaternion myRotation;
+	CU::Vector3f myPosition;
+
 	CU::Matrix44f myTransformation;
 	CU::Matrix44f myProjection;
 };
