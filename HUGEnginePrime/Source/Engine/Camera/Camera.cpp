@@ -14,14 +14,12 @@ Camera::~Camera()
 Camera::Camera(
 	const float aProjectionHeight,
 	const float aProjectionWidth,
+	const float aFoVAngle,
 	const CU::Vector3f &aPosition)
 {
-	/*
-		PROJECTIONSTUFFS
-	*/
 	SetPosition(aPosition);
 
-	myProjection = CU::Matrix44f::CreateProjectionMatrixLH(0.01f, 1000.f, aProjectionHeight / aProjectionWidth, DEGRESS_TO_RADIANSF(90));
+	myProjection = CU::Matrix44f::CreateProjectionMatrixLH(0.01f, 1000.f, aProjectionHeight / aProjectionWidth, aFoVAngle);
 }
 
 CU::Matrix44f Camera::GetInverse()
@@ -53,10 +51,6 @@ void Camera::IncreasePosition(CU::Vector3f aPosition)
 
 void Camera::IncreaseYaw(float aRadian)
 {
-	//CU::Vector3f tempPosition(myTransformation.GetPosition());
-	//myTransformation.SetPosition(CU::Vector3f(0.f, 0.f, 0.f));
-	//myTransformation = myTransformation.CreateRotateAroundY(aRadian) * myTransformation;;
-	//myTransformation.SetPosition(tempPosition);
 	myRotation.RotateY(aRadian);
 	UpdateTransformation();
 
@@ -64,20 +58,12 @@ void Camera::IncreaseYaw(float aRadian)
 
 void Camera::IncreasePitch(float aRadian)
 {
-	//CU::Vector3f tempPosition(myTransformation.GetPosition());
-	//myTransformation.SetPosition(CU::Vector3f(0.f, 0.f, 0.f));
-	//myTransformation = myTransformation.CreateRotateAroundX(aRadian) * myTransformation;
-	//myTransformation.SetPosition(tempPosition);
 	myRotation.RotateX(aRadian);
 	UpdateTransformation();
 }
 
 void Camera::IncreaseRoll(float aRadian)
 {
-	//CU::Vector3f tempPosition(myTransformation.GetPosition());
-	//myTransformation.SetPosition(CU::Vector3f(0.f, 0.f, 0.f));
-	//myTransformation = myTransformation.CreateRotateAroundZ(aRadian) * myTransformation;;
-	//myTransformation.SetPosition(tempPosition);
 	myRotation.RotateZ(aRadian);
 	UpdateTransformation();
 }
