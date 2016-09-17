@@ -36,3 +36,11 @@ void CHUGCameraManager::CreateCamera(
 	Camera prettyCamera(aProjectionHeight, aProjectionWidth, aFoVAngle, aPosition);
 	myCameras.Add(prettyCamera);
 }
+
+void CHUGCameraManager::UpdateProjections(const CU::Vector2ui & aNewProjectionSize)
+{
+	for (unsigned short iCamera = 0; iCamera < myCameras.Size(); ++iCamera)
+	{
+		myCameras[iCamera].UpdateProjection(CU::Vector2f(static_cast<float>(aNewProjectionSize.x), static_cast<float>(aNewProjectionSize.y)));
+	}
+}

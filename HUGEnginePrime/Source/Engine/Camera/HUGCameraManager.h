@@ -17,8 +17,12 @@ public:
 		const CU::Vector3f & aPosition = CU::Vector3f::Zero,
 		const float aFoVAngle = DEGRESS_TO_RADIANSF(90.f));
 
+	void UpdateProjections(const CU::Vector2ui & aNewProjectionSize);
+
 private:
 	CU::GrowingArray<Camera> myCameras;
+	CU::Matrix44f myProjection;
+
 	unsigned short myActiveCamera;
 };
 

@@ -40,6 +40,7 @@ void CHUGEngineSingleton::Init(EngineParameters & someParameters)
 void CHUGEngineSingleton::ResizeWindow(const CU::Vector2ui aNewWindowSize)
 {
 	GetInstance().GetFramework().UpdateViewportSize(aNewWindowSize);
+	GetInstance().GetCameraManager().UpdateProjections(aNewWindowSize);
 }
 
 void * CHUGEngineSingleton::GetHWND()

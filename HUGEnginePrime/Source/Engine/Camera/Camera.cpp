@@ -7,6 +7,7 @@ Camera::Camera()
 }
 
 
+
 Camera::~Camera()
 {
 }
@@ -19,7 +20,8 @@ Camera::Camera(
 {
 	SetPosition(aPosition);
 
-	myProjection = CU::Matrix44f::CreateProjectionMatrixLH(0.01f, 1000.f, aProjectionWidth / aProjectionHeight, aFoVAngle);
+	myFoV = aFoVAngle;
+	myProjection = CU::Matrix44f::CreateProjectionMatrixLH(0.01f, 1000.f, aProjectionWidth / aProjectionHeight, myFoV);
 }
 
 CU::Matrix44f Camera::GetInverse()
@@ -94,6 +96,11 @@ CU::Vector3f Camera::GetMyPosition() const
 const CU::Matrix44f & Camera::GetTransformation() const
 {
 	return myTransformation;
+}
+
+void Camera::UpdateProjection(const CU::Vector2f & aProjectionSize)
+{
+	myProjection = CU::Matrix44f::CreateProjectionMatrixLH(0.01f, 1000.f, aProjectionSize.x / aProjectionSize.y, myFoV);
 }
 
 void Camera::UpdateTransformation()

@@ -7,8 +7,7 @@ public:
 	Camera();
 	~Camera();
 
-	Camera(
-		const float aProjectionHeight,
+	Camera(const float aProjectionHeight,
 		const float aProjectionWidth,
 		const float aFoVAngle = M_PI_2,
 		const CU::Vector3f &aPosition = CU::Vector3f::Zero);
@@ -35,6 +34,8 @@ public:
 
 	const CU::Matrix44f & GetTransformation() const;
 
+	void UpdateProjection(const CU::Vector2f & aProjectionSize);
+
 private:
 	void UpdateTransformation();
 
@@ -43,5 +44,6 @@ private:
 
 	CU::Matrix44f myTransformation;
 	CU::Matrix44f myProjection;
+	float myFoV;
 };
 
