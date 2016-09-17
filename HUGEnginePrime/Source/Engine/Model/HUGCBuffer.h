@@ -6,7 +6,7 @@ public:
 	CHUGCBuffer();
 	~CHUGCBuffer();
 
-	void Init(const int aSizeOfBuffer);
+	void Init(const int aSizeOfBuffer, const int aRegisterIndex);
 
 	void Activate();
 
@@ -17,8 +17,11 @@ private:
 	ID3D11Buffer * myBuffer;
 	char * myDataPtr;
 
+	int myRegisterIndex;
+
 	int myDataSize;
 	int myCurrentIndex;
+	
 };
 
 template <typename DataType>

@@ -10,6 +10,7 @@ CHUGCBuffer::CHUGCBuffer()
 	myDataSize = 0;
 	myDataPtr = nullptr;
 	myBuffer = nullptr;
+	myRegisterIndex = 0;
 }
 
 
@@ -27,8 +28,9 @@ CHUGCBuffer::~CHUGCBuffer()
 	}
 }
 
-void CHUGCBuffer::Init(const int aSizeOfBuffer)
+void CHUGCBuffer::Init(const int aSizeOfBuffer, const int aRegisterIndex)
 {
+	myRegisterIndex = aRegisterIndex;
 	myDataPtr = new char[aSizeOfBuffer];
 	myDataSize = aSizeOfBuffer;
 
@@ -56,7 +58,6 @@ void CHUGCBuffer::Activate()
 {
 	HRESULT tempResult = S_OK;
 	D3D11_MAPPED_SUBRESOURCE mappedResource;
-	char * tempDataPtr;
 
 
 	ID3D11DeviceContext & tempDeviceContextRef = CHUGEngineSingleton::GetFramework().GetDeviceContext();
@@ -70,7 +71,7 @@ void CHUGCBuffer::Activate()
 
 	memcpy(mappedResource.pData, myDataPtr, myDataSize);
 	
-	tempDeviceContextRef.VSSetConstantBuffers(0, 1, &myBuffer);
+	tempDeviceContextRef.VSSetConstantBuffers(myRegisterIndex, 1, &myBuffer);
 
 	// Unlock the constant buffer.
 	tempDeviceContextRef.Unmap(myBuffer, 0);
