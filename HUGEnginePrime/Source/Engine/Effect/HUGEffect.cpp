@@ -6,6 +6,7 @@
 #include "DDSLoader\dds.h"
 #include "DDSLoader\DDSTextureLoader.h"
 #include "DXHelpers\DataTypeEnumConverter.h"
+#include "Model\HUGCBuffer.h"
 
 
 CHUGEffect::CHUGEffect()
@@ -15,6 +16,8 @@ CHUGEffect::CHUGEffect()
 	myLayout = nullptr;
 	myMatrixBuffer = nullptr;
 	mySampleState = nullptr;
+	myMatrixBuffer = new CHUGCBuffer();
+	//myMatrixBuffer = nullptr;
 }
 
 
@@ -69,8 +72,10 @@ void CHUGEffect::Init(const std::wstring & aTextureFilePath)
 	tempPixelShaderBuffer->Release();
 	tempPixelShaderBuffer = nullptr;
 
-	HUGEffectHelper::CreateCBuffer<MatrixBuffer>(0, myMatrixBuffer, &tempDeviceRef);
-	DL_ASSERT(tempResult == S_OK, "failed to create matrix buffer");
+	myMatrixBuffer->Init(sizeof(CU::Matrix44f) * 3);
+
+	/*HUGEffectHelper::CreateCBuffer<MatrixBuffer>(0, myMatrixBuffer, &tempDeviceRef);
+	DL_ASSERT(tempResult == S_OK, "failed to create matrix buffer");*/
 
 	tempResult = DirectX::CreateDDSTextureFromFile(&tempDeviceRef, aTextureFilePath.c_str(), nullptr, &myTexture);
 	DL_ASSERT(tempResult == S_OK, "Texture was loaded incorrecly");
@@ -121,7 +126,7 @@ void CHUGEffect::Inactivate()
 	myVertexShader->Release();
 	myPixelShader->Release();
 	myLayout->Release();
-	myMatrixBuffer->Release();
+	//myMatrixBuffer->Release();
 	mySampleState->Release();
 
 	myVertexShader = nullptr;
@@ -145,29 +150,37 @@ void CHUGEffect::SetMatrixes(const MatrixBuffer & aMatrixBuffer)
 
 	ID3D11DeviceContext & tempDeviceContextRef = CHUGEngineSingleton::GetFramework().GetDeviceContext();
 
+	
+	myMatrixBuffer->SetData(tempWorld);
+	myMatrixBuffer->SetData(tempCamera);
+	myMatrixBuffer->SetData(tempProjection);
+
+	myMatrixBuffer->Activate();
+
 	// Transpose the matrices to prepare them for the shader.
 
 	// Lock the constant buffer so it can be written to.
-	tempResult = tempDeviceContextRef.Map(myMatrixBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
-	
-	DL_ASSERT(tempResult == S_OK, "Failed to map matrixbuffer");
+	//tempResult = tempDeviceContextRef.Map(myMatrixBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
+	//
+	//DL_ASSERT(tempResult == S_OK, "Failed to map matrixbuffer");
 
-	// Get a pointer to the data in the constant buffer.
-	dataPtr = (MatrixBuffer*)mappedResource.pData;
+	//// Get a pointer to the data in the constant buffer.
+	//dataPtr = (MatrixBuffer*)mappedResource.pData;
 
-	// Copy the matrices into the constant buffer.
-	dataPtr->myWorld = tempWorld;
-	dataPtr->myCamera = tempCamera;
-	dataPtr->myProjection = tempProjection;
+	//// Copy the matrices into the constant buffer.
+	//
+	//dataPtr->myWorld = tempWorld;
+	//dataPtr->myCamera = tempCamera;
+	//dataPtr->myProjection = tempProjection;
 
-	// Unlock the constant buffer.
-	tempDeviceContextRef.Unmap(myMatrixBuffer, 0);
+	//// Unlock the constant buffer.
+	//tempDeviceContextRef.Unmap(myMatrixBuffer, 0);
 
-	// Set the position of the constant buffer in the vertex shader.
-	bufferNumber = 0;
+	//// Set the position of the constant buffer in the vertex shader.
+	//bufferNumber = 0;
 
-	// Finanly set the constant buffer in the vertex shader with the updated values.
-	tempDeviceContextRef.VSSetConstantBuffers(bufferNumber, 1, &myMatrixBuffer);
+	//// Finanly set the constant buffer in the vertex shader with the updated values.
+	//tempDeviceContextRef.VSSetConstantBuffers(bufferNumber, 1, &myMatrixBuffer);
 
 	// Set shader texture resource in the pixel shader.
 	tempDeviceContextRef.PSSetShaderResources(0, 1, &myTexture);

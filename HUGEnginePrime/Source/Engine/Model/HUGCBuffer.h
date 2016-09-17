@@ -14,7 +14,7 @@ public:
 	void SetData(const DataType& aDataToSet);
 
 private:
-	ID3D11Buffer * myMatrixBuffer;
+	ID3D11Buffer * myBuffer;
 	char * myDataPtr;
 
 	int myDataSize;
@@ -24,6 +24,6 @@ private:
 template <typename DataType>
 void CHUGCBuffer::SetData(const DataType & aDataToSet)
 {
-	&myDataPtr[myCurrentIndex] = &aDataToSet;
+	memcpy(&myDataPtr[myCurrentIndex], &aDataToSet, sizeof(DataType));
 	myCurrentIndex += sizeof(DataType);
 }
