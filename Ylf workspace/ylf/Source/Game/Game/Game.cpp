@@ -68,20 +68,20 @@ void CGame::Update()
 
 	if (GET_INPUT.GetKeyDown(DIK_UPARROW) == true)
 	{
-		myCamera.IncreasePitch(-cameraRotationSpeed * deltaTime);
+		myCamera.IncreasePitch(cameraRotationSpeed * deltaTime);
 	}
 	else if (GET_INPUT.GetKeyDown(DIK_DOWNARROW) == true)
 	{
-		myCamera.IncreasePitch(cameraRotationSpeed * deltaTime);
+		myCamera.IncreasePitch(-cameraRotationSpeed * deltaTime);
 	}
 
 	if (GET_INPUT.GetKeyDown(DIK_RIGHTARROW) == true)
 	{
-		myCamera.IncreaseYaw(cameraRotationSpeed * deltaTime);
+		myCamera.IncreaseYaw(-cameraRotationSpeed * deltaTime);
 	}
 	else if (GET_INPUT.GetKeyDown(DIK_LEFTARROW) == true)
 	{
-		myCamera.IncreaseYaw(-cameraRotationSpeed * deltaTime);
+		myCamera.IncreaseYaw(cameraRotationSpeed * deltaTime);
 	}
 
 	myCamera.MovePosition(tempToAddCameraPosition);
