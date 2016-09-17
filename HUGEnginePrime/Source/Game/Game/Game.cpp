@@ -94,20 +94,20 @@ void CGame::Update()
 	}
 	if (GET_INPUT.GetKeyDown(DIK_UPARROW) == true)
 	{
-		myCamera.IncreasePitch(DeltaTime  * cameraTurnSpeed);
+		myCamera.IncreasePitch(-DeltaTime  * cameraTurnSpeed);
 	}
 	if (GET_INPUT.GetKeyDown(DIK_DOWNARROW) == true)
 	{
-		myCamera.IncreasePitch(-DeltaTime  * cameraTurnSpeed);
+		myCamera.IncreasePitch(DeltaTime  * cameraTurnSpeed);
 	}
 
 	if (GET_INPUT.GetKeyDown(DIK_E) == true)
 	{
-		myCamera.IncreaseRoll(-DeltaTime  * cameraTurnSpeed);
+		myCamera.IncreaseRoll(DeltaTime  * cameraTurnSpeed);
 	}
 	if (GET_INPUT.GetKeyDown(DIK_Q) == true)
 	{
-		myCamera.IncreaseRoll(DeltaTime  * cameraTurnSpeed);
+		myCamera.IncreaseRoll(-DeltaTime  * cameraTurnSpeed);
 	}
 
 }

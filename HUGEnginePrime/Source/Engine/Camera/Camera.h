@@ -12,7 +12,7 @@ public:
 		const float aProjectionWidth,
 		const CU::Vector3f &aPosition);
 
-	CU::Matrix44f GetInverse(void) const;
+	CU::Matrix44f GetInverse(void);
 
 	const CU::Matrix44f &GetProjection(void) const;
 

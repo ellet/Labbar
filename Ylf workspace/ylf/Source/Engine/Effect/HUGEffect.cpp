@@ -153,6 +153,6 @@ void CHUGEffect::SetShaderResources(const CU::Matrix44f aWorldMatrix, const CU::
 
 	// Set shader texture resource in the pixel shader.
 	tempDeviceContextRef.PSSetShaderResources(0, 1, &aTexture);
-	//tempDeviceContextRef.PSSetSamplers(0, 1, &mySampleState);
+
 
 }

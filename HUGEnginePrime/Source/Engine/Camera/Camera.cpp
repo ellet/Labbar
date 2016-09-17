@@ -24,8 +24,9 @@ Camera::Camera(
 	myProjection = CU::Matrix44f::CreateProjectionMatrixLH(0.01f, 1000.f, aProjectionHeight / aProjectionWidth, DEGRESS_TO_RADIANSF(90));
 }
 
-CU::Matrix44f Camera::GetInverse() const
+CU::Matrix44f Camera::GetInverse()
 {
+	UpdateTransformation();
 	CU::Matrix44<float> inverse(myTransformation);
 
 	CU::Vector4<float> translation = inverse.GetPosition4();
@@ -46,60 +47,62 @@ const CU::Matrix44f& Camera::GetProjection() const
 
 void Camera::IncreasePosition(CU::Vector3f aPosition)
 {
-	myTransformation.SetPosition(aPosition + myTransformation.GetPosition());
+	myPosition += aPosition;
+	myTransformation.SetPosition(myPosition);
 }
 
 void Camera::IncreaseYaw(float aRadian)
 {
-	CU::Vector3f tempPosition(myTransformation.GetPosition());
+	//CU::Vector3f tempPosition(myTransformation.GetPosition());
+	//myTransformation.SetPosition(CU::Vector3f(0.f, 0.f, 0.f));
+	//myTransformation = myTransformation.CreateRotateAroundY(aRadian) * myTransformation;;
+	//myTransformation.SetPosition(tempPosition);
+	myRotation.RotateY(aRadian);
+	UpdateTransformation();
 
-	myTransformation.SetPosition(CU::Vector3f(0.f, 0.f, 0.f));
-
-	myTransformation = myTransformation.CreateRotateAroundY(aRadian) * myTransformation;;
-
-	myTransformation.SetPosition(tempPosition);
 }
 
 void Camera::IncreasePitch(float aRadian)
 {
-	CU::Vector3f tempPosition(myTransformation.GetPosition());
-
-	myTransformation.SetPosition(CU::Vector3f(0.f, 0.f, 0.f));
-
-	myTransformation = myTransformation.CreateRotateAroundX(aRadian) * myTransformation;
-
-	myTransformation.SetPosition(tempPosition);
+	//CU::Vector3f tempPosition(myTransformation.GetPosition());
+	//myTransformation.SetPosition(CU::Vector3f(0.f, 0.f, 0.f));
+	//myTransformation = myTransformation.CreateRotateAroundX(aRadian) * myTransformation;
+	//myTransformation.SetPosition(tempPosition);
+	myRotation.RotateX(aRadian);
+	UpdateTransformation();
 }
 
 void Camera::IncreaseRoll(float aRadian)
 {
-	CU::Vector3f tempPosition(myTransformation.GetPosition());
-
-	myTransformation.SetPosition(CU::Vector3f(0.f, 0.f, 0.f));
-
-	myTransformation = myTransformation.CreateRotateAroundZ(aRadian) * myTransformation;;
-
-	myTransformation.SetPosition(tempPosition);
+	//CU::Vector3f tempPosition(myTransformation.GetPosition());
+	//myTransformation.SetPosition(CU::Vector3f(0.f, 0.f, 0.f));
+	//myTransformation = myTransformation.CreateRotateAroundZ(aRadian) * myTransformation;;
+	//myTransformation.SetPosition(tempPosition);
+	myRotation.RotateZ(aRadian);
+	UpdateTransformation();
 }
 
 void Camera::IncreaseForward(float aDelta)
 {
+	UpdateTransformation();
 	SetPosition(GetMyPosition() + (myTransformation.GetForward() * aDelta ));
 }
 
 void Camera::IncreaseRight(float aDelta)
 {
+	UpdateTransformation();
 	SetPosition(GetMyPosition() + (myTransformation.GetRight() * aDelta));
 }
 
 void Camera::SetPosition(CU::Vector3f aPosition)
 {
-	myTransformation.SetPosition(aPosition);
+	myPosition = aPosition;
+	myTransformation.SetPosition(myPosition);
 }
 
 CU::Vector3f Camera::GetMyPosition() const
 {
-	return myTransformation.GetPosition();
+	return myPosition;
 }
 
 void Camera::UpdateTransformation()
@@ -107,3 +110,4 @@ void Camera::UpdateTransformation()
 	myTransformation = myRotation.GenerateMatrix();
 	myTransformation.SetPosition(myPosition);
 }
+
