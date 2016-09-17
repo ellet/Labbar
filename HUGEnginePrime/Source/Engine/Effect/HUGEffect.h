@@ -11,6 +11,7 @@ struct MatrixBuffer
 };
 
 //class ShaderResourceView;
+class CHUGCBuffer;
 
 class CHUGEffect
 {
@@ -32,9 +33,9 @@ private:
 	ID3D11InputLayout * myLayout;
 	
 	ID3D11ShaderResourceView * myTexture;
-	ID3D11Buffer * myMatrixBuffer;
+	//ID3D11Buffer * myMatrixBuffer;
 
-	/*Cbuffer mymatrixbuffer*/
+	CHUGCBuffer * myMatrixBuffer;
 
 	ID3D11SamplerState * mySampleState;
 };

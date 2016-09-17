@@ -6,6 +6,7 @@
 #include "DDSLoader\dds.h"
 #include "DDSLoader\DDSTextureLoader.h"
 #include "DXHelpers\DataTypeEnumConverter.h"
+#include "Model\HUGCBuffer.h"
 
 
 CHUGEffect::CHUGEffect()
@@ -15,11 +16,14 @@ CHUGEffect::CHUGEffect()
 	myLayout = nullptr;
 	myMatrixBuffer = nullptr;
 	mySampleState = nullptr;
+	myMatrixBuffer = new CHUGCBuffer();
+	//myMatrixBuffer = nullptr;
 }
 
 
 CHUGEffect::~CHUGEffect()
 {
+	SAFE_DELETE(myMatrixBuffer);
 }
 
 void CHUGEffect::Init(const std::wstring & aTextureFilePath)
@@ -69,8 +73,7 @@ void CHUGEffect::Init(const std::wstring & aTextureFilePath)
 	tempPixelShaderBuffer->Release();
 	tempPixelShaderBuffer = nullptr;
 
-	HUGEffectHelper::CreateCBuffer<MatrixBuffer>(0, myMatrixBuffer, &tempDeviceRef);
-	DL_ASSERT(tempResult == S_OK, "failed to create matrix buffer");
+	myMatrixBuffer->Init(sizeof(CU::Matrix44f) * 3, 0);
 
 	tempResult = DirectX::CreateDDSTextureFromFile(&tempDeviceRef, aTextureFilePath.c_str(), nullptr, &myTexture);
 	DL_ASSERT(tempResult == S_OK, "Texture was loaded incorrecly");
@@ -103,8 +106,12 @@ void CHUGEffect::ActivateEffect(const MatrixBuffer & aMatrixBuffer)
 
 	SetMatrixes(aMatrixBuffer);
 
+
 	ID3D11DeviceContext & tempDeviceContextRef = CHUGEngineSingleton::GetFramework().GetDeviceContext();
 
+	// Set shader texture resource in the pixel shader.
+	tempDeviceContextRef.PSSetShaderResources(0, 1, &myTexture);
+	
 
 	// Set the vertex input layout.
 	tempDeviceContextRef.IASetInputLayout(myLayout);
@@ -112,6 +119,9 @@ void CHUGEffect::ActivateEffect(const MatrixBuffer & aMatrixBuffer)
 	// Set the vertex and pixel shaders that will be used to render this triangle.
 	tempDeviceContextRef.VSSetShader(myVertexShader, NULL, 0);
 	tempDeviceContextRef.PSSetShader(myPixelShader, NULL, 0);
+
+	//Set sampler
+	//tempDeviceContextRef.PSSetSamplers(0, 1, &mySampleState);
 
 	return;
 }
@@ -121,7 +131,6 @@ void CHUGEffect::Inactivate()
 	myVertexShader->Release();
 	myPixelShader->Release();
 	myLayout->Release();
-	myMatrixBuffer->Release();
 	mySampleState->Release();
 
 	myVertexShader = nullptr;
@@ -133,43 +142,15 @@ void CHUGEffect::Inactivate()
 
 void CHUGEffect::SetMatrixes(const MatrixBuffer & aMatrixBuffer)
 {
-	HRESULT tempResult = S_OK;
-	D3D11_MAPPED_SUBRESOURCE mappedResource;
-	MatrixBuffer* dataPtr;
-	unsigned int bufferNumber;
-
 	CU::Matrix44f tempWorld = CU::Matrix44f::Transpose(aMatrixBuffer.myWorld);
 	CU::Matrix44f tempCamera = CU::Matrix44f::Transpose(aMatrixBuffer.myCamera);
 	CU::Matrix44f tempProjection = CU::Matrix44f::Transpose(aMatrixBuffer.myProjection);
 
-
-	ID3D11DeviceContext & tempDeviceContextRef = CHUGEngineSingleton::GetFramework().GetDeviceContext();
-
-	// Transpose the matrices to prepare them for the shader.
-
-	// Lock the constant buffer so it can be written to.
-	tempResult = tempDeviceContextRef.Map(myMatrixBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
 	
-	DL_ASSERT(tempResult == S_OK, "Failed to map matrixbuffer");
+	myMatrixBuffer->SetData(tempWorld);
+	myMatrixBuffer->SetData(tempCamera);
+	myMatrixBuffer->SetData(tempProjection);
 
-	// Get a pointer to the data in the constant buffer.
-	dataPtr = (MatrixBuffer*)mappedResource.pData;
+	myMatrixBuffer->Activate();
 
-	// Copy the matrices into the constant buffer.
-	dataPtr->myWorld = tempWorld;
-	dataPtr->myCamera = tempCamera;
-	dataPtr->myProjection = tempProjection;
-
-	// Unlock the constant buffer.
-	tempDeviceContextRef.Unmap(myMatrixBuffer, 0);
-
-	// Set the position of the constant buffer in the vertex shader.
-	bufferNumber = 0;
-
-	// Finanly set the constant buffer in the vertex shader with the updated values.
-	tempDeviceContextRef.VSSetConstantBuffers(bufferNumber, 1, &myMatrixBuffer);
-
-	// Set shader texture resource in the pixel shader.
-	tempDeviceContextRef.PSSetShaderResources(0, 1, &myTexture);
-	//tempDeviceContextRef.PSSetSamplers(0, 1, &mySampleState);
 }
