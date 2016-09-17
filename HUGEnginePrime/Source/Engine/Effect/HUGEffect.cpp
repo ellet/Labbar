@@ -17,7 +17,6 @@ CHUGEffect::CHUGEffect()
 	myMatrixBuffer = nullptr;
 	mySampleState = nullptr;
 	myMatrixBuffer = new CHUGCBuffer();
-	//myMatrixBuffer = nullptr;
 }
 
 

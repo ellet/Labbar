@@ -19,7 +19,5 @@ private:
 	CHUGModel myCube;
 
 	CHUGCameraController myController;
-
-	//Camera myCamera;
 };
 
