@@ -31,6 +31,7 @@ public:
 	static void CloseGame();
 
 	static CHUGDXFramework & GetFramework();
+	static const CHUGCameraManager & GetCameraManager();
 
 	static CDXModel & GetModel(const std::string & aFilePath);
 	static CDXModel & GetModel();

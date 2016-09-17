@@ -5,7 +5,7 @@
 
 CGame::CGame()
 {
-	myCamera = Camera(900.f, 500.f, CU::Vector3f::Zero);
+	myCamera = Camera(900.f, 500.f);
 }
 
 

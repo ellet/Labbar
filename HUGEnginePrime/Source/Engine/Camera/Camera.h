@@ -10,8 +10,8 @@ public:
 	Camera(
 		const float aProjectionHeight,
 		const float aProjectionWidth,
-		const float aFoVAngle,
-		const CU::Vector3f &aPosition);
+		const float aFoVAngle = M_PI_2,
+		const CU::Vector3f &aPosition = CU::Vector3f::Zero);
 
 	CU::Matrix44f GetInverse(void);
 
