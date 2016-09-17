@@ -30,7 +30,7 @@ void CHUGEngineSingleton::Init(EngineParameters & someParameters)
 
 
 	GetInstance().myFramework->Init(GetInstance().myWindowsWindow->GetHWND(), someParameters.myWindowSize);
-	GetInstance().myCameraManager->CreateCamera(someParameters.myWindowSize.y, someParameters.myWindowSize.x);
+	GetInstance().myCameraManager->CreateCamera(someParameters.myWindowSize.y, someParameters.myWindowSize.x, { 0.f, 0.0f, -1.5f }, M_PI_2);
 
 	GetInstance().myGameInitFunction();
 
@@ -57,7 +57,7 @@ CHUGDXFramework & CHUGEngineSingleton::GetFramework()
 	return *GetInstance().myFramework;
 }
 
-const CHUGCameraManager & CHUGEngineSingleton::GetCameraManager()
+CHUGCameraManager & CHUGEngineSingleton::GetCameraManager()
 {
 	return *GetInstance().myCameraManager;
 }

@@ -25,7 +25,7 @@ public:
 	void Init(const CU::GrowingArray<Vertex> & aArrayOfVertices, const CU::GrowingArray<unsigned int> & aArrayOfIndices);
 	void Init(const CLoaderModel & aModelToLoadFrom);
 
-	void Render(const CU::Matrix44f & aModelTransform, const CU::Matrix44f & aCameraTransform, const CU::Matrix44f & aProjectionTransform);
+	void Render(const CU::Matrix44f & aModelTransform);
 
 private:
 	void ShapeBufferInit();

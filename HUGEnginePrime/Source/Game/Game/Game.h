@@ -1,6 +1,6 @@
 #pragma once
 #include "Model/HUGModel.h"
-#include "Camera/Camera.h"
+#include "Camera/HUGCameraController.h"
 
 class CGame
 {
@@ -18,6 +18,8 @@ private:
 	CHUGModel myTriangle;
 	CHUGModel myCube;
 
-	Camera myCamera;
+	CHUGCameraController myController;
+
+	//Camera myCamera;
 };
 

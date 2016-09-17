@@ -3,6 +3,8 @@
 #include "Effect/HUGEffect.h"
 #include "Engine/HUGEngine.h"
 #include "HUGFramework/HUGDXFramework.h"
+#include "Camera/Camera.h"
+#include "Camera/HUGCameraManager.h"
 
 
 
@@ -49,13 +51,14 @@ void CDXModel::Init(const CU::GrowingArray<Vertex> & aArrayOfVertices, const CU:
 	myEffect->Init(L"Textures/tga_logo.dds");
 }
 
-void CDXModel::Render(const CU::Matrix44f & aModelTransform, const CU::Matrix44f & aCameraTransform, const CU::Matrix44f & aProjectionTransform)
+void CDXModel::Render(const CU::Matrix44f & aModelTransform)
 {
+	const Camera & activeCamera = CHUGEngineSingleton::GetCameraManager().GetActiveCamera();
 
 	MatrixBuffer tempMatrixes;
-	tempMatrixes.myCamera = aCameraTransform;
+	tempMatrixes.myCamera = activeCamera.GetTransformation().GetInverse();
 	tempMatrixes.myWorld = aModelTransform;
-	tempMatrixes.myProjection = aProjectionTransform;
+	tempMatrixes.myProjection = activeCamera.GetProjection();
 
 	RenderBuffers();
 	myEffect->ActivateEffect(tempMatrixes);

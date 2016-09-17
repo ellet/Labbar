@@ -130,6 +130,7 @@
     <ClCompile Include="DDSLoader\DDSTextureLoader.cpp" />
     <ClCompile Include="Effect\HUGEffect.cpp" />
     <ClCompile Include="Camera\HUGCameraManager.cpp" />
+    <ClCompile Include="Camera\HUGCameraController.cpp" />
     <ClCompile Include="Model\HUGCBuffer.cpp" />
     <ClCompile Include="Model\ModelManager\HUGModelManager.cpp" />
     <ClCompile Include="ModelLoader\FBX_Loader_assimp\FBXLoader.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="DXHelpers\HUGEffectHelper.h" />
     <ClInclude Include="Effect\HUGEffect.h" />
     <ClInclude Include="Camera\HUGCameraManager.h" />
+    <ClInclude Include="Camera\HUGCameraController.h" />
     <ClInclude Include="Model\HUGCBuffer.h" />
     <ClInclude Include="Model\ModelManager\HUGModelManager.h" />
     <ClInclude Include="ModelLoader\FBX_Loader_assimp\AssImp\ai_assert.h" />

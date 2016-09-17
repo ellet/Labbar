@@ -17,7 +17,7 @@ const Camera & CHUGCameraManager::GetActiveCamera() const
 	return myCameras[myActiveCamera];
 }
 
-const Camera & CHUGCameraManager::GetCameraAtIndex(const unsigned short anIndex) const
+Camera & CHUGCameraManager::GetCameraAtIndex(const unsigned short anIndex)
 {
 	return myCameras[anIndex];
 }

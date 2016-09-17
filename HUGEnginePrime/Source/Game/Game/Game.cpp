@@ -5,7 +5,6 @@
 
 CGame::CGame()
 {
-	myCamera = Camera(900.f, 500.f);
 }
 
 
@@ -18,7 +17,7 @@ void CGame::Init()
 	//myCube.InitAsModel("Modeller/Asteroid/AsteroidPillarLarge3.fbx");
 	myCube.InitAsCube();
 	
-	myCamera.SetPosition({ 0.f, 0.0f, -1.5f });
+	//myController.SetPosition({ 0.f, 0.0f, -1.5f });
 }
 
 void CGame::Update()
@@ -69,51 +68,51 @@ void CGame::Update()
 
 	if (GET_INPUT.GetKeyDown(DIK_D) == true)
 	{
-		myCamera.IncreaseRight(DeltaTime  * cameraSpeed);
+		myController.IncreaseRight(DeltaTime  * cameraSpeed);
 	}
 	if (GET_INPUT.GetKeyDown(DIK_A) == true)
 	{
-		myCamera.IncreaseRight(-DeltaTime  * cameraSpeed);
+		myController.IncreaseRight(-DeltaTime  * cameraSpeed);
 	}
 	if (GET_INPUT.GetKeyDown(DIK_W) == true)
 	{
-		myCamera.IncreaseForward(DeltaTime  * cameraSpeed);
+		myController.IncreaseForward(DeltaTime  * cameraSpeed);
 	}
 	if (GET_INPUT.GetKeyDown(DIK_S) == true)
 	{
-		myCamera.IncreaseForward(-DeltaTime  * cameraSpeed);
+		myController.IncreaseForward(-DeltaTime  * cameraSpeed);
 	}
 
 	if (GET_INPUT.GetKeyDown(DIK_RIGHTARROW) == true)
 	{
-		myCamera.IncreaseYaw(DeltaTime  * cameraTurnSpeed);
+		myController.IncreaseYaw(DeltaTime  * cameraTurnSpeed);
 	}
 	if (GET_INPUT.GetKeyDown(DIK_LEFTARROW) == true)
 	{
-		myCamera.IncreaseYaw(-DeltaTime  * cameraTurnSpeed);
+		myController.IncreaseYaw(-DeltaTime  * cameraTurnSpeed);
 	}
 	if (GET_INPUT.GetKeyDown(DIK_UPARROW) == true)
 	{
-		myCamera.IncreasePitch(-DeltaTime  * cameraTurnSpeed);
+		myController.IncreasePitch(-DeltaTime  * cameraTurnSpeed);
 	}
 	if (GET_INPUT.GetKeyDown(DIK_DOWNARROW) == true)
 	{
-		myCamera.IncreasePitch(DeltaTime  * cameraTurnSpeed);
+		myController.IncreasePitch(DeltaTime  * cameraTurnSpeed);
 	}
 
 	if (GET_INPUT.GetKeyDown(DIK_E) == true)
 	{
-		myCamera.IncreaseRoll(DeltaTime  * cameraTurnSpeed);
+		myController.IncreaseRoll(DeltaTime  * cameraTurnSpeed);
 	}
 	if (GET_INPUT.GetKeyDown(DIK_Q) == true)
 	{
-		myCamera.IncreaseRoll(-DeltaTime  * cameraTurnSpeed);
+		myController.IncreaseRoll(-DeltaTime  * cameraTurnSpeed);
 	}
 
 }
 
 void CGame::Render()
 {
-	myCube.Render(myCamera.GetInverse(), myCamera.GetProjection());
+	myCube.Render();
 	//myTriangle.Render();
 }

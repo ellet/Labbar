@@ -33,6 +33,8 @@ public:
 
 	CU::Vector3f GetMyPosition() const;
 
+	const CU::Matrix44f & GetTransformation() const;
+
 private:
 	void UpdateTransformation();
 

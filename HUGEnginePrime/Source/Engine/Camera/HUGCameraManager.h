@@ -8,7 +8,7 @@ public:
 	~CHUGCameraManager();
 
 	const Camera & GetActiveCamera() const;
-	const Camera & GetCameraAtIndex(const unsigned short anIndex) const;
+	Camera & GetCameraAtIndex(const unsigned short anIndex);
 	void SetActiveCamera(const unsigned short anIndex);
 
 	void CreateCamera(

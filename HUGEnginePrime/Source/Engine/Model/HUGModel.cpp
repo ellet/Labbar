@@ -54,7 +54,7 @@ void CHUGModel::Update(const CU::Time & aDeltaTime)
 	//myTransformation = myTransformation * CU::Matrix44f::CreateRotateAroundX(DEGRESS_TO_RADIANSF(rotatespeed * fakeDeltaTime));
 }
 
-void CHUGModel::Render(const CU::Matrix44f & aCameraTransform, const CU::Matrix44f & aProjectionTransform)
+void CHUGModel::Render()
 {
 	CU::GrowingArray<CU::Vector3f>tgaPosition;
 	tgaPosition.Init(29);
@@ -98,6 +98,6 @@ void CHUGModel::Render(const CU::Matrix44f & aCameraTransform, const CU::Matrix4
 	for (unsigned short iPosition = 0; iPosition < tgaPosition.Size(); ++iPosition)
 	{
 		myTransformation.SetPosition(tgaPosition[iPosition]);
-		myModel->Render(myTransformation, aCameraTransform, aProjectionTransform);
+		myModel->Render(myTransformation);
 	}
 }

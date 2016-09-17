@@ -15,7 +15,7 @@ public:
 
 	void Init();
 	void Update(const CU::Time & aDeltaTime);
-	void Render(const CU::Matrix44f & aCameraTransform, const CU::Matrix44f & aProjectionTransform);
+	void Render();
 
 private:
 	CU::Matrix44f myTransformation;
