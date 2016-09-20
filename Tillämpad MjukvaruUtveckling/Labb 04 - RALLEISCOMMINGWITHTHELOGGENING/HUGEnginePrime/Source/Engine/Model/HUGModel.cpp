@@ -56,7 +56,7 @@ void CHUGModel::Update(const CU::Time & aDeltaTime)
 
 void CHUGModel::Render()
 {
-	CU::GrowingArray<CU::Vector3f>tgaPosition;
+	/*CU::GrowingArray<CU::Vector3f>tgaPosition;
 	tgaPosition.Init(29);
 
 	tgaPosition.Add(CU::Vector3f(-8.f, 4.f, 0));
@@ -93,11 +93,11 @@ void CHUGModel::Render()
 	tgaPosition.Add(CU::Vector3f(14.f, 0.f, 0));
 
 	tgaPosition.Add(CU::Vector3f(14.f, -2.f, 0));
-	tgaPosition.Add(CU::Vector3f(12.f, 0.f, 0));
+	tgaPosition.Add(CU::Vector3f(12.f, 0.f, 0));*/
 
-	for (unsigned short iPosition = 0; iPosition < tgaPosition.Size(); ++iPosition)
-	{
-		myTransformation.SetPosition(tgaPosition[iPosition]);
+	//for (unsigned short iPosition = 0; iPosition < tgaPosition.Size(); ++iPosition)
+	//{
+	//	myTransformation.SetPosition(tgaPosition[iPosition]);
 		myModel->Render(myTransformation);
-	}
+	//}
 }

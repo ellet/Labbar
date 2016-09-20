@@ -146,17 +146,20 @@ namespace CommonUtilities
 
 	bool InputWrapper::GetKeyDown(int aButton) const
 	{
+		INPUT_LOG(("Button :" + std::to_string(aButton) + " is Held Down").c_str());
 		return myInputStates->myKeyboardData[aButton] > 0;
 	}
 
 
 	bool InputWrapper::GetKeyPressed(int aButton) const
 	{
+		INPUT_LOG(("Button was :" + std::to_string(aButton) + " pressed").c_str());
 		return (myInputStates->myKeyboardData[aButton] > 0 && myInputStates->myPreviousKeyboardData[aButton] == 0);
 	}
 
 	bool InputWrapper::GetKeyReleased(int aButton) const
 	{
+		INPUT_LOG(("Button was :" + std::to_string(aButton) + " Released").c_str());
 		return (myInputStates->myKeyboardData[aButton] == 0 && myInputStates->myPreviousKeyboardData[aButton] > 0);
 	}
 

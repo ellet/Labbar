@@ -38,10 +38,26 @@ void CHUGEffect::Init(const std::wstring & aTextureFilePath)
 
 	bool tempLoadBool = true;
 	tempLoadBool = HUGEffectHelper::CompileShader(L"Shaders/HUGShader.fx", "HUGVertexShader", "vs_5_0", tempVertexShaderBuffer, tempOutput);
-	DL_ASSERT(tempLoadBool == true, "failed to load vertexshader");
+	if (tempLoadBool != true)
+	{ 
+		ENGINE_LOG(("Shaders/HUGShader.fx failed to compile returned error message: "  + tempOutput).c_str());
+		DL_ASSERT(tempLoadBool == true, "failed to load vertexshader");
+	}
+	else
+	{
+		ENGINE_LOG("Shaders/HUGShader.fx compiled succesfully");
+	}
 
 	tempLoadBool = HUGEffectHelper::CompileShader(L"Shaders/HUGShader.fx", "HUGPixelShader", "ps_5_0", tempPixelShaderBuffer, tempOutput);
-	DL_ASSERT(tempLoadBool == true, "failed to load pixelshader");
+	if (tempLoadBool != true)
+	{
+		ENGINE_LOG(("Shaders/HUGShader.fx failed to compile returned error message: " + tempOutput).c_str());
+		DL_ASSERT(tempLoadBool == true, "failed to load vertexshader");
+	}
+	else
+	{
+		ENGINE_LOG("Shaders/HUGShader.fx compiled succesfully");
+	}
 
 	// Create the vertex shader from the buffe.r
 	tempResult = tempDeviceRef.CreateVertexShader(tempVertexShaderBuffer->GetBufferPointer(), tempVertexShaderBuffer->GetBufferSize(), NULL, &myVertexShader);

@@ -34,11 +34,14 @@ void CHUGEngineSingleton::Init(EngineParameters & someParameters)
 
 	GetInstance().myGameInitFunction();
 
+
+	ENGINE_LOG("Engine entered engine loop.");
 	GetInstance().EngineLoop();
 }
 
 void CHUGEngineSingleton::ResizeWindow(const CU::Vector2ui aNewWindowSize)
 {
+	ENGINE_LOG("Rezising window.");
 	GetInstance().GetFramework().UpdateViewportSize(aNewWindowSize);
 	GetInstance().GetCameraManager().UpdateProjections(aNewWindowSize);
 }

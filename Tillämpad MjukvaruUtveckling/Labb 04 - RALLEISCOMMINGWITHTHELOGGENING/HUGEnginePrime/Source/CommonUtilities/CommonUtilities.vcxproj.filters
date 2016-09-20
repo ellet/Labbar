@@ -303,6 +303,9 @@
     <ClInclude Include="CU\Math\Quaternion\Quaternion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CU\Utility\CommandLineManager\CommandLineManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CU\Intersection\Shapes\AABB.cpp">
@@ -417,6 +420,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CU\Math\Quaternion\Quaternion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CU\Utility\CommandLineManager\CommandLineManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

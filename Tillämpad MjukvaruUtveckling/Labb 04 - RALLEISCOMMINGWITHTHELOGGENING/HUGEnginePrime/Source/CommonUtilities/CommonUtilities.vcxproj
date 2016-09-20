@@ -285,6 +285,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CU\Utility\CommandLineManager\CommandLineManager.h" />
     <ClInclude Include="CU\Containers\ContainersInclude.h" />
     <ClInclude Include="CU\Includes\WindowsDefines.h" />
     <ClInclude Include="CU\Input\InputWrapper\InputDefines.h" />
@@ -383,6 +384,7 @@
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CU\Utility\CommandLineManager\CommandLineManager.cpp" />
     <ClCompile Include="CU\Intersection\Colliders\CircleCollider.cpp" />
     <ClCompile Include="CU\Math\Quaternion\Quaternion.cpp" />
     <ClCompile Include="CU\Utility\Camera\Camera2D.cpp" />

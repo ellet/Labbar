@@ -81,13 +81,8 @@ PixelInputType HUGVertexShader(VertexInputType aInput)
 PixelOutputType HUGPixelShader(PixelInputType aInput)
 {
 	PixelOutputType tempOutput;
-	float4 tempColor;
-	tempColor.r = aInput.UV.x;
-	tempColor.g = aInput.UV.y;
-	tempColor.b = aInput.UV.x;
-	tempColor.a = 1.0;
 	
-	tempOutput.color = tempColor;//ShaderTexture.Sample(Sampler, aInput.UV);
+	tempOutput.color = ShaderTexture.Sample(Sampler, aInput.UV);
 
 	return tempOutput;
 }

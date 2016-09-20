@@ -14,10 +14,10 @@ CGame::~CGame()
 
 void CGame::Init()
 {
-	//myCube.InitAsModel("Modeller/Asteroid/AsteroidPillarLarge3.fbx");
-	myCube.InitAsCube();
+	myCube.InitAsModel("Modeller/Asteroid/AsteroidPillarLarge3.fbx");
+	//myCube.InitAsCube();
 	
-	//myController.SetPosition({ 0.f, 0.0f, -1.5f });
+	myController.SetPosition({ 0.f, 0.0f, -10.5f });
 }
 
 void CGame::Update()

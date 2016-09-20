@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "HUGModelManager.h"
+#include <time.h>
 
 
 
@@ -321,7 +322,22 @@ CDXModel & CHUGModelManager::CreateModel(const std::string & aFilePath)
 
 	if (myInstanceHandler.GetObjectInstance(aFilePath, tempInstance) == true)
 	{
+		
+		CU::Timer tempTimer;
+		CU::TimeManager::Update();
+		tempTimer.Reset();
+		
+
+		RESOURCE_LOG(("started loading a model from: " + aFilePath).c_str());
 		CLoaderModel & tempInputModel = *myModelLoader->LoadModel(aFilePath.c_str());
+
+		CU::TimeManager::Update();
+
+		std::stringstream tempNumberConverter;
+		tempNumberConverter << tempTimer.GetTime().GetMicroSeconds();
+
+
+		RESOURCE_LOG(("Model: " + aFilePath + " took: " + tempNumberConverter.str() + "ms" ).c_str());
 
 		DL_ASSERT(&tempInputModel != nullptr, "Model not loaded!");
 

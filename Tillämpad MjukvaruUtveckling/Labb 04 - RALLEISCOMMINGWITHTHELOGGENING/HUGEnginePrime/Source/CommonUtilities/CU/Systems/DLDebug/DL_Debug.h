@@ -28,8 +28,12 @@ extern "C" {
 
 #ifdef USE_FILTERLOG
 #define RESOURCE_LOG(...) DL_WRITELOG("Resource", __VA_ARGS__);
+#define ENGINE_LOG(...) DL_WRITELOG("Engine", __VA_ARGS__);
+#define INPUT_LOG(...) DL_WRITELOG("Input", __VA_ARGS__);
 #else
 #define RESOURCE_LOG(...);
+#define ENGINE_LOG(...);
+#define INPUT_LOG(...);
 #endif
 
 #define DL_DEBUG( ... )  DL_Debug::Debug::GetInstance()->DebugMessage(__LINE__,__FILE__,__VA_ARGS__);

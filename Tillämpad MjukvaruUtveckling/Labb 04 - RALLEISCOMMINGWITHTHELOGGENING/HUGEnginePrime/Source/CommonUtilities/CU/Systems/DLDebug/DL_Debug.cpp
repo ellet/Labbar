@@ -222,6 +222,14 @@ bool DL_Debug::Debug::ValidateLogFilterName(const std::string & aFilterName)
 	{
 		return true;
 	}
+	else if (aFilterName == "Engine")
+	{
+		return true;
+	}
+	else if (aFilterName == "Input")
+	{
+		return true;
+	}
 	else
 	{
 		return false;
