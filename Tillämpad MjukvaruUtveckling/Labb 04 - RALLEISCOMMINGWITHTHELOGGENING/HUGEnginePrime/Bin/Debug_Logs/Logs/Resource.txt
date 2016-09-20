@@ -1,0 +1,1 @@
+[17:31:19] This is a debug message printed by DL_DEBUG - Tests:   int : 8   float:  1.000000  string: Apa   
