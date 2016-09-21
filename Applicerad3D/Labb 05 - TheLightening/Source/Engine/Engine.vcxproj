@@ -250,6 +250,7 @@
     <ClInclude Include="DDSTextureLoader.h" />
     <ClInclude Include="DebugLogger.h" />
     <ClInclude Include="DepthBuffer.h" />
+    <ClInclude Include="DirectionalLight.h" />
     <ClInclude Include="DirectXHelpers.h" />
     <ClInclude Include="DXRenderer.h" />
     <ClInclude Include="Effect.h" />
@@ -313,6 +314,7 @@
     <ClCompile Include="DDSTextureLoader.cpp" />
     <ClCompile Include="DebugLogger.cpp" />
     <ClCompile Include="DepthBuffer.cpp" />
+    <ClCompile Include="DirectionalLight.cpp" />
     <ClCompile Include="DXRenderer.cpp" />
     <ClCompile Include="Effect.cpp" />
     <ClCompile Include="Engine.cpp" />

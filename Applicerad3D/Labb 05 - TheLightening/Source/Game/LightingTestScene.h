@@ -4,9 +4,13 @@
 template<typename TDataType>
 class ConstantBuffer;
 
-struct BlendCBuffer
+class DirectionalLight;
+
+
+struct LightBuffer
 {
-	Vector4f blendColor;
+	Vector4f myDirection;
+	Vector4f myColor;
 };
 
 class LightingTestScene : public Scene
@@ -17,6 +21,11 @@ public:
 
 	virtual void Render() override;
 
+
+	virtual void Update(const Time & aDeltaTime) override;
+
 private:
-	std::unique_ptr<ConstantBuffer<BlendCBuffer>> myConstantBuffer;
+	std::shared_ptr<ModelInstance> myHead;
+	std::unique_ptr<ConstantBuffer<LightBuffer>> myConstantBuffer;
+	std::unique_ptr<DirectionalLight> myLight;
 };

@@ -157,6 +157,7 @@
     <ClInclude Include="DebugLogger.h" />
     <ClInclude Include="StringFormatter.h" />
     <ClInclude Include="CommandLineParameters.h" />
+    <ClInclude Include="DirectionalLight.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -263,6 +264,7 @@
     <ClCompile Include="FileChangedEvent.cpp" />
     <ClCompile Include="DebugLogger.cpp" />
     <ClCompile Include="CommandLineParameters.cpp" />
+    <ClCompile Include="DirectionalLight.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GameObjects">

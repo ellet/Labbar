@@ -14,7 +14,7 @@ GenericMesh::GenericMesh(const std::shared_ptr<Texture> & aTexture)
 {
 	myVertexCount = 0;
 	myIndexCount = 0;
-	myTexture = aTexture;
+	myTextures[0] = aTexture;
 	myIdentifier = 0;
 }
 
@@ -41,16 +41,20 @@ GenericMesh::~GenericMesh()
 	}
 }
 
-void GenericMesh::SetTexture(const std::shared_ptr<Texture> & aTexture)
+void GenericMesh::SetTexture(const std::shared_ptr<Texture> & aTexture, const unsigned int aTextureIndex)
 {
-	myTexture = aTexture;
+	myTextures[aTextureIndex] = aTexture;
 }
 
 void GenericMesh::Render() const
 {
-	if (myTexture != nullptr)
+	if (myTextures[0] != nullptr)
 	{
-		myTexture->BindToPS(0);
+		myTextures[0]->BindToPS(0);
+	}
+	if (myTextures[1] != nullptr)
+	{
+		myTextures[1]->BindToPS(1);
 	}
 
 	myVertexBuffer->Bind(0);
@@ -62,9 +66,13 @@ void GenericMesh::Render() const
 
 void GenericMesh::RenderInstanced(int aInstanceCount) const
 {
-	if (myTexture != nullptr)
+	if (myTextures[0] != nullptr)
 	{
-		myTexture->BindToPS(0);
+		myTextures[0]->BindToPS(0);
+	}
+	if (myTextures[1] != nullptr)
+	{
+		myTextures[1]->BindToPS(1);
 	}
 
 	if (myEffect != nullptr)
@@ -79,9 +87,9 @@ void GenericMesh::RenderInstanced(int aInstanceCount) const
 	Engine::GetInstance().GetRenderer().GetContext()->DrawIndexedInstanced(myIndexCount, aInstanceCount, 0, 0, 0);
 }
 
-std::shared_ptr<Texture> GenericMesh::GetTexture()
+std::shared_ptr<Texture> GenericMesh::GetTexture(const unsigned int aTextureIndex)
 {
-	return myTexture;
+	return myTextures[aTextureIndex];
 }
 
 const BoundingBoxf & GenericMesh::GetBoundingBox()

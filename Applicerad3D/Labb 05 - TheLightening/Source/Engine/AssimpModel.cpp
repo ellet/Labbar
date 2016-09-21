@@ -28,22 +28,26 @@ AssimpModel::AssimpModel(const std::shared_ptr<Effect> & aEffect, const std::str
 		AddMesh(std::make_shared<AssimpMesh>(mesh, modelDirectory));
 	}
 
+	std::array<int, 2> IndicesToCheck;
+	IndicesToCheck[0] = 0;
+	IndicesToCheck[1] = 5;
 
-	for (size_t i = 0; i < model->myTextures.size(); i++)
+
+	for (unsigned int i = 0; i < IndicesToCheck.size(); i++)
 	{
 		// Model loader fills unused texture slots with an empty string, skip them
-		if (model->myTextures[i].size() == 0)
+		if (model->myTextures[IndicesToCheck[i]].size() == 0)
 			continue;
 
-		std::shared_ptr<Texture> texture = Engine::GetResourceManager().Get<Texture>(modelDirectory + model->myTextures[i]);
+		std::shared_ptr<Texture> texture = Engine::GetResourceManager().Get<Texture>(modelDirectory + model->myTextures[IndicesToCheck[i]]);
 
 		for (size_t j = 0; j < GetMeshes().size(); j++)
 		{
-			GetMeshes()[j]->SetTexture(texture);
+			GetMeshes()[j]->SetTexture(texture, i);
 		}
 
 		// Only load the first texture for now
-		break;
+		//break;
 	}
 
 	delete model;
