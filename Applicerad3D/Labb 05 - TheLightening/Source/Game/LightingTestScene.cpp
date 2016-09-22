@@ -44,9 +44,12 @@ void LightingTestScene::Render()
 
 void LightingTestScene::Update(const Time & aDeltaTime)
 {
+	const float LightSpeed = 1.0f;
+	const float CameraSpeed = 0.1f;
+
 	Vector3f tempVector = myLight->GetDirection();
-	Vector4f tempNewDirection(Vector4f(tempVector.x, tempVector.y, tempVector.z, 1.0f) * Matrix44f::CreateRotateAroundY(aDeltaTime.InSeconds()));
+	Vector4f tempNewDirection(Vector4f(tempVector.x, tempVector.y, tempVector.z, 1.0f) * Matrix44f::CreateRotateAroundY(aDeltaTime.InSeconds() * LightSpeed));
 
 	myLight->SetDirection(Vector3f(tempNewDirection.x, tempNewDirection.y, tempNewDirection.z));
-	myHead->SetMatrix(myHead->GetMatrix() * Matrix44f::CreateRotateAroundY(aDeltaTime.InSeconds() / 10.f));
+	myHead->SetMatrix(myHead->GetMatrix() * Matrix44f::CreateRotateAroundY(aDeltaTime.InSeconds() * CameraSpeed));
 }

@@ -52,9 +52,9 @@ PixelInputType VShader(VertexInputType input)
 	output.position = mul(toCamera, output.position);
 	output.position = mul(toProjection, output.position);
 	
-	output.normal = float4(mul((float3x3)input.toWorld, input.normal.xyz), 0.0f);
-	output.tangent = float4(mul((float3x3)input.toWorld, input.tangent.xyz), 0.0f);
-	output.bitangent = float4(mul((float3x3)input.toWorld, input.bitangent.xyz), 0.0f);
+	output.normal = float4(mul((float3x3)input.toWorld, input.normal.xyz), 1.0f);
+	output.tangent = float4(mul((float3x3)input.toWorld, input.tangent.xyz), 1.0f);
+	output.bitangent = float4(mul((float3x3)input.toWorld, input.bitangent.xyz), 1.0f);
 	output.uv = input.uv;
 	
 	
