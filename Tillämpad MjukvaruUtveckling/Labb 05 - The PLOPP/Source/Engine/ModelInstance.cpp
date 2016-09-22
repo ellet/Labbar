@@ -4,10 +4,19 @@
 #include "ConstantBuffer.h"
 #include "DXRenderer.h"
 #include "ModelRenderer.h"
+#include "StandardEffect.h"
+#include "AssimpModel.h"
 
 ModelInstance::ModelInstance(const std::shared_ptr<Model> & aModel)
 {
 	myModel = aModel;
+	myIsLoaded = true;
+}
+
+ModelInstance::ModelInstance()
+{
+	myModel = nullptr;
+	myIsLoaded = false;
 }
 
 ModelInstance::~ModelInstance()
@@ -16,12 +25,18 @@ ModelInstance::~ModelInstance()
 
 void ModelInstance::Render() const
 {
-	myModel->Render(myWorldMatrix);
+	if (myIsLoaded == true)
+	{
+		myModel->Render(myWorldMatrix);
+	}
 }
 
 void ModelInstance::InstantRender() const
 {
-	myModel->InstantRender(myWorldMatrix);
+	if (myIsLoaded == true)
+	{
+		myModel->InstantRender(myWorldMatrix);
+	}
 }
 
 void ModelInstance::SetMatrix(const Matrix44f & aMatrix)
@@ -41,3 +56,11 @@ void ModelInstance::SetPosition(const Vector3f & aPosition)
 {
 	myWorldMatrix.SetPosition(aPosition);
 }
+
+void ModelInstance::Load(std::shared_ptr<StandardEffect> & anEffect, const std::string & aFilePath)
+{
+	myModel = std::make_shared<AssimpModel>(anEffect, aFilePath);
+	myIsLoaded = true;
+}
+
+

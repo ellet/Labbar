@@ -27,5 +27,7 @@ private:
 	ID3D11ShaderResourceView * myTextureView;
 	int myWidth;
 	int myHeight;
+	//virtual bool myIsLoading;
+	//virtual bool myIsLoaded;
 };
 

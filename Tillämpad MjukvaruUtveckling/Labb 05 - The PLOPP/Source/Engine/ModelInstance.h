@@ -1,10 +1,12 @@
 #pragma once
 
 class Model;
+class StandardEffect;
 
 class ModelInstance
 {
 public:
+	ModelInstance();
 	ModelInstance(const std::shared_ptr<Model> & aModel);
 	~ModelInstance();
 
@@ -23,9 +25,12 @@ public:
 
 	void SetPosition(const Vector3f & aPosition);
 
+	void Load(std::shared_ptr<StandardEffect> & anEffect, const std::string & aFilePath);
+
 private:
 	std::shared_ptr<Model> myModel;
 	Matrix44f myWorldMatrix;
+	volatile bool myIsLoaded;
 };
 
 inline const Matrix44f & ModelInstance::GetMatrix() const

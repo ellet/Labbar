@@ -158,6 +158,9 @@
     <ClInclude Include="StringFormatter.h" />
     <ClInclude Include="CommandLineParameters.h" />
     <ClInclude Include="DirectionalLight.h" />
+    <ClInclude Include="ThreadPool\ThreadPool.h" />
+    <ClInclude Include="ThreadPool\Work.h" />
+    <ClInclude Include="ThreadPool\Worker.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -265,6 +268,9 @@
     <ClCompile Include="DebugLogger.cpp" />
     <ClCompile Include="CommandLineParameters.cpp" />
     <ClCompile Include="DirectionalLight.cpp" />
+    <ClCompile Include="ThreadPool\ThreadPool.cpp" />
+    <ClCompile Include="ThreadPool\Work.cpp" />
+    <ClCompile Include="ThreadPool\Worker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GameObjects">

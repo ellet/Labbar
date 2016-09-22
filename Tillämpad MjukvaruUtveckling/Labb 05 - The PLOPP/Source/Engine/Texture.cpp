@@ -94,6 +94,7 @@ ID3D11Texture2D* Texture::GetTexture()
 
 void Texture::Reload()
 {
+	//myIsLoading = true;
 	SAFE_RELEASE(myTextureView);
 	SAFE_RELEASE(myTexture);
 	
@@ -121,6 +122,7 @@ void Texture::Reload()
 		Error("Only 2D-textures are supported!");
 		return;
 	}
-	myIsLoaded = true;
+	//myIsLoaded = true;
+	//myIsLoading = false;
 }
 

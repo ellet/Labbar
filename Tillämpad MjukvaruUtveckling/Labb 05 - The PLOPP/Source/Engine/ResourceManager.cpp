@@ -31,7 +31,6 @@ ReceiveResult ResourceManager::Receive(const FileChangedEvent & aMessage)
 Resource::Resource(const std::string & aFilePath)
 {
 	myPath = aFilePath;
-	myIsLoaded = false;
 }
 
 Resource::~Resource()

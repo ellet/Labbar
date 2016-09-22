@@ -19,7 +19,6 @@ public:
 
 protected:
 	Resource(const std::string & aFilePath);
-	bool myIsLoaded;
 
 private:
 	std::string myPath;

@@ -290,6 +290,9 @@
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureDebugger.h" />
     <ClInclude Include="TextureLoader.h" />
+    <ClInclude Include="ThreadPool\ThreadPool.h" />
+    <ClInclude Include="ThreadPool\Work.h" />
+    <ClInclude Include="ThreadPool\Worker.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="TriangleModel.h" />
     <ClInclude Include="Vector2.h" />
@@ -350,6 +353,9 @@
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureDebugger.cpp" />
     <ClCompile Include="TextureLoader.cpp" />
+    <ClCompile Include="ThreadPool\ThreadPool.cpp" />
+    <ClCompile Include="ThreadPool\Work.cpp" />
+    <ClCompile Include="ThreadPool\Worker.cpp" />
     <ClCompile Include="TriangleModel.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
     <ClCompile Include="VertexShader.cpp" />

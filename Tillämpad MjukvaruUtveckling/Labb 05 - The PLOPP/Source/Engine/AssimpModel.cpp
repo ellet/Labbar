@@ -9,7 +9,7 @@ AssimpModel::AssimpModel(const std::shared_ptr<Effect> & aEffect, const std::str
 {
 	CFBXLoader loader;
 	CLoaderModel * model = loader.LoadModel(aFilePath.c_str());
-	
+
 	std::string modelDirectory;
 	size_t lastSlash = aFilePath.find_last_of("\\/");
 	if (lastSlash == std::string::npos)
@@ -21,11 +21,14 @@ AssimpModel::AssimpModel(const std::shared_ptr<Effect> & aEffect, const std::str
 		modelDirectory = aFilePath.substr(0, lastSlash + 1);
 	}
 
-	for (size_t i = 0; i < model->myMeshes.size(); i++)
+	for (unsigned short iMesh = 0; iMesh < model->myMeshes.size() + 1; ++iMesh)
 	{
-		CLoaderMesh * mesh = model->myMeshes[i];
-
-		AddMesh(std::make_shared<AssimpMesh>(mesh, modelDirectory));
+		if (iMesh == model->myMeshes.size() || model->myMeshes[iMesh] == nullptr)
+		{
+			CLoaderMesh * mesh = model->myMeshes[iMesh -1];
+			AddMesh(std::make_shared<AssimpMesh>(mesh, modelDirectory));
+			break;
+		}
 	}
 
 	std::array<int, 2> IndicesToCheck;
