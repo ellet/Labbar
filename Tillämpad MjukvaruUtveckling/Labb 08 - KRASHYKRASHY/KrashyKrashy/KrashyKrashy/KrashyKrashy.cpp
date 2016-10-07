@@ -10,6 +10,8 @@
 
 //#pragma comment(lib, "Dbghelp")
 
+std::wstring gloablPrettyOutput;
+
 void RunGame()
 {
 	*((int*)0) = 0;
@@ -81,12 +83,14 @@ void CreateMiniDump(_EXCEPTION_POINTERS* anExceptionPoiter)
 		SYSTEMTIME t;
 		GetSystemTime(&t);
 		wsprintfA(nameEnd,//-strlen(".exe"),
-			"_%4d%02d%02d_%02d%02d%02d.dmp",
+			"MiniDump_%4d%02d%02d_%02d%02d%02d.dmp",
 			t.wYear, t.wMonth, t.wDay, t.wHour, t.wMinute, t.wSecond);
 	}
 
 	std::string tempString(name);
 	std::wstring tempWstring(tempString.begin(), tempString.end());
+
+	gloablPrettyOutput = tempWstring;
 
 	HANDLE tempCrashFile = CreateFile(tempWstring.c_str(),                // name of the write
 		GENERIC_WRITE,          // open for writing
@@ -125,6 +129,12 @@ LONG WINAPI GetTheKrashy(_EXCEPTION_POINTERS* anExceptionPoiter)
 {
 	
 	CreateMiniDump(anExceptionPoiter);
+
+	std::wstring outPut;
+
+	outPut = L"A minidump was created at bin/" + gloablPrettyOutput + L" , please tell a programmer.";
+
+	MessageBox(NULL, outPut.c_str(), L"KRASSSIIIIHHHUUIII", MB_OK);
 
 	return EXCEPTION_EXECUTE_HANDLER;
 }
