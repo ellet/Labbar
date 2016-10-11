@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="RaceCondition">
+      <UniqueIdentifier>{54ada157-1bea-4811-88f9-b424b39f13f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Deadlock">
+      <UniqueIdentifier>{0ac02be9-15ff-4e2a-b152-61a09e012212}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataRace.cpp">
+      <Filter>RaceCondition</Filter>
+    </ClCompile>
+    <ClCompile Include="Deadlock.cpp">
+      <Filter>Deadlock</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DataRace.h">
+      <Filter>RaceCondition</Filter>
+    </ClInclude>
+    <ClInclude Include="Deadlock.h">
+      <Filter>Deadlock</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
