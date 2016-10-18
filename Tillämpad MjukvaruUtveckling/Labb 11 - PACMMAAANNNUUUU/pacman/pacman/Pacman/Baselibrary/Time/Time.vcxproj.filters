@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Time Input">
+      <UniqueIdentifier>{4da818b0-ff7f-4aac-82e6-56e760f77e44}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Precompiled.cpp">
+      <Filter>Time Input</Filter>
+    </ClCompile>
+    <ClCompile Include="TI_SystemTime.cpp">
+      <Filter>Time Input</Filter>
+    </ClCompile>
+    <ClCompile Include="TI_time.cpp">
+      <Filter>Time Input</Filter>
+    </ClCompile>
+    <ClCompile Include="TI_TimeManager.cpp">
+      <Filter>Time Input</Filter>
+    </ClCompile>
+    <ClCompile Include="TI_Timer.cpp">
+      <Filter>Time Input</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Precompiled.h">
+      <Filter>Time Input</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Time Input</Filter>
+    </ClInclude>
+    <ClInclude Include="TI_SystemTime.h">
+      <Filter>Time Input</Filter>
+    </ClInclude>
+    <ClInclude Include="TI_Time.h">
+      <Filter>Time Input</Filter>
+    </ClInclude>
+    <ClInclude Include="TI_TimeManager.h">
+      <Filter>Time Input</Filter>
+    </ClInclude>
+    <ClInclude Include="TI_Timer.h">
+      <Filter>Time Input</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
