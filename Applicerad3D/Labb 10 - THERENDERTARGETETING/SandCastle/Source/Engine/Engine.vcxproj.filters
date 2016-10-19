@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="Engine\Buffer\Buffer.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Buffer\ConstantBuffer.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Buffer\DepthBuffer.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Buffer\IndexBuffer.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Buffer\ShaderResourceBuffer.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Buffer\VertexBuffer.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Camera\Camera.h" />
+    <ClInclude Include="Engine\Camera\Skybox.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Effect\Effect.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Effect\InputLayout.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Effect\PixelShader.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Effect\Shader.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Effect\StandardEffect.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Effect\VertexShader.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Model\AssimpModel.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Model\CubeModel.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Model\Mesh.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Model\Model.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Model\ModelBatch.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Model\ModelInstance.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Model\PlaneModel.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Model\TriangleModel.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Rendering\DXRenderer.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Rendering\ModelRenderer.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Rendering\SpriteRenderer.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Scene\Scene.h" />
+    <ClInclude Include="Engine\Texture\Texture.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Texture\TextureDebugger.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Texture\TextureLoader.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Time\Stopwatch.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Time\Time.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Window\Window.h" />
+    <ClInclude Include="Engine\Window\WindowMessage.h" />
+    <ClInclude Include="Engine\Window\WindowMessageType.h" />
+    <ClInclude Include="Engine\Window\WindowsWindow.h" />
+    <ClInclude Include="Engine\BoundingBox.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\CommonIncludes.h" />
+    <ClInclude Include="Engine\Engine.h" />
+    <ClInclude Include="Engine\LightConstantBufferData.h" />
+    <ClInclude Include="Engine\PostMaster.h">
+      <Filter>PostMaster</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Size.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Engine\Resources\ResourceManager.h" />
+    <ClInclude Include="Engine\FileWatcher\FileChangedEvent.h" />
+    <ClInclude Include="Engine\FileWatcher\FileChangeWatcher.h" />
+    <ClInclude Include="Engine\Input\KeyboardKey.h" />
+    <ClInclude Include="Engine\Input\KeyMessages.h" />
+    <ClInclude Include="Engine\Texture\RenderTexture.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\DXHelpers\DirectXHelpers.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\DXHelpers\PlatformHelpers.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\GameObject\GameObject.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Debugging\CommandLineParameters.h" />
+    <ClInclude Include="Engine\Debugging\DebugLogger.h" />
+    <ClInclude Include="Engine\Vertex\SimpleVertex.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Vertex\Vertex.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Vertex\VertexPosColUV.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Model\Surface.h" />
+    <ClInclude Include="Engine\Sprite\SpriteShape.h" />
+    <ClInclude Include="Engine\Sprite\SpriteVertex.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Sprite\SpriteEffect.h" />
+    <ClInclude Include="Engine\Sprite\Sprite.h" />
+    <ClInclude Include="Engine\Sprite\QuadSpriteShape.h" />
+    <ClInclude Include="Engine\SplashScreen\SplashScreenEffect.h" />
+    <ClInclude Include="Engine\SplashScreen\SplashScreenScene.h" />
+    <ClInclude Include="Engine\Imgui\imgui_impl_dx11.h" />
+    <ClInclude Include="Engine\Debugging\Debugger.h" />
+    <ClInclude Include="Engine\SoundManager\SoundManger.h" />
+    <ClInclude Include="Engine\Component\BaseComponent.h" />
+    <ClInclude Include="Engine\Component\ModelComponent.h" />
+    <ClInclude Include="Engine\Component\Factory\ComponentFactory.h" />
+    <ClInclude Include="Engine\Component\Factory\BaseComponentFactory.h" />
+    <ClInclude Include="Engine\Component\LightComponent.h" />
+    <ClInclude Include="Engine\Component\Pointer\SharedPtrComponent.h" />
+    <ClInclude Include="Engine\DataParser\DataParser.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\error\en.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\error\error.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\internal\biginteger.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\internal\diyfp.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\internal\dtoa.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\internal\ieee754.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\internal\itoa.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\internal\meta.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\internal\pow10.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\internal\stack.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\internal\strfunc.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\internal\strtod.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\internal\swap.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\msinttypes\inttypes.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\msinttypes\stdint.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\allocators.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\document.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\encodedstream.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\encodings.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\filereadstream.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\filewritestream.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\memorybuffer.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\memorystream.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\pointer.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\prettywriter.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\rapidjson.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\reader.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\stringbuffer.h" />
+    <ClInclude Include="Engine\DataParser\rapidjson\writer.h" />
+    <ClInclude Include="Engine\Scene\SceneManager.h" />
+    <ClInclude Include="Engine\Scene\JsonScene.h" />
+    <ClInclude Include="Engine\Texture\TextureCube.h" />
+    <ClInclude Include="Engine\Camera\CameraController.h" />
+    <ClInclude Include="Engine\Camera\Controllers\FreeSpaceCameraController.h" />
+    <ClInclude Include="Engine\Component\BouncingComponent.h" />
+    <ClInclude Include="Engine\SoundManager\PlaySoundEvent.h" />
+    <ClInclude Include="Engine\Scripting\Script.h" />
+    <ClInclude Include="Engine\Scripting\ScriptLoader.h" />
+    <ClInclude Include="Engine\Scripting\ScriptFile.h" />
+    <ClInclude Include="Engine\DXHelpers\dds.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\DXHelpers\DDSTextureLoader.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Effect\SkyboxEffect.h" />
+    <ClInclude Include="Engine\Debugging\LineVertex.h" />
+    <ClInclude Include="Engine\Scripting\LuaComponent.h" />
+    <ClInclude Include="Engine\Component\TestEventSystem\TestEvent.h" />
+    <ClInclude Include="Engine\Component\TestEventSystem\TestEventSystemComponent.h" />
+    <ClInclude Include="Engine\GameObject\ObjectEventSystem\EventSubscriber.h" />
+    <ClInclude Include="Engine\Scripting\ScriptHost.h" />
+    <ClInclude Include="Engine\Input\MouseButton.h" />
+    <ClInclude Include="Engine\Input\MouseMessages.h" />
+    <ClInclude Include="Engine\Text\Text.h" />
+    <ClInclude Include="Engine\Camera\Controllers\FirstPersonCameraController.h" />
+    <ClInclude Include="Engine\Component\Collider\ColliderComponent.h" />
+    <ClInclude Include="Engine\Component\Collider\CollisionEvent.h" />
+    <ClInclude Include="Engine\Component\Collider\RenderColliderComponent.h" />
+    <ClInclude Include="Engine\InstanceData.h" />
+    <ClInclude Include="Engine\CollisionHandling\CollisionManager.h" />
+    <ClInclude Include="Engine\CollisionHandling\ColliderData.h" />
+    <ClInclude Include="Engine\GameObject\GameObjectFactory.h" />
+    <ClInclude Include="Engine\GameObject\ObjectPtr.h" />
+    <ClInclude Include="Engine\Component\ComponentPtr.h" />
+    <ClInclude Include="Engine\Effect\ShaderFile.h" />
+    <ClInclude Include="Engine\Effect\ShaderFileLoader.h" />
+    <ClInclude Include="Engine\Component\ComponentRegistry.h" />
+    <ClInclude Include="Engine\Component\ComponentRegistration.h" />
+    <ClInclude Include="Engine\ComponentList.h" />
+    <ClInclude Include="Engine\Effect\GeometryShader.h" />
+    <ClInclude Include="Engine\ParticleSystem\ParticleComponent.h" />
+    <ClInclude Include="Engine\ParticleSystem\ParticleData.h" />
+    <ClInclude Include="Engine\ParticleSystem\ParticleEffect.h" />
+    <ClInclude Include="Engine\ParticleSystem\ParticleLogic.h" />
+    <ClInclude Include="Engine\Streak\StreakData.h" />
+    <ClInclude Include="Engine\Streak\StreakEffect.h" />
+    <ClInclude Include="Engine\Streak\StreakComponent.h" />
+    <ClInclude Include="Engine\Component\CircleMovementComponent.h" />
+    <ClInclude Include="Engine\GUI\GUIElement.h" />
+    <ClInclude Include="Engine\GUI\GUILoader.h" />
+    <ClInclude Include="Engine\GUI\RootGUIElement.h" />
+    <ClInclude Include="Engine\Texture\BitmapData.h" />
+    <ClInclude Include="Engine\Text\Font.h" />
+    <ClInclude Include="Engine\Model\AssimpModelLoader.h" />
+    <ClInclude Include="Engine\Component\Collider\TriggerCollisionEvent.h" />
+    <ClInclude Include="Engine\Physics\PhysicsComponent.h" />
+    <ClInclude Include="Engine\Physics\PhysicsManager.h" />
+    <ClInclude Include="Engine\Lighting\PointLightComponent.h" />
+    <ClInclude Include="Engine\Physics\CollisionData.h" />
+    <ClInclude Include="Engine\ParticleSystem\ParticleSettings.h" />
+    <ClInclude Include="Engine\Component\Collider\CollisionFilter.h" />
+    <ClInclude Include="Engine\Scene\SceneStack\SceneStack.h" />
+    <ClInclude Include="Engine\Scene\SceneStack\PopSceneMessage.h" />
+    <ClInclude Include="Engine\GenericGameMessages.h" />
+    <ClInclude Include="Engine\Effect\FullScreenEffect.h" />
+    <ClInclude Include="Engine\DXHelpers\FullscreenHelper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine\Buffer\Buffer.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Buffer\ConstantBuffer.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Buffer\DepthBuffer.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Buffer\IndexBuffer.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Buffer\ShaderResourceBuffer.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Buffer\VertexBuffer.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Camera\Camera.cpp" />
+    <ClCompile Include="Engine\Camera\Skybox.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Effect\Effect.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Effect\InputLayout.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Effect\PixelShader.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Effect\Shader.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Effect\StandardEffect.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Effect\VertexShader.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Model\AssimpModel.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Model\CubeModel.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Model\Mesh.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Model\Model.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Model\ModelBatch.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Model\ModelInstance.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Model\PlaneModel.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Model\TriangleModel.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Rendering\DXRenderer.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Rendering\ModelRenderer.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Rendering\SpriteRenderer.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Scene\Scene.cpp" />
+    <ClCompile Include="Engine\Texture\Texture.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Texture\TextureDebugger.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Texture\TextureLoader.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Time\Stopwatch.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Window\Window.cpp" />
+    <ClCompile Include="Engine\Window\WindowsWindow.cpp" />
+    <ClCompile Include="Engine\Engine.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Engine\Resources\ResourceManager.cpp" />
+    <ClCompile Include="Engine\FileWatcher\FileChangedEvent.cpp" />
+    <ClCompile Include="Engine\FileWatcher\FileChangeWatcher.cpp" />
+    <ClCompile Include="Engine\Texture\RenderTexture.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\GameObject\GameObject.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Debugging\CommandLineParameters.cpp" />
+    <ClCompile Include="Engine\Debugging\DebugLogger.cpp" />
+    <ClCompile Include="Engine\Model\Surface.cpp" />
+    <ClCompile Include="Engine\Sprite\SpriteShape.cpp" />
+    <ClCompile Include="Engine\Sprite\SpriteEffect.cpp" />
+    <ClCompile Include="Engine\Sprite\Sprite.cpp" />
+    <ClCompile Include="Engine\Sprite\QuadSpriteShape.cpp" />
+    <ClCompile Include="Engine\SplashScreen\SplashScreenEffect.cpp" />
+    <ClCompile Include="Engine\SplashScreen\SplashScreenScene.cpp" />
+    <ClCompile Include="Engine\Imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="Engine\Debugging\Debugger.cpp" />
+    <ClCompile Include="Engine\SoundManager\SoundManger.cpp" />
+    <ClCompile Include="Engine\Component\BaseComponent.cpp" />
+    <ClCompile Include="Engine\Component\ModelComponent.cpp" />
+    <ClCompile Include="Engine\Component\LightComponent.cpp" />
+    <ClCompile Include="Engine\DataParser\DataParser.cpp" />
+    <ClCompile Include="Engine\Scene\SceneManager.cpp" />
+    <ClCompile Include="Engine\Scene\JsonScene.cpp" />
+    <ClCompile Include="Engine\Texture\TextureCube.cpp" />
+    <ClCompile Include="Engine\Camera\CameraController.cpp" />
+    <ClCompile Include="Engine\Camera\Controllers\FreeCameraController.cpp" />
+    <ClCompile Include="Engine\Component\BouncingComponent.cpp" />
+    <ClCompile Include="Engine\Scripting\Script.cpp" />
+    <ClCompile Include="Engine\Scripting\ScriptLoader.cpp" />
+    <ClCompile Include="Engine\Scripting\ScriptFile.cpp" />
+    <ClCompile Include="Engine\DXHelpers\DDSTextureLoader.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Effect\SkyboxEffect.cpp" />
+    <ClCompile Include="Engine\Scripting\LuaComponent.cpp" />
+    <ClCompile Include="Engine\Component\TestEventSystem\TestEventSystemComponent.cpp" />
+    <ClCompile Include="Engine\Scripting\ScriptHost.cpp" />
+    <ClCompile Include="Engine\Text\Text.cpp" />
+    <ClCompile Include="Engine\Camera\Controllers\FirstPersonCameraController.cpp" />
+    <ClCompile Include="Engine\Component\Collider\ColliderComponent.cpp" />
+    <ClCompile Include="Engine\Component\Collider\RenderColliderComponent.cpp" />
+    <ClCompile Include="Engine\CollisionHandling\CollisionManager.cpp" />
+    <ClCompile Include="Engine\GameObject\GameObjectFactory.cpp" />
+    <ClCompile Include="Engine\GameObject\ObjectPtr.cpp" />
+    <ClCompile Include="Engine\Effect\ShaderFile.cpp" />
+    <ClCompile Include="Engine\Effect\ShaderFileLoader.cpp" />
+    <ClCompile Include="Engine\Component\ComponentRegistration.cpp" />
+    <ClCompile Include="Engine\Component\ComponentRegistry.cpp" />
+    <ClCompile Include="Engine\ComponentList.cpp" />
+    <ClCompile Include="Engine\Effect\GeometryShader.cpp" />
+    <ClCompile Include="Engine\ParticleSystem\ParticleComponent.cpp" />
+    <ClCompile Include="Engine\ParticleSystem\ParticleEffect.cpp" />
+    <ClCompile Include="Engine\Streak\StreakEffect.cpp" />
+    <ClCompile Include="Engine\Streak\StreakComponent.cpp" />
+    <ClCompile Include="Engine\Component\CircleMovementComponent.cpp" />
+    <ClCompile Include="Engine\GUI\GUIElement.cpp" />
+    <ClCompile Include="Engine\GUI\GUILoader.cpp" />
+    <ClCompile Include="Engine\GUI\RootGUIElement.cpp" />
+    <ClCompile Include="Engine\Text\Font.cpp" />
+    <ClCompile Include="Engine\Model\AssimpModelLoader.cpp" />
+    <ClCompile Include="Engine\Physics\PhysicsComponent.cpp" />
+    <ClCompile Include="Engine\Physics\PhysicsManager.cpp" />
+    <ClCompile Include="Engine\Lighting\PointLightComponent.cpp" />
+    <ClCompile Include="Engine\Scene\SceneStack\SceneStack.cpp" />
+    <ClCompile Include="Engine\Effect\FullScreenEffect.cpp" />
+    <ClCompile Include="Engine\DXHelpers\FullscreenHelper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="GameObjects">
+      <UniqueIdentifier>{e575af88-297e-4af4-9aed-230f90652816}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rendering">
+      <UniqueIdentifier>{5b128140-d6a3-4198-97da-6143e9d957db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{8bfdc100-5c8f-4ed3-8360-200107fc3fcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PostMaster">
+      <UniqueIdentifier>{5ede3819-4343-4daa-a253-5a7f1c85d57a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
