@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Frogger">
+      <UniqueIdentifier>{c73fc8b4-1690-4cc6-b1c8-1db2306c528b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frogger\World">
+      <UniqueIdentifier>{267b22c9-76ed-4ce6-ab0e-cb287c8e8238}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frogger\Frog">
+      <UniqueIdentifier>{5f56c448-bb94-4050-aeba-3030d41408bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frogger\MainSingleton">
+      <UniqueIdentifier>{67788690-9b57-4f7e-9644-1ccb000250f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frogger\Vehicle">
+      <UniqueIdentifier>{173523df-6ae3-48ef-8328-dd4d43e837e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frogger\Vehicle\Car">
+      <UniqueIdentifier>{ef6f6605-70bf-46b8-9118-bfd7372058d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frogger\Vehicle\Bulldozer">
+      <UniqueIdentifier>{cf6acb8d-97cf-437e-b7d4-c3832e2f24e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frogger\Vehicle\Ferarri">
+      <UniqueIdentifier>{654d5945-4023-4b21-b224-205137702a36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frogger\Vehicle\Truck">
+      <UniqueIdentifier>{14657efb-c319-41a7-9851-a3d1a4e43508}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frogger\Vehicle\Bus">
+      <UniqueIdentifier>{16030ae4-64b6-49ab-973d-a38240b03c5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frogger\WaterEntity">
+      <UniqueIdentifier>{28253b51-57be-4709-abf8-292a10f7fe2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frogger\WaterEntity\Turtle">
+      <UniqueIdentifier>{760d928a-71d3-45a6-a38b-fc1f3d0d0470}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frogger\WaterEntity\Log">
+      <UniqueIdentifier>{75217a53-1a4d-47ac-a695-55f0172bff32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frogger\ScoreHandler">
+      <UniqueIdentifier>{e5c356ea-baaf-43ee-8c88-26c2957c4e45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frogger\TimeHandler">
+      <UniqueIdentifier>{2b1af9c6-7d38-47f7-a115-fd81800a8de6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{ba4e5c3c-1da8-4850-bdac-2252be12b1fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Main\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Main\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="defines.h">
+      <Filter>Frogger</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Frogger</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelDataHandler.h">
+      <Filter>Frogger</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Frogger\World</Filter>
+    </ClInclude>
+    <ClInclude Include="Frog.h">
+      <Filter>Frogger\Frog</Filter>
+    </ClInclude>
+    <ClInclude Include="MainSingleton.h">
+      <Filter>Frogger\MainSingleton</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteContainer.h">
+      <Filter>Frogger\MainSingleton</Filter>
+    </ClInclude>
+    <ClInclude Include="TileGrid.h">
+      <Filter>Frogger\MainSingleton</Filter>
+    </ClInclude>
+    <ClInclude Include="Vehicle.h">
+      <Filter>Frogger\Vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="VehicleHandler.h">
+      <Filter>Frogger\Vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="Car.h">
+      <Filter>Frogger\Vehicle\Car</Filter>
+    </ClInclude>
+    <ClInclude Include="Bulldozer.h">
+      <Filter>Frogger\Vehicle\Bulldozer</Filter>
+    </ClInclude>
+    <ClInclude Include="Ferarri.h">
+      <Filter>Frogger\Vehicle\Ferarri</Filter>
+    </ClInclude>
+    <ClInclude Include="Truck.h">
+      <Filter>Frogger\Vehicle\Truck</Filter>
+    </ClInclude>
+    <ClInclude Include="Bus.h">
+      <Filter>Frogger\Vehicle\Bus</Filter>
+    </ClInclude>
+    <ClInclude Include="WaterEntity.h">
+      <Filter>Frogger\WaterEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="WaterEntityHandler.h">
+      <Filter>Frogger\WaterEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="Turtle.h">
+      <Filter>Frogger\WaterEntity\Turtle</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Frogger\WaterEntity\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreHandler.h">
+      <Filter>Frogger\ScoreHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeHandler.h">
+      <Filter>Frogger\TimeHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>Main\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="namespaces.h">
+      <Filter>Main\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Main\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Main\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Main\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Main\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderCommand.h">
+      <Filter>Main\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GiefThreadNAme.h">
+      <Filter>Main\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Main\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsManager.h">
+      <Filter>Main\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Game.cpp">
+      <Filter>Frogger</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelDataHandler.cpp">
+      <Filter>Frogger</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Frogger\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Frog.cpp">
+      <Filter>Frogger\Frog</Filter>
+    </ClCompile>
+    <ClCompile Include="MainSingleton.cpp">
+      <Filter>Frogger\MainSingleton</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteContainer.cpp">
+      <Filter>Frogger\MainSingleton</Filter>
+    </ClCompile>
+    <ClCompile Include="TileGrid.cpp">
+      <Filter>Frogger\MainSingleton</Filter>
+    </ClCompile>
+    <ClCompile Include="Vehicle.cpp">
+      <Filter>Frogger\Vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="VehicleHandler.cpp">
+      <Filter>Frogger\Vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="Car.cpp">
+      <Filter>Frogger\Vehicle\Car</Filter>
+    </ClCompile>
+    <ClCompile Include="Bulldozer.cpp">
+      <Filter>Frogger\Vehicle\Bulldozer</Filter>
+    </ClCompile>
+    <ClCompile Include="Ferarri.cpp">
+      <Filter>Frogger\Vehicle\Ferarri</Filter>
+    </ClCompile>
+    <ClCompile Include="Truck.cpp">
+      <Filter>Frogger\Vehicle\Truck</Filter>
+    </ClCompile>
+    <ClCompile Include="Bus.cpp">
+      <Filter>Frogger\Vehicle\Bus</Filter>
+    </ClCompile>
+    <ClCompile Include="WaterEntity.cpp">
+      <Filter>Frogger\WaterEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="WaterEntityHandler.cpp">
+      <Filter>Frogger\WaterEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="Turtle.cpp">
+      <Filter>Frogger\WaterEntity\Turtle</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>Frogger\WaterEntity\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreHandler.cpp">
+      <Filter>Frogger\ScoreHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeHandler.cpp">
+      <Filter>Frogger\TimeHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Main\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Main\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Main\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderCommand.cpp">
+      <Filter>Main\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Main\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsManager.cpp">
+      <Filter>Main\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Frogger.ico">
+      <Filter>Main\Resource Files</Filter>
+    </Image>
+    <Image Include="small.ico">
+      <Filter>Main\Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Frogger.rc">
+      <Filter>Main\Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
