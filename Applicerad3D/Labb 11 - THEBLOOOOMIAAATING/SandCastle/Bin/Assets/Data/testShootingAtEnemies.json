@@ -1,0 +1,243 @@
+{
+  "name": "testCollisionScene",
+  "hierarchy": [
+    {
+      "name": "Player",
+      "components": [
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 0.01,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {
+            "movementSpeed": 10.0,
+            "mouseRotationSpeed": 1.0,
+            "keyboardRotationSpeed": 3.0,
+            "boostMovementSpeedMultiplier": 7.5,
+            "boostRotationSpeedMultiplier": 0.5
+          },
+          "type": "PlayerControllerComponent"
+        },
+        {
+          "properties": {
+            "shotSize": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "shotCooldown": 1.0,
+            "shotDamage": 1.0
+          },
+          "type": "PlayerShootComponent"
+        },
+        {
+          "properties": {
+            "StartSpeed": 0.0,
+            "Drag": 0.0,
+            "WorldDirection": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "RenderCollider": false
+          },
+          "type": "PhysicsComponent"
+        },
+        {
+          "localPosition": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": [
+        {
+          "name": "cockpit",
+          "components": [
+            {
+              "localPosition": [
+                0.0,
+                -0.173512548,
+                -0.246442258
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        },
+        {
+          "name": "Camera",
+          "components": [
+            {
+              "localPosition": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "interceptorX101 (1)",
+      "components": [
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 3.63,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {
+            "modelPath": "Assets/Models/Ships/Enemies/InterceptorX101/interceptorX101.fbx"
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "properties": {
+            "StartSpeed": 0.0,
+            "Drag": 0.0,
+            "WorldDirection": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "RenderCollider": false
+          },
+          "type": "PhysicsComponent"
+        },
+        {
+          "localPosition": [
+            41.2,
+            0.0,
+            41.4
+          ],
+          "localRotation": [
+            0.0,
+            0.7071068,
+            0.0,
+            -0.7071068
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    },
+    {
+      "name": "interceptorX101",
+      "components": [
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 3.63,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {
+            "modelPath": "Assets/Models/Ships/Enemies/InterceptorX101/interceptorX101.fbx"
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "properties": {
+            "StartSpeed": 0.0,
+            "Drag": 0.0,
+            "WorldDirection": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "RenderCollider": false
+          },
+          "type": "PhysicsComponent"
+        },
+        {
+          "localPosition": [
+            0.0,
+            1.7,
+            41.4
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    }
+  ]
+}

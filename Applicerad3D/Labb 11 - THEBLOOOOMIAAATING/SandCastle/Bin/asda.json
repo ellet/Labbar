@@ -1,0 +1,41 @@
+{
+  "name": "",
+  "hierarchy": [
+    {
+      "name": "interceptorX101",
+      "components": [
+        {
+          "properties": {
+            "scriptPath": "Assets/Scripts/Components/TestComponent.lua"
+          },
+          "type": "LuaComponent"
+        },
+        {
+          "modelPath": "Assets/Models/Ships/Enemies/InterceptorX101/interceptorX101.fbx",
+          "texturePath": "",
+          "type": "ModelData"
+        },
+        {
+          "localPosition": [
+            -1.46276188,
+            -0.268044,
+            1.966455
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    }
+  ]
+}

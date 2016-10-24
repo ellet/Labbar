@@ -1,0 +1,374 @@
+{
+  "name": "testCollisionScene",
+  "hierarchy": [
+    {
+      "name": "Player",
+      "components": [
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 0.01,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {
+            "movementSpeed": 10.0,
+            "mouseRotationSpeed": 1.0,
+            "keyboardRotationSpeed": 3.0,
+            "boostMovementSpeedMultiplier": 7.5,
+            "boostRotationSpeedMultiplier": 0.5
+          },
+          "type": "PlayerControllerComponent"
+        },
+        {
+          "properties": {
+            "shotSize": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "shotCooldown": 1.0,
+            "shotDamage": 1.0
+          },
+          "type": "PlayerShootComponent"
+        },
+        {
+          "properties": {
+            "StartSpeed": 0.0,
+            "Drag": 0.0,
+            "WorldDirection": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "type": "PhysicsComponent"
+        },
+        {
+          "localPosition": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": [
+        {
+          "name": "cockpit",
+          "components": [
+            {
+              "localPosition": [
+                0.0,
+                -0.173512548,
+                -0.246442258
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        },
+        {
+          "name": "Camera",
+          "components": [
+            {
+              "localPosition": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "interceptorX101 (1)",
+      "components": [
+        {
+          "properties": {},
+          "type": "AIInterceptorComponent"
+        },
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 3.63,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {
+            "modelPath": "Assets/Models/Ships/Enemies/InterceptorX101/interceptorX101.fbx"
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "properties": {
+            "identifier": "Interceptor gun",
+            "weaponModelPath": "",
+            "weaponIconPath": "",
+            "projectileModelPath": "",
+            "shootSound": "",
+            "barrelOffset": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "shotScale": [
+              0.1,
+              0.1,
+              5.0
+            ],
+            "shotCooldown": 1.0,
+            "damage": 3.0,
+            "shotSpeed": 400.0
+          },
+          "type": "WeaponComponent"
+        },
+		{
+          "properties": {
+            "StartColor": [
+              0.897058845,
+              0.02638411,
+              0.52638411,
+              0.0
+            ],
+            "EndColor": [
+              0.87027204,
+              0.882352948,
+              0.50648789573,
+              0.0
+            ],
+            "MinMaxVelocityX": [
+              -1.0,
+              1.0
+            ],
+            "MinMaxVelocityY": [
+              -1.0,
+              1.0
+            ],
+            "MinMaxVelocityZ": [
+              -1.0,
+              1.0
+            ],
+            "MinMaxLifetime": [
+              1.0,
+              10.0
+            ],
+            "MinMaxSize": [
+              1.0,
+              3.0
+            ],
+            "EndSizeInPercent": 0.1,
+            "EmitCoolDown": 0.05,
+            "AmountOfParticles": 100
+          },
+          "type": "ParticleComponent"
+        },
+        {
+          "properties": {
+            "StartSpeed": 0.0,
+            "Drag": 0.0,
+            "WorldDirection": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "type": "PhysicsComponent"
+        },
+        {
+          "localPosition": [
+            41.2,
+            0.0,
+            41.4
+          ],
+          "localRotation": [
+            0.0,
+            0.7071068,
+            0.0,
+            -0.7071068
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    },
+    {
+      "name": "interceptorX101",
+      "components": [
+        {
+          "properties": {},
+          "type": "AIInterceptorComponent"
+        },
+        {
+          "properties": {
+            "identifier": "Interceptor gun",
+            "weaponModelPath": "",
+            "weaponIconPath": "",
+            "projectileModelPath": "",
+            "shootSound": "",
+            "barrelOffset": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "shotScale": [
+              0.1,
+              0.1,
+              5.0
+            ],
+            "shotCooldown": 1.0,
+            "damage": 3.0,
+            "shotSpeed": 400.0
+          },
+          "type": "WeaponComponent"
+        },
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 3.63,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {
+            "modelPath": "Assets/Models/Ships/Enemies/InterceptorX101/interceptorX101.fbx"
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "properties": {
+            "StartColor": [
+              0.897058845,
+              0.02638411,
+              0.52638411,
+              0.0
+            ],
+            "EndColor": [
+              0.87027204,
+              0.882352948,
+              0.50648789573,
+              0.0
+            ],
+            "MinMaxVelocityX": [
+              -1.0,
+              1.0
+            ],
+            "MinMaxVelocityY": [
+              -1.0,
+              1.0
+            ],
+            "MinMaxVelocityZ": [
+              -1.0,
+              1.0
+            ],
+            "MinMaxLifetime": [
+              1.0,
+              10.0
+            ],
+            "MinMaxSize": [
+              1.0,
+              5.0
+            ],
+            "EndSizeInPercent": 0.1,
+            "EmitCoolDown": 0.1,
+            "AmountOfParticles": 100
+          },
+          "type": "ParticleComponent"
+        },
+        {
+          "properties": {
+            "StartSpeed": 0.0,
+            "Drag": 0.0,
+            "WorldDirection": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "type": "PhysicsComponent"
+        },
+        {
+          "localPosition": [
+            0.0,
+            1.7,
+            41.4
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    }
+  ]
+}
