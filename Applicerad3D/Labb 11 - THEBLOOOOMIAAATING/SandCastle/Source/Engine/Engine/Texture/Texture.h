@@ -20,6 +20,8 @@ namespace ENGINE_NAMESPACE
 		void BindToHS(int aSlot) const;
 		void BindToDS(int aSlot) const;
 
+		static void ClearShaderResource(int aSlot);
+
 		ID3D11Texture2D * GetTexture();
 
 		void Reload() override;

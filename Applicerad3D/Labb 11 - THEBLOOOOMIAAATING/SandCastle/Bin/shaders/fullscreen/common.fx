@@ -18,5 +18,6 @@ struct PixelOutput
 };
 
 Texture2D boundTexture : register( t0 );
+Texture2D boundSecondTexture : register(t1);
 
 SamplerState samplerState;

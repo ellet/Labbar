@@ -26,21 +26,39 @@ namespace ENGINE_NAMESPACE
 		myVertices[5].myUV = Vector2f(0.f ,0.f);
 
 		myVertexBuffer = std::make_unique<VertexBuffer<FullScreenVertex>>(&myVertices[0], myVertices.Size(), true);
-		myCopyEffect = std::make_unique<FullScreenEffect>();
+
+		myEffects.Resize(static_cast<unsigned short>(FullScreenEffectTypes::EnumLength));
+		myEffects[GetEffectSlot(FullScreenEffectTypes::eCopy)] = new FullScreenEffect();
+		myEffects[GetEffectSlot(FullScreenEffectTypes::eLuminence)] = new FullScreenEffect("Luminance");
+		myEffects[GetEffectSlot(FullScreenEffectTypes::eAdd)] = new FullScreenEffect("AddToTexturesToTarget");
+		myEffects[GetEffectSlot(FullScreenEffectTypes::eGaussianBlurHorizontal)] = new FullScreenEffect("GaussianBlurHorizontal");
+		myEffects[GetEffectSlot(FullScreenEffectTypes::eGaussianBlurVertical)] = new FullScreenEffect("GaussianBlurVertical");
 	}
 
 
 	FullscreenHelper::~FullscreenHelper()
 	{
+		myEffects.DeleteAll();
 	}
 
-	void FullscreenHelper::CopyTextureToTarget(const std::shared_ptr<Texture> & aTextureToCopyFrom)
+	void FullscreenHelper::DoEffect(const FullScreenEffectTypes aEffectType, const std::shared_ptr<Texture> & aTextureToCopyFrom)
 	{
 		aTextureToCopyFrom->BindToPS(0);
+		myVertexBuffer->Bind(0);
+		myEffects[GetEffectSlot(aEffectType)]->Bind();
+
+		Engine::GetInstance().GetRenderer().GetContext()->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY::D3D10_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+
+		Engine::GetInstance().GetRenderer().GetContext()->Draw(myVertices.Size(), 0);
+	}
+
+	void FullscreenHelper::DoEffect(const FullScreenEffectTypes aEffectType, const std::shared_ptr<Texture> & aTextureToCopyFrom, const std::shared_ptr<Texture> & aSecondToCopyFrom)
+	{
+		aTextureToCopyFrom->BindToPS(0);
+		aSecondToCopyFrom->BindToPS(1);
 
 		myVertexBuffer->Bind(0);
-
-		myCopyEffect->Bind();
+		myEffects[GetEffectSlot(aEffectType)]->Bind();
 
 		Engine::GetInstance().GetRenderer().GetContext()->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY::D3D10_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 

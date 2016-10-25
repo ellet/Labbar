@@ -4,8 +4,19 @@
 
 namespace ENGINE_NAMESPACE
 {
+
 	class FullScreenEffect;
 
+	enum class FullScreenEffectTypes
+	{
+		eCopy,
+		eLuminence,
+		eAdd,
+		eGaussianBlurHorizontal,
+		eGaussianBlurVertical,
+		EnumLength
+	};
+	
 	struct FullScreenVertex
 	{
 		Vector4f myPosition;
@@ -18,11 +29,16 @@ namespace ENGINE_NAMESPACE
 		FullscreenHelper();
 		~FullscreenHelper();
 
-		void CopyTextureToTarget(const std::shared_ptr<Texture> & aTextureToCopyFrom);
+		void DoEffect(const FullScreenEffectTypes aEffectType, const std::shared_ptr<Texture> & aTextureToCopyFrom);
+		void DoEffect(const FullScreenEffectTypes aEffectType, const std::shared_ptr<Texture> & aTextureToCopyFrom, const std::shared_ptr<Texture> & aSecondToCopyFrom);
 
 	private:
-		std::unique_ptr<FullScreenEffect> myCopyEffect;
+		unsigned short GetEffectSlot(const FullScreenEffectTypes aEffectType) { return static_cast<unsigned short>(aEffectType); }
+
+		GrowingArray<FullScreenEffect*> myEffects;
+
 		std::unique_ptr<VertexBuffer<FullScreenVertex>> myVertexBuffer;
 		GrowingArray<FullScreenVertex> myVertices;
 	};
+	
 }

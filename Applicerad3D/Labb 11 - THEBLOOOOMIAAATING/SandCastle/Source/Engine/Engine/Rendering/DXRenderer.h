@@ -22,6 +22,14 @@ namespace ENGINE_NAMESPACE
 	class SpriteRenderer;
 	class FullscreenHelper;
 
+	struct BloomStruct
+	{
+		std::shared_ptr<RenderTexture> myInputTargetTexture;
+		std::shared_ptr<RenderTexture> mySquareTargetTexture;
+		std::shared_ptr<RenderTexture> myDownSampleTargetTexture[3];
+		std::shared_ptr<RenderTexture> myBloomTargetTexture[4];
+	};
+
 	class DXRenderer
 	{
 	public:
@@ -64,6 +72,11 @@ namespace ENGINE_NAMESPACE
 	private:
 		void CreateBuffers(int aWidth, int aHeight);
 
+		void CreateBloomTextures(const int aWidth, const int aHeight);
+		void DoFullScreenEffects();
+		void Bloom();
+		void ClearBloom();
+
 		IDXGISwapChain * mySwapchain;
 		ID3D11Device * myDevice;
 		ID3D11DeviceContext * myDeviceContext;
@@ -83,6 +96,8 @@ namespace ENGINE_NAMESPACE
 		std::unique_ptr<SpriteRenderer> mySpriteRenderer;
 		
 		std::unique_ptr<FullscreenHelper> myFullscreenHelper;
+
+		BloomStruct myBloomStruct;
 
 		Vector2f myCurrentRenderTargetResolution;
 		ID3D11Debug * myD3dDebug;

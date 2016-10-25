@@ -89,6 +89,12 @@ namespace ENGINE_NAMESPACE
 		Engine::GetInstance().GetRenderer().GetContext()->DSSetShaderResources(aSlot, 1, &myTextureView);
 	}
 
+	void Texture::ClearShaderResource(int aSlot)
+	{
+		ID3D11ShaderResourceView* nullSRV[1] = { nullptr };
+		Engine::GetInstance().GetRenderer().GetContext()->PSSetShaderResources(0, 1, nullSRV);
+	}
+
 	ID3D11Texture2D* Texture::GetTexture()
 	{
 		return myTexture;

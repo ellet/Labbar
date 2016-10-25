@@ -178,8 +178,8 @@ namespace ENGINE_NAMESPACE
 		if (mySkybox != nullptr)
 		{
 			Engine::GetRenderer().DisableDepthWrite();
-			mySkybox->SetMatrix(Matrix44f::CreateTranslation(myCamera->GetPosition()));
-			mySkybox->InstantRender();
+			/*mySkybox->SetMatrix(Matrix44f::CreateTranslation(myCamera->GetPosition()));
+			mySkybox->InstantRender();*/
 			Engine::GetRenderer().EnableDepth();
 		}
 

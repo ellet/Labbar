@@ -262,9 +262,10 @@ namespace ENGINE_NAMESPACE
 
 		Engine::GetDebugger().RenderFrame();
 
-		myBackbuffer->Bind(0);
+		DoFullScreenEffects();
 
-		myFullscreenHelper->CopyTextureToTarget(myIntermediateRenderTarget->GetTexture());
+		myBackbuffer->Bind(0);
+		myFullscreenHelper->DoEffect(FullScreenEffectTypes::eCopy, myIntermediateRenderTarget->GetTexture());
 
 		mySwapchain->Present(0, 0);
 	}
@@ -325,12 +326,90 @@ namespace ENGINE_NAMESPACE
 
 		myBackbuffer = std::make_shared<RenderTexture>(texture, backbuffer, shaderResourceView, aWidth, aHeight, true);
 		myIntermediateRenderTarget = std::make_shared<RenderTexture>(aWidth, aHeight, true);
+		
+		CreateBloomTextures(aWidth, aHeight);
 
 		myBackbuffer->Bind(0);
 
 		SAFE_RELEASE(texture);
 		SAFE_RELEASE(backbuffer);
 		SAFE_RELEASE(shaderResourceView);
+	}
+
+	void DXRenderer::CreateBloomTextures(const int aWidth, const int aHeight)
+	{
+		myBloomStruct.myInputTargetTexture = std::make_shared<RenderTexture>(aWidth, aHeight, true);
+
+		const int SmallestAxis = min(aWidth, aHeight);
+
+		myBloomStruct.mySquareTargetTexture = std::make_shared<RenderTexture>(SmallestAxis, SmallestAxis, true);
+
+		const int DownSample1 = static_cast<int> (pow(2, floor(log(SmallestAxis) / ( log(2)))));
+		const int DownSample2 = DownSample1 / 2;
+		//const int DownSample3 = DownSample2 / 2;
+
+		myBloomStruct.myDownSampleTargetTexture[0] = std::make_shared<RenderTexture>(DownSample1, DownSample1, true);
+		myBloomStruct.myDownSampleTargetTexture[1] = std::make_shared<RenderTexture>(DownSample2, DownSample2, true);
+		//myBloomStruct.myDownSampleTargetTexture[2] = std::make_shared<RenderTexture>(DownSample3, DownSample3, true);
+
+		myBloomStruct.myBloomTargetTexture[0] = std::make_shared<RenderTexture>(DownSample2, DownSample2, true);
+		myBloomStruct.myBloomTargetTexture[1] = std::make_shared<RenderTexture>(DownSample2, DownSample2, true);
+		myBloomStruct.myBloomTargetTexture[2] = std::make_shared<RenderTexture>(DownSample2, DownSample2, true);
+		myBloomStruct.myBloomTargetTexture[3] = std::make_shared<RenderTexture>(DownSample2, DownSample2, true);
+	}
+
+	void DXRenderer::DoFullScreenEffects()
+	{
+		ClearBloom();
+
+		Bloom();
+	}
+
+	void DXRenderer::Bloom()
+	{
+		myBloomStruct.myInputTargetTexture->Bind(0);
+		myFullscreenHelper->DoEffect(FullScreenEffectTypes::eCopy, myIntermediateRenderTarget->GetTexture());
+
+		myBloomStruct.mySquareTargetTexture->Bind(0);
+		myFullscreenHelper->DoEffect(FullScreenEffectTypes::eLuminence, myBloomStruct.myInputTargetTexture->GetTexture());
+
+		myBloomStruct.myDownSampleTargetTexture[0]->Bind(0);
+		myFullscreenHelper->DoEffect(FullScreenEffectTypes::eCopy, myBloomStruct.mySquareTargetTexture->GetTexture());
+		myBloomStruct.myDownSampleTargetTexture[1]->Bind(0);
+		myFullscreenHelper->DoEffect(FullScreenEffectTypes::eCopy, myBloomStruct.myDownSampleTargetTexture[0]->GetTexture());
+		/*myBloomStruct.myDownSampleTargetTexture[2]->Bind(0);
+		myFullscreenHelper->DoEffect(FullScreenEffectTypes::eCopy, myBloomStruct.myDownSampleTargetTexture[1]->GetTexture());*/
+
+		myBloomStruct.myBloomTargetTexture[0]->Bind(0);
+		myFullscreenHelper->DoEffect(FullScreenEffectTypes::eGaussianBlurHorizontal, myBloomStruct.myDownSampleTargetTexture[1]->GetTexture());
+		myBloomStruct.myBloomTargetTexture[1]->Bind(0);
+		myFullscreenHelper->DoEffect(FullScreenEffectTypes::eGaussianBlurVertical, myBloomStruct.myBloomTargetTexture[0]->GetTexture());
+		myBloomStruct.myBloomTargetTexture[2]->Bind(0);
+		myFullscreenHelper->DoEffect(FullScreenEffectTypes::eGaussianBlurHorizontal, myBloomStruct.myBloomTargetTexture[1]->GetTexture());
+		myBloomStruct.myBloomTargetTexture[3]->Bind(0);
+		myFullscreenHelper->DoEffect(FullScreenEffectTypes::eGaussianBlurVertical, myBloomStruct.myBloomTargetTexture[2]->GetTexture());
+		
+		myIntermediateRenderTarget->Clear(Vector4f::Zero);
+		myIntermediateRenderTarget->Bind(0);
+		
+		myFullscreenHelper->DoEffect(FullScreenEffectTypes::eAdd, myBloomStruct.myInputTargetTexture->GetTexture(), myBloomStruct.myBloomTargetTexture[3]->GetTexture());
+
+		//myFullscreenHelper->DoEffect(FullScreenEffectTypes::eCopy, myBloomStruct.myBloomTargetTexture[3]->GetTexture());
+	}
+
+	void DXRenderer::ClearBloom()
+	{
+		myBloomStruct.myInputTargetTexture->Clear(Vector4f::Zero);
+		myBloomStruct.mySquareTargetTexture->Clear(Vector4f::Zero);
+
+		myBloomStruct.myDownSampleTargetTexture[0]->Clear(Vector4f::Zero);
+		myBloomStruct.myDownSampleTargetTexture[1]->Clear(Vector4f::Zero);
+		//myBloomStruct.myDownSampleTargetTexture[2]->Clear(Vector4f::Zero);
+
+		myBloomStruct.myBloomTargetTexture[0]->Clear(Vector4f::Zero);
+		myBloomStruct.myBloomTargetTexture[1]->Clear(Vector4f::Zero);
+		myBloomStruct.myBloomTargetTexture[2]->Clear(Vector4f::Zero);
+		myBloomStruct.myBloomTargetTexture[3]->Clear(Vector4f::Zero);
 	}
 
 	void DXRenderer::SetViewport(const Vector2f & aTopLeft, const Vector2f & aSize)
@@ -363,7 +442,7 @@ namespace ENGINE_NAMESPACE
 
 	void DXRenderer::ClearRenderTarget()
 	{
-		myIntermediateRenderTarget->Clear(Vector4f::One);
+		myIntermediateRenderTarget->Clear(Vector4f::Zero);
 	}
 
 	void DXRenderer::SetRenderTarget()
