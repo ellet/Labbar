@@ -14,6 +14,7 @@ namespace ENGINE_NAMESPACE
 		eAdd,
 		eGaussianBlurHorizontal,
 		eGaussianBlurVertical,
+		eHDR,
 		EnumLength
 	};
 	

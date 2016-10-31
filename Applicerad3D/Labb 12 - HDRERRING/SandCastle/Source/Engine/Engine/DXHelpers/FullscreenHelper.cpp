@@ -33,6 +33,7 @@ namespace ENGINE_NAMESPACE
 		myEffects[GetEffectSlot(FullScreenEffectTypes::eAdd)] = new FullScreenEffect("AddToTexturesToTarget");
 		myEffects[GetEffectSlot(FullScreenEffectTypes::eGaussianBlurHorizontal)] = new FullScreenEffect("GaussianBlurHorizontal");
 		myEffects[GetEffectSlot(FullScreenEffectTypes::eGaussianBlurVertical)] = new FullScreenEffect("GaussianBlurVertical");
+		myEffects[GetEffectSlot(FullScreenEffectTypes::eHDR)] = new FullScreenEffect("ToneMap");
 	}
 
 

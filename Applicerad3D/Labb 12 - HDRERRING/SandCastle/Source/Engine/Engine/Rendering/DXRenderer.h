@@ -30,6 +30,12 @@ namespace ENGINE_NAMESPACE
 		std::shared_ptr<RenderTexture> myBloomTargetTexture[4];
 	};
 
+	struct HDRStruct
+	{
+		std::shared_ptr<RenderTexture> myInputTargetTexture;
+		std::shared_ptr<RenderTexture> myToneSampleTexture;
+	};
+
 	class DXRenderer
 	{
 	public:
@@ -73,9 +79,14 @@ namespace ENGINE_NAMESPACE
 		void CreateBuffers(int aWidth, int aHeight);
 
 		void CreateBloomTextures(const int aWidth, const int aHeight);
+		void CreateHDRTextures(const int aWidth, const int aHeight);
 		void DoFullScreenEffects();
+		
 		void Bloom();
 		void ClearBloom();
+
+		void HDR();
+		void ClearHDR();
 
 		IDXGISwapChain * mySwapchain;
 		ID3D11Device * myDevice;
@@ -98,6 +109,7 @@ namespace ENGINE_NAMESPACE
 		std::unique_ptr<FullscreenHelper> myFullscreenHelper;
 
 		BloomStruct myBloomStruct;
+		HDRStruct myHDRStruct;
 
 		Vector2f myCurrentRenderTargetResolution;
 		ID3D11Debug * myD3dDebug;

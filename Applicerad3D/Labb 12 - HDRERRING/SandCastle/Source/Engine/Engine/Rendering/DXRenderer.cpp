@@ -328,6 +328,7 @@ namespace ENGINE_NAMESPACE
 		myIntermediateRenderTarget = std::make_shared<RenderTexture>(aWidth, aHeight, true);
 		
 		CreateBloomTextures(aWidth, aHeight);
+		CreateHDRTextures(aWidth, aHeight);
 
 		myBackbuffer->Bind(0);
 
@@ -358,11 +359,19 @@ namespace ENGINE_NAMESPACE
 		myBloomStruct.myBloomTargetTexture[3] = std::make_shared<RenderTexture>(DownSample2, DownSample2, true);
 	}
 
+	void DXRenderer::CreateHDRTextures(const int aWidth, const int aHeight)
+	{
+		myHDRStruct.myInputTargetTexture = std::make_shared<RenderTexture>(aWidth, aHeight, true);
+		myHDRStruct.myToneSampleTexture= std::make_shared<RenderTexture>(aWidth, aHeight, true);
+	}
+
 	void DXRenderer::DoFullScreenEffects()
 	{
-		ClearBloom();
+		/*ClearBloom();
+		Bloom();*/
 
-		Bloom();
+		ClearHDR();
+		HDR();
 	}
 
 	void DXRenderer::Bloom()
@@ -410,6 +419,32 @@ namespace ENGINE_NAMESPACE
 		myBloomStruct.myBloomTargetTexture[1]->Clear(Vector4f::Zero);
 		myBloomStruct.myBloomTargetTexture[2]->Clear(Vector4f::Zero);
 		myBloomStruct.myBloomTargetTexture[3]->Clear(Vector4f::Zero);
+	}
+
+	void DXRenderer::HDR()
+	{
+		myHDRStruct.myInputTargetTexture->Bind(0);
+		myFullscreenHelper->DoEffect(FullScreenEffectTypes::eCopy, myIntermediateRenderTarget->GetTexture());
+
+		myHDRStruct.myToneSampleTexture->Bind(0);
+		myFullscreenHelper->DoEffect(FullScreenEffectTypes::eHDR, myHDRStruct.myInputTargetTexture->GetTexture());
+
+		myIntermediateRenderTarget->Clear(Vector4f::Zero);
+		myIntermediateRenderTarget->Bind(0);
+
+		SetViewport(Vector2f::Zero, myCurrentRenderTargetResolution / 2.f);
+
+		myFullscreenHelper->DoEffect(FullScreenEffectTypes::eCopy, myHDRStruct.myInputTargetTexture->GetTexture());
+
+		SetViewport(Vector2f::Zero, myCurrentRenderTargetResolution);
+
+		myFullscreenHelper->DoEffect(FullScreenEffectTypes::eCopy, myHDRStruct.myToneSampleTexture->GetTexture());
+	}
+
+	void DXRenderer::ClearHDR()
+	{
+		myHDRStruct.myInputTargetTexture->Clear(Vector4f::Zero);
+		myHDRStruct.myToneSampleTexture->Clear(Vector4f::Zero);
 	}
 
 	void DXRenderer::SetViewport(const Vector2f & aTopLeft, const Vector2f & aSize)
@@ -479,4 +514,5 @@ namespace ENGINE_NAMESPACE
 	{
 		myDeviceContext->RSSetState(myRasterState);
 	}
+
 }

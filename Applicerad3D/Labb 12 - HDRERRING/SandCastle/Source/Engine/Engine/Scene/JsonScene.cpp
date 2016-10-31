@@ -38,6 +38,8 @@ namespace ENGINE_NAMESPACE
 	JsonScene::JsonScene(const char* aFilePath) : Scene(aFilePath, "grass.dds")
 	{
 		Engine::GetSoundManager().LoadBank("Audio/SoundBanks/level1.bnk");
+
+		Engine::GetRenderer().GetModelRenderer().SetDirectionalLight(0, Vector3f::UnitZ, Vector4f(10.f, 10.f, 10.f, 10.f));
 	}
 
 

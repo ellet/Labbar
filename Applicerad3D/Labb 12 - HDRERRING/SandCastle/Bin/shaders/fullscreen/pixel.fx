@@ -93,6 +93,32 @@ PixelOutput GaussianBlurVertical(PixelInput aInput)
 	return tempOutput;
 }
 
+PixelOutput ToneMap(PixelInput aInput)
+{
+    float3 resource = boundTexture.SampleLevel(samplerState, aInput.uv, 0).rgb;
+	
+    float3 relativeLuminace = (float3) 0;
+	
+    relativeLuminace.r = 0.2126f;
+    relativeLuminace.g = 0.7152;
+    relativeLuminace.b = 0.0722f;
+
+    float luminance = resource.r * relativeLuminace.r + resource.g * relativeLuminace.g + resource.b * relativeLuminace.b;
+
+    // Simple Reinhardt
+    float luminanceToneMapped = luminance / (luminance + 1);
+
+    float scale = luminanceToneMapped / luminance;
+
+    resource = resource * scale;
+    resource = pow(resource, 1 / 2.2);
+
+    PixelOutput tempOutput;
+    tempOutput.color = float4(resource.rgb, 1.f);
+
+    return tempOutput;
+}
+
 PixelOutput CopyToTarget(PixelInput aInput)
 {
 	float3 SampledColor = boundTexture.SampleLevel(testSampleState, aInput.uv, 0).rgb;
