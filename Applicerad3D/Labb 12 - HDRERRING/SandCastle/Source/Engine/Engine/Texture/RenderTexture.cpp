@@ -82,6 +82,44 @@ namespace ENGINE_NAMESPACE
 		}
 	}
 
+	void RenderTexture::Bind(int aSlot, const int aAnotherSlot, RenderTexture & aAnotherRenderTexture, bool aUpdateViewport /*= true*/)
+	{
+		Texture::ClearShaderResource(0);
+		Engine::GetRenderer().StoreRenderTargetResolution(Vector2f(static_cast<float>(myWidth), static_cast<float>(myHeight)));
+
+		ID3D11RenderTargetView * renderTargets[D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT];
+		ID3D11DepthStencilView * depthStencilView;
+		Engine::GetInstance().GetRenderer().GetContext()->OMGetRenderTargets(D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT, renderTargets, &depthStencilView);
+
+		for (size_t i = 0; i < D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT; i++)
+		{
+			if (renderTargets[i])
+			{
+				renderTargets[i]->Release();
+			}
+		}
+
+		if (depthStencilView)
+		{
+			depthStencilView->Release();
+		}
+
+		renderTargets[aSlot] = myRenderTargetView;
+		renderTargets[aAnotherSlot] = aAnotherRenderTexture.myRenderTargetView;
+
+		if (myDepthBuffer != nullptr)
+		{
+			depthStencilView = myDepthBuffer->GetView();
+		}
+
+		Engine::GetInstance().GetRenderer().GetContext()->OMSetRenderTargets(D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT, renderTargets, depthStencilView);
+
+		if (aUpdateViewport)
+		{
+			Engine::GetInstance().GetRenderer().SetViewport(Vector2f::Zero, Vector2f(static_cast<float>(myWidth), static_cast<float>(myHeight)));
+		}
+	}
+
 	unsigned int RenderTexture::GetWidth() const
 	{
 		return myWidth;

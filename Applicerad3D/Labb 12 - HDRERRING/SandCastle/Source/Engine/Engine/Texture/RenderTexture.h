@@ -17,13 +17,13 @@ namespace ENGINE_NAMESPACE
 		~RenderTexture();
 
 		void Bind(int aSlot, bool aUpdateViewport = true);
+		void Bind(int aSlot, const int aAnotherSlot, RenderTexture & aAnotherRenderTexture, bool aUpdateViewport = true);
 
 		void Clear(const Vector4f & aColor);
 
 		unsigned int GetWidth() const;
 		unsigned int GetHeight() const;
 
-		void SetTexture(ID3D11Texture2D *test);
 		const std::shared_ptr<Texture> & GetTexture();
 
 		const std::shared_ptr<DepthBuffer> & GetDepthBuffer();
