@@ -1,0 +1,282 @@
+{
+	"sprite":"",
+	"function" : "",
+	"children":
+	[
+		{
+			"name": "Play Game",
+			"type": "",
+			"position": 
+			[
+				540.0,
+				100.0
+			],
+			"size":
+			[
+				0.0,
+				0.0
+			],
+			"scale":
+			[
+				1.0,
+				1.0
+			],
+			"sprite": "Assets/Gui/LevelSelect/Button.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Start Level 1",
+			"hoverFunction": "",
+			"children":
+			[
+				{
+					"name": "Play Level 1 Text",
+					"type": "Text",
+					"text": "Play Level 1",
+					"position": 
+					[
+						0.0,
+						0.0
+					],
+					"size":
+					[
+						0.0,
+						0.0
+					],
+					"scale":
+					[
+						1.0,
+						1.0
+					],
+					"sprite": "",
+					"active": true,
+					"hover" : false,
+					"function": "",
+					"hoverFunction": "",
+					"children":
+					[
+					]
+				}
+			]
+		},
+		{
+			"name": "Level Select",
+			"type": "",
+			"position": 
+			[
+				540.0,
+				250.0
+			],
+			"size":
+			[
+				0.0,
+				0.0
+			],
+			"scale":
+			[
+				1.0,
+				1.0
+			],
+			"sprite": "Assets/Gui/LevelSelect/Button.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Start Level 2",
+			"hoverFunction": "",
+			"children":
+			[
+				{
+					"name": "Play Level 2 Text",
+					"type": "Text",
+					"text": "Play Level 2",
+					"position": 
+					[
+						0.0,
+						0.0
+					],
+					"size":
+					[
+						0.0,
+						0.0
+					],
+					"scale":
+					[
+						1.0,
+						1.0
+					],
+					"sprite": "",
+					"active": true,
+					"hover" : false,
+					"function": "",
+					"hoverFunction": "",
+					"children":
+					[
+					]
+				}
+			]
+		},
+		{
+			"name": "Credits",
+			"type": "",
+			"position": 
+			[
+				540.0,
+				400.0
+			],
+			"size":
+			[
+				0.0,
+				0.0
+			],
+			"scale":
+			[
+				1.0,
+				1.0
+			],
+			"sprite": "Assets/Gui/LevelSelect/Button.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Start Level 3",
+			"hoverFunction": "",
+			"children":
+			[
+				{
+					"name": "Play Level 3 Text",
+					"type": "Text",
+					"text": "Play Level 3",
+					"position": 
+					[
+						0.0,
+						0.0
+					],
+					"size":
+					[
+						0.0,
+						0.0
+					],
+					"scale":
+					[
+						1.0,
+						1.0
+					],
+					"sprite": "",
+					"active": true,
+					"hover" : false,
+					"function": "",
+					"hoverFunction": "",
+					"children":
+					[
+					]
+				}
+			]
+		},
+		{
+			"name": "Quit Game",
+			"type": "",
+			"position": 
+			[
+				540.0,
+				550.0
+			],
+			"size":
+			[
+				0.0,
+				0.0
+			],
+			"scale":
+			[
+				1.0,
+				1.0
+			],
+			"sprite": "Assets/Gui/LevelSelect/Button.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Start Level 4",
+			"hoverFunction": "",
+			"children":
+			[
+				{
+					"name": "Play Level 4 Text",
+					"type": "Text",
+					"text": "Play Level 4",
+					"position": 
+					[
+						0.0,
+						0.0
+					],
+					"size":
+					[
+						0.0,
+						0.0
+					],
+					"scale":
+					[
+						1.0,
+						1.0
+					],
+					"sprite": "",
+					"active": true,
+					"hover" : false,
+					"function": "",
+					"hoverFunction": "",
+					"children":
+					[
+					]
+				}
+			]
+		},
+		{
+			"name": "Back To MainMenu",
+			"type": "",
+			"position": 
+			[
+				1000.0,
+				1000.0
+			],
+			"size":
+			[
+				0.0,
+				0.0
+			],
+			"scale":
+			[
+				1.0,
+				1.0
+			],
+			"sprite": "Assets/Gui/LevelSelect/Button.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Back To MainMenu",
+			"hoverFunction": "",
+			"children":
+			[
+				{
+					"name": "Main Menu",
+					"type": "Text",
+					"text": "Main Menu",
+					"position": 
+					[
+						0.0,
+						0.0
+					],
+					"size":
+					[
+						0.0,
+						0.0
+					],
+					"scale":
+					[
+						1.0,
+						1.0
+					],
+					"sprite": "",
+					"active": true,
+					"hover" : false,
+					"function": "",
+					"hoverFunction": "",
+					"children":
+					[
+					]
+				}
+			]
+		}
+	]
+}

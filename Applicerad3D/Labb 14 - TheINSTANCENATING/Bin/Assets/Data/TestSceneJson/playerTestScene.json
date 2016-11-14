@@ -1,0 +1,183 @@
+{
+  "name": "playerTestScene",
+  "hierarchy": [
+    {
+      "name": "SceneHandler",
+      "components": [
+        {
+          "properties": {
+            "objectives": []
+          },
+          "type": "ObjectiveHandlerComponent"
+        },
+        {
+          "localPosition": [
+            -0.6804075,
+            11.79,
+            11.7529974
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    },
+    {
+      "name": "Enemy",
+      "components": [
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 1.0,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {},
+          "type": "EnemyComponent"
+        },
+        {
+          "properties": {
+            "StartHealth": 100.0
+          },
+          "type": "HealthComponent"
+        },
+        {
+          "properties": {
+            "scriptPath": "Assets\\Scripts\\Components\\KillComponent.lua"
+          },
+          "type": "LuaComponent"
+        },
+        {
+          "properties": {
+            "modelPath": "Assets/Models/Player/Cockpit/cockpit.fbx"
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "properties": {
+            "counter": 0,
+            "target": 1,
+            "description": "\"skjut den. {0:counter} av {0:target}\"",
+            "identity": "killObjective"
+          },
+          "type": "ObjectiveComponent"
+        },
+        {
+          "localPosition": [
+            -0.340482771,
+            -1.66465521,
+            15.31
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    },
+    {
+      "name": "Player",
+      "components": [
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 1.0,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {
+            "modelPath": "Assets/Models/Player/Cockpit/cockpit.fbx"
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "properties": {
+            "StartSpeed": 0.0,
+            "Drag": 0.0,
+            "WorldDirection": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "type": "PhysicsComponent"
+        },
+        {
+          "properties": {
+            "movementSpeed": 10.0,
+            "mouseRotationSpeed": 1.0,
+            "keyboardRotationSpeed": 3.0,
+            "boostMovementSpeedMultiplier": 7.5,
+            "boostRotationSpeedMultiplier": 0.5
+          },
+          "type": "PlayerControllerComponent"
+        },
+        {
+          "properties": {
+            "shotSize": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "shotCooldown": 1.0,
+            "shotDamage": 1.0
+          },
+          "type": "PlayerShootComponent"
+        },
+        {
+          "localPosition": [
+            -0.340482771,
+            -1.66465521,
+            -1.61
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    }
+  ]
+}

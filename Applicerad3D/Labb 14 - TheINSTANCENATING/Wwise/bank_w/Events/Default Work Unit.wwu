@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{AC650890-2A47-4848-948D-4FF3985BE07B}" SchemaVersion="70">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{AC650890-2A47-4848-948D-4FF3985BE07B}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Laser" ID="{5174A51F-29C6-416E-A349-F92A2B1F3E89}">
+					<ChildrenList>
+						<Action Name="Play" ID="{1BC46870-8B26-4500-A49A-C04AEEC72FA3}" ShortID="694480172" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{2C399C9D-2E61-4CF2-A8F9-CF8C1E2324A4}" Global="false">
+									<ObjectRef Name="mega_mob_incoming" ID="{599FF11A-0A6A-4F83-BEDA-3BABE5E7837B}" WorkUnitID="{F2F27E13-F2F4-4994-B8D2-8B1CE7FDCA7C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+						<Action Name="Play" ID="{56C18101-252C-45E6-A472-2EB02CE58AD0}" ShortID="741757320" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{4432FE6A-18A4-4F10-97A3-371C38791154}" Global="false">
+									<ObjectRef Name="adam" ID="{D7C3F242-FB34-4C1B-B307-B9842596288F}" WorkUnitID="{F2F27E13-F2F4-4994-B8D2-8B1CE7FDCA7C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Derp" ID="{674C1A60-7B75-49A9-A831-1453CAD7A128}">
+					<ChildrenList>
+						<Action Name="Play" ID="{554D0D0E-6F5F-4696-9079-2E9A02D4DE2E}" ShortID="698798444" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{37116E3B-1599-4531-AC98-4DF1AD0B2490}" Global="false">
+									<ObjectRef Name="Randomize7" ID="{5DDAC80D-C207-4773-A63B-BDB6A59BC65F}" WorkUnitID="{F2F27E13-F2F4-4994-B8D2-8B1CE7FDCA7C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Player_Thruster" ID="{7E83DC9A-9BCA-40CF-84C2-20D8EC0EAFC4}">
+					<ChildrenList>
+						<Action Name="Play" ID="{B0CA4A04-4B2D-4F81-A15C-B2ED955A78DC}" ShortID="1051323807" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{44535E01-7772-4C88-8FC3-8F05E7FEAB2D}" Global="false">
+									<ObjectRef Name="spaceThruster" ID="{B9D253F9-2601-4B72-A98D-4E722078C9BA}" WorkUnitID="{F2F27E13-F2F4-4994-B8D2-8B1CE7FDCA7C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Thruster" ID="{FE93801F-1BCF-4A5A-86D2-750C4CAEAF0C}">
+					<ChildrenList>
+						<Action Name="Stop" ID="{69BBEB8C-EBDA-4F9B-8C4E-6B470D7A36DC}" ShortID="585163246" Type="Stop" Scope="One" Global="true">
+							<PropertyList>
+								<Property Name="FadeCurve" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
+							</PropertyList>
+							<ElementList>
+								<Element ID="{11E72C3C-8A08-42EA-8881-8B2AD2A2ECC8}" Global="true">
+									<ObjectRef Name="spaceThruster" ID="{B9D253F9-2601-4B72-A98D-4E722078C9BA}" WorkUnitID="{F2F27E13-F2F4-4994-B8D2-8B1CE7FDCA7C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PlayerHitEnemy" ID="{6DD94D61-A64F-4661-9708-42FA28517C81}">
+					<ChildrenList>
+						<Action Name="Play" ID="{80751F82-A874-42D3-8B70-FEF83C4BA17F}" ShortID="404665729" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{33272CEE-4CDF-42E2-8653-062CE7CD0FF8}" Global="false">
+									<ObjectRef Name="PlayerHitEnemy" ID="{4AB39878-23B7-4C3F-B7A9-2D45DD529651}" WorkUnitID="{F2F27E13-F2F4-4994-B8D2-8B1CE7FDCA7C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Interceptor_Movement" ID="{7B7DCC1A-4E66-4937-BF7B-9D5BEF100BB7}">
+					<ChildrenList>
+						<Action Name="Play" ID="{39DB01F6-0DAA-4DAB-B8D4-0C1FFAC7F7AD}" ShortID="565105122" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{99F05E21-A152-45B4-9A57-406F0DF1A767}" Global="false">
+									<ObjectRef Name="interceptor_Movement" ID="{990DA50B-9A39-4F62-B476-DAF7A5075821}" WorkUnitID="{F2F27E13-F2F4-4994-B8D2-8B1CE7FDCA7C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_GatlingGun" ID="{DE66C1B6-6885-4C2E-A43F-5349C4D22F8C}">
+					<ChildrenList>
+						<Action Name="Play" ID="{1C22D762-E061-4E60-B8CA-FD13FC8DCB8A}" ShortID="252285617" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{EA647D75-BF3A-432F-BEA9-5F57DA0563A5}" Global="false">
+									<ObjectRef Name="laserMachineGun" ID="{B8748A87-53E0-4643-BB5A-AEAB688C6C84}" WorkUnitID="{F2F27E13-F2F4-4994-B8D2-8B1CE7FDCA7C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_GatlingGun" ID="{C3EC9156-A9BF-4734-9FB6-6394440DE058}">
+					<ChildrenList>
+						<Action Name="Stop" ID="{F082768D-3E47-4ECC-BEF4-ADD775B537C0}" ShortID="91692937" Type="Stop" Scope="One" Global="false">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+							</PropertyList>
+							<ElementList>
+								<Element ID="{1DD76433-4DEA-422A-9110-7A26496201AB}" Global="false">
+									<ObjectRef Name="laserMachineGun" ID="{B8748A87-53E0-4643-BB5A-AEAB688C6C84}" WorkUnitID="{F2F27E13-F2F4-4994-B8D2-8B1CE7FDCA7C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_DemonicVoice" ID="{1DE72214-B212-44C7-BE0E-896077CB8736}">
+					<ChildrenList>
+						<Action Name="Play" ID="{65AE77EC-528B-4365-BA62-53E20E85229E}" ShortID="349954010" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{375F5012-96AF-4768-9477-8CB737C3FF9C}" Global="false">
+									<ObjectRef Name="demonic_voice" ID="{F2B02F32-3193-4E8E-82B7-95A36623A1DB}" WorkUnitID="{F2F27E13-F2F4-4994-B8D2-8B1CE7FDCA7C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_All_Voice" ID="{B0F389FC-98C0-48BF-8ABD-1937489D3B7F}">
+					<ChildrenList>
+						<Action Name="Stop All" ID="{5DF9D27A-8CB8-4C82-AFFC-E0988E62D49E}" ShortID="496103156" Type="Stop" Scope="All" Global="false"/>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

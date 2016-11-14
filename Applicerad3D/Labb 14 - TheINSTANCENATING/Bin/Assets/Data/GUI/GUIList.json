@@ -1,0 +1,23 @@
+{
+	"GUIList":
+	[
+		{
+			"name":"Assets/Data/Gui/MainMenu.json"
+		},
+		{
+			"name":"Assets/Data/Gui/testGUI.json"
+		},
+		{
+			"name":"Assets/Data/Gui/LevelSelect.json"
+		},
+		{
+			"name":"Assets/Data/Gui/Credit.json"
+		},
+		{
+			"name":"Assets/Data/Gui/Options.json"
+		},
+		{
+			"name":"Assets/Data/Gui/PauseMenu.json"
+		}
+	]
+}

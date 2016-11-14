@@ -1,0 +1,25 @@
+Event	ID	Name			Wwise Object Path	Notes
+	299884166	Player_Thruster			\Default Work Unit\Player_Thruster	
+	432716372	Play_PlayerHitEnemy			\Default Work Unit\Play_PlayerHitEnemy	
+	1313292386	Stop_All_Voice			\Default Work Unit\Stop_All_Voice	
+	2100953969	Play_Interceptor_Movement			\Default Work Unit\Play_Interceptor_Movement	
+	2169740631	Stop_Thruster			\Default Work Unit\Stop_Thruster	
+	2270376495	Play_Laser			\Default Work Unit\Play_Laser	
+	2362094225	Play_Derp			\Default Work Unit\Play_Derp	
+	3160810803	Play_DemonicVoice			\Default Work Unit\Play_DemonicVoice	
+	3848272688	Play_GatlingGun			\Default Work Unit\Play_GatlingGun	
+	4171349466	Stop_GatlingGun			\Default Work Unit\Stop_GatlingGun	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1427680658	GatlingGunRPM			\Default Work Unit\GatlingGunRPM	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	134922151	demonic_voice	C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\.cache\Android\SFX\demonic_voice_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\demonic_voice		7232060
+	345062463	adam	C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\.cache\Android\SFX\adam_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\adam		979008
+	407840366	PlayerHitEnemy	C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\.cache\Android\SFX\PlayerHitEnemy_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerHitEnemy		12990
+	507624551	spaceThruster	C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\.cache\Android\SFX\spaceThruster_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\spaceThruster		1617840
+	544884412	mega_mob_incoming	C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\.cache\Android\SFX\mega_mob_incoming_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\mega_mob_incoming		1111384
+	632474148	Randomize7	C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\.cache\Android\SFX\Randomize7_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Randomize7		111518
+	818493151	laserMachineGun	C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\.cache\Android\SFX\laserMachineGun_895BB11D.wem		\Actor-Mixer Hierarchy\Default Work Unit\laserMachineGun		98544
+	1068630108	interceptor_Movement	C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\.cache\Android\SFX\62520__bsumusictech__razor_D0877FE4_9A9D0632.wem		\Actor-Mixer Hierarchy\Default Work Unit\interceptor_Movement		602240
+

@@ -1,0 +1,2183 @@
+{
+  "name": "Prefabs",
+  "hierarchy": [
+    {
+      "name": "26M",
+      "components": [
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 14.13,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {
+            "modelPath": "Assets/Models/Asteroids/Standard/26M/26M.fbx"
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "localPosition": [
+            478.206665,
+            -346.660675,
+            67.51474
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    },
+    {
+      "name": "52 _ 5M",
+      "components": [
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 135.0,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {
+            "modelPath": ""
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "localPosition": [
+            -568.0,
+            0.0,
+            220.1
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            5.0,
+            5.0,
+            5.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    },
+    {
+      "name": "52M",
+      "components": [
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 23.4,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {
+            "modelPath": "Assets/Models/Asteroids/Standard/52M/52M.fbx"
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "localPosition": [
+            127.786751,
+            207.025787,
+            222.8206
+          ],
+          "localRotation": [
+            0.0,
+            0.399793416,
+            0.0,
+            0.9166053
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    },
+    {
+      "name": "Enemy",
+      "components": [
+        {
+          "properties": {
+            "maxForwardSpeed": 0.0,
+            "minForwardSpeed": 0.0,
+            "acceleration": 0.0,
+            "breakPower": 0.0,
+            "distanceToPlayerUntilRotate": 0.0,
+            "rotateTowardsPlayerPoints": 0,
+            "isRotatingPoints": 0,
+            "shootAtPlayerPoints": 0,
+            "turnAwayFromClusterPoints": 0,
+            "turnAwayFromObjectPoints": 0
+          },
+          "type": "AIInterceptorComponent"
+        },
+        {
+          "properties": {},
+          "type": "EnemyComponent"
+        },
+        {
+          "properties": {
+            "StartHealth": 100.0
+          },
+          "type": "HealthComponent"
+        },
+        {
+          "properties": {
+            "identity": "Kill Enemy"
+          },
+          "type": "ObjectiveComponent"
+        },
+        {
+          "properties": {
+            "StartSpeed": 0.0,
+            "Drag": 0.0,
+            "WorldDirection": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "type": "PhysicsComponent"
+        },
+        {
+          "localPosition": [
+            -316.2853,
+            86.0,
+            -314.291931
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    },
+    {
+      "name": "Interceptor",
+      "components": [
+        {
+          "properties": {
+            "maxForwardSpeed": 200.0,
+            "minForwardSpeed": 20.0,
+            "acceleration": 30.0,
+            "breakPower": 10.0,
+            "distanceToPlayerUntilRotate": 300.0,
+            "rotateTowardsPlayerPoints": 200,
+            "isRotatingPoints": 100,
+            "shootAtPlayerPoints": 100,
+            "turnAwayFromClusterPoints": 400,
+            "turnAwayFromObjectPoints": 400
+          },
+          "type": "AIInterceptorComponent"
+        },
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 4.57,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              150.0
+            ],
+            "Radius": 200.0,
+            "Trigger": true,
+            "RenderCollider": false
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {},
+          "type": "EnemyComponent"
+        },
+        {
+          "properties": {
+            "StartHealth": 100.0
+          },
+          "type": "HealthComponent"
+        },
+        {
+          "properties": {},
+          "type": "MarkerComponent"
+        },
+        {
+          "properties": {
+            "modelPath": "Assets/Models/Ships/Enemies/InterceptorX101/interceptorX101.fbx"
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "properties": {
+            "StartSpeed": 0.0,
+            "Drag": 0.0,
+            "WorldDirection": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "type": "PhysicsComponent"
+        },
+        {
+          "properties": {},
+          "type": "SpeakerComponent"
+        },
+        {
+          "properties": {
+            "identifier": "Enemy weapon",
+            "weaponModelPath": "",
+            "weaponIconPath": "",
+            "projectileModelPath": "",
+            "shootSound": "",
+            "barrelOffset": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "shotScale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "shotCooldown": 1.0,
+            "damage": 3.0,
+            "shotSpeed": 400.0,
+            "firingRotationVelocityMax": 0.0,
+            "firingRotationVelocityAccelerationTime": 0.0
+          },
+          "type": "WeaponComponent"
+        },
+        {
+          "localPosition": [
+            46.0911865,
+            -0.0176274776,
+            4.235718
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": [
+        {
+          "name": "MotorStreak",
+          "components": [
+            {
+              "properties": {
+                "colors": [
+                  [
+                    1.0,
+                    0.931034446,
+                    0.0,
+                    1.0
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ],
+                "sizes": [
+                  1.0,
+                  0.0
+                ],
+                "streakTime": 1.0,
+                "numberOfSegments": 80
+              },
+              "type": "StreakComponent"
+            },
+            {
+              "localPosition": [
+                0.0,
+                0.56,
+                -9.39
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        },
+        {
+          "name": "MotorStreak (1)",
+          "components": [
+            {
+              "properties": {
+                "colors": [
+                  [
+                    1.0,
+                    0.931034446,
+                    0.0,
+                    1.0
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ],
+                "sizes": [
+                  0.5,
+                  0.0
+                ],
+                "streakTime": 0.75,
+                "numberOfSegments": 40
+              },
+              "type": "StreakComponent"
+            },
+            {
+              "localPosition": [
+                5.08,
+                1.41,
+                -5.24
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        },
+        {
+          "name": "MotorStreak (2)",
+          "components": [
+            {
+              "properties": {
+                "colors": [
+                  [
+                    1.0,
+                    0.931034446,
+                    0.0,
+                    1.0
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                ],
+                "sizes": [
+                  0.5,
+                  0.0
+                ],
+                "streakTime": 0.75,
+                "numberOfSegments": 40
+              },
+              "type": "StreakComponent"
+            },
+            {
+              "localPosition": [
+                -5.06,
+                1.41,
+                -5.24
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Mothership 2",
+      "components": [
+        {
+          "properties": {},
+          "type": "AIMothershipComponent"
+        },
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 1.0,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {
+            "StartSpeed": 0.0,
+            "Drag": 0.0,
+            "WorldDirection": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "type": "PhysicsComponent"
+        },
+        {
+          "localPosition": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": [
+        {
+          "name": "mothership_lowerBackEngine",
+          "components": [
+            {
+              "properties": {
+                "modelPath": "Assets/Models/Ships/Enemies/MothershipParts/LowEngine/mothership_lowerBackEngine.fbx"
+              },
+              "type": "ModelComponent"
+            },
+            {
+              "localPosition": [
+                0.0,
+                -30.3,
+                -88.4
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        },
+        {
+          "name": "mothership_bigEngine",
+          "components": [
+            {
+              "properties": {
+                "modelPath": "Assets/Models/Ships/Enemies/MothershipParts/BigEngine/mothership_bigEngine.fbx"
+              },
+              "type": "ModelComponent"
+            },
+            {
+              "localPosition": [
+                0.0,
+                0.0,
+                -100.8
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        },
+        {
+          "name": "mothership_front",
+          "components": [
+            {
+              "properties": {
+                "modelPath": "Assets/Models/Ships/Enemies/MothershipParts/Front/mothership_front.fbx"
+              },
+              "type": "ModelComponent"
+            },
+            {
+              "localPosition": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        },
+        {
+          "name": "mothership_main",
+          "components": [
+            {
+              "properties": {
+                "modelPath": "Assets/Models/Ships/Enemies/MothershipParts/Main/mothership_main.fbx"
+              },
+              "type": "ModelComponent"
+            },
+            {
+              "localPosition": [
+                0.0,
+                -18.5,
+                160.2
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        },
+        {
+          "name": "mothership_sideEngine_Left",
+          "components": [
+            {
+              "properties": {
+                "modelPath": "Assets/Models/Ships/Enemies/MothershipParts/SideEngine/mothership_sideEngine.fbx"
+              },
+              "type": "ModelComponent"
+            },
+            {
+              "localPosition": [
+                -65.7,
+                2.9,
+                -36.0
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        },
+        {
+          "name": "mothership_sideEngine_Right",
+          "components": [
+            {
+              "properties": {
+                "modelPath": "Assets/Models/Ships/Enemies/MothershipParts/SideEngine/mothership_sideEngine.fbx"
+              },
+              "type": "ModelComponent"
+            },
+            {
+              "localPosition": [
+                65.7,
+                2.9,
+                -36.0
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        },
+        {
+          "name": "mothership_smallEngine_low",
+          "components": [
+            {
+              "properties": {
+                "modelPath": "Assets/Models/Ships/Enemies/MothershipParts/SmallEngine/mothership_smallEngine.fbx"
+              },
+              "type": "ModelComponent"
+            },
+            {
+              "localPosition": [
+                0.0,
+                -12.7,
+                -89.7
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        },
+        {
+          "name": "mothership_smallEngine_top_right",
+          "components": [
+            {
+              "properties": {
+                "modelPath": "Assets/Models/Ships/Enemies/MothershipParts/SmallEngine/mothership_smallEngine.fbx"
+              },
+              "type": "ModelComponent"
+            },
+            {
+              "localPosition": [
+                22.5,
+                10.8,
+                -105.2
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        },
+        {
+          "name": "mothership_smallEngine_top_left",
+          "components": [
+            {
+              "properties": {
+                "modelPath": "Assets/Models/Ships/Enemies/MothershipParts/SmallEngine/mothership_smallEngine.fbx"
+              },
+              "type": "ModelComponent"
+            },
+            {
+              "localPosition": [
+                -22.5,
+                10.8,
+                -105.2
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        },
+        {
+          "name": "mothershipTurret",
+          "components": [
+            {
+              "properties": {
+                "Center": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "Radius": 1.0,
+                "Trigger": false,
+                "RenderCollider": true
+              },
+              "type": "ColliderComponent"
+            },
+            {
+              "properties": {},
+              "type": "MarkerComponent"
+            },
+            {
+              "properties": {
+                "modelPath": "Assets/Models/Ships/Enemies/Turret/turretBase.fbx"
+              },
+              "type": "ModelComponent"
+            },
+            {
+              "properties": {
+                "identifier": "",
+                "weaponModelPath": "",
+                "weaponIconPath": "",
+                "projectileModelPath": "",
+                "shootSound": "",
+                "barrelOffset": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "shotScale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "shotCooldown": 1.0,
+                "damage": 1.0,
+                "shotSpeed": 10.0,
+                "firingRotationVelocityMax": 0.0,
+                "firingRotationVelocityAccelerationTime": 0.0
+              },
+              "type": "WeaponComponent"
+            },
+            {
+              "localPosition": [
+                -54.0,
+                -5.5,
+                79.9
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": [
+            {
+              "name": "turretGun",
+              "components": [
+                {
+                  "properties": {},
+                  "type": "AIMothershipTurretComponent"
+                },
+                {
+                  "properties": {
+                    "Center": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "Radius": 1.0,
+                    "Trigger": false,
+                    "RenderCollider": true
+                  },
+                  "type": "ColliderComponent"
+                },
+                {
+                  "properties": {},
+                  "type": "EnemyComponent"
+                },
+                {
+                  "properties": {
+                    "StartHealth": 30.0
+                  },
+                  "type": "HealthComponent"
+                },
+                {
+                  "properties": {
+                    "modelPath": "Assets/Models/Ships/Enemies/Turret/turretGun.fbx"
+                  },
+                  "type": "ModelComponent"
+                },
+                {
+                  "properties": {
+                    "identifier": "",
+                    "weaponModelPath": "",
+                    "weaponIconPath": "",
+                    "projectileModelPath": "",
+                    "shootSound": "",
+                    "barrelOffset": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "shotScale": [
+                      1.0,
+                      1.0,
+                      1.0
+                    ],
+                    "shotCooldown": 1.0,
+                    "damage": 3.0,
+                    "shotSpeed": 10.0,
+                    "firingRotationVelocityMax": 0.0,
+                    "firingRotationVelocityAccelerationTime": 0.0
+                  },
+                  "type": "WeaponComponent"
+                },
+                {
+                  "localPosition": [
+                    0.0,
+                    3.139,
+                    0.0
+                  ],
+                  "localRotation": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "localScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "type": "Transform"
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "mothershipTurret (1)",
+          "components": [
+            {
+              "properties": {
+                "Center": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "Radius": 1.0,
+                "Trigger": false,
+                "RenderCollider": true
+              },
+              "type": "ColliderComponent"
+            },
+            {
+              "properties": {},
+              "type": "MarkerComponent"
+            },
+            {
+              "properties": {
+                "modelPath": "Assets/Models/Ships/Enemies/Turret/turretBase.fbx"
+              },
+              "type": "ModelComponent"
+            },
+            {
+              "properties": {
+                "identifier": "",
+                "weaponModelPath": "",
+                "weaponIconPath": "",
+                "projectileModelPath": "",
+                "shootSound": "",
+                "barrelOffset": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "shotScale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "shotCooldown": 1.0,
+                "damage": 1.0,
+                "shotSpeed": 10.0,
+                "firingRotationVelocityMax": 0.0,
+                "firingRotationVelocityAccelerationTime": 0.0
+              },
+              "type": "WeaponComponent"
+            },
+            {
+              "localPosition": [
+                54.0,
+                -5.5,
+                79.9
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": [
+            {
+              "name": "turretGun",
+              "components": [
+                {
+                  "properties": {},
+                  "type": "AIMothershipTurretComponent"
+                },
+                {
+                  "properties": {
+                    "Center": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "Radius": 1.0,
+                    "Trigger": false,
+                    "RenderCollider": true
+                  },
+                  "type": "ColliderComponent"
+                },
+                {
+                  "properties": {},
+                  "type": "EnemyComponent"
+                },
+                {
+                  "properties": {
+                    "StartHealth": 30.0
+                  },
+                  "type": "HealthComponent"
+                },
+                {
+                  "properties": {
+                    "modelPath": "Assets/Models/Ships/Enemies/Turret/turretGun.fbx"
+                  },
+                  "type": "ModelComponent"
+                },
+                {
+                  "properties": {
+                    "identifier": "",
+                    "weaponModelPath": "",
+                    "weaponIconPath": "",
+                    "projectileModelPath": "",
+                    "shootSound": "",
+                    "barrelOffset": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "shotScale": [
+                      1.0,
+                      1.0,
+                      1.0
+                    ],
+                    "shotCooldown": 1.0,
+                    "damage": 3.0,
+                    "shotSpeed": 10.0,
+                    "firingRotationVelocityMax": 0.0,
+                    "firingRotationVelocityAccelerationTime": 0.0
+                  },
+                  "type": "WeaponComponent"
+                },
+                {
+                  "localPosition": [
+                    0.0,
+                    3.139,
+                    0.0
+                  ],
+                  "localRotation": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "localScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "type": "Transform"
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "mothershipTurret (2)",
+          "components": [
+            {
+              "properties": {
+                "Center": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "Radius": 1.0,
+                "Trigger": false,
+                "RenderCollider": true
+              },
+              "type": "ColliderComponent"
+            },
+            {
+              "properties": {},
+              "type": "MarkerComponent"
+            },
+            {
+              "properties": {
+                "modelPath": "Assets/Models/Ships/Enemies/Turret/turretBase.fbx"
+              },
+              "type": "ModelComponent"
+            },
+            {
+              "properties": {
+                "identifier": "",
+                "weaponModelPath": "",
+                "weaponIconPath": "",
+                "projectileModelPath": "",
+                "shootSound": "",
+                "barrelOffset": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "shotScale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "shotCooldown": 1.0,
+                "damage": 1.0,
+                "shotSpeed": 10.0,
+                "firingRotationVelocityMax": 0.0,
+                "firingRotationVelocityAccelerationTime": 0.0
+              },
+              "type": "WeaponComponent"
+            },
+            {
+              "localPosition": [
+                -55.7,
+                -5.5,
+                72.4
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": [
+            {
+              "name": "turretGun",
+              "components": [
+                {
+                  "properties": {},
+                  "type": "AIMothershipTurretComponent"
+                },
+                {
+                  "properties": {
+                    "Center": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "Radius": 1.0,
+                    "Trigger": false,
+                    "RenderCollider": true
+                  },
+                  "type": "ColliderComponent"
+                },
+                {
+                  "properties": {},
+                  "type": "EnemyComponent"
+                },
+                {
+                  "properties": {
+                    "StartHealth": 30.0
+                  },
+                  "type": "HealthComponent"
+                },
+                {
+                  "properties": {
+                    "modelPath": "Assets/Models/Ships/Enemies/Turret/turretGun.fbx"
+                  },
+                  "type": "ModelComponent"
+                },
+                {
+                  "properties": {
+                    "identifier": "",
+                    "weaponModelPath": "",
+                    "weaponIconPath": "",
+                    "projectileModelPath": "",
+                    "shootSound": "",
+                    "barrelOffset": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "shotScale": [
+                      1.0,
+                      1.0,
+                      1.0
+                    ],
+                    "shotCooldown": 1.0,
+                    "damage": 3.0,
+                    "shotSpeed": 10.0,
+                    "firingRotationVelocityMax": 0.0,
+                    "firingRotationVelocityAccelerationTime": 0.0
+                  },
+                  "type": "WeaponComponent"
+                },
+                {
+                  "localPosition": [
+                    0.0,
+                    3.139,
+                    0.0
+                  ],
+                  "localRotation": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "localScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "type": "Transform"
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "mothershipTurret (3)",
+          "components": [
+            {
+              "properties": {
+                "Center": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "Radius": 1.0,
+                "Trigger": false,
+                "RenderCollider": true
+              },
+              "type": "ColliderComponent"
+            },
+            {
+              "properties": {},
+              "type": "MarkerComponent"
+            },
+            {
+              "properties": {
+                "modelPath": "Assets/Models/Ships/Enemies/Turret/turretBase.fbx"
+              },
+              "type": "ModelComponent"
+            },
+            {
+              "properties": {
+                "identifier": "",
+                "weaponModelPath": "",
+                "weaponIconPath": "",
+                "projectileModelPath": "",
+                "shootSound": "",
+                "barrelOffset": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "shotScale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "shotCooldown": 1.0,
+                "damage": 1.0,
+                "shotSpeed": 10.0,
+                "firingRotationVelocityMax": 0.0,
+                "firingRotationVelocityAccelerationTime": 0.0
+              },
+              "type": "WeaponComponent"
+            },
+            {
+              "localPosition": [
+                55.70001,
+                -5.5,
+                72.4
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": [
+            {
+              "name": "turretGun",
+              "components": [
+                {
+                  "properties": {},
+                  "type": "AIMothershipTurretComponent"
+                },
+                {
+                  "properties": {
+                    "Center": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "Radius": 1.0,
+                    "Trigger": false,
+                    "RenderCollider": true
+                  },
+                  "type": "ColliderComponent"
+                },
+                {
+                  "properties": {},
+                  "type": "EnemyComponent"
+                },
+                {
+                  "properties": {
+                    "StartHealth": 30.0
+                  },
+                  "type": "HealthComponent"
+                },
+                {
+                  "properties": {
+                    "modelPath": "Assets/Models/Ships/Enemies/Turret/turretGun.fbx"
+                  },
+                  "type": "ModelComponent"
+                },
+                {
+                  "properties": {
+                    "identifier": "",
+                    "weaponModelPath": "",
+                    "weaponIconPath": "",
+                    "projectileModelPath": "",
+                    "shootSound": "",
+                    "barrelOffset": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "shotScale": [
+                      1.0,
+                      1.0,
+                      1.0
+                    ],
+                    "shotCooldown": 1.0,
+                    "damage": 3.0,
+                    "shotSpeed": 10.0,
+                    "firingRotationVelocityMax": 0.0,
+                    "firingRotationVelocityAccelerationTime": 0.0
+                  },
+                  "type": "WeaponComponent"
+                },
+                {
+                  "localPosition": [
+                    0.0,
+                    3.139,
+                    0.0
+                  ],
+                  "localRotation": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "localScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "type": "Transform"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "motherShip",
+      "components": [
+        {
+          "properties": {},
+          "type": "AIMothershipComponent"
+        },
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 1.0,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {
+            "modelPath": "Assets/Models/Ships/Enemies/motherShip/motherShip.fbx"
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "properties": {
+            "StartSpeed": 0.0,
+            "Drag": 0.0,
+            "WorldDirection": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "type": "PhysicsComponent"
+        },
+        {
+          "localPosition": [
+            -8.04,
+            69.1,
+            90.2
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    },
+    {
+      "name": "mothershipTurret",
+      "components": [
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 1.0,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {},
+          "type": "MarkerComponent"
+        },
+        {
+          "properties": {
+            "modelPath": "Assets/Models/Ships/Enemies/Turret/turretBase.fbx"
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "properties": {
+            "identifier": "",
+            "weaponModelPath": "",
+            "weaponIconPath": "",
+            "projectileModelPath": "",
+            "shootSound": "",
+            "barrelOffset": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "shotScale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "shotCooldown": 1.0,
+            "damage": 1.0,
+            "shotSpeed": 10.0,
+            "firingRotationVelocityMax": 0.0,
+            "firingRotationVelocityAccelerationTime": 0.0
+          },
+          "type": "WeaponComponent"
+        },
+        {
+          "localPosition": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": [
+        {
+          "name": "turretGun",
+          "components": [
+            {
+              "properties": {},
+              "type": "AIMothershipTurretComponent"
+            },
+            {
+              "properties": {
+                "Center": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "Radius": 1.0,
+                "Trigger": false,
+                "RenderCollider": true
+              },
+              "type": "ColliderComponent"
+            },
+            {
+              "properties": {},
+              "type": "EnemyComponent"
+            },
+            {
+              "properties": {
+                "StartHealth": 30.0
+              },
+              "type": "HealthComponent"
+            },
+            {
+              "properties": {
+                "modelPath": "Assets/Models/Ships/Enemies/Turret/turretGun.fbx"
+              },
+              "type": "ModelComponent"
+            },
+            {
+              "properties": {
+                "identifier": "",
+                "weaponModelPath": "",
+                "weaponIconPath": "",
+                "projectileModelPath": "",
+                "shootSound": "",
+                "barrelOffset": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "shotScale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "shotCooldown": 1.0,
+                "damage": 3.0,
+                "shotSpeed": 10.0,
+                "firingRotationVelocityMax": 0.0,
+                "firingRotationVelocityAccelerationTime": 0.0
+              },
+              "type": "WeaponComponent"
+            },
+            {
+              "localPosition": [
+                0.0,
+                3.139,
+                0.0
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Player",
+      "components": [
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 4.57,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {
+            "StartHealth": 100.0
+          },
+          "type": "HealthComponent"
+        },
+        {
+          "properties": {
+            "StartSpeed": 0.0,
+            "Drag": 0.0,
+            "WorldDirection": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "type": "PhysicsComponent"
+        },
+        {
+          "properties": {
+            "RestrictPlayer": false,
+            "CenterPosition": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "GameAreaRadius": 1000.0,
+            "DrawGameAreaSolid": false
+          },
+          "type": "PlayerControllerComponent"
+        },
+        {
+          "properties": {
+            "shotSize": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "shotCooldown": 1.0,
+            "shotDamage": 1.0
+          },
+          "type": "PlayerShootComponent"
+        },
+        {
+          "properties": {},
+          "type": "SpeakerComponent"
+        },
+        {
+          "localPosition": [
+            0.0,
+            0.0,
+            -112.5
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": [
+        {
+          "name": "",
+          "components": [
+            {
+              "localPosition": [
+                0.0,
+                1.0,
+                -10.0
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "SceneHandler",
+      "components": [
+        {
+          "properties": {
+            "objectiveChains": [
+              {
+                "objectives": [
+                  {
+                    "identity": null,
+                    "description": null,
+                    "counter": 0,
+                    "target": 0
+                  }
+                ]
+              }
+            ]
+          },
+          "type": "ObjectiveHandlerComponent"
+        },
+        {
+          "localPosition": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "localRotation": [
+            -0.2657756,
+            0.531031668,
+            -0.718786955,
+            -0.361544073
+          ],
+          "localScale": [
+            2.68276143,
+            2.68276143,
+            2.68276
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    },
+    {
+      "name": "Swarmer",
+      "components": [
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 5.0,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {},
+          "type": "EnemyComponent"
+        },
+        {
+          "properties": {
+            "StartHealth": 1.0
+          },
+          "type": "HealthComponent"
+        },
+        {
+          "properties": {},
+          "type": "MarkerComponent"
+        },
+        {
+          "properties": {
+            "modelPath": "Assets/Models/Ships/Enemies/Swarmer/swarmer_lp.fbx"
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "properties": {
+            "modelPath": "Assets/Models/Ships/Enemies/Swarmer/swarmer_lp.fbx"
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "properties": {
+            "StartSpeed": 0.0,
+            "Drag": 0.0,
+            "WorldDirection": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "type": "PhysicsComponent"
+        },
+        {
+          "localPosition": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    },
+    {
+      "name": "TestSpawnEnemy",
+      "components": [
+        {
+          "properties": {
+            "maxForwardSpeed": 200.0,
+            "minForwardSpeed": 20.0,
+            "acceleration": 30.0,
+            "breakPower": 10.0,
+            "distanceToPlayerUntilRotate": 300.0,
+            "rotateTowardsPlayerPoints": 200,
+            "isRotatingPoints": 100,
+            "shootAtPlayerPoints": 75,
+            "turnAwayFromClusterPoints": 400,
+            "turnAwayFromObjectPoints": 400
+          },
+          "type": "AIInterceptorComponent"
+        },
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 3.34,
+            "Trigger": false,
+            "RenderCollider": false
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 1.0,
+            "Trigger": false,
+            "RenderCollider": false
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {},
+          "type": "EnemyComponent"
+        },
+        {
+          "properties": {
+            "StartHealth": 1.0
+          },
+          "type": "HealthComponent"
+        },
+        {
+          "properties": {
+            "scriptPath": "Assets/Scripts/Components/KillComponent.lua"
+          },
+          "type": "LuaComponent"
+        },
+        {
+          "properties": {
+            "modelPath": ""
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "properties": {
+            "identity": "KillObjective"
+          },
+          "type": "ObjectiveComponent"
+        },
+        {
+          "properties": {
+            "StartSpeed": 0.0,
+            "Drag": 0.0,
+            "WorldDirection": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "type": "PhysicsComponent"
+        },
+        {
+          "properties": {},
+          "type": "SpeakerComponent"
+        },
+        {
+          "properties": {
+            "identifier": "",
+            "weaponModelPath": "",
+            "weaponIconPath": "",
+            "projectileModelPath": "",
+            "shootSound": "",
+            "barrelOffset": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "shotScale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "shotCooldown": 1.0,
+            "damage": 1.0,
+            "shotSpeed": 10.0,
+            "firingRotationVelocityMax": 0.0,
+            "firingRotationVelocityAccelerationTime": 0.0
+          },
+          "type": "WeaponComponent"
+        },
+        {
+          "localPosition": [
+            -23.0,
+            86.0,
+            -314.291931
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    },
+    {
+      "name": "turretBase",
+      "components": [
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 1.0,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {},
+          "type": "MarkerComponent"
+        },
+        {
+          "properties": {
+            "modelPath": "Assets/Models/Ships/Enemies/Turret/turretBase.fbx"
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "properties": {
+            "identifier": "",
+            "weaponModelPath": "",
+            "weaponIconPath": "",
+            "projectileModelPath": "",
+            "shootSound": "",
+            "barrelOffset": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "shotScale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "shotCooldown": 1.0,
+            "damage": 1.0,
+            "shotSpeed": 10.0,
+            "firingRotationVelocityMax": 0.0,
+            "firingRotationVelocityAccelerationTime": 0.0
+          },
+          "type": "WeaponComponent"
+        },
+        {
+          "localPosition": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": [
+        {
+          "name": "turretGun",
+          "components": [
+            {
+              "properties": {},
+              "type": "AITurretComponent"
+            },
+            {
+              "properties": {
+                "Center": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "Radius": 1.0,
+                "Trigger": false,
+                "RenderCollider": true
+              },
+              "type": "ColliderComponent"
+            },
+            {
+              "properties": {},
+              "type": "EnemyComponent"
+            },
+            {
+              "properties": {
+                "StartHealth": 30.0
+              },
+              "type": "HealthComponent"
+            },
+            {
+              "properties": {
+                "modelPath": "Assets/Models/Ships/Enemies/Turret/turretGun.fbx"
+              },
+              "type": "ModelComponent"
+            },
+            {
+              "properties": {
+                "identifier": "",
+                "weaponModelPath": "",
+                "weaponIconPath": "",
+                "projectileModelPath": "",
+                "shootSound": "",
+                "barrelOffset": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "shotScale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "shotCooldown": 1.0,
+                "damage": 3.0,
+                "shotSpeed": 10.0,
+                "firingRotationVelocityMax": 0.0,
+                "firingRotationVelocityAccelerationTime": 0.0
+              },
+              "type": "WeaponComponent"
+            },
+            {
+              "localPosition": [
+                0.0,
+                3.139,
+                0.0
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        }
+      ]
+    }
+  ]
+}

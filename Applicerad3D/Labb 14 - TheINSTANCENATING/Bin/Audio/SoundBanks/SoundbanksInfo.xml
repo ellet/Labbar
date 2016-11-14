@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="10" SoundbankVersion="113">
+	<RootPaths>
+		<ProjectRoot>C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Bin\Audio\SoundBanks\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2678230382" Language="SFX">
+			<ShortName>level1</ShortName>
+			<Path>level1.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3160810803" Name="Play_DemonicVoice"/>
+				<Event Id="2362094225" Name="Play_Derp"/>
+				<Event Id="3848272688" Name="Play_GatlingGun"/>
+				<Event Id="2100953969" Name="Play_Interceptor_Movement"/>
+				<Event Id="2270376495" Name="Play_Laser"/>
+				<Event Id="432716372" Name="Play_PlayerHitEnemy"/>
+				<Event Id="299884166" Name="Player_Thruster"/>
+				<Event Id="1313292386" Name="Stop_All_Voice"/>
+				<Event Id="4171349466" Name="Stop_GatlingGun"/>
+				<Event Id="2169740631" Name="Stop_Thruster"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="134922151" Language="SFX">
+					<ShortName>demonic_voice.wav</ShortName>
+					<Path>SFX\demonic_voice_9E69E797.wem</Path>
+				</File>
+				<File Id="345062463" Language="SFX">
+					<ShortName>adam.wav</ShortName>
+					<Path>SFX\adam_9E69E797.wem</Path>
+				</File>
+				<File Id="407840366" Language="SFX">
+					<ShortName>PlayerHitEnemy.wav</ShortName>
+					<Path>SFX\PlayerHitEnemy_9E69E797.wem</Path>
+				</File>
+				<File Id="507624551" Language="SFX">
+					<ShortName>spaceThruster.wav</ShortName>
+					<Path>SFX\spaceThruster_9E69E797.wem</Path>
+				</File>
+				<File Id="544884412" Language="SFX">
+					<ShortName>mega_mob_incoming.wav</ShortName>
+					<Path>SFX\mega_mob_incoming_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="632474148" Language="SFX">
+					<ShortName>Randomize7.wav</ShortName>
+					<Path>SFX\Randomize7_9E69E797.wem</Path>
+				</File>
+				<File Id="818493151" Language="SFX">
+					<ShortName>laserMachineGun.wav</ShortName>
+					<Path>SFX\laserMachineGun_895BB11D.wem</Path>
+				</File>
+				<File Id="1068630108" Language="SFX">
+					<ShortName>62520__bsumusictech__razor.wav</ShortName>
+					<Path>SFX\62520__bsumusictech__razor_D0877FE4_9A9D0632.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

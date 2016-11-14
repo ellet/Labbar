@@ -1,0 +1,91 @@
+{
+	"sprite":"",
+	"function" : "",
+	"children":
+	[
+		{
+			"name": "Return To Main Menu",
+			"type": "",
+			"position": 
+			[
+				100.0,
+				200.0
+			],
+			"size":
+			[
+				512.0,
+				128.0
+			],
+			"scale":
+			[
+				1.0,
+				1.0
+			],
+			"sprite": "Assets/Gui/PauseMenu/mainMenuButton.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Return To Main Menu",
+			"hoverFunction": "",
+			"children":
+			[
+				
+			]
+		},
+		{
+			"name": "Resume",
+			"type": "",
+			"position": 
+			[
+				100.0,
+				500.0
+			],
+			"size":
+			[
+				512.0,
+				128.0
+			],
+			"scale":
+			[
+				1.0,
+				1.0
+			],
+			"sprite": "Assets/Gui/PauseMenu/resumeButton.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Resume",
+			"hoverFunction": "",
+			"children":
+			[
+				
+			]
+		},
+		{
+			"name": "Options",
+			"type": "",
+			"position": 
+			[
+				100.0,
+				350.0
+			],
+			"size":
+			[
+				512.0,
+				128.0
+			],
+			"scale":
+			[
+				1.0,
+				1.0
+			],
+			"sprite": "Assets/Gui/PauseMenu/optionsButton.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Options",
+			"hoverFunction": "",
+			"children":
+			[
+				
+			]
+		}
+	]
+}

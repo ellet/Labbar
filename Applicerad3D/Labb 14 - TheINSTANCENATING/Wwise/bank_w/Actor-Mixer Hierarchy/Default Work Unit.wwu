@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F2F27E13-F2F4-4994-B8D2-8B1CE7FDCA7C}" SchemaVersion="70">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{F2F27E13-F2F4-4994-B8D2-8B1CE7FDCA7C}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="mega_mob_incoming" ID="{599FF11A-0A6A-4F83-BEDA-3BABE5E7837B}" ShortID="434418011" Type="SoundFX">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{16D73D86-8A23-43D8-81E6-0ACF7F42B647}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{DA14C0C6-F59E-4393-829F-230779BEA0FD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="mega_mob_incoming" ID="{90D4CEFD-B303-4F84-BCB1-9C6B5AC068C1}" ShortID="544884412">
+							<Language>SFX</Language>
+							<AudioFile>mega_mob_incoming.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="mega_mob_incoming" ID="{90D4CEFD-B303-4F84-BCB1-9C6B5AC068C1}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="adam" ID="{D7C3F242-FB34-4C1B-B307-B9842596288F}" ShortID="123590358" Type="SoundFX">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{E632A458-10CB-47E5-8A21-5A3113B80E09}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="935"/>
+											<Property Name="Min" Type="Real64" Value="-758"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{16D73D86-8A23-43D8-81E6-0ACF7F42B647}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{DA14C0C6-F59E-4393-829F-230779BEA0FD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="adam" ID="{12CADD69-85A4-44BE-A81E-C32F12FFDB2A}" ShortID="345062463">
+							<Language>SFX</Language>
+							<AudioFile>adam.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="adam" ID="{12CADD69-85A4-44BE-A81E-C32F12FFDB2A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="laserMachineGun" ID="{B8748A87-53E0-4643-BB5A-AEAB688C6C84}" ShortID="700377564" Type="SoundFX">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>26</Value>
+							</ValueList>
+						</Property>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>49</Value>
+							</ValueList>
+						</Property>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<RTPCList>
+								<RTPC Name="" ID="{7045EAA4-EACE-4688-9000-BB21637893E6}" ShortID="718015243">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="GatlingGunRPM" ID="{C37A7F30-5327-452F-9800-AD6AB23BA88A}" WorkUnitID="{878228A2-CEB4-46CD-AC9A-E870D265FB60}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{97F64072-A392-4838-832B-7C0469496522}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="65537"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-1502</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>296</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{16D73D86-8A23-43D8-81E6-0ACF7F42B647}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{DA14C0C6-F59E-4393-829F-230779BEA0FD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="laserMachineGun" ID="{B480691B-F64B-4C64-86C8-BB43FE75A02E}" ShortID="818493151">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.374985704426699"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.205784837795139"/>
+								<Property Name="LoopBegin" Type="Real64" Value="0.12118440447936"/>
+								<Property Name="LoopEnd" Type="Real64" Value="0.551046065651428"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.5579055602446"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>laserMachineGun.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="laserMachineGun" ID="{B480691B-F64B-4C64-86C8-BB43FE75A02E}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Randomize7" ID="{5DDAC80D-C207-4773-A63B-BDB6A59BC65F}" ShortID="231519638" Type="SoundFX">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{16D73D86-8A23-43D8-81E6-0ACF7F42B647}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{DA14C0C6-F59E-4393-829F-230779BEA0FD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Randomize7" ID="{6A64468A-4FD0-4864-B2F9-CCC418AABD7F}" ShortID="632474148">
+							<Language>SFX</Language>
+							<AudioFile>Randomize7.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Randomize7" ID="{6A64468A-4FD0-4864-B2F9-CCC418AABD7F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="mega_mob_incoming_non_repeating" ID="{EB218A1E-0A7E-4D06-BFA6-EB2953AAFF1D}" ShortID="175256178" Type="SoundFX">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{16D73D86-8A23-43D8-81E6-0ACF7F42B647}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{DA14C0C6-F59E-4393-829F-230779BEA0FD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="mega_mob_incoming" ID="{7403F1A3-E988-4DC2-AE56-EE00F3A22746}" ShortID="1001153174">
+							<Language>SFX</Language>
+							<AudioFile>mega_mob_incoming.wav</AudioFile>
+							<ConvertedFileIDList>
+								<File ID="544884412"/>
+							</ConvertedFileIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="mega_mob_incoming" ID="{7403F1A3-E988-4DC2-AE56-EE00F3A22746}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="spaceThruster" ID="{B9D253F9-2601-4B72-A98D-4E722078C9BA}" ShortID="324043889" Type="SoundFX">
+					<PropertyList>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{16D73D86-8A23-43D8-81E6-0ACF7F42B647}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{DA14C0C6-F59E-4393-829F-230779BEA0FD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="spaceThruster" ID="{10FCC236-4B2C-4E6E-9BBC-F5FEA5C0F9FF}" ShortID="507624551">
+							<Language>SFX</Language>
+							<AudioFile>spaceThruster.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="spaceThruster" ID="{10FCC236-4B2C-4E6E-9BBC-F5FEA5C0F9FF}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="PlayerHitEnemy" ID="{4AB39878-23B7-4C3F-B7A9-2D45DD529651}" ShortID="238155113" Type="SoundFX">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{16D73D86-8A23-43D8-81E6-0ACF7F42B647}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{DA14C0C6-F59E-4393-829F-230779BEA0FD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="PlayerHitEnemy" ID="{B80454A4-84CC-4182-9ADE-8485DFBCB30D}" ShortID="407840366">
+							<Language>SFX</Language>
+							<AudioFile>PlayerHitEnemy.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="PlayerHitEnemy" ID="{B80454A4-84CC-4182-9ADE-8485DFBCB30D}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="razor" ID="{E0F3A56E-D018-48D9-A179-6E42FDFF1211}" ShortID="280668914" Type="SoundFX">
+					<PropertyList>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>20</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{16D73D86-8A23-43D8-81E6-0ACF7F42B647}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{DA14C0C6-F59E-4393-829F-230779BEA0FD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="62520__bsumusictech__razor" ID="{88D7E20E-75A1-4829-B278-F97CEB5C5910}" ShortID="713331545">
+							<Language>SFX</Language>
+							<AudioFile>62520__bsumusictech__razor.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="62520__bsumusictech__razor" ID="{88D7E20E-75A1-4829-B278-F97CEB5C5910}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="interceptor_Movement" ID="{990DA50B-9A39-4F62-B476-DAF7A5075821}" ShortID="941586924" Type="SoundFX">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>39</Value>
+							</ValueList>
+						</Property>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>56</Value>
+							</ValueList>
+						</Property>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-510</Value>
+							</ValueList>
+						</Property>
+						<Property Name="PositioningType" Type="int16" Value="1"/>
+						<Property Name="RenderEffect0" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>40</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<Custom>
+								<Attenuation Name="Attenuation (Custom)" ID="{E079F60B-4933-41E9-86BB-E4456D278182}" ShortID="417006415">
+									<PropertyList>
+										<Property Name="RadiusMax" Type="Real64" Value="300"/>
+									</PropertyList>
+									<CurveUsageInfoList>
+										<VolumeDryUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+												<Curve Name="VolumeDry" ID="{CCC0B785-5116-433A-8A2A-A650201A2E2F}">
+													<PropertyList>
+														<Property Name="Flags" Type="int32" Value="3"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>0</XPos>
+															<YPos>0</YPos>
+															<Flags>5</Flags>
+															<SegmentShape>Log3</SegmentShape>
+														</Point>
+														<Point>
+															<XPos>300</XPos>
+															<YPos>-200</YPos>
+															<Flags>37</Flags>
+														</Point>
+													</PointList>
+												</Curve>
+											</CurveUsageInfo>
+										</VolumeDryUsage>
+										<VolumeWetGameUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetGameUsage>
+										<VolumeWetUserUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetUserUsage>
+										<LowPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</LowPassFilterUsage>
+										<HighPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</HighPassFilterUsage>
+										<SpreadUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</SpreadUsage>
+										<FocusUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</FocusUsage>
+									</CurveUsageInfoList>
+								</Attenuation>
+							</Custom>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{16D73D86-8A23-43D8-81E6-0ACF7F42B647}"/>
+						</Reference>
+						<Reference Name="Effect0" CompanyID="4095" PluginID="65535" PluginType="15">
+							<ObjectRef Name="Inside_Your_Head" ID="{AE2D0AE1-8963-400A-AA4A-52A7A6397F89}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{DA14C0C6-F59E-4393-829F-230779BEA0FD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="62520__bsumusictech__razor" ID="{E9BB9CEC-70DF-42A4-A5C4-48B2E609CB20}" ShortID="1068630108">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.414927113702624"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.122941367023"/>
+								<Property Name="LoopBegin" Type="Real64" Value="4.11853579527049"/>
+								<Property Name="LoopEnd" Type="Real64" Value="4.42588921282799"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="3.45772594752186"/>
+								<Property Name="TrimEnd" Type="Real64" Value="5.67067055393586"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>62520__bsumusictech__razor.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<PositioningInfo>
+						<Panner Name="" ID="{35A4F846-E47C-4714-8D9E-90797F5F50BE}"/>
+						<Position Name="" ID="{FC52BA76-D503-4605-B0DE-6DA506C885D7}"/>
+					</PositioningInfo>
+					<ActiveSourceList>
+						<ActiveSource Name="62520__bsumusictech__razor" ID="{E9BB9CEC-70DF-42A4-A5C4-48B2E609CB20}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Laser" ID="{65EA174A-BB67-4979-85AE-216809F2DE2F}" ShortID="221098155" Type="SoundFX">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{16D73D86-8A23-43D8-81E6-0ACF7F42B647}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{DA14C0C6-F59E-4393-829F-230779BEA0FD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Randomize7" ID="{3A0D4BDB-3A8E-4A4D-B474-49A94A0D9BCF}" ShortID="3072903">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="2.68006530996987E-02"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.120602938948644"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.184924506387921"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Randomize7.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Randomize7" ID="{3A0D4BDB-3A8E-4A4D-B474-49A94A0D9BCF}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="demonic_voice" ID="{F2B02F32-3193-4E8E-82B7-95A36623A1DB}" ShortID="247055109" Type="SoundFX">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{16D73D86-8A23-43D8-81E6-0ACF7F42B647}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{DA14C0C6-F59E-4393-829F-230779BEA0FD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="demonic_voice" ID="{29C3788B-8450-46AD-9EC5-8E05C2D9FC6C}" ShortID="134922151">
+							<Language>SFX</Language>
+							<AudioFile>demonic_voice.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="demonic_voice" ID="{29C3788B-8450-46AD-9EC5-8E05C2D9FC6C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

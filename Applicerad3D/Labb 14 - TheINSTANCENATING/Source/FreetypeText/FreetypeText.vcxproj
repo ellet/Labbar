@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{173DC7AE-2146-47FA-B5F6-DDE0D7204618}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>FreetypeText</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)extincludes\;$(IncludePath)</IncludePath>
+    <TargetName>$(ProjectName)_$(Configuration)_$(Platform)</TargetName>
+    <IntDir>$(SolutionDir)..\Temp\$(ProjectName)\$(Platform) $(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)..\Lib\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(ProjectDir)extincludes\;$(IncludePath)</IncludePath>
+    <TargetName>$(ProjectName)_$(Configuration)_$(Platform)</TargetName>
+    <IntDir>$(SolutionDir)..\Temp\$(ProjectName)\$(Platform) $(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)..\Lib\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>$(ProjectName)_$(Configuration)_$(Platform)</TargetName>
+    <IntDir>$(SolutionDir)..\Temp\$(ProjectName)\$(Platform) $(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)..\Lib\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>$(ProjectName)_$(Configuration)_$(Platform)</TargetName>
+    <IntDir>$(SolutionDir)..\Temp\$(ProjectName)\$(Platform) $(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)..\Lib\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)\FreetypeText\;$(ProjectDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)extincludes\;$(ProjectDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)\FreetypeText\;$(ProjectDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)extincludes\;$(ProjectDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="extincludes\freetype\config\ftconfig.h" />
+    <ClInclude Include="extincludes\freetype\config\ftheader.h" />
+    <ClInclude Include="extincludes\freetype\config\ftmodule.h" />
+    <ClInclude Include="extincludes\freetype\config\ftoption.h" />
+    <ClInclude Include="extincludes\freetype\config\ftstdlib.h" />
+    <ClInclude Include="extincludes\freetype\freetype.h" />
+    <ClInclude Include="extincludes\freetype\ftadvanc.h" />
+    <ClInclude Include="extincludes\freetype\ftautoh.h" />
+    <ClInclude Include="extincludes\freetype\ftbbox.h" />
+    <ClInclude Include="extincludes\freetype\ftbdf.h" />
+    <ClInclude Include="extincludes\freetype\ftbitmap.h" />
+    <ClInclude Include="extincludes\freetype\ftbzip2.h" />
+    <ClInclude Include="extincludes\freetype\ftcache.h" />
+    <ClInclude Include="extincludes\freetype\ftcffdrv.h" />
+    <ClInclude Include="extincludes\freetype\ftchapters.h" />
+    <ClInclude Include="extincludes\freetype\ftcid.h" />
+    <ClInclude Include="extincludes\freetype\fterrdef.h" />
+    <ClInclude Include="extincludes\freetype\fterrors.h" />
+    <ClInclude Include="extincludes\freetype\ftfntfmt.h" />
+    <ClInclude Include="extincludes\freetype\ftgasp.h" />
+    <ClInclude Include="extincludes\freetype\ftglyph.h" />
+    <ClInclude Include="extincludes\freetype\ftgxval.h" />
+    <ClInclude Include="extincludes\freetype\ftgzip.h" />
+    <ClInclude Include="extincludes\freetype\ftimage.h" />
+    <ClInclude Include="extincludes\freetype\ftincrem.h" />
+    <ClInclude Include="extincludes\freetype\ftlcdfil.h" />
+    <ClInclude Include="extincludes\freetype\ftlist.h" />
+    <ClInclude Include="extincludes\freetype\ftlzw.h" />
+    <ClInclude Include="extincludes\freetype\ftmac.h" />
+    <ClInclude Include="extincludes\freetype\ftmm.h" />
+    <ClInclude Include="extincludes\freetype\ftmodapi.h" />
+    <ClInclude Include="extincludes\freetype\ftmoderr.h" />
+    <ClInclude Include="extincludes\freetype\ftotval.h" />
+    <ClInclude Include="extincludes\freetype\ftoutln.h" />
+    <ClInclude Include="extincludes\freetype\ftpfr.h" />
+    <ClInclude Include="extincludes\freetype\ftrender.h" />
+    <ClInclude Include="extincludes\freetype\ftsizes.h" />
+    <ClInclude Include="extincludes\freetype\ftsnames.h" />
+    <ClInclude Include="extincludes\freetype\ftstroke.h" />
+    <ClInclude Include="extincludes\freetype\ftsynth.h" />
+    <ClInclude Include="extincludes\freetype\ftsystem.h" />
+    <ClInclude Include="extincludes\freetype\fttrigon.h" />
+    <ClInclude Include="extincludes\freetype\ftttdrv.h" />
+    <ClInclude Include="extincludes\freetype\fttypes.h" />
+    <ClInclude Include="extincludes\freetype\ftwinfnt.h" />
+    <ClInclude Include="extincludes\freetype\internal\autohint.h" />
+    <ClInclude Include="extincludes\freetype\internal\ftcalc.h" />
+    <ClInclude Include="extincludes\freetype\internal\ftdebug.h" />
+    <ClInclude Include="extincludes\freetype\internal\ftdriver.h" />
+    <ClInclude Include="extincludes\freetype\internal\ftgloadr.h" />
+    <ClInclude Include="extincludes\freetype\internal\fthash.h" />
+    <ClInclude Include="extincludes\freetype\internal\ftmemory.h" />
+    <ClInclude Include="extincludes\freetype\internal\ftobjs.h" />
+    <ClInclude Include="extincludes\freetype\internal\ftpic.h" />
+    <ClInclude Include="extincludes\freetype\internal\ftrfork.h" />
+    <ClInclude Include="extincludes\freetype\internal\ftserv.h" />
+    <ClInclude Include="extincludes\freetype\internal\ftstream.h" />
+    <ClInclude Include="extincludes\freetype\internal\fttrace.h" />
+    <ClInclude Include="extincludes\freetype\internal\ftvalid.h" />
+    <ClInclude Include="extincludes\freetype\internal\internal.h" />
+    <ClInclude Include="extincludes\freetype\internal\psaux.h" />
+    <ClInclude Include="extincludes\freetype\internal\pshints.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svbdf.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svcid.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svfntfmt.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svgldict.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svgxval.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svkern.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svmm.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svotval.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svpfr.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svpostnm.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svprop.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svpscmap.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svpsinfo.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svsfnt.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svttcmap.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svtteng.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svttglyf.h" />
+    <ClInclude Include="extincludes\freetype\internal\services\svwinfnt.h" />
+    <ClInclude Include="extincludes\freetype\internal\sfnt.h" />
+    <ClInclude Include="extincludes\freetype\internal\t1types.h" />
+    <ClInclude Include="extincludes\freetype\internal\tttypes.h" />
+    <ClInclude Include="extincludes\freetype\t1tables.h" />
+    <ClInclude Include="extincludes\freetype\ttnameid.h" />
+    <ClInclude Include="extincludes\freetype\tttables.h" />
+    <ClInclude Include="extincludes\freetype\tttags.h" />
+    <ClInclude Include="extincludes\freetype\ttunpat.h" />
+    <ClInclude Include="extincludes\ft2build.h" />
+    <ClInclude Include="FreetypeText\FreetypeText.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="FreetypeText\TextWrapper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FreetypeText\FreetypeText.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="FreetypeText\TextWrapper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FreetypeText\FreetypeBitmap.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

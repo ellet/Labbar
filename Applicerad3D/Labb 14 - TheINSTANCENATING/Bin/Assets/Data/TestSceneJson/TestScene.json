@@ -1,0 +1,160 @@
+{
+  "name": "",
+  "hierarchy": [
+    {
+      "name": "13M",
+      "components": [
+        {
+          "properties": {
+            "scriptPath": "Assets/Scripts/Components/SpinningComponent.lua"
+          },
+          "type": "LuaComponent"
+        },
+        {
+          "properties": {
+            "modelPath": "Assets/Models/Asteroids/Standard/13M/13M.fbx"
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "localPosition": [
+            6.46,
+            16.170929,
+            3.825536
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            0.06863248,
+            0.06863248,
+            0.06863248
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": [
+        {
+          "name": "interceptorX101",
+          "components": [
+            {
+              "properties": {
+                "modelPath": "Assets/Models/Ships/Enemies/InterceptorX101/interceptorX101.fbx"
+              },
+              "type": "ModelComponent"
+            },
+            {
+              "localPosition": [
+                -5.0,
+                -5.78339529,
+                -82.40319
+              ],
+              "localRotation": [
+                0.0,
+                0.7071068,
+                0.0,
+                0.7071068
+              ],
+              "localScale": [
+                5.185817,
+                5.185813,
+                5.185817
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": [
+            {
+              "name": "GameObject",
+              "components": [
+                {
+                  "properties": {
+                    "myStreakColor": [
+                      1.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "distanceBetweenSegments": 0.1,
+                    "numberOfSegments": 100
+                  },
+                  "type": "StreakComponent"
+                },
+                {
+                  "localPosition": [
+                    1.69,
+                    1.03,
+                    -0.07
+                  ],
+                  "localRotation": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "localScale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "type": "Transform"
+                }
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Player",
+      "components": [
+        {
+          "properties": {
+            "movementSpeed": 10.0,
+            "mouseRotationSpeed": 1.0,
+            "keyboardRotationSpeed": 3.0,
+            "boostMovementSpeedMultiplier": 7.5,
+            "boostRotationSpeedMultiplier": 0.5
+          },
+          "type": "PlayerControllerComponent"
+        },
+        {
+          "properties": {
+            "shotSize": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "shotCooldown": 1.0,
+            "shotDamage": 1.0
+          },
+          "type": "PlayerShootComponent"
+        },
+        {
+          "localPosition": [
+            6.88794327,
+            16.5775585,
+            -6.61294842
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    }
+  ]
+}

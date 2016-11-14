@@ -1,0 +1,211 @@
+{
+  "name": "objectiveLevel",
+  "hierarchy": [
+    {
+      "name": "SceneHandler",
+      "components": [
+        {
+          "properties": {
+            "scriptPath": "Assets\\Scripts\\Components\\objectiveLevelObjectives.lua"
+          },
+          "type": "LuaComponent"
+        },
+        {
+          "properties": {
+            "objectiveChains": [
+              {
+                "objectives": [
+                  {
+                    "dialogChain": {
+                      "dialogNodes": [
+                        {
+                          "subtitles": "Testy Test Text Goes Here",
+                          "voiceClip": "Play_DemonicVoice",
+                          "trailDelay": 0.0
+                        },
+                        {
+                          "subtitles": "More Testing Text Here!",
+                          "voiceClip": "Play_Derp",
+                          "trailDelay": 0.0
+                        },
+                        {
+                          "subtitles": "Even moooore testing text ehrmagerd!",
+                          "voiceClip": "Play_DemonicVoice",
+                          "trailDelay": 0.0
+                        }
+                      ]
+                    },
+                    "identity": "KillObjective",
+                    "description": "KILL IT NOW {0:counter}/{0:target}",
+                    "counter": 0,
+                    "target": 1
+                  }
+                ]
+              },
+              {
+                "objectives": []
+              }
+            ]
+          },
+          "type": "ObjectiveHandlerComponent"
+        },
+        {
+          "localPosition": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    },
+    {
+      "name": "Player",
+      "components": [
+        {
+          "properties": {
+            "Center": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Radius": 1.0,
+            "Trigger": false,
+            "RenderCollider": true
+          },
+          "type": "ColliderComponent"
+        },
+        {
+          "properties": {
+            "StartHealth": 100.0
+          },
+          "type": "HealthComponent"
+        },
+        {
+          "properties": {
+            "StartSpeed": 0.0,
+            "Drag": 0.0,
+            "WorldDirection": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "type": "PhysicsComponent"
+        },
+        {
+          "properties": {
+            "RestrictPlayer": false,
+            "CenterPosition": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "GameAreaRadius": 100.0,
+            "DrawGameAreaSolid": false
+          },
+          "type": "PlayerControllerComponent"
+        },
+        {
+          "properties": {
+            "shotSize": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "shotCooldown": 1.0,
+            "shotDamage": 1.0
+          },
+          "type": "PlayerShootComponent"
+        },
+        {
+          "properties": {},
+          "type": "SpeakerComponent"
+        },
+        {
+          "localPosition": [
+            0.0616211854,
+            0.0,
+            -112.871605
+          ],
+          "localRotation": [
+            0.0,
+            0.9865318,
+            0.0,
+            0.163569659
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": [
+        {
+          "name": "Main Camera",
+          "components": [
+            {
+              "localPosition": [
+                0.0,
+                1.0,
+                -10.0
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Directional Light",
+      "components": [
+        {
+          "localPosition": [
+            0.0,
+            3.0,
+            0.0
+          ],
+          "localRotation": [
+            0.408217877,
+            -0.234569684,
+            0.109381631,
+            0.8754261
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    }
+  ]
+}

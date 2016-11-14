@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationCache Version="1" SchemaVersion="70">
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="3349434208" DateHigh="30554548"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Attenuations\Default Work Unit.wwu" DateLow="1648594628" DateHigh="30553514"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\bank_w.stroja1.wsettings" DateLow="4244263378" DateHigh="30554548"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\bank_w.wproj" DateLow="2062790769" DateHigh="30546491"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Control Surface Sessions\Default Work Unit.wwu" DateLow="2060449212" DateHigh="30546491"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Conversion Settings\Default Work Unit.wwu" DateLow="2060479227" DateHigh="30546491"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Conversion Settings\Factory Conversion Settings.wwu" DateLow="2060519254" DateHigh="30546491"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Dynamic Dialogue\Default Work Unit.wwu" DateLow="2060549279" DateHigh="30546491"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Effects\Default Work Unit.wwu" DateLow="2060569292" DateHigh="30546491"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Effects\Factory Effects.wwu" DateLow="2060629329" DateHigh="30546491"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Events\Default Work Unit.wwu" DateLow="3349554283" DateHigh="30554548"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Game Parameters\Default Work Unit.wwu" DateLow="4275093428" DateHigh="30553765"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="2061119654" DateHigh="30546491"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="2061149676" DateHigh="30546491"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Mixing Sessions\Default Work Unit.wwu" DateLow="2061169689" DateHigh="30546491"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Modulators\Default Work Unit.wwu" DateLow="2061199708" DateHigh="30546491"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Presets\Default Work Unit.wwu" DateLow="2062210386" DateHigh="30546491"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Queries\Default Work Unit.wwu" DateLow="2062250412" DateHigh="30546491"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Queries\Factory Queries.wwu" DateLow="2062290498" DateHigh="30546491"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\SoundBanks\Default Work Unit.wwu" DateLow="3625290311" DateHigh="30554548"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Soundcaster Sessions\Default Work Unit.wwu" DateLow="2062380628" DateHigh="30546491"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\States\Default Work Unit.wwu" DateLow="2062410519" DateHigh="30546491"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Switches\Default Work Unit.wwu" DateLow="2062430532" DateHigh="30546491"/>
+	<ValidationCacheItem File="C:\Users\Stroja1\Desktop\GitRepos\GameEngine\Wwise\bank_w\Triggers\Default Work Unit.wwu" DateLow="2062460551" DateHigh="30546491"/>
+</ValidationCache>

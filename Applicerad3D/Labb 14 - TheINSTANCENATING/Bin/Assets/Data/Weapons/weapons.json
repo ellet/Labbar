@@ -1,0 +1,107 @@
+{
+	"primaryWeapons":
+	[
+		{
+			"identifier": "Gatling Gun",
+			"weaponModelPath": "Assets/Models/Player/Weapons/Minigun/minigun.fbx",
+			"projectileModelPath": "Assets/Models/Projectiles/MinigunProjectile/minigunProjectile.fbx",
+			"muzzleFlashModelPath": "",
+			"weaponIconPath": "Assets/Gui/WeaponIcons/gatlingGun.dds",
+			"shootSound": "Play_GatlingGun",
+			"impactSound": "Play_Derp",
+			"shootEffect": "GatlingGunFire", //Particle effect to use when firing
+			"impactEffects": ["GatlingGunImpact", "FireSparks"],
+			"shotScale": [ 0.1, 0.1, 5.0 ],
+			"barrelOffset": [ 0.0, 0.0, -0.4 ],
+			"shotCooldown": 0.1,
+			"damage": 1.0,
+			"shotSpeed": 1500.0,
+			"firingRotationVelocityMax": 1080.0,
+			"firingRotationVelocityAccelerationTime": 3.0,
+			"overheatDuration": 1.0,
+			"overheatPerShot": 3,
+			"isOwned": true,
+			"firingType": 0 //0 = default, 1 = homing, 2 = beam
+		},
+		{
+			"identifier": "Blaster",
+			"weaponModelPath": "Assets/Models/Player/Weapons/Blaster/blaster.fbx",
+			"projectileModelPath": "Assets/Models/Projectiles/BlasterProjectile/blasterProjectile.fbx",
+			"muzzleFlashModelPath": "",
+			"weaponIconPath": "Assets/Gui/WeaponIcons/blaster.dds",
+			"shootSound": "Play_Derp",
+			"impactSound": "Play_Derp",
+			"shootEffect": "BlasterFire", //Particle effect to use when firing
+			"impactEffects": ["BlasterImpact", "FireSparks"],
+			"shotScale": [ 0.2, 0.2, 3.0 ],
+			"barrelOffset": [ 0.0, 0.0, -0.5 ],
+			"shotCooldown": 0.4,
+			"damage": 3.0,
+			"shotSpeed": 150.0,
+			"firingRotationVelocityMax": 0.0,
+			"firingRotationVelocityAccelerationTime": 0.0,
+			"overheatDuration": 3.0,
+			"overheatPerShot": 15,
+			"isOwned": false,
+			"firingType": 0 //0 = default, 1 = homing, 2 = beam
+		}
+	],
+	"secondaryWeapons":
+	[
+		{
+			"identifier": "Rocket Launcher",
+			"weaponModelPath": "Assets/Models/Player/Weapons/RocketLauncher/rocketLauncher.fbx",
+			"projectileModelPath": "Assets/Models/Projectiles/RocketLauncherProjectile/rocketLauncherProjectile.fbx",
+			"muzzleFlashModelPath": "",
+			"weaponIconPath": "Assets/Gui/WeaponIcons/rocketLauncher.dds",
+			"shootSound": "Play_Derp",
+			"impactSound": "Play_Derp",
+			"shootEffect": "RocketLauncherFire", //Particle effect to use when firing
+			"impactEffects": ["RocketLauncherImpact", "FireSparks"],
+			"shotScale": [ 0.6, 0.6, 4.0 ],
+			"barrelOffset": [ 0.0, 0.0, -1.1 ],
+			"shotCooldown": 1.4,
+			"damage": 10.0,
+			"shotSpeed": 10.0,
+			"firingRotationVelocityMax": 0.0,
+			"firingRotationVelocityAccelerationTime": 0.0,
+			"overheatDuration": 3.0,
+			"overheatPerShot": 40,
+			"isOwned": true,
+			"firingType": 1, //0 = default, 1 = homing, 2 = beam
+			
+			"targetScanRadius": 150.0,
+			"shotTrackingDelay": 2.0,
+			"shotSpeedMax": 160.0, //Accelerates from base to max during the tracking delay time
+			"projectileRotationDegreesPerSecond": 1080.0,
+			"targetSwitchingCooldown": 2.0
+		},
+		{
+			"identifier": "Railgun",
+			"weaponModelPath": "Assets/Models/Player/Weapons/Railgun/railgun.fbx",
+			"projectileModelPath": "Assets/Models/Projectiles/RailgunProjectile/railgunProjectile.fbx",
+			"muzzleFlashModelPath": "",
+			"weaponIconPath": "Assets/Gui/WeaponIcons/railGun.dds",
+			"shootSound": "Play_Derp",
+			"impactSound": "Play_Derp",
+			"shootEffect": "RailgunFire", //Particle effect to use when firing
+			"impactEffects": ["RailgunImpact", "FireSparks"],
+			"shotScale": [ 1.0, 1.0, 50.0 ],
+			"barrelOffset": [ 0.0, 0.05, -0.2 ],
+			"shotCooldown": 3.0,
+			"damage": 18.0,
+			"shotSpeed": 100.0,
+			"firingRotationVelocityMax": 0.0,
+			"firingRotationVelocityAccelerationTime": 0.0,
+			"overheatDuration": 2.5,
+			"overheatPerShot": 6,
+			"isOwned": false,
+			"firingType": 2, //0 = default, 1 = homing, 2 = beam
+			
+			"beamRadius": 0.02, //currently unused
+			"beamMaxDistance": 0, //0 = infinite range
+			"beamLifeTime": 2.0,
+			"beamPierces": true
+		}
+	]
+}
