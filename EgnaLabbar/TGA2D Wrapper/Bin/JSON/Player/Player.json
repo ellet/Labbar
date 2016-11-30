@@ -1,7 +1,0 @@
-{
-	"Player" :
-	{
-		"AnimationPath" : "JSON/Animations/AnimationPlayer.json",
-		"PlayerSpeed" : 175
-	}
-}

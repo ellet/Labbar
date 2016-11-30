@@ -1,9 +1,0 @@
-{
-    "LevelsPath" : "JSON/Levels/Levels.json",
-	"InterfacesPath" : "JSON/Interfaces/Interfaces.json",
-    "DialogPath" :  "JSON/Interfaces/Dialog/Dialog.json",
-	"PlayerPath" : "JSON/Player/Player.json",
-	"SoundsPath" : "JSON/Sounds/Sounds.json",
-	"ActionWheelPath" : "JSON/ActionWheel/ActionWheel.json",
-	"BalanceBeamPuzzle" : "JSON/Puzzles/BalanceBeamPuzzle.json"
-}
