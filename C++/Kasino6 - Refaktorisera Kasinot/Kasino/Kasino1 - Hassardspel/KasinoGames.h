@@ -1,9 +1,0 @@
-#pragma once
-#include "DiceBlackJackGame.h"
-#include "GuessEvenOrUneven.h"
-#include "GuessNumberGame.h"
-#include "RockPapperScissors.h"
-#include "RussianRoullete.h"
-#include "NormalRoulette.h"
-#include "WhatNumberAmIThinkingOfGame.h"
-#include "GuessMoreOrLess.h"

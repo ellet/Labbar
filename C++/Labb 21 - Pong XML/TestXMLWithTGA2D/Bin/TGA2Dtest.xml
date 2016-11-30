@@ -1,8 +1,0 @@
-<Root>
-	<GAMEOBJECT>
-		<ID>pad1</ID>
-		<SPRITEPATH>Sprites/paddle.png</SPRITEPATH>
-		<PositionX>0.1</PositionX>
-		<PositionY>0.1</PositionY>
-	</GAMEOBJECT>
-</Root>

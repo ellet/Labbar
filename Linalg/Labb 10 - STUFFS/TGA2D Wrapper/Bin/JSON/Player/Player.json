@@ -1,7 +1,0 @@
-{
-	"Player" :
-	{
-		"SpritePath" : "Sprites/Player/Player.dds",
-		"PlayerSpeed" : 600
-	}
-}
