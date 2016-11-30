@@ -1,7 +1,0 @@
-#ifndef MATH_DEFINES_H
-#define MATH_DEFINES_H
-
-#define PI 3.141592653589793238462643383279f
-
-
-#endif
