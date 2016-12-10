@@ -201,6 +201,9 @@ Temp/
 /Bin/Launcher_Debug.exe
 /Bin/Launcher_Release.exe
 /Source/Launcher/Debug_Logs
+!*LuaGame.exe
+!*Bass.dll
+!*HGE.dll
 *.vs
 *.idb
 /Bin/Logs/
