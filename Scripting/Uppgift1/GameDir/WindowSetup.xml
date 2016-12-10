@@ -1,0 +1,5 @@
+<Settings>
+	<Resolution width="1280" height="720"/>
+	<Windowed>true</Windowed>
+	<FixedFrameRate>true</FixedFrameRate>
+</Settings>

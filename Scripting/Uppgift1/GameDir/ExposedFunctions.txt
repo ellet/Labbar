@@ -1,0 +1,20 @@
+------------------------  //  RenderImage()  \\  ------------------------
+RenderImage(spritePath:string ,x:number, y:number):void Renders aSprite at the defined x and y cordinate this will also load the image if its not loaded
+
+-------------------------------------------------------------------------
+
+------------------------  //  RenderText()  \\  ------------------------
+RenderText(spritePath:string ,x:number, y:number):void Renders a Text at the defined x and y cordinate
+
+-------------------------------------------------------------------------
+
+------------------------  //  GetMousePos()  \\  ------------------------
+GetMousePos():x,y gives mouse cordinate in pixels
+
+-------------------------------------------------------------------------
+
+------------------------  //  GetKeyState()  \\  ------------------------
+GetKeyState(key:int):bool returns true if key is down
+
+-------------------------------------------------------------------------
+
