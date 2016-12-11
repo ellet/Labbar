@@ -152,7 +152,6 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="FileWatcher\FileChangedEvent.h" />
     <ClInclude Include="FileWatcher\FileChangeWatcher.h" />
     <ClInclude Include="Lua\include\lauxlib.h" />
     <ClInclude Include="Lua\include\lua.h" />
@@ -191,7 +190,6 @@
     <ClInclude Include="Time\Time.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FileWatcher\FileChangedEvent.cpp" />
     <ClCompile Include="FileWatcher\FileChangeWatcher.cpp" />
     <ClCompile Include="Lua\src\lapi.c" />
     <ClCompile Include="Lua\src\lauxlib.c" />
