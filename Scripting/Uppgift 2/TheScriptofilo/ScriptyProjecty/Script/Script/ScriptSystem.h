@@ -3,7 +3,8 @@
 #include "Lua/include/lua.hpp"
 #include <iostream>
 #include <string.h>
-
+#include <vector>
+#include "FileWatcher/FileChangeWatcher.h"
 
 class ScriptSystem
 {
@@ -25,7 +26,8 @@ public:
 private:
 
 	void InternalLoadLuaFile(const std::string & aFilePath);
-	void PrintErrorMessage(lua_State * aLuaState);
+	void PrintErrorMessage(lua_State * aLuaState, const int aErrorCode);
+	void HandleWrongFunctionCall(const std::string & aErrorMesage);
 
 	static ScriptSystem * ourInstance;	
 	static ScriptSystem & GetInstance()
@@ -36,6 +38,8 @@ private:
 	}
 
 	lua_State * myLuaState;
+
+	std::vector <std::string> myRegisteredFunctions;
 
 	ScriptSystem();
 	~ScriptSystem();

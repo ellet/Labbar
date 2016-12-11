@@ -1,4 +1,7 @@
+//#include "stdafx.h"
 #include "ScriptSystem.h"
+//#include <afxver_.h>
+#include "HelperFunctions.h"
 
 
 ScriptSystem * ScriptSystem::ourInstance = nullptr;
@@ -36,7 +39,7 @@ void ScriptSystem::InternalLoadLuaFile(const std::string & aFilePath)
 
 	if (LuaResult != LUA_OK)
 	{
-		PrintErrorMessage(myLuaState);
+		PrintErrorMessage(myLuaState, LuaResult);
 		return;
 	}
 
@@ -44,7 +47,7 @@ void ScriptSystem::InternalLoadLuaFile(const std::string & aFilePath)
 
 	if (LuaResult != LUA_OK)
 	{
-		PrintErrorMessage(myLuaState);
+		PrintErrorMessage(myLuaState, LuaResult);
 		return;
 	}
 
@@ -52,12 +55,45 @@ void ScriptSystem::InternalLoadLuaFile(const std::string & aFilePath)
 
 }
 
-void ScriptSystem::PrintErrorMessage(lua_State * aLuaState)
+void ScriptSystem::PrintErrorMessage(lua_State * aLuaState, const int aErrorCode)
 {
-	const char* message = lua_tostring(aLuaState, -1);
-	std::cout << message << std::endl;
+	int apa = aErrorCode;
+
+	std::string message = lua_tostring(aLuaState, -1);
+	
+	size_t stringStartPos = message.find("attempt to call a nil value");
+
+	if (stringStartPos == message.npos)
+	{
+		std::cout << message.c_str() << std::endl;
+	}
+	else
+	{
+		HandleWrongFunctionCall(message);
+	}
 	std::system("pause");
 	lua_pop(aLuaState, 1);
+}
+
+void ScriptSystem::HandleWrongFunctionCall(const std::string & aErrorMesage)
+{
+	std::string functionName = aErrorMesage.substr(aErrorMesage.find_first_of('\'') + 1, aErrorMesage.length() - aErrorMesage.find_first_of('\'') - 3);
+
+	size_t smallestDifferene = 0xffffffff;
+	unsigned short smallestIndex = 0;
+
+	for (unsigned short iFunction = 0; iFunction < myRegisteredFunctions.size(); ++iFunction)
+	{
+		size_t currentDifference = uiLevenshteinDistance(functionName, myRegisteredFunctions[iFunction]);
+
+		if (currentDifference < smallestDifferene)
+		{
+			smallestIndex = iFunction;
+			smallestDifferene = currentDifference;
+		}
+	}
+
+	std::cout << "Could not find function " + functionName + " perhaps you meant " + myRegisteredFunctions[smallestIndex] << "?" << std::endl;
 }
 
 void ScriptSystem::Update()
@@ -67,6 +103,7 @@ void ScriptSystem::Update()
 
 void ScriptSystem::RegisterFunction(const std::string & aLuaFunctionName, lua_CFunction aFunction, const std::string & /*aHelpText*/)
 {
+	GetInstance().myRegisteredFunctions.push_back(aLuaFunctionName);
 	lua_register(GetInstance().myLuaState, aLuaFunctionName.c_str(), aFunction);
 }
 
@@ -78,7 +115,7 @@ void ScriptSystem::CallFunction(const std::string & aLuaFunctionToCall)
 
 	if (LuaResult != LUA_OK)
 	{
-		GetInstance().PrintErrorMessage(GetInstance().myLuaState);
+		GetInstance().PrintErrorMessage(GetInstance().myLuaState, LuaResult);
 		return;
 	}
 

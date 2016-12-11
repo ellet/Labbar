@@ -10,11 +10,16 @@ void RegisterFunctions()
 {
 	ScriptSystem::RegisterFunction("testy", TestFuncton, "testytestytesty");
 	ScriptSystem::RegisterFunction("Print", PrintFromLua, "PrintPrintPrintPrint");
+	ScriptSystem::RegisterFunction("littlenicosfullofenergy", PrintFromLua, "PrintPrintPrintPrint");
+	//ScriptSystem::RegisterFunction("Print", PrintFromLua, "PrintPrintPrintPrint");
+	//ScriptSystem::RegisterFunction("Print", PrintFromLua, "PrintPrintPrintPrint");
 }
 
 
 int main()
 {
+	
+
 	ScriptSystem::Create();
 
 	ScriptSystem::LoadLuaFile("testfile.lua");
