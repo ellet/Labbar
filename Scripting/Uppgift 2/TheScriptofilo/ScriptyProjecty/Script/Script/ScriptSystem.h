@@ -5,6 +5,7 @@
 #include <string.h>
 #include <vector>
 #include "FileWatcher/FileChangeWatcher.h"
+#include <functional>
 
 class ScriptSystem
 {
@@ -12,8 +13,9 @@ public:
 	static void Create();
 	static void Destroy();
 
-	static void LoadLuaFile(const std::string & aFilePath)
+	static void LoadLuaFile(std::function<void()> aInitFunciton, const std::string & aFilePath)
 	{
+		GetInstance().myInitFunction = aInitFunciton;
 		GetInstance().InternalLoadLuaFile(aFilePath);
 	}
 
@@ -25,6 +27,7 @@ public:
 
 private:
 
+	void CloseFile();
 	void InternalLoadLuaFile(const std::string & aFilePath);
 	void PrintErrorMessage(lua_State * aLuaState, const int aErrorCode);
 	void HandleWrongFunctionCall(const std::string & aErrorMesage);
@@ -37,9 +40,14 @@ private:
 		return *ourInstance;
 	}
 
+
+	std::function<void()> myInitFunction;
+	std::string myLuaFilePath;
 	lua_State * myLuaState;
 
 	std::vector <std::string> myRegisteredFunctions;
+
+	SB::FileChangeWatcher myFileChangeWatcher;
 
 	ScriptSystem();
 	~ScriptSystem();

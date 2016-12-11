@@ -1,6 +1,7 @@
 apa = 10
 apa = apa + 2
-
+derp = 10
+arararar = 12
 
 function Init()
   local x = 10

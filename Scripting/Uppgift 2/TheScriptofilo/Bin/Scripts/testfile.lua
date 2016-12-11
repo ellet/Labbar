@@ -16,5 +16,5 @@ function Init()
 end
 
 function Update()
-  Print(123)
+  Print("apa hej123")
 end

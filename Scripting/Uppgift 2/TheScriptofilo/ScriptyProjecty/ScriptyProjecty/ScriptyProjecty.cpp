@@ -5,6 +5,7 @@
 #include <iostream>
 #include "Script\ScriptSystem.h"
 #include "LuaTestFunctions.h"
+#include <functional>
 
 void RegisterFunctions()
 {
@@ -22,7 +23,7 @@ int main()
 
 	ScriptSystem::Create();
 
-	ScriptSystem::LoadLuaFile("testfile.lua");
+	ScriptSystem::LoadLuaFile(std::bind( RegisterFunctions ), "Scripts/testfile.lua");
 	RegisterFunctions();
 
 	ScriptSystem::CallFunction("Init");
@@ -39,6 +40,7 @@ int main()
 		if (upateTimer <= 0.f)
 		{
 			upateTimer = TickRate;
+			ScriptSystem::Update();
 			ScriptSystem::CallFunction("Update");
 		}
 	}

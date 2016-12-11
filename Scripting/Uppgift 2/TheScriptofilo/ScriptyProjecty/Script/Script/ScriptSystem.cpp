@@ -25,10 +25,20 @@ void ScriptSystem::Destroy()
 
 
 
+void ScriptSystem::CloseFile()
+{
+	if (myLuaState != nullptr)
+	{
+		lua_close(myLuaState);
+		myLuaState = nullptr;
+	}
+}
+
+
 void ScriptSystem::InternalLoadLuaFile(const std::string & aFilePath)
 {
-	assert(myLuaState == nullptr && "lua state was not nullptr");
-
+	CloseFile();
+	myLuaFilePath = aFilePath;
 	myLuaState = luaL_newstate();
 
 	luaL_openlibs(myLuaState);
@@ -51,7 +61,7 @@ void ScriptSystem::InternalLoadLuaFile(const std::string & aFilePath)
 		return;
 	}
 
-	
+	myInitFunction();
 
 }
 
@@ -98,6 +108,21 @@ void ScriptSystem::HandleWrongFunctionCall(const std::string & aErrorMesage)
 
 void ScriptSystem::Update()
 {
+	std::vector<std::string> aVectorOfFileChanges;
+	GetInstance().myFileChangeWatcher.CheckChanges(aVectorOfFileChanges);
+
+	if (aVectorOfFileChanges.size() > 0)
+	{
+		for (size_t iFile = 0; iFile < aVectorOfFileChanges.size(); ++iFile)
+		{
+			if (GetInstance().myLuaFilePath == aVectorOfFileChanges[iFile])
+			{
+				GetInstance().InternalLoadLuaFile(GetInstance().myLuaFilePath);
+				break;
+			}
+		}
+		
+	}
 
 }
 
@@ -124,11 +149,10 @@ void ScriptSystem::CallFunction(const std::string & aLuaFunctionToCall)
 ScriptSystem::ScriptSystem()
 {
 	myLuaState = nullptr;
-		
 }
 
 
 ScriptSystem::~ScriptSystem()
 {
-	lua_close(myLuaState);
+	CloseFile();
 }
