@@ -10,11 +10,8 @@ function Init()
   Print("Hej barn nu blir det barn program","\n",8546,534)
 end
 
-function Update(aFirst, aSecond, aThird, aFourth)
+function Update(aFirst)
   print("-------")
   Print(aFirst)
-  Print(aSecond)
-  Print(aThird)
-  Print(aFourth)
   print("-------")
 end

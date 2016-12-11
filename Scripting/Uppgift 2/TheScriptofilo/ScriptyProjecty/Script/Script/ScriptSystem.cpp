@@ -1,6 +1,5 @@
 //#include "stdafx.h"
 #include "ScriptSystem.h"
-//#include <afxver_.h>
 #include "HelperFunctions.h"
 
 
@@ -82,7 +81,11 @@ void ScriptSystem::InternalLoadLuaFile(const std::string & aFilePath)
 		return;
 	}
 
+	myFunctionExplainer = std::ofstream("exposedscriptfunctions.txt");
+
 	myInitFunction();
+
+	myFunctionExplainer.close();
 
 }
 
@@ -147,10 +150,16 @@ void ScriptSystem::Update()
 
 }
 
-void ScriptSystem::RegisterFunction(const std::string & aLuaFunctionName, lua_CFunction aFunction, const std::string & /*aHelpText*/)
+void ScriptSystem::RegisterFunction(const std::string & aLuaFunctionName, lua_CFunction aFunction, const std::string & aHelpText)
 {
 	GetInstance().myRegisteredFunctions.push_back(aLuaFunctionName);
 	lua_register(GetInstance().myLuaState, aLuaFunctionName.c_str(), aFunction);
+
+	GetInstance().myFunctionExplainer << std::endl;
+
+	GetInstance().myFunctionExplainer << aLuaFunctionName << " - " << "Function Description: " << aHelpText  << std::endl;
+
+	GetInstance().myFunctionExplainer << std::endl;
 }
 
 ScriptSystem::ScriptSystem()

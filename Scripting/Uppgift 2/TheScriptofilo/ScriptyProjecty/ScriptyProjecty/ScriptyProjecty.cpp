@@ -9,15 +9,13 @@
 
 void RegisterFunctions()
 {
-	ScriptSystem::RegisterFunction("testy", TestFuncton, "testytestytesty");
-	ScriptSystem::RegisterFunction("Print", PrintFromLua, "PrintPrintPrintPrint"); 
+	ScriptSystem::RegisterFunction("testy", TestFuncton, "Just a test function");
+	ScriptSystem::RegisterFunction("Print", PrintFromLua, "Will do a cout on each in arguemnt, ends with a newline. (there is no space or newline between arguments)"); 
 }
 
 
 int main()
 {
-	
-
 	ScriptSystem::Create();
 
 	ScriptSystem::LoadLuaFile(std::bind( RegisterFunctions ), "Scripts/testfile.lua");
@@ -38,7 +36,7 @@ int main()
 		{
 			upateTimer = TickRate;
 			ScriptSystem::Update();
-			ScriptSystem::CallFunction("Update", 3.3456f, 2.34f, 2345.3f, 3456.f);
+			ScriptSystem::CallFunction("Update", 3.3456f, 2.34f);
 		}
 	}
 

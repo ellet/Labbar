@@ -25,7 +25,15 @@ extern "C" inline int PrintFromLua(lua_State * aLuaState)
 
 	for (int n = 1; n <= args; ++n)
 	{
-		std::cout << lua_tostring(aLuaState, n);
+		if (lua_isnoneornil(aLuaState, n) == true)
+		{
+			std::cout << "a argument was none or nil " << std::endl;
+			std::system("pause");
+		}
+		else
+		{
+			std::cout << lua_tostring(aLuaState, n);
+		}
 	}
 
 	std::cout << std::endl;

@@ -6,6 +6,7 @@
 #include <vector>
 #include "FileWatcher/FileChangeWatcher.h"
 #include <functional>
+#include <fstream>
 
 class ScriptSystem
 {
@@ -76,6 +77,7 @@ private:
 	std::string myLuaFilePath;
 	lua_State * myLuaState;
 
+	std::ofstream myFunctionExplainer;
 	std::vector <std::string> myRegisteredFunctions;
 
 	SB::FileChangeWatcher myFileChangeWatcher;

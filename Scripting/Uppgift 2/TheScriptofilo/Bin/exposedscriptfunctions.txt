@@ -1,0 +1,6 @@
+
+testy - Function Description: Just a test function
+
+
+Print - Function Description: Will do a cout on each in arguemnt, ends with a newline. (there is no space or newline between arguments)
+
