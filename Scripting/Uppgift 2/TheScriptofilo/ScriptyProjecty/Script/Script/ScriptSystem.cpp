@@ -25,6 +25,27 @@ void ScriptSystem::Destroy()
 
 
 
+void ScriptSystem::InternalSetFunctionToCall(const std::string & aFunctionToCall)
+{
+	lua_getglobal(GetInstance().myLuaState, aFunctionToCall.c_str());
+}
+
+void ScriptSystem::InternalFunctionCall(const unsigned short aArgumentCount)
+{
+	int LuaResult = lua_pcall(GetInstance().myLuaState, aArgumentCount, 0, 0);
+
+	if (LuaResult != LUA_OK)
+	{
+		GetInstance().PrintErrorMessage(GetInstance().myLuaState, LuaResult);
+		return;
+	}
+}
+
+void ScriptSystem::AddToStack(const float aFloatToAdd)
+{
+	lua_pushnumber(GetInstance().myLuaState, static_cast<float>(aFloatToAdd));
+}
+
 void ScriptSystem::CloseFile()
 {
 	if (myLuaState != nullptr)
@@ -130,20 +151,6 @@ void ScriptSystem::RegisterFunction(const std::string & aLuaFunctionName, lua_CF
 {
 	GetInstance().myRegisteredFunctions.push_back(aLuaFunctionName);
 	lua_register(GetInstance().myLuaState, aLuaFunctionName.c_str(), aFunction);
-}
-
-void ScriptSystem::CallFunction(const std::string & aLuaFunctionToCall)
-{
-	lua_getglobal(GetInstance().myLuaState, aLuaFunctionToCall.c_str());
-
-	int LuaResult = lua_pcall(GetInstance().myLuaState, 0, 0, 0);
-
-	if (LuaResult != LUA_OK)
-	{
-		GetInstance().PrintErrorMessage(GetInstance().myLuaState, LuaResult);
-		return;
-	}
-
 }
 
 ScriptSystem::ScriptSystem()

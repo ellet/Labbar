@@ -8,13 +8,13 @@ function Init()
 
   testy(2,4,6,8,4,3,6,45,3,56)
   Print("Hej barn nu blir det barn program","\n",8546,534)
-
-  smerp()
-  littleNicosIsTired()
-  ylfIsWriting()
-
 end
 
-function Update()
-  Print("apa hej123")
+function Update(aFirst, aSecond, aThird, aFourth)
+  print("-------")
+  Print(aFirst)
+  Print(aSecond)
+  Print(aThird)
+  Print(aFourth)
+  print("-------")
 end

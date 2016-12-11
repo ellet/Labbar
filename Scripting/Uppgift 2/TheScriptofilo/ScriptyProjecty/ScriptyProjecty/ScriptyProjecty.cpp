@@ -10,10 +10,7 @@
 void RegisterFunctions()
 {
 	ScriptSystem::RegisterFunction("testy", TestFuncton, "testytestytesty");
-	ScriptSystem::RegisterFunction("Print", PrintFromLua, "PrintPrintPrintPrint");
-	ScriptSystem::RegisterFunction("littlenicosfullofenergy", PrintFromLua, "PrintPrintPrintPrint");
-	//ScriptSystem::RegisterFunction("Print", PrintFromLua, "PrintPrintPrintPrint");
-	//ScriptSystem::RegisterFunction("Print", PrintFromLua, "PrintPrintPrintPrint");
+	ScriptSystem::RegisterFunction("Print", PrintFromLua, "PrintPrintPrintPrint"); 
 }
 
 
@@ -41,7 +38,7 @@ int main()
 		{
 			upateTimer = TickRate;
 			ScriptSystem::Update();
-			ScriptSystem::CallFunction("Update");
+			ScriptSystem::CallFunction("Update", 3.3456f, 2.34f, 2345.3f, 3456.f);
 		}
 	}
 

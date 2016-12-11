@@ -30,7 +30,5 @@ extern "C" inline int PrintFromLua(lua_State * aLuaState)
 
 	std::cout << std::endl;
 
-	lua_pushnumber(aLuaState, 123);
-
-	return 1;
+	return 0;
 }
