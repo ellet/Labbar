@@ -211,4 +211,6 @@ TBSA/Source/TBS.VC.opendb
 *.opendb
 
 !Scripting/Upg5Retry/TheScriptofilo/exlibs/**
+!Scripting/Upg5Retry/Demo/**
+!Scripting/Upg5Retry/Editor/**
 
