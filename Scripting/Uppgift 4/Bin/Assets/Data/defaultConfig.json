@@ -1,0 +1,11 @@
+{
+	//View Settings
+	"resolution": [ 1920, 1080 ],
+	"startInFullscreen": false,
+
+	//Post-Processing
+	"enablePostProcessing": false,
+	"enableBloom": false,
+	"enableHDR": false,
+	"enableMotionBlur": false
+}

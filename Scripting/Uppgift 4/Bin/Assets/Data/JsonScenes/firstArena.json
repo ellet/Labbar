@@ -1,0 +1,299 @@
+{
+  "name": "firstArena",
+  "hierarchy": [
+    {
+      "name": "Player",
+      "components": [
+        {
+          "properties": {
+            "maxHealth": 100.0,
+            "isInvulnerable": false
+          },
+          "type": "PlayerComponent"
+        },
+        {
+          "properties": {
+            "modelPath": "Assets/Models/Objects/Player/player.fbx"
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "localPosition": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "localRotation": [
+            -0.7071068,
+            0.0,
+            0.0,
+            0.7071067
+          ],
+          "localScale": [
+            100.0,
+            100.0,
+            100.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    },
+    {
+      "name": "WaveManager",
+      "components": [
+        {
+          "properties": {
+            "waves": [
+              {
+                "waveEncounters": [
+                  {
+                    "enemyPrefab": "TestEnemy",
+                    "spawnDelay": 0.0,
+                    "spawnPointIndex": 0,
+                    "randomizeSpawnPoint": true
+                  },
+                  {
+                    "enemyPrefab": "TestEnemy",
+                    "spawnDelay": 0.0,
+                    "spawnPointIndex": 0,
+                    "randomizeSpawnPoint": true
+                  }
+                ],
+                "spawnCap": 0
+              },
+              {
+                "waveEncounters": [
+                  {
+                    "enemyPrefab": "TestEnemy",
+                    "spawnDelay": 0.0,
+                    "spawnPointIndex": 0,
+                    "randomizeSpawnPoint": false
+                  },
+                  {
+                    "enemyPrefab": "TestEnemy",
+                    "spawnDelay": 0.0,
+                    "spawnPointIndex": 0,
+                    "randomizeSpawnPoint": false
+                  }
+                ],
+                "spawnCap": 1
+              },
+              {
+                "waveEncounters": [
+                  {
+                    "enemyPrefab": "TestEnemy",
+                    "spawnDelay": 1.0,
+                    "spawnPointIndex": 1,
+                    "randomizeSpawnPoint": false
+                  },
+                  {
+                    "enemyPrefab": "TestEnemy",
+                    "spawnDelay": 3.0,
+                    "spawnPointIndex": 2,
+                    "randomizeSpawnPoint": false
+                  }
+                ],
+                "spawnCap": 0
+              }
+            ]
+          },
+          "type": "WaveManagerComponent"
+        },
+        {
+          "localPosition": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "localRotation": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": [
+        {
+          "name": "SpawnPoint",
+          "components": [
+            {
+              "properties": {},
+              "type": "SpawnPointComponent"
+            },
+            {
+              "localPosition": [
+                5.0,
+                0.0,
+                0.0
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        },
+        {
+          "name": "SpawnPoint (1)",
+          "components": [
+            {
+              "properties": {},
+              "type": "SpawnPointComponent"
+            },
+            {
+              "localPosition": [
+                -5.0,
+                0.0,
+                0.0
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        },
+        {
+          "name": "SpawnPoint (2)",
+          "components": [
+            {
+              "properties": {},
+              "type": "SpawnPointComponent"
+            },
+            {
+              "localPosition": [
+                0.0,
+                0.0,
+                5.0
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        },
+        {
+          "name": "SpawnPoint (3)",
+          "components": [
+            {
+              "properties": {},
+              "type": "SpawnPointComponent"
+            },
+            {
+              "localPosition": [
+                0.0,
+                0.0,
+                -5.0
+              ],
+              "localRotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "type": "Transform"
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "firstArena",
+      "components": [
+        {
+          "properties": {
+            "modelPath": "Assets/Models/Arenas/FirstArena/firstArena.fbx"
+          },
+          "type": "ModelComponent"
+        },
+        {
+          "localPosition": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "localRotation": [
+            -0.7071068,
+            -3.09086232E-08,
+            3.09086161E-08,
+            0.7071067
+          ],
+          "localScale": [
+            813.327,
+            813.327,
+            813.327
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    },
+    {
+      "name": "Directional Light",
+      "components": [
+        {
+          "localPosition": [
+            0.0,
+            3.0,
+            0.0
+          ],
+          "localRotation": [
+            0.408217877,
+            -0.234569684,
+            0.109381631,
+            0.8754261
+          ],
+          "localScale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "type": "Transform"
+        }
+      ],
+      "children": []
+    }
+  ]
+}

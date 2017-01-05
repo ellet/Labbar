@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="10" SoundbankVersion="113">
+	<RootPaths>
+		<ProjectRoot>C:\Users\sterpa1\Documents\ai-project\Wwise\bank_w\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\sterpa1\Documents\ai-project\Wwise\bank_w\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\sterpa1\Documents\ai-project\Bin\Audio\SoundBanks\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\sterpa1\Documents\ai-project\Wwise\bank_w\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2678230382" Language="SFX">
+			<ShortName>level1</ShortName>
+			<Path>level1.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

@@ -1,0 +1,3 @@
+
+RegisterCallback - Function Description: Registers a callback function for a given event, first argument the event second argument the name of the callback function
+

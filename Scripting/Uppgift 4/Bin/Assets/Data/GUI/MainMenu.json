@@ -1,0 +1,199 @@
+{
+	"padding":
+	[
+		0, //top
+		0, //left
+		0, //right
+		0 //bottom
+	],
+	"children":
+	[
+	{
+			"name": "Logo",
+			"type": "",
+			"verticalAnchorPoint" : "center",
+			"horizontalAnchorPoint" : "center",		
+			"position": 
+			[
+				0.0,
+				0.0
+			],
+			"size":
+			[
+				1100.0,
+				1920.0
+			],
+			"scale":
+			[
+				0.6,
+				0.6
+			],
+			"sprite": "Assets/Gui/MainMenu/background.dds",
+			"active": true,
+			"hover" : false,
+			"function": "",
+			"hoverFunction": "",
+			"children":
+			[
+			{
+			"name": "Start Game",
+			"type": "button",
+			"verticalAnchorPoint" : "center",
+			"horizontalAnchorPoint" : "center",		
+			"position": 
+			[
+				0.0,
+				-0.1
+			],
+			"size":
+			[
+				417.0,
+				168.0
+			],
+			"scale":
+			[
+				0.6,
+				0.6
+			],
+			"sprite": "Assets/Gui/MainMenu/startButton.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Start Game",
+			"hoverFunction": "",
+			"clickSound": "Play_ButtonPress",
+			"hoverSound": "Play_ButtonHover",
+			"children":
+			[
+				
+			]
+			},
+			{
+			"name": "Level Select",
+			"type": "button",
+			"verticalAnchorPoint" : "center",
+			"horizontalAnchorPoint" : "center",		
+			"position": 
+			[
+				0.0,
+				0
+			],
+			"size":
+			[
+				417.0,
+				168.0
+			],
+			"scale":
+			[
+				0.6,
+				0.6
+			],
+			"sprite": "Assets/Gui/MainMenu/levelSelectButton.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Level Select",
+			"hoverFunction": "",
+			"clickSound": "Play_ButtonPress",
+			"hoverSound": "Play_ButtonHover",
+			"children":
+			[
+			]
+			},
+			{
+			"name": "Options",
+			"type": "button",
+			"verticalAnchorPoint" : "center",
+			"horizontalAnchorPoint" : "center",		
+			"position": 
+			[
+				0.0,
+				0.1
+			],
+			"size":
+			[
+				417.0,
+				168.0
+			],
+			"scale":
+			[
+				0.6,
+				0.6
+			],
+			"sprite": "Assets/Gui/MainMenu/optionButton.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Options",
+			"hoverFunction": "",
+			"clickSound": "Play_ButtonPress",
+			"hoverSound": "Play_ButtonHover",
+			"children":
+			[
+			]
+			},
+			{
+			"name": "Credits",
+			"type": "button",
+			"verticalAnchorPoint" : "center",
+			"horizontalAnchorPoint" : "center",		
+			"position": 
+			[
+				0.0,
+				0.20
+			],
+			"size":
+			[
+				417.0,
+				168.0
+			],
+			"scale":
+			[
+				0.6,
+				0.6
+			],
+			"sprite": "Assets/Gui/MainMenu/creditButton.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Credits",
+			"hoverFunction": "",
+			"clickSound": "Play_ButtonPress",
+			"hoverSound": "Play_ButtonHover",
+			"children":
+			[
+				
+			]
+			},
+			{
+			"name": "Quit Game",
+			"type": "button",
+			"verticalAnchorPoint" : "center",
+			"horizontalAnchorPoint" : "center",		
+			"position": 
+			[
+				0.0,
+				0.3
+			],
+			"size":
+			[
+				417.0,
+				168.0
+			],
+			"scale":
+			[
+				0.6,
+				0.6
+			],
+			"sprite": "Assets/Gui/MainMenu/quitButton.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Quit Game",
+			"hoverFunction": "",
+			"clickSound": "Play_ButtonPress",
+			"hoverSound": "Play_ButtonHover",
+			"children":
+			[
+				
+			]
+			}
+			]
+		}
+	]
+}
