@@ -210,5 +210,5 @@ TBSA/Lib/PostMaster_Debug.lib
 TBSA/Source/TBS.VC.opendb
 *.opendb
 
-!*exlibs/**
+!Scripting/Upg5Retry/TheScriptofilo/exlibs/**
 
