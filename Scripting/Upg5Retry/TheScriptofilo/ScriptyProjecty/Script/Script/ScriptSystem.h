@@ -51,17 +51,17 @@ public:
 			}*/
 			if (currentNodes[iNode].GetEventFunction(aEventName) == "unassigned")
 			{
-				std::cout << ("Tried to call: " + aEventName + " but it hasn't been assigned a callback function").c_str() << std::endl;
+				//std::cout << ("Tried to call: " + aEventName + " but it hasn't been assigned a callback function").c_str() << std::endl;
 			}
 			else
 			{
-				CallFunction(iNode, currentNodes[iNode].GetEventFunction(aEventName));
+				CallFunction(iNode, currentNodes[iNode].GetEventFunction(aEventName), iNode);
 			}
 		}
 	}
 
 	template <typename ...Arguments>
-	static void CallEvent(const std::string & aEventName, Arguments... args)
+	static void CallEvent(const std::string & aEventName, size_t aNodeID, Arguments... args)
 	{
 		if (GetInstance().myEvents.find(aEventName) == GetInstance().myEvents.end())
 		{
@@ -69,11 +69,11 @@ public:
 		}
 		else if (GetInstance().myEvents[aEventName] == "unassigned")
 		{
-			std::cout << ("Tried to call: " + GetInstance().myEvents[aEventName] + " but it hasn't been assigned a callback function").c_str() << std::endl;
+			//std::cout << ("Tried to call: " + GetInstance().myEvents[aEventName] + " but it hasn't been assigned a callback function").c_str() << std::endl;
 		}
 		else
 		{
-			CallFunction(GetInstance().myEvents[aEventName], args...);
+			CallFunction(GetInstance().myEvents[aEventName], aNodeID, args...);
 		}
 	}
 

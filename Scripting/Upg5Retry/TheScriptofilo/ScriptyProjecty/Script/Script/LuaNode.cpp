@@ -95,7 +95,7 @@ bool LuaNode::GetConnectedID(const std::string & aName, long long & aIDToSet)
 	}
 	else
 	{
-		std::cout << "Node with name " + aName + " could not be found." << std::endl;
+		//std::cout << "Node with name " + aName + " could not be found." << std::endl;
 		return false;
 	}
 }

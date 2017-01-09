@@ -19,16 +19,6 @@ extern "C" inline int LUARegisterEventCallBack(lua_State * aLuaState)
 		std::cout << "LUARegisterEventCallBack recieved too many arguments" << std::endl;
 	}
 
-	if (lua_isnoneornil(aLuaState, 1) == true)
-	{
-		std::cout << "a argument was none or nil " << std::endl;
-		std::system("pause");
-	}
-	else
-	{
-		eventName = lua_tostring(aLuaState, 1);
-	}
-
 	if (lua_isnoneornil(aLuaState, 2) == true)
 	{
 		std::cout << "a argument was none or nil " << std::endl;
@@ -36,7 +26,7 @@ extern "C" inline int LUARegisterEventCallBack(lua_State * aLuaState)
 	}
 	else
 	{
-		callbackFunctionName = lua_tostring(aLuaState, 2);
+		eventName = lua_tostring(aLuaState, 2);
 	}
 
 	if (lua_isnoneornil(aLuaState, 3) == true)
@@ -46,7 +36,17 @@ extern "C" inline int LUARegisterEventCallBack(lua_State * aLuaState)
 	}
 	else
 	{
-		nodeIndex = static_cast<size_t>(lua_tointeger(aLuaState, 3));
+		callbackFunctionName = lua_tostring(aLuaState, 3);
+	}
+
+	if (lua_isnoneornil(aLuaState, 1) == true)
+	{
+		std::cout << "a argument was none or nil " << std::endl;
+		std::system("pause");
+	}
+	else
+	{
+		nodeIndex = static_cast<size_t>(lua_tointeger(aLuaState, 1));
 	}
 
 	ScriptSystem::AddEventCallback(nodeIndex, eventName, callbackFunctionName);

@@ -1,9 +1,9 @@
 ﻿<NodeTree>
   <Node>
     <Name>script init</Name>
-    <UID>4692269204170799239</UID>
-    <PosX>-201</PosX>
-    <PosY>-145</PosY>
+    <UID>4809398359496366233</UID>
+    <PosX>-262</PosX>
+    <PosY>-138</PosY>
     <FilePath>ScriptInit.Lua</FilePath>
     <Connections>
       <Connection>
@@ -12,7 +12,7 @@
         <Type>Output</Type>
         <Name>start</Name>
         <PinConnection>
-          <ConnectedTo>5376486392975395136</ConnectedTo>
+          <ConnectedTo>5104307406706209833</ConnectedTo>
           <PinIndex>0</PinIndex>
         </PinConnection>
       </Connection>
@@ -20,9 +20,9 @@
   </Node>
   <Node>
     <Name>keyinputcallback</Name>
-    <UID>5376486392975395136</UID>
-    <PosX>-18</PosX>
-    <PosY>-128</PosY>
+    <UID>5104307406706209833</UID>
+    <PosX>-38</PosX>
+    <PosY>-154</PosY>
     <FilePath>KeyInputCallbackNode.Lua</FilePath>
     <Connections>
       <Connection>
@@ -31,7 +31,7 @@
         <Type>Input</Type>
         <Name>in</Name>
         <PinConnection>
-          <ConnectedTo>4692269204170799239</ConnectedTo>
+          <ConnectedTo>4809398359496366233</ConnectedTo>
           <PinIndex>0</PinIndex>
         </PinConnection>
       </Connection>
@@ -41,7 +41,7 @@
         <Type>Output</Type>
         <Name>out</Name>
         <PinConnection>
-          <ConnectedTo>5309701287104095439</ConnectedTo>
+          <ConnectedTo>5425399461982630997</ConnectedTo>
           <PinIndex>0</PinIndex>
         </PinConnection>
       </Connection>
@@ -51,7 +51,7 @@
         <Type>Output</Type>
         <Name>onkeypress</Name>
         <PinConnection>
-          <ConnectedTo>4983656122382159454</ConnectedTo>
+          <ConnectedTo>4626286225577328556</ConnectedTo>
           <PinIndex>0</PinIndex>
         </PinConnection>
       </Connection>
@@ -59,9 +59,9 @@
   </Node>
   <Node>
     <Name>print</Name>
-    <UID>5309701287104095439</UID>
-    <PosX>184</PosX>
-    <PosY>-159</PosY>
+    <UID>5425399461982630997</UID>
+    <PosX>172</PosX>
+    <PosY>-141</PosY>
     <FilePath>Print.Lua</FilePath>
     <Connections>
       <Connection>
@@ -70,7 +70,7 @@
         <Type>Input</Type>
         <Name>in</Name>
         <PinConnection>
-          <ConnectedTo>5376486392975395136</ConnectedTo>
+          <ConnectedTo>5104307406706209833</ConnectedTo>
           <PinIndex>1</PinIndex>
         </PinConnection>
       </Connection>
@@ -79,7 +79,7 @@
         <VarType>string</VarType>
         <Type>Input</Type>
         <Name>in2</Name>
-        <PinData>PRIAAANT</PinData>
+        <PinData>Press arrowK EYS NOOAAWWW</PinData>
       </Connection>
       <Connection>
         <Index>2</Index>
@@ -91,9 +91,9 @@
   </Node>
   <Node>
     <Name>print</Name>
-    <UID>4983656122382159454</UID>
-    <PosX>183</PosX>
-    <PosY>-19</PosY>
+    <UID>4626286225577328556</UID>
+    <PosX>310</PosX>
+    <PosY>138</PosY>
     <FilePath>Print.Lua</FilePath>
     <Connections>
       <Connection>
@@ -102,7 +102,7 @@
         <Type>Input</Type>
         <Name>in</Name>
         <PinConnection>
-          <ConnectedTo>5376486392975395136</ConnectedTo>
+          <ConnectedTo>5104307406706209833</ConnectedTo>
           <PinIndex>2</PinIndex>
         </PinConnection>
       </Connection>
@@ -111,7 +111,7 @@
         <VarType>string</VarType>
         <Type>Input</Type>
         <Name>in2</Name>
-        <PinData>KEEEEEEIAAAAAH</PinData>
+        <PinData>IT WAS PRESSEED</PinData>
       </Connection>
       <Connection>
         <Index>2</Index>

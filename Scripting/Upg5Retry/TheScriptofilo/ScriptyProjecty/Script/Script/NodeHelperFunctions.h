@@ -18,7 +18,7 @@ extern "C" inline int ExecutePin(lua_State * aLuaState)
 	std::transform(connectionName.begin(), connectionName.end(), connectionName.begin(), ::tolower);
 
 	size_t connectedID = ScriptSystem::GetConnectedLuaNodeIndex(currentNode, connectionName);
-
+	
 	if (connectedID != SIZE_T_MAX)
 	{
 		ScriptSystem::CallFunction(connectedID, "Run", connectedID);
@@ -51,5 +51,5 @@ extern "C" inline int GetPinData(lua_State * aLuaState)
 void RegisterNodeFunctions(const size_t aNodeIndex)
 {
 	ScriptSystem::RegisterFunction(aNodeIndex, "ExecutePin", ExecutePin, "Executes run function on a connected graph node");
-	//ScriptSystem::RegisterFunction(aNodeIndex, "ExecutePin", ExecutePin, "Executes run function on a connected graph node");
+	ScriptSystem::RegisterFunction(aNodeIndex, "GetPinData", GetPinData, "Gets PinData from given node index at given node name");
 }

@@ -18,11 +18,23 @@ int main()
 {
 	ScriptSystem::Create();
 
+	std::cout << "Hej Ralle!" << std::endl;
+	std::cout << "any key == only arrow keys" << std::endl;
+	std::cout << "any key == only arrow keys" << std::endl;
+	std::cout << "any key == only arrow keys" << std::endl;
+	std::cout << "any key == only arrow keys" << std::endl;
+	std::cout << "any key == only arrow keys" << std::endl;
+	std::cout << "any key == only arrow keys" << std::endl;
+	std::cout << "any key == only arrow keys" << std::endl;
+	std::cout << "any key == only arrow keys" << std::endl;
+	std::cout << "// Ylf and l1" << std::endl;
+
+	ScriptSystem::RegisterEvent("KeyPress");
 	ScriptSystem::SetLuaFunctionRegistrationInit(std::bind(RegisterFunctions, std::placeholders::_1));
 	/*ScriptSystem::LoadLuaFile("Scripts/testfile.lua");
 	ScriptSystem::LoadLuaFile("Scripts/otherfile.lua");*/
 
-	ScriptSystem::LoadScriptGraph("Graphs/test.json");
+	ScriptSystem::LoadScriptGraph("Graphs/GraphFile.json");
 
 	//ScriptSystem::CallFunction("Init");
 
@@ -38,6 +50,11 @@ int main()
 		if (upateTimer <= 0.f)
 		{
 			upateTimer = TickRate;
+
+			if (GetAsyncKeyState(0x25) || GetAsyncKeyState(0x26) || GetAsyncKeyState(0x27) || GetAsyncKeyState(0x28))
+			{
+				ScriptSystem::CallEvent("KeyPress");
+			}
 			//ScriptSystem::Update();
 			//ScriptSystem::CallFunction("Update", 3.3456f, 2.34f);
 		}
