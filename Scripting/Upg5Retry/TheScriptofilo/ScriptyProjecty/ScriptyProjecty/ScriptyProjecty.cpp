@@ -9,8 +9,8 @@
 
 void RegisterFunctions(const size_t aNodeIndex)
 {
-	//ScriptSystem::RegisterFunction(aNodeIndex, "testy", TestFuncton, "Just a test function");
-	//ScriptSystem::RegisterFunction(aNodeIndex, "Print", PrintFromLua, "Will do a cout on each in arguemnt, ends with a newline. (there is no space or newline between arguments)");
+	ScriptSystem::RegisterFunction(aNodeIndex, "testy", TestFuncton, "Just a test function");
+	ScriptSystem::RegisterFunction(aNodeIndex, "Print", PrintFromLua, "Will do a cout on each in arguemnt, ends with a newline. (there is no space or newline between arguments)");
 }
 
 
@@ -20,6 +20,9 @@ int main()
 
 	ScriptSystem::SetLuaFunctionRegistrationInit(std::bind(RegisterFunctions, std::placeholders::_1));
 	ScriptSystem::LoadLuaFile("Scripts/testfile.lua");
+	ScriptSystem::LoadLuaFile("Scripts/otherfile.lua");
+
+	ScriptSystem::LoadScriptGraph("Graphs/test.json");
 
 	ScriptSystem::CallFunction("Init");
 
@@ -35,13 +38,13 @@ int main()
 		if (upateTimer <= 0.f)
 		{
 			upateTimer = TickRate;
-			/*ScriptSystem::Update();
-			ScriptSystem::CallFunction("Update", 3.3456f, 2.34f);*/
+			ScriptSystem::Update();
+			ScriptSystem::CallFunction("Update", 3.3456f, 2.34f);
 		}
 	}
 
 	std::system("pause");
 
-	//ScriptSystem::Destroy();
+	ScriptSystem::Destroy();
     return 0;
 }

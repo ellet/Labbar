@@ -20,10 +20,16 @@ public:
 		GetInstance().myInitFunction = aInitFunciton;
 	}
 
-	static void LoadLuaFile(const std::string & aFilePath)
+	static size_t LoadLuaFile(const std::string & aFilePath, const long long aNodeID = 0)
 	{
-		GetInstance().myLuaStates.push_back(LuaNode());
-		GetInstance().InternalLoadLuaFile(GetInstance().myLuaStates.size() - 1, aFilePath);
+		GetInstance().myLuaStates.resize(GetInstance().myLuaStates.size() + 1);
+		GetInstance().InternalLoadLuaFile(GetInstance().myLuaStates.size() - 1, aFilePath, aNodeID);
+		return GetInstance().myLuaStates.size() - 1;
+	}
+
+	static void LoadScriptGraph(const std::string & aFilePath)
+	{
+		GetInstance().InternalLoadScriptGraph(aFilePath);
 	}
 
 	static void Update();
@@ -127,7 +133,8 @@ private:
 	static unsigned short AddArgumentsToStack(const size_t aNodeIndex, const unsigned short aUnsignedShortToAdd);
 
 	//void CloseFile();
-	void InternalLoadLuaFile(const size_t aNodeIndex, const std::string & aFilePath);
+	void InternalLoadLuaFile(const size_t aNodeIndex, const std::string & aFilePath, const long long aNodeID);
+	void InternalLoadScriptGraph(const std::string & aFilePath);
 	void PrintErrorMessage(lua_State * aLuaState, const int aErrorCode);
 	void HandleWrongFunctionCall(const std::string & aErrorMesage);
 
@@ -143,6 +150,8 @@ private:
 
 	std::function<void(const size_t)> myInitFunction;
 	std::vector<LuaNode> myLuaStates;
+
+
 
 	std::ofstream myFunctionExplainer;
 	std::vector <std::string> myRegisteredFunctions;

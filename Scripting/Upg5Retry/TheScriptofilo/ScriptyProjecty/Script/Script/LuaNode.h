@@ -24,6 +24,7 @@ public:
 
 	void CloseFile();
 
+	void RegisterConnectedNode(const std::string & aConnectionName, const long long aNodeIndex);
 	void RegisterEventCallback(const std::string & aEventName, const std::string & aCallbackFunctionName);
 	const std::string & GetEventFunction(const std::string & aEventName);
 
@@ -34,10 +35,12 @@ public:
 
 private:
 	std::unordered_map<std::string, std::string> myEvents;
+	std::unordered_map<std::string, long long> myConnectedNodes;
 
 	lua_State * myLuaState;
 	std::string myFilePath;
 	size_t myInternalID;
+	
 	long long myNodeID;
 };
 

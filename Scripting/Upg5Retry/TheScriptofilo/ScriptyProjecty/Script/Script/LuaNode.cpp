@@ -11,7 +11,6 @@ LuaNode::LuaNode()
 
 LuaNode::~LuaNode()
 {
-	CloseFile();
 }
 
 void LuaNode::Init(const LuaNodeDesc & aSetupData)
@@ -36,8 +35,20 @@ void LuaNode::CloseFile()
 {
 	if (myLuaState != nullptr)
 	{
-		//lua_close(myLuaState);
+		lua_close(myLuaState);
 		myLuaState = nullptr;
+	}
+}
+
+void LuaNode::RegisterConnectedNode(const std::string & aConnectionName, const long long aNodeIndex)
+{
+	if (myConnectedNodes.find(aConnectionName) == myConnectedNodes.end())
+	{
+		myConnectedNodes[aConnectionName] = aNodeIndex;
+	}
+	else
+	{
+		std::cout << " a connection with that name already exists" << std::endl;
 	}
 }
 

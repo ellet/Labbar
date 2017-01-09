@@ -1,6 +1,7 @@
 //#include "stdafx.h"
 #include "ScriptSystem.h"
 #include "HelperFunctions.h"
+#include "..\DataParser\DataParser.h"
 
 
 ScriptSystem * ScriptSystem::ourInstance = nullptr;
@@ -131,7 +132,7 @@ void ScriptSystem::InternalFunctionCall(const size_t aNodeIndex, const unsigned 
 //}
 
 
-void ScriptSystem::InternalLoadLuaFile(const size_t aNodeIndex, const std::string & aFilePath)
+void ScriptSystem::InternalLoadLuaFile(const size_t aNodeIndex, const std::string & aFilePath, const long long aNodeID)
 {
 	myLuaStates[aNodeIndex].CloseFile();
 
@@ -139,7 +140,7 @@ void ScriptSystem::InternalLoadLuaFile(const size_t aNodeIndex, const std::strin
 
 	nodeDesc.FilePath = aFilePath;
 	nodeDesc.InternalID = aNodeIndex;
-	nodeDesc.NodeID = 0;
+	nodeDesc.NodeID = aNodeID;
 	nodeDesc.Events = &myEventLibrary;
 
 
@@ -174,6 +175,46 @@ void ScriptSystem::InternalLoadLuaFile(const size_t aNodeIndex, const std::strin
 
 	myFunctionExplainer.close();
 
+}
+
+void ScriptSystem::InternalLoadScriptGraph(const std::string & aFilePath)
+{
+	SB::DataDocument graphFile;
+
+	SB::DataParser::Open(aFilePath, graphFile);
+
+	SB::DataNode nodes = graphFile["NodeTree"]["Node"];
+
+	for (unsigned short iNode = 0; iNode < nodes.Capacity(); ++iNode)
+	{
+		std::string nodeName = nodes[iNode]["Name"].GetString();
+		std::string luaFile = nodes[iNode]["FilePath"].GetString();
+		long long nodeID = std::stoll(nodes[iNode]["UID"].GetString());
+		
+		size_t newNodeIndex = LoadLuaFile(luaFile, nodeID);
+		LuaNode & newNode = myLuaStates[newNodeIndex];
+
+		SB::DataNode connections = nodes[iNode]["Connections"]["Connection"];
+		if (connections.IsArray())
+		{
+
+			for (unsigned short iConnection = 0; iConnection < connections.Capacity(); ++iConnection)
+			{
+				std::string name = connections[iConnection]["Name"].GetString();
+
+				int apa = 10;
+				++apa;
+				//newNode.RegisterConnectedNode();
+			}
+		}
+		else
+		{
+			int apa = 10;
+			++apa;
+		}
+
+		
+	}
 }
 
 void ScriptSystem::PrintErrorMessage(lua_State * aLuaState, const int aErrorCode)
@@ -232,7 +273,7 @@ void ScriptSystem::Update()
 			{
 				if (currentNodes[iNode].GetFilePath() == aVectorOfFileChanges[iFile])
 				{
-					GetInstance().InternalLoadLuaFile(iNode, currentNodes[iNode].GetFilePath());
+					GetInstance().InternalLoadLuaFile(iNode, currentNodes[iNode].GetFilePath(), 0);
 					break;
 				}
 			}
@@ -278,5 +319,10 @@ ScriptSystem::ScriptSystem()
 
 ScriptSystem::~ScriptSystem()
 {
+	for (size_t iState = 0; iState < myLuaStates.size(); ++iState)
+	{
+		myLuaStates[iState].CloseFile();
+	}
+
 	myLuaStates.clear();
 }

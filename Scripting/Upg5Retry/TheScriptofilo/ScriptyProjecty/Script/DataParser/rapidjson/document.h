@@ -854,11 +854,12 @@ public:
         if (member != MemberEnd())
             return member->value;
 		else {
-			Error((std::string("Could not find key: ") + std::string(name.data_.s.str)).c_str());    // see above note
+			//Error((std::string("Could not find key: ") + std::string(name.data_.s.str)).c_str());    // see above note
+			std::cout << (std::string("Could not find key: ") + std::string(name.data_.s.str)).c_str() << std::endl;
 
 			// This will generate -Wexit-time-destructors in clang
-            // static GenericValue NullValue;
-            // return NullValue;
+            static GenericValue NullValue;
+            return NullValue;
 
             // Use static buffer and placement-new to prevent destruction
             //static char buffer[sizeof(GenericValue)];
