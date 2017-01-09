@@ -1,3 +1,9 @@
 
 RegisterCallback - Function Description: Registers a callback function for a given event, first argument the event second argument the name of the callback function
 
+
+testy - Function Description: Just a test function
+
+
+Print - Function Description: Will do a cout on each in arguemnt, ends with a newline. (there is no space or newline between arguments)
+

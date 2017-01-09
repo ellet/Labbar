@@ -19,12 +19,12 @@ int main()
 	ScriptSystem::Create();
 
 	ScriptSystem::SetLuaFunctionRegistrationInit(std::bind(RegisterFunctions, std::placeholders::_1));
-	ScriptSystem::LoadLuaFile("Scripts/testfile.lua");
-	ScriptSystem::LoadLuaFile("Scripts/otherfile.lua");
+	/*ScriptSystem::LoadLuaFile("Scripts/testfile.lua");
+	ScriptSystem::LoadLuaFile("Scripts/otherfile.lua");*/
 
 	ScriptSystem::LoadScriptGraph("Graphs/test.json");
 
-	ScriptSystem::CallFunction("Init");
+	//ScriptSystem::CallFunction("Init");
 
 	const float FrameRate = 1.f / 60.f;
 
@@ -38,8 +38,8 @@ int main()
 		if (upateTimer <= 0.f)
 		{
 			upateTimer = TickRate;
-			ScriptSystem::Update();
-			ScriptSystem::CallFunction("Update", 3.3456f, 2.34f);
+			//ScriptSystem::Update();
+			//ScriptSystem::CallFunction("Update", 3.3456f, 2.34f);
 		}
 	}
 

@@ -9,7 +9,6 @@ function Prepare()
 end
 
 function Run(aCaller, pinIndex)
-	Print(GetPinData(aCaller, "In2"))
-	--PrintLog(aCaller, GetPinData(aCaller, "In2"));	
-	--ExecutePin("Out", aCaller);
+	PrintLog(aCaller, GetPinData(aCaller, "In2"));	
+	ExecutePin("Out", aCaller);
 end

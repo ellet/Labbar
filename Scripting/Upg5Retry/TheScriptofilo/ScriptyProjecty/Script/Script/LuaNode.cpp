@@ -1,6 +1,7 @@
 #include "Lua/include/lua.hpp"
 #include "LuaNode.h"
 #include <iostream>
+#include <intsafe.h>
 
 
 LuaNode::LuaNode()
@@ -52,6 +53,18 @@ void LuaNode::RegisterConnectedNode(const std::string & aConnectionName, const l
 	}
 }
 
+void LuaNode::RegisterPindData(const std::string & aConnectionName, const std::string & aPinData)
+{
+	if (myPinData.find(aConnectionName) != myPinData.end())
+	{
+		std::cout << ("PinData with name: " + aConnectionName + " already exists").c_str() << std::endl;
+	}
+	else
+	{
+		myPinData[aConnectionName] = aPinData;
+	}
+}
+
 void LuaNode::RegisterEventCallback(const std::string & aEventName, const std::string & aCallbackFunctionName)
 {
 	if (myEvents.find(aEventName) == myEvents.end())
@@ -71,6 +84,34 @@ void LuaNode::RegisterEventCallback(const std::string & aEventName, const std::s
 const std::string & LuaNode::GetEventFunction(const std::string & aEventName)
 {
 	return myEvents[aEventName];
+}
+
+bool LuaNode::GetConnectedID(const std::string & aName, long long & aIDToSet)
+{
+	if (myConnectedNodes.find(aName) != myConnectedNodes.end())
+	{
+		aIDToSet = myConnectedNodes[aName];
+		return true;
+	}
+	else
+	{
+		std::cout << "Node with name " + aName + " could not be found." << std::endl;
+		return false;
+	}
+}
+
+const std::string & LuaNode::GetPinData(const std::string aPinName)
+{
+	if (myPinData.find(aPinName) == myPinData.end())
+	{
+		std::cout << ("PinData with name: " + aPinName + " doesn't exists").c_str() << std::endl;
+		const static std::string GoodLifeChoices("");
+		return GoodLifeChoices;
+	}
+	else
+	{
+		return myPinData[aPinName];
+	}
 }
 
 lua_State * LuaNode::GetLuaState() const

@@ -2,7 +2,7 @@
 #include "ScriptSystem.h"
 #include "HelperFunctions.h"
 #include "..\DataParser\DataParser.h"
-
+#include "NodeHelperFunctions.h"
 
 ScriptSystem * ScriptSystem::ourInstance = nullptr;
 
@@ -55,6 +55,7 @@ extern "C" inline int LUARegisterEventCallBack(lua_State * aLuaState)
 }
 
 
+
 void ScriptSystem::Create()
 {
 	assert(ourInstance == nullptr && "trying to create scriptsystem twice");
@@ -71,26 +72,38 @@ void ScriptSystem::Destroy()
 
 unsigned short ScriptSystem::AddArgumentsToStack(const size_t aNodeIndex, const float aFloatToAdd)
 {
-	lua_pushnumber(GetInstance().myLuaStates[aNodeIndex].GetLuaState(), static_cast<float>(aFloatToAdd));
+	lua_pushnumber(GetInstance().myLuaStates[aNodeIndex].GetLuaState(), static_cast<double>(aFloatToAdd));
 
 	return 1;
 }
 
 unsigned short ScriptSystem::AddArgumentsToStack(const size_t aNodeIndex, const unsigned short aUnsignedShortToAdd)
 {
-	lua_pushnumber(GetInstance().myLuaStates[aNodeIndex].GetLuaState(), static_cast<float>(aUnsignedShortToAdd));
+	lua_pushnumber(GetInstance().myLuaStates[aNodeIndex].GetLuaState(), static_cast<double>(aUnsignedShortToAdd));
 
 	return 1;
 }
 
 unsigned short ScriptSystem::AddArgumentsToStack(const size_t aNodeIndex, const int aIntToAdd)
 {
-	lua_pushnumber(GetInstance().myLuaStates[aNodeIndex].GetLuaState(), static_cast<float>(aIntToAdd));
+	lua_pushnumber(GetInstance().myLuaStates[aNodeIndex].GetLuaState(), static_cast<double>(aIntToAdd));
 
 	return 1;
 }
 
+unsigned short ScriptSystem::AddArgumentsToStack(const size_t aNodeIndex, const size_t aUnsignedIntToAdd)
+{
+	lua_pushnumber(GetInstance().myLuaStates[aNodeIndex].GetLuaState(), static_cast<double>(aUnsignedIntToAdd));
 
+	return 1;
+}
+
+unsigned short ScriptSystem::AddArgumentsToStack(const size_t aNodeIndex, const std::string aStringToAdd)
+{
+	lua_pushstring(GetInstance().myLuaStates[aNodeIndex].GetLuaState(), aStringToAdd.c_str());
+
+	return 1;
+}
 
 lua_State * ScriptSystem::GetLuaStateAt(const size_t aNodeIndex)
 {
@@ -185,13 +198,33 @@ void ScriptSystem::InternalLoadScriptGraph(const std::string & aFilePath)
 
 	SB::DataNode nodes = graphFile["NodeTree"]["Node"];
 
+	size_t initNodeID;
+	bool initAssigned = false;
+
 	for (unsigned short iNode = 0; iNode < nodes.Capacity(); ++iNode)
 	{
 		std::string nodeName = nodes[iNode]["Name"].GetString();
-		std::string luaFile = nodes[iNode]["FilePath"].GetString();
+		std::string luaFile = std::string( "Scripts/ScriptNodes/") + nodes[iNode]["FilePath"].GetString();
+
 		long long nodeID = std::stoll(nodes[iNode]["UID"].GetString());
+
 		
 		size_t newNodeIndex = LoadLuaFile(luaFile, nodeID);
+		RegisterNodeFunctions(newNodeIndex);
+
+		myNodeIDConverter[nodeID] = newNodeIndex;
+
+		if (nodeName == "script init")
+		{
+			if (initAssigned == true)
+			{
+				std::cout << "more than one init node " << std::endl;
+			}
+
+			initAssigned = true;
+			initNodeID = newNodeIndex;
+		}
+
 		LuaNode & newNode = myLuaStates[newNodeIndex];
 
 		SB::DataNode connections = nodes[iNode]["Connections"]["Connection"];
@@ -200,21 +233,50 @@ void ScriptSystem::InternalLoadScriptGraph(const std::string & aFilePath)
 
 			for (unsigned short iConnection = 0; iConnection < connections.Capacity(); ++iConnection)
 			{
-				std::string name = connections[iConnection]["Name"].GetString();
+				std::string connectionName = connections[iConnection]["Name"].GetString();
+				std::string varType = connections[iConnection]["VarType"].GetString();
+				if (varType == "impulse")
+				{
+					if (connections[iConnection].HasMember("PinConnection") == true)
+					{
+						long long connectionID = std::stoll(connections[iConnection]["PinConnection"]["ConnectedTo"].GetString());
 
-				int apa = 10;
-				++apa;
-				//newNode.RegisterConnectedNode();
+						newNode.RegisterConnectedNode(connectionName, connectionID);
+					}
+				}
+				else if (varType == "string")
+				{
+					std::string pinData = connections[iConnection]["PinData"].GetString();
+
+					newNode.RegisterPindData(connectionName, pinData);
+				}
+				else
+				{
+					std::cout << "Connection Vartype: " << connections[iConnection]["VarType"].GetString() << " is unsupported" << std::endl;
+				}
+
+				
 			}
 		}
 		else
 		{
-			int apa = 10;
-			++apa;
+			std::string connectionName = connections["Name"].GetString();
+			long long connectionID = std::stoll(connections["PinConnection"]["ConnectedTo"].GetString());
+			newNode.RegisterConnectedNode(connectionName, connectionID);
 		}
 
 		
 	}
+
+	if (initAssigned == true)
+	{
+		CallFunction(initNodeID, "Run", initNodeID);
+	}
+	else
+	{
+		std::cout << "graph did not have a init node" << std::endl;
+	}
+	
 }
 
 void ScriptSystem::PrintErrorMessage(lua_State * aLuaState, const int aErrorCode)
@@ -256,6 +318,20 @@ void ScriptSystem::HandleWrongFunctionCall(const std::string & aErrorMesage)
 	}
 
 	std::cout << "Could not find function " + functionName + " perhaps you meant " + myRegisteredFunctions[smallestIndex] << "?" << std::endl;
+}
+
+size_t ScriptSystem::GetInternalNodeID(const long long aExternalNodeID)
+{
+	if (myNodeIDConverter.find(aExternalNodeID) != myNodeIDConverter.end())
+	{
+		return myNodeIDConverter[aExternalNodeID];
+		
+	}
+	else
+	{
+		std::cout << "External ID: " << std::to_string(aExternalNodeID) + " did not exist is database" << std::endl;
+		return 0;
+	}
 }
 
 void ScriptSystem::Update()
@@ -310,6 +386,24 @@ void ScriptSystem::AddEventCallback(const size_t aNodeIndex, const std::string &
 	{
 		std::cout << "Tried to add a EventCallback to a luastate that doensn't exist" << std::endl;
 	}
+}
+
+size_t ScriptSystem::GetConnectedLuaNodeIndex(const size_t aStateIndex, const std::string & aConnectionName)
+{
+	long long externalID;
+	if (GetInstance().myLuaStates[aStateIndex].GetConnectedID(aConnectionName, externalID) == true)
+	{
+		return GetInstance().GetInternalNodeID(externalID);
+	}
+	else
+	{
+		return SIZE_T_MAX;
+	}
+}
+
+const std::string & ScriptSystem::GetPinDataFromNode(const size_t aStateIndex, const std::string & aPinName)
+{
+	return GetInstance().myLuaStates[aStateIndex].GetPinData(aPinName);
 }
 
 ScriptSystem::ScriptSystem()

@@ -116,10 +116,8 @@ public:
 		}
 	}
 
-private:
-	static lua_State * GetLuaStateAt(const size_t aNodeIndex);
-	bool InternalSetFunctionToCall(const size_t aNodeIndex, const std::string & aFunctionToCall);
-	void InternalFunctionCall(const size_t aNodeIndex, const unsigned short aArgumentCount);
+	static size_t GetConnectedLuaNodeIndex(const size_t aStateIndex, const std::string & aConnectionName);
+	static const std::string & GetPinDataFromNode(const size_t aStateIndex, const std::string & aPinName);
 
 	template <typename Type, typename ...Arguments>
 	static unsigned short AddArgumentsToStack(const size_t aNodeIndex, const Type aTypeToAdd, Arguments... TheRest)
@@ -128,15 +126,27 @@ private:
 		return 1 + AddArgumentsToStack(aNodeIndex, TheRest...);
 	}
 
+	static unsigned short AddArgumentsToStack(const size_t aNodeIndex, const std::string aStringToAdd);
+
 	static unsigned short AddArgumentsToStack(const size_t aNodeIndex, const float aFloatToAdd);
 	static unsigned short AddArgumentsToStack(const size_t aNodeIndex, const int aIntToAdd);
 	static unsigned short AddArgumentsToStack(const size_t aNodeIndex, const unsigned short aUnsignedShortToAdd);
+	static unsigned short AddArgumentsToStack(const size_t aNodeIndex, const size_t aUnsignedIntToAdd);
+
+private:
+	static lua_State * GetLuaStateAt(const size_t aNodeIndex);
+	bool InternalSetFunctionToCall(const size_t aNodeIndex, const std::string & aFunctionToCall);
+	void InternalFunctionCall(const size_t aNodeIndex, const unsigned short aArgumentCount);
+
+	
 
 	//void CloseFile();
 	void InternalLoadLuaFile(const size_t aNodeIndex, const std::string & aFilePath, const long long aNodeID);
 	void InternalLoadScriptGraph(const std::string & aFilePath);
 	void PrintErrorMessage(lua_State * aLuaState, const int aErrorCode);
 	void HandleWrongFunctionCall(const std::string & aErrorMesage);
+
+	size_t GetInternalNodeID(const long long aExternalNodeID);
 
 	static ScriptSystem * ourInstance;
 	static ScriptSystem & GetInstance()
@@ -150,7 +160,7 @@ private:
 
 	std::function<void(const size_t)> myInitFunction;
 	std::vector<LuaNode> myLuaStates;
-
+	std::unordered_map<long long, size_t> myNodeIDConverter;
 
 
 	std::ofstream myFunctionExplainer;

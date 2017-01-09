@@ -230,6 +230,7 @@
     <ClInclude Include="DataParser\rapidjson\writer.h" />
     <ClInclude Include="Script\HelperFunctions.h" />
     <ClInclude Include="Script\LuaNode.h" />
+    <ClInclude Include="Script\NodeHelperFunctions.h" />
     <ClInclude Include="Script\ScriptSystem.h" />
     <ClInclude Include="Time\Stopwatch.h" />
     <ClInclude Include="Time\Time.h" />
