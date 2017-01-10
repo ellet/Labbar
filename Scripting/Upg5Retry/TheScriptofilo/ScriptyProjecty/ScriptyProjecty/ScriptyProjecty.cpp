@@ -19,14 +19,14 @@ int main()
 	ScriptSystem::Create();
 
 	std::cout << "Hej Ralle!" << std::endl;
-	std::cout << "any key == only arrow keys" << std::endl;
-	std::cout << "any key == only arrow keys" << std::endl;
-	std::cout << "any key == only arrow keys" << std::endl;
-	std::cout << "any key == only arrow keys" << std::endl;
-	std::cout << "any key == only arrow keys" << std::endl;
-	std::cout << "any key == only arrow keys" << std::endl;
-	std::cout << "any key == only arrow keys" << std::endl;
-	std::cout << "any key == only arrow keys" << std::endl;
+	std::cout << "any key == only arrow keys!" << std::endl;
+	std::cout << "any key == only arrow keys!" << std::endl;
+	std::cout << "any key == only arrow keys!" << std::endl;
+	std::cout << "any key == only arrow keys!" << std::endl;
+	std::cout << "any key == only arrow keys!" << std::endl;
+	std::cout << "any key == only arrow keys!" << std::endl;
+	std::cout << "any key == only arrow keys!" << std::endl;
+	std::cout << "any key == only arrow keys!" << std::endl;
 	std::cout << "// Ylf and l1" << std::endl;
 
 	ScriptSystem::RegisterEvent("KeyPress");
