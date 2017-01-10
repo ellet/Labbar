@@ -1,0 +1,133 @@
+{
+	"sprite":"Assets/Gui/Options/background.dds",
+	"function" : "",
+	"children":
+	[
+		{
+			"name": "Back To MainMenu",
+			"verticalAnchorPoint": "bottom",
+			"horizontalAnchorPoint": "right",
+			"type": "",
+			"position": [ -0.01, -0.017 ],
+			"size": [ 417.0, 168.0 ],
+			"scale": [ 0.8, 0.8 ],
+			"sprite": "Assets/Gui/mainMenuButton.dds",
+			"active": true,
+			"hover": true,
+			"function": "Return",
+			"hoverFunction": "",
+			"clickSound": "Play_ButtonPress",
+			"hoverSound": "Play_ButtonHover",
+			"children": []
+		},
+		
+		//DISPLAY OPTIONS:
+		
+		{
+			"name": "ToggleFullscreen",
+			"type": "",
+			"verticalAnchorPoint" : "center",
+			"horizontalAnchorPoint" : "center",	
+			"position": [ -0.2, -0.1 ],
+			"size": [ 417.0, 168.0 ],
+			"scale": [ 0.8, 0.8 ],
+			"sprite": "Assets/Gui/Options/fullscreenUnchecked.dds",
+			"active": true,
+			"hover" : true,
+			"function": "ToggleFullscreen",
+			"hoverFunction": "",
+			"clickSound": "Play_ButtonPress",
+			"hoverSound": "Play_ButtonHover",
+			"children": []
+		},
+		{
+			"name": "ToggleBloom",
+			"type": "",
+			"verticalAnchorPoint" : "center",
+			"horizontalAnchorPoint" : "center",	
+			"position": [ 0.0, -0.1 ],
+			"size": [ 417.0, 168.0 ],
+			"scale": [ 0.8, 0.8 ],
+			"sprite": "Assets/Gui/Options/bloom.dds",
+			"active": true,
+			"hover" : true,
+			"function": "ToggleBloom",
+			"hoverFunction": "",
+			"clickSound": "Play_ButtonPress",
+			"hoverSound": "Play_ButtonHover",
+			"children": []
+		},
+		{
+			"name": "ToggleMotionBlur",
+			"type": "",
+			"verticalAnchorPoint" : "center",
+			"horizontalAnchorPoint" : "center",	
+			"position": [ 0.2, -0.1 ],
+			"size": [ 417.0, 168.0 ],
+			"scale": [ 0.8, 0.8 ],
+			"sprite": "Assets/Gui/Options/motionBlur.dds",
+			"active": true,
+			"hover" : true,
+			"function": "ToggleMotionBlur",
+			"hoverFunction": "",
+			"clickSound": "Play_ButtonPress",
+			"hoverSound": "Play_ButtonHover",
+			"children": []
+		},
+		
+		//AUDIO OPTIONS:
+		
+		{
+			"name": "ToggleSFX",
+			"type": "",
+			"verticalAnchorPoint" : "center",
+			"horizontalAnchorPoint" : "center",	
+			"position": [ -0.2, 0.1 ],
+			"size": [ 417.0, 168.0 ],
+			"scale": [ 0.8, 0.8],
+			"sprite": "Assets/Gui/Options/sfx.dds",
+			"active": true,
+			"hover" : true,
+			"function": "ToggleSFX",
+			"hoverFunction": "",
+			"clickSound": "Play_ButtonPress",
+			"hoverSound": "Play_ButtonHover",
+			"children": []
+		},
+		{
+			"name": "ToggleAmbient",
+			"type": "",
+			"verticalAnchorPoint" : "center",
+			"horizontalAnchorPoint" : "center",	
+			"position": [ 0.0, 0.1 ],
+			"size": [ 417.0, 168.0 ],
+			"scale": [ 0.8, 0.8 ],
+			"sprite": "Assets/Gui/Options/ambience.dds",
+			"active": true,
+			"hover" : true,
+			"function": "ToggleAmbient",
+			"hoverFunction": "",
+			"clickSound": "Play_ButtonPress",
+			"hoverSound": "Play_ButtonHover",
+			"children":
+			[]
+		},
+		{
+			"name": "ToggleBGM",
+			"type": "",
+			"verticalAnchorPoint": "center",
+			"horizontalAnchorPoint": "center",
+			"position": [ 0.2, 0.1 ],
+			"size": [ 417.0, 168.0 ],
+			"scale": [ 0.8, 0.8 ],
+			"sprite": "Assets/Gui/Options/bgm.dds",
+			"active": true,
+			"hover": true,
+			"function": "ToggleBGM",
+			"hoverFunction": "",
+			"clickSound": "Play_ButtonPress",
+			"hoverSound": "Play_ButtonHover",
+			"children": []
+		}
+	]
+}

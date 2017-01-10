@@ -1,0 +1,10 @@
+{
+  "pictureFilePaths": 
+  [    
+    "Assets/Gui/Story/tutorial.dds",
+    "Assets/Gui/Story/level1.dds",
+    "Assets/Gui/Story/level2.dds",
+    "Assets/Gui/Story/level3.dds",
+    "Assets/Gui/Story/afterGame.dds"
+  ]
+}

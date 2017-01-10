@@ -1,0 +1,35 @@
+#pragma once
+
+struct ID3D11DepthStencilView;
+struct ID3D11Texture2D;
+struct ID3D11ShaderResourceView;
+struct ID3D11RenderTargetView;
+
+namespace SB
+{
+	class Texture;
+
+	class DepthBuffer
+	{
+	public:
+		DepthBuffer(unsigned int aWidth, unsigned int aHeight);
+		~DepthBuffer();
+
+		void Bind();
+		void Unbind();
+
+		void Clear();
+		void Clear(UINT aFlags, FLOAT aDepth, UINT8 aStencilMask);
+
+		std::shared_ptr<Texture> GetTexture();
+		ID3D11DepthStencilView * GetView();
+		Vector2f GetSize() const;
+
+	private:
+		ID3D11DepthStencilView * myDepthStencilView;
+		ID3D11Texture2D * myDepthStencilBuffer;
+		ID3D11ShaderResourceView * myResourceView;
+		std::shared_ptr<Texture> myTexture;
+		Vector2f mySize;
+	};
+}

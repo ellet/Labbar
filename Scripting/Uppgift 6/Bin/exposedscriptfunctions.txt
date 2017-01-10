@@ -1,0 +1,12 @@
+
+RegisterCallback - Function Description: Registers a callback function for a given event, first argument the event second argument the name of the callback function
+
+
+Print - Function Description: Will do a cout on each in arguemnt, ends with a newline. (there is no space or newline between arguments)
+
+
+MoveToFreeVolume - Function Description: Gets a free volume index and moves towards it
+
+
+GetCurrentObjectID - Function Description: Gets ID of current active object
+

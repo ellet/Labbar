@@ -1,0 +1,23 @@
+{
+	"rotationSpeed": 2,
+	"moveMaxSpeed": 40,
+	"moveAcceleration": 200,
+	"moveDeacceleration": 2,
+	"moveNormalizeCrosshairSpeed": 1,
+	
+	"boostMaxSpeed": 800,
+	"boostAcceleration": 1200,
+	"boostDeacceleration": 4,
+	"boostTurnSpeed": 0.5,
+
+  "rotationSensitivity": 2,
+  "maxRotation": 6,
+	
+	"crosshairMoveAmount": 0.7,
+	
+	"cShakeHyperJump": 5.0,
+	"cShakePlayerEnterJump": 10.0,
+	"cShakePlayerCollision": 15.0,
+	"cShakePlayerShotDamage": 5.0,
+	"cShakeBoost": 4.0
+}

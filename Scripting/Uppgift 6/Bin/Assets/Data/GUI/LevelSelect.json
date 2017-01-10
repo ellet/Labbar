@@ -1,0 +1,167 @@
+{
+	"sprite":"",
+	"function" : "",
+	"children":
+	[
+		{
+			"name": "Level 1",
+			"verticalAnchorPoint" : "center",
+			"horizontalAnchorPoint" : "center",	
+			"type": "button",
+			"position": 
+			[
+				-0.33,
+				-0.32
+			],
+			"size":
+			[
+				426.0,
+				176.0
+			],
+			"scale":
+			[
+				1.0,
+				1.0
+			],
+			"sprite": "Assets/Gui/LevelSelect/level1.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Start Level 1",
+			"hoverFunction": "",
+			"clickSound": "Play_ButtonPress",
+			"hoverSound": "Play_ButtonHover",
+			"children":
+			[
+				
+			]
+		},
+		{
+			"name": "Level 2",
+			"type": "button",
+			"verticalAnchorPoint" : "center",
+			"horizontalAnchorPoint" : "center",	
+			"position": 
+			[
+				-0.28,
+				-0.1
+			],
+			"size":
+			[
+				426.0,
+				176.0
+			],
+			"scale":
+			[
+				1.0,
+				1.0
+			],
+			"sprite": "Assets/Gui/LevelSelect/level2.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Start Level 2",
+			"hoverFunction": "",
+			"clickSound": "Play_ButtonPress",
+			"hoverSound": "Play_ButtonHover",
+			"children":
+			[
+				
+			]
+		},
+		{
+			"name": "Level 3",
+			"type": "button",
+			"verticalAnchorPoint" : "center",
+			"horizontalAnchorPoint" : "center",	
+			"position": 
+			[
+				-0.23,
+				0.12
+			],
+			"size":
+			[
+				426.0,
+				176.0
+			],
+			"scale":
+			[
+				1.0,
+				1.0
+			],
+			"sprite": "Assets/Gui/LevelSelect/level3.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Start Level 3",
+			"hoverFunction": "",
+			"clickSound": "Play_ButtonPress",
+			"hoverSound": "Play_ButtonHover",
+			"children":
+			[
+				
+			]
+		},
+		{
+			"name": "Level 4",
+			"type": "button",
+			"verticalAnchorPoint" : "center",
+			"horizontalAnchorPoint" : "center",	
+			"position": 
+			[
+				-0.18,
+				0.34
+			],
+			"size":
+			[
+				426.0,
+				176.0
+			],
+			"scale":
+			[
+				1.0,
+				1.0
+			],
+			"sprite": "Assets/Gui/LevelSelect/level4.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Start Level 4",
+			"hoverFunction": "",
+			"clickSound": "Play_ButtonPress",
+			"hoverSound": "Play_ButtonHover",
+			"children":
+			[
+				
+			]
+		},
+		{
+			"name": "Back To MainMenu",
+			"type": "button",
+			"verticalAnchorPoint" : "bottom",
+			"horizontalAnchorPoint" : "right",	
+			"position": 
+			[
+				-0.01,
+				-0.017
+			],
+			"size":
+			[
+				417.0,
+				168.0
+			],
+			"scale":
+			[
+				0.8,
+				0.8
+			],
+			"sprite": "Assets/Gui/mainMenuButton.dds",
+			"active": true,
+			"hover" : true,
+			"function": "Back To MainMenu",
+			"hoverFunction": "",
+			"clickSound": "Play_ButtonPress",
+			"hoverSound": "Play_ButtonHover",
+			"children":
+			[
+				
+			]
+		}
+	]
+}
