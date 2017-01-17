@@ -78,7 +78,7 @@ public:
 			}
 			else
 			{
-				CallEvent(iNode, currentNodes[iNode].GetEventFunction(aEventName), args...);
+				CallEvent(iNode, aEventName, args...);
 			}
 		}
 	}
@@ -143,23 +143,23 @@ public:
 	static unsigned short AddArgumentsToStack(const size_t aNodeIndex, const float aFloatToAdd);
 	static unsigned short AddArgumentsToStack(const size_t aNodeIndex, const int aIntToAdd);
 	static unsigned short AddArgumentsToStack(const size_t aNodeIndex, const unsigned short aUnsignedShortToAdd);
+	static unsigned short AddArgumentsToStack(const size_t aNodeIndex, const bool aBoolToAdd);
 	static unsigned short AddArgumentsToStack(const size_t aNodeIndex, const size_t aUnsignedIntToAdd);
 
 	template <typename... args>
 	static std::tuple<args...> PopValues(lua_State * aLuaState)
 	{
-		int argumentNumner = 1;
-		return std::make_tuple(PopTop<args>(aLuaState, argumentNumner)...);
+		return std::make_tuple(PopTop<args>(aLuaState)...);
 	}
 
 private:
 
 	template <typename T>
-	static T PopTop(lua_State * aLuaState, int & aCurrentArgumentNumber)
+	static T PopTop(lua_State * aLuaState)
 	{}
 
 	template <>
-	static int PopTop<int>(lua_State * aLuaState, int & aCurrentArgumentNumber)
+	static int PopTop<int>(lua_State * aLuaState)
 	{
 		int returnValue = static_cast<int>(lua_tointeger(aLuaState, -1));
 		lua_remove(aLuaState, -1);
@@ -167,7 +167,7 @@ private:
 	}
 
 	template <>
-	static std::string PopTop<std::string>(lua_State * aLuaState, int & aCurrentArgumentNumber)
+	static std::string PopTop<std::string>(lua_State * aLuaState)
 	{
 		std::string returnValue = lua_tostring(aLuaState, -1);
 		lua_remove(aLuaState, -1);
@@ -175,7 +175,7 @@ private:
 	}
 
 	template <>
-	static const char * PopTop<const char *>(lua_State * aLuaState, int & aCurrentArgumentNumber)
+	static const char * PopTop<const char *>(lua_State * aLuaState)
 	{
 		const char * returnValue = lua_tostring(aLuaState, -1);
 		lua_remove(aLuaState, -1);
@@ -183,9 +183,17 @@ private:
 	}
 
 	template <>
-	static float PopTop<float>(lua_State * aLuaState, int & aCurrentArgumentNumber)
+	static float PopTop<float>(lua_State * aLuaState)
 	{
 		float returnValue = static_cast<float>( lua_tonumber(aLuaState, -1));
+		lua_remove(aLuaState, -1);
+		return returnValue;
+	}
+
+	template <>
+	static unsigned short PopTop<unsigned short>(lua_State * aLuaState)
+	{
+		unsigned short returnValue = static_cast<unsigned short>(lua_tonumber(aLuaState, -1));
 		lua_remove(aLuaState, -1);
 		return returnValue;
 	}

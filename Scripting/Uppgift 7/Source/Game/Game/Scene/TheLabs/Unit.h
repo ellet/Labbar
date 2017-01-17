@@ -45,9 +45,12 @@ public:
 	SB::Vector2f GetFuturePosition(const float aTimeDelta) const;
 	const SB::Vector2f & GetSpeed() const;
 
+	SB::CircleShape GetCircle() const;
+
 	void Update(const SB::Time aDeltaTime);
 	void Render(const SB::GuiRenderTarget & aRenderTargetToRenderTo);
 	void DebugRender(const SB::GuiRenderTarget & aRenderTargetToRenderTo);
+	void AddToPosition(const SB::Vector2f & aDeltaMovement);
 
 	Controller & GetController();
 

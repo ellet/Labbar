@@ -60,10 +60,110 @@ extern "C" inline int TestPop(lua_State * aLuaState)
 	return 0;
 }
 
+extern "C" inline int SpawnUnit(lua_State * aLuaState)
+{
+	int args = lua_gettop(aLuaState);
+
+	unsigned short caller = 0;
+	const char * filePath = "";
+	float xPos = 0.f;
+	float yPos = 0.f;
+
+	std::tie(caller, filePath, xPos, yPos) = ScriptSystem::PopValues<unsigned short, const char *, float, float>(aLuaState);
+
+	std::string stringPath = filePath;
+	SB::Vector2f spawnPos(xPos, yPos);
+
+	const unsigned short newUnitIndex = LabbAIScene::GetScene().SpawnUnit(stringPath, spawnPos);
+
+	ScriptSystem::AddArgumentsToStack(caller, newUnitIndex);
+
+	return 1;
+}
+
+extern "C" inline int ClearUnits(lua_State * aLuaState)
+{
+	int args = lua_gettop(aLuaState);
+
+	LabbAIScene::GetScene().ClearUnits();
+
+	return 0;
+}
+
+extern "C" inline int SetObjectPosition(lua_State * aLuaState)
+{
+	int args = lua_gettop(aLuaState);
+
+	unsigned short objectID = 0;
+	SB::Vector2f newPosition;
+
+
+	std::tie(objectID, newPosition.x, newPosition.y) = ScriptSystem::PopValues<unsigned short, float, float>(aLuaState);
+
+	LabbAIScene::GetScene().SetPositionOnObject(objectID, newPosition);
+
+	return 0;
+}
+
+extern "C" inline int AddToObjectPosition(lua_State * aLuaState)
+{
+	int args = lua_gettop(aLuaState);
+
+	unsigned short activeObjectID = 0;
+	SB::Vector2f deltaMovement;
+
+	std::tie(activeObjectID, deltaMovement.x, deltaMovement.y) = ScriptSystem::PopValues<unsigned short, float ,float>(aLuaState);
+
+	LabbAIScene::GetScene().AddToObjectPosition(activeObjectID, deltaMovement);
+
+	return 0;
+}
+
+extern "C" inline int GetObjectPosition(lua_State * aLuaState)
+{
+	int args = lua_gettop(aLuaState);
+
+	unsigned short caller = 0;
+	unsigned short aObjectID = 0;
+	
+
+	std::tie(caller, aObjectID) = ScriptSystem::PopValues<unsigned short, unsigned short>(aLuaState);
+
+	SB::Vector2f currentPosition = LabbAIScene::GetScene().GetObjectsPosition(aObjectID);
+
+	ScriptSystem::AddArgumentsToStack(caller, currentPosition.x ,currentPosition.y);
+
+	return 2;
+}
+
+extern "C" inline int CheckCollision(lua_State * aLuaState)
+{
+	int args = lua_gettop(aLuaState);
+
+	unsigned short caller = 0;
+	unsigned short objectID = 0;
+	unsigned short otherObjectID = 0;
+
+
+	std::tie(caller, objectID, otherObjectID) = ScriptSystem::PopValues<unsigned short, unsigned short, unsigned short>(aLuaState);
+
+	bool collisionState = LabbAIScene::GetScene().CheckIfUnitsCollide(objectID, otherObjectID);
+
+	ScriptSystem::AddArgumentsToStack(caller, collisionState);
+
+	return 1;
+}
+
 void RegisterFunctions(const size_t aNodeIndex)
 {
 	ScriptSystem::RegisterFunction(aNodeIndex, "Print", PrintFromLua, "Will do a cout on each in arguemnt, ends with a newline. (there is no space or newline between arguments)");
 	ScriptSystem::RegisterFunction(aNodeIndex, "TestPop", TestPop, "test tuple and pop");
+	ScriptSystem::RegisterFunction(aNodeIndex, "SpawnUnit", SpawnUnit, "spawns a unit with given sprite at given position");
+	ScriptSystem::RegisterFunction(aNodeIndex, "ClearUnits", ClearUnits, "removes all the units in the scene");
+	ScriptSystem::RegisterFunction(aNodeIndex, "GetObjectPosition", GetObjectPosition, "Gets Given objects position");
+	ScriptSystem::RegisterFunction(aNodeIndex, "AddToObjectPosition", AddToObjectPosition, "On the given object will add to its position");
+	ScriptSystem::RegisterFunction(aNodeIndex, "CheckCollision", CheckCollision, "Checks collision between two objects");
+	ScriptSystem::RegisterFunction(aNodeIndex, "SetObjectPosition", SetObjectPosition, "On given Object set given Position");
 }
 
 LabbAIScene * LabbAIScene::ourScene = nullptr;
@@ -75,14 +175,10 @@ LabbAIScene::LabbAIScene(SB::PostMasterState & aPostMasterState) : SB::Scene(aPo
 	ourScene = this;
 
 	ScriptSystem::Create();
-	ScriptSystem::RegisterEvent("VolumeEnter");
-	ScriptSystem::RegisterEvent("VolumeExit");
 	ScriptSystem::RegisterEvent("KeyPress");
 
 	ScriptSystem::SetLuaFunctionRegistrationInit(std::bind(RegisterFunctions, std::placeholders::_1));
 	ScriptSystem::LoadLuaFile("Scripts/TestPop.lua");
-	
-	ScriptSystem::CallFunction("Init");
 
 	//25
 	//myUnits.Resize(2);
@@ -103,6 +199,7 @@ LabbAIScene::LabbAIScene(SB::PostMasterState & aPostMasterState) : SB::Scene(aPo
 		myMousePosition = SB::Vector2f(static_cast<float>( aMessage.x), static_cast<float>(aMessage.y));
 	});
 
+	
 	
 
 	SeekBehaviour::ourWeight = 1.f;
@@ -135,21 +232,35 @@ void LabbAIScene::Update(const SB::Time & aDeltaTime)
 
 	ScriptSystem::Update();
 	
-	if (myInputListener.GetAnyKeyPressedThisFrame() == true)
+
+	if (myInputListener.GetHeldKeyDown(SB::KeyboardKey::eRight) == true)
 	{
-		ScriptSystem::CallEvent("KeyPress");
+		ScriptSystem::CallEvent("KeyPress", 1);
 	}
 
-	if (myInputListener.GetMouseButtonDownThisFrame() == true)
+	if (myInputListener.GetHeldKeyDown(SB::KeyboardKey::eDown) == true)
 	{
-		AIEventHandler::SetNewTargetForSeek(SetSeekTargetEvent(myMousePosition));
+		ScriptSystem::CallEvent("KeyPress", 2);
 	}
+
+	if (myInputListener.GetHeldKeyDown(SB::KeyboardKey::eLeft) == true)
+	{
+		ScriptSystem::CallEvent("KeyPress", 3);
+	}
+
+	if (myInputListener.GetHeldKeyDown(SB::KeyboardKey::eUp) == true)
+	{
+		ScriptSystem::CallEvent("KeyPress", 4);
+	}
+
+	
 
 	for (unsigned short iUnit = 0; iUnit < myUnits.Size(); ++iUnit)
 	{
 		myUnits[iUnit].Update(aDeltaTime);
 	}
 
+	ScriptSystem::CallFunction("Update", aDeltaTime.InSeconds());
 	//AIEventHandler::CheckEvadeOnBlendControllers();
 	//AIEventHandler::CheckEvadeOnFormationControllers();
 
@@ -179,6 +290,43 @@ LabbAIScene & LabbAIScene::GetScene()
 	return *ourScene;
 }
 
+
+unsigned short LabbAIScene::SpawnUnit(const std::string & aFilePath, const SB::Vector2f & aPosition)
+{
+	myUnits.Add(Unit());
+	Unit & newUnit = myUnits.GetLast();
+
+	newUnit.SetPosition(aPosition);
+	newUnit.SetSprite(aFilePath);
+
+	newUnit.SetIndex(myUnits.Size() - 1);
+	return myUnits.Size() - 1;
+}
+
+void LabbAIScene::AddToObjectPosition(const unsigned short aObjectID, const SB::Vector2f & aDeltaMovement)
+{
+	myUnits[aObjectID].AddToPosition(aDeltaMovement);
+}
+
+bool LabbAIScene::CheckIfUnitsCollide(const unsigned short aObjectID, const unsigned short aOtherObject)
+{
+	return CollisionCheck(myUnits[aObjectID].GetCircle(), myUnits[aOtherObject].GetCircle());
+}
+
+const SB::Vector2f LabbAIScene::GetObjectsPosition(const unsigned short aObjectID)
+{
+	return myUnits[aObjectID].GetPosition();
+}
+
+void LabbAIScene::SetPositionOnObject(const unsigned short aObjectID, const SB::Vector2f & aPosition)
+{
+	myUnits[aObjectID].SetPosition(aPosition);
+}
+
+void LabbAIScene::ClearUnits()
+{
+	myUnits.RemoveAll();
+}
 
 void LabbAIScene::CollisionCheckUnits()
 {
@@ -226,13 +374,4 @@ bool LabbAIScene::CollisionCheck(const SB::CircleShape & aFirstCircle, const SB:
 	return false;
 }
 
-void LabbAIScene::OnCollisionEnter(const unsigned short aObjectID, const unsigned short aVolumeID)
-{
-	ScriptSystem::CallEvent("VolumeEnter", aObjectID, aVolumeID);
-}
-
-void LabbAIScene::OnCollisionExit(const unsigned short aObjectID, const unsigned short aVolumeID)
-{
-	ScriptSystem::CallEvent("VolumeExit", aObjectID, aVolumeID);
-}
 

@@ -18,14 +18,19 @@ public:
 
 	void AssignNewTargetVolume(const unsigned short aObjectID);
 
+	unsigned short SpawnUnit(const std::string & aFilePath, const SB::Vector2f & aPosition);
+	void AddToObjectPosition(const unsigned short aObjectID, const SB::Vector2f & aDeltaMovement);
+	bool CheckIfUnitsCollide(const unsigned short aObjectID, const unsigned short aOtherObject);
+
+	const SB::Vector2f GetObjectsPosition(const unsigned short aObjectID);
+	void SetPositionOnObject(const unsigned short aObjectID, const SB::Vector2f & aPosition);
+	void ClearUnits();
+
 private:
 	static LabbAIScene * ourScene;
 
 	void CollisionCheckUnits();
 	bool CollisionCheck(const SB::CircleShape & aFirstCircle, const SB::CircleShape & aSecondCircle);
-
-	void OnCollisionEnter(const unsigned short aObjectID, const unsigned short aVolumeID);
-	void OnCollisionExit(const unsigned short aObjectID, const unsigned short aVolumeID);
 
 	SB::Randomizer myRandomizer;
 	SB::Vector2f myMousePosition;

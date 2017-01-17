@@ -7,3 +7,21 @@ Print - Function Description: Will do a cout on each in arguemnt, ends with a ne
 
 TestPop - Function Description: test tuple and pop
 
+
+SpawnUnit - Function Description: spawns a unit with given sprite at given position
+
+
+ClearUnits - Function Description: removes all the units in the scene
+
+
+GetObjectPosition - Function Description: Gets Given objects position
+
+
+AddToObjectPosition - Function Description: On the given object will add to its position
+
+
+CheckCollision - Function Description: Checks collision between two objects
+
+
+SetObjectPosition - Function Description: On given Object set given Position
+

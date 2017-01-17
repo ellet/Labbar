@@ -105,6 +105,13 @@ unsigned short ScriptSystem::AddArgumentsToStack(const size_t aNodeIndex, const 
 	return 1;
 }
 
+unsigned short ScriptSystem::AddArgumentsToStack(const size_t aNodeIndex, const bool aBoolToAdd)
+{
+	lua_pushboolean(GetInstance().myLuaStates[aNodeIndex].GetLuaState(), aBoolToAdd);
+
+	return 1;
+}
+
 lua_State * ScriptSystem::GetLuaStateAt(const size_t aNodeIndex)
 {
 	return GetInstance().myLuaStates[aNodeIndex].GetLuaState();
@@ -187,6 +194,8 @@ void ScriptSystem::InternalLoadLuaFile(const size_t aNodeIndex, const std::strin
 	myInitFunction(aNodeIndex);
 
 	myFunctionExplainer.close();
+
+	CallFunction(aNodeIndex, "Init", aNodeIndex);
 
 }
 

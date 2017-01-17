@@ -68,6 +68,11 @@ const SB::Vector2f & Unit::GetSpeed() const
 	return mySpeed;
 }
 
+SB::CircleShape Unit::GetCircle() const
+{
+	return SB::CircleShape(myPosition, myRadius);
+}
+
 void Unit::Update(const SB::Time aDeltaTime)
 {	
 	if (mySpeed != SB::Vector2f::Zero)
@@ -93,6 +98,11 @@ void Unit::DebugRender(const SB::GuiRenderTarget & aRenderTargetToRenderTo)
 	}
 }
 
+void Unit::AddToPosition(const SB::Vector2f & aDeltaMovement)
+{
+	myPosition += aDeltaMovement;
+}
+
 Controller & Unit::GetController()
 {
 	return *myController;
@@ -106,4 +116,6 @@ unsigned short Unit::GetTargetIndex() const
 void Unit::SetSprite(const std::string & aFilePath)
 {
 	mySprite.SetTexture(SB::Engine::GetResourceManager().Get<SB::Texture>(aFilePath));
+	myRadius = mySprite.GetTexture()->GetSize().x / 2.f;
+	mySprite.SetOrigin(SB::Vector2f(myRadius, myRadius));
 }
