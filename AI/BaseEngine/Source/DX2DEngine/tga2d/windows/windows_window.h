@@ -4,6 +4,9 @@ This class handles the creation of the actual window
 
 #pragma once
 #include <windows.h>
+#include "tga2d\Input\KeyboardKey.h"
+
+class InputCallback;
 
 namespace DX2D
 {
@@ -17,9 +20,14 @@ namespace DX2D
 		HWND GetWindowHandle() const {return myWindowHandle;}
 		void SetResolution(DX2D::Vector2<unsigned int> aResolution);
 		void Close();
+
+		static SB::KeyboardKey ConvertVirtualKey(const WPARAM& aVirtualKey);
+
+		static void SetInputCallback(InputCallback & aCallback);
 	private:
 		 static LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 		 HWND myWindowHandle;
 		 WNDCLASSEX myWindowClass;
+		 static InputCallback * ourInputCallback;
 	};
 }

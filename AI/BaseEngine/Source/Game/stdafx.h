@@ -12,3 +12,12 @@
 
 
 // TODO: reference additional headers your program requires here
+#include <Utilities/CommonIncludes.h>
+
+#include <tga2d/sprite/sprite.h>
+
+
+#include "Conversions/Conversions.h"
+#include "GameWorld.h"
+#include "Rendering/BDRenderer.h"
+#include "Rendering/BDSprite.h"

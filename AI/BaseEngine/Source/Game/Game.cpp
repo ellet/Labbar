@@ -32,7 +32,7 @@ CGame::~CGame()
 void CGame::Init(const std::wstring& aVersion)
 {
 	unsigned short windowWidth = 1280;
-	unsigned short windowHeight = 720;
+	unsigned short windowHeight = 1080;
 
 
     DX2D::SEngineCreateParameters createParameters;
@@ -45,8 +45,8 @@ void CGame::Init(const std::wstring& aVersion)
     createParameters.myWindowWidth = windowWidth;
 	createParameters.myRenderHeight = windowHeight;
 	createParameters.myRenderWidth = windowWidth;
-	createParameters.myTargetWidth = 1280;
-	createParameters.myTargetHeight = 720;
+	createParameters.myTargetWidth = windowWidth;
+	createParameters.myTargetHeight = windowHeight;
 	createParameters.myAutoUpdateViewportWithWindow = false;
     createParameters.myClearColor.Set( 0.0f, 0.0f, 0.0f, 1.0f );
 	

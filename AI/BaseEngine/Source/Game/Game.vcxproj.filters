@@ -17,6 +17,10 @@
     <ClInclude Include="resource.h">
       <Filter>Precompiled</Filter>
     </ClInclude>
+    <ClInclude Include="Rendering\BDSprite.h" />
+    <ClInclude Include="Rendering\BDRenderer.h" />
+    <ClInclude Include="Conversions\Conversions.h" />
+    <ClInclude Include="Input\InputListener.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -24,5 +28,8 @@
     </ClCompile>
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameWorld.cpp" />
+    <ClCompile Include="Rendering\BDSprite.cpp" />
+    <ClCompile Include="Rendering\BDRenderer.cpp" />
+    <ClCompile Include="Input\InputListener.cpp" />
   </ItemGroup>
 </Project>

@@ -147,7 +147,7 @@ bool CEngine::Start()
 		myInitFunctionToCall();
 	}
 
-	myStartOfTime = std::chrono::system_clock::now();
+	myStartOfTime = std::chrono::steady_clock::now();
 
     if( myUpdateFunctionToCall )
     {

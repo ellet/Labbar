@@ -204,7 +204,7 @@ namespace DX2D
         float myWindowRatio;
         float myWindowRatioInversed;
 
-        std::chrono::system_clock::time_point myStartOfTime;
+        std::chrono::steady_clock::time_point myStartOfTime;
         float myTotalTime;
         float myDeltaTime;
     };

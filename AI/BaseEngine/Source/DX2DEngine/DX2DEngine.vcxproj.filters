@@ -273,6 +273,8 @@
     <ClInclude Include="DirectXTK\Inc\ScreenGrab.h">
       <Filter>External\Src</Filter>
     </ClInclude>
+    <ClInclude Include="tga2d\Input\InputCallback.h" />
+    <ClInclude Include="tga2d\Input\KeyboardKey.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DirectXTK\Src\DDSTextureLoader.cpp">
@@ -398,6 +400,7 @@
     <ClCompile Include="DirectXTK\Src\ScreenGrab.cpp">
       <Filter>External\Inc</Filter>
     </ClCompile>
+    <ClCompile Include="tga2d\Input\InputCallback.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DX2DEngine.rc">
