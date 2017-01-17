@@ -175,6 +175,14 @@ private:
 	}
 
 	template <>
+	static const char * PopTop<const char *>(lua_State * aLuaState, int & aCurrentArgumentNumber)
+	{
+		const char * returnValue = lua_tostring(aLuaState, -1);
+		lua_remove(aLuaState, -1);
+		return returnValue;
+	}
+
+	template <>
 	static float PopTop<float>(lua_State * aLuaState, int & aCurrentArgumentNumber)
 	{
 		float returnValue = static_cast<float>( lua_tonumber(aLuaState, -1));

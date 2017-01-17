@@ -42,12 +42,16 @@ extern "C" inline int TestPop(lua_State * aLuaState)
 	int intValue = 0;
 	//std::string stringValue = "";
 	float testfloat = 0.f;
+	float ararfloat = 0.f;
 	float testNumber = 0.f;
+	//std::string daDerp = "";
+	const char * comboBreaker = "";
 
 	int ararar = lua_gettop(aLuaState);
 
 
-	std::tie(intValue, testfloat, testNumber) = ScriptSystem::PopValues<int, float, float>(aLuaState);
+
+	std::tie(intValue, testfloat, ararfloat, comboBreaker, testNumber) = ScriptSystem::PopValues<int, float, float, const char *, float>(aLuaState);
 
 //	size_t testInt = lua_tointeger(aLuaState, 1);
 
