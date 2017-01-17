@@ -253,6 +253,10 @@ void LabbAIScene::Update(const SB::Time & aDeltaTime)
 		ScriptSystem::CallEvent("KeyPress", 4);
 	}
 
+	if ((myInputListener.GetPressedThisFrame(SB::KeyboardKey::eSpace) == true) || (myInputListener.GetPressedThisFrame(SB::KeyboardKey::eControl) == true))
+	{
+		ScriptSystem::CallEvent("KeyPress", 5);
+	}
 	
 
 	for (unsigned short iUnit = 0; iUnit < myUnits.Size(); ++iUnit)
@@ -260,7 +264,7 @@ void LabbAIScene::Update(const SB::Time & aDeltaTime)
 		myUnits[iUnit].Update(aDeltaTime);
 	}
 
-	ScriptSystem::CallFunction("Update", aDeltaTime.InSeconds());
+	ScriptSystem::CallFunction("Update", 0, aDeltaTime.InSeconds());
 	//AIEventHandler::CheckEvadeOnBlendControllers();
 	//AIEventHandler::CheckEvadeOnFormationControllers();
 
@@ -325,6 +329,7 @@ void LabbAIScene::SetPositionOnObject(const unsigned short aObjectID, const SB::
 
 void LabbAIScene::ClearUnits()
 {
+	std::system("cls");
 	myUnits.RemoveAll();
 }
 
