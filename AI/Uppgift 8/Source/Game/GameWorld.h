@@ -1,6 +1,7 @@
 #pragma once
 #include "Input\InputListener.h"
 #include "Actors\Actor.h"
+#include "TeamBased\TeamOverSeer.h"
 
 class BDSprite;
 class TeamBasedGameController;
@@ -18,9 +19,5 @@ public:
 private:
 	InputListener myInput;
 	
-	TeamBasedGameController * enemyController;
-
-	Actor myEnemyUnit;
-
-	Actor myActor;
+	TeamOverSeer myEvilDudes;
 };

@@ -17,13 +17,9 @@ CGameWorld::~CGameWorld()
 
 void CGameWorld::Init()
 {	
-	myEnemyUnit.SetSprite("Sprites/daFace.dds");
-	myEnemyUnit.SetPosition({ 100.f, 100.f });
-	enemyController = &myEnemyUnit.SetController<TeamBasedGameController>();
-
-	myActor.SetSprite("Sprites/daFace.dds");
-	myActor.SetPosition({ 300.f, 300.f });
-	myActor.SetController<PlayerController>();
+	myEvilDudes.InitBase("Sprites/evilBase.dds", {100.f, 100.f});
+	myEvilDudes.SetUnitSprite("Sprites/daFace.dds");
+	myEvilDudes.SetUnitsTarget({ 500.f, 500.f });
 }
 
 
@@ -32,15 +28,13 @@ void CGameWorld::Update(float aDeltaTime)
 {
 	if (myInput.GetIfMouseButtonPressed(SB::MouseKey::eLeft) == true)
 	{
-		enemyController->SetTargetPosition(myInput.GetMousePosition());
+		myEvilDudes.SetUnitsTarget(myInput.GetMousePosition());
 	}
 
-	myEnemyUnit.Update(aDeltaTime);
-	myActor.Update(aDeltaTime);
+	myEvilDudes.Update(aDeltaTime);
 }
 
 void CGameWorld::Render() const
 {
-	myEnemyUnit.Render();
-	//myActor.Render();
+	myEvilDudes.Render();
 }

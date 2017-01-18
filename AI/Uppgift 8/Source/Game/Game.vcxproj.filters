@@ -30,6 +30,7 @@
     <ClInclude Include="Controllers\Behaviours\Steering.h" />
     <ClInclude Include="Controllers\TeamBasedGameController.h" />
     <ClInclude Include="Controllers\Behaviours\SeekBehaviour.h" />
+    <ClInclude Include="TeamBased\TeamOverSeer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -47,5 +48,6 @@
     <ClCompile Include="Controllers\Behaviours\BaseBehaviour.cpp" />
     <ClCompile Include="Controllers\TeamBasedGameController.cpp" />
     <ClCompile Include="Controllers\Behaviours\SeekBehaviour.cpp" />
+    <ClCompile Include="TeamBased\TeamOverSeer.cpp" />
   </ItemGroup>
 </Project>
