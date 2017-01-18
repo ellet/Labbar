@@ -9,7 +9,7 @@
 #include "filewatcher/file_watcher.h"
 #include "texture/texture_manager.h"
 
-DX2D::CShader::CShader(CEngine* aEngine)
+Tga2D::CShader::CShader(CEngine* aEngine)
 	:myEngine(aEngine)
 	, myDirect3dEngine(&aEngine->GetDirect3D())
 	, myMatrixBuffer(0)
@@ -21,7 +21,7 @@ DX2D::CShader::CShader(CEngine* aEngine)
 	myIsReadyToRender = false;
 }
 
-DX2D::CShader::~CShader()
+Tga2D::CShader::~CShader()
 {
 	SAFE_RELEASE(myVertexShader);
 	SAFE_RELEASE(myPixelShader);
@@ -32,7 +32,7 @@ DX2D::CShader::~CShader()
 	
 }
 
-bool DX2D::CShader::CreateShaders(const char* aVertex, const char* aPixel)
+bool Tga2D::CShader::CreateShaders(const char* aVertex, const char* aPixel, callback_layout aLayout)
 {
 	myIsReadyToRender = false;
 	myVertexShaderFile = aVertex;
@@ -41,7 +41,7 @@ bool DX2D::CShader::CreateShaders(const char* aVertex, const char* aPixel)
 	if (!myIsListeningOnFileChange)
 	{
 
-		myEngine->GetFileWatcher()->WatchFileChangeWithDependencies(DX2D::CharArrayToLPCWSTR(aPixel), std::bind(&DX2D::CShader::OnShaderFileModified, this, std::placeholders::_1));
+		myEngine->GetFileWatcher()->WatchFileChangeWithDependencies(Tga2D::CharArrayToLPCWSTR(aPixel), std::bind(&Tga2D::CShader::OnShaderFileModified, this, std::placeholders::_1));
 	
 		
 		myIsListeningOnFileChange = true;
@@ -49,15 +49,16 @@ bool DX2D::CShader::CreateShaders(const char* aVertex, const char* aPixel)
 
 	ID3D10Blob *VS = nullptr;
 	ID3D10Blob *PS = nullptr;
-	INFO_PRINT("%s%s", "Initing Shader: ", aVertex);
-	if (!myEngine->GetDirect3D().CompileShader(aVertex, "VShader", "vs_5_0", VS))
+	INFO_PRINT("%s%s", "Initing vertex Shader: ", aVertex);
+	INFO_PRINT("%s%s", "Initing pixel Shader: ", aPixel);
+	if (!myEngine->GetDirect3D().CompileShader(aVertex, "VShader", "vs_4_0", VS))
 	{
-		ERROR_AUTO_PRINT("%s%s", "Shader error in file: ", aVertex);
+		ERROR_PRINT("%s%s", "Shader error in file: ", aVertex);
 		return false;
 	}
-	if (!myEngine->GetDirect3D().CompileShader(aPixel, "PShader", "ps_5_0", PS))
+	if (!myEngine->GetDirect3D().CompileShader(aPixel, "PShader", "ps_4_0", PS))
 	{
-		ERROR_AUTO_PRINT("%s%s", "Shader error in file: ", aPixel);
+		ERROR_PRINT("%s%s", "Shader error in file: ", aPixel);
 		return false;
 	}
 	myEngine->GetDirect3D().GetDevice()->CreateVertexShader(VS->GetBufferPointer(), VS->GetBufferSize(), NULL, &myVertexShader);
@@ -69,7 +70,11 @@ bool DX2D::CShader::CreateShaders(const char* aVertex, const char* aPixel)
 		myLayout = nullptr;
 	}
 
-	if (!CreateInputLayout(VS))
+	if (aLayout)
+	{
+		aLayout(VS);
+	}
+	else if (!CreateInputLayout(VS))
 	{
 		// LAYOUT
 		D3D11_INPUT_ELEMENT_DESC polygonLayout[7];
@@ -137,7 +142,7 @@ bool DX2D::CShader::CreateShaders(const char* aVertex, const char* aPixel)
 		HRESULT result = myEngine->GetDirect3D().GetDevice()->CreateInputLayout(polygonLayout, numElements, VS->GetBufferPointer(), VS->GetBufferSize(), &myLayout);
 		if (FAILED(result))
 		{
-			ERROR_AUTO_PRINT("%s", "Layout error");
+			ERROR_PRINT("%s", "Layout error");
 			return false;
 		}
 	}
@@ -203,21 +208,21 @@ bool DX2D::CShader::CreateShaders(const char* aVertex, const char* aPixel)
 	return true;
 }
 
-void DX2D::CShader::OnShaderFileModified(std::wstring aFile)
+void Tga2D::CShader::OnShaderFileModified(std::wstring aFile)
 {
 	INFO_PRINT("%s", "Shader modified! Trying to reload...");
 
 	// Test compile
 	ID3D10Blob *VS = nullptr;
 	ID3D10Blob *PS = nullptr;
-	if (!myEngine->GetDirect3D().CompileShader(myVertexShaderFile.c_str(), "VShader", "vs_5_0", VS))
+	if (!myEngine->GetDirect3D().CompileShader(myVertexShaderFile.c_str(), "VShader", "vs_4_0", VS))
 	{
-		ERROR_AUTO_PRINT("%s%s", "Shader modified failed! error in file: ", myVertexShaderFile.c_str());
+		ERROR_PRINT("%s%s", "Shader modified failed! error in file: ", myVertexShaderFile.c_str());
 		return;
 	}
-	if (!myEngine->GetDirect3D().CompileShader(myPixelShaderFile.c_str(), "PShader", "ps_5_0", PS))
+	if (!myEngine->GetDirect3D().CompileShader(myPixelShaderFile.c_str(), "PShader", "ps_4_0", PS))
 	{
-		ERROR_AUTO_PRINT("%s%s", "Shader modified failed! error in file: ", myPixelShaderFile.c_str());
+		ERROR_PRINT("%s%s", "Shader modified failed! error in file: ", myPixelShaderFile.c_str());
 		return;
 	}
 
@@ -240,12 +245,13 @@ void DX2D::CShader::OnShaderFileModified(std::wstring aFile)
 
 }
 
-bool DX2D::CShader::Render(CRenderObject* aObject)
+bool Tga2D::CShader::Render(CRenderObject* aObject)
 {
-	if (!myVertexShader || !myPixelShader || !myIsReadyToRender)
+	if (!myVertexShader || !myPixelShader || !myIsReadyToRender || !myEngine)
 	{
 		return false;
 	}
+
 	CDirectEngine& engine = myEngine->GetDirect3D();
 	engine.GetContext()->VSSetShader(myVertexShader, NULL, 0);
 	engine.GetContext()->PSSetShader(myPixelShader, NULL, 0);
@@ -260,7 +266,7 @@ bool DX2D::CShader::Render(CRenderObject* aObject)
 	return true;
 }
 
-void DX2D::CShader::DoOneFrameUpdates(CRenderObject* aObject)
+void Tga2D::CShader::DoOneFrameUpdates(CRenderObject* aObject)
 {
 	CDirectEngine& engine = myEngine->GetDirect3D();
 
@@ -275,7 +281,7 @@ void DX2D::CShader::DoOneFrameUpdates(CRenderObject* aObject)
 	result = engine.GetContext()->Map(myMatrixBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
 	if (FAILED(result))
 	{
-		INFO_PRINT("Error in rendering!");
+		INFO_PRINT("Error in rendering! Could not map sprites");
 		return;
 	}
 
@@ -340,13 +346,13 @@ void DX2D::CShader::DoOneFrameUpdates(CRenderObject* aObject)
 	result = engine.GetContext()->Map(myLightBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResourceLight);
 	if (FAILED(result))
 	{
-		INFO_PRINT("Error in rendering!");
+		INFO_PRINT("Error in rendering! Could not map lights");
 		return;
 	}
 
 	std::vector<const CLight*> lights = myEngine->GetLightManager().myLightsToRender;
 	dataPtrLights = (LightBufferType*)mappedResourceLight.pData;
-	dataPtrLights->myNumberOfLights = lights.size();
+	dataPtrLights->myNumberOfLights = static_cast<unsigned int>(lights.size());
 
 	for (unsigned int i = 0; i < 4; i++)
 	{
@@ -356,7 +362,7 @@ void DX2D::CShader::DoOneFrameUpdates(CRenderObject* aObject)
 
 	for (unsigned int i = 0; i < lights.size(); i++)
 	{
-		DX2D::Vector4f worldPos = myEngine->GetDirect3D().myCorrectedWorldWatrix.myPos4;
+		Tga2D::Vector4f worldPos = myEngine->GetDirect3D().myCorrectedWorldWatrix.myPos4;
 		
 		dataPtrLights->myLights[i].myLightColors = lights[i]->myColor;
 		dataPtrLights->myLights[i].myLightPositions.Set(((lights[i]->myPosition.x) - worldPos.x) * myEngine->GetWindowSize().x, ((lights[i]->myPosition.y) - worldPos.y) * myEngine->GetWindowSize().y, lights[i]->myIntensity, lights[i]->myFallOff);

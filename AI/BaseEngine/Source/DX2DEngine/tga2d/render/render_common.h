@@ -2,6 +2,13 @@
 #include "tga2d/math/Vector2.h"
 
 
+
+enum ESamplerType
+{
+	ESamplerType_Linear,
+	ESamplerType_Point
+};
+
 enum EShaderMap
 {
 	NORMAL_MAP,

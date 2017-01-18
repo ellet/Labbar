@@ -8,10 +8,11 @@
 #include "texture/texture_manager.h"
 #include <d3d11.h>
 
-using namespace DX2D;
+using namespace Tga2D;
 
 CTexturedQuad::CTexturedQuad(void)
 		:myTexture(nullptr)
+		, myCustomShader(nullptr)
 {
 	myEngine = CEngine::GetInstance();
 
@@ -19,7 +20,6 @@ CTexturedQuad::CTexturedQuad(void)
 	myTextureRect.myStartY = 0.0f;
 	myTextureRect.myEndX = 1.0f;
 	myTextureRect.myEndY = 1.0f;
-	myVertexesDirty = false;
 	for (int i = 0; i < MAP_MAX; i++)
 	{
 		myMaps[i] = NULL;
@@ -31,7 +31,7 @@ CTexturedQuad::~CTexturedQuad(void)
 {
 }
 
-void DX2D::CTexturedQuad::Init(const char* aTexturePath)
+void Tga2D::CTexturedQuad::Init(const char* aTexturePath)
 {
 	if (aTexturePath)
 	{
@@ -45,18 +45,17 @@ void DX2D::CTexturedQuad::Init(const char* aTexturePath)
 	}
 }
 
-void DX2D::CTexturedQuad::Render()
+void Tga2D::CTexturedQuad::Render()
 {
 	myEngine->GetRenderer().AddToRender(this);
 }
 
-void DX2D::CTexturedQuad::SetTextureRect(float aStartX, float aStartY, float aEndX, float aEndY)
+void Tga2D::CTexturedQuad::SetTextureRect(float aStartX, float aStartY, float aEndX, float aEndY)
 {
 	myTextureRect.myStartX = aStartX;
 	myTextureRect.myStartY = aStartY;
 	myTextureRect.myEndX = aEndX;
 	myTextureRect.myEndY = aEndY;
-	VertexChanged();
 }
 
 void CTexturedQuad::SetColor(CColor aColor)
@@ -64,28 +63,27 @@ void CTexturedQuad::SetColor(CColor aColor)
 	myColor = aColor;
 }
 
-const CColor& DX2D::CTexturedQuad::GetColor() const
+const CColor& Tga2D::CTexturedQuad::GetColor() const
 {
 	return myColor;
 }
 
-DX2D::CColor DX2D::CTexturedQuad::GetColor()
+const Tga2D::CColor& Tga2D::CTexturedQuad::GetColor()
 {
 	return myColor;
 }
 
-void DX2D::CTexturedQuad::SetSize(const Vector2f& aSize)
+void Tga2D::CTexturedQuad::SetSize(const Vector2f& aSize)
 {
 	mySize = aSize;
-	VertexChanged();
 }
 
-void DX2D::CTexturedQuad::SetUV(const Vector2f& aUV)
+void Tga2D::CTexturedQuad::SetUV(const Vector2f& aUV)
 {
 	myUV = aUV;
 }
 
-void DX2D::CTexturedQuad::SetMap(EShaderMap aMapType, const char* aPath)
+void Tga2D::CTexturedQuad::SetMap(EShaderMap aMapType, const char* aPath)
 {
 	myMaps[aMapType] = myEngine->GetTextureManager().GetTexture(aPath);
 }

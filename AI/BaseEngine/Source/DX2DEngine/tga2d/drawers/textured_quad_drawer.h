@@ -2,7 +2,7 @@
 #include "render/render_common.h"
 #include "render/render_object.h"
 
-namespace DX2D
+namespace Tga2D
 {
 
 

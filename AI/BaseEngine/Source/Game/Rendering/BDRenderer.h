@@ -3,7 +3,7 @@
 
 class BDSprite;
 
-namespace DX2D
+namespace Tga2D
 {
 	class CSprite;
 }
@@ -30,7 +30,7 @@ private:
 
 	static BDRenderer * ourInstance;
 
-	std::unordered_map<std::string, DX2D::CSprite*> mySprites;
+	std::unordered_map<std::string, Tga2D::CSprite*> mySprites;
 
 	BDRenderer();
 	~BDRenderer();

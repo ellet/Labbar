@@ -1,12 +1,11 @@
 #pragma once
 
-#include "../targetver.h"
+#include "targetver.h"
 #include "error/error_manager.h"
 
 #if !defined(WIN32_LEAN_AND_MEAN)
 #define WIN32_LEAN_AND_MEAN
 #endif
-
 
 #include "math/matrix44.h"
 #include "math/vector2.h"
@@ -31,6 +30,9 @@
 
 #define MIN(a,b) (((a)<(b))?(a):(b))
 #define MAX(a,b) (((a)>(b))?(a):(b))
+
+// Will fix VS 2015 bugs (Microsoft is working on it atm)
+#pragma warning( disable : 4458 )
 
 // VS 2010's stdint.h conflicts with intsafe.h
 #pragma warning(push)

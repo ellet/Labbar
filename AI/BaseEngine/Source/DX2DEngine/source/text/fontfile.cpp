@@ -6,7 +6,7 @@
 #include "engine.h"
 #include <sstream>
 
-using namespace DX2D;
+using namespace Tga2D;
 #pragma optimize( "", on ) 
 // "VeraMoBI.ttf_font.txt"
 // char id=32    x=486   y=505   width=4     height=4     xoffset=-1.500    yoffset=1.500     xadvance=30.688      page=0  chnl=0

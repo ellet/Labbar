@@ -1,7 +1,7 @@
 #pragma once
 
 
-namespace DX2D
+namespace Tga2D
 {
 	class Vector4f
 	{

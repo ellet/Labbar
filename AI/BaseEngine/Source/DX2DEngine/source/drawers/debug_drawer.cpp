@@ -14,7 +14,7 @@
 
 #pragma comment(lib, "psapi.lib")
 
-using namespace DX2D;
+using namespace Tga2D;
 
 CDebugDrawer::CDebugDrawer(int aFlagset)
 	:myNumberOfRenderedLines(0)
@@ -23,7 +23,6 @@ CDebugDrawer::CDebugDrawer(int aFlagset)
 	myDebugFeatureSet = aFlagset;
 	tickindex = 0;
 	ticksum = 0;
-	myFPSCounter = 0;
 	myRealFPS = 0;
 }
 
@@ -41,49 +40,57 @@ CDebugDrawer::~CDebugDrawer(void)
 	delete myCPUText;
 	delete myPerformanceGraph;
 	delete myLineMultiBuffer;
+	delete myErrorsText;
 }
 
 void CDebugDrawer::Init()
 {
 	for (int i=0; i< myMaxLines; i++)
 	{
-		LinePrimitive* newLine = new LinePrimitive();
+		CLinePrimitive* newLine = new CLinePrimitive();
 		myLineBuffer.push_back(newLine);
 	}
 
-	myFPS = new DX2D::CText("Text/calibril.ttf_sdf");
+	const float theSize = 1.0f;
+	myFPS = new Tga2D::CText("Text/BOMBARD_.ttf", EFontSize_14);
 	myFPS->myText = "--";
-	myFPS->myPosition = DX2D::Vector2f(0.0f, 0.02f);
+	myFPS->myPosition = Tga2D::Vector2f(0, 0.02f);
 	myFPS->myColor.Set(1, 1, 1, 1.0f);
-	myFPS->mySize = 0.4f;
+	myFPS->myScale = theSize;
 
-	myMemUsage = new DX2D::CText("Text/calibril.ttf_sdf");
+	myMemUsage = new Tga2D::CText("Text/BOMBARD_.ttf");
 	myMemUsage->myText = "--";
-	myMemUsage->myPosition = DX2D::Vector2f(0.0f, 0.05f);
+	myMemUsage->myPosition = Tga2D::Vector2f(0.0f, 0.05f);
 	myMemUsage->myColor.Set(1, 1, 1, 1.0f);
-	myMemUsage->mySize = 0.4f;
+	myMemUsage->myScale = theSize;
 
-	myDrawCallText = new DX2D::CText("Text/calibril.ttf_sdf");
+	myDrawCallText = new Tga2D::CText("Text/BOMBARD_.ttf");
 	myDrawCallText->myText = "--";
-	myDrawCallText->myPosition = DX2D::Vector2f(0.0f, 0.08f);
+	myDrawCallText->myPosition = Tga2D::Vector2f(0.0f, 0.08f);
 	myDrawCallText->myColor.Set(1, 1, 1, 1.0f);
-	myDrawCallText->mySize = 0.4f;
+	myDrawCallText->myScale = theSize;
 
-	myCPUText = new DX2D::CText("Text/calibril.ttf_sdf");
+	myCPUText = new Tga2D::CText("Text/BOMBARD_.ttf");
 	myCPUText->myText = "--";
-	myCPUText->myPosition = DX2D::Vector2f(0.0f, 0.11f);
+	myCPUText->myPosition = Tga2D::Vector2f(0.0f, 0.11f);
 	myCPUText->myColor.Set(1, 1, 1, 1.0f);
-	myCPUText->mySize = 0.4f;
+	myCPUText->myScale = theSize;
+
+	myErrorsText = new Tga2D::CText("Text/BOMBARD_.ttf");
+	myErrorsText->myText = "--";
+	myErrorsText->myPosition = Tga2D::Vector2f(0.0f, 0.14f);
+	myErrorsText->myColor.Set(1, 0.7f, 0.7f, 1.0f);
+	myErrorsText->myScale = theSize;
 
 	myErrorSprite = new CSprite("sprites/error.dds");
-	myErrorSprite->SetPosition(DX2D::Vector2f(0.9f, 0.0f));
-	myErrorSprite->SetPivot(DX2D::Vector2f(0.5f, 0.0f));
+	myErrorSprite->SetPosition(Tga2D::Vector2f(0.9f, 0.0f));
+	myErrorSprite->SetPivot(Tga2D::Vector2f(0.5f, 0.0f));
 	myShowErrorTimer = 0.0f;
 
 
 	myPerformanceGraph = new CPerformanceGraph(this);
-	DX2D::CColor bgColor(0, 1, 0, 0.4f);
-	DX2D::CColor lineColro(1, 1, 1, 1.0f);
+	Tga2D::CColor bgColor(0, 1, 0, 0.4f);
+	Tga2D::CColor lineColro(1, 1, 1, 1.0f);
 	myPerformanceGraph->Init(bgColor, lineColro, "FPS spike detector");
 
 	myLineMultiBuffer = new CLineMultiPrimitive();
@@ -159,23 +166,12 @@ void CDebugDrawer::Update(float aTimeDelta)
 	
 	fpsText.append("FPS: ");
 
-	myTimer += aTimeDelta;
-	myFPSCounter++;
-	if (myTimer >= 0.1)
-	{ 
-		myRealFPS = myFPSCounter * 10;
-		myFPSCounter = 0;
-		myTimer = 0.0;
-	
-	}
-
+	myRealFPS = static_cast<unsigned short>(1.0f / aTimeDelta);
 
 	myPerformanceGraph->FeedValue(myRealFPS);
 
-
 	fpsText.append(std::to_string(myRealFPS));
 	myFPS->myText = fpsText;
-
 
 	PROCESS_MEMORY_COUNTERS memCounter;
 	BOOL result = GetProcessMemoryInfo(GetCurrentProcess(),
@@ -187,8 +183,8 @@ void CDebugDrawer::Update(float aTimeDelta)
 		return;
 	}
 
-	int memUsed = memCounter.WorkingSetSize/1024;
-	int memUsedMb = memCounter.WorkingSetSize / 1024 / 1024;
+	int memUsed = static_cast<int>(memCounter.WorkingSetSize) / 1024;
+	int memUsedMb = static_cast<int>(memCounter.WorkingSetSize) / 1024 / 1024;
 	myMemUsage->myText.clear();
 	myMemUsage->myText.append("Mem: ");
 	myMemUsage->myText.append(std::to_string(memUsed));
@@ -215,9 +211,9 @@ void CDebugDrawer::Update(float aTimeDelta)
 	{
 		if (myErrorSprite && myErrorSprite->HasValidTexture())
 		{
-			float theRandomShake = (((rand() % 100) / 100.0f) - 0.5f) * 0.05f;
+			float theRandomShake = (((rand() % 100) / 100.0f) - 0.5f) * 0.06f;
 			myErrorSprite->SetRotation(theRandomShake);
-			myErrorSprite->SetColor(DX2D::CColor(1, 1, 1, min(myShowErrorTimer, 1.0f)));
+			myErrorSprite->SetColor(Tga2D::CColor(1, 1, 1, min(myShowErrorTimer, 1.0f)));
 			myErrorSprite->Render();
 		}
 	}
@@ -225,6 +221,16 @@ void CDebugDrawer::Update(float aTimeDelta)
 
 	myShowErrorTimer -=  aTimeDelta;
 	myShowErrorTimer = max(myShowErrorTimer, 0.0f);
+
+	unsigned int errors = CEngine::GetInstance()->GetErrorManager().GetErrorsReported();
+	if (errors > 0)
+	{
+		std::string errorsString;
+		errorsString.append("Errors: ");
+		errorsString.append(std::to_string(errors));
+		myErrorsText->myText = errorsString;
+	}
+
 	
 }
 
@@ -261,9 +267,25 @@ void CDebugDrawer::Render()
 			myMemUsage->Render();
 		}
 
+
+		if (CEngine::GetInstance()->IsDebugFeatureOn(eDebugFeature_Cpu))
+		{
+			myCPUText->Render();
+		}
+
+	}
+
+	unsigned int errors = CEngine::GetInstance()->GetErrorManager().GetErrorsReported();
+	if (errors > 0)
+	{
+		myErrorsText->Render();
+	}
+
+	if (myDebugFeatureSet != 0 && CEngine::GetInstance()->IsDebugFeatureOn(eDebugFeature_Drawcalls))
+	{
 		std::string drawCalls;
 		drawCalls.append("DrawCalls: ");
-		int objCount = CEngine::GetInstance()->GetDirect3D().GetObjectRenderCount();
+		int objCount = CEngine::GetInstance()->GetDirect3D().GetObjectRenderCount() + 1;
 		drawCalls.append(std::to_string(objCount));
 		myDrawCallText->myText = drawCalls;
 		myDrawCallText->myColor.Set(1, 1, 1, 1);
@@ -271,20 +293,13 @@ void CDebugDrawer::Render()
 		{
 			myDrawCallText->myColor.Set(1, 0, 0, 1);
 		}
-		if (CEngine::GetInstance()->IsDebugFeatureOn(eDebugFeature_Drawcalls))
-		{
-			myDrawCallText->Render();
-		}
-		if (CEngine::GetInstance()->IsDebugFeatureOn(eDebugFeature_Cpu))
-		{
-			myCPUText->Render();
-		}
-	}
 
+		myDrawCallText->Render();
+	}
 
 }
 
-void DX2D::CDebugDrawer::DrawLine(Vector2f aFrom, Vector2f aTo, Vector4f aColor)
+void Tga2D::CDebugDrawer::DrawLine(Vector2f aFrom, Vector2f aTo, Vector4f aColor)
 {
 	if (myNumberOfRenderedLines > myMaxLines)
 	{
@@ -296,7 +311,7 @@ void DX2D::CDebugDrawer::DrawLine(Vector2f aFrom, Vector2f aTo, Vector4f aColor)
 	myNumberOfRenderedLines++;
 }
 
-void DX2D::CDebugDrawer::DrawLines(Vector2f* aFrom, Vector2f* aTo, CColor* aColor, unsigned int aCount)
+void Tga2D::CDebugDrawer::DrawLines(Vector2f* aFrom, Vector2f* aTo, CColor* aColor, unsigned int aCount)
 {
 	if (aCount <= 0)
 	{
@@ -311,7 +326,7 @@ void DX2D::CDebugDrawer::DrawLines(Vector2f* aFrom, Vector2f* aTo, CColor* aColo
 	myLineMultiBuffer->Render();
 }
 
-void DX2D::CDebugDrawer::ShowErrorImage()
+void Tga2D::CDebugDrawer::ShowErrorImage()
 {
 	myShowErrorTimer = 4.0f;
 }

@@ -2,7 +2,7 @@
 #include "render_common.h"
 
 struct ID3D11ShaderResourceView;
-namespace DX2D
+namespace Tga2D
 {
 	class CRenderObject;
 	class CTexturedQuad;

@@ -2,7 +2,7 @@
 #include "render/render_object.h"
 #include "render/render_common.h"
 
-namespace DX2D
+namespace Tga2D
 {
 	struct STextureRext
 	{
@@ -27,20 +27,16 @@ namespace DX2D
 		CTexture* myTexture;
 
 		STextureRext& GetTextureRect(){return myTextureRect;}
-		bool IsVertexesDirty() const {return myVertexesDirty;}
-		void SetCleanVertexes(){myVertexesDirty = false;}
 		void SetColor(const CColor aColor);
 		const CColor& GetColor() const;
-		CColor GetColor();
+		const CColor& GetColor();
 		void SetSize(const Vector2f& aSize);
 		virtual void SetUV(const Vector2f& aUV);
 		void SetMap(EShaderMap aMapType, const char* aPath);
 		
 		CTexture* myMaps[MAP_MAX];
-
+		class CCustomShader* myCustomShader;
 	private:
-		void VertexChanged(){ myVertexesDirty = true; }
 		STextureRext myTextureRect;
-		bool myVertexesDirty;
 	};
 }

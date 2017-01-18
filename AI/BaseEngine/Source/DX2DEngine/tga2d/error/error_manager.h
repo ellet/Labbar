@@ -2,13 +2,12 @@
 #include "tga2d/Engine.h"
 #include <vector>
 
-namespace DX2D
+namespace Tga2D
 {
-	#define SETCONSOLECOLOR(color) DX2D::CEngine::GetInstance()->GetErrorManager().SetConsoleColor(color);
-    #define ERROR_AUTO_PRINT(aFormat, ...) DX2D::CEngine::GetInstance()->GetErrorManager().ErrorPrint(__FILE__, __LINE__, aFormat, ##__VA_ARGS__); // same as below but badly named
-	#define ERROR_PRINT(aFormat, ...) DX2D::CEngine::GetInstance()->GetErrorManager().ErrorPrint(__FILE__, __LINE__, aFormat, ##__VA_ARGS__);
-    #define INFO_PRINT(aFormat, ...) DX2D::CEngine::GetInstance()->GetErrorManager().InfoPrint(aFormat, ##__VA_ARGS__);
-	#define INFO_TIP(aFormat, ...) DX2D::CEngine::GetInstance()->GetErrorManager().InfoTip(aFormat, ##__VA_ARGS__);
+	#define SETCONSOLECOLOR(color) Tga2D::CEngine::GetInstance()->GetErrorManager().SetConsoleColor(color);
+	#define ERROR_PRINT(aFormat, ...) Tga2D::CEngine::GetInstance()->GetErrorManager().ErrorPrint(__FILE__, __LINE__, aFormat, ##__VA_ARGS__);
+    #define INFO_PRINT(aFormat, ...) Tga2D::CEngine::GetInstance()->GetErrorManager().InfoPrint(aFormat, ##__VA_ARGS__);
+	#define INFO_TIP(aFormat, ...) Tga2D::CEngine::GetInstance()->GetErrorManager().InfoTip(aFormat, ##__VA_ARGS__);
 
     class CErrorManager
     {
@@ -23,9 +22,11 @@ namespace DX2D
         void InfoPrint(const char* aFormat, ...);
 		void InfoTip(const char* aFormat, ...);
 		void SetConsoleColor(int aColor);
+		unsigned int GetErrorsReported() const { return myErrorsReported; }
     private:
 		std::vector<callback_function_log> myLogFunctions;
 		std::vector<callback_function_error> myErrorFunctions;
+		unsigned int myErrorsReported;
         
     };
 }

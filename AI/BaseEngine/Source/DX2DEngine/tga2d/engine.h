@@ -5,15 +5,17 @@ It takes care of creating everything necessary for window handling and rendering
 */
 
 #pragma once
-#define _X86_
-#include <windef.h>
+//#define _X86_
+#include <windows.h>
 
 #include <functional>
 #include "math/Color.h"
 #include "math/vector2.h"
+#include "render/render_common.h"
 #include <chrono>
+#include "StepTimer.h"
 
-namespace DX2D
+namespace Tga2D
 {
     class CWindowsWindow;
     class CDirectEngine;
@@ -28,10 +30,11 @@ namespace DX2D
 }
 
 
-namespace DX2D
+namespace Tga2D
 {
     using callback_function        = std::function<void()>;
-    using callback_function_update = std::function<void()>;
+    using callback_function_update = std::function<void(const float)>;
+	using callback_function_wndProc = std::function<LRESULT(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)>;
     using callback_function_log    = std::function<void( std::string )>;
     using callback_function_error  = std::function<void( std::string )>;
 
@@ -62,7 +65,6 @@ namespace DX2D
             myWindowWidth                  = 800; 
             myWindowHeight                 = 600; 
             myEnableVSync                  = false; 
-            myMaxRenderedObjectsPerFrame   = 100000;  // Legacy, not used
             myRenderWidth                  = myWindowWidth; 
             myRenderHeight                 = myWindowHeight; 
             myErrorFunction                = nullptr; 
@@ -76,14 +78,22 @@ namespace DX2D
 
         callback_function myInitFunctionToCall;
         callback_function_update myUpdateFunctionToCall;
+		callback_function_wndProc myWinProcCallback;
         callback_function_log myLogFunction;
         callback_function_error myErrorFunction;
+
+		/* How big should the window be? */
         unsigned short myWindowWidth;
         unsigned short myWindowHeight;
+
+		/* What resolution should we render everything in?*/
         unsigned short myRenderWidth;
         unsigned short myRenderHeight;
+
+		/* In what resolution are the graphic artist working?*/
         unsigned short myTargetHeight;
         unsigned short myTargetWidth;
+
         /* Will show the FPS and memory text*/
         int myActivateDebugSystems;
         CColor myClearColor;
@@ -92,7 +102,6 @@ namespace DX2D
         std::wstring myApplicationName;
         bool myEnableVSync;
         bool myStartInFullScreen;
-        int myMaxRenderedObjectsPerFrame; // Legacy, not used
         EWindowSetting myWindowSetting;
         bool myAutoUpdateViewportWithWindow;
     };
@@ -105,6 +114,7 @@ namespace DX2D
         friend class CShader;
         friend class CErrorManager;
         friend class CDirectEngine;
+		friend class CWindowsWindow;
     public:
         CEngine &operator =( const CEngine &anOther ) = delete;
         static void CreateInstance( const SEngineCreateParameters& aCreateParameters);
@@ -126,17 +136,20 @@ namespace DX2D
 
         CErrorManager& GetErrorManager() const { return *myErrorManager; }
 
-        void SetWorldMatrixPosition( const Vector2f &aPosition);
-        void SetWorldMatrixZoom(const float aZoom);
+		/* These functions are disabled in shaders for now */
+	   // void SetWorldMatrixPosition( const Vector2f &aPosition);
+       // void SetWorldMatrixZoom(const float aZoom);
         
         Vector2ui GetWindowSize() const {return myWindowSize;}
         Vector2ui GetRenderSize() const { return myRenderSize; }
         Vector2ui GetTargetSize() const { return myTargetSize; }
         float GetWindowRatio() const;
         float GetWindowRatioInversed() const;
+		Vector2f GetWindowRatioVec() const;
+		Vector2f GetWindowRatioInversedVec() const;
         CDirectEngine& GetDirect3D() const { return *myDirect3D; }
 
-        void SetResolution(const DX2D::Vector2ui &aResolution, bool aAlsoSetWindowSize = true);
+        void SetResolution(const Tga2D::Vector2ui &aResolution, bool aAlsoSetWindowSize = true);
 
         HWND* GetHWND() const;
         HINSTANCE GetHInstance() const;
@@ -159,22 +172,29 @@ namespace DX2D
         // Clears the frame and prepares engine for rendering. Run at the beginning
         // of the frame.
         //
-        void BeginFrame( const CColor &aClearColor = { 0.0f, 0.0f, 0.0f, 1.0f } );
+        bool BeginFrame( const CColor &aClearColor = { 0.0f, 0.0f, 0.0f, 1.0f } );
 
         // Passes data to GPU. Run at the end of the frame.
         //
         void EndFrame( void );
-
+		
+		void SetSampler(ESamplerType aType);
+		ESamplerType GetSamplerType() const;
+		
     private:
         CEngine(const SEngineCreateParameters& aCreateParameters);
         ~CEngine();
-
+		
         void StartStep();
         void DoStep();
         void RunFrame();
         void CalculateRatios();
 
-        void UpdateWindowSizeChanges();
+		void UpdateWindowSizeChanges();
+		void SetWantToUpdateSize(){ myWantToUpdateSize = true; }
+       
+		/* Only for debugging, not accurate */
+		float GetDeltaTime() const { return myDeltaTime; }
 
         static CEngine* myInstance;
 
@@ -199,13 +219,20 @@ namespace DX2D
         CLightManager* myLightManager;
         CErrorManager* myErrorManager;
         CFileWatcher* myFileWatcher;
+		bool myWantToUpdateSize;
 
         bool myRunEngine;
         float myWindowRatio;
         float myWindowRatioInversed;
+		Vector2f myWindowRatioVec;
+		Vector2f myWindowRatioInversedVec;
 
-        std::chrono::steady_clock::time_point myStartOfTime;
+		std::chrono::steady_clock::time_point myStartOfTime;
         float myTotalTime;
         float myDeltaTime;
+
+		DX::StepTimer myTimer;
+
+		bool myShouldExit; // Only used when using beginframe and endframe
     };
 }

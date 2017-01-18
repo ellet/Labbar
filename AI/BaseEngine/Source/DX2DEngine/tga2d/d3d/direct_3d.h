@@ -19,7 +19,7 @@ struct ID3D11DeviceChild;
 struct ID3D11BlendState;
 struct ID3D11Debug;
 struct IDXGIAdapter;
-namespace DX2D
+namespace Tga2D
 { 
 	class CEngine;
 	class CTexturedQuad;
@@ -58,7 +58,7 @@ namespace DX2D
 		bool CompileShader(const char* aShader, const char* aMainFunction, const char* aTarget, ID3D10Blob*& aCodeBlob);
 		Vector2<unsigned int> myWindowSize;
 
-		void SetResolution(DX2D::Vector2<unsigned int> aResolution);
+		void SetResolution(Tga2D::Vector2<unsigned int> aResolution);
 		void SetFullScreen(bool aFullScreen);
 		void SetViewPort(float aTopLeftX, float aTopLeftY, float aWidth, float aHeight, float aMinDepth = 0.0f, float aMaxDepth = 1.0f);
 
@@ -68,6 +68,9 @@ namespace DX2D
 		Matrix44 myProjWatrix;
 
         int GetObjectRenderCount();
+
+		void SetSampler(ESamplerType aType);
+		ESamplerType GetSamplerType() const;
 
 
         //
@@ -93,7 +96,8 @@ namespace DX2D
 		ID3D11DeviceContext *myDeviceContext;
 		CRendertarget* myRendertarget;
 		ID3D11RenderTargetView *myBackbuffer;
-		ID3D11SamplerState* mySampleState;
+		ID3D11SamplerState* mySampleStateLinear;
+		ID3D11SamplerState* mySampleStatePoint;
 		ID3D11Texture2D* myDepthStencilBuffer;
 		ID3D11DepthStencilState* myDepthStencilState;
 		ID3D11DepthStencilView* myDepthStencilView;
@@ -110,5 +114,6 @@ namespace DX2D
 		CColor myClearColor;
 		int myVideoCardMemory;
 		bool myEnableVSync;
+		ESamplerType mySampler;
 	};
 }

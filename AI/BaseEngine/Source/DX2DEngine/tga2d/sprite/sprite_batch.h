@@ -4,7 +4,7 @@
 #include <tga2d/render/render_common.h>
 
 
-namespace DX2D
+namespace Tga2D
 {
 	class CSprite;
 	class CTexturedQuadBatch;
@@ -34,7 +34,7 @@ namespace DX2D
 		std::vector<CSprite*>* myCurrentSpriteAdder;
 		CTexturedQuadBatch* myQuadBatch;
 		Vector2f GetInitialSize();
-		DX2D::Vector2<unsigned int> GetImageSize();
+		Tga2D::Vector2<unsigned int> GetImageSize();
 		const std::string GetImagePath() const;
 	private:
 		unsigned short myCurrentSpriteCount;

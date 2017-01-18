@@ -12,7 +12,7 @@
 #include "light/light_manager.h"
 
 
-using namespace DX2D;
+using namespace Tga2D;
 
 
 CShaderNormalInstanced::CShaderNormalInstanced(CEngine* aEngine)
@@ -99,13 +99,13 @@ int CShaderNormalInstanced::SetShaderParameters(std::vector<CSprite*>& someSprit
 		ObjectBufferInstanceType& type = *next;
 
 		type.myPosition = sprite->GetPosition();
-		DX2D::Vector2f offsetPos(DX2D::CEngine::GetInstance()->GetWindowRatio(), -1.0f);
+		Tga2D::Vector2f offsetPos(Tga2D::CEngine::GetInstance()->GetWindowRatio(), -1.0f);
 		//type.myPosition = DX2D::Vector2f((type.myPosition.x * 2.0f) - 1.0f, -(type.myPosition.y * 2.0f) + 1.0f);
 	
 		type.myPosition.x = (type.myPosition.x * 2.0f) - 1.0f;
 		type.myPosition.y = -(type.myPosition.y * 2.0f) + 1.0f;
 
-		const DX2D::Vector2f& pivot = sprite->GetPivot();
+		const Tga2D::Vector2f& pivot = sprite->GetPivot();
 		type.myPivot.Set(pivot.x, pivot.y, 0, 0);
 		type.myRotationAndSize.x = sprite->GetRotation();
 
@@ -184,7 +184,7 @@ int CShaderNormalInstanced::SetShaderParameters(std::vector<CSprite*>& someSprit
 	return myBufferedObjects.NextCount()+1;
 }
 
-bool DX2D::CShaderNormalInstanced::CreateInputLayout(ID3D10Blob* aVS)
+bool Tga2D::CShaderNormalInstanced::CreateInputLayout(ID3D10Blob* aVS)
 {
 	D3D11_INPUT_ELEMENT_DESC polygonLayout[9];
 
@@ -266,7 +266,7 @@ bool DX2D::CShaderNormalInstanced::CreateInputLayout(ID3D10Blob* aVS)
 	HRESULT result = myDirect3dEngine->GetDevice()->CreateInputLayout(polygonLayout, numElements, aVS->GetBufferPointer(), aVS->GetBufferSize(), &myLayout);
 	if (FAILED(result))
 	{
-		ERROR_AUTO_PRINT("%s", "Layout error");
+		ERROR_PRINT("%s", "Layout error");
 	}
 	return true;
 }

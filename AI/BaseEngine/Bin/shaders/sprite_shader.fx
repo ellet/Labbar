@@ -28,7 +28,7 @@ PixelInputType VShader(VertexInputType input)
 	input.position.x *= ratio;
 	input.position.xy += myPosition;
 	output.position = input.position;
-	output.tex = myUV.xy + (input.tex * myUV.z);
+	output.tex = myUV.xy + (input.tex * myUV.zw);
 	output.color = myColor; 
 	output.textureMappingData = myRotationAndSize.w;
 	

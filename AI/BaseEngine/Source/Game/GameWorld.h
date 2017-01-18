@@ -1,17 +1,9 @@
 #pragma once
-#include <vector>
-#include <memory>
 #include "Input\InputListener.h"
+#include "Actors\Actor.h"
 
 class BDSprite;
-
-namespace DX2D
-{
-	class CSprite;
-	class CSpriteBatch;
-	class CText;
-	class CCustomShape;
-} 
+class TeamBasedGameController;
 
 class CGameWorld
 {
@@ -21,9 +13,14 @@ public:
 
 	void Init();
 	void Update(float aTimeDelta); 
-private:
+	void Render() const;
 
-	//DX2D::CSprite* mySprite;
-	std::unique_ptr<BDSprite> mySprite;
-	InputListener myInputListener;
+private:
+	InputListener myInput;
+	
+	TeamBasedGameController * enemyController;
+
+	Actor myEnemyUnit;
+
+	Actor myActor;
 };

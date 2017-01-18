@@ -8,7 +8,7 @@
 #include "d3d/direct_3d.h"
 #include "texture/texture.h"
 
-using namespace DX2D;
+using namespace Tga2D;
 
 CRenderer::CRenderer()
 	: myDXEngine(&CEngine::GetInstance()->GetDirect3D())
@@ -27,7 +27,7 @@ void CRenderer::AddToRender( CRenderObject* aObject )
 
 }
 
-void DX2D::CRenderer::AddToRender(CTexturedQuad* aObject)
+void Tga2D::CRenderer::AddToRender(CTexturedQuad* aObject)
 {
 	myDXEngine->Draw(aObject);
 
@@ -44,7 +44,7 @@ void DX2D::CRenderer::AddToRender(CTexturedQuad* aObject)
 }
 
 #define RENDER_WARN_COUNT 20
-void DX2D::CRenderer::Update()
+void Tga2D::CRenderer::Update()
 {
 	if (CEngine::GetInstance()->IsDebugFeatureOn(eDebugFeature_OptimiceWarnings))
 	{

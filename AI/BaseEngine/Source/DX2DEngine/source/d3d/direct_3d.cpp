@@ -28,7 +28,7 @@
 #pragma comment (lib, "d3d11.lib")
 #pragma comment (lib, "D3DCompiler.lib")
 
-using namespace DX2D;
+using namespace Tga2D;
 
 const float SCREEN_DEPTH = 10.0f;
 const float SCREEN_NEAR = 0.5f;
@@ -48,7 +48,8 @@ CDirectEngine::CDirectEngine()
     myDevice( nullptr ),
     myDeviceContext( nullptr ),
     myBackbuffer( nullptr ),
-	mySampleState(nullptr)
+	mySampleStateLinear(nullptr),
+	mySampleStatePoint(nullptr)
 {
     myClearColor.myR = 0.5f;
     myClearColor.myG = 0.2f;
@@ -73,7 +74,8 @@ CDirectEngine::~CDirectEngine( void )
     SAFE_RELEASE( myDepthStencilState );
     SAFE_RELEASE( myDepthStencilBuffer );
     SAFE_RELEASE( myAlphaEnableBlendingState );
-    SAFE_RELEASE( mySampleState );
+    SAFE_RELEASE( mySampleStateLinear );
+	SAFE_RELEASE( mySampleStatePoint );
 
     delete myLineDrawer;
     delete myTexturedQuadBatchDrawer;
@@ -97,7 +99,7 @@ bool CDirectEngine::CollectAdapters(Vector2<unsigned int> aWindowSize, Vector2<i
 
     DXGI_MODE_DESC* displayModeList = nullptr;
 	unsigned int numModes = 0;
-	unsigned int i = 0;
+	//unsigned int i = 0;
 	unsigned int denominator = 0;
     unsigned int numerator = 0;
     result = CreateDXGIFactory( __uuidof( IDXGIFactory ), (void**)&factory );
@@ -179,7 +181,7 @@ bool CDirectEngine::CollectAdapters(Vector2<unsigned int> aWindowSize, Vector2<i
 				{
 					// Now go through all the display modes and find the one that matches the screen width and height.
 					// When a match is found store the numerator and denominator of the refresh rate for that monitor.
-					for (i = 0; i < numModes; i++)
+					for (unsigned int i = 0; i < numModes; i++)
 					{
 						if (displayModeList[i].Width == (unsigned int)aWindowSize.x)
 						{
@@ -241,7 +243,10 @@ bool CDirectEngine::Init(const CEngine& aEngine, Vector2<unsigned int> aWindowSi
 
     INFO_PRINT( "%s", "Starting engine" );
 
+
     myWindowSize = aWindowSize;
+
+
     DXGI_SWAP_CHAIN_DESC swapChainDescription;
     ZeroMemory( &swapChainDescription, sizeof( DXGI_SWAP_CHAIN_DESC ) );
     // fill the swap chain description struct
@@ -253,7 +258,7 @@ bool CDirectEngine::Init(const CEngine& aEngine, Vector2<unsigned int> aWindowSi
     Vector2<int> numDenum;
 
 	IDXGIAdapter* adapter = nullptr;
-	if (CollectAdapters(aWindowSize, numDenum, adapter))
+	if (CollectAdapters(myWindowSize, numDenum, adapter))
     {
         INFO_PRINT( "%s%s", "VSYNC Compatible: Yes, Enabled: ", myEnableVSync ? "Yes" : "No" );
     }
@@ -271,6 +276,7 @@ bool CDirectEngine::Init(const CEngine& aEngine, Vector2<unsigned int> aWindowSi
     swapChainDescription.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
 
     UINT creationFlags = D3D11_CREATE_DEVICE_BGRA_SUPPORT;
+	D3D_FEATURE_LEVEL feat_level;
 #if defined(_DEBUG)
 #if defined(REPORT_DX_WARNIGNS)
 	creationFlags |= D3D11_CREATE_DEVICE_DEBUG;
@@ -278,7 +284,7 @@ bool CDirectEngine::Init(const CEngine& aEngine, Vector2<unsigned int> aWindowSi
 #endif
     // create a device, device context and swap chain using the information in the scd struct
     INFO_PRINT( "%s", "Creating device" );
-	D3D_FEATURE_LEVEL feat_level;
+	
 	result = D3D11CreateDeviceAndSwapChain(adapter,
 		D3D_DRIVER_TYPE_UNKNOWN,
         NULL,
@@ -295,9 +301,8 @@ bool CDirectEngine::Init(const CEngine& aEngine, Vector2<unsigned int> aWindowSi
 #if defined(_DEBUG)
 	if (FAILED(result))
 	{
-		D3D_FEATURE_LEVEL feat_level;
-		ERROR_AUTO_PRINT("%s", "Device could not create itself in debug mode, trying without debug layer... If you have Win10, try this:  Settings panel -> System -> Apps & features -> Manage optional Features -> Add a feature -> Select ""Graphics Tools""");
-		UINT creationFlags = D3D11_CREATE_DEVICE_BGRA_SUPPORT;
+		ERROR_PRINT("%s", "Device could not create itself in debug mode, trying without debug layer... If you have Win10, try this:  Settings panel -> System -> Apps & features -> Manage optional Features -> Add a feature -> Select ""Graphics Tools""");
+		creationFlags = D3D11_CREATE_DEVICE_BGRA_SUPPORT;
 
 		INFO_PRINT("%s", "Creating device without debug layer");
 		result = D3D11CreateDeviceAndSwapChain(adapter,
@@ -317,13 +322,13 @@ bool CDirectEngine::Init(const CEngine& aEngine, Vector2<unsigned int> aWindowSi
 
 	if (!myDeviceContext)
 	{
-		ERROR_AUTO_PRINT("%s", "Device context error, you might not have a DX11 supported grahics card");
+		ERROR_PRINT("%s", "Device context error, you might not have a DX11 supported grahics card");
 		return false;
 	}
 
 	if (FAILED(result) || !mySwapchain || feat_level == D3D_FEATURE_LEVEL_10_0)
     {
-        ERROR_AUTO_PRINT( "%s", "Device swap error, you might not have a DX11 supported grahics card" );
+        ERROR_PRINT( "%s", "Device swap error, you might not have a DX11 supported grahics card" );
         return false;
     }
 
@@ -360,7 +365,7 @@ bool CDirectEngine::Init(const CEngine& aEngine, Vector2<unsigned int> aWindowSi
     INFO_PRINT( "%s", "Creating swapchain" );
     if( FAILED( result ) )
     {
-        ERROR_AUTO_PRINT( "%s", "Get buffer error" );
+        ERROR_PRINT( "%s", "Get buffer error" );
         return false;
     }
 
@@ -371,7 +376,7 @@ bool CDirectEngine::Init(const CEngine& aEngine, Vector2<unsigned int> aWindowSi
     INFO_PRINT( "%s", "Creating RenderTargetView" );
     if( FAILED( result ) )
     {
-        ERROR_AUTO_PRINT( "%s", "Render target view error" );
+        ERROR_PRINT( "%s", "Render target view error" );
         return false;
     }
     backBuffer->Release();
@@ -401,7 +406,7 @@ bool CDirectEngine::Init(const CEngine& aEngine, Vector2<unsigned int> aWindowSi
     INFO_PRINT( "%s", "Creating Texture2D" );
     if( FAILED( result ) )
     {
-        ERROR_AUTO_PRINT( "%s", "Create tex2d error" );
+        ERROR_PRINT( "%s", "Create tex2d error" );
         return false;
     }
 
@@ -431,7 +436,7 @@ bool CDirectEngine::Init(const CEngine& aEngine, Vector2<unsigned int> aWindowSi
     INFO_PRINT( "%s", "Creating DepthStencilState" );
     if( FAILED( result ) )
     {
-        ERROR_AUTO_PRINT( "%s", "Depth stencil error" );
+        ERROR_PRINT( "%s", "Depth stencil error" );
         return false;
     }
 
@@ -451,7 +456,7 @@ bool CDirectEngine::Init(const CEngine& aEngine, Vector2<unsigned int> aWindowSi
     INFO_PRINT( "%s", "Creating DepthStencilView" );
     if( FAILED( result ) )
     {
-        ERROR_AUTO_PRINT( "%s", "depth stencil view error" );
+        ERROR_PRINT( "%s", "depth stencil view error" );
         return false;
     }
 
@@ -476,7 +481,7 @@ bool CDirectEngine::Init(const CEngine& aEngine, Vector2<unsigned int> aWindowSi
     INFO_PRINT( "%s", "Creating RasterizerState" );
     if( FAILED( result ) )
     {
-        ERROR_AUTO_PRINT( "%s", "Resterizer error" );
+        ERROR_PRINT( "%s", "Resterizer error" );
         return false;
     }
 
@@ -531,6 +536,9 @@ bool CDirectEngine::Init(const CEngine& aEngine, Vector2<unsigned int> aWindowSi
     myTexturedQuadBatchDrawer = new CTexturedQuadBatchDrawer( this );
     myTexturedQuadBatchDrawer->Init();
 
+	// First state
+	myDeviceContext->IASetPrimitiveTopology(D3D10_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+
     INFO_PRINT( "%s", "All done, starting..." );
     return true;
 }
@@ -555,7 +563,7 @@ bool CDirectEngine::CompileShader( const char* aShader, const char* aMainFunctio
 {
     if( !File_exist( aShader ) )
     {
-        ERROR_AUTO_PRINT( "%s %s", "Shader not found! ", aShader );
+        ERROR_PRINT( "%s %s", "Shader not found! ", aShader );
         return false;
     }
     HRESULT result;
@@ -566,17 +574,17 @@ bool CDirectEngine::CompileShader( const char* aShader, const char* aMainFunctio
 	flags |= D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION | D3DCOMPILE_PREFER_FLOW_CONTROL;
 #endif
 
-	result = D3DCompileFromFile(DX2D::ConvertCharArrayToLPCWSTR(aShader).c_str(), 0, D3D_COMPILE_STANDARD_FILE_INCLUDE, aMainFunction, aTarget, flags, 0, &aCodeBlob, &errorMessage);
+	result = D3DCompileFromFile(Tga2D::ConvertCharArrayToLPCWSTR(aShader).c_str(), 0, D3D_COMPILE_STANDARD_FILE_INCLUDE, aMainFunction, aTarget, flags, 0, &aCodeBlob, &errorMessage);
     if( FAILED( result ) )
     {
-        ERROR_AUTO_PRINT( "%s %s", "Failed to compile shader: ", aShader );
+        ERROR_PRINT( "%s %s", "Failed to compile shader: ", aShader );
     }
     LPVOID voidError = NULL;
     if( errorMessage )
     {
         voidError = errorMessage->GetBufferPointer();
-        const char* errorMessage = static_cast<const char*>( voidError );
-        INFO_PRINT( "%s %s", "Shader compilation error: ", errorMessage );
+        const char* errorMessageChar = static_cast<const char*>( voidError );
+        INFO_PRINT( "%s %s", "Shader compilation error: ", errorMessageChar);
 	
         return false;
     }
@@ -594,12 +602,12 @@ bool CDirectEngine::File_exist( const char *fileName )
 bool CDirectEngine::CreateSampler()
 {
     D3D11_SAMPLER_DESC samplerDesc;
-    samplerDesc.Filter = D3D11_FILTER_MIN_MAG_MIP_POINT;
+    samplerDesc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
     samplerDesc.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
 	samplerDesc.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
 	samplerDesc.AddressW = D3D11_TEXTURE_ADDRESS_WRAP;
     samplerDesc.MipLODBias = 0.0f;
-    samplerDesc.MaxAnisotropy = 1;
+    samplerDesc.MaxAnisotropy = 16;
 	samplerDesc.ComparisonFunc = D3D11_COMPARISON_ALWAYS;
     samplerDesc.BorderColor[0] = 0;
     samplerDesc.BorderColor[1] = 0;
@@ -608,13 +616,33 @@ bool CDirectEngine::CreateSampler()
     samplerDesc.MinLOD = 0;
     samplerDesc.MaxLOD = D3D11_FLOAT32_MAX;
 
-    myDevice->CreateSamplerState( &samplerDesc, &mySampleState );
-    myDeviceContext->PSSetSamplers( 0, 1, &mySampleState );
+    myDevice->CreateSamplerState( &samplerDesc, &mySampleStateLinear );
+    myDeviceContext->PSSetSamplers( 0, 1, &mySampleStateLinear );
+
+
+	D3D11_SAMPLER_DESC samplerDescPoint;
+	samplerDescPoint.Filter = D3D11_FILTER_MIN_MAG_MIP_POINT;
+	samplerDescPoint.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
+	samplerDescPoint.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
+	samplerDescPoint.AddressW = D3D11_TEXTURE_ADDRESS_WRAP;
+	samplerDescPoint.MipLODBias = 0.0f;
+	samplerDescPoint.MaxAnisotropy = 16;
+	samplerDescPoint.ComparisonFunc = D3D11_COMPARISON_ALWAYS;
+	samplerDescPoint.BorderColor[0] = 0;
+	samplerDescPoint.BorderColor[1] = 0;
+	samplerDescPoint.BorderColor[2] = 0;
+	samplerDescPoint.BorderColor[3] = 0;
+	samplerDescPoint.MinLOD = 0;
+	samplerDescPoint.MaxLOD = D3D11_FLOAT32_MAX;
+
+	myDevice->CreateSamplerState(&samplerDescPoint, &mySampleStatePoint);
+	//myDeviceContext->PSSetSamplers(0, 1, &mySampleStateLinear);
+	mySampler = ESamplerType_Linear;
 
     return true;
 }
 
-void DX2D::CDirectEngine::PostRenderFrame()
+void Tga2D::CDirectEngine::PostRenderFrame()
 {
     float color[4];
     color[0] = myClearColor.myR;
@@ -630,22 +658,22 @@ void CDirectEngine::RenderFrame()
 {
     if( myEnableVSync )
     {
-        mySwapchain->Present( 1, 0 );
+		mySwapchain->Present(1, 0);
     }
     else
     {
-        mySwapchain->Present( 0, 0 );
+		mySwapchain->Present(0, 0);
     }
 
     myRenderedCount = 0;
 }
 
-void DX2D::CDirectEngine::SetClearColor( CColor aColor )
+void Tga2D::CDirectEngine::SetClearColor( CColor aColor )
 {
     myClearColor = aColor;
 }
 
-void DX2D::CDirectEngine::SetWorldMatrixPosition( Vector2f aCorrectedPosition, Vector2f aPosition )
+void Tga2D::CDirectEngine::SetWorldMatrixPosition( Vector2f aCorrectedPosition, Vector2f aPosition )
 {
     myCorrectedWorldWatrix.myPos4.x = aPosition.x;
     myCorrectedWorldWatrix.myPos4.y = aPosition.y;
@@ -653,47 +681,47 @@ void DX2D::CDirectEngine::SetWorldMatrixPosition( Vector2f aCorrectedPosition, V
     myWorldWatrix.myPos4.y = aCorrectedPosition.y;
 }
 
-void DX2D::CDirectEngine::SetWorldMatrixZoom( float aZoom )
+void Tga2D::CDirectEngine::SetWorldMatrixZoom( float aZoom )
 {
     myWorldWatrix.myPos4.z = aZoom;
 }
 
-void DX2D::CDirectEngine::Draw( CRenderObject* aObject )
+void Tga2D::CDirectEngine::Draw( CRenderObject* aObject )
 {
     aObject->Draw( this );
 }
 
-void DX2D::CDirectEngine::DoDraw( CRenderObjectSprite* aObject )
+void Tga2D::CDirectEngine::DoDraw( CRenderObjectSprite* aObject )
 {
     myTexturedQuadDrawer->Draw( aObject );
     myRenderedCount++;
 }
 
-void DX2D::CDirectEngine::DoDraw(CLineMultiPrimitive* aObject)
+void Tga2D::CDirectEngine::DoDraw(CLineMultiPrimitive* aObject)
 {
 	myLineDrawer->Draw(aObject);
 	myRenderedCount++;
 }
 
-void DX2D::CDirectEngine::DoDraw(CRenderObjectCustom* aCustomObject)
+void Tga2D::CDirectEngine::DoDraw(CRenderObjectCustom* aCustomObject)
 {
     myCustomShapeDrawer->Draw( aCustomObject );
     myRenderedCount++;
 }
 
-void  DX2D::CDirectEngine::DoDraw( CRenderObjectLine* aObject )
+void  Tga2D::CDirectEngine::DoDraw( CRenderObjectLine* aObject )
 {
     myLineDrawer->Draw( aObject );
 	myRenderedCount++;
 }
 
-void DX2D::CDirectEngine::DoDraw( CTexturedQuadBatch* aBatch )
+void Tga2D::CDirectEngine::DoDraw( CTexturedQuadBatch* aBatch )
 {
     myTexturedQuadBatchDrawer->Draw( aBatch );
 	myRenderedCount++;
 }
 
-void DX2D::CDirectEngine::SetDebugObjectName( _In_ ID3D11DeviceChild* resource, _In_z_ std::string aName )
+void Tga2D::CDirectEngine::SetDebugObjectName( _In_ ID3D11DeviceChild* resource, _In_z_ std::string aName )
 {
 #if defined(_DEBUG)
     resource->SetPrivateData( WKPDID_D3DDebugObjectName, static_cast<UINT>( aName.size() ), aName.c_str() );
@@ -703,7 +731,7 @@ void DX2D::CDirectEngine::SetDebugObjectName( _In_ ID3D11DeviceChild* resource, 
 #endif
 }
 
-void DX2D::CDirectEngine::SetResolution( DX2D::Vector2<unsigned int> aResolution )
+void Tga2D::CDirectEngine::SetResolution( Tga2D::Vector2<unsigned int> aResolution )
 {
     myWindowSize = aResolution;
 
@@ -712,23 +740,32 @@ void DX2D::CDirectEngine::SetResolution( DX2D::Vector2<unsigned int> aResolution
 
     myDeviceContext->OMSetRenderTargets( 0, 0, 0 );
     myBackbuffer->Release();
-    HRESULT hr;
 	if (!mySwapchain)
 	{
 		return;
 	}
-    hr = mySwapchain->ResizeBuffers( 0, 0, 0, DXGI_FORMAT_UNKNOWN, 0 );
+	if (mySwapchain->ResizeBuffers(0, 0, 0, DXGI_FORMAT_UNKNOWN, 0) != S_OK)
+	{
+		ERROR_PRINT("%s", "Could not resize buffers!");
+		return;
+	}
 
 	ID3D11Texture2D* pBuffer = nullptr;
-    hr = mySwapchain->GetBuffer( 0, __uuidof( ID3D11Texture2D ),
-        (void**)&pBuffer );
+	if (mySwapchain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBuffer) != S_OK)
+	{
+		ERROR_PRINT("%s", "Could not resize buffers!");
+		return;
+	}
 
 	if (!pBuffer)
 	{
 		return;
 	}
-    hr = myDevice->CreateRenderTargetView( pBuffer, NULL,
-        &myBackbuffer );
+	if (myDevice->CreateRenderTargetView(pBuffer, NULL, &myBackbuffer) != S_OK)
+	{
+		ERROR_PRINT("%s", "Could not resize buffers!");
+		return;
+	}
 
     pBuffer->Release();
 
@@ -737,18 +774,36 @@ void DX2D::CDirectEngine::SetResolution( DX2D::Vector2<unsigned int> aResolution
 	SetViewPort(0, 0, (float)myWindowSize.x, (float)myWindowSize.y);
 }
 
-void DX2D::CDirectEngine::SetFullScreen(bool aFullScreen)
+void Tga2D::CDirectEngine::SetFullScreen(bool aFullScreen)
 {
 	mySwapchain->SetFullscreenState(aFullScreen, nullptr);
 }
 
-int DX2D::CDirectEngine::GetObjectRenderCount()
+int Tga2D::CDirectEngine::GetObjectRenderCount()
 {
     return myRenderedCount;
 }
 
 
-void DX2D::CDirectEngine::Clear( const CColor &aClearColor )
+void Tga2D::CDirectEngine::SetSampler(ESamplerType aType)
+{
+	if (aType == ESamplerType_Linear)
+	{
+		myDeviceContext->PSSetSamplers(0, 1, &mySampleStateLinear);
+	}
+	else if (aType == ESamplerType_Point)
+	{
+		myDeviceContext->PSSetSamplers(0, 1, &mySampleStatePoint);
+	}
+	mySampler = aType;
+}
+
+ESamplerType Tga2D::CDirectEngine::GetSamplerType() const
+{
+	return mySampler;
+}
+
+void Tga2D::CDirectEngine::Clear(const CColor &aClearColor)
 {
     myDeviceContext->ClearRenderTargetView( myBackbuffer, reinterpret_cast<const float *>( &aClearColor ) );
     myDeviceContext->ClearDepthStencilView( myDepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0 );

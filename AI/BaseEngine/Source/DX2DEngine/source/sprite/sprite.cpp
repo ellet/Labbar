@@ -3,9 +3,10 @@
 #include "sprite/sprite.h"
 #include "sprite/textured_quad.h"
 #include "texture/texture_manager.h"
+#include "shaders/customshader.h"
 
-using namespace DX2D;
-DX2D::CSprite::CSprite(const char* aTexturePath)
+using namespace Tga2D;
+Tga2D::CSprite::CSprite(const char* aTexturePath)
 	:myQuad(nullptr)
 	,myHasChangedSize(false)
 	,myShouldRender(true)
@@ -16,7 +17,19 @@ DX2D::CSprite::CSprite(const char* aTexturePath)
 }
 
 
-DX2D::CSprite::~CSprite(void)
+
+Tga2D::CSprite::CSprite()
+	:myQuad(nullptr)
+	, myHasChangedSize(false)
+	, myShouldRender(true)
+	, myIsPartOfbatch(false)
+	, myShouldRenderBatched(false)
+{
+	InternalInit(nullptr);
+}
+
+
+Tga2D::CSprite::~CSprite(void)
 {
 	delete myQuad;
 }
@@ -27,7 +40,7 @@ CSprite::CSprite(const CSprite& aCSprite)
 	*this = aCSprite;
 }
 
-CSprite& DX2D::CSprite::operator=(const CSprite& aCSprite)
+CSprite& Tga2D::CSprite::operator=(const CSprite& aCSprite)
 {
 	myHasChangedSize = aCSprite.myHasChangedSize;
 	myShouldRender = aCSprite.myShouldRender;
@@ -45,14 +58,19 @@ CSprite& DX2D::CSprite::operator=(const CSprite& aCSprite)
 }
 
 
-void DX2D::CSprite::InternalInit(const char* aTexturePath)
+void Tga2D::CSprite::InternalInit(const char* aTexturePath)
 {
 	myQuad = new CTexturedQuad();
 	myQuad->Init(aTexturePath);
 }
 
 
-void DX2D::CSprite::Render()
+void Tga2D::CSprite::Init(const char* aTexturePath)
+{
+	InternalInit(aTexturePath);
+}
+
+void Tga2D::CSprite::Render()
 {
 	if (!myShouldRender)
 	{
@@ -65,131 +83,139 @@ void DX2D::CSprite::Render()
 	myShouldRenderBatched = true;
 }
 
-void DX2D::CSprite::SetPosition(const Vector2f& aPosition)
+void Tga2D::CSprite::SetPosition(const Vector2f& aPosition)
 {
 	myQuad->myPosition = aPosition;
 }
 
-const Vector2f& DX2D::CSprite::GetPosition() const
+const Vector2f& Tga2D::CSprite::GetPosition() const
 {
 	return myQuad->myPosition;
 }
 
-void DX2D::CSprite::SetPivot(const Vector2f& aPivot)
+void Tga2D::CSprite::SetPivot(const Vector2f& aPivot)
 {
 	myQuad->myPivot = aPivot;
 }
 
-const Vector2f& DX2D::CSprite::GetPivot() const
+const Vector2f& Tga2D::CSprite::GetPivot() const
 {
 	return myQuad->myPivot;
 }
 
 
-void DX2D::CSprite::SetTextureRect(float aStartX, float aStartY, float aEndX, float aEndY)
+void Tga2D::CSprite::SetTextureRect(float aStartX, float aStartY, float aEndX, float aEndY)
 {
 	myQuad->SetTextureRect(aStartX, aStartY, aEndX, aEndY);
 }
 
-STextureRext* DX2D::CSprite::GetTextureRect()
+STextureRext* Tga2D::CSprite::GetTextureRect()
 {
 	return &myQuad->GetTextureRect();
 }
 
-bool DX2D::CSprite::HasSameTextureAs(CSprite* aSprite) const
+bool Tga2D::CSprite::HasSameTextureAs(CSprite* aSprite) const
 {
 	return myQuad->myTexture == aSprite->myQuad->myTexture;
 }
 
-const DX2D::Vector2f& DX2D::CSprite::GetUVOffset() const
+const Tga2D::Vector2f& Tga2D::CSprite::GetUVOffset() const
 {
 	return myQuad->myUV;
 }
 
-void DX2D::CSprite::SetUVOffset(const Vector2f& aUV)
+void Tga2D::CSprite::SetUVOffset(const Vector2f& aUV)
 {
 	myQuad->SetUV(aUV);
 }
 
 
 
-void DX2D::CSprite::SetColor(const CColor& aColor)
+void Tga2D::CSprite::SetColor(const CColor& aColor)
 {
 	myQuad->SetColor(aColor);
 }
 
-const CColor& DX2D::CSprite::GetColor() const
+const CColor& Tga2D::CSprite::GetColor() const
 {
 	return myQuad->GetColor();
 }
 
-CColor DX2D::CSprite::GetColor()
+CColor Tga2D::CSprite::GetColor()
 {
 	return myQuad->GetColor();
 }
 
 
-void DX2D::CSprite::SetRotation( const float aRotationInRadians )
+void Tga2D::CSprite::SetRotation( const float aRotationInRadians )
 {
 	myQuad->myRotation = aRotationInRadians;
 }
 
-float DX2D::CSprite::GetRotation() const
+float Tga2D::CSprite::GetRotation() const
 {
 	return myQuad->myRotation;
 }
 
-void DX2D::CSprite::SetSize(const Vector2f& aSize)
+void Tga2D::CSprite::SetSize(const Vector2f& aSize)
 {
 	myQuad->SetSize(aSize);
 	myHasChangedSize = true;
 }
 
-Vector2f DX2D::CSprite::GetSize() const
+Vector2f Tga2D::CSprite::GetSize() const
 {
 	return myQuad->mySize;
 }
 
-Vector2<unsigned int> DX2D::CSprite::GetImageSize() const
+Vector2<unsigned int> Tga2D::CSprite::GetImageSize() const
 {
 	return myQuad->myImageSize;
 }
 
-void DX2D::CSprite::SetUVScale(Vector2f aScale)
+void Tga2D::CSprite::SetUVScale(Vector2f aScale)
 {
 	myQuad->myUVScale = aScale;
 }
 
-const Vector2f& DX2D::CSprite::GetUVScale() const
+const Vector2f& Tga2D::CSprite::GetUVScale() const
 {
 	return myQuad->myUVScale;
 }
 
-bool DX2D::CSprite::HasValidTexture() const
+bool Tga2D::CSprite::HasValidTexture() const
 {
 	return !myQuad->myTexture->myIsFailedTexture;
 }
 
-void DX2D::CSprite::SetMap(const EShaderMap aMapType, const char* aPath)
+void Tga2D::CSprite::SetMap(const EShaderMap aMapType, const char* aPath)
 {
 	myQuad->SetMap(aMapType, aPath);
 }
 
-void DX2D::CSprite::ReleaseAttachedTexture()
+void Tga2D::CSprite::ReleaseAttachedTexture()
 {
 	CEngine::GetInstance()->GetTextureManager().ReleaseTexture(myQuad->myTexture);
 }
 
-DX2D::CColor DX2D::CSprite::GetPixelColor(unsigned short aX, unsigned short aY)
+Tga2D::CColor Tga2D::CSprite::GetPixelColor(unsigned short aX, unsigned short aY)
 {
 	return myQuad->myTexture->GetPixelColor(aX, aY);
 }
 
-const std::string DX2D::CSprite::GetImagePath() const
+const char* Tga2D::CSprite::GetImagePath() const
 {
 	if (myQuad && myQuad->myTexture)
 	{
-		return myQuad->myTexture->myPath;
+		return myQuad->myTexture->myPath.c_str();
 	}
-	return "";
+	return nullptr;
+}
+
+void Tga2D::CSprite::SetCustomShader(CCustomShader* aShader)
+{
+	if (myQuad)
+	{
+		myQuad->myCustomShader = aShader;
+	}
 }

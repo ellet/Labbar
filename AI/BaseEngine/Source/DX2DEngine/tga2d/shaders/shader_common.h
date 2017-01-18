@@ -1,7 +1,7 @@
 #pragma once
 
 #define SPRITE_BATCH_COUNT 1000
-namespace DX2D
+namespace Tga2D
 {
 	enum EConstantBufferSlot
 	{
@@ -10,11 +10,11 @@ namespace DX2D
 		EConstantBufferSlot_Light = 2,
 		EConstantBufferSlot_Object = 3,
 		EConstantBufferSlot_ObjectCustom = 4,
+		EConstantBufferSlot_MAX,
 	};
 	enum SEffect
 	{
 		SEffect_None,
-		SEffect_SignedDistanceField
 	};
 	struct ObjectBufferInstanceType
 	{

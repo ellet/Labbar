@@ -4,7 +4,7 @@
 #include "d3d/direct_3d.h"
 
 
-using namespace DX2D;
+using namespace Tga2D;
 
 
 CRenderObject::CRenderObject(void)
@@ -42,12 +42,12 @@ void CRenderObjectLine::Draw(CDirectEngine* aRenderer)
 	aRenderer->DoDraw(this);
 }
 
-DX2D::CRenderObjectCustom::CRenderObjectCustom()
+Tga2D::CRenderObjectCustom::CRenderObjectCustom()
 {
 
 }
 
-void DX2D::CRenderObjectCustom::Draw(CDirectEngine* aRenderer)
+void Tga2D::CRenderObjectCustom::Draw(CDirectEngine* aRenderer)
 {
 	aRenderer->DoDraw(this);
 }

@@ -3,15 +3,15 @@
 #include "tga2d/render/render_object.h"
 
 
-namespace DX2D
+namespace Tga2D
 {
 	class CEngine;
 	class CDirectEngine;
-	class LinePrimitive : public CRenderObjectLine
+	class CLinePrimitive : public CRenderObjectLine
 	{
 	public:
-		LinePrimitive(void);
-		~LinePrimitive(void);
+		CLinePrimitive(void);
+		~CLinePrimitive(void);
 		void Render();
 		void SetFrom(float aX, float aY)
 		{

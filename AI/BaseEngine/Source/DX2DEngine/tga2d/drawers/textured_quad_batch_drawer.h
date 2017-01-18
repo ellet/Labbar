@@ -4,13 +4,12 @@
 #include "render/render_object.h"
 #include "shaders/shader_common.h"
 
-namespace DX2D
+namespace Tga2D
 {
 
 	class CShaderNormalInstanced;
 	class CTexturedQuadBatch;
 	class CSprite;
-	class CShaderDistanceFieldInstanced;
 	class CTexturedQuadBatchDrawer
 	{
 	public:
@@ -33,7 +32,6 @@ namespace DX2D
 
 
 		CShaderNormalInstanced* myNormalShaderInstanced;
-		CShaderDistanceFieldInstanced* myDistanceFieldShaderInstanced;
 		bool myIsLoaded;
 	};
 }

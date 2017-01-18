@@ -1,7 +1,7 @@
 #pragma once
 #include "tga2d/render/render_object.h"
 
-namespace DX2D
+namespace Tga2D
 {
 	class CTexture;
 	class CCustomShape : public CRenderObjectCustom
@@ -12,7 +12,7 @@ namespace DX2D
 
 		// Do this first, must be %3 (3, 6, 9, 12 etc..)
 		void Reset();
-		int AddPoint(DX2D::Vector2f aPoint, CColor aColor, DX2D::Vector2f aUV = DX2D::Vector2f(0, 0));
+		int AddPoint(Tga2D::Vector2f aPoint, CColor aColor, Tga2D::Vector2f aUV = Tga2D::Vector2f(0, 0));
 		void SetColorOnPoint(int aIndex, CColor aColor);
 		void RemovePoints(int aIndex);
 

@@ -6,7 +6,7 @@
 #pragma warning(push)
 #pragma warning(disable: 4100) //Unreferenced formal parameter
 
-namespace DX2D
+namespace Tga2D
 {
 	static wchar_t *CharArrayToLPCWSTR(const char* charArray)
 	{

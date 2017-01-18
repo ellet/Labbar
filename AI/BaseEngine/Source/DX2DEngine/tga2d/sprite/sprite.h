@@ -5,7 +5,7 @@ Use this class to create and show a sprite
 #pragma once
 #include "tga2d/render/render_common.h"
 #include "tga2d/math/Color.h"
-namespace DX2D
+namespace Tga2D
 {
 	class CTexturedQuad;
 	class CTexturedQuadBatch;
@@ -16,14 +16,16 @@ namespace DX2D
 		friend class CShaderNormalInstanced;
 		friend class CShaderDistanceFieldInstanced;
 		friend class CSpriteBatch;
-		friend class CVideoInstance;
+		friend class CVideo;
 	public:
-		CSprite(const char* aTexturePath = nullptr);
+		CSprite();
+		CSprite(const char* aTexturePath);
 		CSprite(const CSprite& aCSprite);
 		~CSprite();
 
 		CSprite& operator=(const CSprite& aCSprite);
 		
+		void Init(const char* aTexturePath);
 		void Render();
 		/* Set a normalized position on the sprite*/
 		void SetPosition(const Vector2f& aPosition);
@@ -40,14 +42,18 @@ namespace DX2D
 		const CColor& GetColor() const;
 		CColor GetColor();
 
+		/* Full screen is equal to:  X = WindowRatioX (get from CEngine::GetInstance()->GetWindowRatio()), Y = 1.0f */
 		void SetSize(const Vector2f& aSize);
 		virtual Vector2f GetSize() const;
+
+		/* Image size in pixels */
 		virtual Vector2<unsigned int> GetImageSize() const;
 
 		void SetUVScale(Vector2f aScale);
 		const Vector2f& GetUVScale() const;
 
 		bool HasValidTexture() const;
+
 		/*
 		aX = The texture region top-left corner X-coordinate.
 		aY = The texture region top-left corner Y-coordinate.
@@ -78,7 +84,9 @@ namespace DX2D
 		/* Initially expensive! Once this has been called once, the data is stored and will be cheap. But run this once in your INIT function, then it will be fine*/
 		CColor GetPixelColor(unsigned short aX, unsigned short aY);
 
-		const std::string GetImagePath() const;
+		const char* GetImagePath() const;
+
+		void SetCustomShader(class CCustomShader* aShader);
 		
 	private:
 		

@@ -3,7 +3,7 @@
 #include "engine.h"
 #include "light/light_manager.h"
 
-using namespace DX2D;
+using namespace Tga2D;
 
 CLight::CLight()
 	:myIntensity(100.0f)
@@ -19,7 +19,7 @@ CLight::~CLight()
 {
 }
 
-void DX2D::CLight::Render()
+void Tga2D::CLight::Render()
 {
 	CEngine::GetInstance()->GetLightManager().AddLightToRender(this);
 }

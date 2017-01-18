@@ -9,7 +9,7 @@
 #include "primitives/custom_shape.h"
 #include "texture/texture.h"
 
-using namespace DX2D;
+using namespace Tga2D;
 
 CCustomShapeDrawer::CCustomShapeDrawer( CEngine* anEngine )
     :CShader( anEngine )
@@ -40,7 +40,7 @@ bool CCustomShapeDrawer::Init()
     result = myEngine.GetDevice()->CreateBuffer( &objectBufferDesc, NULL, &myObjectBuffer );
     if( FAILED( result ) )
     {
-        ERROR_AUTO_PRINT( "%s", "Object Buffer error" );
+        ERROR_PRINT( "%s", "Object Buffer error" );
         return false;
     }
 
@@ -65,7 +65,7 @@ void CCustomShapeDrawer::CreateBuffer()
     HRESULT hr = myEngine.GetDevice()->CreateBuffer( &vertexBufferDesc, nullptr, &myVertexBuffer );
     if( FAILED( hr ) )
     {
-        ERROR_AUTO_PRINT( "%s", "Buffer error" );
+        ERROR_PRINT( "%s", "Buffer error" );
         return;
     }
 }
@@ -112,7 +112,7 @@ bool CCustomShapeDrawer::CreateInputLayout( ID3D10Blob* aVS )
     HRESULT result = myEngine.GetDevice()->CreateInputLayout( polygonLayout, numElements, aVS->GetBufferPointer(), aVS->GetBufferSize(), &myLayout );
     if( FAILED( result ) )
     {
-        ERROR_AUTO_PRINT( "%s", "Layout error" );
+        ERROR_PRINT( "%s", "Layout error" );
         return false;
     }
     return true;
@@ -142,7 +142,7 @@ int CCustomShapeDrawer::SetShaderParameters( CRenderObjectCustom* aObject )
     float lightType = haveLights ? 1.0f : 0.0f;
 
     objectDataPtr->myRotationAndSize = Vector4f( 0, 1, 1, lightType );
-    objectDataPtr->myPosition = DX2D::Vector2f( 0, 0 );
+    objectDataPtr->myPosition = Tga2D::Vector2f( 0, 0 );
 
     myDirect3dEngine->GetContext()->Unmap( myObjectBuffer, 0 );
 
@@ -183,8 +183,8 @@ int CCustomShapeDrawer::UpdateVertexes( CRenderObjectCustom* aObject )
         }
 
 
-		DX2D::Vector2f offsetPos(DX2D::CEngine::GetInstance()->GetWindowRatio(), -1.0f);
-		Vector2f correctedPositionFrom = DX2D::Vector2f((point.myPosition.x * 2.0f) - 1.0f, -(point.myPosition.y * 2.0f) + 1.0f);
+		Tga2D::Vector2f offsetPos(Tga2D::CEngine::GetInstance()->GetWindowRatio(), -1.0f);
+		Vector2f correctedPositionFrom = Tga2D::Vector2f((point.myPosition.x * 2.0f) - 1.0f, -(point.myPosition.y * 2.0f) + 1.0f);
 
 
 /*
@@ -210,7 +210,7 @@ int CCustomShapeDrawer::UpdateVertexes( CRenderObjectCustom* aObject )
     return index;
 }
 
-void DX2D::CCustomShapeDrawer::Draw( CRenderObjectCustom* aObject )
+void Tga2D::CCustomShapeDrawer::Draw( CRenderObjectCustom* aObject )
 {
 	if (!Render(aObject))
 	{

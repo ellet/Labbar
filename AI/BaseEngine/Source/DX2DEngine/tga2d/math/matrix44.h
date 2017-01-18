@@ -2,7 +2,7 @@
 #include "Vector4.h"
 #include "common_math.h"
 
-namespace DX2D
+namespace Tga2D
 {
 	class Matrix44
 	{

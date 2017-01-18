@@ -70,14 +70,14 @@ void Go( void )
     const unsigned short windowHeight = 720;
 
     // Here the settings used when setting up the DX2D-engine are set.
-    DX2D::SEngineCreateParameters createParameters;
-    createParameters.myActivateDebugSystems = DX2D::eDebugFeature_Fps
-                                            | DX2D::eDebugFeature_Mem
-                                            | DX2D::eDebugFeature_Filewatcher
-                                            | DX2D::eDebugFeature_Cpu
-                                            | DX2D::eDebugFeature_Drawcalls;
+    Tga2D::SEngineCreateParameters createParameters;
+    createParameters.myActivateDebugSystems = Tga2D::eDebugFeature_Fps
+                                            | Tga2D::eDebugFeature_Mem
+                                            | Tga2D::eDebugFeature_Filewatcher
+                                            | Tga2D::eDebugFeature_Cpu
+                                            | Tga2D::eDebugFeature_Drawcalls
+											| Tga2D::eDebugFeature_FpsGraph;
 
-    createParameters.myActivateDebugSystems = true;
     createParameters.myWindowWidth          = static_cast<unsigned short>( windowWidth );
     createParameters.myWindowHeight         = static_cast<unsigned short>( windowHeight );
     createParameters.myRenderWidth          = static_cast<unsigned short>( windowWidth );
@@ -92,16 +92,21 @@ void Go( void )
 
     createParameters.myApplicationName = appname;
 
-    DX2D::CEngine::CreateInstance( createParameters );
-    if( !DX2D::CEngine::GetInstance()->Start() )
+    Tga2D::CEngine::CreateInstance( createParameters );
+    if( !Tga2D::CEngine::GetInstance()->Start() )
     {
-        ERROR_AUTO_PRINT( "Fatal error! Engine could not start!" );
+        ERROR_PRINT( "Fatal error! Engine could not start!" );
         system("pause");
-        exit( 9876 );
+        exit( 0 );
     }
 
-    DX2D::CEngine::GetInstance()->BeginFrame();
-    DX2D::CEngine::GetInstance()->EndFrame();
+	while (true)
+	{
+		if (!Tga2D::CEngine::GetInstance()->BeginFrame())
+		{
+			break;
+		}
+		Tga2D::CEngine::GetInstance()->EndFrame();
+	}
 
-    system( "pause" );
-} // Go
+}

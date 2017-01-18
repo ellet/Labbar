@@ -1,4 +1,6 @@
 #pragma once
+#include "Utilities\Math\Vector2.h"
+
 class BDSprite
 {
 public:
@@ -8,12 +10,13 @@ public:
 	~BDSprite();
 
 	void Init(const std::string & aFilePath);
-	void Render();
+	void Render() const;
 
 	void SetPosition(const SB::Vector2f & aPosition);
 
 private:
 	std::string myFilePath;
 	SB::Vector2f myPosition;
+	SB::Vector2f myOrigin;
 };
 

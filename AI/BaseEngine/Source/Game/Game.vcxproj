@@ -101,6 +101,8 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)DX2DEngine\;$(SolutionDir)Utilities\;$(ProjectDir)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -109,7 +111,7 @@
     <Lib>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)..\Lib\</AdditionalLibraryDirectories>
-      <TargetMachine>MachineX86</TargetMachine>
+      <TargetMachine>MachineX64</TargetMachine>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -147,6 +149,7 @@
       <FloatingPointModel>Fast</FloatingPointModel>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(SolutionDir)DX2DEngine\;$(SolutionDir)Utilities\;$(ProjectDir)</AdditionalIncludeDirectories>
+      <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -157,37 +160,48 @@
     <Lib>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)..\Lib\</AdditionalLibraryDirectories>
-      <TargetMachine>MachineX86</TargetMachine>
+      <TargetMachine>MachineX64</TargetMachine>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Actors\Actor.h" />
+    <ClInclude Include="Controllers\Behaviours\BaseBehaviour.h" />
+    <ClInclude Include="Controllers\BaseController.h" />
+    <ClInclude Include="Controllers\Behaviours\Steering.h" />
     <ClInclude Include="Conversions\Conversions.h" />
-    <ClInclude Include="Input\InputListener.h" />
-    <ClInclude Include="Rendering\BDRenderer.h" />
-    <ClInclude Include="Rendering\BDSprite.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameWorld.h" />
+    <ClInclude Include="Input\InputCallback.h" />
+    <ClInclude Include="Input\InputListener.h" />
+    <ClInclude Include="Input\KeyboardKey.h" />
+    <ClInclude Include="Controllers\PlayerController.h" />
+    <ClInclude Include="Rendering\BDRenderer.h" />
+    <ClInclude Include="Rendering\BDSprite.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Controllers\Behaviours\SeekBehaviour.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Controllers\TeamBasedGameController.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Input\InputListener.cpp" />
-    <ClCompile Include="Rendering\BDRenderer.cpp" />
-    <ClCompile Include="Rendering\BDSprite.cpp" />
+    <ClCompile Include="Actors\Actor.cpp" />
+    <ClCompile Include="Controllers\Behaviours\BaseBehaviour.cpp" />
+    <ClCompile Include="Controllers\BaseController.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameWorld.cpp" />
+    <ClCompile Include="Input\InputCallback.cpp" />
+    <ClCompile Include="Input\InputListener.cpp" />
+    <ClCompile Include="Controllers\PlayerController.cpp" />
+    <ClCompile Include="Rendering\BDRenderer.cpp" />
+    <ClCompile Include="Rendering\BDSprite.cpp" />
+    <ClCompile Include="Controllers\Behaviours\SeekBehaviour.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Utilities\Utilities.vcxproj">
-      <Project>{92d34133-88e5-4fe3-bfe2-96e8a9b316f3}</Project>
-    </ProjectReference>
+    <ClCompile Include="Controllers\TeamBasedGameController.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

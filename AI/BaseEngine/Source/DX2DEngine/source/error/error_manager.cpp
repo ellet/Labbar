@@ -1,8 +1,10 @@
 #include "stdafx.h"
 #include "error/error_manager.h"
+#include "tga2d/windows/windows_window.h"
+#include "tga2d/drawers/debug_drawer.h"
 #include <iostream>
 #include <cstdarg>
-using namespace DX2D;
+using namespace Tga2D;
 
 
 #define CONSOLE_TEXT_COLOR_RED 12
@@ -11,6 +13,7 @@ using namespace DX2D;
 #define CONSOLE_TEXT_COLOR_WHITE 15
 
 CErrorManager::CErrorManager()
+	:myErrorsReported(0)
 {
 }
 
@@ -20,7 +23,7 @@ CErrorManager::~CErrorManager(void)
 }
 
 
-void DX2D::CErrorManager::AddLogListener(callback_function_log aFunctionToCall, callback_function_error aFunctionToCallOnError)
+void Tga2D::CErrorManager::AddLogListener(callback_function_log aFunctionToCall, callback_function_error aFunctionToCallOnError)
 {
 	if (aFunctionToCall)
 	{
@@ -36,19 +39,20 @@ std::string string_vsprintf(const char* format, std::va_list args)
 {
 	va_list tmp_args; //unfortunately you cannot consume a va_list twice
 	va_copy(tmp_args, args); //so we have to copy it
-	const int required_len = vsnprintf(nullptr, 0, format, tmp_args) + 1;
+	const int required_len = _vscprintf(format, tmp_args) + 1;
 	va_end(tmp_args);
 
-	std::string buf(required_len, '\0');
-	if (std::vsnprintf(&buf[0], buf.size(), format, args) < 0)
+	char buff[256];
+	memset(buff, 0, required_len);
+	if (vsnprintf_s(buff, required_len, format, args) < 0)
 	{
 		return "string_vsprintf encoding error";
 	}
-	return buf;
+	return std::string(buff);
 }
 
 
-void DX2D::CErrorManager::ErrorPrint(const char* aFile, int aline, const char* aFormat, ...)
+void Tga2D::CErrorManager::ErrorPrint(const char* aFile, int aline, const char* aFormat, ...)
 {
 	SetConsoleColor(CONSOLE_TEXT_COLOR_RED);
 	std::string file = std::string(aFile);
@@ -71,10 +75,13 @@ void DX2D::CErrorManager::ErrorPrint(const char* aFile, int aline, const char* a
 	va_end(argptr);
 	std::cout << std::endl;
 	SetConsoleColor(CONSOLE_TEXT_COLOR_WHITE);
+	myErrorsReported++;
+
+	CEngine::GetInstance()->GetDebugDrawer().ShowErrorImage();
 }
 
 
-void DX2D::CErrorManager::InfoPrint( const char* aFormat, ... )
+void Tga2D::CErrorManager::InfoPrint( const char* aFormat, ... )
 {
 	SetConsoleColor(CONSOLE_TEXT_COLOR_GREEN);
 	va_list argptr;
@@ -94,7 +101,7 @@ void DX2D::CErrorManager::InfoPrint( const char* aFormat, ... )
 
 
 
-void DX2D::CErrorManager::InfoTip(const char* aFormat, ...)
+void Tga2D::CErrorManager::InfoTip(const char* aFormat, ...)
 {
 	SetConsoleColor(CONSOLE_TEXT_COLOR_YELLOW);
 	va_list argptr;
@@ -112,7 +119,7 @@ void DX2D::CErrorManager::InfoTip(const char* aFormat, ...)
 	SetConsoleColor(CONSOLE_TEXT_COLOR_WHITE);
 }
 
-void DX2D::CErrorManager::SetConsoleColor(int aColor)
+void Tga2D::CErrorManager::SetConsoleColor(int aColor)
 {
 	HANDLE  hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);

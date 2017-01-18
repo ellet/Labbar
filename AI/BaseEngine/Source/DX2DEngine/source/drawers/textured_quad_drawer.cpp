@@ -7,10 +7,11 @@
 #include "sprite/sprite.h"
 #include "texture/texture.h"
 #include "shaders/shader_normal.h"
+#include "shaders/customshader.h"
 #include "engine.h"
 
 
-using namespace DX2D;
+using namespace Tga2D;
 
 CTexturedQuadDrawer::CTexturedQuadDrawer(CDirectEngine* anEngine)
 	:myEngine(anEngine)
@@ -40,7 +41,7 @@ void CTexturedQuadDrawer::Init()
 	result = myEngine->GetDevice()->CreateBuffer(&objectBufferDesc, NULL, &myObjectBuffer);
 	if(FAILED(result))
 	{
-		ERROR_AUTO_PRINT("%s", "Object Buffer error");
+		ERROR_PRINT("%s", "Object Buffer error");
 		return;
 	}
 	InitShaders();
@@ -69,20 +70,26 @@ void CTexturedQuadDrawer::CreateBuffer()
 	HRESULT hr = myEngine->GetDevice()->CreateBuffer(&vertexBufferDesc, &vertexData, &myVertexBuffer);
 	if (FAILED(hr))
 	{
-		ERROR_AUTO_PRINT("%s", "Buffer error");
+		ERROR_PRINT("%s", "Buffer error");
 		return;
 	}
 
 }
 
 
-void DX2D::CTexturedQuadDrawer::Draw(CRenderObjectSprite* aObject)
+void Tga2D::CTexturedQuadDrawer::Draw(CRenderObjectSprite* aObject)
 {
+	CTexturedQuad* quad = static_cast<CTexturedQuad*>(aObject);
+	if (quad->myCustomShader)
+	{
+		quad->myCustomShader->Render(aObject, myObjectBuffer, myVertexBuffer);
+		return;
+	}
 	myNormalShader->Render(aObject, myObjectBuffer, myVertexBuffer);
 }
 
 
-bool DX2D::CTexturedQuadDrawer::InitShaders()
+bool Tga2D::CTexturedQuadDrawer::InitShaders()
 {
 	myNormalShader = new CShaderNormal(CEngine::GetInstance());
 	myNormalShader->Init();

@@ -17,10 +17,19 @@
     <ClInclude Include="resource.h">
       <Filter>Precompiled</Filter>
     </ClInclude>
-    <ClInclude Include="Rendering\BDSprite.h" />
     <ClInclude Include="Rendering\BDRenderer.h" />
-    <ClInclude Include="Conversions\Conversions.h" />
+    <ClInclude Include="Rendering\BDSprite.h" />
     <ClInclude Include="Input\InputListener.h" />
+    <ClInclude Include="Conversions\Conversions.h" />
+    <ClInclude Include="Input\InputCallback.h" />
+    <ClInclude Include="Input\KeyboardKey.h" />
+    <ClInclude Include="Actors\Actor.h" />
+    <ClInclude Include="Controllers\BaseController.h" />
+    <ClInclude Include="Controllers\PlayerController.h" />
+    <ClInclude Include="Controllers\Behaviours\BaseBehaviour.h" />
+    <ClInclude Include="Controllers\Behaviours\Steering.h" />
+    <ClInclude Include="Controllers\TeamBasedGameController.h" />
+    <ClInclude Include="Controllers\Behaviours\SeekBehaviour.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -28,8 +37,15 @@
     </ClCompile>
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameWorld.cpp" />
-    <ClCompile Include="Rendering\BDSprite.cpp" />
     <ClCompile Include="Rendering\BDRenderer.cpp" />
+    <ClCompile Include="Rendering\BDSprite.cpp" />
     <ClCompile Include="Input\InputListener.cpp" />
+    <ClCompile Include="Input\InputCallback.cpp" />
+    <ClCompile Include="Actors\Actor.cpp" />
+    <ClCompile Include="Controllers\BaseController.cpp" />
+    <ClCompile Include="Controllers\PlayerController.cpp" />
+    <ClCompile Include="Controllers\Behaviours\BaseBehaviour.cpp" />
+    <ClCompile Include="Controllers\TeamBasedGameController.cpp" />
+    <ClCompile Include="Controllers\Behaviours\SeekBehaviour.cpp" />
   </ItemGroup>
 </Project>

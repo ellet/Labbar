@@ -45,7 +45,6 @@ PixelInputType VShader(VertexInputType input)
 	 // Update the position of the vertices based on the data for this particular instance.
     
 	input.position.xy *= input.instanceRotationAndSize.yz;
-	
 
 	float2x2 theRotation = ComputeParticleRotation(input.instanceRotationAndSize.x);
 	input.position.xy = mul(input.position.xy, theRotation);
@@ -59,7 +58,7 @@ PixelInputType VShader(VertexInputType input)
    
 	
 	float2 textureRect = GetUVRect(input.myUVRect, input.myVertexIndex.x);
-	output.tex = input.instanceUV.xy + (textureRect * input.instanceUV.z);
+	output.tex = input.instanceUV.xy + (textureRect * input.instanceUV.zw);
 	
 	output.color = input.instanceColor;	
 	output.textureMappingData = input.instanceRotationAndSize.w;

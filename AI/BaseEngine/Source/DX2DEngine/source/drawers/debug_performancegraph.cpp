@@ -13,7 +13,7 @@
 #include <psapi.h>
 
 
-using namespace DX2D;
+using namespace Tga2D;
 
 CPerformanceGraph::CPerformanceGraph(CDebugDrawer* aDrawer)
 	:myDrawer(aDrawer)
@@ -27,30 +27,30 @@ CPerformanceGraph::~CPerformanceGraph(void)
 	SAFE_DELETE(myBackGround);
 }
 
-void CPerformanceGraph::Init(DX2D::CColor& aBackgroundColor, DX2D::CColor& aLineColor, const std::string& aText)
+void CPerformanceGraph::Init(Tga2D::CColor& aBackgroundColor, Tga2D::CColor& aLineColor, const std::string& aText)
 {
 	myBackGround = new CCustomShape();
 	myLineColor = aLineColor;
 	const float sizeX = -0.4f;
 	const float sizeY = 0.11f;
-	const DX2D::Vector2f position(1, -0.01f);
+	const Tga2D::Vector2f position(1, -0.01f);
 
 
-	myBackGround->AddPoint(DX2D::Vector2f(position.x, position.y), aBackgroundColor);
-	myBackGround->AddPoint(DX2D::Vector2f(position.x + sizeX, position.y), aBackgroundColor);
-	myBackGround->AddPoint(DX2D::Vector2f(position.x + sizeX, position.y + sizeY), aBackgroundColor);
+	myBackGround->AddPoint(Tga2D::Vector2f(position.x, position.y), aBackgroundColor);
+	myBackGround->AddPoint(Tga2D::Vector2f(position.x + sizeX, position.y), aBackgroundColor);
+	myBackGround->AddPoint(Tga2D::Vector2f(position.x + sizeX, position.y + sizeY), aBackgroundColor);
 
-	myBackGround->AddPoint(DX2D::Vector2f(position.x, position.y), aBackgroundColor);
-	myBackGround->AddPoint(DX2D::Vector2f(position.x, position.y + sizeY), aBackgroundColor);
-	myBackGround->AddPoint(DX2D::Vector2f(position.x + sizeX, position.y + sizeY), aBackgroundColor);
+	myBackGround->AddPoint(Tga2D::Vector2f(position.x, position.y), aBackgroundColor);
+	myBackGround->AddPoint(Tga2D::Vector2f(position.x, position.y + sizeY), aBackgroundColor);
+	myBackGround->AddPoint(Tga2D::Vector2f(position.x + sizeX, position.y + sizeY), aBackgroundColor);
 	myBackGround->BuildShape();
 
 
-	myText = new DX2D::CText("Text/calibril.ttf_sdf");
+	myText = new Tga2D::CText("Text/arial.ttf");
 	myText->myText = "--";
-	myText->myPosition = DX2D::Vector2f(0.6f, 0.02f);
+	myText->myPosition = Tga2D::Vector2f(0.6f, 0.02f);
 	myText->myColor.Set(1, 1, 1, 1.0f);
-	myText->mySize = 0.4f;
+	myText->myScale = 0.4f;
 	myText->myText = aText;
 }
 
@@ -95,9 +95,9 @@ void CPerformanceGraph::Render()
 
 	float lastY = startY;
 
-	std::vector<DX2D::Vector2f> theTos;
-	std::vector<DX2D::Vector2f> theFrom;
-	std::vector<DX2D::CColor> theColors;
+	std::vector<Tga2D::Vector2f> theTos;
+	std::vector<Tga2D::Vector2f> theFrom;
+	std::vector<Tga2D::CColor> theColors;
 
 	for (unsigned int i = 0; i < myBuffer.size(); i++)
 	{
@@ -107,8 +107,8 @@ void CPerformanceGraph::Render()
 
 		float incrWithI = increaseX * ((float)i+1);
 
-		theTos.push_back(DX2D::Vector2f(startX + incrWithI, lastY));
-		theFrom.push_back(DX2D::Vector2f((startX + incrWithI) + increaseX, thisY));
+		theTos.push_back(Tga2D::Vector2f(startX + incrWithI, lastY));
+		theFrom.push_back(Tga2D::Vector2f((startX + incrWithI) + increaseX, thisY));
 		theColors.push_back(myLineColor);
 	
 		
@@ -118,7 +118,7 @@ void CPerformanceGraph::Render()
 	if (theTos.size() > 0)
 	{
 		
-		myDrawer->DrawLines(&theTos[0], &theFrom[0], &theColors[0], theTos.size());
+		myDrawer->DrawLines(&theTos[0], &theFrom[0], &theColors[0], static_cast<int>(theTos.size()));
 	}
 	
 	myText->Render();

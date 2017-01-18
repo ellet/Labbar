@@ -29,7 +29,7 @@ void BDRenderer::AddSprite(BDSprite & aSpriteToRender)
 {
 	if (GetInstance().mySprites.find(aSpriteToRender.myFilePath) == GetInstance().mySprites.end())
 	{
-		GetInstance().mySprites[aSpriteToRender.myFilePath] = new DX2D::CSprite(aSpriteToRender.myFilePath.c_str());
+		GetInstance().mySprites[aSpriteToRender.myFilePath] = new Tga2D::CSprite(aSpriteToRender.myFilePath.c_str());
 	}
 }
 
@@ -37,12 +37,13 @@ void BDRenderer::RenderSprite(const BDSprite & aSpriteToRender)
 {
 	if (GetInstance().mySprites.find(aSpriteToRender.myFilePath) != GetInstance().mySprites.end())
 	{
-		DX2D::CSprite & sprite = *GetInstance().mySprites[aSpriteToRender.myFilePath];
+		Tga2D::CSprite & sprite = *GetInstance().mySprites[aSpriteToRender.myFilePath];
 
-		SB::Vector2f windowSize = To(DX2D::CEngine::GetInstance()->GetWindowSize());
+		SB::Vector2f windowSize = To(Tga2D::CEngine::GetInstance()->GetWindowSize());
 
 		SB::Vector2f normPosition = aSpriteToRender.myPosition / windowSize;
 
+		sprite.SetPivot(To(aSpriteToRender.myOrigin));
 		sprite.SetPosition(To(normPosition));
 		sprite.Render();
 	}

@@ -2,7 +2,7 @@
 #include "filewatcher/file_watcher.h"
 #include <fstream>
 
-using namespace DX2D;
+using namespace Tga2D;
 
 CFileWatcher::CFileWatcher()
 	: myThread(nullptr)

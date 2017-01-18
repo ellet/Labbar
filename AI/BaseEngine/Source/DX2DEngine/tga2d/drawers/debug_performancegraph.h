@@ -2,10 +2,10 @@
 #include <vector>
 
 #define DEBUG_PERFGRAPH_SAMPLES 500
-namespace DX2D
+namespace Tga2D
 {
 	class CText;
-	class LinePrimitive;
+	class CLinePrimitive;
 	class CSprite;
 	class CCustomShape;
 	class CDebugDrawer;
@@ -14,7 +14,7 @@ namespace DX2D
 	public:
 		CPerformanceGraph(CDebugDrawer* aDrawer);
 		~CPerformanceGraph(void);
-		void Init(DX2D::CColor& aBackgroundColor, DX2D::CColor& aLineColor, const std::string& aText);
+		void Init(Tga2D::CColor& aBackgroundColor, Tga2D::CColor& aLineColor, const std::string& aText);
 		void Render();
 
 		void FeedValue(int aValue);
@@ -22,7 +22,7 @@ namespace DX2D
 		CCustomShape* myBackGround;
 		std::vector<int> myBuffer;
 		CDebugDrawer* myDrawer;
-		DX2D::CColor myLineColor;
+		Tga2D::CColor myLineColor;
 		CText* myText;
 
 	};

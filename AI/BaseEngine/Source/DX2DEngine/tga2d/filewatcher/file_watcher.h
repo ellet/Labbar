@@ -4,7 +4,7 @@
 #include <thread>
 #include <mutex>
 
-namespace DX2D
+namespace Tga2D
 {
 	typedef std::function<void(const std::wstring&)> callback_function_file;
 	class CFileWatcher

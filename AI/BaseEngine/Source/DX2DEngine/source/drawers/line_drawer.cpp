@@ -6,7 +6,7 @@
 #include "engine.h"
 #include "primitives/line_primitive.h"
 
-using namespace DX2D;
+using namespace Tga2D;
 CLineDrawer::CLineDrawer(CEngine* anEngine)
 	:CShader(anEngine)
 	,myEngine(anEngine->GetDirect3D())
@@ -58,13 +58,13 @@ void CLineDrawer::CreateBuffer()
 	HRESULT hr = myEngine.GetDevice()->CreateBuffer(&vertexBufferDesc, nullptr, &myVertexBuffer);
 	if (FAILED(hr))
 	{
-		ERROR_AUTO_PRINT("%s", "Buffer error");
+		ERROR_PRINT("%s", "Buffer error");
 		return;
 	}
 
 }
 
-void DX2D::CLineDrawer::Draw(CLineMultiPrimitive* aObject)
+void Tga2D::CLineDrawer::Draw(CLineMultiPrimitive* aObject)
 {
 	if (!myVertexBuffer)
 	{
@@ -87,10 +87,10 @@ void DX2D::CLineDrawer::Draw(CLineMultiPrimitive* aObject)
 	for (unsigned int i = 0; i < aObject->myCount; i++)
 	{
 
-		Vector2f correctedPositionFrom = DX2D::Vector2f((aObject->myFromPosition[i].x * 2.0f) - 1.0f, -(aObject->myFromPosition[i].y * 2) + 1);
+		Vector2f correctedPositionFrom = Tga2D::Vector2f((aObject->myFromPosition[i].x * 2.0f) - 1.0f, -(aObject->myFromPosition[i].y * 2) + 1);
 		static const float ratioX = (float)CEngine::GetInstance()->GetWindowSize().x / (float)CEngine::GetInstance()->GetWindowSize().y;
 
-		Vector2f correctedPositionTo = DX2D::Vector2f((aObject->myToPosition[i].x * 2.0f) - 1.0f, -(aObject->myToPosition[i].y * 2) + 1);
+		Vector2f correctedPositionTo = Tga2D::Vector2f((aObject->myToPosition[i].x * 2.0f) - 1.0f, -(aObject->myToPosition[i].y * 2) + 1);
 
 		dataVertexPtr[theCount].X = correctedPositionFrom.x;
 		dataVertexPtr[theCount].Y = correctedPositionFrom.y;
@@ -123,7 +123,7 @@ void DX2D::CLineDrawer::Draw(CLineMultiPrimitive* aObject)
 	myEngine.GetContext()->Draw(aObject->myCount * 2, 0);
 }
 
-bool DX2D::CLineDrawer::InitShaders()
+bool Tga2D::CLineDrawer::InitShaders()
 {
 	CreateShaders("shaders/lineshader.fx", "shaders/lineshader.fx");
 
@@ -158,7 +158,7 @@ bool CLineDrawer::CreateInputLayout(ID3D10Blob* aVS)
 	HRESULT result = myEngine.GetDevice()->CreateInputLayout(polygonLayout, numElements, aVS->GetBufferPointer(), aVS->GetBufferSize(), &myLayout);
 	if (FAILED(result))
 	{
-		ERROR_AUTO_PRINT("%s", "Layout error");
+		ERROR_PRINT("%s", "Layout error");
 		return false;
 	}
 	return true;
@@ -185,11 +185,11 @@ void CLineDrawer::UpdateVertexes(CRenderObjectLine* aObject)
 		return;
 	}
 
-	Vector2f correctedPositionFrom = DX2D::Vector2f( (aObject->myFromPosition.x * 2.0f) -1.0f, -(aObject->myFromPosition.y *2) +1) ;
+	Vector2f correctedPositionFrom = Tga2D::Vector2f( (aObject->myFromPosition.x * 2.0f) -1.0f, -(aObject->myFromPosition.y *2) +1) ;
 	static const float ratioX = (float)CEngine::GetInstance()->GetWindowSize().x / (float)CEngine::GetInstance()->GetWindowSize().y;
 	//correctedPositionFrom.x *= ratioX;
 
-	Vector2f correctedPositionTo = DX2D::Vector2f((aObject->myToPosition.x * 2.0f) - 1.0f, -(aObject->myToPosition.y * 2) + 1);
+	Vector2f correctedPositionTo = Tga2D::Vector2f((aObject->myToPosition.x * 2.0f) - 1.0f, -(aObject->myToPosition.y * 2) + 1);
 	//correctedPositionTo.x *= ratioX;
 
 	//Vector2f correctedPosition = DX2D::Vector2f((aObject->myPosition.x * 2.0f) - 1.0f, (aObject->myPosition.y * 2.0f));

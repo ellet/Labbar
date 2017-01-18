@@ -4,11 +4,10 @@ This class handles the creation of the actual window
 
 #pragma once
 #include <windows.h>
-#include "tga2d\Input\KeyboardKey.h"
 
 class InputCallback;
 
-namespace DX2D
+namespace Tga2D
 {
 	struct SEngineCreateParameters;
 	class CWindowsWindow
@@ -16,18 +15,17 @@ namespace DX2D
 	public:
 		CWindowsWindow(void);
 		~CWindowsWindow(void);
-		bool Init(Vector2<unsigned int> aWindowSize, HWND*& aHwnd, SEngineCreateParameters* aSetting, HINSTANCE& aHInstanceToFill);
+		bool Init(Vector2<unsigned int> aWindowSize, HWND*& aHwnd, SEngineCreateParameters* aSetting, HINSTANCE& aHInstanceToFill, callback_function_wndProc aWndPrcCallback);
 		HWND GetWindowHandle() const {return myWindowHandle;}
-		void SetResolution(DX2D::Vector2<unsigned int> aResolution);
+		void SetResolution(Tga2D::Vector2<unsigned int> aResolution);
 		void Close();
 
-		static SB::KeyboardKey ConvertVirtualKey(const WPARAM& aVirtualKey);
-
-		static void SetInputCallback(InputCallback & aCallback);
 	private:
+		LRESULT LocWindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 		 static LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 		 HWND myWindowHandle;
 		 WNDCLASSEX myWindowClass;
-		 static InputCallback * ourInputCallback;
+		 callback_function_wndProc myWndProcCallback;
+
 	};
 }

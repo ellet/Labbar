@@ -1,10 +1,7 @@
 #include "stdafx.h"
 #include "GameWorld.h"
-
-#include <tga2d/Engine.h>
-#include <tga2d/light/light_manager.h>
-#include <tga2d/sprite/sprite.h>
-#include "Rendering/BDRenderer.h"
+#include "Controllers\PlayerController.h"
+#include "Controllers\TeamBasedGameController.h"
 
 CGameWorld::CGameWorld()
 {
@@ -19,21 +16,31 @@ CGameWorld::~CGameWorld()
 
 
 void CGameWorld::Init()
-{
-	myInputListener.SetAsListener();
-	//mySprite = new DX2D::CSprite("sprites/tga_logo.dds");
-	mySprite = std::make_unique<BDSprite>();
-	mySprite->Init("sprites/tga_logo.dds");
-	mySprite->SetPosition(SB::Vector2f(100.f, 250.f));
+{	
+	myEnemyUnit.SetSprite("Sprites/daFace.dds");
+	myEnemyUnit.SetPosition({ 100.f, 100.f });
+	enemyController = &myEnemyUnit.SetController<TeamBasedGameController>();
+
+	myActor.SetSprite("Sprites/daFace.dds");
+	myActor.SetPosition({ 300.f, 300.f });
+	myActor.SetController<PlayerController>();
 }
 
 
 
-void CGameWorld::Update(float /*aTimeDelta*/)
-{ 
-	//mySprite->Render();
-	mySprite->Render();
+void CGameWorld::Update(float aDeltaTime)
+{
+	if (myInput.GetIfMouseButtonPressed(SB::MouseKey::eLeft) == true)
+	{
+		enemyController->SetTargetPosition(myInput.GetMousePosition());
+	}
 
-	//DX2D::CColor color = mySprite->GetPixelColor(7, 7);
-	//CEngine::GetInstance()->GetLightManager().SetAmbience(1.0f);
+	myEnemyUnit.Update(aDeltaTime);
+	myActor.Update(aDeltaTime);
+}
+
+void CGameWorld::Render() const
+{
+	myEnemyUnit.Render();
+	//myActor.Render();
 }

@@ -2,7 +2,7 @@
 #include "render/render_common.h"
 #include "shaders/Shader.h"
 
-namespace DX2D
+namespace Tga2D
 {
     struct ObjectBufferTypeCustomShape
     {

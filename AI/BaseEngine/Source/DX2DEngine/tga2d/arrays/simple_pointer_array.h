@@ -1,6 +1,6 @@
 #pragma once
 
-namespace DX2D
+namespace Tga2D
 {
 	template<class TYPE>
 	struct SSimplePointerArray

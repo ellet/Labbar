@@ -4,11 +4,11 @@
 
 
 #define MAXSAMPLES 100
-namespace DX2D
+namespace Tga2D
 {
 
 	class CText;
-	class LinePrimitive;
+	class CLinePrimitive;
 	class CSprite;
 	class CPerformanceGraph;
 	class CLineMultiPrimitive;
@@ -27,7 +27,7 @@ namespace DX2D
 		void ShowErrorImage();
 	private:
 		double CalcAverageTick(int newtick);
-		std::vector<LinePrimitive*> myLineBuffer;
+		std::vector<CLinePrimitive*> myLineBuffer;
 		CLineMultiPrimitive* myLineMultiBuffer;
 		int myNumberOfRenderedLines;
 		int myMaxLines;
@@ -35,6 +35,7 @@ namespace DX2D
 		CText* myMemUsage;
 		CText* myDrawCallText;
 		CText* myCPUText;
+		CText* myErrorsText;
 
 		CSprite* myErrorSprite;
 		
@@ -46,8 +47,6 @@ namespace DX2D
 
 		int myDebugFeatureSet;
 		CPerformanceGraph *myPerformanceGraph;
-		float myTimer;
-		unsigned short myFPSCounter;
 		unsigned short myRealFPS;
 	};
 }

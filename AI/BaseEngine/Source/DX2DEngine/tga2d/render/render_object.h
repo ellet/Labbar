@@ -1,7 +1,8 @@
 #pragma once
+#include <vector>
 #include "tga2d/math/Color.h"
 
-namespace DX2D
+namespace Tga2D
 {
 	class CDirectEngine;
 	class CRenderObject

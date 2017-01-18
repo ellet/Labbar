@@ -3,28 +3,28 @@
 #include "engine.h"
 #include "render/Renderer.h"
 
-using namespace DX2D;
+using namespace Tga2D;
 
-LinePrimitive::LinePrimitive(void)
+CLinePrimitive::CLinePrimitive(void)
 {
 }
 
 
-LinePrimitive::~LinePrimitive(void)
+CLinePrimitive::~CLinePrimitive(void)
 {
 }
 
-void DX2D::LinePrimitive::Render()
-{
-	CEngine::GetInstance()->GetRenderer().AddToRender(this);
-}
-
-void DX2D::CLineMultiPrimitive::Render()
+void Tga2D::CLinePrimitive::Render()
 {
 	CEngine::GetInstance()->GetRenderer().AddToRender(this);
 }
 
-void DX2D::CLineMultiPrimitive::Draw(CDirectEngine* aRenderer)
+void Tga2D::CLineMultiPrimitive::Render()
+{
+	CEngine::GetInstance()->GetRenderer().AddToRender(this);
+}
+
+void Tga2D::CLineMultiPrimitive::Draw(CDirectEngine* aRenderer)
 {
 	aRenderer->DoDraw(this);
 }

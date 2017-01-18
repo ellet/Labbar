@@ -7,7 +7,7 @@
 #include "render/renderer.h"
 #include "d3d/direct_3d.h"
 
-using namespace DX2D;
+using namespace Tga2D;
 
 CTexturedQuadBatch::CTexturedQuadBatch(void)
 {
@@ -21,7 +21,7 @@ CTexturedQuadBatch::~CTexturedQuadBatch(void)
 {
 }
 
-void DX2D::CTexturedQuadBatch::Init(const char* aTexturePath)
+void Tga2D::CTexturedQuadBatch::Init(const char* aTexturePath)
 {
 	if (aTexturePath)
 	{
@@ -35,18 +35,18 @@ void DX2D::CTexturedQuadBatch::Init(const char* aTexturePath)
 	}
 }
 
-void DX2D::CTexturedQuadBatch::Render(CSpriteBatch* aBatch)
+void Tga2D::CTexturedQuadBatch::Render(CSpriteBatch* aBatch)
 {
 	mySpriteBatch = aBatch;
 	myEngine->GetRenderer().AddToRender(this);
 }
 
-void DX2D::CTexturedQuadBatch::Draw(CDirectEngine* aRenderer)
+void Tga2D::CTexturedQuadBatch::Draw(CDirectEngine* aRenderer)
 {
 	aRenderer->DoDraw(this);
 }
 
-void DX2D::CTexturedQuadBatch::SetMap(EShaderMap aMapType, const char* aPath)
+void Tga2D::CTexturedQuadBatch::SetMap(EShaderMap aMapType, const char* aPath)
 {
 	myMaps[aMapType] = myEngine->GetTextureManager().GetTexture(aPath);
 }

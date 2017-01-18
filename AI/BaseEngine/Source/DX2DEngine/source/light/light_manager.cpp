@@ -3,7 +3,7 @@
 #include "engine.h"
 #include "render/Renderer.h"
 
-using namespace DX2D;
+using namespace Tga2D;
 
 CLightManager::CLightManager()
 {
@@ -24,12 +24,12 @@ void CLightManager::AddLightToRender(const CLight* aLight)
 	myLightsToRender.push_back(aLight);
 }
 
-void DX2D::CLightManager::PostFrameUpdate()
+void Tga2D::CLightManager::PostFrameUpdate()
 {
 	myLightsToRender.clear();
 }
 
-void DX2D::CLightManager::SetAmbience(float aAmbientLight)
+void Tga2D::CLightManager::SetAmbience(float aAmbientLight)
 {
 	myAmbientLight = aAmbientLight;
 }

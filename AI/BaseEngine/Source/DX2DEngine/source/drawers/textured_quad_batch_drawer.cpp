@@ -7,10 +7,9 @@
 #include "sprite/sprite.h"
 #include "texture/texture_manager.h"
 #include "shaders/shader_normal_instanced.h"
-#include "shaders/shader_distance_field_instanced.h"
 #include "engine.h"
 
-using namespace DX2D;
+using namespace Tga2D;
 
 CTexturedQuadBatchDrawer::CTexturedQuadBatchDrawer(CDirectEngine* anEngine)
 : myEngine(anEngine)
@@ -25,11 +24,9 @@ CTexturedQuadBatchDrawer::~CTexturedQuadBatchDrawer()
 	SAFE_RELEASE(myVertexBuffer);
 
 	delete myNormalShaderInstanced;
-	delete myDistanceFieldShaderInstanced;
-
 }
 
-void DX2D::CTexturedQuadBatchDrawer::Init()
+void Tga2D::CTexturedQuadBatchDrawer::Init()
 {
 	D3D11_BUFFER_DESC objectBufferDesc;
 	objectBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
@@ -43,23 +40,17 @@ void DX2D::CTexturedQuadBatchDrawer::Init()
 	result = myEngine->GetDevice()->CreateBuffer(&objectBufferDesc, nullptr, &myInstanceBuffer);
 	if(FAILED(result))
 	{
-		ERROR_AUTO_PRINT("%s", "Object Buffer error");
+		ERROR_PRINT("%s", "Object Buffer error");
 		return;
 	}
 	myIsLoaded = InitShaders();
 	CreateBuffer();
 }
 
-bool DX2D::CTexturedQuadBatchDrawer::InitShaders()
+bool Tga2D::CTexturedQuadBatchDrawer::InitShaders()
 {
 	myNormalShaderInstanced = new CShaderNormalInstanced(CEngine::GetInstance());
 	if (!myNormalShaderInstanced->Init())
-	{
-		return false;
-	}
-
-	myDistanceFieldShaderInstanced = new CShaderDistanceFieldInstanced(CEngine::GetInstance());
-	if (!myDistanceFieldShaderInstanced->Init())
 	{
 		return false;
 	}
@@ -135,14 +126,14 @@ void CTexturedQuadBatchDrawer::CreateBuffer()
 	HRESULT hr = myEngine->GetDevice()->CreateBuffer(&vertexBufferDesc, &vertexData, &myVertexBuffer);
 	if (FAILED(hr))
 	{
-		ERROR_AUTO_PRINT("%s", "Buffer error");
+		ERROR_PRINT("%s", "Buffer error");
 		return;
 	}
 
 }
 
 
-void DX2D::CTexturedQuadBatchDrawer::Draw(CTexturedQuadBatch* aObject)
+void Tga2D::CTexturedQuadBatchDrawer::Draw(CTexturedQuadBatch* aObject)
 {
 	if (!myIsLoaded)
 	{
@@ -152,10 +143,6 @@ void DX2D::CTexturedQuadBatchDrawer::Draw(CTexturedQuadBatch* aObject)
 	if (effect == SEffect_None)
 	{
 		myNormalShaderInstanced->Render(aObject, myInstanceBuffer, myVertexBuffer);
-	}
-	else if (effect == SEffect_SignedDistanceField)
-	{
-		myDistanceFieldShaderInstanced->Render(aObject, myInstanceBuffer, myVertexBuffer);
 	}
 
 }

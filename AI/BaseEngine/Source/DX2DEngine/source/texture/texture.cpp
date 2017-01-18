@@ -2,14 +2,14 @@
 #include "texture/Texture.h"
 #include "DirectXTK/Inc/ScreenGrab.h"
 
-DX2D::CTexture::CTexture()
+Tga2D::CTexture::CTexture()
 {
 	myPath = "undefined";
 	myResource = nullptr;
 	myIsFailedTexture = false;
 }
 
-DX2D::CTexture::~CTexture()
+Tga2D::CTexture::~CTexture()
 {
 	if (myIsFailedTexture)
 	{
@@ -21,7 +21,7 @@ DX2D::CTexture::~CTexture()
 	SAFE_ARRAYDELETE(myPixelColors);
 }
 
-DX2D::CColor DX2D::CTexture::GetPixelColor(unsigned short aX, unsigned short aY, bool aRefreshData)
+Tga2D::CColor Tga2D::CTexture::GetPixelColor(unsigned short aX, unsigned short aY, bool aRefreshData)
 {
 	CColor retColor;
 
@@ -65,7 +65,7 @@ DX2D::CColor DX2D::CTexture::GetPixelColor(unsigned short aX, unsigned short aY,
 	return retColor;
 }
 
-BYTE* DX2D::CTexture::GrabPixelColors()
+BYTE* Tga2D::CTexture::GrabPixelColors()
 {
 	ID3D11Resource* resource = NULL;;
 	D3D11_SHADER_RESOURCE_VIEW_DESC srvDesc;
@@ -93,12 +93,12 @@ BYTE* DX2D::CTexture::GrabPixelColors()
 }
 
 
-DX2D::CRendertarget::CRendertarget() : CTexture()
+Tga2D::CRendertarget::CRendertarget() : CTexture()
 {
 	myTarget = nullptr;
 }
 
-DX2D::CRendertarget::~CRendertarget()
+Tga2D::CRendertarget::~CRendertarget()
 {
 	SAFE_RELEASE(myTarget)
 }

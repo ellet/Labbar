@@ -11,8 +11,9 @@
 #include <Gdiplus.h>
 
 
-using namespace DX2D;
-
+using namespace Tga2D;
+#define CAN_USE_DDS_NOT_POWER_OF_TWO false // Set to true for debug purposes
+#define CAN_USE_NON_DDS false // Set to true if you want to support PNGs (should only be for debug purposes, we demand all textures to be in the DDS format!)
 
 CTextureManager::CTextureManager(void)
 	:myFailedResource(nullptr)
@@ -73,15 +74,16 @@ CTexture* CTextureManager::GetTexture(const char* aTexturePath)
 		return texture;
 	}
 	ID3D11ShaderResourceView* resource = nullptr;
-	HRESULT hr = DirectX::CreateDDSTextureFromFile(myDirect3D->GetDevice(), DX2D::ConvertCharArrayToLPCWSTR(aTexturePath).c_str(), nullptr, &resource);
+	HRESULT hr = DirectX::CreateDDSTextureFromFile(myDirect3D->GetDevice(), Tga2D::ConvertCharArrayToLPCWSTR(aTexturePath).c_str(), nullptr, &resource);
+
 
 	if (FAILED(hr))
 	{
-		hr = DirectX::CreateWICTextureFromFile(myDirect3D->GetDevice(), myDirect3D->GetContext(), DX2D::ConvertCharArrayToLPCWSTR(aTexturePath).c_str(), nullptr,
+		hr = DirectX::CreateWICTextureFromFile(myDirect3D->GetDevice(), myDirect3D->GetContext(), Tga2D::ConvertCharArrayToLPCWSTR(aTexturePath).c_str(), nullptr,
 			&resource);
 		if (!FAILED(hr))
 		{
-			DX2D::Vector2f textureSize = GetTextureSize(resource, false);
+			Tga2D::Vector2f textureSize = GetTextureSize(resource, false);
 			unsigned int x = static_cast<int>(textureSize.x);
 			unsigned int y = static_cast<int>(textureSize.y);
 
@@ -89,20 +91,36 @@ CTexture* CTextureManager::GetTexture(const char* aTexturePath)
 			powerOfTwo &= !(y == 0) && !(y & (y - 1));
 			if (!powerOfTwo && IsDDS(aTexturePath))
 			{
-				INFO_TIP("%s %s %i*%i", "DDS needs to be power of two!", aTexturePath, x, y);
+				if (!CAN_USE_DDS_NOT_POWER_OF_TWO)
+				{
+					ERROR_PRINT("%s %s", "DDS is not power of two, this is forbidden! ", aTexturePath);
+					resource->Release();
+					hr = E_FAIL;
+				}
+				else
+				{
+					INFO_TIP("%s %s %i*%i", "DDS needs to be power of two!", aTexturePath, x, y);
+				}
 			}
 			else
 			{
-				INFO_TIP("%s %s", "Non dds texture loaded, please consider using dds as it will be more optimized! ", aTexturePath);
+				if (!CAN_USE_NON_DDS)
+				{
+					ERROR_PRINT("%s %s", "This image format is forbidden! Use .dds! ", aTexturePath);
+					resource->Release();
+					hr = E_FAIL;
+				}
+				else
+				{
+					INFO_TIP("%s %s", "Non dds texture loaded, please consider using dds as it will be more optimized! ", aTexturePath);
+				}
 			}
-
-			
 		}
 	}
 	
 	if (FAILED(hr))
 	{
-		ERROR_AUTO_PRINT("%s %s", "Failed to load resource: ", aTexturePath);
+		ERROR_PRINT("%s %s", "Failed to load resource: ", aTexturePath);
 		resource = myFailedResource;
 		aTexturePath = "Failed Texture";
 
@@ -159,7 +177,7 @@ CRendertarget* CTextureManager::GetRendertarget(const Vector2ui& aSize)
 	hr = device->CreateTexture2D(&textureDesc, nullptr, &temporaryTexture);
 	if (FAILED(hr))
 	{
-		ERROR_AUTO_PRINT("%s %s", "Failed to create texture");
+		ERROR_PRINT("%s %s", "Failed to create texture");
 	}
 
 
@@ -167,7 +185,7 @@ CRendertarget* CTextureManager::GetRendertarget(const Vector2ui& aSize)
 	hr = device->CreateShaderResourceView(temporaryTexture, nullptr, &resource);
 	if (FAILED(hr))
 	{
-		ERROR_AUTO_PRINT("%s %s", "Failed to create resource");
+		ERROR_PRINT("%s %s", "Failed to create resource");
 	}
 
 
@@ -175,7 +193,7 @@ CRendertarget* CTextureManager::GetRendertarget(const Vector2ui& aSize)
 	hr = device->CreateRenderTargetView(temporaryTexture, nullptr, &target);
 	if (FAILED(hr))
 	{
-		ERROR_AUTO_PRINT("%s %s", "Failed to create target");
+		ERROR_PRINT("%s %s", "Failed to create target");
 	}
 
 
@@ -187,7 +205,7 @@ CRendertarget* CTextureManager::GetRendertarget(const Vector2ui& aSize)
 	hr = device->CreateTexture2D(&depthDesc, nullptr, &temporaryDepth);
 	if (FAILED(hr))
 	{
-		ERROR_AUTO_PRINT("%s %s", "Failed to create depthtexture");
+		ERROR_PRINT("%s %s", "Failed to create depthtexture");
 		return false;
 	}
 
@@ -481,7 +499,7 @@ void CTextureManager::CreateDefaultNormalmapTexture()
 	tex->Release();
 }
 
-void DX2D::CTextureManager::Init()
+void Tga2D::CTextureManager::Init()
 {
 	
 	myDirect3D = &CEngine::GetInstance()->GetDirect3D();
@@ -498,12 +516,12 @@ void DX2D::CTextureManager::Init()
 	CreateDefaultNormalmapTexture();
 }
 
-void DX2D::CTextureManager::ReleaseTexture(CTexture* aTexture)
+void Tga2D::CTextureManager::ReleaseTexture(CTexture* aTexture)
 {
 	aTexture->myResource->Release();
 	aTexture->myResource = myFailedResource;
 }
 
-void DX2D::CTextureManager::Update()
+void Tga2D::CTextureManager::Update()
 {
 }

@@ -9,7 +9,7 @@
 #include "light/light_manager.h"
 #include "texture/texture_manager.h"
 
-using namespace DX2D;
+using namespace Tga2D;
 
 CShaderNormal::CShaderNormal(CEngine* aEngine)
 	:CShader(aEngine)
@@ -21,12 +21,12 @@ CShaderNormal::~CShaderNormal()
 {
 }
 
-bool DX2D::CShaderNormal::Init()
+bool Tga2D::CShaderNormal::Init()
 {
 	return CShader::CreateShaders("shaders/sprite_shader.fx", "shaders/sprite_shader.fx");
 }
 
-void DX2D::CShaderNormal::Render(CRenderObjectSprite* aObject, ID3D11Buffer* aObjectBuffer, ID3D11Buffer* aVertexBuffer)
+void Tga2D::CShaderNormal::Render(CRenderObjectSprite* aObject, ID3D11Buffer* aObjectBuffer, ID3D11Buffer* aVertexBuffer)
 {
 	if (!myIsReadyToRender)
 	{
@@ -39,7 +39,7 @@ void DX2D::CShaderNormal::Render(CRenderObjectSprite* aObject, ID3D11Buffer* aOb
 
 }
 
-bool DX2D::CShaderNormal::CreateInputLayout(ID3D10Blob* aVS)
+bool Tga2D::CShaderNormal::CreateInputLayout(ID3D10Blob* aVS)
 {
 	// LAYOUT
 	D3D11_INPUT_ELEMENT_DESC polygonLayout[2];
@@ -67,7 +67,7 @@ bool DX2D::CShaderNormal::CreateInputLayout(ID3D10Blob* aVS)
 	HRESULT result = myDirect3dEngine->GetDevice()->CreateInputLayout(polygonLayout, numElements, aVS->GetBufferPointer(), aVS->GetBufferSize(), &myLayout);
 	if (FAILED(result))
 	{
-		ERROR_AUTO_PRINT("%s", "Layout error");
+		ERROR_PRINT("%s", "Layout error");
 	}
 	return true;
 }
@@ -88,9 +88,9 @@ void CShaderNormal::SetShaderParameters(CRenderObjectSprite* aObject, ID3D11Buff
 		return;
 	}
 
-	DX2D::Vector2f offsetPos(DX2D::CEngine::GetInstance()->GetWindowRatio(), -1.0f);
+	Tga2D::Vector2f offsetPos(Tga2D::CEngine::GetInstance()->GetWindowRatio(), -1.0f);
 
-	Vector2f correctedPosition = DX2D::Vector2f((aObject->myPosition.x * 2.0f) - 1.0f, -(aObject->myPosition.y * 2.0f) + 1.0f);
+	Vector2f correctedPosition = Tga2D::Vector2f((aObject->myPosition.x * 2.0f) - 1.0f, -(aObject->myPosition.y * 2.0f) + 1.0f);
 
 	//correctedPosition.x -= ratioX;
 

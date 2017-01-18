@@ -4,7 +4,7 @@
 #include "shaders/shader_common.h"
 #include "arrays/simple_pointer_array.h"
 
-namespace DX2D
+namespace Tga2D
 {
 	class CTexturedQuadBatch;
 	class CSprite;

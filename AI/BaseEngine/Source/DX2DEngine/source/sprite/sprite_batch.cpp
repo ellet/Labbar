@@ -2,11 +2,12 @@
 
 #include "sprite/sprite_batch.h"
 #include "sprite/sprite.h"
+#include "sprite/textured_quad.h"
 #include "sprite/textured_quad_batch.h"
 #include "texture/texture_manager.h"
 #include "shaders/shader_common.h"
 
-using namespace DX2D;
+using namespace Tga2D;
 
 CSpriteBatch::CSpriteBatch(bool aDeleteSpritesWhenDestructed)
 	:myQuadBatch(nullptr)
@@ -43,6 +44,10 @@ void CSpriteBatch::Init(const char* aTexturePath)
 
 bool CSpriteBatch::AddObject(CSprite* aSpriteObject)
 {
+	if (aSpriteObject->GetTexturedQuad()->myCustomShader)
+	{
+		INFO_PRINT("CSpriteBatch::AddObject() a sprite with a custom shader added. This will not work in a batch");
+	}
 	if (myCurrentSpriteCount > SPRITE_BATCH_COUNT)
 	{
 		std::vector<CSprite*> newSpriteAdder;
@@ -60,7 +65,7 @@ bool CSpriteBatch::AddObject(CSprite* aSpriteObject)
 }
 
 
-void DX2D::CSpriteBatch::RemoveObject(CSprite* aSpriteObject, bool aAlsoDelete)
+void Tga2D::CSpriteBatch::RemoveObject(CSprite* aSpriteObject, bool aAlsoDelete)
 {
 	for (unsigned int i = 0; i < mySprites.size(); i++)
 	{
@@ -87,7 +92,7 @@ void DX2D::CSpriteBatch::RemoveObject(CSprite* aSpriteObject, bool aAlsoDelete)
 	}
 }
 
-void DX2D::CSpriteBatch::Render()
+void Tga2D::CSpriteBatch::Render()
 {
 	if (!myCurrentSpriteCount)
 	{
@@ -95,7 +100,7 @@ void DX2D::CSpriteBatch::Render()
 	}
 	if (!myQuadBatch)
 	{
-		ERROR_AUTO_PRINT("%s", "SpriteBatch not inited! Can not render!");
+		ERROR_PRINT("%s", "SpriteBatch not inited! Can not render!");
 		return;
 	}
 
@@ -103,7 +108,7 @@ void DX2D::CSpriteBatch::Render()
 
 }
 
-CSprite* DX2D::CSpriteBatch::GetNext()
+CSprite* Tga2D::CSpriteBatch::GetNext()
 {
 	if (myNextBatch > static_cast<int>(mySprites.size())-1)
 	{
@@ -121,23 +126,23 @@ CSprite* DX2D::CSpriteBatch::GetNext()
 	return sprite;
 }
 
-void DX2D::CSpriteBatch::ResetNext()
+void Tga2D::CSpriteBatch::ResetNext()
 {
 	myNextIndex = 0;
 	myNextBatch = 0;
 }
 
-Vector2f DX2D::CSpriteBatch::GetInitialSize()
+Vector2f Tga2D::CSpriteBatch::GetInitialSize()
 {
 	return myQuadBatch->myTexture->mySize;
 }
 
-Vector2<unsigned int> DX2D::CSpriteBatch::GetImageSize()
+Vector2<unsigned int> Tga2D::CSpriteBatch::GetImageSize()
 {
 	return myQuadBatch->myTexture->myImageSize;
 }
 
-const std::string DX2D::CSpriteBatch::GetImagePath() const
+const std::string Tga2D::CSpriteBatch::GetImagePath() const
 {
 	if (myQuadBatch && myQuadBatch->myTexture)
 	{
@@ -148,12 +153,12 @@ const std::string DX2D::CSpriteBatch::GetImagePath() const
 	
 }
 
-void DX2D::CSpriteBatch::SetEffect(SEffect aEffect)
+void Tga2D::CSpriteBatch::SetEffect(SEffect aEffect)
 {
 	myEffect = aEffect;
 }
 
-void DX2D::CSpriteBatch::ClearAll()
+void Tga2D::CSpriteBatch::ClearAll()
 {
 	for (unsigned int i = 0; i < mySprites.size(); i++)
 	{
@@ -166,12 +171,12 @@ void DX2D::CSpriteBatch::ClearAll()
 	myCurrentSpriteCount = 0;
 }
 
-void DX2D::CSpriteBatch::SetMap(EShaderMap aMapType, const char* aPath)
+void Tga2D::CSpriteBatch::SetMap(EShaderMap aMapType, const char* aPath)
 {
 	myQuadBatch->SetMap(aMapType, aPath);
 }
 
-void DX2D::CSpriteBatch::DeleteAll()
+void Tga2D::CSpriteBatch::DeleteAll()
 {
 	for (unsigned int i = 0; i < mySprites.size(); i++)
 	{

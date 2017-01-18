@@ -4,7 +4,7 @@
 #include "render/Renderer.h"
 #include "texture/texture_manager.h"
 
-using namespace DX2D;
+using namespace Tga2D;
 CCustomShape::CCustomShape()
 {
 	myIndex = 0;
@@ -22,7 +22,7 @@ void CCustomShape::Reset()
 	myPoints.clear();
 }
 
-int CCustomShape::AddPoint(DX2D::Vector2f aPoint, CColor aColor, DX2D::Vector2f aUV)
+int CCustomShape::AddPoint(Tga2D::Vector2f aPoint, CColor aColor, Tga2D::Vector2f aUV)
 {
 	SCustomPoint point;
 	point.myPosition = aPoint;
@@ -47,16 +47,36 @@ void CCustomShape::BuildShape()
 		INFO_PRINT("%s", "CCustomShape::BuildShape(): building shape with non even devided by 3 points, invalid! We need it to build triangles!");
 		return;
 	}
+
+	if (myTexture)
+	{
+		bool noUVsSet = true;
+		for (SCustomPoint& point : myPoints)
+		{
+			if (point.myUV.x != 0 && point.myUV.y != 0)
+			{
+				noUVsSet = false;
+			}
+		}
+		if (noUVsSet)
+		{
+			ERROR_PRINT("%s", "Warning! A custom shape that have a texture set have no valid UV coordinates, the shape will most likley not be shown. Set valid UV coordinates,")
+		}
+	}
+
 	if (!myTexture)
 	{
 		myTexture = CEngine::GetInstance()->GetTextureManager().GetWhiteSquareTexture();
 	}
+
+
+
 	myIsDirty = false;
 }
 
-void DX2D::CCustomShape::SetColorOnPoint(int aIndex, CColor aColor)
+void Tga2D::CCustomShape::SetColorOnPoint(int aIndex, CColor aColor)
 {
-	for (int i = myPoints.size() - 1; i > 0; i--)
+	for (size_t i = myPoints.size() - 1; i > 0; i--)
 	{
 		if (myPoints[i].myIndex == aIndex)
 		{
@@ -65,9 +85,9 @@ void DX2D::CCustomShape::SetColorOnPoint(int aIndex, CColor aColor)
 	}
 }
 
-void DX2D::CCustomShape::RemovePoints(int aIndex)
+void Tga2D::CCustomShape::RemovePoints(int aIndex)
 {
-	for (int i = myPoints.size()-1; i > 0; i--)
+	for (size_t i = myPoints.size() - 1; i > 0; i--)
 	{
 		if (myPoints[i].myIndex == aIndex)
 		{
@@ -77,17 +97,17 @@ void DX2D::CCustomShape::RemovePoints(int aIndex)
 	}
 }
 
-void DX2D::CCustomShape::Render()
+void Tga2D::CCustomShape::Render()
 {
 	if (myIsDirty)
 	{
-		INFO_PRINT("%s", "CCustomShape::Render() shape is dirty, please call CCustomShape::BuildShape() to verify shape");
+		ERROR_PRINT("%s", "CCustomShape::Render() shape is dirty, please call CCustomShape::BuildShape() to verify shape");
 		return;
 	}
 	CEngine::GetInstance()->GetRenderer().AddToRender(this);
 }
 
-void DX2D::CCustomShape::SetTexture(const char* aPath)
+void Tga2D::CCustomShape::SetTexture(const char* aPath)
 {
 	myTexture = CEngine::GetInstance()->GetTextureManager().GetTexture(aPath);
 }

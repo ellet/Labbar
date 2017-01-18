@@ -2,7 +2,7 @@
 #include <tga2d/render/render_common.h>
 #include <tga2d/shaders/Shader.h>
 
-namespace DX2D
+namespace Tga2D
 {
     struct LineBufferType
     {

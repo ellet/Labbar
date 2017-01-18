@@ -3,7 +3,7 @@
 #include "shader.h"
 #include "shader_common.h"
 
-namespace DX2D
+namespace Tga2D
 {
 	struct ObjectBufferType
 	{

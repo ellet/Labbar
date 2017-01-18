@@ -4,7 +4,7 @@
 #include "render/render_common.h"
 
 
-namespace DX2D
+namespace Tga2D
 {
 	class CTexture;
 	class CSprite;

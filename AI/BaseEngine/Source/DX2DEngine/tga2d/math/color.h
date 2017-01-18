@@ -1,7 +1,7 @@
 #pragma once
 #include "Vector4.h"
 
-namespace DX2D
+namespace Tga2D
 {
 	class CColor
 	{

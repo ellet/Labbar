@@ -16,13 +16,13 @@
 #pragma comment( lib, "user32.lib" )
 
 
-using namespace DX2D;
+using namespace Tga2D;
 
 
-CEngine* DX2D::CEngine::myInstance = nullptr;
+CEngine* Tga2D::CEngine::myInstance = nullptr;
 
 
-void DX2D::CEngine::CreateInstance( const SEngineCreateParameters& aCreateParameters )
+void Tga2D::CEngine::CreateInstance( const SEngineCreateParameters& aCreateParameters )
 {
 	if (!myInstance)
 	{
@@ -30,7 +30,7 @@ void DX2D::CEngine::CreateInstance( const SEngineCreateParameters& aCreateParame
 	}
 	else
 	{
-		ERROR_AUTO_PRINT("%s", "DX2D::CEngine::CreateInstance called twice, thats bad.");
+		ERROR_PRINT("%s", "DX2D::CEngine::CreateInstance called twice, thats bad.");
 	}
 }
 
@@ -49,6 +49,8 @@ CEngine::CEngine( const SEngineCreateParameters& aCreateParameters)
 , myRunEngine(true)
 , myTotalTime(0.0f)
 , myDeltaTime(0.0f)
+, myShouldExit(false)
+, myWantToUpdateSize(false)
 {
 	myWindowSize.x = myCreateParameters.myWindowWidth;
 	myWindowSize.y = myCreateParameters.myWindowHeight;
@@ -92,7 +94,7 @@ CEngine::~CEngine()
 }
 
 
-void DX2D::CEngine::DestroyInstance()
+void Tga2D::CEngine::DestroyInstance()
 {
 	if (myInstance)
 	{
@@ -109,16 +111,16 @@ bool CEngine::Start()
 	INFO_PRINT("%s", "Creating window");
 	myFileWatcher = new CFileWatcher();
 	myWindow = new CWindowsWindow();
-	if (!myWindow->Init(myWindowSize, myHwnd, &myCreateParameters, myHInstance))
+	if (!myWindow->Init(myWindowSize, myHwnd, &myCreateParameters, myHInstance, myCreateParameters.myWinProcCallback))
 	{
-		ERROR_AUTO_PRINT("%s", "Window failed to be created!");
+		ERROR_PRINT("%s", "Window failed to be created!");
 		return false;
 	}
 
 	myDirect3D = new CDirectEngine();
 	if (!myDirect3D->Init(*this, myRenderSize, myCreateParameters.myEnableVSync, myCreateParameters.myStartInFullScreen))
 	{
-		ERROR_AUTO_PRINT("%s", "D3D failed to be created!");
+		ERROR_PRINT("%s", "D3D failed to be created!");
 		myWindow->Close();
 		return false;
 	}
@@ -159,18 +161,18 @@ bool CEngine::Start()
 	return true;
 }
 
-void DX2D::CEngine::Shutdown()
+void Tga2D::CEngine::Shutdown()
 {
 	myRunEngine = false;
 }
 
-void DX2D::CEngine::StartStep()
+void Tga2D::CEngine::StartStep()
 {
 	DoStep();
 }
 
 
-void DX2D::CEngine::DoStep()
+void Tga2D::CEngine::DoStep()
 {
 	MSG msg = {0};
 
@@ -188,37 +190,37 @@ void DX2D::CEngine::DoStep()
 		}
 		else
 		{
-			auto end = std::chrono::high_resolution_clock::now();
-			std::chrono::duration<double, std::milli> elapsed = end - myStartOfTime;
-			myStartOfTime = end;
-
-			float deltaTime = static_cast<float>(elapsed.count()) * 0.001f;
-			deltaTime = min(deltaTime, 1.0f / 30.0f); // if we go below, wierd thing will happen in the game -> cap to min 30 fps
-
-			myDeltaTime = deltaTime;
-			myTotalTime += deltaTime;
-
-			myFileWatcher->FlushChanges();
-			myDirect3D->PostRenderFrame();
-			myTextureManager->Update();
-			myTextService->Update();
-			if (myUpdateFunctionToCall)
+			myTimer.Tick([&]()
 			{
-				myUpdateFunctionToCall();
-			}
+				myDeltaTime = static_cast<float>(myTimer.GetElapsedSeconds());
+				myTotalTime += static_cast<float>(myTimer.GetElapsedSeconds());
 
-			myRenderer->Update();
-			if (myDebugDrawer)
-			{
-				myDebugDrawer->Update(deltaTime);
-				myDebugDrawer->Render();
-			}
-			myDirect3D->RenderFrame();
-			
-			myLightManager->PostFrameUpdate();
+				myFileWatcher->FlushChanges();
+				myDirect3D->PostRenderFrame();
+				myTextureManager->Update();
+				myTextService->Update();
+				if (myUpdateFunctionToCall)
+				{
+					myUpdateFunctionToCall(myDeltaTime);
+				}
 
-			UpdateWindowSizeChanges();
-	
+				myRenderer->Update();
+				if (myDebugDrawer)
+				{
+					myDebugDrawer->Update(myDeltaTime);
+					myDebugDrawer->Render();
+				}
+				myDirect3D->RenderFrame();
+
+				myLightManager->PostFrameUpdate();
+
+				if (myWantToUpdateSize)
+				{
+					UpdateWindowSizeChanges();
+					myWantToUpdateSize = false;
+				}
+			});
+
 			std::this_thread::yield();
 		}
 	}
@@ -230,18 +232,9 @@ void GetDesktopResolution(int& horizontal, int& vertical, HWND aHwnd)
 	GetClientRect(aHwnd, &r); //get window rect of control relative to screen
 	horizontal = r.right - r.left;
 	vertical = r.bottom - r.top;
-
-	RECT windowRect;
-	GetWindowRect(aHwnd, &windowRect);
-
-	int borderWidth = ((windowRect.right - windowRect.left) - horizontal);
-	int borderHeight = ((windowRect.bottom - windowRect.top) - vertical);
-
-	horizontal += borderWidth;
-	vertical += borderHeight;
 }
 
-void DX2D::CEngine::UpdateWindowSizeChanges()
+void Tga2D::CEngine::UpdateWindowSizeChanges()
 {
 	if (!myCreateParameters.myAutoUpdateViewportWithWindow)
 	{
@@ -264,13 +257,13 @@ void DX2D::CEngine::UpdateWindowSizeChanges()
 
 	// figure out the largest area that fits in this resolution at the desired aspect ratio
 	float  width = screen_width;
-	float  height = (float)(width / targetAspectRatio + 0.5f);
+	float  height = (float)(width / targetAspectRatio);
 
 	if (height > screen_height)
 	{
 		//It doesn't fit our height, we must switch to pillarbox then
 		height = screen_height;
-		width = (float)(height * targetAspectRatio + 0.5f);
+		width = (float)(height * targetAspectRatio );
 	}
 
 	// set up the new viewport centered in the backbuffer
@@ -280,16 +273,16 @@ void DX2D::CEngine::UpdateWindowSizeChanges()
 	static float lastWidth = 0.0f;
 	static float lastHeight = 0.0f;
 
-	if (lastWidth != width || lastHeight != height)
 	{
 		lastWidth = width;
 		lastHeight = height;
 		SetViewPort(vp_x, vp_y, width, height, 0, 1, true);
 	}
 }
+/*
 
 
-void DX2D::CEngine::SetWorldMatrixPosition( const Vector2f &aPosition )
+void Tga2D::CEngine::SetWorldMatrixPosition( const Vector2f &aPosition )
 {
 	Vector2f correctedPos = aPosition;
 	// Helpers to get the right camera position
@@ -302,25 +295,34 @@ void DX2D::CEngine::SetWorldMatrixPosition( const Vector2f &aPosition )
 }
 
 
-void DX2D::CEngine::SetWorldMatrixZoom( float aZoom )
+void Tga2D::CEngine::SetWorldMatrixZoom( float aZoom )
 {
 	myDirect3D->SetWorldMatrixZoom(aZoom);
 }
+*/
 
 
-float DX2D::CEngine::GetWindowRatio() const
+float Tga2D::CEngine::GetWindowRatio() const
 {
 	return myWindowRatio;
 }
 
-float DX2D::CEngine::GetWindowRatioInversed() const
+float Tga2D::CEngine::GetWindowRatioInversed() const
 {
 	return myWindowRatioInversed;
 }
 
+Vector2f Tga2D::CEngine::GetWindowRatioVec() const
+{
+	return myWindowRatioVec;
+}
 
+Vector2f Tga2D::CEngine::GetWindowRatioInversedVec() const
+{
+	return myWindowRatioInversedVec;
+}
 
-void DX2D::CEngine::SetResolution(const DX2D::Vector2<unsigned int> &aResolution, bool aAlsoSetWindowSize)
+void Tga2D::CEngine::SetResolution(const Tga2D::Vector2<unsigned int> &aResolution, bool aAlsoSetWindowSize)
 {
 	myWindowSize = aResolution;
 	if (aAlsoSetWindowSize)
@@ -332,36 +334,60 @@ void DX2D::CEngine::SetResolution(const DX2D::Vector2<unsigned int> &aResolution
 
 }
 
-void DX2D::CEngine::CalculateRatios()
+void Tga2D::CEngine::CalculateRatios()
 {
-	myWindowRatio = static_cast<float>(myWindowSize.x) / static_cast<float>(myWindowSize.y);
-	myWindowRatioInversed = static_cast<float>(myWindowSize.y) / static_cast<float>(myWindowSize.x);
+	float sizeX = static_cast<float>(myWindowSize.x);
+	float sizeY = static_cast<float>(myWindowSize.y);
+	if (sizeY > sizeX)
+	{
+		float temp = sizeX;
+		sizeX = sizeY;
+		sizeY = temp;
+	}
+
+	myWindowRatio = static_cast<float>(sizeX) / static_cast<float>(sizeY);
+	myWindowRatioInversed = static_cast<float>(sizeY) / static_cast<float>(sizeX);
+	
+	myWindowRatioVec.x = 1.0f;
+	myWindowRatioVec.y = 1.0f;
+	myWindowRatioInversedVec.x = 1.0f;
+	myWindowRatioInversedVec.y = 1.0f;
+	if (sizeX >= sizeY)
+	{
+		myWindowRatioVec.y = myWindowRatio;
+		myWindowRatioInversedVec.y = myWindowRatioInversed;
+	}
+	else
+	{
+		myWindowRatioVec.x = myWindowRatio;
+		myWindowRatioInversedVec.x = myWindowRatioInversed;
+	}
 }
 
-HWND* DX2D::CEngine::GetHWND() const
+HWND* Tga2D::CEngine::GetHWND() const
 {
 	return myHwnd;
 }
 
 
-HINSTANCE DX2D::CEngine::GetHInstance() const
+HINSTANCE Tga2D::CEngine::GetHInstance() const
 {
 	return myHInstance;
 }
 
-void DX2D::CEngine::SetViewPort(float aTopLeftX, float aTopLeftY, float aWidth, float aHeight, float aMinDepth, float aMaxDepth, bool aSetEngineResolution)
+void Tga2D::CEngine::SetViewPort(float aTopLeftX, float aTopLeftY, float aWidth, float aHeight, float aMinDepth, float aMaxDepth, bool aSetEngineResolution)
 {
 	if (myDirect3D)
 	{
 		if (aSetEngineResolution)
 		{
-			SetResolution(DX2D::Vector2<unsigned int>(static_cast<unsigned int>(aWidth), static_cast<unsigned int>(aHeight)), false);
+			SetResolution(Tga2D::Vector2<unsigned int>(static_cast<unsigned int>(aWidth), static_cast<unsigned int>(aHeight)), false);
 		}	
 		myDirect3D->SetViewPort(aTopLeftX, aTopLeftY, aWidth, aHeight, aMinDepth, aMaxDepth);
 	}
 }
 
-void DX2D::CEngine::SetFullScreen(bool aFullScreen)
+void Tga2D::CEngine::SetFullScreen(bool aFullScreen)
 {
 	if (myDirect3D)
 	{
@@ -369,7 +395,7 @@ void DX2D::CEngine::SetFullScreen(bool aFullScreen)
 	}
 }
 
-bool DX2D::CEngine::IsDebugFeatureOn(eDebugFeatures aFeature) const
+bool Tga2D::CEngine::IsDebugFeatureOn(eDebugFeatures aFeature) const
 {
 	const bool all = ((myCreateParameters.myActivateDebugSystems & eDebugFeature_All) != 0);
 	if (all)
@@ -382,40 +408,76 @@ bool DX2D::CEngine::IsDebugFeatureOn(eDebugFeatures aFeature) const
 }
 
 
-void CEngine::BeginFrame( const CColor &aClearColor )
+void Tga2D::CEngine::SetSampler(ESamplerType aType)
 {
+	if (myDirect3D)
+	{
+		myDirect3D->SetSampler(aType);
+	}
+}
+
+ESamplerType Tga2D::CEngine::GetSamplerType() const
+{
+	if (myDirect3D)
+	{
+		return myDirect3D->GetSamplerType();
+	}
+	return ESamplerType_Linear;
+}
+
+bool CEngine::BeginFrame(const CColor &aClearColor)
+{
+	if (myShouldExit)
+	{
+		return false;
+	}
+	MSG msg = { 0 };
+
+	if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+	{
+		TranslateMessage(&msg);
+		DispatchMessage(&msg);
+		if (msg.message == WM_QUIT)
+		{
+			INFO_PRINT("%s", "Exiting...");
+			myShouldExit = true;
+			return false;
+		}
+	}
+
     myFileWatcher->FlushChanges();
     myDirect3D->Clear( aClearColor );
     myTextureManager->Update();
     myTextService->Update();
+	return true;
 }
 
 
 void CEngine::EndFrame( void )
 {
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double, std::milli> elapsed = end - myStartOfTime;
-    myStartOfTime = end;
+	myTimer.Tick([&]()
+	{
+		myDeltaTime = static_cast<float>(myTimer.GetElapsedSeconds());
+		myTotalTime += static_cast<float>(myTimer.GetElapsedSeconds());
 
-    float deltaTime = static_cast<float>( elapsed.count() ) * 0.001f;
-    deltaTime = min( deltaTime, 1.0f / 30.0f ); // if we go below, wierd thing will happen in the game -> cap to min 30 fps
+		myRenderer->Update();
 
-    myDeltaTime = deltaTime;
-    myTotalTime += deltaTime;
+		if (myDebugDrawer)
+		{
+			myDebugDrawer->Update(myDeltaTime);
+			myDebugDrawer->Render();
+		}
 
-    myRenderer->Update();
+		myDirect3D->RenderFrame();
 
-    if( myDebugDrawer )
-    {
-        myDebugDrawer->Update( deltaTime );
-        myDebugDrawer->Render();
-    }
+		myLightManager->PostFrameUpdate();
 
-    myDirect3D->RenderFrame();
-
-    myLightManager->PostFrameUpdate();
-
-    UpdateWindowSizeChanges();
+		if (myWantToUpdateSize)
+		{
+			UpdateWindowSizeChanges();
+			myWantToUpdateSize = false;
+		}
+	});
 
     std::this_thread::yield();
 }

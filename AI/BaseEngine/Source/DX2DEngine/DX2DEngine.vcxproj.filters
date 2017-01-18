@@ -43,9 +43,6 @@
     <Filter Include="Source\tga2d\text">
       <UniqueIdentifier>{f2bf2c34-f932-47ab-8350-1bed945124cf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\tga2d\video">
-      <UniqueIdentifier>{64359d0e-50c0-4d98-8161-eec4637d9753}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\tga2d\texture">
       <UniqueIdentifier>{4107b8b0-7b5c-4b7c-bc00-673883b7ef94}</UniqueIdentifier>
     </Filter>
@@ -94,9 +91,6 @@
     <Filter Include="Source\source\text">
       <UniqueIdentifier>{3fb0ff8f-caf5-495d-964b-8141b7711c89}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\source\video">
-      <UniqueIdentifier>{dd16fefb-867e-4ab0-bd0d-01a0431f6fe1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\source\texture">
       <UniqueIdentifier>{d4259b15-e965-4dbd-a216-c3b7f17dc59c}</UniqueIdentifier>
     </Filter>
@@ -121,6 +115,12 @@
     <Filter Include="Source\source\drawers\Debug">
       <UniqueIdentifier>{be04318b-3213-4d1f-a7b3-31d7a2497e12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\tga2d\video">
+      <UniqueIdentifier>{c172d978-4aff-4e13-a85c-6f737800c4ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\video">
+      <UniqueIdentifier>{f5908271-4be8-4fb4-b922-ad1dbde689b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectXTK\Inc\DDSTextureLoader.h">
@@ -143,12 +143,6 @@
     </ClInclude>
     <ClInclude Include="tga2d\engine.h">
       <Filter>Source\tga2d</Filter>
-    </ClInclude>
-    <ClInclude Include="tga2d\video\video_instance.h">
-      <Filter>Source\tga2d\video</Filter>
-    </ClInclude>
-    <ClInclude Include="tga2d\video\video.h">
-      <Filter>Source\tga2d\video</Filter>
     </ClInclude>
     <ClInclude Include="tga2d\d3d\direct_3d.h">
       <Filter>Source\tga2d\d3d</Filter>
@@ -228,9 +222,6 @@
     <ClInclude Include="tga2d\shaders\shader_common.h">
       <Filter>Source\tga2d\shaders</Filter>
     </ClInclude>
-    <ClInclude Include="tga2d\shaders\shader_distance_field_instanced.h">
-      <Filter>Source\tga2d\shaders</Filter>
-    </ClInclude>
     <ClInclude Include="tga2d\shaders\shader_normal.h">
       <Filter>Source\tga2d\shaders</Filter>
     </ClInclude>
@@ -273,8 +264,21 @@
     <ClInclude Include="DirectXTK\Inc\ScreenGrab.h">
       <Filter>External\Src</Filter>
     </ClInclude>
-    <ClInclude Include="tga2d\Input\InputCallback.h" />
-    <ClInclude Include="tga2d\Input\KeyboardKey.h" />
+    <ClInclude Include="tga2d\shaders\customshader.h">
+      <Filter>Source\tga2d\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\videoplayer\video.h">
+      <Filter>Source\tga2d\video</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\videoplayer\videoplayer.h">
+      <Filter>Source\tga2d\video</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\StepTimer.h">
+      <Filter>Source\tga2d</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\engine_defines.h">
+      <Filter>Source\tga2d</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DirectXTK\Src\DDSTextureLoader.cpp">
@@ -294,12 +298,6 @@
     </ClCompile>
     <ClCompile Include="source\engine.cpp">
       <Filter>Source\source</Filter>
-    </ClCompile>
-    <ClCompile Include="source\video\video.cpp">
-      <Filter>Source\source\video</Filter>
-    </ClCompile>
-    <ClCompile Include="source\video\video_instance.cpp">
-      <Filter>Source\source\video</Filter>
     </ClCompile>
     <ClCompile Include="source\d3d\direct_3d.cpp">
       <Filter>Source\source\d3d</Filter>
@@ -355,9 +353,6 @@
     <ClCompile Include="source\shader\shader.cpp">
       <Filter>Source\source\shaders</Filter>
     </ClCompile>
-    <ClCompile Include="source\shader\shader_distance_field_instanced.cpp">
-      <Filter>Source\source\shaders</Filter>
-    </ClCompile>
     <ClCompile Include="source\shader\shader_normal.cpp">
       <Filter>Source\source\shaders</Filter>
     </ClCompile>
@@ -400,7 +395,15 @@
     <ClCompile Include="DirectXTK\Src\ScreenGrab.cpp">
       <Filter>External\Inc</Filter>
     </ClCompile>
-    <ClCompile Include="tga2d\Input\InputCallback.cpp" />
+    <ClCompile Include="source\shader\customshader.cpp">
+      <Filter>Source\source\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="source\videoplayer\video.cpp">
+      <Filter>Source\source\video</Filter>
+    </ClCompile>
+    <ClCompile Include="source\videoplayer\videoplayer.cpp">
+      <Filter>Source\source\video</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DX2DEngine.rc">

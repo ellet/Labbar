@@ -5,7 +5,7 @@ This class will store a texture bound to DX11
 
 struct ID3D11ShaderResourceView;
 struct ID3D11RenderTargetView;
-namespace DX2D
+namespace Tga2D
 {
 	
 	class CTexture

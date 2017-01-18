@@ -7,6 +7,8 @@ BDSprite::BDSprite()
 {
 	myFilePath = "";
 	myPosition = SB::Vector2f::Zero;
+
+	myOrigin = { 0.5f, 0.5f };
 }
 
 
@@ -21,7 +23,7 @@ void BDSprite::Init(const std::string & aFilePath)
 }
 
 
-void BDSprite::Render()
+void BDSprite::Render() const
 {
 	BDRenderer::RenderSprite(*this);
 }

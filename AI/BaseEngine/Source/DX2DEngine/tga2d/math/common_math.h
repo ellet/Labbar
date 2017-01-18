@@ -7,7 +7,7 @@
 #define FmodMacro(aX, aY) ((aX) - Ftrunc((aX) * (1.0f / (aY))) * (aY))
 
 
-namespace DX2D
+namespace Tga2D
 {
 	class Matrix44;
 	void PerspectiveFOV(float fov, float aspect, float aNear, float aFar, Matrix44& aOutMatrix);
