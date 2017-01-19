@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Precompiled">
+      <UniqueIdentifier>{b07bafa4-d21c-4674-8f50-96a0b05e15ec}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Precompiled</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Precompiled</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameWorld.h" />
+    <ClInclude Include="resource.h">
+      <Filter>Precompiled</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\BDRenderer.h" />
+    <ClInclude Include="Rendering\BDSprite.h" />
+    <ClInclude Include="Input\InputListener.h" />
+    <ClInclude Include="Conversions\Conversions.h" />
+    <ClInclude Include="Input\InputCallback.h" />
+    <ClInclude Include="Input\KeyboardKey.h" />
+    <ClInclude Include="Actors\Actor.h" />
+    <ClInclude Include="Controllers\BaseController.h" />
+    <ClInclude Include="Controllers\PlayerController.h" />
+    <ClInclude Include="Controllers\Behaviours\BaseBehaviour.h" />
+    <ClInclude Include="Controllers\Behaviours\Steering.h" />
+    <ClInclude Include="Controllers\TeamBasedGameController.h" />
+    <ClInclude Include="Controllers\Behaviours\SeekBehaviour.h" />
+    <ClInclude Include="ImGui\imgui_impl_dx11.h" />
+    <ClInclude Include="PathFinderGame\WorldTiles.h" />
+    <ClInclude Include="PathFinderGame\Tile.h" />
+    <ClInclude Include="Rendering\BDTextRenderer.h" />
+    <ClInclude Include="Rendering\BDText.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Precompiled</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameWorld.cpp" />
+    <ClCompile Include="Rendering\BDRenderer.cpp" />
+    <ClCompile Include="Rendering\BDSprite.cpp" />
+    <ClCompile Include="Input\InputListener.cpp" />
+    <ClCompile Include="Input\InputCallback.cpp" />
+    <ClCompile Include="Actors\Actor.cpp" />
+    <ClCompile Include="Controllers\BaseController.cpp" />
+    <ClCompile Include="Controllers\PlayerController.cpp" />
+    <ClCompile Include="Controllers\Behaviours\BaseBehaviour.cpp" />
+    <ClCompile Include="Controllers\TeamBasedGameController.cpp" />
+    <ClCompile Include="Controllers\Behaviours\SeekBehaviour.cpp" />
+    <ClCompile Include="ImGui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="PathFinderGame\WorldTiles.cpp" />
+    <ClCompile Include="PathFinderGame\Tile.cpp" />
+    <ClCompile Include="Rendering\BDTextRenderer.cpp" />
+    <ClCompile Include="Rendering\BDText.cpp" />
+  </ItemGroup>
+</Project>
