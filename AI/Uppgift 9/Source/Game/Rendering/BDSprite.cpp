@@ -41,7 +41,7 @@ void BDSprite::SetPosition(const SB::Vector2f & aPosition)
 	myPosition = aPosition;
 }
 
-const SB::Vector2f BDSprite::GetPosition() const
+const SB::Vector2f & BDSprite::GetPosition() const
 {
 	return myPosition;
 }

@@ -8,6 +8,7 @@
 #include "ImGui/imgui_impl_dx11.h"
 #include "tga2d/windows/windows_window.h"
 #include "tga2d/d3d/direct_3d.h"
+#include "Rendering/BDTextRenderer.h"
 
 using namespace std::placeholders;
 
@@ -26,12 +27,14 @@ const unsigned short windowHeight = 720;
 CGame::CGame()
 {
 	BDRenderer::Create();
+	BDTextRenderer::Create();
 }
 
 
 CGame::~CGame()
 {
 	BDRenderer::Destroy();
+	BDTextRenderer::Destroy();
 }
 
 
@@ -41,7 +44,7 @@ bool CGame::Init(const std::wstring& aVersion, HWND aHWND)
 
 
     Tga2D::SEngineCreateParameters createParameters;
-	createParameters.myActivateDebugSystems = Tga2D::eDebugFeature_Fps | Tga2D::eDebugFeature_Mem | Tga2D::eDebugFeature_Filewatcher | Tga2D::eDebugFeature_Cpu | Tga2D::eDebugFeature_Drawcalls | Tga2D::eDebugFeature_OptimiceWarnings;
+	//createParameters.myActivateDebugSystems = Tga2D::eDebugFeature_Fps | Tga2D::eDebugFeature_Mem | Tga2D::eDebugFeature_Filewatcher | Tga2D::eDebugFeature_Cpu | Tga2D::eDebugFeature_Drawcalls | Tga2D::eDebugFeature_OptimiceWarnings;
     
     createParameters.myInitFunctionToCall = std::bind( &CGame::InitCallBack, this );
     createParameters.myUpdateFunctionToCall = std::bind( &CGame::UpdateCallBack, this, _1);
@@ -340,7 +343,7 @@ void CGame::InitCallBack()
 	//unsigned char* pixels;
 	//int width, height;
 	//io.Fonts->GetTexDataAsRGBA32(&pixels, &width, &height);
-
+	BDTextRenderer::Init();
 
     myGameWorld.Init();
 }
@@ -353,6 +356,7 @@ void CGame::UpdateCallBack(const float aDeltaTime)
 	myGameWorld.Update(aDeltaTime);
 	myGameWorld.Render();
 	BDRenderer::Render();
+	BDTextRenderer::Render();
 
 	for (unsigned short iInput = 0; iInput < ourInputCallbacks.Size(); ++iInput)
 	{

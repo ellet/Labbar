@@ -13,7 +13,7 @@ public:
 	void Render() const;
 
 	void SetPosition(const SB::Vector2f & aPosition);
-	const SB::Vector2f GetPosition() const;
+	const SB::Vector2f & GetPosition() const;
 
 private:
 	std::string myFilePath;

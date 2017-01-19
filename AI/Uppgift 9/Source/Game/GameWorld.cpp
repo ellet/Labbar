@@ -5,6 +5,7 @@
 #include "PathFinderGame\WorldTiles.h"
 #include "imgui.h"
 
+
 CGameWorld::CGameWorld()
 {
 	
@@ -20,7 +21,11 @@ CGameWorld::~CGameWorld()
 void CGameWorld::Init()
 {
 	
-	myTiles = new WorldTiles(33.f, 10, 18);
+	myTiles = new WorldTiles(33.f, 35, 35);
+
+	myPlayerSprite.Init("Sprites/PlayerUnit.dds");
+	myPlayerSprite.SetPosition({ 100.f, 100.f });
+	
 	
 }
 
@@ -38,13 +43,20 @@ void CGameWorld::Update(float aDeltaTime)
 
 	ImGui::End();
 
+	if (myInput.GetIfMouseButtonPressed(SB::MouseKey::eRight) == true)
+	{
+		myPlayerSprite.SetPosition(myInput.GetMousePosition());
+	}
+
 	if (myInput.GetIfMouseButtonPressed(SB::MouseKey::eLeft) == true)
 	{
-		myTiles->SetTileType(TileTypes::eRoad, myInput.GetMousePosition());
+		SB::GrowingArray<SB::Vector2f> tempPath;
+		myTiles->CreatePath(myPlayerSprite.GetPosition(), myInput.GetMousePosition(), tempPath);
 	}
 }
 
 void CGameWorld::Render() const
 {
 	myTiles->Render();
+	myPlayerSprite.Render();
 }

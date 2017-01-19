@@ -33,6 +33,8 @@
     <ClInclude Include="ImGui\imgui_impl_dx11.h" />
     <ClInclude Include="PathFinderGame\WorldTiles.h" />
     <ClInclude Include="PathFinderGame\Tile.h" />
+    <ClInclude Include="Rendering\BDTextRenderer.h" />
+    <ClInclude Include="Rendering\BDText.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -53,5 +55,7 @@
     <ClCompile Include="ImGui\imgui_impl_dx11.cpp" />
     <ClCompile Include="PathFinderGame\WorldTiles.cpp" />
     <ClCompile Include="PathFinderGame\Tile.cpp" />
+    <ClCompile Include="Rendering\BDTextRenderer.cpp" />
+    <ClCompile Include="Rendering\BDText.cpp" />
   </ItemGroup>
 </Project>
