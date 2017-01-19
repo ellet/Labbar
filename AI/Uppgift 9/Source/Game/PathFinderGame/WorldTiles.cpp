@@ -54,6 +54,10 @@ void WorldTiles::CreatePath(const SB::Vector2f aFromPosition, const SB::Vector2f
 	} while (tilesToExplore.Size() > 0);
 
 	testGrid = mappedGrid;
+
+	CalculatePath(aVectorOfPathPositions, mappedGrid, startTile);
+	aVectorOfPathPositions.Add(aToPosition);
+	FlagPath(aVectorOfPathPositions);
 }
 
 void WorldTiles::SetTileType(const TileTypes aTileType, const SB::Vector2f & aPosition)
@@ -74,9 +78,11 @@ void WorldTiles::Render() const
 		{
 			//myGrid.Access(iX, iY)->Render(std::to_string(iX) + " - " + std::to_string(iY));
 
-			std::string Value = std::to_string(testGrid.Access(iX, iY));
+			/*std::string Value = std::to_string(testGrid.Access(iX, iY));
 			Value.resize(2);
-			myGrid.Access(iX, iY)->Render(Value);
+			myGrid.Access(iX, iY)->Render(Value);*/
+
+			myGrid.Access(iX, iY)->Render();
 		}
 	}
 }
@@ -91,8 +97,8 @@ void WorldTiles::CalculateMap(SB::GrowingArray<Tile*, unsigned int> & aTilesToEx
 
 
 	SB::Vector2ui tileIndices;
-	const unsigned short currentX = currentTile.GetXIndex();
-	const unsigned short currentY = currentTile.GetYIndex();
+	const unsigned int currentX = currentTile.GetXIndex();
+	const unsigned int currentY = currentTile.GetYIndex();
 
 	const float currentTileCost = myMapToBuild.Access(currentX, currentY);
 	Tile * testTile = nullptr;
@@ -123,6 +129,79 @@ void WorldTiles::CalculateMap(SB::GrowingArray<Tile*, unsigned int> & aTilesToEx
 	aTilesToExplore.RemoveAtIndex(0);
 }
 
+void WorldTiles::CalculatePath(SB::GrowingArray<SB::Vector2f> & aWayPoints, const SB::GridArray<float, unsigned int> & myMapToRead, const SB::Vector2ui & aStartPos)
+{
+	SB::Vector2ui currentPos = aStartPos;
+	float currentValue = myMapToRead.Access(currentPos);
+
+	while (currentValue != 0.f)
+	{
+		aWayPoints.Add(myGrid.Access(currentPos)->GetPosition());
+
+		Tile * newTile = nullptr;
+		const unsigned int currentX = currentPos.x;
+		const unsigned int currentY = currentPos.y;
+
+		SB::Vector2ui newPos;
+		newPos = SB::Vector2ui(currentX + 1, currentY);
+		newTile = GetTileAtPosition(newPos);
+		if (newTile != nullptr)
+		{
+			if (myMapToRead.Access(newPos) < currentValue)
+			{
+				currentPos = newPos;
+				currentValue = myMapToRead.Access(newPos);
+			}
+		}
+
+		newPos = SB::Vector2ui(currentX, currentY - 1);
+		newTile = GetTileAtPosition(newPos);
+		if (newTile != nullptr)
+		{
+			if (myMapToRead.Access(newPos) < currentValue)
+			{
+				currentPos = newPos;
+				currentValue = myMapToRead.Access(newPos);
+			}
+		}
+		newPos = SB::Vector2ui(currentX - 1, currentY);
+		newTile = GetTileAtPosition(newPos);
+		if (newTile != nullptr)
+		{
+			if (myMapToRead.Access(newPos) < currentValue)
+			{
+				currentPos = newPos;
+				currentValue = myMapToRead.Access(newPos);
+			}
+		}
+		newPos = SB::Vector2ui(currentX, currentY + 1);
+		newTile = GetTileAtPosition(newPos);
+		if (newTile != nullptr)
+		{
+			if (myMapToRead.Access(newPos) < currentValue)
+			{
+				currentPos = newPos;
+				currentValue = myMapToRead.Access(newPos);
+			}
+		}
+
+	}
+	aWayPoints.Add(myGrid.Access(currentPos)->GetPosition());
+}
+
+void WorldTiles::FlagPath(const SB::GrowingArray<SB::Vector2f> & aPathToFlag)
+{
+	SB::GrowingArray<Tile*, unsigned int> & allTiles = myGrid.GetArray();
+	for (unsigned int iTile = 0; iTile < allTiles.Size(); ++iTile)
+	{
+		allTiles[iTile]->PathReset();
+	}
+
+	for (unsigned short iPos = 0; iPos < aPathToFlag.Size(); ++iPos)
+	{
+		GetTileAtPosition(aPathToFlag[iPos])->FlagAsPath();
+	}
+}
 
 Tile* WorldTiles::CheckTile(const unsigned int iX, const unsigned int iY, SB::GridArray<float, unsigned int> & aMapToBuild, const float aPreviousCost)
 {

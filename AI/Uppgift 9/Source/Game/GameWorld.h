@@ -7,6 +7,7 @@
 class BDSprite;
 class TeamBasedGameController;
 class WorldTiles;
+class FollowPathController;
 
 class CGameWorld
 {
@@ -19,10 +20,12 @@ public:
 	void Render() const;
 
 private:
-	
+	SB::GrowingArray<SB::Vector2f> myPathToShow;
+
 	InputListener myInput;
 	
-	BDSprite myPlayerSprite;
+	Actor myPlayer;
+	FollowPathController * myPlayerController;
 
 	WorldTiles * myTiles;
 };

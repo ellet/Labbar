@@ -30,3 +30,8 @@ void SeekBehaviour::SetTargetPosition(const SB::Vector2f & aTargetPosition)
 	myTargetPosition = aTargetPosition;
 }
 
+const SB::Vector2f SeekBehaviour::GetTargetPosition() const
+{
+	return myTargetPosition;
+}
+

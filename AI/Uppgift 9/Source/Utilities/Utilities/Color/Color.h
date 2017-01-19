@@ -1,4 +1,6 @@
 #pragma once
+#include "Utilities\Math\Vector3.h"
+#include "Utilities\Math\Vector4.h"
 
 namespace SB
 {

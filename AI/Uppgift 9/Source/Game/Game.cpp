@@ -21,8 +21,8 @@ using namespace std::placeholders;
 
 SB::GrowingArray<InputCallback *> CGame::ourInputCallbacks;
 
-const unsigned short windowWidth = 720;
-const unsigned short windowHeight = 720;
+const unsigned short windowWidth = 1536;
+const unsigned short windowHeight = 1080;
 
 CGame::CGame()
 {
@@ -277,7 +277,13 @@ LRESULT CGame::WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	}
 	case WM_MOUSEMOVE:
 	{
+		POINT mpos;
+		GetCursorPos(&mpos);
+
+		ScreenToClient(hWnd, &mpos);
 		SB::Vector2f mousePosition;
+		//mousePosition.x = static_cast<float>(mpos.x);
+		//mousePosition.y = static_cast<float>(mpos.y);
 		mousePosition.x = static_cast<float>(GET_X_LPARAM(lParam));
 		mousePosition.y = static_cast<float>(GET_Y_LPARAM(lParam));
 

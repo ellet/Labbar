@@ -7,6 +7,7 @@ BDSprite::BDSprite()
 {
 	myFilePath = "";
 	myPosition = SB::Vector2f::Zero;
+	myColor = SB::Color::White;
 
 	myOrigin = { 0.5f, 0.5f };
 	mySpriteIndex = 0;
@@ -34,6 +35,11 @@ void BDSprite::Init(const std::string & aFilePath)
 void BDSprite::Render() const
 {
 	BDRenderer::RenderSprite(*this);
+}
+
+void BDSprite::SetColor(const SB::Color & aColor)
+{
+	myColor = aColor;
 }
 
 void BDSprite::SetPosition(const SB::Vector2f & aPosition)

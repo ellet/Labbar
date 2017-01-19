@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Tile.h"
+#include "Utilities\Color\Color.h"
 
 
 Tile::Tile()
@@ -23,12 +24,12 @@ void Tile::Render(const std::string & aTextToPrint) const
 	myText.Render(aTextToPrint);
 }
 
-unsigned short Tile::GetXIndex() const
+unsigned int Tile::GetXIndex() const
 {
 	return myIndice.x;
 }
 
-unsigned short Tile::GetYIndex() const
+unsigned int Tile::GetYIndex() const
 {
 	return myIndice.y;
 }
@@ -36,6 +37,16 @@ unsigned short Tile::GetYIndex() const
 float Tile::GetTileCost() const
 {
 	return 1.f;
+}
+
+void Tile::PathReset()
+{
+	mySprite.SetColor(SB::Color::White);
+}
+
+void Tile::FlagAsPath()
+{
+	mySprite.SetColor({ 0.2f, 0.2f, 1.f, 1.f });
 }
 
 void Tile::SetTileData(const TileData & aTileData)

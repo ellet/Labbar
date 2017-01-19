@@ -25,6 +25,10 @@ public:
 
 private:
 	void CalculateMap(SB::GrowingArray<Tile*, unsigned int> & aTilesToExplore, SB::GridArray<float, unsigned int> & myMapToBuild);
+	void CalculatePath(SB::GrowingArray<SB::Vector2f> & aWayPoints, const SB::GridArray<float, unsigned int> & myMapToRead, const SB::Vector2ui & aStartPos);
+
+	void FlagPath(const SB::GrowingArray<SB::Vector2f> & aPathToFlag);
+
 	Tile* CheckTile(const unsigned int iX, const unsigned int iY, SB::GridArray<float, unsigned int> & aMapToBuild, const float aPreviousCost);
 
 	SB::Vector2ui GetTileIndicesAtPosition(const SB::Vector2f & aPosition);

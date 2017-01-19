@@ -23,6 +23,8 @@ public:
 
 	static void Render();
 
+	static void RenderLine(const SB::Vector2f & aStartPos, const SB::Vector2f & aEndPos);
+
 private:
 	void AddToBatch(BDSprite & aSpriteToRender, Tga2D::CSprite & aSprite);
 

@@ -165,6 +165,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Actors\Actor.h" />
+    <ClInclude Include="Controllers\FollowPathController.h" />
     <ClInclude Include="Rendering\BDText.h" />
     <ClInclude Include="Rendering\BDTextRenderer.h" />
     <ClInclude Include="Controllers\Behaviours\BaseBehaviour.h" />
@@ -190,6 +191,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Actors\Actor.cpp" />
+    <ClCompile Include="Controllers\FollowPathController.cpp" />
     <ClCompile Include="Rendering\BDText.cpp" />
     <ClCompile Include="Rendering\BDTextRenderer.cpp" />
     <ClCompile Include="Controllers\Behaviours\BaseBehaviour.cpp" />

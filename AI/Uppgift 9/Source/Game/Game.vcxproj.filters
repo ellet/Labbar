@@ -35,6 +35,7 @@
     <ClInclude Include="PathFinderGame\Tile.h" />
     <ClInclude Include="Rendering\BDTextRenderer.h" />
     <ClInclude Include="Rendering\BDText.h" />
+    <ClInclude Include="Controllers\FollowPathController.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -57,5 +58,6 @@
     <ClCompile Include="PathFinderGame\Tile.cpp" />
     <ClCompile Include="Rendering\BDTextRenderer.cpp" />
     <ClCompile Include="Rendering\BDText.cpp" />
+    <ClCompile Include="Controllers\FollowPathController.cpp" />
   </ItemGroup>
 </Project>

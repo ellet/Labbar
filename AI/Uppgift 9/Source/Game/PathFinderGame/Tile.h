@@ -16,10 +16,13 @@ public:
 	void Render() const;
 	void Render(const std::string & aTextToPrint) const;
 
-	unsigned short GetXIndex() const;
-	unsigned short GetYIndex() const;
+	unsigned int GetXIndex() const;
+	unsigned int GetYIndex() const;
 
 	float GetTileCost() const;
+
+	void PathReset();
+	void FlagAsPath();
 
 	void SetTileData(const TileData & aTileData);
 	void SetPosition(const SB::Vector2f & aPosition);

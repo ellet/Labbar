@@ -5,6 +5,7 @@
 
 #include "tga2d\engine.h"
 #include "tga2d\sprite\sprite_batch.h"
+#include "tga2d\drawers\debug_drawer.h"
 
 
 
@@ -72,6 +73,7 @@ void BDRenderer::RenderSprite(const BDSprite & aSpriteToRender)
 
 		SB::Vector2f normPosition = aSpriteToRender.myPosition / windowSize;
 
+		sprite.SetColor(To(aSpriteToRender.myColor));
 		sprite.SetPivot(To(aSpriteToRender.myOrigin));
 		sprite.SetPosition(To(normPosition));
 		sprite.SetShouldRender(true);
@@ -89,6 +91,16 @@ void BDRenderer::Render()
 	{
 		GetInstance().mySpritesData[iSprite]->SetShouldRender(false);
 	}
+}
+
+void BDRenderer::RenderLine(const SB::Vector2f & aStartPos, const SB::Vector2f & aEndPos)
+{
+	SB::Vector2f windowSize = To(Tga2D::CEngine::GetInstance()->GetWindowSize());
+
+	SB::Vector2f normStart = aStartPos / windowSize;
+	SB::Vector2f normEnd = aEndPos / windowSize;
+
+	Tga2D::CEngine::GetInstance()->GetDebugDrawer().DrawLine(To(normStart), To(normEnd));
 }
 
 BDRenderer::BDRenderer()

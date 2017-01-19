@@ -11,8 +11,11 @@ namespace SB
 		
 		void SetSizeClear(CountType aWidth, CountType aHeight, const bool aClearFlag = true);
 		
+		inline T & Access(const Vector2<CountType> & aIndice);
+		inline const T & Access(const Vector2<CountType> & aIndice) const;
+
 		inline T & Access(const CountType& aX, const CountType& aY);
-		inline const T Access(const CountType& aX, const CountType& aY) const;
+		inline const T & Access(const CountType& aX, const CountType& aY) const;
 		
 		GrowingArray<T, CountType> & GetArray()
 		{
@@ -34,6 +37,18 @@ namespace SB
 		CountType myWidth;
 		CountType myHeight;
 	};
+
+	template <typename T, typename CountType /*= unsigned short*/>
+	const T & SB::GridArray<T, CountType>::Access(const Vector2<CountType> & aIndice) const
+	{
+		return Access(aIndice.x, aIndice.y);
+	}
+
+	template <typename T, typename CountType /*= unsigned short*/>
+	T & SB::GridArray<T, CountType>::Access(const Vector2<CountType> & aIndice)
+	{
+		return Access(aIndice.x, aIndice.y);
+	}
 
 	template <typename T, typename CountType /*= unsigned short*/>
 	void GridArray<T, CountType>::Optimize()
@@ -76,7 +91,7 @@ namespace SB
 	}
 
 	template <typename T, typename CountType /*= unsigned short*/>
-	const T GridArray<T, CountType>::Access(const CountType& aX, const CountType& aY) const
+	const T & GridArray<T, CountType>::Access(const CountType& aX, const CountType& aY) const
 	{
 		if ((aX + (aY * myWidth)) >= myArray.Size())
 		{
