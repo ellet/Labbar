@@ -1,5 +1,6 @@
 #pragma once
-#include "render/render_common.h"
+#include "tga2d/render/render_common.h"
+#include "tga2d/math/matrix44.h"
 
 struct IDXGISwapChain;
 struct ID3D11Device;

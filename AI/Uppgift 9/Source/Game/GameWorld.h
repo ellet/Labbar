@@ -1,9 +1,12 @@
 #pragma once
 #include "Input\InputListener.h"
 #include "Actors\Actor.h"
+#include "PathFinderGame\Tile.h"
+
 
 class BDSprite;
 class TeamBasedGameController;
+class WorldTiles;
 
 class CGameWorld
 {
@@ -18,5 +21,5 @@ public:
 private:
 	InputListener myInput;
 	
-	SB::GrowingArray<BDSprite> mySprites;
+	WorldTiles * myTiles;
 };

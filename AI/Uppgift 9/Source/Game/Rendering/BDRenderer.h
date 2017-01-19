@@ -16,12 +16,16 @@ public:
 	static void Create();
 	static void Destroy();
 
+	static void ChangeBatch(const std::string & ChangeBatch, BDSprite & aSpriteToRender);
+
 	static void AddSprite(BDSprite & aSpriteToRender);
 	static void RenderSprite(const BDSprite & aSpriteToRender);
 
 	static void Render();
 
 private:
+	void AddToBatch(BDSprite & aSpriteToRender, Tga2D::CSprite & aSprite);
+
 	static BDRenderer & GetInstance()
 	{
 		if (ourInstance == nullptr)

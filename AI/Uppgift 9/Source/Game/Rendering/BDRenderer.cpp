@@ -7,6 +7,8 @@
 #include "tga2d\sprite\sprite_batch.h"
 
 
+
+
 BDRenderer * BDRenderer::ourInstance = nullptr;
 
 void BDRenderer::Create()
@@ -26,25 +28,38 @@ void BDRenderer::Destroy()
 	}
 }
 
+void BDRenderer::ChangeBatch(const std::string & ChangeBatch, BDSprite & aSpriteToRender)
+{
+	Tga2D::CSprite & currentSprite = * GetInstance().mySpritesData[aSpriteToRender.mySpriteIndex];
+	Tga2D::CSpriteBatch & currentBatch = *GetInstance().mySpritesBatches[aSpriteToRender.myFilePath];
+
+	currentBatch.RemoveObject(&currentSprite);
+
+	aSpriteToRender.myFilePath = ChangeBatch;
+	GetInstance().AddToBatch(aSpriteToRender, currentSprite);
+}
+
 void BDRenderer::AddSprite(BDSprite & aSpriteToRender)
+{
+	Tga2D::CSprite * newSprite = new Tga2D::CSprite();
+	GetInstance().AddToBatch(aSpriteToRender, *newSprite);
+
+	GetInstance().mySpritesData.Add(newSprite);
+
+	aSpriteToRender.mySpriteIndex = GetInstance().mySpritesData.Size() - 1;
+}
+
+void BDRenderer::AddToBatch(BDSprite & aSpriteToRender, Tga2D::CSprite & aSprite)
 {
 	if (GetInstance().mySpritesBatches.find(aSpriteToRender.myFilePath) == GetInstance().mySpritesBatches.end())
 	{
 		GetInstance().mySpritesBatches[aSpriteToRender.myFilePath] = new Tga2D::CSpriteBatch(true);
 		GetInstance().mySpritesBatches[aSpriteToRender.myFilePath]->Init(aSpriteToRender.myFilePath.c_str());
-		
 	}
 
+	aSprite.SetShouldRender(false);
 	Tga2D::CSpriteBatch & currentBatch = *GetInstance().mySpritesBatches[aSpriteToRender.myFilePath];
-
-
-	Tga2D::CSprite * newSprite = new Tga2D::CSprite();
-	GetInstance().mySpritesData.Add(newSprite);
-
-	currentBatch.AddObject(newSprite);
-	newSprite->SetShouldRender(false);
-
-	aSpriteToRender.mySpriteIndex = GetInstance().mySpritesData.Size() - 1;
+	currentBatch.AddObject(&aSprite);
 }
 
 void BDRenderer::RenderSprite(const BDSprite & aSpriteToRender)

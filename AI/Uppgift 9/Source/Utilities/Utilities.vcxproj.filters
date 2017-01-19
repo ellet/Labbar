@@ -47,6 +47,7 @@
     <ClInclude Include="Utilities\Tweening\Tween.h" />
     <ClInclude Include="Utilities\Tweening\External\dbtweener.h" />
     <ClInclude Include="Utilities\UniqeIdentifier.h" />
+    <ClInclude Include="Utilities\Container\GridArray.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />

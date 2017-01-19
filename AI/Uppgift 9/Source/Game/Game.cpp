@@ -1,9 +1,13 @@
 #include "stdafx.h"
 #include <tga2d/Engine.h>
 #include "Game.h"
+#include "imgui.h"
 
 #include <tga2d/error/error_manager.h>
 #include <Windowsx.h>
+#include "ImGui/imgui_impl_dx11.h"
+#include "tga2d/windows/windows_window.h"
+#include "tga2d/d3d/direct_3d.h"
 
 using namespace std::placeholders;
 
@@ -15,6 +19,9 @@ using namespace std::placeholders;
 #endif // DEBUG
 
 SB::GrowingArray<InputCallback *> CGame::ourInputCallbacks;
+
+const unsigned short windowWidth = 720;
+const unsigned short windowHeight = 720;
 
 CGame::CGame()
 {
@@ -30,8 +37,7 @@ CGame::~CGame()
 
 bool CGame::Init(const std::wstring& aVersion, HWND aHWND)
 {
-	unsigned short windowWidth = 720;
-	unsigned short windowHeight = 720;
+	
 
 
     Tga2D::SEngineCreateParameters createParameters;
@@ -226,6 +232,8 @@ SB::KeyboardKey CGame::ConvertVirtualKey(const WPARAM& aVirtualKey)
 
 LRESULT CGame::WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
+	ImGui_ImplDX11_WndProcHandler(hWnd, message, wParam, lParam);
+
 	switch (message)
 	{
 	case WM_RBUTTONUP:
@@ -318,12 +326,30 @@ LRESULT CGame::WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 void CGame::InitCallBack()
 {
+	ImGui_ImplDX11_Init(Tga2D::CEngine::GetInstance()->GetWindow().GetWindowHandle(), Tga2D::CEngine::GetInstance()->GetDirect3D().GetDevice(), Tga2D::CEngine::GetInstance()->GetDirect3D().GetContext());
+
+	//ImGuiIO& io = ImGui::GetIO();
+	//io.DisplaySize.x = windowWidth;
+	//io.DisplaySize.y = windowHeight;
+	//io.IniFilename = "imgui.ini";
+	//io.RenderDrawListsFn = nullptr;//my_render_function;  // Setup a render function, or set to NULL and call GetDrawData() after Render() to access the render data.
+	//											// TODO: Fill others settings of the io structure
+
+	//											// Load texture atlas
+	//											// There is a default font so you don't need to care about choosing a font yet
+	//unsigned char* pixels;
+	//int width, height;
+	//io.Fonts->GetTexDataAsRGBA32(&pixels, &width, &height);
+
+
     myGameWorld.Init();
 }
 
 
 void CGame::UpdateCallBack(const float aDeltaTime)
 {
+	ImGui_ImplDX11_NewFrame();
+
 	myGameWorld.Update(aDeltaTime);
 	myGameWorld.Render();
 	BDRenderer::Render();
@@ -332,6 +358,8 @@ void CGame::UpdateCallBack(const float aDeltaTime)
 	{
 		ourInputCallbacks[iInput]->Update();
 	}
+
+	ImGui::Render();
 }
 
 

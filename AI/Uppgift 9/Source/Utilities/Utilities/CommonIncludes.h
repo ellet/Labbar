@@ -77,6 +77,8 @@ namespace SB
 #include "Utilities\Math\Matrix44.h"
 #include "Utilities\Math\Quaternion.h"
 #include "Utilities\Container\Stack.h"
+#include "Utilities\Container\GrowingArray.h"
+#include "Utilities\Container\GridArray.h"
 #include "Utilities/Container/StaticList.h"
 
 #include "Utilities/Time/Time.h"

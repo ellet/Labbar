@@ -19,8 +19,15 @@ BDSprite::~BDSprite()
 
 void BDSprite::Init(const std::string & aFilePath)
 {
-	myFilePath = aFilePath;
-	BDRenderer::AddSprite(*this);
+	if (myFilePath == "")
+	{
+		myFilePath = aFilePath;
+		BDRenderer::AddSprite(*this);
+	}
+	else
+	{
+		BDRenderer::ChangeBatch(aFilePath, *this);
+	}
 }
 
 
@@ -32,4 +39,9 @@ void BDSprite::Render() const
 void BDSprite::SetPosition(const SB::Vector2f & aPosition)
 {
 	myPosition = aPosition;
+}
+
+const SB::Vector2f BDSprite::GetPosition() const
+{
+	return myPosition;
 }

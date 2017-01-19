@@ -30,6 +30,9 @@
     <ClInclude Include="Controllers\Behaviours\Steering.h" />
     <ClInclude Include="Controllers\TeamBasedGameController.h" />
     <ClInclude Include="Controllers\Behaviours\SeekBehaviour.h" />
+    <ClInclude Include="ImGui\imgui_impl_dx11.h" />
+    <ClInclude Include="PathFinderGame\WorldTiles.h" />
+    <ClInclude Include="PathFinderGame\Tile.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -47,5 +50,8 @@
     <ClCompile Include="Controllers\Behaviours\BaseBehaviour.cpp" />
     <ClCompile Include="Controllers\TeamBasedGameController.cpp" />
     <ClCompile Include="Controllers\Behaviours\SeekBehaviour.cpp" />
+    <ClCompile Include="ImGui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="PathFinderGame\WorldTiles.cpp" />
+    <ClCompile Include="PathFinderGame\Tile.cpp" />
   </ItemGroup>
 </Project>
