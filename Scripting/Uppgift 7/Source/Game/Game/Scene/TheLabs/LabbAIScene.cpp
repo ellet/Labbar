@@ -374,6 +374,7 @@ void LabbAIScene::ClearUnits()
 {
 	std::system("cls");
 	myUnits.RemoveAll();
+	myFreeIndexes.PopAll();
 }
 
 void LabbAIScene::CollisionCheckUnits()

@@ -4,21 +4,71 @@ g_Input = {}
 
 g_Enemies = {}
 
+g_EnemiesData = {}
+
+--e_GameState = {}
+g_GameOverState = false
+
+--g_GameState = {}
+
+e_Direction = {}
+e_Direction.Right = 1
+e_Direction.Down = 2
+e_Direction.Left = -1
+e_Direction.Up = 3
+
+g_ScreenSize = {}
+g_ScreenSize.x = 1920
+g_ScreenSize.y = 1080
+
+
+
+
+
+
 function InitPlayer()
   g_Player.ID = SpawnUnit(aCaller, "Sprites/Player.dds", 345.0, 300.0);
-  g_Player.MovementSpeed = 150.0
+  g_Player.MovementSpeed = 350.0
   g_Player.Projectiles = {}
   g_Player.ProjectileSpeed = 350.0
+  g_Player.MaxHeight = 1080 - 300
+end
+
+function InitEnemies()
+  g_EnemiesData = {}
+  g_EnemiesData.StartX = 128
+  g_EnemiesData.StartY = 32
+  g_EnemiesData.PerRow = 10
+  g_EnemiesData.RowAmount = 5
+  g_EnemiesData.StartEnemyAmount = g_EnemiesData.PerRow * g_EnemiesData.RowAmount
+
+  g_EnemiesData.XDistance = 128
+  g_EnemiesData.YDistance = 82
+  g_EnemiesData.CurrentSpeed = 128
+  g_EnemiesData.DropHeight = 64
+  g_EnemiesData.Direction = e_Direction.Right
+  g_EnemiesData.PreviousDirection = e_Direction.Right
+  g_EnemiesData.SpeedIncrease = 32
 end
 
 function SpawnEnemies()
-  SpawnEnemy(300.0, 300.0)
-  SpawnEnemy(450.0, 300.0)
-  SpawnEnemy(750.0, 300.0)
+  g_Enemies = {}
+  local spawnX, spawnY = 0, 0
+  for iRow = 1, g_EnemiesData.RowAmount do
+    for iEnemy = 1, g_EnemiesData.PerRow do
+      spawnX = g_EnemiesData.StartX + g_EnemiesData.XDistance * iEnemy
+      spawnY = g_EnemiesData.StartY + (g_EnemiesData.YDistance * iRow)
+
+      SpawnEnemy(spawnX, spawnY)
+    end
+  end
+
 end
 
 function GameInit()
+  g_GameOverState = false
   InitPlayer()
+  InitEnemies()
   SpawnEnemies()
 
   g_Input.Right = false;
@@ -114,6 +164,22 @@ function HandleInput(aCaller, aDeltaTime)
 
   AddToObjectPosition(g_Player.ID, deltaX, deltaY)
 
+  local afterX, afterY = GetObjectPosition(aCaller, g_Player.ID)
+
+  if afterY < g_Player.MaxHeight then
+    afterY = g_Player.MaxHeight
+  elseif afterY > g_ScreenSize.y - 32 then
+    afterY = g_ScreenSize.y - 32
+  end
+
+  if afterX < 32 then
+    afterX = 32
+  elseif afterX > g_ScreenSize.x then
+    afterX = g_ScreenSize.x
+  end
+
+  SetObjectPosition(g_Player.ID, afterX, afterY)
+
 end
 
 function PlayerUpdate(aCaller, aDeltaTime)
@@ -145,11 +211,10 @@ end
 
 function ProjectileUpdate(aCaller, aDeltaTime)
 
-local deltaY = -g_Player.ProjectileSpeed * aDeltaTime
+  local deltaY = -g_Player.ProjectileSpeed * aDeltaTime
 
   local projectilesToRemove = {}
   for iShoot = #g_Player.Projectiles, 1, - 1  do
-    Print(iShoot)
     AddToObjectPosition(aCaller, g_Player.Projectiles[iShoot].ID, 0, deltaY)
 
     local x,y = GetObjectPosition(g_Player.Projectiles[iShoot].ID)
@@ -164,18 +229,68 @@ local deltaY = -g_Player.ProjectileSpeed * aDeltaTime
 
 end
 
+function CheckIfTouchingEdge(aCaller, xDelta, yDelta)
+  for iEnemy = 1, #g_Enemies do
+    local x, y = GetObjectPosition(aCaller, g_Enemies[iEnemy].ID)
+    local tempX = x + xDelta
+
+    if y > g_ScreenSize.y then
+      g_GameOverState = true
+      return true
+    end
+
+    if tempX > g_ScreenSize.x or tempX < 0 then
+        return true
+    end
+  end
+
+  return false
+end
+
+function MoveEnemy(aEnemyIndex, xDelta, yDelta)
+  AddToObjectPosition(g_Enemies[aEnemyIndex].ID, xDelta, yDelta)
+end
+
+function EnemyUpdate(aCaller, aDeltaTime)
+  local xMovementDelta yMovementDelta = 0, 0
+
+  xMovementDelta = g_EnemiesData.CurrentSpeed * g_EnemiesData.Direction * aDeltaTime
+
+  if CheckIfTouchingEdge(aCaller, xMovementDelta, yMovementDelta) == true then
+    yMovementDelta = g_EnemiesData.DropHeight
+    xMovementDelta = 0
+    g_EnemiesData.Direction = g_EnemiesData.Direction * -1
+    g_EnemiesData.CurrentSpeed = g_EnemiesData.CurrentSpeed * 1.2
+  end
+
+
+  for iEnemy = 1, #g_Enemies do
+    MoveEnemy(iEnemy, xMovementDelta, yMovementDelta)
+  end
+
+end
+
 function CheckCollisions(aCaller)
 
 local projectilesToRemove = {}
 local unitsToRemove = {}
 
+for iShoot = #g_Player.Projectiles, 1, -1 do
+  local shouldBreak = false
   for iEnemy = #g_Enemies, 1, -1 do
-    for iShoot = #g_Player.Projectiles, 1, -1 do
       if CheckCollision(aCaller, g_Enemies[iEnemy].ID, g_Player.Projectiles[iShoot].ID) then
         projectilesToRemove[#projectilesToRemove + 1] = iShoot
         unitsToRemove[#unitsToRemove + 1] = iEnemy
+
+        shouldBreak = true
+        break
       end
     end
+
+    if shouldBreak == true then
+      break
+    end
+
   end
 
   for iShoot = 1, #projectilesToRemove do
@@ -189,9 +304,20 @@ local unitsToRemove = {}
 end
 
 function Update(aCaller, aDeltaTime)
+  if g_GameOverState == true then
+    Init(aCaller)
+  end
+
+
   PlayerUpdate(aCaller, aDeltaTime);
   ProjectileUpdate(aCaller, aDeltaTime)
   CheckCollisions(aCaller)
+
+  if (#g_Enemies < 1) then
+    g_GameOverState = true
+  end
+
+  EnemyUpdate(aCaller, aDeltaTime)
 
   --if (CheckCollision(PlayterID, enemyID)) then
     --Print("IT COLLIDDEDEDED")
