@@ -25,6 +25,7 @@ Unit::Unit()
 	myDirection = SB::Vector2f::UnitX;
 
 	myRadius = 32.f;
+	myIsActive = false;
 }
 
 
@@ -87,7 +88,10 @@ void Unit::Update(const SB::Time aDeltaTime)
 
 void Unit::Render(const SB::GuiRenderTarget & aRenderTargetToRenderTo)
 {
-	aRenderTargetToRenderTo.Render(mySprite);
+	if (myIsActive == true)
+	{
+		aRenderTargetToRenderTo.Render(mySprite);
+	}
 }
 
 void Unit::DebugRender(const SB::GuiRenderTarget & aRenderTargetToRenderTo)
@@ -106,6 +110,11 @@ void Unit::AddToPosition(const SB::Vector2f & aDeltaMovement)
 Controller & Unit::GetController()
 {
 	return *myController;
+}
+
+void Unit::SetActiveState(const bool aActiveState)
+{
+	myIsActive = aActiveState;
 }
 
 unsigned short Unit::GetTargetIndex() const

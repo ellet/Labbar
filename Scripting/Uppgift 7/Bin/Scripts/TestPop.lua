@@ -11,11 +11,15 @@ function InitPlayer()
   g_Player.ProjectileSpeed = 350.0
 end
 
-function GameInit()
-  InitPlayer()
+function SpawnEnemies()
   SpawnEnemy(300.0, 300.0)
   SpawnEnemy(450.0, 300.0)
   SpawnEnemy(750.0, 300.0)
+end
+
+function GameInit()
+  InitPlayer()
+  SpawnEnemies()
 
   g_Input.Right = false;
   g_Input.Down = false;
@@ -116,27 +120,72 @@ function PlayerUpdate(aCaller, aDeltaTime)
   HandleInput(aCaller, aDeltaTime)
 end
 
+function RemoveEnemy(aIndexOfEnemy)
+  RemoveUnit(g_Enemies[aIndexOfEnemy].ID)
+
+  local lastIndex = #g_Enemies
+  for iEnemy = aIndexOfEnemy, #g_Enemies - 1 do
+    g_Enemies[iEnemy] = g_Enemies[iEnemy + 1]
+  end
+
+  g_Enemies[lastIndex] = nil
+end
+
+function RemoveProjectile(IndexOfProjectile)
+  RemoveUnit(g_Player.Projectiles[IndexOfProjectile].ID)
+
+  local lastIndex = #g_Player.Projectiles
+  for iShoot = IndexOfProjectile, #g_Player.Projectiles - 1 do
+    g_Player.Projectiles[iShoot] = g_Player.Projectiles[iShoot + 1]
+  end
+
+  g_Player.Projectiles[lastIndex] = nil
+
+end
+
 function ProjectileUpdate(aCaller, aDeltaTime)
 
 local deltaY = -g_Player.ProjectileSpeed * aDeltaTime
 
-
-  for iShoot = 1, #g_Player.Projectiles do
+  local projectilesToRemove = {}
+  for iShoot = #g_Player.Projectiles, 1, - 1  do
+    Print(iShoot)
     AddToObjectPosition(aCaller, g_Player.Projectiles[iShoot].ID, 0, deltaY)
 
+    local x,y = GetObjectPosition(g_Player.Projectiles[iShoot].ID)
+    if y < 0.0 then
+      projectilesToRemove[#projectilesToRemove + 1] = iShoot
+    end
   end
+
+  for iShoot = 1, #projectilesToRemove do
+    RemoveProjectile(projectilesToRemove[iShoot])
+  end
+
 end
 
 function CheckCollisions(aCaller)
 
-  for iEnemy = 1, #g_Enemies do
-    for iShoot = 1, #g_Player.Projectiles do
+local projectilesToRemove = {}
+local unitsToRemove = {}
+
+  for iEnemy = #g_Enemies, 1, -1 do
+    for iShoot = #g_Player.Projectiles, 1, -1 do
       if CheckCollision(aCaller, g_Enemies[iEnemy].ID, g_Player.Projectiles[iShoot].ID) then
-        Print("Enemy hit")
+        projectilesToRemove[#projectilesToRemove + 1] = iShoot
+        unitsToRemove[#unitsToRemove + 1] = iEnemy
       end
     end
-
   end
+
+  for iShoot = 1, #projectilesToRemove do
+    RemoveProjectile(projectilesToRemove[iShoot])
+  end
+
+  for iEnemy = 1, #unitsToRemove do
+    RemoveEnemy(unitsToRemove[iEnemy])
+  end
+
 end
 
 function Update(aCaller, aDeltaTime)

@@ -25,3 +25,6 @@ CheckCollision - Function Description: Checks collision between two objects
 
 SetObjectPosition - Function Description: On given Object set given Position
 
+
+RemoveUnit - Function Description: Remove object with given index
+

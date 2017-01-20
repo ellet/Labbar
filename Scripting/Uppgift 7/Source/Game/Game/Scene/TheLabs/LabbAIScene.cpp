@@ -81,6 +81,18 @@ extern "C" inline int SpawnUnit(lua_State * aLuaState)
 	return 1;
 }
 
+extern "C" inline int RemoveUnit(lua_State * aLuaState)
+{
+	int args = lua_gettop(aLuaState);
+
+	unsigned short indexToRemove;
+	std::tie(indexToRemove) = ScriptSystem::PopValues<unsigned short>(aLuaState);
+
+	LabbAIScene::GetScene().RemoveUnit(indexToRemove);
+
+	return 0;
+}
+
 extern "C" inline int ClearUnits(lua_State * aLuaState)
 {
 	int args = lua_gettop(aLuaState);
@@ -164,6 +176,7 @@ void RegisterFunctions(const size_t aNodeIndex)
 	ScriptSystem::RegisterFunction(aNodeIndex, "AddToObjectPosition", AddToObjectPosition, "On the given object will add to its position");
 	ScriptSystem::RegisterFunction(aNodeIndex, "CheckCollision", CheckCollision, "Checks collision between two objects");
 	ScriptSystem::RegisterFunction(aNodeIndex, "SetObjectPosition", SetObjectPosition, "On given Object set given Position");
+	ScriptSystem::RegisterFunction(aNodeIndex, "RemoveUnit", RemoveUnit, "Remove object with given index");
 }
 
 LabbAIScene * LabbAIScene::ourScene = nullptr;
@@ -295,16 +308,46 @@ LabbAIScene & LabbAIScene::GetScene()
 }
 
 
+void LabbAIScene::RemoveUnit(const unsigned short aIndexToRemove)
+{
+	myUnits[aIndexToRemove].SetActiveState(false);
+	myFreeIndexes.Push(aIndexToRemove);
+}
+
 unsigned short LabbAIScene::SpawnUnit(const std::string & aFilePath, const SB::Vector2f & aPosition)
 {
-	myUnits.Add(Unit());
-	Unit & newUnit = myUnits.GetLast();
+	if (myFreeIndexes.Size() <= 0)
+	{
+		unsigned short tempGrowSize = myUnits.Size();
+		unsigned short tempEndPoint = tempGrowSize;
+
+		if (tempGrowSize < 1)
+		{
+			tempGrowSize = 2;
+		}
+
+		myUnits.Resize(tempGrowSize * 2);
+
+		for (unsigned short iFreeIndex = myUnits.Size() - 1; iFreeIndex >= tempEndPoint; --iFreeIndex)
+		{
+			myFreeIndexes.Push(iFreeIndex);
+
+			if (iFreeIndex == 0)
+			{
+				break;
+			}
+		}
+	}
+
+	const unsigned short newIndex = myFreeIndexes.Pop();
+	Unit & newUnit = myUnits[newIndex];
 
 	newUnit.SetPosition(aPosition);
 	newUnit.SetSprite(aFilePath);
+	newUnit.SetActiveState(true);
 
-	newUnit.SetIndex(myUnits.Size() - 1);
-	return myUnits.Size() - 1;
+	newUnit.SetIndex(newIndex);
+	return newIndex;
 }
 
 void LabbAIScene::AddToObjectPosition(const unsigned short aObjectID, const SB::Vector2f & aDeltaMovement)

@@ -18,6 +18,7 @@ public:
 
 	void AssignNewTargetVolume(const unsigned short aObjectID);
 
+	void RemoveUnit(const unsigned short aIndexToRemove);
 	unsigned short SpawnUnit(const std::string & aFilePath, const SB::Vector2f & aPosition);
 	void AddToObjectPosition(const unsigned short aObjectID, const SB::Vector2f & aDeltaMovement);
 	bool CheckIfUnitsCollide(const unsigned short aObjectID, const unsigned short aOtherObject);
@@ -37,6 +38,7 @@ private:
 
 	FormationGroup myUnitGroup;
 
+	SB::Stack<unsigned short> myFreeIndexes;
 	SB::GrowingArray<Unit> myUnits;
 	SB::GrowingArray<Unit> myEnemyUnits;
 

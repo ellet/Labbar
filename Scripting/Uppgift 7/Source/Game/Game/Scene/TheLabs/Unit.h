@@ -54,12 +54,14 @@ public:
 
 	Controller & GetController();
 
+	void SetActiveState(const bool aActiveState);
 	unsigned short GetTargetIndex() const;
 	void SetSprite(const std::string & aFilePath);
 private:
 	unsigned short myTargetIndex;
 
 	unsigned short myIndex;
+	bool myIsActive;
 	SB::Sprite mySprite;
 	SB::Vector2f myPosition;
 	SB::Vector2f myDirection;
