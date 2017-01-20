@@ -3,11 +3,12 @@
 #include "..\Actors\Actor.h"
 
 
-const float MinDistance = 4.f;
+const float MinDistance = 5.f;
 const float MovementSpeed = 175.f;
 
 FollowPathController::FollowPathController(const Actor & aActor) : BaseController(aActor), mySeekBehaviour(*this)
 {
+	mySpeedModifier = 1.f;
 }
 
 
@@ -31,12 +32,17 @@ SB::Vector2f FollowPathController::Update(const float aDeltaTime)
 	Steering output;
 	output += mySeekBehaviour.UpdateSteering(aDeltaTime);
 
-	return output.Direction * MovementSpeed * output.SpeedPercentage * aDeltaTime;
+	return (output.Direction * MovementSpeed * output.SpeedPercentage * aDeltaTime) / mySpeedModifier;
 }
 
 void FollowPathController::SetPath(const SB::GrowingArray<SB::Vector2f> aPath)
 {
 	myPath = aPath;
+}
+
+void FollowPathController::SetSpeedModifier(const float aTileCost)
+{
+	mySpeedModifier = aTileCost;
 }
 
 void FollowPathController::SetTargetPosition(const SB::Vector2f & aTargetPosition)

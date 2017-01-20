@@ -43,7 +43,25 @@ void CGameWorld::Update(float aDeltaTime)
 
 	ImGui::End();
 
+	myPlayerController->SetSpeedModifier(myTiles->GetTileCost(myPlayerController->GetPosition()));
 	myPlayer.Update(aDeltaTime);
+
+	static bool drawMapMode = true;
+
+	if (ImGui::Button("SwitchMode") == true)
+	{
+		drawMapMode = !drawMapMode;
+	}
+
+	static int currentTileDrop;
+
+	if (drawMapMode == true)
+	{
+		ImGui::RadioButton("Field", &currentTileDrop, static_cast<int>(TileTypes::eField));
+		ImGui::RadioButton("Rock", &currentTileDrop, static_cast<int>(TileTypes::eRock));
+		ImGui::RadioButton("Swamp", &currentTileDrop, static_cast<int>(TileTypes::eSvamp));
+		ImGui::RadioButton("Road", &currentTileDrop, static_cast<int>(TileTypes::eRoad));
+	}
 
 	if (ImGui::IsMouseHoveringAnyWindow() == false)
 	{
@@ -52,15 +70,32 @@ void CGameWorld::Update(float aDeltaTime)
 			//myPlayerSprite.SetPosition(myInput.GetMousePosition());
 		}
 
-		if (myInput.GetIfMouseButtonPressed(SB::MouseKey::eLeft) == true)
+		if (drawMapMode == true)
 		{
-			myPathToShow.RemoveAll();
-			myTiles->CreatePath(myPlayer.GetPosition(), myInput.GetMousePosition(), myPathToShow);
-			myPlayerController->SetPath(myPathToShow);
+			if (myInput.GetIfMouseButtonDown(SB::MouseKey::eLeft) == true)
+			{
+				myTiles->SetTileType(static_cast<TileTypes>(currentTileDrop), myInput.GetMousePosition());
+
+			}
+		}
+		else
+		{
+			if (myInput.GetIfMouseButtonPressed(SB::MouseKey::eLeft) == true)
+			{
+				myPathToShow.RemoveAll();
+				myTiles->CreatePath(myPlayer.GetPosition(), myInput.GetMousePosition(), myPathToShow);
+				myPlayerController->SetPath(myPathToShow);
+			
+			}
 		}
 	}
 
-	if (myPathToShow.Size() > 1)
+	static int item = static_cast<int>(DebugRenderModes::eNone);
+	ImGui::Combo("RenderMode", &item, "Show Tile Cost\0Show Current Path Cost\0Only RenderMap\0\0");
+
+	myTiles->SetRenderMode(static_cast<DebugRenderModes>(item));
+
+	/*if (myPathToShow.Size() > 1)
 	{
 		SB::Vector2f startPos = myPathToShow[0];
 		SB::Vector2f endPos;
@@ -70,7 +105,7 @@ void CGameWorld::Update(float aDeltaTime)
 			BDRenderer::RenderLine(startPos, endPos);
 			startPos = endPos;
 		}
-	}
+	}*/
 }
 
 void CGameWorld::Render() const

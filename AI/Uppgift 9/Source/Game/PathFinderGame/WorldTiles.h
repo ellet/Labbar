@@ -9,7 +9,16 @@ enum class TileTypes
 {
 	eField,
 	eRoad,
+	eSvamp,
+	eRock,
 	enumLength
+};
+
+enum class DebugRenderModes
+{
+	eCost,
+	ePath,
+	eNone
 };
 
 class WorldTiles
@@ -21,9 +30,15 @@ public:
 	void CreatePath(const SB::Vector2f aFromPosition, const SB::Vector2f aToPosition, SB::GrowingArray<SB::Vector2f> & aVectorOfPathPositions);
 	void SetTileType(const TileTypes aTileType, const SB::Vector2f & aPosition);
 
+	float GetTileCost(const SB::Vector2f & aPosition);
+
 	void Render() const;
 
+	void SetRenderMode(const DebugRenderModes aRenderMode);
+
 private:
+	DebugRenderModes myRenderMode;
+
 	void CalculateMap(SB::GrowingArray<Tile*, unsigned int> & aTilesToExplore, SB::GridArray<float, unsigned int> & myMapToBuild);
 	void CalculatePath(SB::GrowingArray<SB::Vector2f> & aWayPoints, const SB::GridArray<float, unsigned int> & myMapToRead, const SB::Vector2ui & aStartPos);
 

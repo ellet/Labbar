@@ -13,7 +13,11 @@ public:
 
 	void SetPath(const SB::GrowingArray<SB::Vector2f> aPath);
 
+	void SetSpeedModifier(const float aTileCost);
+
 private:
+	float mySpeedModifier;
+
 	SB::GrowingArray<SB::Vector2f> myPath;
 
 	void SetTargetPosition(const SB::Vector2f & aTargetPosition);

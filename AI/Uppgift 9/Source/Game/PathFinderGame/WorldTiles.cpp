@@ -25,6 +25,8 @@ WorldTiles::WorldTiles(const float aTileDistance, const unsigned int aWidth, con
 	}
 
 	testGrid = myDefaultPathMap;
+
+	myRenderMode = DebugRenderModes::eNone;
 }
 
 
@@ -70,21 +72,50 @@ void WorldTiles::SetTileType(const TileTypes aTileType, const SB::Vector2f & aPo
 	}
 }
 
+float WorldTiles::GetTileCost(const SB::Vector2f & aPosition)
+{
+	Tile * activeTile = GetTileAtPosition(aPosition);
+
+	if (activeTile != nullptr)
+	{
+		return activeTile->GetTileCost();
+	}
+
+	return 0.f;
+}
+
 void WorldTiles::Render() const
 {
 	for (unsigned short iX = 0; iX < myGrid.Width(); ++iX)
 	{
 		for (unsigned short iY = 0; iY < myGrid.Height(); ++iY)
 		{
-			//myGrid.Access(iX, iY)->Render(std::to_string(iX) + " - " + std::to_string(iY));
 
-			/*std::string Value = std::to_string(testGrid.Access(iX, iY));
-			Value.resize(2);
-			myGrid.Access(iX, iY)->Render(Value);*/
+			if (myRenderMode == DebugRenderModes::eCost)
+			{
+				std::string nodeCost = std::to_string(myGrid.Access(iX, iY)->GetTileCost());
+				nodeCost.resize(3);
+				myGrid.Access(iX, iY)->Render(nodeCost);
+			}
+			else if (myRenderMode == DebugRenderModes::ePath)
+			{
+				//myGrid.Access(iX, iY)->Render(std::to_string(iX) + " - " + std::to_string(iY));
 
-			myGrid.Access(iX, iY)->Render();
+				std::string Value = std::to_string(testGrid.Access(iX, iY));
+				Value.resize(2);
+				myGrid.Access(iX, iY)->Render(Value);
+			}
+			else
+			{
+				myGrid.Access(iX, iY)->Render();
+			}
 		}
 	}
+}
+
+void WorldTiles::SetRenderMode(const DebugRenderModes aRenderMode)
+{
+	myRenderMode = aRenderMode;
 }
 
 void WorldTiles::CalculateMap(SB::GrowingArray<Tile*, unsigned int> & aTilesToExplore, SB::GridArray<float, unsigned int> & myMapToBuild)
@@ -267,9 +298,19 @@ void WorldTiles::TileDataSetup()
 	myTileData.Resize(static_cast<unsigned short>(TileTypes::enumLength));
 
 	myTileData[static_cast<unsigned short>(TileTypes::eField)].SpriteFilePath = "Sprites/fieldTile.dds";
-
+	myTileData[static_cast<unsigned short>(TileTypes::eField)].MovementCost = 2.f;
 
 
 	myTileData[static_cast<unsigned short>(TileTypes::eRoad)].SpriteFilePath = "Sprites/roadTile.dds";
+	myTileData[static_cast<unsigned short>(TileTypes::eRoad)].MovementCost = 1.f;
+
+
+	myTileData[static_cast<unsigned short>(TileTypes::eRock)].SpriteFilePath = "Sprites/rockTile.dds";
+	myTileData[static_cast<unsigned short>(TileTypes::eRock)].MovementCost = 50.f;
+
+
+
+	myTileData[static_cast<unsigned short>(TileTypes::eSvamp)].SpriteFilePath = "Sprites/svampTile.dds";
+	myTileData[static_cast<unsigned short>(TileTypes::eSvamp)].MovementCost = 5.f;
 }
 

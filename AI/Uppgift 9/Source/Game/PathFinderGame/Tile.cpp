@@ -6,6 +6,7 @@
 Tile::Tile()
 {
 	myText.SetScale(0.5f);
+	myCost = 1.f;
 }
 
 
@@ -36,7 +37,7 @@ unsigned int Tile::GetYIndex() const
 
 float Tile::GetTileCost() const
 {
-	return 1.f;
+	return myCost;
 }
 
 void Tile::PathReset()
@@ -52,6 +53,7 @@ void Tile::FlagAsPath()
 void Tile::SetTileData(const TileData & aTileData)
 {
 	mySprite.Init(aTileData.SpriteFilePath);
+	myCost = aTileData.MovementCost;
 }
 
 void Tile::SetPosition(const SB::Vector2f & aPosition)

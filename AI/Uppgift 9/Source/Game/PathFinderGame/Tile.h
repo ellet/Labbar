@@ -4,7 +4,7 @@
 struct TileData
 {
 	std::string SpriteFilePath;
-
+	float MovementCost;
 };
 
 class Tile
@@ -34,5 +34,6 @@ private:
 	BDSprite mySprite;
 	SB::Vector2f myPosition;
 	SB::Vector2ui myIndice;
+	float myCost;
 };
 

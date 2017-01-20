@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "SeekBehaviour.h"
 
+const float MinDistance = 2.f;
 
 SeekBehaviour::SeekBehaviour(const BaseController & aController) : BaseBehaviour(aController)
 {
@@ -19,8 +20,12 @@ Steering SeekBehaviour::UpdateSteering(const float aDeltaTime)
 
 	const SB::Vector2f DirectionVector = myTargetPosition - GetPosition();
 
-	output.Direction = DirectionVector.GetNormalized();
-	output.SpeedPercentage = 1.f;
+	if (DirectionVector.Length() > MinDistance)
+	{
+
+		output.Direction = DirectionVector.GetNormalized();
+		output.SpeedPercentage = 1.f;
+	}
 
 	return output;
 }

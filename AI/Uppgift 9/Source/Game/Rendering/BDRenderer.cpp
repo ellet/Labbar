@@ -84,8 +84,12 @@ void BDRenderer::Render()
 {
 	for (std::unordered_map<std::string, Tga2D::CSpriteBatch*>::iterator iBatch = GetInstance().mySpritesBatches.begin(); iBatch != GetInstance().mySpritesBatches.end(); ++iBatch)
 	{
-		iBatch->second->Render();
+		if (iBatch->first != "Sprites/PlayerUnit.dds")
+		{
+			iBatch->second->Render();
+		}
 	}
+	GetInstance().mySpritesBatches["Sprites/PlayerUnit.dds"]->Render();
 
 	for (unsigned short iSprite = 0; iSprite < GetInstance().mySpritesData.Size(); ++iSprite)
 	{
