@@ -45,7 +45,7 @@ function InitEnemies()
   g_EnemiesData.XDistance = 128
   g_EnemiesData.YDistance = 82
   g_EnemiesData.CurrentSpeed = 128
-  g_EnemiesData.DropHeight = 64
+  g_EnemiesData.DropHeight = 32
   g_EnemiesData.Direction = e_Direction.Right
   g_EnemiesData.PreviousDirection = e_Direction.Right
   g_EnemiesData.SpeedIncrease = 32
