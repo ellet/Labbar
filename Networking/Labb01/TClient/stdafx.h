@@ -6,6 +6,9 @@
 #pragma once
 
 #include "targetver.h"
+#include <CommonNetworkIncludes.h>
+
+#pragma comment(lib,"ws2_32.lib")
 
 #include <stdio.h>
 #include <tchar.h>

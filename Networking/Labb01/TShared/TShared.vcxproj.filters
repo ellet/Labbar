@@ -14,10 +14,14 @@
     </ClInclude>
     <ClInclude Include="CommonNetworkIncludes.h" />
     <ClInclude Include="CommonErrorHandling.h" />
+    <ClInclude Include="MessageStruct.h" />
+    <ClInclude Include="Time\Stopwatch.h" />
+    <ClInclude Include="Time\Time.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>PrecompiledHeader</Filter>
     </ClCompile>
+    <ClCompile Include="Time\Stopwatch.cpp" />
   </ItemGroup>
 </Project>
