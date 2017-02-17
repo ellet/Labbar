@@ -14,14 +14,29 @@
     </ClInclude>
     <ClInclude Include="CommonNetworkIncludes.h" />
     <ClInclude Include="CommonErrorHandling.h" />
-    <ClInclude Include="MessageStruct.h" />
     <ClInclude Include="Time\Stopwatch.h" />
     <ClInclude Include="Time\Time.h" />
+    <ClInclude Include="Messages\NetMessage.h" />
+    <ClInclude Include="Serialization\SerializeCommands.h" />
+    <ClInclude Include="Serialization\SerializeHeader.h" />
+    <ClInclude Include="Serialization\SerializeHelper.h" />
+    <ClInclude Include="Messages\NetworkMessageTypes.h" />
+    <ClInclude Include="Messages\PingNetMessage.h" />
+    <ClInclude Include="Messages\Manager\NetMessageManager.h" />
+    <ClInclude Include="Messages\ConnectNetMessage.h" />
+    <ClInclude Include="Messages\ChatNetMessage.h" />
+    <ClInclude Include="Messages\DisconnectNetMessage.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>PrecompiledHeader</Filter>
     </ClCompile>
     <ClCompile Include="Time\Stopwatch.cpp" />
+    <ClCompile Include="Messages\NetMessage.cpp" />
+    <ClCompile Include="Messages\PingNetMessage.cpp" />
+    <ClCompile Include="Messages\Manager\NetMessageManager.cpp" />
+    <ClCompile Include="Messages\ConnectNetMessage.cpp" />
+    <ClCompile Include="Messages\ChatNetMessage.cpp" />
+    <ClCompile Include="Messages\DisconnectNetMessage.cpp" />
   </ItemGroup>
 </Project>

@@ -44,20 +44,20 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\Lib\</OutDir>
     <TargetName>$(ProjectName)_$(Configuration)</TargetName>
-    <IntDir>..\Temp\$(Configuration)\$(ProjectName)</IntDir>
+    <IntDir>..\Temp\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>..\Lib\</OutDir>
     <TargetName>$(ProjectName)_$(Configuration)</TargetName>
-    <IntDir>..\Temp\$(Configuration)\$(ProjectName)</IntDir>
+    <IntDir>..\Temp\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions); _SCL_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -73,7 +73,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions); _SCL_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -85,15 +85,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Messages\DisconnectNetMessage.h" />
+    <ClInclude Include="Messages\ChatNetMessage.h" />
     <ClInclude Include="CommonErrorHandling.h" />
     <ClInclude Include="CommonNetworkIncludes.h" />
-    <ClInclude Include="MessageStruct.h" />
+    <ClInclude Include="Messages\ConnectNetMessage.h" />
+    <ClInclude Include="Messages\Manager\NetMessageManager.h" />
+    <ClInclude Include="Messages\NetworkMessageTypes.h" />
+    <ClInclude Include="Messages\NetMessage.h" />
+    <ClInclude Include="Messages\PingNetMessage.h" />
+    <ClInclude Include="Serialization\SerializeCommands.h" />
+    <ClInclude Include="Serialization\SerializeHeader.h" />
+    <ClInclude Include="Serialization\SerializeHelper.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Time\Stopwatch.h" />
     <ClInclude Include="Time\Time.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Messages\DisconnectNetMessage.cpp" />
+    <ClCompile Include="Messages\ChatNetMessage.cpp" />
+    <ClCompile Include="Messages\ConnectNetMessage.cpp" />
+    <ClCompile Include="Messages\Manager\NetMessageManager.cpp" />
+    <ClCompile Include="Messages\NetMessage.cpp" />
+    <ClCompile Include="Messages\PingNetMessage.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
