@@ -20,9 +20,9 @@ public:
 	CPaddleComponent();
 	~CPaddleComponent();
 	bool Collides(const CBall& aBall);
-	void Update(float aDeltaTime/*, const Input::InputWrapper& aInputWrapper, const Ball& aBall*/) override;
+	void Update(float aDeltaTime) override;
 	virtual void Render() override;
-	void Init(/*bool aMakeAI*/);
+	void Init();
 	void SetPosition(const float aX, const float aY);
 	void OnMessage(CComponentMessageBase* aMessage);
 	static unsigned int myID;

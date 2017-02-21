@@ -62,34 +62,8 @@ void CPaddleComponent::Render()
 	mySprite->Render();
 }
 
-void CPaddleComponent::Update(float aDeltaTime/*, const Input::InputWrapper& aInputWrapper, const Ball& aBall*/)
+void CPaddleComponent::Update(float aDeltaTime)
 {
-/*
-	if (myIsAI == true)
-	{
-		if (aBall.GetPosition().y + aBall.GetHeight() / 2 > myPosition.y + mySprite->GetSize().y / 2)
-		{
-			MoveDown(aDeltaTime);
-		}
-		else
-		{
-			MoveUp(aDeltaTime);
-		}
-	}
-	else
-	{
-		if (aInputWrapper.GetKeyDown(DIK_UPARROW) == true)
-		{
-			MoveUp(aDeltaTime);
-		}
-		else if (aInputWrapper.GetKeyDown(DIK_DOWNARROW) == true)
-		{
-			MoveDown(aDeltaTime);
-		}
-	}
-
-	*/
-
 	if (myVelocity.y > 0)
 	{
 		MoveUp(aDeltaTime);
