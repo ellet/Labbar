@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Precompiled">
+      <UniqueIdentifier>{b07bafa4-d21c-4674-8f50-96a0b05e15ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{16efdef1-9439-47ad-8401-693a23b706bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Core">
+      <UniqueIdentifier>{29950037-ac53-476e-978e-8f0bc978db19}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Precompiled</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Precompiled</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameWorld.h" />
+    <ClInclude Include="resource.h">
+      <Filter>Precompiled</Filter>
+    </ClInclude>
+    <ClInclude Include="Ball.h" />
+    <ClInclude Include="ComponentIds.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="InputComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="PaddleComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseComponent.h">
+      <Filter>Component\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentMessages.h">
+      <Filter>Component\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Component\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="AIComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="InputUiComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Precompiled</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameWorld.cpp" />
+    <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="InputComponent.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="PaddleComponent.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseComponent.cpp">
+      <Filter>Component\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentMessages.cpp">
+      <Filter>Component\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Component\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="AIComponent.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="InputUiComponent.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
