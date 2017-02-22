@@ -6,6 +6,7 @@ class CGameObject;
 class GameCodeNetMessage;
 class CreateGameObjectMessage;
 class NetworkCallback;
+class GameStateNetMessage;
 
 class ServerWorld
 {
@@ -17,6 +18,7 @@ public:
 	void Update(float aTimeDelta);
 
 	void HandleInputMessage(GameCodeNetMessage & aMessage);
+	void HandleGameStateMessage(GameStateNetMessage & aMessage);
 	
 	void SetNetworkCallback(NetworkCallback & aCallback);
 
@@ -24,10 +26,14 @@ public:
 
 private:
 	void StartGame();
+	void ChangeGameState(const eGameState aGameState);
+
+	void CreateAI();
 
 	void AddGameObject(CGameObject* aGameObecjt, const GameObjectTypes aObjectType);
 
 	void SendCreationMessage(CGameObject * aGameObject, const GameObjectTypes aObjectType, const unsigned short aToID);
+	void SendCreateDummyMessage(const GameObjectTypes aType, const unsigned short aObjectID,const unsigned short aToID);
 	
 	void SyncGameObject(CGameObject * aGameObject);
 

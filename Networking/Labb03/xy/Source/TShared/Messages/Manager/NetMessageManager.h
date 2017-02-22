@@ -12,6 +12,8 @@ public:
 	TMessageType CreateMessage();
 
 	void SetUserID(const unsigned short aUserID);
+	unsigned short GetUserID() const;
+
 	void SetTargetID(const unsigned short aTargetID);
 
 	NetworkMessageTypes GetMessageType(char * buf) const;

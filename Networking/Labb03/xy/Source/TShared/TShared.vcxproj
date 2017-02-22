@@ -85,6 +85,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ImportantMessageData.h" />
+    <ClInclude Include="Messages\ImportantNetMessage.h" />
+    <ClInclude Include="Messages\GameStateNetMessage.h" />
+    <ClInclude Include="Messages\CreateDummyNetMessage.h" />
     <ClInclude Include="Messages\CreateGameObjectMessage.h" />
     <ClInclude Include="GameCode\GameObjectTypes.h" />
     <ClInclude Include="Messages\GameCodeNetMessage.h" />
@@ -110,6 +114,7 @@
     <ClInclude Include="Messages\NetMessage.h" />
     <ClInclude Include="Messages\PingNetMessage.h" />
     <ClInclude Include="GameCode\Components\NetworkComponent.h" />
+    <ClInclude Include="Messages\ScoreNetMessage.h" />
     <ClInclude Include="Serialization\SerializeCommands.h" />
     <ClInclude Include="Serialization\SerializeHeader.h" />
     <ClInclude Include="Serialization\SerializeHelper.h" />
@@ -120,6 +125,9 @@
     <ClInclude Include="Time\Time.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Messages\ImportantNetMessage.cpp" />
+    <ClCompile Include="Messages\GameStateNetMessage.cpp" />
+    <ClCompile Include="Messages\CreateDummyNetMessage.cpp" />
     <ClCompile Include="Messages\CreateGameObjectMessage.cpp" />
     <ClCompile Include="Messages\GameCodeNetMessage.cpp" />
     <ClCompile Include="GameCode\Components\AIComponent.cpp" />
@@ -138,6 +146,7 @@
     <ClCompile Include="Messages\NetMessage.cpp" />
     <ClCompile Include="Messages\PingNetMessage.cpp" />
     <ClCompile Include="GameCode\Components\NetworkComponent.cpp" />
+    <ClCompile Include="Messages\ScoreNetMessage.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

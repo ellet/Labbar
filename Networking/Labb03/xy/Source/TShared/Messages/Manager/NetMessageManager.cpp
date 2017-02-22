@@ -19,6 +19,11 @@ void NetMessageManager::SetUserID(const unsigned short aUserID)
 	myID = aUserID;
 }
 
+unsigned short NetMessageManager::GetUserID() const
+{
+	return myID;
+}
+
 void NetMessageManager::SetTargetID(const unsigned short aTargetID)
 {
 	myTargetID = aTargetID;

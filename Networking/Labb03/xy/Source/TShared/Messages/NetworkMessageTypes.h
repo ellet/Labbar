@@ -5,12 +5,30 @@ enum class NetworkMessageTypes : char
 	eSyncGameObject,
 	ePing,
 	eDisconnect,
+	eScore,
 
-	eConnection,
+	
 	eMessage,
 	eInputMessage,
-	eCreationMessage,
 	
+	
+	
+	
+	eIMPORTANTCUTTOF,
+	eGameStateMessage,
+	eDummyCreate,
+	eCreationMessage,
+	eConnection,
 	
 	enumLength
 };
+
+//inline bool operator>(const NetworkMessageTypes aLeft, const NetworkMessageTypes aRight)
+//{
+//	return  static_cast<char>(aLeft) > static_cast<char>(aRight);
+//}
+//
+//inline bool operator<(const NetworkMessageTypes aLeft, const NetworkMessageTypes aRight)
+//{
+//	return  static_cast<char>(aLeft) < static_cast<char>(aRight);
+//}

@@ -15,6 +15,10 @@ public:
 	unsigned int GetTimeStamp() const { return myTimeStamp; }
 	unsigned short GetSenderID() const { return mySenderID; }
 	unsigned short GetTargetID() const { return myTargetID; }
+	NetworkMessageTypes GetMessageType() const { return myObjectID; }
+
+	static bool isImportant(const NetworkMessageTypes aMessageType);
+	bool isImportant();
 
 	StreamType myStream;
 protected:

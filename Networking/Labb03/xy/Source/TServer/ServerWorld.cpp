@@ -8,6 +8,9 @@
 #include "..\TShared\Messages\NetworkCallback.h"
 #include "..\TShared\Messages\CreateGameObjectMessage.h"
 #include "..\TShared\Messages\SyncGameObjectMessage.h"
+#include <Messages\CreateDummyNetMessage.h>
+#include "..\TShared\Messages\GameStateNetMessage.h"
+#include "..\TShared\Messages\ScoreNetMessage.h"
 
 
 ServerWorld::ServerWorld()
@@ -24,33 +27,31 @@ ServerWorld::~ServerWorld()
 
 void ServerWorld::Init()
 {
-	
-	
-	myPlayer2 = new CGameObject();
-	myPlayer2->CreateComponent<CPaddleComponent>()->Init();
-	myPlayer2->CreateComponent<CAIComponent>()->Init(myBall); // Create network comntroller instead?
-	//AddGameObject(myPlayer2);
-
 }
 
 void ServerWorld::Update(float aTimeDelta)
 {
+	if (myPlayer1 != nullptr)
+	{
+		myPlayer1->Update(aTimeDelta);
+	}
+
+	if (myPlayer2 != nullptr)
+	{
+		myPlayer2->Update(aTimeDelta);
+	}
+	
+
 	switch (myGameState)
 	{
 	case eGameState::ePlaying:
 		UpdateBall(aTimeDelta);
-		myPlayer1->Update(aTimeDelta);
-		//myPlayer2->Update(aDeltaTime);
-		//CheckGameOverState();*/
+		
+		CheckGameOverState();
 		break;
 	case eGameState::ePreGame:
 		break;
 	case eGameState::eGameOver:
-		/*if (myInputWrapper.GetKeyDown(DIK_SPACE) == true)
-		{
-			ResetGame();
-			myGameState = eGameState::ePlaying;
-		}*/
 		break;
 	}
 
@@ -66,16 +67,47 @@ void ServerWorld::Update(float aTimeDelta)
 	{
 		SyncGameObject(myBallObject);
 	}
+
+	ScoreNetMessage player1Score = myNetworkCallback->myMessageManager.CreateMessage<ScoreNetMessage>();
+	player1Score.myScore = myPlayer1Score;
+	player1Score.myIsPlayer1 = true;
+
+	myNetworkCallback->BroadCastMessageFromWorld(player1Score);
+
+	ScoreNetMessage player2Score = myNetworkCallback->myMessageManager.CreateMessage<ScoreNetMessage>();
+	player2Score.myScore = myPlayer2Score;
+	player2Score.myIsPlayer1 = false;
+
+	myNetworkCallback->BroadCastMessageFromWorld(player2Score);
 }
 
 
 void ServerWorld::HandleInputMessage(GameCodeNetMessage & aMessage)
 {
-	myPlayer1->BroadCastMessage(&aMessage.myGameMessage);
+	if (aMessage.GetSenderID() == myPlayer1->myUserID)
+	{
+		myPlayer1->BroadCastMessage(&aMessage.myGameMessage);
+	}
+	else if (aMessage.GetSenderID() == myPlayer2->myUserID)
+	{
+		myPlayer2->BroadCastMessage(&aMessage.myGameMessage);
+	}
+	else
+	{
+		Error("user id is not related to a player");
+	}
 }
 
 
 
+
+void ServerWorld::HandleGameStateMessage(GameStateNetMessage & aMessage)
+{
+	if (aMessage.myGameState == eGameState::ePlaying && myGameState == eGameState::eGameOver)
+	{
+		ResetGame();
+	}
+}
 
 void ServerWorld::SetNetworkCallback(NetworkCallback & aCallback)
 {
@@ -90,33 +122,52 @@ void ServerWorld::OnConnect(const unsigned short aUserID)
 		myPlayer1->CreateComponent<CPaddleComponent>()->Init();
 		myPlayer1->myUserID = aUserID;
 		AddGameObject(myPlayer1, GameObjectTypes::ePaddle);
-
 		SendCreationMessage(myPlayer1, GameObjectTypes::ePaddle, aUserID);
+
+		myPlayer1->myPosition.Set(0.05f, 0.5f);
+		
+
 		if (myBallObject != nullptr)
 		{
-			SendCreationMessage(myBallObject, GameObjectTypes::eBall, aUserID);
+			SendCreateDummyMessage(GameObjectTypes::eBall, myBallObject->myID, myPlayer1->myUserID);
 		}
 
 		if (myPlayer2 != nullptr)
 		{
-			SendCreationMessage(myPlayer2, GameObjectTypes::ePaddle, aUserID);
+			SendCreateDummyMessage(GameObjectTypes::ePaddle, myPlayer2->myID, myPlayer1->myUserID);
+		}
+	
+	}
+	else if (myPlayer2 == nullptr)
+	{
+		myPlayer2 = new CGameObject();
+		myPlayer2->CreateComponent<CPaddleComponent>()->Init();
+		myPlayer2->myUserID = aUserID;
+		AddGameObject(myPlayer2, GameObjectTypes::ePaddle);
+		SendCreationMessage(myPlayer2, GameObjectTypes::ePaddle, aUserID);
+
+		myPlayer2->myPosition.Set(0.9f, 0.5f);
+
+		if (myBallObject != nullptr)
+		{
+			SendCreateDummyMessage(GameObjectTypes::eBall, myBallObject->myID, myPlayer2->myUserID);
+		}		
+
+		SendCreateDummyMessage(GameObjectTypes::ePaddle, myPlayer2->myID, myPlayer1->myUserID);
+
+		SendCreateDummyMessage(GameObjectTypes::ePaddle, myPlayer1->myID, myPlayer2->myUserID);
+	}
+
+	if (myPlayer1 != nullptr && myPlayer2 != nullptr)
+	{
+		if (myPlayer1->myUserID == myPlayer2->myUserID)
+		{
+			Error("player1 and 2 have the same user");
 		}
 	}
-	//else if (myPlayer2 == nullptr)
-	//{
-	//	myPlayer2 = new CGameObject();
-	//	myPlayer2->CreateComponent<CPaddleComponent>()->Init();
-	//	myPlayer2->myUserID = aUserID;
-	//	AddGameObject(myPlayer2, GameObjectTypes::ePaddle);
-
-	//	SendCreationMessage(myPlayer2, GameObjectTypes::ePaddle, aUserID);
-	//	if (myBallObject != nullptr)
-	//	{
-	//		SendCreationMessage(myBallObject, GameObjectTypes::eBall, aUserID);
-	//	}
-	//}
-	//
-	if (myGameState == eGameState::ePreGame /*&& myPlayer2 != nullptr*/)
+	
+	
+	if (myGameState == eGameState::ePreGame && myPlayer2 != nullptr && myPlayer1 != nullptr)
 	{
 		StartGame();
 	}
@@ -133,15 +184,39 @@ void ServerWorld::StartGame()
 	
 	if (myPlayer1 != nullptr)
 	{
-		SendCreationMessage(myBallObject, GameObjectTypes::eBall, myPlayer1->myUserID);
+		SendCreateDummyMessage(GameObjectTypes::eBall, myBallObject->myID, myPlayer1->myUserID);
 	}
 
-	if (myPlayer2 != nullptr)
+	if (myPlayer2 == nullptr)
 	{
-		SendCreationMessage(myBallObject, GameObjectTypes::eBall, myPlayer2->myUserID);
+		CreateAI();
+	}
+	else
+	{
+		SendCreateDummyMessage(GameObjectTypes::eBall, myBallObject->myID, myPlayer2->myUserID);
 	}
 
 	ResetGame();
+}
+
+void ServerWorld::ChangeGameState(const eGameState aGameState)
+{
+	myGameState = aGameState;
+	GameStateNetMessage newMessage = myNetworkCallback->myMessageManager.CreateMessage<GameStateNetMessage>();
+	newMessage.myGameState = aGameState;
+
+	myNetworkCallback->BroadCastMessageFromWorld(newMessage);
+}
+
+void ServerWorld::CreateAI()
+{
+	myPlayer2 = new CGameObject();
+	AddGameObject(myPlayer2, GameObjectTypes::ePaddle);
+	myPlayer2->myUserID = globalServerID;
+	myPlayer2->CreateComponent<CPaddleComponent>()->Init();
+	myPlayer2->CreateComponent<CAIComponent>()->Init(myBall);
+
+	SendCreateDummyMessage(GameObjectTypes::ePaddle, myPlayer2->myID, myPlayer1->myUserID);
 }
 
 void ServerWorld::AddGameObject(CGameObject* aGameObecjt, const GameObjectTypes aObjectType)
@@ -152,12 +227,23 @@ void ServerWorld::AddGameObject(CGameObject* aGameObecjt, const GameObjectTypes 
 
 void ServerWorld::SendCreationMessage(CGameObject * aGameObject, const GameObjectTypes aObjectType, const unsigned short aToID)
 {
+	myNetworkCallback->myMessageManager.SetTargetID(aToID);
 	CreateGameObjectMessage createObjectMessage = myNetworkCallback->myMessageManager.CreateMessage<CreateGameObjectMessage>();
 	createObjectMessage.myID = aGameObject->myID;
 	createObjectMessage.myType = aObjectType;
 
-	myNetworkCallback->myMessageManager.SetTargetID(aToID);
+	
 	myNetworkCallback->SendMesseageFromWorld(createObjectMessage);
+}
+
+void ServerWorld::SendCreateDummyMessage(const GameObjectTypes aType, const unsigned short aObjectID, const unsigned short aToID)
+{
+	myNetworkCallback->myMessageManager.SetTargetID(aToID);
+	CreateDummyNetMessage dummy = myNetworkCallback->myMessageManager.CreateMessage<CreateDummyNetMessage>();
+	dummy.myGameObjectID = aObjectID;
+	dummy.myObjectType = aType;
+
+	myNetworkCallback->SendMesseageFromWorld(dummy);
 }
 
 void ServerWorld::SyncGameObject(CGameObject * aGameObject)
@@ -177,7 +263,7 @@ void ServerWorld::ResetGame()
 	myPlayer1->myPosition.Set(0.05f, 0.5f);
 	myPlayer2->myPosition.Set(0.9f, 0.5f);
 	myBall->Reset();
-	myGameState = eGameState::ePlaying;
+	ChangeGameState(eGameState::ePlaying);
 }
 
 void ServerWorld::UpdateBall(const float aDeltaTime)
@@ -205,6 +291,6 @@ void ServerWorld::CheckGameOverState()
 {
 	if (myPlayer1Score >= 3 || myPlayer2Score >= 3)
 	{
-		myGameState = eGameState::eGameOver;
+		ChangeGameState(eGameState::eGameOver);
 	}
 }

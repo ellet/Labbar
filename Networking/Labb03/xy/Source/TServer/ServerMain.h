@@ -3,18 +3,22 @@
 #include "Messages\Manager\NetMessageManager.h"
 #include "..\CommonUtilites\TimerManager.h"
 #include "..\TShared\Messages\NetworkCallback.h"
+#include "..\TShared\ImportantMessageData.h"
 
 class PingNetMessage;
 class ConnectNetMessage;
 class ChatNetMessage;
 class DisconnectNetMessage;
 class ServerWorld;
+class ImportantNetMessage;
+
 
 struct ClientData
 {
 	sockaddr_in AddressInformation;
 	std::string ClientName;
 	SB::Stopwatch ConnectionTimer;
+	std::unordered_map<unsigned short, SB::Stopwatch> myRecievedMessages;
 };
 
 class CServerMain : public NetworkCallback
@@ -32,14 +36,16 @@ public:
 
 
 	virtual void Connect(const std::string & aIp, const std::string & aName) override;
-
-
 	virtual void SendMesseageFromWorld(NetMessage & aMessageToSend) override;
-
-
 	virtual void BroadCastMessageFromWorld(NetMessage & aMessageToBroadCast) override;
+	virtual void SendMesseageFromWorld(ImportantNetMessage & aMessageToSend) override;
+	virtual void BroadCastMessageFromWorld(ImportantNetMessage & aMessageToBroadCast) override;
 
 private:
+	bool HandleImportantMessage(ImportantNetMessage & aImportantMessage);
+	void UpdateImportantMessages();
+	unsigned short GetNewImportantMessageID();
+
 	void CreateWorld();
 
 	void UpdateClients();
@@ -62,11 +68,24 @@ private:
 
 	void ServerBroadcast(const std::string & aBroadcastMessage, const unsigned short aExcludeIndex = 0);
 	void BroadcastMessage(NetMessage & aMessageToSend, const unsigned short sendFromIndex);
+	void BroadcastMessage(ImportantNetMessage & aMessageToSend, const unsigned short sendFromIndex);
 	void SendNetMessage(NetMessage & aMessageToSend);
+	void SendNetMessage(ImportantNetMessage & aMessage);
+	void SendNetMessage(StreamType & message, const unsigned short aUserID);
+	void SendNetMessage(StreamType & message, const sockaddr_in & addressTosendTo);
+
+	
+	
+	std::unordered_map<unsigned short, ImportantMessageData> myImportantMessages;
+	
+	unsigned short myMessageCounter;
 
 	std::unordered_map<unsigned short, ClientData> myConnectedClients;
 	SOCKET mySocket;
 	
+	sockaddr_in myLatestAddr;
+	int myLatestAddrSize;
+
 	struct sockaddr_in myServerData;
 	std::vector<unsigned short> myFreeIndexes;
 

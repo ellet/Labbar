@@ -20,3 +20,6 @@
 #include "Time/Stopwatch.h"
 
 const unsigned short globalServerID = 1337;
+const float globalImportantMessageTimeout = 0.05f;
+
+const float globalImportantPacketKeepTimeout = 5.f;

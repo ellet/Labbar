@@ -3,12 +3,14 @@
 #include "ConsoleInputHandler.h"
 #include <CommonNetworkIncludes.h>
 #include "Messages/NetworkCallback.h"
+#include "ImportantMessageData.h"
 
 
 class PingNetMessage;
 class ConnectNetMessage;
 class ChatNetMessage;
 class CGameWorld;
+class ImportantNetMessage;
 
 class Client : public NetworkCallback
 {
@@ -33,10 +35,19 @@ public:
 
 	virtual void SendMesseageFromWorld(NetMessage & aMessageToSend) override;
 
+
+	virtual void SendMesseageFromWorld(ImportantNetMessage & aMessageToSend) override;
+
 private:
+	bool HandleImportantMessage(ImportantNetMessage & aImportantMessage);
+	void UpdateImportantMessages();
+	unsigned short GetNewImportantMessageID();
+
 	void RecieveMessages();
 
-	void SendMessage(NetMessage & aMessageToSend);
+	void SendNetMessage(NetMessage & aMessageToSend);
+	void SendNetMessage(ImportantNetMessage & aMessage);
+	void SendNetMessage(StreamType & message);
 
 	void HandleMessage(const PingNetMessage & aPingMessage);
 	void HandleMessage(const ConnectNetMessage & aConnectionMessage);
@@ -53,6 +64,10 @@ private:
 	
 	void UserClientSetup();
 	void ConnectToServer();
+
+	std::unordered_map<unsigned short, ImportantMessageData> myImportantMessages;
+	std::unordered_map<unsigned short, SB::Stopwatch> myRecievedMessages;
+	unsigned short myMessageCounter;
 
 	SB::Stopwatch myPingTimer;
 	SB::Stopwatch myConnectionTimer;

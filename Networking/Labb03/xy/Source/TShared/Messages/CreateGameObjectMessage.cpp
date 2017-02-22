@@ -15,13 +15,13 @@ CreateGameObjectMessage::~CreateGameObjectMessage()
 {
 }
 
-void CreateGameObjectMessage::DoSerialize(StreamType & aStreamType)
+void CreateGameObjectMessage::DoImporantSerialize(StreamType & aStreamType)
 {
 	SERIALIZE(aStreamType, myID);
 	SERIALIZE(aStreamType, myType);
 }
 
-void CreateGameObjectMessage::DoDeSerialize(StreamType & aStreamType)
+void CreateGameObjectMessage::DoImporantDeSerialize(StreamType & aStreamType)
 {
 	DESERIALIZE(aStreamType, myID);
 	DESERIALIZE(aStreamType, myType);

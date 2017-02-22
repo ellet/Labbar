@@ -7,6 +7,10 @@
 #include "..\GameWorld.h"
 #include "Messages\SyncGameObjectMessage.h"
 #include "Messages\CreateGameObjectMessage.h"
+#include "Messages\CreateDummyNetMessage.h"
+#include "Messages\GameStateNetMessage.h"
+#include "Messages\ScoreNetMessage.h"
+#include "Messages\ImportantNetMessage.h"
 
 #pragma comment(lib,"ws2_32.lib")
 
@@ -21,6 +25,8 @@ Client::Client()
 	myServerDataLength = sizeof(myServerData);
 
 	myShouldShutDown = false;
+
+	myMessageCounter = 0;
 }
 
 
@@ -61,7 +67,7 @@ void Client::Startup()
 	//UserClientSetup();
 
 	
-
+	myMessageManager.SetUserID(0);
 	
 }
 
@@ -82,7 +88,9 @@ void Client::Update()
 		return;
 	}
 
+	
 	RecieveMessages();
+	UpdateImportantMessages();
 
 	if (myIsConnected == true)
 	{
@@ -119,8 +127,10 @@ void Client::Update()
 	{
 		if (myConnectionTimer.GetElapsedTime() > 3.f && myShouldShutDown == false)
 		{
+#ifndef _DEBUG
 			PrintClientMessage("trying to reconnect to server...");
 			ConnectToServer();
+#endif
 		}
 	}
 }
@@ -143,105 +153,290 @@ void Client::Connect(const std::string & aIp, const std::string & aName)
 
 void Client::SendMesseageFromWorld(NetMessage & aMessageToSend)
 {
-	SendMessage(aMessageToSend);
+	if (aMessageToSend.GetMessageType() > NetworkMessageTypes::eIMPORTANTCUTTOF)
+	{
+		Error("message is not sent as important");
+	}
+
+	SendNetMessage(aMessageToSend);
 }
 
 
-void Client::SendMessage(NetMessage & aMessageToSend)
+void Client::SendMesseageFromWorld(ImportantNetMessage & aMessageToSend)
+{
+	SendNetMessage(aMessageToSend);
+}
+
+void Client::SendNetMessage(NetMessage & aMessageToSend)
 {
 	aMessageToSend.PackMessage();
-	if (sendto(mySocket, &aMessageToSend.myStream[0], aMessageToSend.myStream.size(), 0, (struct sockaddr *) &myServerData, myServerDataLength) == SOCKET_ERROR)
+
+	SendNetMessage(aMessageToSend.myStream);
+}
+
+void Client::SendNetMessage(StreamType & message)
+{
+	if (sendto(mySocket, &message[0], message.size(), 0, (struct sockaddr *) &myServerData, myServerDataLength) == SOCKET_ERROR)
 	{
 		SomethingWentWrongMessage("sendto() failed with error code : " + std::to_string(WSAGetLastError()));
 	}
+}
+
+bool Client::HandleImportantMessage(ImportantNetMessage & aImportantMessage)
+{
+	if (aImportantMessage.GetMessageType() == NetworkMessageTypes::eGameStateMessage)
+	{
+		int apa = 10;
+		++apa;
+	}
+
+	if (aImportantMessage.GetSenderID() == myMessageManager.GetUserID())
+	{
+		std::unordered_map<unsigned short, ImportantMessageData>::iterator messageCheck = myImportantMessages.find(static_cast<unsigned short>(aImportantMessage.myImpID));
+		if (messageCheck != myImportantMessages.end())
+		{
+			myImportantMessages.erase(messageCheck);	
+		}
+		return false;
+	}
+	else
+	{
+
+		SendNetMessage(aImportantMessage);
+		std::unordered_map<unsigned short, SB::Stopwatch>::iterator recievedCheck = myRecievedMessages.find(static_cast<unsigned short>( aImportantMessage.myImpID));
+
+		if (recievedCheck == myRecievedMessages.end())
+		{
+			myRecievedMessages[static_cast<unsigned short> (aImportantMessage.myImpID)];
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+}
+
+void Client::UpdateImportantMessages()
+{
+	if (myImportantMessages.size() > 0)
+	{
+		int apa = 10;
+		++apa;
+	}
+
+	std::unordered_map<unsigned short, ImportantMessageData>::iterator messageCheck = myImportantMessages.begin();
+	for (; messageCheck != myImportantMessages.end(); ++messageCheck)
+	{
+		if (messageCheck->second.timerOutTimer.GetElapsedTime().InSeconds() > globalImportantMessageTimeout)
+		{
+			SendNetMessage(messageCheck->second.myStream);
+			messageCheck->second.timerOutTimer.Restart();
+		}
+	}
+
+	std::unordered_map<unsigned short, SB::Stopwatch>::iterator timer = myRecievedMessages.begin();
+	std::unordered_map<unsigned short, SB::Stopwatch>::iterator removeIterator = myRecievedMessages.end();
+	for (; timer != myRecievedMessages.end(); ++timer)
+	{
+		if (removeIterator != myRecievedMessages.end())
+		{
+			myRecievedMessages.erase(removeIterator);
+			removeIterator = myRecievedMessages.end();
+		}
+
+		if (timer->second.GetElapsedTime().InSeconds() > globalImportantPacketKeepTimeout)
+		{
+			removeIterator = timer;
+		}
+	}
+
+	if (removeIterator != myRecievedMessages.end())
+	{
+		myRecievedMessages.erase(removeIterator);
+		removeIterator = myRecievedMessages.end();
+	}
+}
+
+unsigned short Client::GetNewImportantMessageID()
+{
+	unsigned short newID = myMessageCounter++;
+
+	if (myMessageCounter > 35000)
+	{
+		myMessageCounter = 0;
+	}
+
+	return newID;
 }
 
 void Client::RecieveMessages()
 {
 
 	char buf[BUFLEN];
-	int recieveLengthOfMessage;
+	int recieveLengthOfMessage = 0;
 	
 
 	memset(buf, '\0', BUFLEN);
 
-	//try to receive some data, this is a blocking call
-	recieveLengthOfMessage = recvfrom(mySocket, buf, BUFLEN, 0, (struct sockaddr *) &myServerData, &myServerDataLength);
-	unsigned short lenghOfMessage = static_cast<unsigned short>( recieveLengthOfMessage);
-
-	if (recieveLengthOfMessage == SOCKET_ERROR)
+	
+	do
 	{
-		const int SocketError = WSAGetLastError();
+		recieveLengthOfMessage = recvfrom(mySocket, buf, BUFLEN, 0, (struct sockaddr *) &myServerData, &myServerDataLength);
+		unsigned short lenghOfMessage = static_cast<unsigned short>(recieveLengthOfMessage);
+	
 
-		if (SocketError == 10054)
+		if (recieveLengthOfMessage == SOCKET_ERROR)
 		{
-			if (myIsConnected == true)
+			const int SocketError = WSAGetLastError();
+
+			if (SocketError == 10054)
 			{
-				PrintClientMessage("Lost Connection to Server");
-				myIsConnected = false;
-				myMessageManager.SetUserID(0);
+				if (myIsConnected == true)
+				{
+					PrintClientMessage("Lost Connection to Server");
+					myIsConnected = false;
+					myMessageManager.SetUserID(0);
+				}
+			}
+			else if (SocketError != 10035)
+			{
+				SomethingWentWrongMessage("recvfrom() failed with error code : " + std::to_string(SocketError));
 			}
 		}
-		else if (SocketError != 10035)
+		else
 		{
-			SomethingWentWrongMessage("recvfrom() failed with error code : " + std::to_string(SocketError));
+			NetworkMessageTypes messageType = myMessageManager.GetMessageType(buf);
+
+			bool readMessage = true;
+			if (NetMessage::isImportant(messageType) == true)
+			{
+				ImportantNetMessage impMessage;
+				impMessage.UnPackMessage(buf, lenghOfMessage);
+
+				if (impMessage.GetSenderID() > 25 && impMessage.GetSenderID() != 1337)
+				{
+					int apa = 10;
+					++apa;
+				}
+
+				readMessage = HandleImportantMessage(impMessage);
+			}
+
+			if (readMessage)
+			{
+				switch (messageType)
+				{
+				case NetworkMessageTypes::eConnection:
+				{
+					ConnectNetMessage recievedMessage;
+					recievedMessage.UnPackMessage(buf, lenghOfMessage);
+
+					HandleMessage(recievedMessage);
+				}
+				break;
+
+				case NetworkMessageTypes::ePing:
+				{
+					PingNetMessage recievedMessage;
+					recievedMessage.UnPackMessage(buf, lenghOfMessage);
+
+					HandleMessage(recievedMessage);
+				}
+				break;
+
+				case NetworkMessageTypes::eMessage:
+				{
+					ChatNetMessage recievedMessage;
+					recievedMessage.UnPackMessage(buf, lenghOfMessage);
+
+					HandleMessage(recievedMessage);
+				}
+				break;
+
+				case NetworkMessageTypes::eSyncGameObject:
+				{
+					SyncGameObjectMessage recievedMessage;
+					recievedMessage.UnPackMessage(buf, lenghOfMessage);
+
+					myGameWorld->RecieveMessage(recievedMessage);
+				}
+				break;
+
+				case NetworkMessageTypes::eCreationMessage:
+				{
+					CreateGameObjectMessage recievedMessage;
+					recievedMessage.UnPackMessage(buf, lenghOfMessage);
+
+					myGameWorld->RecieveMessage(recievedMessage);
+				}
+				break;
+
+				case NetworkMessageTypes::eDummyCreate:
+				{
+					CreateDummyNetMessage recievedMessage;
+					recievedMessage.UnPackMessage(buf, lenghOfMessage);
+
+					myGameWorld->RecieveMessage(recievedMessage);
+				}
+				break;
+
+				case NetworkMessageTypes::eGameStateMessage:
+				{
+					GameStateNetMessage recievedMessage;
+					recievedMessage.UnPackMessage(buf, lenghOfMessage);
+
+					myGameWorld->RecieveMessage(recievedMessage);
+				}
+				break;
+
+				case NetworkMessageTypes::eScore:
+				{
+					ScoreNetMessage recievedMessage;
+					recievedMessage.UnPackMessage(buf, lenghOfMessage);
+
+					myGameWorld->RecieveMessage(recievedMessage);
+				}
+				break;
+
+				default:
+					SomethingWentWrongMessage("Could not find network message type");
+					break;
+				}
+			}
 		}
+
+	} while (recieveLengthOfMessage > 0);
+}
+
+void Client::SendNetMessage(ImportantNetMessage & aMessage)
+{
+	if (aMessage.GetSenderID() == myMessageManager.GetUserID())
+	{
+		ImportantMessageData data;
+
+		data.messageID = GetNewImportantMessageID();
+		aMessage.myImpID = data.messageID;
+		aMessage.PackMessage();
+
+		data.myStream = aMessage.myStream;
+		data.targetID = aMessage.GetTargetID();
+
+		SendNetMessage(aMessage.myStream);
+
+		if (myImportantMessages.find(data.messageID) != myImportantMessages.end())
+		{
+			Error("duplicate important message id");
+		}
+
+	
+		myImportantMessages[data.messageID] = data;
+		myImportantMessages[data.messageID].timerOutTimer.Restart();
 	}
 	else
 	{
-		NetworkMessageTypes messageType = myMessageManager.GetMessageType(buf);
-
-		switch (messageType)
-		{
-		case NetworkMessageTypes::eConnection:
-		{
-			ConnectNetMessage recievedMessage;
-			recievedMessage.UnPackMessage(buf, lenghOfMessage);
-
-			HandleMessage(recievedMessage);
-		}
-		break;
-
-		case NetworkMessageTypes::ePing:
-		{
-			PingNetMessage recievedMessage;
-			recievedMessage.UnPackMessage(buf, lenghOfMessage);
-
-			HandleMessage(recievedMessage);
-		}
-		break;
-
-		case NetworkMessageTypes::eMessage:
-		{
-			ChatNetMessage recievedMessage;
-			recievedMessage.UnPackMessage(buf, lenghOfMessage);
-
-			HandleMessage(recievedMessage);
-		}
-		break;
-
-		case NetworkMessageTypes::eSyncGameObject:
-		{
-			SyncGameObjectMessage recievedMessage;
-			recievedMessage.UnPackMessage(buf, lenghOfMessage);
-
-			myGameWorld->RecieveMessage(recievedMessage);
-		}
-		break;
-
-		case NetworkMessageTypes::eCreationMessage:
-		{
-			CreateGameObjectMessage recievedMessage;
-			recievedMessage.UnPackMessage(buf, lenghOfMessage);
-
-			myGameWorld->RecieveMessage(recievedMessage);
-		}
-		break;
-
-		default:
-			SomethingWentWrongMessage("Could not find network message type");
-			break;
-		}
+		aMessage.PackMessage();
+		SendNetMessage(aMessage.myStream);
 	}
 }
 
@@ -297,7 +492,7 @@ void Client::PrintClientMessage(const std::string & aMessage)
 void Client::TurnOffClient()
 {
 	DisconnectNetMessage discMessage = myMessageManager.CreateMessage<DisconnectNetMessage>();
-	SendMessage(discMessage);
+	SendNetMessage(discMessage);
 
 	myIsConnected = false;
 	myShouldShutDown = true;
@@ -362,13 +557,18 @@ void Client::ConnectToServer()
 
 	ConnectNetMessage connectMessage = myMessageManager.CreateMessage<ConnectNetMessage>();
 	connectMessage.SetUserName(myClientName);
-	connectMessage.PackMessage();
+	//connectMessage.PackMessage();
+	
 
 	myIsConnected = false;
-	if (sendto(mySocket, &connectMessage.myStream[0], connectMessage.myStream.size(), 0, (struct sockaddr *) &myServerData, myServerDataLength) == SOCKET_ERROR)
+
+	SendNetMessage(connectMessage);
+	/*if (sendto(mySocket, &connectMessage.myStream[0], connectMessage.myStream.size(), 0, (struct sockaddr *) &myServerData, myServerDataLength) == SOCKET_ERROR)
 	{
 		SomethingWentWrongMessage("sendto() failed with error code : " + std::to_string(WSAGetLastError()));
-	}
+	}*/
+
+	
 	
 	myConnectionTimer.Restart();
 }

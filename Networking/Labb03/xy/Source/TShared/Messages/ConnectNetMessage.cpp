@@ -20,12 +20,13 @@ void ConnectNetMessage::SetUserName(const std::string & aName)
 	myUserName = aName;
 }
 
-void ConnectNetMessage::DoSerialize(StreamType & aStreamType)
+void ConnectNetMessage::DoImporantSerialize(StreamType & aStreamType)
 {
 	SERIALIZE(aStreamType, myUserName);
 }
 
-void ConnectNetMessage::DoDeSerialize(StreamType & aStreamType)
+void ConnectNetMessage::DoImporantDeSerialize(StreamType & aStreamType)
 {
 	DESERIALIZE(aStreamType, myUserName);
 }
+

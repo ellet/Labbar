@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/Teachers/!svn/ver/220/TGA2D/trunk/Source/DX2DEngine/source/shader
+END
+shader_normal.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Teachers/!svn/ver/200/TGA2D/trunk/Source/DX2DEngine/source/shader/shader_normal.cpp
+END
+shader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/Teachers/!svn/ver/200/TGA2D/trunk/Source/DX2DEngine/source/shader/shader.cpp
+END
+shader_normal_instanced.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/Teachers/!svn/ver/210/TGA2D/trunk/Source/DX2DEngine/source/shader/shader_normal_instanced.cpp
+END
+shader_distance_field_instanced.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/Teachers/!svn/ver/220/TGA2D/trunk/Source/DX2DEngine/source/shader/shader_distance_field_instanced.cpp
+END

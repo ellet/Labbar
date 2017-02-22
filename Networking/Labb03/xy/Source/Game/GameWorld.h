@@ -21,6 +21,9 @@ class Client;
 class NetworkCallback;
 class CreateGameObjectMessage;
 class SyncGameObjectMessage;
+class CreateDummyNetMessage;
+class GameStateNetMessage;
+class ScoreNetMessage;
 
 
 class CGameWorld
@@ -34,18 +37,18 @@ public:
 	void Render();
 
 	void RecieveMessage(CreateGameObjectMessage & aMessageToHandle);
+	void RecieveMessage(CreateDummyNetMessage & aMessageToHandle);
+	void RecieveMessage(GameStateNetMessage & aMessageToHandle);
 	void RecieveMessage(SyncGameObjectMessage & aMessage);
+	void RecieveMessage(ScoreNetMessage & aMessage);
+
 private:
-	void CreateGameObject();
 	void CreatePlayer(CGameObject & PlayerToCreate);
-	void CreateBall();
 
 	void OnIpEntered(std::string aIp);
 	void PrintText(const float aX, const float aY, const char* aText);
 	void ResetGame();
 	
-	//void UpdateBall(const float aDeltaTime);
-	void CheckGameOverState();
 	void PrintScores();
 
 	

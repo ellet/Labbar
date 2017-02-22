@@ -54,3 +54,13 @@ void NetMessage::UnPackMessage(const char * aMessage, const unsigned short aSize
 
 	InternalDeSerialize(inputStream);
 }
+
+bool NetMessage::isImportant(const NetworkMessageTypes aMessageType)
+{
+	return aMessageType > NetworkMessageTypes::eIMPORTANTCUTTOF;
+}
+
+bool NetMessage::isImportant()
+{
+	return isImportant(myObjectID);
+}

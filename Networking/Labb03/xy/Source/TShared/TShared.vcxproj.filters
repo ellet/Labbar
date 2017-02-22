@@ -43,6 +43,11 @@
     <ClInclude Include="GameCode\GameObjectTypes.h" />
     <ClInclude Include="Messages\CreateGameObjectMessage.h" />
     <ClInclude Include="Messages\SyncGameObjectMessage.h" />
+    <ClInclude Include="Messages\CreateDummyNetMessage.h" />
+    <ClInclude Include="Messages\GameStateNetMessage.h" />
+    <ClInclude Include="Messages\ScoreNetMessage.h" />
+    <ClInclude Include="Messages\ImportantNetMessage.h" />
+    <ClInclude Include="ImportantMessageData.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -68,5 +73,9 @@
     <ClCompile Include="Messages\GameCodeNetMessage.cpp" />
     <ClCompile Include="Messages\CreateGameObjectMessage.cpp" />
     <ClCompile Include="Messages\SyncGameObjectMessage.cpp" />
+    <ClCompile Include="Messages\CreateDummyNetMessage.cpp" />
+    <ClCompile Include="Messages\GameStateNetMessage.cpp" />
+    <ClCompile Include="Messages\ScoreNetMessage.cpp" />
+    <ClCompile Include="Messages\ImportantNetMessage.cpp" />
   </ItemGroup>
 </Project>

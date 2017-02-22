@@ -19,6 +19,9 @@
 #include "GameCode/Components/NetworkComponent.h"
 #include "Messages/CreateGameObjectMessage.h"
 #include "Messages/SyncGameObjectMessage.h"
+#include "Messages/CreateDummyNetMessage.h"
+#include "Messages/GameStateNetMessage.h"
+#include "Messages/ScoreNetMessage.h"
 
 using namespace DX2D;
 CGameWorld::CGameWorld()
@@ -49,9 +52,9 @@ void CGameWorld::ResetGame()
 		myPlayer2->myPosition.Set(0.9f, 0.5f);
 	}
 
-	
-	//myBall->Reset();
-	myGameState = eGameState::ePreGame;
+	GameStateNetMessage playgame = myClientCallback->myMessageManager.CreateMessage<GameStateNetMessage>();
+	playgame.myGameState = eGameState::ePlaying;
+	myClientCallback->SendMesseageFromWorld(playgame);
 }
 
 void CGameWorld::Init(NetworkCallback & aClientCallback)
@@ -60,24 +63,19 @@ void CGameWorld::Init(NetworkCallback & aClientCallback)
 	myInputWrapper.Init(DX2D::CEngine::GetInstance()->GetHInstance(), *DX2D::CEngine::GetInstance()->GetHWND(),
 		DX2D::CEngine::GetInstance()->GetWindowSize().x, DX2D::CEngine::GetInstance()->GetWindowSize().y);
 	myText = new DX2D::CText("Text/calibril.ttf_sdf");
-
-	
-
-
-	myPlayer2 = new CGameObject();
-	CreatePlayer(*myPlayer2);
-	//myPlayer2->CreateComponent<CAIComponent>()->Init(myBall); // Create network comntroller instead?
 	
 
 	myIpUi = new CGameObject();
 	myIpUi->CreateComponent<CInputUiComponent>()->Init(&myInputWrapper, std::bind(&CGameWorld::OnIpEntered, this, std::placeholders::_1));
 
-	ResetGame();
+	myPlayer1Score = 0;
+	myPlayer2Score = 0;
+
+	myGameState = eGameState::ePreGame;
 }
 
 void CGameWorld::CreatePlayer(CGameObject & PlayerToCreate)
 {
-	//PlayerToCreate.CreateComponent<CPaddleComponent>()->Init();
 	PlayerToCreate.CreateComponent<CInputComponent>()->Init(&myInputWrapper);
 	PlayerToCreate.CreateComponent<RenderComponent>();
 	PlayerToCreate.CreateComponent<NetworkComponent>()->SetCallback(*myClientCallback);
@@ -106,10 +104,8 @@ void CGameWorld::Update(float aDeltaTime)
 		{
 			return;
 		}
-		//UpdateBall(aDeltaTime);
 		myPlayer1->Update(aDeltaTime);
-		/*myPlayer2->Update(aDeltaTime);
-		CheckGameOverState();*/
+		
 		break;
 	case eGameState::ePreGame:
 		myIpUi->Update(aDeltaTime);
@@ -118,7 +114,6 @@ void CGameWorld::Update(float aDeltaTime)
 		if (myInputWrapper.GetKeyDown(DIK_SPACE) == true)
 		{
 			ResetGame();
-			myGameState = eGameState::ePlaying;
 		}
 		break;
 	}
@@ -132,36 +127,6 @@ void CGameWorld::PrintScores()
 	PrintText(0.8f, 0.1f, "Player 2");
 	PrintText(0.8f, 0.15f, std::to_string(myPlayer2Score).c_str());
 }
-
-void CGameWorld::CheckGameOverState()
-{
-	if (myPlayer1Score >= 3 || myPlayer2Score >= 3)
-	{
-		myGameState = eGameState::eGameOver;
-	}
-}
-
-//void CGameWorld::UpdateBall(const float aDeltaTime)
-//{
-//	//myBall.Update(aDeltaTime);
-//	myBallObject->Update(aDeltaTime);
-//	if (myBall->GetPosition().x <= 0)
-//	{
-//		myBall->Reset();
-//		myPlayer2Score++;
-//	}
-//	else if (myBall->GetPosition().x >= 1)
-//	{
-//		myBall->Reset();
-//		myPlayer1Score++;
-//	}
-//
-//	if (myPlayer1->GetComponent<CPaddleComponent>()->Collides(*myBall) == true ||
-//		myPlayer2->GetComponent<CPaddleComponent>()->Collides(*myBall) == true)
-//	{
-//		myBall->ReverseDirection();
-//	}
-//}
 
 void CGameWorld::Render()
 {
@@ -197,6 +162,12 @@ void CGameWorld::Render()
 	{
 		myIpUi->Render();
 	}
+	else
+	{
+		PrintText(0.f, 0.f, "");
+		PrintText(0.f, 0.f, "");
+		PrintText(0.f, 0.f, "");
+	}
 }
 
 void CGameWorld::RecieveMessage(CreateGameObjectMessage & aMessageToHandle)
@@ -209,23 +180,25 @@ void CGameWorld::RecieveMessage(CreateGameObjectMessage & aMessageToHandle)
 	}
 	else if (aMessageToHandle.myType == GameObjectTypes::eBall)
 	{
-		myBallObject = new class CGameObject;
-		myBallObject->CreateComponent<RenderComponent>();
-		myBallObject->GetComponent<RenderComponent>()->LoadSprite("sprites/ball.png");
-		myBallObject->myID = aMessageToHandle.myID;
+		
 	}
 
 }
 
 void CGameWorld::RecieveMessage(SyncGameObjectMessage & aMessage)
 {
+	if (myPlayer1 == nullptr)
+	{
+		return;
+	}
+
 	DX2D::Vector2f position(aMessage.X, aMessage.Y);
 
 	if (myBallObject != nullptr && myBallObject->myID == aMessage.objectID)
 	{
 		myBallObject->myPosition = position;
 	}
-	else if (myPlayer1 != nullptr && myPlayer1->myID == aMessage.objectID)
+	else if (myPlayer1->myID == aMessage.objectID)
 	{
 		myPlayer1->myPosition = position;
 	}
@@ -238,6 +211,55 @@ void CGameWorld::RecieveMessage(SyncGameObjectMessage & aMessage)
 		//Error("could not find object with ID" + std::to_string(aMessage.objectID));
 	}
 
+}
+
+void CGameWorld::RecieveMessage(CreateDummyNetMessage & aMessageToHandle)
+{
+	if (aMessageToHandle.myObjectType == GameObjectTypes::eBall)
+	{
+		if (myBallObject == nullptr)
+		{
+			myBallObject = new class CGameObject;
+			myBallObject->CreateComponent<RenderComponent>();
+			myBallObject->GetComponent<RenderComponent>()->LoadSprite("sprites/ball.png");
+			myBallObject->myID = aMessageToHandle.myGameObjectID;
+		}
+		else
+		{
+			//Error("ball already created");
+		}
+	}
+	else if (aMessageToHandle.myObjectType == GameObjectTypes::ePaddle)
+	{
+		if (myPlayer2 == nullptr)
+		{
+			myPlayer2 = new class CGameObject;
+			myPlayer2->CreateComponent<RenderComponent>();
+			myPlayer2->GetComponent<RenderComponent>()->LoadSprite("sprites/paddle.png");
+			myPlayer2->myID = aMessageToHandle.myGameObjectID;
+		}
+		else
+		{
+			//Error("Paddle already created");
+		}
+	}
+}
+
+void CGameWorld::RecieveMessage(GameStateNetMessage & aMessageToHandle)
+{
+	myGameState = aMessageToHandle.myGameState;
+}
+
+void CGameWorld::RecieveMessage(ScoreNetMessage & aMessage)
+{
+	if (aMessage.myIsPlayer1 == true)
+	{
+		myPlayer1Score = aMessage.myScore;
+	}
+	else
+	{
+		myPlayer2Score = aMessage.myScore;
+	}
 }
 
 void CGameWorld::PrintText(const float aX, const float aY, const char* aText)
