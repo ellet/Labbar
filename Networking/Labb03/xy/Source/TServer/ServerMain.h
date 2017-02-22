@@ -76,7 +76,7 @@ private:
 
 	
 	
-	std::unordered_map<unsigned short, ImportantMessageData> myImportantMessages;
+	std::unordered_map<unsigned int, ImportantMessageData> myImportantMessages;
 	
 	unsigned short myMessageCounter;
 

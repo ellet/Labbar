@@ -7,5 +7,6 @@ struct ImportantMessageData
 	unsigned short messageID;
 	unsigned short targetID;
 	SB::Stopwatch timerOutTimer;
+	unsigned int timeStamp;
 	StreamType myStream;
 };

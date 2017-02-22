@@ -5,7 +5,7 @@ enum class NetworkMessageTypes : char
 	eSyncGameObject,
 	ePing,
 	eDisconnect,
-	eScore,
+	
 
 	
 	eMessage,
@@ -15,6 +15,7 @@ enum class NetworkMessageTypes : char
 	
 	
 	eIMPORTANTCUTTOF,
+	eScore,
 	eGameStateMessage,
 	eDummyCreate,
 	eCreationMessage,

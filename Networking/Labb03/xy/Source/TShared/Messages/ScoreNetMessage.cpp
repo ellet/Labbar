@@ -15,13 +15,13 @@ ScoreNetMessage::~ScoreNetMessage()
 {
 }
 
-void ScoreNetMessage::DoSerialize(StreamType & aStreamType)
+void ScoreNetMessage::DoImporantSerialize(StreamType & aStreamType)
 {
 	SERIALIZE(aStreamType, myScore);
 	SERIALIZE(aStreamType, myIsPlayer1);
 }
 
-void ScoreNetMessage::DoDeSerialize(StreamType & aStreamType)
+void ScoreNetMessage::DoImporantDeSerialize(StreamType & aStreamType)
 {
 	DESERIALIZE(aStreamType, myScore);
 	DESERIALIZE(aStreamType, myIsPlayer1);

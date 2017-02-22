@@ -1,8 +1,8 @@
 #pragma once
-#include "NetMessage.h"
+#include "ImportantNetMessage.h"
 
 
-class ScoreNetMessage : public NetMessage
+class ScoreNetMessage : public ImportantNetMessage
 {
 public:
 	ScoreNetMessage();
@@ -12,10 +12,11 @@ public:
 	int myScore;
 
 protected:
-	virtual void DoSerialize(StreamType & aStreamType) override;
+
+	virtual void DoImporantSerialize(StreamType & aStreamType) override;
 
 
-	virtual void DoDeSerialize(StreamType & aStreamType) override;
+	virtual void DoImporantDeSerialize(StreamType & aStreamType) override;
 
 };
 

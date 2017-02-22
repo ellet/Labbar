@@ -68,6 +68,7 @@ void Client::Startup()
 
 	
 	myMessageManager.SetUserID(0);
+	myMessageManager.SetTargetID(globalServerID);
 	
 }
 
@@ -190,7 +191,7 @@ bool Client::HandleImportantMessage(ImportantNetMessage & aImportantMessage)
 		++apa;
 	}
 
-	if (aImportantMessage.GetSenderID() == myMessageManager.GetUserID())
+	if (aImportantMessage.GetSenderID() != globalServerID)
 	{
 		std::unordered_map<unsigned short, ImportantMessageData>::iterator messageCheck = myImportantMessages.find(static_cast<unsigned short>(aImportantMessage.myImpID));
 		if (messageCheck != myImportantMessages.end())
@@ -230,6 +231,17 @@ void Client::UpdateImportantMessages()
 	{
 		if (messageCheck->second.timerOutTimer.GetElapsedTime().InSeconds() > globalImportantMessageTimeout)
 		{
+			ImportantNetMessage derp;
+			derp.UnPackMessage(&messageCheck->second.myStream[0], messageCheck->second.myStream.size());
+
+			if (derp.GetMessageType() == NetworkMessageTypes::eConnection)
+			{
+				ConnectNetMessage arar;
+				arar.UnPackMessage(&messageCheck->second.myStream[0], messageCheck->second.myStream.size());
+				int apa = 10;
+				++apa;
+			}
+
 			SendNetMessage(messageCheck->second.myStream);
 			messageCheck->second.timerOutTimer.Restart();
 		}

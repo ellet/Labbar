@@ -67,18 +67,6 @@ void ServerWorld::Update(float aTimeDelta)
 	{
 		SyncGameObject(myBallObject);
 	}
-
-	ScoreNetMessage player1Score = myNetworkCallback->myMessageManager.CreateMessage<ScoreNetMessage>();
-	player1Score.myScore = myPlayer1Score;
-	player1Score.myIsPlayer1 = true;
-
-	myNetworkCallback->BroadCastMessageFromWorld(player1Score);
-
-	ScoreNetMessage player2Score = myNetworkCallback->myMessageManager.CreateMessage<ScoreNetMessage>();
-	player2Score.myScore = myPlayer2Score;
-	player2Score.myIsPlayer1 = false;
-
-	myNetworkCallback->BroadCastMessageFromWorld(player2Score);
 }
 
 
@@ -260,6 +248,19 @@ void ServerWorld::ResetGame()
 {
 	myPlayer1Score = 0;
 	myPlayer2Score = 0;
+
+	ScoreNetMessage player2Score = myNetworkCallback->myMessageManager.CreateMessage<ScoreNetMessage>();
+	player2Score.myScore = myPlayer2Score;
+	player2Score.myIsPlayer1 = false;
+
+	myNetworkCallback->BroadCastMessageFromWorld(player2Score);
+
+	ScoreNetMessage player1Score = myNetworkCallback->myMessageManager.CreateMessage<ScoreNetMessage>();
+	player1Score.myScore = myPlayer1Score;
+	player1Score.myIsPlayer1 = true;
+
+	myNetworkCallback->BroadCastMessageFromWorld(player1Score);
+
 	myPlayer1->myPosition.Set(0.05f, 0.5f);
 	myPlayer2->myPosition.Set(0.9f, 0.5f);
 	myBall->Reset();
@@ -273,11 +274,24 @@ void ServerWorld::UpdateBall(const float aDeltaTime)
 	{
 		myBall->Reset();
 		myPlayer2Score++;
+		
+
+		ScoreNetMessage player2Score = myNetworkCallback->myMessageManager.CreateMessage<ScoreNetMessage>();
+		player2Score.myScore = myPlayer2Score;
+		player2Score.myIsPlayer1 = false;
+
+		myNetworkCallback->BroadCastMessageFromWorld(player2Score);
 	}
 	else if (myBall->GetPosition().x >= 1)
 	{
 		myBall->Reset();
 		myPlayer1Score++;
+
+		ScoreNetMessage player1Score = myNetworkCallback->myMessageManager.CreateMessage<ScoreNetMessage>();
+		player1Score.myScore = myPlayer1Score;
+		player1Score.myIsPlayer1 = true;
+
+		myNetworkCallback->BroadCastMessageFromWorld(player1Score);
 	}
 
 	if (myPlayer1->GetComponent<CPaddleComponent>()->Collides(*myBall) == true ||

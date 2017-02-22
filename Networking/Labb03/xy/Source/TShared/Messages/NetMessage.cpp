@@ -38,6 +38,7 @@ void NetMessage::InternalDeSerialize(StreamType & aStreamType)
 
 void NetMessage::PackMessage()
 {
+	myStream.clear();
 	InternalSerialize(myStream);
 
 	if (myStream.size() > 512)

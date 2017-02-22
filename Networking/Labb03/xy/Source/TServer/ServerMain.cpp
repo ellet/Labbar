@@ -140,7 +140,7 @@ bool CServerMain::HandleImportantMessage(ImportantNetMessage & aImportantMessage
 	unsigned short senderID = aImportantMessage.GetSenderID();
 	if (senderID == myMessageManager.GetUserID())
 	{
-		std::unordered_map<unsigned short, ImportantMessageData>::iterator messageCheck = myImportantMessages.find(aImportantMessage.myImpID);
+		std::unordered_map<unsigned int, ImportantMessageData>::iterator messageCheck = myImportantMessages.find(aImportantMessage.GetTimeStamp());
 		if (messageCheck != myImportantMessages.end())
 		{
 			myImportantMessages.erase(messageCheck);
@@ -172,7 +172,7 @@ bool CServerMain::HandleImportantMessage(ImportantNetMessage & aImportantMessage
 
 void CServerMain::UpdateImportantMessages()
 {
-	std::unordered_map<unsigned short, ImportantMessageData>::iterator messageCheck = myImportantMessages.begin();
+	std::unordered_map<unsigned int, ImportantMessageData>::iterator messageCheck = myImportantMessages.begin();
 	for (; messageCheck != myImportantMessages.end(); ++messageCheck)
 	{
 		if (messageCheck->second.timerOutTimer.GetElapsedTime().InSeconds() > globalImportantMessageTimeout)
@@ -311,6 +311,16 @@ void CServerMain::SetupIndexes()
 
 void CServerMain::HandleMessage(const ConnectNetMessage & recievedConnectionMessage, const sockaddr_in & aClientData)
 {
+	std::unordered_map<unsigned short, ClientData>::iterator iUser = myConnectedClients.begin();
+	for (; iUser != myConnectedClients.end(); ++iUser)
+	{
+		if (iUser->second.AddressInformation.sin_port == aClientData.sin_port)
+		{
+			PrintServerMessage("Client is already connected");
+			return;
+		}
+	}
+
 	const unsigned short NewClientIndex = AddClient(recievedConnectionMessage.GetClientName(), aClientData);
 
 	myMessageManager.SetTargetID(NewClientIndex);
@@ -403,10 +413,19 @@ void CServerMain::CheckRecievedMessages()
 			impMessage.UnPackMessage(buf, recieveLengthOfMessage);
 
 			readMessage = HandleImportantMessage(impMessage);
+
+			if (readMessage == true)
+			{
+				if (impMessage.GetTargetID() != globalServerID)
+				{
+					Error("message target is not server");
+				}
+			}
 		}
 
 		if (readMessage == true)
 		{
+
 			switch (messageType)
 			{
 			case NetworkMessageTypes::eConnection:
@@ -553,7 +572,12 @@ void CServerMain::SendNetMessage(ImportantNetMessage & aMessage)
 		data.myStream = aMessage.myStream;
 		data.targetID = aMessage.GetTargetID();
 
+		data.timeStamp = aMessage.GetTimeStamp();
+
 		const unsigned short clientIndex = aMessage.GetTargetID();
+
+		myImportantMessages[aMessage.GetTimeStamp()] = data;
+		myImportantMessages[aMessage.GetTimeStamp()].timerOutTimer.Restart();
 
 		SendNetMessage(aMessage.myStream, clientIndex);
 
@@ -567,8 +591,9 @@ void CServerMain::SendNetMessage(ImportantNetMessage & aMessage)
 			Error("Message and data id dont match");
 		}
 
-		myImportantMessages[data.messageID] = data;
-		myImportantMessages[data.messageID].timerOutTimer.Restart();
+		
+		/*myImportantMessages[data.messageID] = data;
+		myImportantMessages[data.messageID].timerOutTimer.Restart();*/
 	}
 	else
 	{
