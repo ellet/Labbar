@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="PrecompiledHeader">
+      <UniqueIdentifier>{83c467ed-fb37-4d04-baab-e837ffd1c636}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>PrecompiledHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>PrecompiledHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonNetworkIncludes.h" />
+    <ClInclude Include="CommonErrorHandling.h" />
+    <ClInclude Include="Time\Stopwatch.h" />
+    <ClInclude Include="Time\Time.h" />
+    <ClInclude Include="Messages\NetMessage.h" />
+    <ClInclude Include="Serialization\SerializeCommands.h" />
+    <ClInclude Include="Serialization\SerializeHeader.h" />
+    <ClInclude Include="Serialization\SerializeHelper.h" />
+    <ClInclude Include="Messages\NetworkMessageTypes.h" />
+    <ClInclude Include="Messages\PingNetMessage.h" />
+    <ClInclude Include="Messages\Manager\NetMessageManager.h" />
+    <ClInclude Include="Messages\ConnectNetMessage.h" />
+    <ClInclude Include="Messages\ChatNetMessage.h" />
+    <ClInclude Include="Messages\DisconnectNetMessage.h" />
+    <ClInclude Include="GameCode\GameObject\GameObject.h" />
+    <ClInclude Include="GameCode\Components\BaseComponent.h" />
+    <ClInclude Include="GameCode\Components\ComponentIds.h" />
+    <ClInclude Include="GameCode\Components\ComponentMessages.h" />
+    <ClInclude Include="GameCode\Components\AIComponent.h" />
+    <ClInclude Include="GameCode\Components\Ball.h" />
+    <ClInclude Include="GameCode\Components\InputComponent.h" />
+    <ClInclude Include="GameCode\Components\InputUiComponent.h" />
+    <ClInclude Include="GameCode\Components\PaddleComponent.h" />
+    <ClInclude Include="GameCode\Components\RenderComponent.h" />
+    <ClInclude Include="GameCode\GameStates.h" />
+    <ClInclude Include="Messages\NetworkCallback.h" />
+    <ClInclude Include="GameCode\Components\NetworkComponent.h" />
+    <ClInclude Include="Messages\GameCodeNetMessage.h" />
+    <ClInclude Include="GameCode\GameObjectTypes.h" />
+    <ClInclude Include="Messages\CreateGameObjectMessage.h" />
+    <ClInclude Include="Messages\SyncGameObjectMessage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>PrecompiledHeader</Filter>
+    </ClCompile>
+    <ClCompile Include="Time\Stopwatch.cpp" />
+    <ClCompile Include="Messages\NetMessage.cpp" />
+    <ClCompile Include="Messages\PingNetMessage.cpp" />
+    <ClCompile Include="Messages\Manager\NetMessageManager.cpp" />
+    <ClCompile Include="Messages\ConnectNetMessage.cpp" />
+    <ClCompile Include="Messages\ChatNetMessage.cpp" />
+    <ClCompile Include="Messages\DisconnectNetMessage.cpp" />
+    <ClCompile Include="GameCode\GameObject\GameObject.cpp" />
+    <ClCompile Include="GameCode\Components\BaseComponent.cpp" />
+    <ClCompile Include="GameCode\Components\ComponentMessages.cpp" />
+    <ClCompile Include="GameCode\Components\AIComponent.cpp" />
+    <ClCompile Include="GameCode\Components\Ball.cpp" />
+    <ClCompile Include="GameCode\Components\InputComponent.cpp" />
+    <ClCompile Include="GameCode\Components\InputUiComponent.cpp" />
+    <ClCompile Include="GameCode\Components\PaddleComponent.cpp" />
+    <ClCompile Include="GameCode\Components\RenderComponent.cpp" />
+    <ClCompile Include="GameCode\Components\NetworkComponent.cpp" />
+    <ClCompile Include="Messages\GameCodeNetMessage.cpp" />
+    <ClCompile Include="Messages\CreateGameObjectMessage.cpp" />
+    <ClCompile Include="Messages\SyncGameObjectMessage.cpp" />
+  </ItemGroup>
+</Project>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DX2DEngine", "DX2DEngine\DX2DEngine.vcxproj", "{11F98BF6-7BDB-4CFB-96CF-577DB4AE312F}"
 EndProject
@@ -16,6 +16,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Launcher", "Launcher\Launch
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CommonUtilites", "CommonUtilites\CommonUtilites.vcxproj", "{DCD8C5DE-FA9F-4DD9-B546-20D56969E5EF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TServer", "TServer\TServer.vcxproj", "{461E0775-B5E4-4A23-80D3-DD69C07A44FA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TShared", "TShared\TShared.vcxproj", "{ADBD4EB5-E36B-4338-90DD-53C299C9F77C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{DCD8C5DE-FA9F-4DD9-B546-20D56969E5EF}.Debug|Win32.Build.0 = Debug|Win32
 		{DCD8C5DE-FA9F-4DD9-B546-20D56969E5EF}.Release|Win32.ActiveCfg = Release|Win32
 		{DCD8C5DE-FA9F-4DD9-B546-20D56969E5EF}.Release|Win32.Build.0 = Release|Win32
+		{461E0775-B5E4-4A23-80D3-DD69C07A44FA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{461E0775-B5E4-4A23-80D3-DD69C07A44FA}.Debug|Win32.Build.0 = Debug|Win32
+		{461E0775-B5E4-4A23-80D3-DD69C07A44FA}.Release|Win32.ActiveCfg = Release|Win32
+		{461E0775-B5E4-4A23-80D3-DD69C07A44FA}.Release|Win32.Build.0 = Release|Win32
+		{ADBD4EB5-E36B-4338-90DD-53C299C9F77C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ADBD4EB5-E36B-4338-90DD-53C299C9F77C}.Debug|Win32.Build.0 = Debug|Win32
+		{ADBD4EB5-E36B-4338-90DD-53C299C9F77C}.Release|Win32.ActiveCfg = Release|Win32
+		{ADBD4EB5-E36B-4338-90DD-53C299C9F77C}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

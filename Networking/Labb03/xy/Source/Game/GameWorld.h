@@ -1,8 +1,11 @@
 #pragma once
 #include <vector>
 #include "..\CommonUtilites\InputWrapper.h"
-#include "Ball.h"
-#include "PaddleComponent.h"
+#include <GameCode\Components\Ball.h>
+#include <GameCode\Components\PaddleComponent.h>
+#include "GameCode\GameStates.h"
+#include <functional>
+
 
 namespace DX2D
 {
@@ -10,14 +13,15 @@ namespace DX2D
 	class CSpriteBatch;
 	class CText;
 	class CCustomShape;
+	
 }
 
-enum class eGameState
-{
-	ePreGame,
-	ePlaying,
-	eGameOver
-};
+class CBall;
+class Client;
+class NetworkCallback;
+class CreateGameObjectMessage;
+class SyncGameObjectMessage;
+
 
 class CGameWorld
 {
@@ -25,29 +29,37 @@ public:
 	CGameWorld();
 	~CGameWorld();
 
-	void Init();
+	void Init(NetworkCallback & aClientCallback);
 	void Update(float aTimeDelta);
-private:
-	void OnIpEntered(std::string aIP);
-	void PrintText(const float aX, const float aY, const char* aText);
-	void UpdateGameOverState();
-	void UpdatePlayingState();
-	void ResetGame();
 	void Render();
-	void UpdateBall(const float aDeltaTime);
+
+	void RecieveMessage(CreateGameObjectMessage & aMessageToHandle);
+	void RecieveMessage(SyncGameObjectMessage & aMessage);
+private:
+	void CreateGameObject();
+	void CreatePlayer(CGameObject & PlayerToCreate);
+	void CreateBall();
+
+	void OnIpEntered(std::string aIp);
+	void PrintText(const float aX, const float aY, const char* aText);
+	void ResetGame();
+	
+	//void UpdateBall(const float aDeltaTime);
 	void CheckGameOverState();
 	void PrintScores();
 
+	
 	eGameState myGameState;
 
-	CBall myBall;
+	CBall * myBall;
+	class CGameObject* myBallObject;
 	class CGameObject* myPlayer1;
 	class CGameObject* myPlayer2;
 	class CGameObject* myIpUi;
 	int myPlayer1Score;
 	int myPlayer2Score;
-	DX2D::CText* myText;	
+	DX2D::CText* myText;
 	Input::InputWrapper myInputWrapper;
-
+	NetworkCallback * myClientCallback;
 	
 };

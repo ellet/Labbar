@@ -7,6 +7,9 @@
 #include <functional>
 #include <time.h>
 
+#include "GameWorld.h"
+#include "Networking/Client.h"
+
 
 using namespace std::placeholders;
 
@@ -22,11 +25,15 @@ using namespace std::placeholders;
 
 CGame::CGame()
 {
+	myGameWorld = std::make_unique<CGameWorld>();
+	myClient = std::make_unique<Client>();
+	myClient->SetGameWorld(*myGameWorld);
 }
 
 
 CGame::~CGame()
 {
+	myClient->Shutdown();
 }
 
 
@@ -70,14 +77,18 @@ void CGame::Init()
 
 void CGame::InitCallBack()
 {
-    myGameWorld.Init();
+	myClient->Startup();
+
+    myGameWorld->Init(*myClient);
 }
 
 
 void CGame::UpdateCallBack()
 {
 	myTimerManager.UpdateTimers();
-	myGameWorld.Update((float)myTimerManager.GetTimer(0).GetDeltaTime().GetMicroseconds() / 1000000.f);
+	myClient->Update();
+	myGameWorld->Update((float)myTimerManager.GetTimer(0).GetDeltaTime().GetMicroseconds() / 1000000.f);
+	myGameWorld->Render();
 }
 
 

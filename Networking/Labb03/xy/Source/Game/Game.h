@@ -1,7 +1,11 @@
 #pragma once
 #include <tga2d/Engine.h>
 #include "..\CommonUtilites\TimerManager.h"
-#include "GameWorld.h"
+#include <memory>
+
+
+class CGameWorld;
+class Client;
 
 
 class CGame
@@ -15,7 +19,7 @@ private:
 	void UpdateCallBack();
 	void LogCallback(std::string aText);
 
-	CGameWorld myGameWorld;
+	std::unique_ptr<CGameWorld> myGameWorld;
 	CommonUtilities::TimerManager myTimerManager;
-
+	std::unique_ptr<Client> myClient;
 };

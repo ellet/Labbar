@@ -7,11 +7,12 @@
 
 #include "targetver.h"
 
-#define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
+#include <stdio.h>
+#include <tchar.h>
+#include "CommonNetworkIncludes.h"
+#include <CommonErrorHandling.h>
+#include <memory>
 
 
 
 // TODO: reference additional headers your program requires here
-
-#include <CommonNetworkIncludes.h>
-#include <memory>

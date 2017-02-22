@@ -19,63 +19,20 @@
       <Filter>Precompiled</Filter>
     </ClInclude>
     <ClInclude Include="Game.h" />
-    <ClInclude Include="GameWorld.h" />
     <ClInclude Include="resource.h">
       <Filter>Precompiled</Filter>
     </ClInclude>
-    <ClInclude Include="Ball.h" />
-    <ClInclude Include="ComponentIds.h">
-      <Filter>Component</Filter>
-    </ClInclude>
-    <ClInclude Include="InputComponent.h">
-      <Filter>Component</Filter>
-    </ClInclude>
-    <ClInclude Include="PaddleComponent.h">
-      <Filter>Component</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseComponent.h">
-      <Filter>Component\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="ComponentMessages.h">
-      <Filter>Component\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Component\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="AIComponent.h">
-      <Filter>Component</Filter>
-    </ClInclude>
-    <ClInclude Include="InputUiComponent.h">
-      <Filter>Component</Filter>
-    </ClInclude>
+    <ClInclude Include="Networking\Client.h" />
+    <ClInclude Include="Networking\ConsoleInputHandler.h" />
+    <ClInclude Include="GameWorld.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Precompiled</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Networking\Client.cpp" />
+    <ClCompile Include="Networking\ConsoleInputHandler.cpp" />
     <ClCompile Include="GameWorld.cpp" />
-    <ClCompile Include="Ball.cpp" />
-    <ClCompile Include="InputComponent.cpp">
-      <Filter>Component</Filter>
-    </ClCompile>
-    <ClCompile Include="PaddleComponent.cpp">
-      <Filter>Component</Filter>
-    </ClCompile>
-    <ClCompile Include="BaseComponent.cpp">
-      <Filter>Component\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="ComponentMessages.cpp">
-      <Filter>Component\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Component\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="AIComponent.cpp">
-      <Filter>Component</Filter>
-    </ClCompile>
-    <ClCompile Include="InputUiComponent.cpp">
-      <Filter>Component</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
