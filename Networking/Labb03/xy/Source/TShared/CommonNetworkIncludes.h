@@ -23,3 +23,14 @@ const unsigned short globalServerID = 1337;
 const float globalImportantMessageTimeout = 0.05f;
 
 const float globalImportantPacketKeepTimeout = 5.f;
+
+
+#define IMPORTANTMESSAGEPRINT(aString) std::cout << (aString) << std::endl;
+
+
+
+#ifndef IMPORTANTMESSAGEPRINT
+#define IMPORTANTMESSAGEPRINT(aString)
+#endif
+
+

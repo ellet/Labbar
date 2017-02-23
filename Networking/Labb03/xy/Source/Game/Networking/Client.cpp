@@ -191,28 +191,45 @@ bool Client::HandleImportantMessage(ImportantNetMessage & aImportantMessage)
 		++apa;
 	}
 
+	
+
 	if (aImportantMessage.GetSenderID() != globalServerID)
 	{
+		bool messageFound = false;
+
 		std::unordered_map<unsigned short, ImportantMessageData>::iterator messageCheck = myImportantMessages.find(static_cast<unsigned short>(aImportantMessage.myImpID));
 		if (messageCheck != myImportantMessages.end())
 		{
 			myImportantMessages.erase(messageCheck);	
+
+			messageFound = true;
 		}
+
+		if (messageFound == true)
+		{
+			IMPORTANTMESSAGEPRINT("Message with ID: " + std::to_string(aImportantMessage.myImpID) + "was found and deleted");
+		}
+
 		return false;
 	}
 	else
 	{
+		IMPORTANTMESSAGEPRINT("Sending back message with ID: " + std::to_string(aImportantMessage.myImpID));
 
 		SendNetMessage(aImportantMessage);
 		std::unordered_map<unsigned short, SB::Stopwatch>::iterator recievedCheck = myRecievedMessages.find(static_cast<unsigned short>( aImportantMessage.myImpID));
 
 		if (recievedCheck == myRecievedMessages.end())
 		{
+			
+
 			myRecievedMessages[static_cast<unsigned short> (aImportantMessage.myImpID)];
 			return true;
 		}
 		else
 		{
+			IMPORTANTMESSAGEPRINT("Message with ID: " + std::to_string(aImportantMessage.myImpID) + " has already been handled");
+
 			return false;
 		}
 	}
@@ -242,6 +259,7 @@ void Client::UpdateImportantMessages()
 				++apa;
 			}
 
+			IMPORTANTMESSAGEPRINT("Resending with ID" + std::to_string(messageCheck->first));
 			SendNetMessage(messageCheck->second.myStream);
 			messageCheck->second.timerOutTimer.Restart();
 		}

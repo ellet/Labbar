@@ -140,15 +140,27 @@ bool CServerMain::HandleImportantMessage(ImportantNetMessage & aImportantMessage
 	unsigned short senderID = aImportantMessage.GetSenderID();
 	if (senderID == myMessageManager.GetUserID())
 	{
+		bool messageFound = false;
+
 		std::unordered_map<unsigned int, ImportantMessageData>::iterator messageCheck = myImportantMessages.find(aImportantMessage.GetTimeStamp());
 		if (messageCheck != myImportantMessages.end())
 		{
+			messageFound = true;
 			myImportantMessages.erase(messageCheck);
+
+			IMPORTANTMESSAGEPRINT("Message with ID removed from server: " + std::to_string(aImportantMessage.myImpID));
 		}
+
+		if (messageFound == true)
+		{
+			IMPORTANTMESSAGEPRINT("Message with ID : " + std::to_string(aImportantMessage.myImpID) + " was not found on server");
+		}
+
 		return false;
 	}
 	else 
 	{
+		IMPORTANTMESSAGEPRINT("Sending back message with ID: " + std::to_string(aImportantMessage.myImpID));
 		SendNetMessage(aImportantMessage);
 
 		if (myConnectedClients.find(senderID) != myConnectedClients.end())
@@ -164,6 +176,9 @@ bool CServerMain::HandleImportantMessage(ImportantNetMessage & aImportantMessage
 			{
 				return false;
 			}
+		}
+		{
+			IMPORTANTMESSAGEPRINT("Client with ID" + std::to_string(aImportantMessage.myImpID) + " doesn't exist on server");
 		}
 		
 		return true;
@@ -339,7 +354,7 @@ void CServerMain::HandleMessage(const PingNetMessage & recievedPingMessage)
 {
 	const unsigned short senderID = recievedPingMessage.GetSenderID();
 
-	PrintServerMessage("Ping recieved from client " + myConnectedClients[senderID].ClientName + " with ID: " + std::to_string(senderID));
+	//PrintServerMessage("Ping recieved from client " + myConnectedClients[senderID].ClientName + " with ID: " + std::to_string(senderID));
 
 	myMessageManager.SetTargetID(senderID);
 	
@@ -385,108 +400,111 @@ void CServerMain::CheckRecievedMessages()
 	int sizeOfMessageData = sizeof(clientMessageData);
 
 	//try to receive some data, this is a blocking call
-	recieveLengthOfMessage = recvfrom(mySocket, buf, BUFLEN, 0, (struct sockaddr *) &clientMessageData, &sizeOfMessageData);
-	myLatestAddr = clientMessageData;
-	myLatestAddrSize = recieveLengthOfMessage;
-
-	if (recieveLengthOfMessage == SOCKET_ERROR)
+	do 
 	{
-		const int SocketError = WSAGetLastError();
+		recieveLengthOfMessage = recvfrom(mySocket, buf, BUFLEN, 0, (struct sockaddr *) &clientMessageData, &sizeOfMessageData);
+		myLatestAddr = clientMessageData;
+		myLatestAddrSize = recieveLengthOfMessage;
+
+		if (recieveLengthOfMessage == SOCKET_ERROR)
+		{
+			const int SocketError = WSAGetLastError();
 	
-		if (SocketError == 10054)
-		{
-			PrintServerMessage("Socket not responding");
+			if (SocketError == 10054)
+			{
+				PrintServerMessage("Socket not responding");
+			}
+			else if (SocketError != 10035)
+			{
+				SomethingWentWrongMessage("recvfrom() failed with error code : " + std::to_string(SocketError));
+			}
 		}
-		else if (SocketError != 10035)
+		else
 		{
-			SomethingWentWrongMessage("recvfrom() failed with error code : " + std::to_string(SocketError));
-		}
-	}
-	else
-	{
-		NetworkMessageTypes messageType = myMessageManager.GetMessageType(buf);
+			NetworkMessageTypes messageType = myMessageManager.GetMessageType(buf);
 
-		bool readMessage = true;
-		if (NetMessage::isImportant(messageType) == true)
-		{
-			ImportantNetMessage impMessage;
-			impMessage.UnPackMessage(buf, recieveLengthOfMessage);
+			bool readMessage = true;
+			if (NetMessage::isImportant(messageType) == true)
+			{
+				ImportantNetMessage impMessage;
+				impMessage.UnPackMessage(buf, recieveLengthOfMessage);
 
-			readMessage = HandleImportantMessage(impMessage);
+				readMessage = HandleImportantMessage(impMessage);
+
+				if (readMessage == true)
+				{
+					if (impMessage.GetTargetID() != globalServerID)
+					{
+						Error("message target is not server");
+					}
+				}
+			}
 
 			if (readMessage == true)
 			{
-				if (impMessage.GetTargetID() != globalServerID)
+
+				switch (messageType)
 				{
-					Error("message target is not server");
+				case NetworkMessageTypes::eConnection:
+				{
+					ConnectNetMessage recievedMessage;
+					recievedMessage.UnPackMessage(buf, recieveLengthOfMessage);
+
+					HandleMessage(recievedMessage, clientMessageData);
+				}
+				break;
+
+				case NetworkMessageTypes::ePing:
+				{
+					PingNetMessage recievedMessage;
+					recievedMessage.UnPackMessage(buf, recieveLengthOfMessage);
+
+					HandleMessage(recievedMessage);
+				}
+				break;
+
+				case NetworkMessageTypes::eMessage:
+				{
+					ChatNetMessage recievedMessage;
+					recievedMessage.UnPackMessage(buf, recieveLengthOfMessage);
+
+					HandleMessage(recievedMessage);
+				}
+				break;
+
+				case NetworkMessageTypes::eDisconnect:
+				{
+					DisconnectNetMessage recievedMessage;
+					recievedMessage.UnPackMessage(buf, recieveLengthOfMessage);
+
+					HandleMessage(recievedMessage);
+				}
+
+				case NetworkMessageTypes::eInputMessage:
+				{
+					GameCodeNetMessage recievedMessage;
+					recievedMessage.UnPackMessage(buf, recieveLengthOfMessage);
+
+					myGameWorld->HandleInputMessage(recievedMessage);
+				}
+				break;
+
+				case NetworkMessageTypes::eGameStateMessage:
+				{
+					GameStateNetMessage recievedMessage;
+					recievedMessage.UnPackMessage(buf, recieveLengthOfMessage);
+
+					myGameWorld->HandleGameStateMessage(recievedMessage);
+				}
+				break;
+
+				default:
+					SomethingWentWrongMessage("server could not find message type");
+					break;
 				}
 			}
 		}
-
-		if (readMessage == true)
-		{
-
-			switch (messageType)
-			{
-			case NetworkMessageTypes::eConnection:
-			{
-				ConnectNetMessage recievedMessage;
-				recievedMessage.UnPackMessage(buf, recieveLengthOfMessage);
-
-				HandleMessage(recievedMessage, clientMessageData);
-			}
-			break;
-
-			case NetworkMessageTypes::ePing:
-			{
-				PingNetMessage recievedMessage;
-				recievedMessage.UnPackMessage(buf, recieveLengthOfMessage);
-
-				HandleMessage(recievedMessage);
-			}
-			break;
-
-			case NetworkMessageTypes::eMessage:
-			{
-				ChatNetMessage recievedMessage;
-				recievedMessage.UnPackMessage(buf, recieveLengthOfMessage);
-
-				HandleMessage(recievedMessage);
-			}
-			break;
-
-			case NetworkMessageTypes::eDisconnect:
-			{
-				DisconnectNetMessage recievedMessage;
-				recievedMessage.UnPackMessage(buf, recieveLengthOfMessage);
-
-				HandleMessage(recievedMessage);
-			}
-
-			case NetworkMessageTypes::eInputMessage:
-			{
-				GameCodeNetMessage recievedMessage;
-				recievedMessage.UnPackMessage(buf, recieveLengthOfMessage);
-
-				myGameWorld->HandleInputMessage(recievedMessage);
-			}
-			break;
-
-			case NetworkMessageTypes::eGameStateMessage:
-			{
-				GameStateNetMessage recievedMessage;
-				recievedMessage.UnPackMessage(buf, recieveLengthOfMessage);
-
-				myGameWorld->HandleGameStateMessage(recievedMessage);
-			}
-			break;
-
-			default:
-				SomethingWentWrongMessage("server could not find message type");
-				break;
-			}
-		}
-	}
+	} while (recieveLengthOfMessage > 0);
 }
 
 void CServerMain::PrintServerAddress() const
@@ -579,6 +597,7 @@ void CServerMain::SendNetMessage(ImportantNetMessage & aMessage)
 		myImportantMessages[aMessage.GetTimeStamp()] = data;
 		myImportantMessages[aMessage.GetTimeStamp()].timerOutTimer.Restart();
 
+		IMPORTANTMESSAGEPRINT("Sending important message with ID: " + std::to_string(aMessage.myImpID));
 		SendNetMessage(aMessage.myStream, clientIndex);
 
 		if (myImportantMessages.find(data.messageID) != myImportantMessages.end())
